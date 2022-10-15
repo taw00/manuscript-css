@@ -154,9 +154,11 @@ div.note-main > h1.title { display: none; }*/
 /* ...or instead, turn it into a watermark */
 body.page-note nav.navbar { opacity: .15; }
 
-/* This is Laurent's JoplinCloud (c), T&Cs, and such. Don't remove it. (Leave
- * this commented out.)
-body.page-note > div.footer div.content { display: none !important; } */
+/* The footer.
+ * This is Laurent's JoplinCloud (c), T&Cs, and such. Don't remove it. */
+/*body.page-note > div.footer div.content { display: none !important; } */
+/* ...but we do fade it to the background */
+body.page-note > div.footer { opacity: .5; }
 
 /* Remove document last-updated line at the top */
 div.note-main > p.last-updated { display: none; }
