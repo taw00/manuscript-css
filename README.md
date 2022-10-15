@@ -17,25 +17,25 @@ How to use: TL;DR - Check out the sample manuscripts in this repository.
 
 1. A generalized manuscript format for prose.
 2. US Letter- or A4-dimensioned artifacts.
-3. Short-form (e.g. short stories) and long-form (novel, and book-sized) works.
+3. Short-form (e.g. short stories) and long-form (novel and book-sized) works.
 4. Narrative and non-narrative prose.
 5. A lot of customization if you know your CSS.
 
 ### What this does not support:
 
 - Nuanced out-of-the-box customization.
-- No 'Lastname / Short Title / Pagenumber' in the headers of page 2 and onward.
+- No 'Lastname / Short Title / Page number' in the headers of page 2 and onward.
   Not yet anyway.
-- There is a bug with page-breaking. The CSS is configured to disallow
-  page-breaking in weird places, like between a chapter title and the prose, but
+- There is a bug with page breaking. The CSS is configured to disallow
+  page breaking in weird places, like between a chapter title and the prose, but
   those rules are ignored.
 
 ### My writer's workflow:
 1. 0-draft is either in markdown or hand-written
-2. Drafting leveraging the Joplin Application <https://joplinapp.org>  
-   (_Joplin is a note-taking software applicaton that also serves as an
+2. Drafting by leveraging the Joplin Application <https://joplinapp.org>  
+   (_Joplin is a note-taking software application that also serves as an
      excellent general purpose markdown editor._)
-3. Periodic sharing of drafts and portion of a drafts with critique partners
+3. Periodic sharing of drafts or portion of a drafts with critique partners
    and alpha readers. For this, I also use Joplin's excellent Joplin Cloud
    service where all my work is backed up securely to the cloud and where I can
    selectively publish to the web a pretty, rendered version of my work.

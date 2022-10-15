@@ -63,7 +63,7 @@
 /* RENDERING */
 
 /* Links:
- * - General links: remove joplin link mucking
+ * - General links: remove Joplin link mucking
  * - Internal resource links: remove the icons */
 a:any-link { color: unset; background: unset; filter: unset; }
 a[href='#'] { color: unset; }
@@ -120,7 +120,7 @@ blockquote {
 
 @media print {
 /* Change the white-space collapse behavior from pre-wrap to pre
- * This also requires removing the scroll-bar that will appear. Read in the
+ * This also requires removing the scroll bar that will appear. Read in the
  * top-comments as to why I did this.
  * Note, I also set this in userstyle.css */
 #rendered-md pre {

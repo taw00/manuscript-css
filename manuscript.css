@@ -10,7 +10,7 @@
  * Why does this exist?
  *
  * Because many of us writers draft in markdown and want a means to present our
- * work professionally, even if still a prelimenary work. Additionally, it
+ * work professionally, even if still a preliminary work. Additionally, it
  * offers a means to webify a finished manuscript.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
@@ -87,8 +87,8 @@
 } /* /print */
 
 /* manuscript facts for long-form manuscripts
- * the facts moves from the upper-right-hand corner to within the
- * manuscript title-area header */
+ * the facts moves from the upper-righthand corner to within the
+ * manuscript title-block header */
 #manuscript.long #m-facts {
     position: unset; box-sizing: unset; overflow: unset;
     top: unset; right: unset;

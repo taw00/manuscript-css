@@ -38,12 +38,12 @@
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 
     /* typefaces (fontstacks)
-     * Manuscript standards, these or close-equivalents:
+     * Manuscript standards, these or close equivalents:
      * - Times New Roman (for narrative works)
      * - Arial or Helvetica (for non-narrative works . . .sometimes)
      * - Courier New (when a monospaced typeface is needed)
      * Those are all proprietary. These font stacks below enable some excellent
-     * close-equivalent open options for each category. */
+     * close equivalent open options for each category. */
     --m-fontstack-serif: "TeX Gyre Termes", "Croscore Tinos", Tinos, "Liberation Serif", "Times New Roman", serif;
     --m-fontstack-sans: "Croscore Arimo", Arimo, "Liberation Sans", Arial, sans-serif;
     --m-fontstack-mono: "TeX Gyre Cursor", "Croscore Cousine", Cousine, "Liberation Mono", "Courier New", monospace;
@@ -57,7 +57,7 @@
     --m-font-size: 12pt;
     --m-font-family: var(--m-fontstack-serif);
     --m-font-weight: normal;
-    --m-line-spacing: 2; /* doublespaced */
+    --m-line-spacing: 2; /* double spaced */
 
     /* Paragraph spacing and indent
      * The default: first line indented and no inter-paragraph spacing */
@@ -77,7 +77,7 @@
 /* #manuscript.US.narrative.short is the default */
 #manuscript {
     --m-font-size-top-heading: var(--m-font-size);
-    --m-line-spacing-top-heading: 1.25; /* singlespaced-ish */
+    --m-line-spacing-top-heading: 1.25; /* single spaced -ish */
     --m-font-family-top-heading: var(--m-font-family);
     --m-font-weight-top-heading: var(--m-font-weight);
 
@@ -113,7 +113,7 @@
     --m-font-family-epigraph: var(--m-font-family);
     --m-font-weight-epigraph: var(--m-font-weight);
 
-    /* font-size, family, and weight for the section seperators */
+    /* font-size, family, and weight for the section separators */
     --m-font-size-dingus-30: var(--m-font-size);
     --m-font-family-dingus-30: var(--m-font-family);
     --m-font-weight-dingus-30: var(--m-font-weight);
@@ -122,7 +122,7 @@
     --m-elbow-room: 1em;
     --m-elbow-room-for-two: 2em;
 
-    /* Defining top-margins of major document components: the title, parts,
+    /* Defining top margins of major document components: the title, parts,
      * chapters and scenes. The default configuration is for short-form
      * manuscripts. */
     --m-page-placement-title: calc(var(--m-5-12th) - var(--m-page-margin));
@@ -239,7 +239,7 @@ html, body {
     text-align: right;
 }
 
-/* per-component top-margins
+/* per-component top margins
  * Formatting notes -- (these assertions need to be retested)
  * - '#manuscript div.m-header' must always exist in the document.
  *   This block contains the manuscript title and whatnot.
@@ -256,7 +256,7 @@ html, body {
     margin: var(--m-page-placement-title) auto calc(var(--m-elbow-room) * 2);
 }
 
-/* part and chapter top-margins (may be large (long) or small (short))
+/* part and chapter top margins (may be large (long) or small (short))
  * But only if they have a title block, otherwise, it's assumed no margin */
 #manuscript section:is(.m-part, .m-chapter) > .m-header {
     margin-top: var(--m-page-placement-parts-and-chapters) !important;
@@ -274,8 +274,8 @@ html, body {
 
 /* Inside of an .m-header:
  * - H1 means title, H2 means subtitle, H3 means author
- * - > (for blockquote) means epigraph
- * - And finally, if you want you can wrap wordcount, audience, and genre
+ * - > (i.e. blockquote) means epigraph
+ * - And finally, if you want you can wrap word count, audience, and genre
  *   in an .m-fact div.
  *
  * Inside of a .m-scene where all the prose goes, H1 through H5 means ...
@@ -348,7 +348,7 @@ html, body {
     font-family: var(--m-font-family-authors);
     font-weight: var(--m-font-weight-authorss);
 }
-#manuscript h6 {                   /* manuscript seperators: dingus and -30- */
+#manuscript h6 {                   /* manuscript separators: dingus and -30- */
     font-size: var(--m-font-size-dingus-30);
     font-family: var(--m-font-family-dingus-30);
     font-weight: var(--m-font-weight-dingus-30);
