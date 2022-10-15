@@ -1,0 +1,160 @@
+/* Taming the Joplin Desktop note-taking application
+ *
+ * These styles are a complement to manuscript.css and only useful if you use
+ * Joplin as a general purpose markdown editor. If so, import this stylesheet
+ * when you import manuscript.css. First this, then that. As such:
+
+<!-- beginning of your markdown-based manuscript -->
+<style>
+    @import "manuscript-joplin-taming.css";
+    @import "manuscript.css";
+    ...
+</style>
+...
+<!-- end of your markdown-based manuscript -->
+     
+ * Why this exists: to neutralize Joplin's rendering and export stylings.
+ *
+ * Joplin was designed to be a note-taking and management application, but it
+ * also serves as an excellent general purpose markdown editor. Since "general
+ * purpose" was not really its intent, we have to clean up a bunch of
+ * assumptions that Joplin makes about how renderings and exports are styled.
+ * This CSS essentially says, "Forget that you are a note-taking application
+ * and pretend for a moment that you are a full-blown content development and
+ * management engine."
+ *
+ * So, here we are.
+ *
+ * By the way, I can't recommend Joplin enough. It is my "second brain". I
+ * have used it for years and am a paying customer (it's free to use for most
+ * functionality). Check it out <https://joplinapp.org>.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ *
+ * This sheet makes these changes to Joplin's styling behavior:
+ *   MINIMUM
+ * - remove note title from exported and Joplin Cloud published documents.
+ * - remove Joplin internal link icons
+ * - subdue the link styling
+ * - remove extra padding from exported documents
+ * - change the behavior of preformatted text from pre-wrap to pre
+ *   BRANDING
+ * - remove Joplin top-level branding from a Joplin Cloud published note
+ *   rendering.
+ * - leave Joplin Cloud copyright and T&Cs and such intact at the bottom.
+ *   METADATA
+ * - remove document metadata (last update) from a Joplin Cloud published note
+ *   rendering.
+ *   EXPAND THE CLOUDVIEW
+ * - Expands the document container in the Joplin renderer to 100%.
+ * - Expands the document container in Joplin Cloud to 100%.
+ * These last two assume the documents either (a) are controlling their own
+ * margins, or (b) needs to be that wide.
+ */
+
+:root {
+    --m-joplin-exported-preformatted-white-space-behavior: pre;
+    --m-font-family-preformatted: monospace;
+    --m-font-family-code: monospace;
+}
+
+/* RENDERING */
+
+/* Links:
+ * - General links: remove joplin link mucking
+ * - Internal resource links: remove the icons */
+a:any-link { color: unset; background: unset; filter: unset; }
+a[href='#'] { color: unset; }
+a:hover[href='#'] { color: unset; }
+a .resource-icon { display: none; }
+
+/* #joplin-container-content adds bit of trim on the left and right of rendered
+ * view so as to never have text touch the editor view. Also, it serves some
+ * scrolling behavioral purpose as well. So, leave this commented out.
+ * Removing this padding is probably excessive. 
+#joplin-container-content { padding: 0; } */
+
+/* ensure #rendered-md doesn't get in the way of our viewport sizing */
+#rendered-md { width: 100%; max-width: unset; margin: 0 auto; padding: unset; }
+
+/* blockquote, pre, and code */
+pre {
+    font-size: .8125rem;
+    white-space: pre;
+    overflow-x: auto; /* changes in the EXPORTED section */
+    line-height: 1.15;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    font-family: var(--m-font-family-preformatted);
+}
+code {
+    white-space: inherit;
+    font-family: var(--m-font-family-code);
+    font-size: 1em;
+}
+code.inline-code {
+    /*border: 1px solid rgb(70, 70, 70);
+    border-radius: 4px;*/
+    border: inherit;
+    /* I want inline code to be of the more generic font group, if even it's
+       defined differently. */
+    font-family: var(--m-font-family-preformatted);
+}
+blockquote {
+  padding: 0;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px; /* 2.5 * 16 */
+  margin-inline-end: 40px;
+}
+.inline-code {
+    /* if it is in a sentence, I don't want it syntax highlighted */
+    font-family: var(--m-font-family-preformatted);
+}
+
+
+
+/* EXPORTING */
+
+@media print {
+/* Change the white-space collapse behavior from pre-wrap to pre
+ * This also requires removing the scroll-bar that will appear. Read in the
+ * top-comments as to why I did this.
+ * Note, I also set this in userstyle.css */
+#rendered-md pre {
+    white-space: var(--m-joplin-exported-preformatted-white-space-behavior);
+    overflow-x: hidden;
+}
+
+/* Not sure why Joplin adds a 1em padding around an exported note by default.
+ * Note, I also remove this in userstyle.css */
+.exported-note { margin: 0; padding: 0; }
+
+/* Remove the Joplin note title header */
+.exported-note-title { display: none !important; }
+
+} /* end @media print */
+
+
+/* JOPLIN CLOUDING */
+
+/* Remove the note title */
+div.note-main > h1.title { display: none; }
+/* maybe keep the last updated line
+div.note-main > p.last-updated { display: none; } */
+
+/* Remove the top-header branding */
+body.page-note > main.main { margin: 0; padding: 0; }
+body.page-note nav.navbar { display: none !important; }
+div.note-main > h1.title { display: none; }
+/* This is Laurent's JoplinCloud (c), T&Cs, and such. Don't remove it. (Leave
+ * this commented out.)
+body.page-note > div.footer div.content { display: none !important; } */
+
+/* Remove document last-updated line at the top */
+div.note-main > p.last-updated { display: none; }
+
+/* expand the note-view to 100% width */
+body.page-note .note-main { margin: 0 auto; padding: 0; max-width: 100%;}
