@@ -138,45 +138,12 @@ html, body {
     background-color: rgb(204,204,204);
     color: black !important;
 }
-body {
+
+#manuscript  *  {
     font-family: var(--m-font-family);
-}
-body * {
     line-height: var(--m-line-spacing);
     color: black !important;
     opacity: 1;
-}
-body p { margin: 0; padding: 0; }
-
-h1,h2,h3,h4,h5,h6 {
-    border: 0;
-    margin: 0; padding: 0;
-}
-
-blockquote {
-    border: 0;
-    margin: var(--m-elbow-room) calc(var(--m-ident) * 1.5);
-	background-color: inherit !important;
-}
-/* let's normalize pre and code a bit */
-pre { /* the browser reset default */
-    font-size: .8125rem;
-    /* line-height: 1.15;
-    margin-block-start: 1em;
-    margin-block-end: 1em; */
-}
-pre {
-    white-space: pre;
-    font-family: var(--m-font-family-preformatted);
-	background-color: inherit !important;
-	color: inherit !important;
-    margin: var(--m-elbow-room) calc(var(--m-ident) * 1.5);
-}
-code {
-    white-space: inherit;
-    font-family: var(--m-font-family-code);
-	background-color: inherit !important;
-	color: inherit !important;
 }
 
 @media screen {
@@ -200,6 +167,39 @@ code {
     border: 1px solid lightgray;
 }
 } /* /screen */
+
+#manuscript p { margin: 0; padding: 0; }
+
+#manuscript :is(h1,h2,h3,h4,h5,h6) {
+    border: 0;
+    margin: 0; padding: 0;
+}
+
+#manuscript blockquote {
+    border: 0;
+    margin: var(--m-elbow-room) calc(var(--m-ident) * 1.5);
+	background-color: inherit !important;
+}
+/* let's normalize pre and code a bit */
+#manuscript pre { /* the browser reset default */
+    font-size: .8125rem;
+    /* line-height: 1.15;
+    margin-block-start: 1em;
+    margin-block-end: 1em; */
+}
+#manuscript pre {
+    white-space: pre;
+    font-family: var(--m-font-family-preformatted);
+	background-color: inherit !important;
+	color: inherit !important;
+    margin: var(--m-elbow-room) calc(var(--m-ident) * 1.5);
+}
+#manuscript code {
+    white-space: inherit;
+    font-family: var(--m-font-family-code);
+	background-color: inherit !important;
+	color: inherit !important;
+}
 
 /* when printing to the actual page / PDF / etc */
 @media print {
