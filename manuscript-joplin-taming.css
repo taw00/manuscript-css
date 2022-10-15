@@ -142,13 +142,18 @@ blockquote {
 
 /* Remove the note title */
 div.note-main > h1.title { display: none; }
+
 /* maybe keep the last updated line
 div.note-main > p.last-updated { display: none; } */
 
 /* Remove the top-header branding */
-body.page-note > main.main { margin: 0; padding: 0; }
+/*body.page-note > main.main { margin: 0; padding: 0; }
 body.page-note nav.navbar { display: none !important; }
-div.note-main > h1.title { display: none; }
+div.note-main > h1.title { display: none; }*/
+
+/* ...or instead, turn it into a watermark */
+body.page-note nav.navbar { opacity: .15; }
+
 /* This is Laurent's JoplinCloud (c), T&Cs, and such. Don't remove it. (Leave
  * this commented out.)
 body.page-note > div.footer div.content { display: none !important; } */
