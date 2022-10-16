@@ -1,17 +1,29 @@
 # Manuscript Formatting for Markdown for Writers
 
-Are you a writer? Do you draft in markdown? And do you wish to share your work
-in a professional manner without having to jump tools? Save LibreOffice or
-Google Docs or whatever for submission time. Importing this `manuscript.css`
-stylesheet plus leveraging a bit of HTML in your markdown document will
-configure your work to render in and export to a generalized industry standard
-manuscript format.
+_Draft your novel or short story in markdown, then export to industry standard
+manuscript format._
+
+Are you a writer? In particular a narrative writer? (Fiction, narrative
+non-fiction, memoir, personal narratives, etc.) Do you draft in markdown? And
+do you wish to share your drafts in a professional manner without having to
+jump tools? Save the fancy office suites like LibreOffice or Google Docs or
+Word for submission finalization. Now you can present your working drafts in a
+professional manner for review, critique, or whatever.
+
+Importing this `manuscript.css` stylesheet plus leveraging a bit of HTML in
+your markdown document will configure your work to render in and export to a
+generalized industry standard manuscript format.
 
 How to use: TL;DR - Check out the sample manuscripts in this repository.
 
 > Just remember, when you submit to an editor, they will likely have very
 > specific requirements for the format of your manuscript. The rule is: submit
 > in whatever format they demand. This is not for that.
+
+> Do you need to produce a book from your markdown? This is not that. But if
+> you do want to do that, check out [Bookdown](https://www.bookdown.org/).
+> Bookdown, though very intriguing, also looks rather daunting and geared for
+> the science community.
 
 ### Supported formatting:
 
@@ -28,23 +40,41 @@ How to use: TL;DR - Check out the sample manuscripts in this repository.
   Not yet anyway.
 - There is a bug with page breaking. The CSS is configured to disallow
   page breaking in weird places, like between a chapter title and the prose, but
-  those rules are ignored.
+  those rules are ignored. I don't know why.
+
+### Completely untested:
+
+- Tables
+- I have also done no styling for images. If you want to add images to your
+  document, you are on your own. For now. I'll probably play with that in the
+  future.
+- I have tested manuscript.css with only a couple markdown editors and
+  renderers. Some editors change the look and feel of certain elements, so just
+  be aware. Since I overload the purpose of Joplin when I draft, I had to
+  create a set of CSS to squash all of its Joplinisms when I render the
+  document. Let me know what you see out there in the wild.
+- Using this with HTML instead of markdown. Well, it should just work, I just
+  haven't tried it. I mean, markdown, in the end, is really just HTML with a bit
+  of varnish.
 
 ### My writer's workflow:
-1. 0-draft is either in markdown or hand-written
-2. Drafting by leveraging the Joplin Application <https://joplinapp.org>  
-   (_Joplin is a note-taking software application that also serves as an
-     excellent general purpose markdown editor._)
-3. Periodic sharing of drafts or portion of a drafts with critique partners
-   and alpha readers. For this, I also use Joplin's excellent Joplin Cloud
-   service where all my work is backed up securely to the cloud and where I can
-   selectively publish to the web a pretty, rendered version of my work.
+1. 0-draft: either in markdown or hand-written
+2. work-in-progress: markdown drafting via the Joplin desktop application
+   <https://joplinapp.org>. (_Joplin is a note-taking software application that
+   also serves as an excellent general purpose markdown editor._)
+3. review by other: I periodic share drafts or portion of a drafts with critique
+   partners, alpha readers, and beta readers. For this, I also use Joplin's
+   excellent Joplin Cloud service which has a really convenient "publish to the
+   web" feature.
+4. submission for publication: I port my markdown over to LibreOffice writer. I
+   developed a manuscript template and it doesn't take me long to convert my
+   markdown to LibreOffice, do a final proofread, and then submit a .docx file.
 
-This *should* work with just about any markdown editor out there. You may have
-to do some custom CSS to ensure the renderer of your choice doesn't add in extra
-stylings of its own. Since I overload the purpose of Joplin when I draft, I had
-to create a set of CSS to squash all of its Joplinisms when I render the
-document.
+### For the Future
+- The one big missing feature is, as I mentioned above, support for a per-page
+  header with LASTNAME / SHORT TITLE / PAGENUMBER in the upper-righthand
+  corner. If I can get that working (via javascript maybe?) I may be able to
+  never leave markdown, even for submissions (assuming they accept PDF).
 
 ### Structure summary of a manuscript drafted in markdown
 
@@ -144,7 +174,7 @@ manuscript:
 </style>
 ```
 
-Good luck and get back to writing.
+Good luck. Now, quit fooling around on the internet and get back to writing.
 
 Copyright (c) Todd Warner <t0dd@protonmail.com>
 This work is licensed under Attribution 4.0 International. To view a copy
