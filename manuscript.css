@@ -46,26 +46,24 @@
 #manuscript.narrative {
     --m-font-family: var(--m-fontstack-serif);
     --m-font-family-preformatted: var(--m-fontstack-mono);
-    --m-font-family-code: var(--m-font-family-preformatted);
     --m-font-family-top-heading: var(--m-font-family);
     --m-font-family-titles: var(--m-font-family);
     --m-font-family-title: var(--m-font-family-titles);
     --m-font-family-title-part: var(--m-font-family-title);
     --m-font-family-dingus-30: var(--m-font-family-titles);
-    --m-ident: calc(var(--m-page-margin) / 2);
+    --m-indent: calc(var(--m-page-margin) / 2);
     --m-paragraph-spacing: 0;
 }
 
 #manuscript.non-narrative {
     --m-font-family: var(--m-fontstack-sans);
     --m-font-family-preformatted: var(--m-fontstack-mono);
-    --m-font-family-code: var(--m-font-family-preformatted);
     --m-font-family-top-heading: var(--m-font-family);
     --m-font-family-titles: var(--m-font-family);
     --m-font-family-title: var(--m-font-family-titles);
     --m-font-family-title-part: var(--m-font-family-title);
     --m-font-family-dingus-30: var(--m-font-family-titles);
-    --m-ident: 0;
+    --m-indent: 0;
     --m-paragraph-spacing: 1em;
 }
 
