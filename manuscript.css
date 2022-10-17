@@ -31,6 +31,11 @@
 
 @import "./manuscript-core.css";
 
+:root {
+    /* only relevant to long-form manuscripts */
+    --m-simulated-page-break: 2px dashed lightgray;
+}
+
 #manuscript.US {
     --m-page-width:  var(--m-page-widthUS);
     --m-page-height: var(--m-page-heightUS);
@@ -83,7 +88,6 @@
     /* long-form default behavior is the render (screen) configuration:
      * simulate page breaks and keep the smaller margins */
     --m-break-after: unset;
-    --m-simulated-page-break: 2px dashed lightgray;
 }
 
 @media print {

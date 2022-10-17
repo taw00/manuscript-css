@@ -158,7 +158,11 @@
      * NOTE: hyphenation only works if the lang attribute is set in the html
      * element (example: <html lang="en"> or set in the elements managing the
      * text you want to be hyphenated. Most markdown editors don't set this. */
-     --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
+    --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
+
+    /* The border wrapping the manuscript content. Set this to none in your
+     * manuscript to disable. */
+    --m-rendering-border: 1px solid lightgray;
 }
 
 html { font-size: var(--m-font-size); } /* 1rem defined */
@@ -175,9 +179,10 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
     hyphenate-limit-lines: 2;
 }
 
-#manuscript  *  {
+#manuscript * {
     opacity: 1;
     margin: 0; padding: 0; border: 0;
+    /*box-sizing: border-box; --- not sure this is necessary */
 }
 
 
@@ -201,7 +206,7 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
     position: relative; box-sizing: border-box; overflow: visible;
     width: 100%; max-width: var(--m-content-width);
     margin: var(--m-page-margin) auto;
-    border: 1px solid lightgray;
+    border: var(--m-rendering-border);
 }
 } /* /screen */
 
