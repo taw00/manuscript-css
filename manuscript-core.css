@@ -187,13 +187,14 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
 
 
 /* rendering to the screen
- * HTML and BODY are off-white. We add a pretty 3D virtual white page and
- * the configure the content container to hold the text within. */
+ * HTML and BODY are off-white. We add a pretty 3D virtual white page with
+ * #vpage andthe configure the content container to hold the text within.
+ * Implemenation note: #vpage and #manuscript use a combination of position
+ * box-sizing and overflow that cannot change or the layout gets weird (though
+ * overflow could still be set to auto, theoretically. */
 @media screen {
 /* a virtual page */
 #vpage {
-    /* box-sizing needs to remain border-box.
-       overflow ... hidden or auto. I am unsure which is the correct choice. */
     position: relative; box-sizing: border-box; overflow: hidden;
     top: 0; left: 0;
     width: 100%; max-width: var(--m-page-width);
@@ -203,7 +204,7 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
 }
 /* the content container */
 #manuscript {
-    position: relative; box-sizing: border-box; overflow: visible;
+    position: relative; box-sizing: border-box; overflow: hidden;
     width: 100%; max-width: var(--m-content-width);
     margin: var(--m-page-margin) auto;
     border: var(--m-rendering-border);
