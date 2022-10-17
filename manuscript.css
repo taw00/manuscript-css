@@ -23,8 +23,8 @@
  * - 'narrative' & 'non-narrative': formatted for narrative prose is the
  *     default.
  *
- * To enable any of these formatting adjustments, just add the relevant "switch"
- * to the class attribute of the <div id="manuscript"> element in the
+ * To enable any of these formatting adjustments, just add the relevant
+ * "switch" to the class attribute of the <div id="manuscript"> element in the
  * markdown document. 'A4' has one difference; you need to add an @page rule
  * after the CSS import call in the style block of the markdown.
  */
@@ -32,14 +32,20 @@
 @import "./manuscript-core.css";
 
 #manuscript.US {
-    --m-page-width: var(--m-page-widthUS); --m-page-height: var(--m-page-heightUS); --m-page-margin: var(--m-page-marginUS);
-    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
+    --m-page-width:  var(--m-page-widthUS);
+    --m-page-height: var(--m-page-heightUS);
+    --m-page-margin: var(--m-page-marginUS);
+
+    --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 }
 
 #manuscript.A4 {
-    --m-page-width: var(--m-page-widthA4); --m-page-height: var(--m-page-heightA4); --m-page-margin: var(--m-page-marginA4);
-    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
+    --m-page-width:  var(--m-page-widthA4);
+    --m-page-height: var(--m-page-heightA4);
+    --m-page-margin: var(--m-page-marginA4);
+
+    --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 }
 
@@ -47,10 +53,13 @@
     --m-font-family: var(--m-fontstack-serif);
     --m-font-family-preformatted: var(--m-fontstack-mono);
     --m-font-family-top-heading: var(--m-font-family);
+
     --m-font-family-titles: var(--m-font-family);
     --m-font-family-title: var(--m-font-family-titles);
     --m-font-family-title-part: var(--m-font-family-title);
-    --m-font-family-dingus-30: var(--m-font-family-titles);
+
+    --m-font-family-dingus-30-: var(--m-font-family-titles);
+
     --m-indent: calc(var(--m-page-margin) / 2);
     --m-paragraph-spacing: 0;
 }
@@ -59,10 +68,13 @@
     --m-font-family: var(--m-fontstack-sans);
     --m-font-family-preformatted: var(--m-fontstack-mono);
     --m-font-family-top-heading: var(--m-font-family);
+
     --m-font-family-titles: var(--m-font-family);
     --m-font-family-title: var(--m-font-family-titles);
     --m-font-family-title-part: var(--m-font-family-title);
-    --m-font-family-dingus-30: var(--m-font-family-titles);
+
+    --m-font-family-dingus-30-: var(--m-font-family-titles);
+
     --m-indent: 0;
     --m-paragraph-spacing: 1em;
 }

@@ -117,9 +117,9 @@
     --m-font-weight-epigraph: var(--m-font-weight);
 
     /* font-size, family, and weight for the section separators */
-    --m-font-size-dingus-30: var(--m-font-size);
-    --m-font-family-dingus-30: var(--m-font-family);
-    --m-font-weight-dingus-30: var(--m-font-weight);
+    --m-font-size-dingus-30-: var(--m-font-size);
+    --m-font-family-dingus-30-: var(--m-font-family);
+    --m-font-weight-dingus-30-: var(--m-font-weight);
 
     /* font-size weight and line-height for the pre and code stuff */
     --m-font-size-preformatted-inline: inherit;
@@ -157,7 +157,7 @@
      *
      * NOTE: hyphenation only works if the lang attribute is set in the html
      * element (example: <html lang="en"> or set in the elements managing the
-     * text you want to be hyphenated. Most markdown editors do not set this. */
+     * text you want to be hyphenated. Most markdown editors don't set this. */
      --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
 }
 
@@ -382,9 +382,9 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-authors);
 }
 #manuscript h6 {                   /* manuscript separators: dingus and -30- */
-    font-size: var(--m-font-size-dingus-30);
-    font-weight: var(--m-font-weight-dingus-30);
-    font-family: var(--m-font-family-dingus-30);
+    font-size: var(--m-font-size-dingus-30-);
+    font-weight: var(--m-font-weight-dingus-30-);
+    font-family: var(--m-font-family-dingus-30-);
     margin-top: var(--m-elbow-room);
 }
 
@@ -396,7 +396,7 @@ html, body { background-color: rgba(0,0,0,0); }
     word-break: normal; overflow-wrap: break-word;
 }
 
-#manuscript :is(.m-header,blockquote,section.m-scene) p {  /* prose+epigraphs */
+#manuscript :is(.m-header,blockquote,section.m-scene) p { /* prose+epigraphs */
     font-size: var(--m-font-size);
     font-weight: var(--m-font-weight);
     font-family: var(--m-font-family);
