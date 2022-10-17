@@ -3,18 +3,19 @@
 _Draft your novel or short story in markdown, then export to industry standard
 manuscript format._
 
-Are you a writer? In particular a narrative writer? (Fiction, narrative
-non-fiction, memoir, personal narratives, etc.) Do you draft in markdown? And
-do you wish to share your drafts in a professional manner without having to
-jump tools? Save the fancy office suites like LibreOffice or Google Docs or
-Word for submission finalization. Now you can present your working drafts in a
-professional manner for review, critique, or whatever.
+Are you a writer? In particular a narrative writer? Fiction, narrative
+non-fiction, memoir, personal narratives, etc.? Do you draft using a markdown
+text editor? And do you wish to share your drafts in a professional manner
+without having to jump toolchainss? Save the fancy office word processors like
+LibreOffice or Google Docs or Word for submission finalization. Now, you can
+stay in your favorite markdown editor and still have a means to present your
+working drafts in a professional manner for review, critique, or whatever.
 
 Importing this `manuscript.css` stylesheet plus leveraging a bit of HTML in
 your markdown document will configure your work to render in and export to a
 generalized industry standard manuscript format.
 
-How to use: TL;DR - Check out the sample manuscripts in this repository.
+**TL;DR** - how to use: check out the sample manuscripts in this repository.
 
 > Just remember, when you submit to an editor, they will likely have very
 > specific requirements for the format of your manuscript. The rule is: submit
@@ -25,7 +26,7 @@ How to use: TL;DR - Check out the sample manuscripts in this repository.
 > Bookdown, though very intriguing, also looks rather daunting and geared for
 > the science community.
 
-### Supported formatting:
+### Supported formatting
 
 1. A generalized manuscript format for prose.
 2. US Letter- or A4-dimensioned artifacts.
@@ -33,50 +34,96 @@ How to use: TL;DR - Check out the sample manuscripts in this repository.
 4. Narrative and non-narrative prose.
 5. A lot of customization if you know your CSS.
 
-### What this does not support:
+## What this does not support
 
 - Nuanced out-of-the-box customization.
-- No 'Lastname / Short Title / Page number' in the headers of page 2 and onward.
-  Not yet anyway.
-- There is a bug with page breaking. The CSS is configured to disallow
-  page breaking in weird places, like between a chapter title and the prose, but
+- No 'Lastname / Short Title / Page number' in the headers of page 2 and
+  onward. Not yet anyway.
+- There is a bug with page breaking. The CSS is configured to disallow page
+  breaking in weird places, like between a chapter title and the prose, but
   those rules are ignored. I don't know why.
 
-### Completely untested:
+## What's completely untested
 
 - Tables
 - I have also done no styling for images. If you want to add images to your
   document, you are on your own. For now. I'll probably play with that in the
   future.
-- I have tested manuscript.css with only a couple markdown editors and
-  renderers. Some editors change the look and feel of certain elements, so just
-  be aware. Since I overload the purpose of Joplin when I draft, I had to
-  create a set of CSS to squash all of its Joplinisms when I render the
-  document. Let me know what you see out there in the wild.
+- I have tested `manuscript.css` with only a couple markdown environments. Some
+  editors change the look and feel of certain elements, so just be aware. Since
+  I overload the purpose of Joplin when I draft, I had to create a set of CSS
+  to squash all of its Joplinisms when I render the document. Let me know what
+  you see out there in the wild.
 - Using this with HTML instead of markdown. Well, it should just work, I just
-  haven't tried it. I mean, markdown, in the end, is really just HTML with a bit
-  of varnish.
+  haven't tried it. I mean, markdown, in the end, is really just HTML with a
+  bit of varnish.
 
-### My writer's workflow:
+## For the Future
+
+- The one big missing feature is, as I mentioned above, support for a per-page
+  header with `LASTNAME / SHORT TITLE / PAGENUMBER` in the upper-right-hand
+  corner. If I can get that working (via javascript maybe?) I may be able to
+  never leave markdown, even for submissions (assuming they accept PDF). I
+  mention this again because it annoys me.
+
+## My writer's workflow:
+
 1. 0-draft: either in markdown or hand-written
 2. work-in-progress: markdown drafting via the Joplin desktop application
    <https://joplinapp.org>. (_Joplin is a note-taking software application that
    also serves as an excellent general purpose markdown editor._)
-3. review by other: I periodic share drafts or portion of a drafts with critique
-   partners, alpha readers, and beta readers. For this, I also use Joplin's
-   excellent Joplin Cloud service which has a really convenient "publish to the
-   web" feature.
+3. review by other: I periodic share drafts or portion of a drafts with
+   critique partners, alpha readers, and beta readers. For this, I also use
+   Joplin's excellent Joplin Cloud service which has a really convenient
+   publish-to-the-web feature.
 4. submission for publication: I port my markdown over to LibreOffice writer. I
    developed a manuscript template and it doesn't take me long to convert my
    markdown to LibreOffice, do a final proofread, and then submit a .docx file.
 
-### For the Future
-- The one big missing feature is, as I mentioned above, support for a per-page
-  header with LASTNAME / SHORT TITLE / PAGENUMBER in the upper-righthand
-  corner. If I can get that working (via javascript maybe?) I may be able to
-  never leave markdown, even for submissions (assuming they accept PDF).
+## Structure summary of a manuscript drafted in markdown
 
-### Structure summary of a manuscript drafted in markdown
+### The `<style>` and first `vpage` and `manuscript` wrappers
+
+These will be your first few lines of your markdown
+
+#### Example 1: The default format and behavior
+
+```markdown
+<!-- Formatting: US letter, 1in margins, short-form narrative -->
+<style>
+    @import "manuscript-core.css";
+</style>
+<div id="vpage"><div id="manuscript">
+... your manuscript ...
+```
+
+#### Example 2: The alternative high-level format and behavior adjustments
+
+```markdown
+<!-- Formatting: A4, 25.4mm margins, long-form non-narrative          -->
+<!--             I.e. All the big switches reversed from the default. -->
+<style>
+    @import "manuscript-core.css";
+    @page { size: A4 portrait; margin: 25.4mm; }
+</style>
+<div id="vpage"><div id="manuscript" class="A4 long non-narrative">
+... your manuscript ...
+```
+
+> **A note about rendering a long-form manuscript.**  
+> Manuscripts formatted for things like novels will page break for every
+> part and chapter and place their title blocks 1/3rd of the way down the page.
+> Well, you can't do that for regular screen output. Instead, I display a faint
+> dashed line where the pagebreak would go, and skip the big margin all
+> together. When you go to export the document to PDF or to the printer, those
+> extra lines (and the manuscript border for that matter) will go away.
+
+### The high-level containers
+
+This is great for quick reference. Just remember that, depending on the nature
+of your prose, parts are not required, nor are chapters. But you will always
+have to have scenes (duh). And per-container `m-header`s are not required
+except for the main title and author section.
 
 ```markdown
 <style>
@@ -84,75 +131,98 @@ How to use: TL;DR - Check out the sample manuscripts in this repository.
 </style>
 <div id="vpage"><div id="manuscript">
 
+<!-- required: contact name, address, email, phone -->
 <div id="m-contact">
-... your name, address, email, cell, and date ...
 </div>
 
+<!-- required: title, subtitle, by Author,
+     wordcount/genre facts, and epigraph (optional) -->
 <div class="m-header">
-... title, subtitle, author ...
 <div id="m-facts">
-... wordcount, genre ...  
 </div>
-... an epigraph if you like ...
-</div></div>
+</div>
 
-<!-- Note that there can be many scenes w/in a chapter, many chapters w/in a
-     part, and many parts w/in a manuscript. Chapters & parts are optional.
-     And, though titling and such are supported for scenes, it's something
-     commonly done. Useful for embedded draft notes into a manuscript. -->
+<!-- optional: part - parts contain chapters -->
+<section class="part">
+<!-- suggested: part title, subtitle, by Author, epigraph -->
+<div class="m-header">
+</div>
 
-<section class="m-part">
+<!-- optional (for short prose): chapter - chapters contain scenes -->
+<section class="chapter">
+<!-- suggested: chapter title, subtitle, by Author, epigraph -->
 <div class="m-header">
-... part title, etc ...
 </div>
-<section class="m-chapter">
+
+<!-- required: scene - scenes contain your prose (example, three scenes) -->
+<section class="scene">
+<!-- optional: scene title, subtitle, by Author, epigraph -->
 <div class="m-header">
-... chapter title, etc ...
 </div>
-<section class="m-scene">
-<div class="m-header">
-... scene title, etc ...
-</div>
-... this scene's prose ...
 </section>
-<section class="m-scene">
+
+<!-- a between-scene dingus -->
+###### \#
+
+<section class="scene">
 <div class="m-header">
-... scene title, etc ...
 </div>
-... this scene's prose ...
 </section>
 
 ###### \#
 
-<section class="m-scene">
-... the next scene, etc ...
-</section>
-<section class="m-chapter">
-... chapter 2 and its scenes, then chapter 3, etc ...
-</section>
-<section class="m-part">
-... part 2 and its chapters, then part 3, etc ...
+<section class="scene">
+<div class="m-header">
+</div>
 </section>
 
+</section>
+</section>
+
+<!-- the end of prose -30- marker -->
 ###### The End
 
 </div></div>
-<!-- the end of the manuscript -->
 ```
 
-That top bit can be tweaked. For example, if I wanted to format the manuscript
-as a long-form, non-narrative work destined to produce A4-dimensioned
-artifacts, I would just have to edit a few things:
 
-```markdown
-<!-- the beginning of markdown file -->
-<style>
-    @import "manuscript.css";
-    @page { size: A4 portrait; margin: 25.4mm; }
-</style>
-<div id="vpage"><div id="manuscript" class="A4 long non-narrative">
-    ... your manuscript ...
-```
+### The `<div id="m-contact">`
+
+#### at the top-level ...
+
+`h1`, `h2`, `h3` represent Title, Subtitle, and by Author in this context. The
+`m-facts` represents facts about your prose, namely word count and sometimes
+genre, and audience (especially if not for adults). The `>` blockquote
+represents a
+[epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)) in this
+context, though I think epigraphs are unusual for a manuscript at the main
+title block.  But I use it at times.
+
+<div id="contact">
+
+# Title of Story
+
+## Subtitle of Story
+
+### by Firstname Lastname
+
+<div id="m-facts">
+
+2000 words
+
+Literary Fiction
+
+</div>
+
+> _There is nothing to writing. All you do is sit down at a typewriter and
+> bleed._ —Ernest Hemingway
+
+</div>
+
+#### `<div class="m-header">` at the part chapter and scene levels
+
+It works just the same, except that there is no `m-facts` div-block.
+
 
 ### FONTS / TYPEFACES
 
@@ -171,12 +241,17 @@ manuscript:
     @import "https://toddwarner.io/pub/css/m-font-serif-tinos.css";
     @import "https://toddwarner.io/pub/css/m-font-sans-arimo.css";
     @import "https://toddwarner.io/pub/css/m-font-mono-cousine.css";
+    @import "manuscript-core.css";
 </style>
 ```
 
-Good luck. Now, quit fooling around on the internet and get back to writing.
+## Good luck!
+
+Check out the example manuscripts in this repository and I think how everything
+you work with `manuscript.css` becomes obvious.
+
+Good luck. Now, quit fooling around on the internet and write something.
 
 Copyright (c) Todd Warner <t0dd@protonmail.com>
 This work is licensed under Attribution 4.0 International. To view a copy
 of this license, visit http://creativecommons.org/licenses/by/4.0/
-
