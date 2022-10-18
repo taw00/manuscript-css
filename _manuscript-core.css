@@ -1,4 +1,4 @@
-/* A 98% Compliant Manuscript Format, in CSS — the core styles
+/* Manuscript Format via CSS — the core styles
  *
  * This contains all of the baseline logic for formatting—via CSS styles—a
  * a markdown or HTML document to present a rendered artifact that closely
@@ -13,161 +13,19 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-/* US letter or A4?
- * US letter is the default. To export to A4 instead of US letter: in your
- * markdown document do your normal import of the manuscript stylesheet
- * (manuscript.css) but then add a line configuring your desired page dimension
- * for export/print. Following that, you wrap your markdown in id=vpage and
- * id=manuscript div, but then add a class attribute with one of its values set
- * to A4. For example:
- *   <style>
- *       @import "manuscript.css";
- *       @page { size: A4 portrait; margin: 25.4mm; }
- *   </style>
- *
- *   <div id="vpage"><div id="manuscript" class="A4">
- *       ... your manuscript ...
- *   </div></div>
- */
-@page { size: A4 portrait; margin: 25.4mm; }
-@page { size: letter portrait; margin: 1in; }
-
-:root {
-    --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginA4: 25.4mm;
-    --m-page-widthUS: 8.5in; --m-page-heightUS: 11in;  --m-page-marginUS: 1in;
-
-    --m-page-width: var(--m-page-widthUS); --m-page-height: var(--m-page-heightUS); --m-page-margin: var(--m-page-marginUS);
-    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
-    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
-
-    /* typefaces (fontstacks)
-     * Manuscript standards, these or close equivalents:
-     * - Times New Roman (for narrative works)
-     * - Arial or Helvetica (for non-narrative works . . .sometimes)
-     * - Courier New (when a monospaced typeface is needed)
-     * Those are all proprietary. These font stacks below enable some excellent
-     * close equivalent open options for each category. */
-    --m-fontstack-serif: "TeX Gyre Termes", "Croscore Tinos", Tinos, "Liberation Serif", "Times New Roman", serif;
-    --m-fontstack-sans: "Croscore Arimo", Arimo, "Liberation Sans", Arial, sans-serif;
-    --m-fontstack-mono: "TeX Gyre Cursor", "Croscore Cousine", Cousine, "Liberation Mono", "Courier New", monospace;
-    --m-fontstack-sans-alt: "TeX Gyre Heros", "Nimbus Sans L", Helvetica, sans-serif;
-
-    --m-font-family: var(--m-fontstack-serif);
-    --m-font-family-preformatted: var(--m-fontstack-mono);
-
-    /* The manuscript standard font-size throughout is 12pt, title headings
-     * included. */
-    --m-font-size: 16px; /* 16px is 12pt */
-    --m-font-size-preformatted: 1rem;
-    --m-font-weight: normal;
-    --m-line-spacing: 2; /* double spaced */
-
-    /* Paragraph spacing and indent
-     * The default: first line indented and no inter-paragraph spacing */
-    --m-indent: calc(var(--m-page-margin) / 2);
-    --m-paragraph-spacing: 0;
-
-    /* Title placement from top of page
-     * Manuscripts standards say anywhere from 1/3rd to 1/2. 5/12ths is right
-     * in between. I change my mind on this all the time, so both 1/3 and 5/12
-     * are defined as a constant. See below for how it is used.
-     * Used for placing the manuscript title on the page, and for long-form
-     * documents, placing the part and chapter titles. */
-    --m-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
-    --m-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
-}
-
-/* #manuscript.US.narrative.short is the default */
-#manuscript {
-    --m-font-size-top-heading: var(--m-font-size);
-    --m-line-spacing-top-heading: 1.25; /* single spaced -ish */
-    --m-font-family-top-heading: var(--m-font-family);
-    --m-font-weight-top-heading: var(--m-font-weight);
-
-    /* font-size, family, and weight for chapter and scene metadata */
-    --m-font-size-titles: var(--m-font-size);
-    --m-font-size-subtitles: var(--m-font-size);
-    --m-font-size-authors: var(--m-font-size);
-
-    --m-font-family-titles: var(--m-font-family); /* subtitles will match */
-    --m-font-weight-titles: var(--m-font-weight); /* subtitles will match */
-    --m-font-weight-authors: var(--m-font-weight); /* subtitles will match */
-
-    /* font-size, family, and weight for the main work and parts metadata */
-    --m-font-size-title: var(--m-font-size-titles);
-    --m-font-size-title-part: var(--m-font-size-title);
-    --m-font-size-subtitle: var(--m-font-size-subtitles);
-    --m-font-size-subtitle-part: var(--m-font-size-subtitle);
-    --m-font-size-author: var(--m-font-size-authors);
-    --m-font-size-author-part: var(--m-font-size-author);
-
-    --m-font-family-title: var(--m-font-family-titles);
-    --m-font-family-title-part: var(--m-font-family-title);
-    --m-font-family-author: var(--m-font-family-authors);
-    --m-font-family-author-part: var(--m-font-family-author);
-
-    --m-font-weight-title: var(--m-font-weight-titles);
-    --m-font-weight-title-part: var(--m-font-weight-title);
-    --m-font-weight-author: var(--m-font-weight-authors);
-    --m-font-weight-author-part: var(--m-font-weight-author);
-
-    /* font-size, family, and weight for the epigraphs */
-    --m-font-size-epigraph: .8125rem;
-    --m-font-family-epigraph: var(--m-font-family);
-    --m-font-weight-epigraph: var(--m-font-weight);
-
-    /* font-size, family, and weight for the section separators */
-    --m-font-size-dingus-30-: var(--m-font-size);
-    --m-font-family-dingus-30-: var(--m-font-family);
-    --m-font-weight-dingus-30-: var(--m-font-weight);
-
-    /* font-size weight and line-height for the pre and code stuff */
-    --m-font-size-preformatted-inline: inherit;
-    --m-font-weight-preformatted: inherit;
-    --m-font-weight-preformatted-inline: inherit;
-    --m-line-spacing-preformatted: inherit;
-
-    /* margin nudges used here and there */
-    --m-elbow-room: 1em;
-    --m-room-for-two: 2em;
-
-    /* Defining top margins of major document components: the title, parts,
-     * chapters and scenes. The default configuration is for short-form
-     * manuscripts. */
-    --m-page-placement-title: calc(var(--m-5-12th) - var(--m-page-margin));
-    --m-page-placement-title: calc(var(--m-1-3rd) - var(--m-page-margin));
-    --m-top-margin-scene: var(--m-elbow-room);
-    --m-page-placement-parts-and-chapters: var(--m-room-for-two);
-
-    /* left and right margins for pre and blockquote */
-    --m-margins-preformatted: var(--m-elbow-room);
-    --m-margins-blockquote: calc(var(--m-indent) * 1.5);
-
-    /* text-alignment
-     * The almost universal manuscript formatting standard demans never fully
-     * justified; never hyphenated. But ... here's the variable switch if
-     * you want to play around: start or justify. */
-    --m-text-align: start;
-
-    /* Hyphenation
-     * ... not that we should be turning on hyphenation. Manuscript
-     * standards almost universally state never fully justified; never
-     * hyphenated. But ... here's the variable switch if you want to play
-     * around: manual or auto.
-     *
-     * NOTE: hyphenation only works if the lang attribute is set in the html
-     * element (example: <html lang="en"> or set in the elements managing the
-     * text you want to be hyphenated. Most markdown editors don't set this. */
-    --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
-
-    /* DISABLED FOR NOW
-     * The border wrapping the manuscript content. Set this to 0 in your
-     * manuscript to disable. */
-    --m-manuscript-border: 1px solid lightgray;
-}
+@import "_manuscript-config.css";
 
 html { font-size: var(--m-font-size); } /* 1rem defined */
 html, body { background-color: rgb(204,204,204); } /* off-white */
+
+:is(h1,h2,h3,h4,h5,h6) {
+    /* because upstream CSS specificity sometimes overrides ours */
+    font-size: unset !important;
+    font-weight: unset !important;
+    line-height: unset !important;
+    margin: unset !important;
+    padding: unset !important;
+}
 
 #manuscript {
     color: black !important;
@@ -183,13 +41,12 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
 #manuscript * {
     opacity: 1;
     margin: 0; padding: 0; border: 0;
-    /*box-sizing: border-box; --- not sure this is necessary */
 }
 
 
 /* rendering to the screen
  * HTML and BODY are off-white. We add a pretty 3D virtual white page with
- * #vpage andthe configure the content container to hold the text within.
+ * #vpage and configure the content container to hold the text within.
  * Implemenation note: #vpage and #manuscript use a combination of position
  * box-sizing and overflow that cannot change or the layout gets weird (though
  * overflow could still be set to auto, theoretically. */
@@ -208,8 +65,7 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
     position: relative; box-sizing: border-box; overflow: hidden;
     width: 100%; max-width: var(--m-content-width);
     margin: var(--m-page-margin) auto;
-    /*border: var(--m-manuscript-border);*/
-    border: 0;
+    border: var(--m-manuscript-border);
 }
 } /* /screen */
 
@@ -271,14 +127,15 @@ html, body { background-color: rgba(0,0,0,0); }
 }
 
 #manuscript #m-facts {
-    position: absolute; box-sizing: border-box; overflow: visible;
-    /* 1px because the page sometimes cuts off a character just a smidge */
-    /* I really want to know why this is. Annoying. */
-    top: 1px; right: 0px;
+    position: var(--m-position-facts);
+    box-sizing: border-box; overflow: visible;
+    top: var(--m-top-facts); bottom: var(--m-bottom-facts);
+    left: var(--m-left-facts); right: var(--m-right-facts);
+    margin: var(--m-margin-facts);
 }
 #manuscript #m-facts p {
-    line-height: var(--m-line-spacing-top-heading);
-    text-align: right;
+    line-height: var(--m-line-spacing-facts);
+    text-align: var(--m-text-align-facts);
 }
 
 /* per-component top margins
@@ -295,30 +152,37 @@ html, body { background-color: rgba(0,0,0,0); }
 
 /* place the manuscript title block 1/3rd or 5/12th down the page */
 #manuscript > .m-header {
-    margin: var(--m-page-placement-title) auto var(--m-room-for-two);
+    margin: var(--m-offset-title) auto var(--m-room-for-two);
 }
 
 /* part and chapter top margins (may be large (long) or small (short))
  * But only if they have a title block, otherwise, it's assumed no margin */
 #manuscript section:is(.m-part, .m-chapter) > .m-header {
-    margin-top: var(--m-page-placement-parts-and-chapters) !important;
+    margin-top: var(--m-offset-parts-and-chapters-render) !important;
+}
+@media print {
+/* part and chapter top margins (may be large (long) or small (short))
+ * But only if they have a title block, otherwise, it's assumed no margin */
+#manuscript section:is(.m-part, .m-chapter) > .m-header {
+    margin-top: var(--m-offset-parts-and-chapters) !important;
+}
 }
 
 /* scenes: small margin betwen scenes and whatever precedes */
 #manuscript section.m-scene {
-    margin-top: var(--m-top-margin-scene) !important;
+    margin-top: var(--m-offset-scene) !important;
 }
 /* the prose content:
  * small margin between prose content and a scene's title block if it exists */
 #manuscript section.m-scene > .m-header + * {
-    margin-top: var(--m-top-margin-scene) !important;
+    margin-top: var(--m-elbow-room) !important;
 }
 
 /* Inside of an .m-header:
  * - H1 means title, H2 means subtitle, H3 means author
  * - > (i.e. blockquote) means epigraph
  * - And finally, if you want you can wrap word count, audience, and genre
- *   in an .m-fact div.
+ *   in an #m-facts div.
  *
  * Inside of a .m-scene where all the prose goes, H1 through H5 means ...
  * header 1 through header 5 as you would expect. And the > (blockquote) also
@@ -329,8 +193,6 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript .m-header > :is(h1, h2, h3, h4, h5, h6),
 #manuscript .m-header p {
     margin: 0; padding: 0; border: 0;
-    font-size: var(--m-font-size);
-    font-weight: var(--m-font-weight);
 }
 #manuscript h6,
 #manuscript .m-header > :is(h1, h2, h3, h4, h5, h6),
@@ -338,7 +200,9 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript .m-header :is(:not(blockquote)) p {
     text-align: center;
 }
-#manuscript .m-header p {
+manuscript .m-header p {
+    font-size:   var(--m-font-size);
+    font-weight: var(--m-font-weight);
     line-height: var(--m-line-spacing);
 }
 #manuscript > .m-header > h1 {                           /* title: main work */
@@ -348,8 +212,8 @@ html, body { background-color: rgba(0,0,0,0); }
 }
 #manuscript > .m-header > h2 {                        /* subtitle: main work */
     font-size: var(--m-font-size-subtitle);
-    font-weight: var(--m-font-weight-title); /* same as h1 */
-    font-family: var(--m-font-family-title); /* same as h1 */
+    font-weight: var(--m-font-weight-subtitle);
+    font-family: var(--m-font-family-subtitle);
 }
 #manuscript > .m-header > h3 {                          /* author: main work */
     font-size: var(--m-font-size-author);
@@ -363,31 +227,43 @@ html, body { background-color: rgba(0,0,0,0); }
 }
 #manuscript > section.m-part > .m-header > h2 {            /* subtitle: part */
     font-size: var(--m-font-size-subtitle-part);
-    font-weight: var(--m-font-weight-title-part); /* same as h1 */
-    font-family: var(--m-font-family-title-part); /* same as h1 */
+    font-weight: var(--m-font-weight-subtitle-part);
+    font-family: var(--m-font-family-subtitle-part);
 }
 #manuscript > section.m-part > .m-header > h3 {            /* subtitle: part */
     font-size: var(--m-font-size-author-part);
     font-weight: var(--m-font-weight-author-part);
     font-family: var(--m-font-family-author-part);
 }
-#manuscript
-  section:is(.m-chapter,.m-scene) > .m-header > h1 { /* title: chapter/scene */
-    font-size: var(--m-font-size-titles);
-    font-weight: var(--m-font-weight-titles);
-    font-family: var(--m-font-family-titles);
+#manuscript section.m-chapter > .m-header > h1 {           /* title: chapter */
+    font-size: var(--m-font-size-title-chapter);
+    font-weight: var(--m-font-weight-title-chapter);
+    font-family: var(--m-font-family-title-chapter);
 }
-#manuscript
-  section:is(.m-chapter,.m-scene) > .m-header > h2 { /* subtitle: chap/scene */
-    font-size: var(--m-font-size-subtitles);
-    font-weight: var(--m-font-weight-titles); /* same as h1 */
-    font-family: var(--m-font-family-titles); /* same as h1 */
+#manuscript section.m-chapter > .m-header > h2 {        /* subtitle: chapter */
+    font-size: var(--m-font-size-subtitle-chapter);
+    font-weight: var(--m-font-weight-subtitle-chapter);
+    font-family: var(--m-font-family-subtitle-chapter);
 }
-#manuscript
-  section:is(.m-chapter,.m-scene) > .m-header > h3 {  /* author: chapt/scene */
-    font-size: var(--m-font-size-authorss);
-    font-weight: var(--m-font-weight-authorss);
-    font-family: var(--m-font-family-authors);
+#manuscript section.m-chapter > .m-header > h3 {          /* author: chapter */
+    font-size: var(--m-font-size-author-chapter);
+    font-weight: var(--m-font-weight-author-chapter);
+    font-family: var(--m-font-family-author-chapter);
+}
+#manuscript section.m-scene > .m-header > h1 {               /* title: scene */
+    font-size: var(--m-font-size-title-scene);
+    font-weight: var(--m-font-weight-title-scene);
+    font-family: var(--m-font-family-title-scene);
+}
+#manuscript section.m-scene > .m-header > h2 {            /* subtitle: scene */
+    font-size: var(--m-font-size-subtitle-scene);
+    font-weight: var(--m-font-weight-subtitle-scene);
+    font-family: var(--m-font-family-subtitle-scene);
+}
+#manuscript section.m-scene > .m-header > h3 {              /* author: scene */
+    font-size: var(--m-font-size-author-scene);
+    font-weight: var(--m-font-weight-author-scene);
+    font-family: var(--m-font-family-author-scene);
 }
 #manuscript h6 {                   /* manuscript separators: dingus and -30- */
     font-size: var(--m-font-size-dingus-30-);
@@ -396,7 +272,8 @@ html, body { background-color: rgba(0,0,0,0); }
     margin-top: var(--m-elbow-room);
 }
 
-#manuscript .m-header p {                                /* all header prose */
+#manuscript .m-header > :is(h4, h5),                     /* all header prose */
+#manuscript .m-header p {           /* h4, h5 were unaccounted for elements) */
     font-size: var(--m-font-size);
     font-weight: var(--m-font-weight);
     font-family: var(--m-font-family);
@@ -444,9 +321,48 @@ html, body { background-color: rgba(0,0,0,0); }
 /* ... but not after certain classes/elements */
 #manuscript section > :is(h1,h2,h3,h4,h5,h6) ~ p:first-of-type,
 #manuscript :is(blockquote, section.m-scene) > p:first-of-type {
-    text-indent: var(--m-indent-of-first-p);
+    text-indent: var(--m-indent-first-paragraph) !important;
     margin-top: 0;
 }
+
+
+/* PAGE BREAK LOGIC */
+
+@media print {
+/* page break after a manuscript title block or part header */
+#manuscript > .m-header,
+#manuscript section.m-part > .m-header {
+    break-after: var(--m-page-break);
+}
+/* page break after a chapter */
+#manuscript section.m-chapter {
+    break-after: var(--m-page-break);
+}
+/* ...except for the last chapter */
+#manuscript section.m-chapter:last-of-type {
+    /*break-after: unset !important;*/
+    break-after: avoid !important;
+}
+} /* end print */
+
+@media screen {
+/* page break (simulated) after a title or part header */
+#manuscript > .m-header,
+#manuscript section.m-part > .m-header {
+    border-bottom: var(--m-page-break-simulated);
+}
+/* page break (simulated) after a chapter */
+#manuscript section.m-chapter {
+    border-bottom: var(--m-page-break-simulated);
+}
+/* ...except for the last chapter */
+#manuscript section.m-chapter:last-of-type {
+    border-bottom: 0 !important;
+}
+} /* /screen */
+
+/* END PAGE BREAK LOGIC */
+
 
 /*** PAGE BREAK AVOIDANCE RULES ***/
 
@@ -475,19 +391,29 @@ html, body { background-color: rgba(0,0,0,0); }
  */
 
 /* don't page break inside a title-block header */
-#manuscript :is(section.m-chapter,section.m-scene) > .m-header {
+#manuscript :is(section.m-part,section.m-chapter,section.m-scene) > .m-header {
+    page-break-inside: avoid !important;
     break-inside: avoid !important;
 }
-/* don't page break after a chapter or scene header */
+/* don't page break after a chapter header or scene header */
 #manuscript :is(section.m-chapter,section.m-scene) > .m-header {
+    page-break-after: avoid !important;
     break-after: avoid !important;
 }
-/* don't page break before a chapter or scene header's first child */
+/* don't page break before scene */
+#manuscript section.m-scene,
+#manuscript section.m-scene > .m-header {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+}
+/* don't page break before a chapter header's or scene header's first child */
 #manuscript :is(section.m-chapter, section.m-scene) > .m-header + * {
+    page-break-before: avoid !important;
     break-before: avoid !important;
 }
 /* don't page break before a dingus or -30- marker */
 #manuscript h6 {
+    page-break-before: avoid !important;
     break-before: avoid !important;
 }
 } /* /print */

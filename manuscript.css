@@ -1,4 +1,4 @@
-/* A 98% Compliant Manuscript Format, in CSS
+/* Manuscript Format via CSS
  *
  * Manuscript formatting for authors who draft in markdown.
  *
@@ -31,18 +31,16 @@
 
 @import "./_manuscript-core.css";
 
-:root {
-    /* only relevant to long-form manuscripts */
-    --m-simulated-page-break: 2px dashed lightgray;
+@page {
+    /* the default is already set for US letter
+     * for A4 you need to add this at-page declaration after your imports in
+     * your markdown (or HTML) file
+@page { size: letter portrait; margin: 1in; }
+     */
 }
 
 #manuscript.US {
-    --m-page-width:  var(--m-page-widthUS);
-    --m-page-height: var(--m-page-heightUS);
-    --m-page-margin: var(--m-page-marginUS);
-
-    --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
-    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+    /* the default is already set for .US */
 }
 
 #manuscript.A4 {
@@ -55,98 +53,43 @@
 }
 
 #manuscript.narrative {
-    --m-font-family: var(--m-fontstack-serif);
-    --m-font-family-preformatted: var(--m-fontstack-mono);
-    --m-font-family-top-heading: var(--m-font-family);
-
-    --m-font-family-titles: var(--m-font-family);
-    --m-font-family-title: var(--m-font-family-titles);
-    --m-font-family-title-part: var(--m-font-family-title);
-
-    --m-font-family-dingus-30-: var(--m-font-family-titles);
-
-    --m-indent: calc(var(--m-page-margin) / 2);
-    --m-paragraph-spacing: 0;
+    /* the default is already set for .narrative */
 }
 
 #manuscript.non-narrative {
-    --m-font-family: var(--m-fontstack-sans);
-    --m-font-family-preformatted: var(--m-fontstack-mono);
-    --m-font-family-top-heading: var(--m-font-family);
+    --m-font-family: var(--m-font-family-non-narrative);
+    --m-font-family-preformatted: var(--m-font-family-non-narrative-preformatted);
+    --m-indent: var(--m-indent-non-narrative);
+    --m-paragraph-spacing: var(--m-paragraph-spacing-non-narrative);
+}
 
-    --m-font-family-titles: var(--m-font-family);
-    --m-font-family-title: var(--m-font-family-titles);
-    --m-font-family-title-part: var(--m-font-family-title);
-
-    --m-font-family-dingus-30-: var(--m-font-family-titles);
-
-    --m-indent: 0;
-    --m-paragraph-spacing: 1em;
+#manuscript.short {
+    /* the default is already set for .short */
 }
 
 #manuscript.long {
-    /* long-form default behavior is the render (screen) configuration:
-     * simulate page breaks and keep the smaller margins */
-    --m-break-after: unset;
-}
+    --m-offset-title: var(--m-offset-title-long);
+    --m-offset-parts-and-chapters: var(--m-offset-parts-and-chapters-long);
+    --m-offset-parts-and-chapters-render: var(--m-offset-parts-and-chapters-render-long);
+    --m-offset-scene: var(--m-offset-scene-long);
 
+    --m-page-break-simulated: var(--m-page-break-simulated-long);
+    --m-break-after: unset;
+
+    --m-position-facts:     var(--m-position-facts-long);
+    --m-top-facts:          var(--m-top-facts-long);
+    --m-bottom-facts:       var(--m-bottom-facts-long);
+    --m-left-facts:         var(--m-left-facts-long);
+    --m-right-facts:        var(--m-right-facts-long);
+    --m-margin-facts:       var(--m-margin-facts-long);
+    --m-text-align-facts:   var(--m-text-align-facts-long);
+    --m-line-spacing-facts: var(--m-line-spacing-facts-long);
+}
 @media print {
 #manuscript.long {
     /* long-form print behavior:
      * major component page break & position 1/3rd to 5/12th down the page */
-    --m-break-after: page;
-    --m-page-placement-parts-and-chapters: var(--m-page-placement-title);
-    --m-simulated-page-break: none;
+    --m-page-break-simulated: 0;
+    --m-page-break: var(--m-page-break-long);
 }
 } /* /print */
-
-/* manuscript facts for long-form manuscripts
- * the facts moves from the upper-righthand corner to within the
- * manuscript title-block header */
-#manuscript.long #m-facts {
-    position: unset; box-sizing: unset; overflow: unset;
-    top: unset; right: unset;
-    margin: var(--m-elbow-room) auto 0;
-}
-#manuscript.long #m-facts p {
-    line-height: var(--m-line-spacing);
-    text-align: center;
-}
-
-/* PAGE BREAK LOGIC - long-form manuscripts */
-
-@media print {
-/* page break after a manuscript title block or part header */
-#manuscript.long > .m-header,
-#manuscript.long section.m-part > .m-header {
-    break-after: var(--m-break-after);
-}
-/* page break after a chapter */
-#manuscript.long section.m-chapter,
-#manuscript.long section.m-part section.m-chapter {
-    break-after: var(--m-break-after);
-}
-/* ...except for the last chapter */
-#manuscript.long section.m-chapter:last-of-type {
-    break-after: unset !important;
-}
-} /* /print */
-
-@media screen {
-/* page break after a title or part header */
-#manuscript.long > .m-header,
-#manuscript.long section.m-part > .m-header {
-    border-bottom: var(--m-simulated-page-break);
-}
-/* page break after a chapter */
-#manuscript.long section.m-chapter,
-#manuscript.long section.m-part section.m-chapter {
-    border-bottom: var(--m-simulated-page-break);
-}
-/* ...except for the last chapter */
-#manuscript.long section.m-chapter:last-of-type {
-    border-bottom: none;
-}
-} /* /screen */
-
-/* END PAGE BREAK LOGIC */
