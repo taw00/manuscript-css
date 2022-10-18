@@ -65,6 +65,7 @@ generalized industry standard manuscript format.
   corner. If I can get that working (via javascript maybe?) I may be able to
   never leave markdown, even for submissions (assuming they accept PDF). I
   mention this again because it annoys me.
+- More options for the placement of `#m-facts`.
 
 ## My writer's workflow:
 
@@ -91,7 +92,7 @@ These will be your first few lines of your markdown
 ```markdown
 <!-- Formatting: US letter, 1in margins, short-form narrative -->
 <style>
-    @import "manuscript-core.css";
+    @import "manuscript.css";
 </style>
 <div id="vpage"><div id="manuscript">
 ... your manuscript ...
@@ -103,7 +104,7 @@ These will be your first few lines of your markdown
 <!-- Formatting: A4, 25.4mm margins, long-form non-narrative          -->
 <!--             I.e. All the big switches reversed from the default. -->
 <style>
-    @import "manuscript-core.css";
+    @import "manuscript.css";
     @page { size: A4 portrait; margin: 25.4mm; }
 </style>
 <div id="vpage"><div id="manuscript" class="A4 long non-narrative">
@@ -127,7 +128,7 @@ except for the main title and author section.
 
 ```markdown
 <style>
-    @import "manuscript-core.css";
+    @import "manuscript.css";
 </style>
 <div id="vpage"><div id="manuscript">
 
@@ -241,7 +242,7 @@ manuscript:
     @import "https://toddwarner.io/pub/css/m-font-serif-tinos.css";
     @import "https://toddwarner.io/pub/css/m-font-sans-arimo.css";
     @import "https://toddwarner.io/pub/css/m-font-mono-cousine.css";
-    @import "manuscript-core.css";
+    @import "manuscript.css";
 </style>
 ```
 
@@ -255,3 +256,41 @@ Good luck. Now, quit fooling around on the internet and write something.
 Copyright (c) Todd Warner <t0dd@protonmail.com>
 This work is licensed under Attribution 4.0 International. To view a copy
 of this license, visit http://creativecommons.org/licenses/by/4.0/
+
+---
+
+## Addendum
+
+### General manuscript formatting guidelines
+
+Please note, again, that manuscript formatting is a loose standard and
+ultimately governed by to whomever you are submitting. For example, if a
+publishing house demands the typeface by Comic Sans, you format your manuscript
+in Comic Sans.
+
+Here are some general guidelines.
+
+#### Novels
+
+- <https://www.shunn.net/format/novel/>
+- <https://graemeshimmin.com/manuscript-format-for-novel-submission/> A4!
+- <https://blog.reedsy.com/guide/book-manuscript-format/>
+
+#### Novellas
+
+- <https://www.shunn.net/format/2009/03/proper_novella_format.html>
+
+#### Short Narratives
+
+- <https://www.shunn.net/format/story/>
+
+#### Poetry!
+
+Poetry is beyond the scope of this project, but it is doable by designating the
+`.short` for the `#manuscript` div, setting `--m-indent` to 0 and managing
+the physical layout of the poetry by hand. Markdown was not truly designed for
+stuff like this, but if you want to maintain all of your writing drafts in a
+single format, for example, it makes sense.
+
+- <https://www.shunn.net/format/poetry/>
+

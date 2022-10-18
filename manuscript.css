@@ -29,7 +29,7 @@
  * after the CSS import call in the style block of the markdown.
  */
 
-@import "./manuscript-core.css";
+@import "./_manuscript-core.css";
 
 :root {
     /* only relevant to long-form manuscripts */
