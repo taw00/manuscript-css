@@ -154,6 +154,38 @@ blockquote {
 .hljs-link { text-decoration: underline; }
 */
 
+
+/* JOPLIN CLOUDING */
+
+/* Remove the note title */
+div.note-main > h1.title { display: none; }
+
+/* Remove document last-updated line at the top */
+div.note-main > p.last-updated { display: none; }
+/* but definitely not for print */
+@media print {
+  div.note-main > p.last-updated { display: none; }
+}
+
+/* Remove the top-header branding */
+/*body.page-note > main.main { margin: 0; padding: 0; }
+body.page-note nav.navbar { display: none !important; }
+div.note-main > h1.title { display: none; }*/
+
+/* ...or instead, turn it into a watermark */
+body.page-note nav.navbar { opacity: .15; }
+
+/* The footer.
+ * This is Laurent's JoplinCloud (c), T&Cs, and such. Don't remove it. */
+/*body.page-note > div.footer div.content { display: none !important; } */
+/* ...but we do fade it to the background */
+body.page-note > div.footer { opacity: .5; }
+
+/* expand the note-view to 100% width */
+body.page-note .note-main { margin: 0 auto; padding: 0; max-width: 100%;}
+
+
+
 /* EXPORTING */
 
 @media print {
@@ -173,33 +205,17 @@ pre {
 /* Remove the Joplin note title header */
 .exported-note-title { display: none !important; }
 
+/* export from Joplin Cloud: remove note title */
+div.note-main > h1.title { display: none; }
+
+/* export from Joplin Cloud: remove the top-header branding */
+body.page-note > main.main { margin: 0; padding: 0; }
+body.page-note nav.navbar { display: none !important; }
+div.note-main > h1.title { display: none; }
+
+/* export from Joplin Cloud: remove the footer */
+body.page-note > div.footer div.content { display: none !important; }
+
 } /* end @media print */
 
 
-/* JOPLIN CLOUDING */
-
-/* Remove the note title */
-div.note-main > h1.title { display: none; }
-
-/* maybe keep the last updated line
-div.note-main > p.last-updated { display: none; } */
-
-/* Remove the top-header branding */
-/*body.page-note > main.main { margin: 0; padding: 0; }
-body.page-note nav.navbar { display: none !important; }
-div.note-main > h1.title { display: none; }*/
-
-/* ...or instead, turn it into a watermark */
-body.page-note nav.navbar { opacity: .15; }
-
-/* The footer.
- * This is Laurent's JoplinCloud (c), T&Cs, and such. Don't remove it. */
-/*body.page-note > div.footer div.content { display: none !important; } */
-/* ...but we do fade it to the background */
-body.page-note > div.footer { opacity: .5; }
-
-/* Remove document last-updated line at the top */
-div.note-main > p.last-updated { display: none; }
-
-/* expand the note-view to 100% width */
-body.page-note .note-main { margin: 0 auto; padding: 0; max-width: 100%;}

@@ -18,13 +18,19 @@
 html { font-size: var(--m-font-size); } /* 1rem defined */
 html, body { background-color: rgb(204,204,204); } /* off-white */
 
+/* fighting off beligerent wrapper css */
+body { width: 100%; max-width: unset; }
+
+/* fighting off beligerent wrapper css */
 :is(h1,h2,h3,h4,h5,h6) {
     /* because upstream CSS specificity sometimes overrides ours */
     font-size: unset !important;
     font-weight: unset !important;
+    font-style: unset !important;
     line-height: unset !important;
     margin: unset !important;
     padding: unset !important;
+    border: unset !important;
 }
 
 #manuscript {
