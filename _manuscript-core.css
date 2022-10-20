@@ -191,6 +191,7 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript h6,
 #manuscript .m-header > :is(h1, h2, h3, h4, h5, h6),
 #manuscript .m-header p {
+    line-height: var(--m-line-spacing);
     margin: 0; padding: 0; border: 0;
 }
 #manuscript h6,
@@ -202,7 +203,6 @@ html, body { background-color: rgba(0,0,0,0); }
 manuscript .m-header p {
     font-size:   var(--m-font-size);
     font-weight: var(--m-font-weight);
-    line-height: var(--m-line-spacing);
 }
 #manuscript > .m-header > h1 {                           /* title: main work */
     font-size: var(--m-font-size-title);
