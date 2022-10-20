@@ -42,7 +42,10 @@ code.inline-code {
 
 /* Rendered view: viewport to 100% */
 #rendered-md { width: 100%; max-width: unset; margin: 0 auto; padding: unset; }
-#rendered-md { box-shadow: unset; } /* cuz I set this in my CSS for this ID }
+#rendered-md { box-shadow: unset; } /* cuz I set this in my CSS for this ID */
+#rendered-md { background-color: transparent; }
+/* Remove the padding and bg that frames #rendered-md */
+#joplin-container-content { background-color: transparent; padding: 0; }
 /* Joplin Cloud view: remove note title */
 div.note-main > h1.title { display: none; }
 /* Joplin Cloud view: remove document last-updated line at the top */
