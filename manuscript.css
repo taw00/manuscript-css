@@ -1,4 +1,4 @@
-/* Manuscript Format via CSS
+/* Manuscript via CSS v2.0
  *
  * Manuscript formatting for authors who draft in markdown.
  *
@@ -29,13 +29,18 @@
  * after the CSS import call in the style block of the markdown.
  */
 
+/* CSS layers not universally supported or honored by the various toolchains
+ * yet. Commenting out for now. Probably for indefinately.
+@layer manuscript {
+*/
+
 @import "./_manuscript-core.css";
 
 @page {
-    /* the default is already set for US letter
-     * for A4 you need to add this at-page declaration after your imports in
-     * your markdown (or HTML) file
-@page { size: letter portrait; margin: 1in; }
+    /* The default is already set for US letter.
+     * For A4 you need to add this at-page declaration after your imports in
+     * your markdown (or HTML) file's <style> block.
+@page { size: A4 portrait; margin: 25.4mm; }
      */
 }
 
@@ -93,3 +98,6 @@
     --m-page-break: var(--m-page-break-long);
 }
 } /* /print */
+
+/* layers not universally supported by the various toolchains, sadly
+}*/ /* end @layer manuscript */
