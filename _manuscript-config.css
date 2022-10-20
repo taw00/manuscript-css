@@ -1,4 +1,4 @@
-/* Manuscript Format via CSS — configurations
+/* Manuscript via CSS v2.0 — constants and configurations
  *
  * This contains all of the switches you can flip to massage the formatting of
  * your manuscript. To see what is available (and there are far too many
@@ -53,8 +53,8 @@
      * excellent close-equivalent open options for each category. */
     --m-fontstack-serif: "TeX Gyre Termes", "Croscore Tinos", Tinos, "Liberation Serif", "Times New Roman", serif;
     --m-fontstack-sans: "Croscore Arimo", Arimo, "Liberation Sans", Arial, sans-serif;
-    --m-fontstack-mono: "TeX Gyre Cursor", "Croscore Cousine", Cousine, "Liberation Mono", "Courier New", monospace;
     --m-fontstack-sans-alt: "TeX Gyre Heros", "Nimbus Sans L", Helvetica, sans-serif;
+    --m-fontstack-mono: "TeX Gyre Cursor", "Croscore Cousine", Cousine, "Liberation Mono", "Courier New", monospace;
 
     /* font-family - narrative and non-narrative */
     --m-font-family-narrative: var(--m-fontstack-serif);
