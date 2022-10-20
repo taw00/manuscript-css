@@ -1,4 +1,4 @@
-/* Manuscript Format via CSS — the core styles
+/* Manuscript via CSS v2.0 — the core styles
  *
  * This contains all of the baseline logic for formatting—via CSS styles—a
  * a markdown or HTML document to present a rendered artifact that closely
@@ -13,25 +13,11 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
+@import "_manuscript-style-reset.css";
 @import "_manuscript-config.css";
 
 html { font-size: var(--m-font-size); } /* 1rem defined */
 html, body { background-color: rgb(204,204,204); } /* off-white */
-
-/* fighting off beligerent wrapper css */
-body { width: 100%; max-width: unset; }
-
-/* fighting off beligerent wrapper css */
-:is(h1,h2,h3,h4,h5,h6) {
-    /* because upstream CSS specificity sometimes overrides ours */
-    font-size: unset !important;
-    font-weight: unset !important;
-    font-style: unset !important;
-    line-height: unset !important;
-    margin: unset !important;
-    padding: unset !important;
-    border: unset !important;
-}
 
 #manuscript {
     color: black !important;
@@ -43,11 +29,16 @@ body { width: 100%; max-width: unset; }
     hyphenate-limit-chars: 6 3 2;
     hyphenate-limit-lines: 2;
 }
-
 #manuscript * {
     opacity: 1;
-    margin: 0; padding: 0; border: 0;
+    padding: 0;
 }
+#manuscript *:not(hr) {
+    margin: 0; border: 0;
+}
+/* because hr is resistent to change, apparently (a mystery for now) */
+#manuscript hr { color: black !important;
+                 border-color: black !important; }
 
 
 /* rendering to the screen
@@ -59,6 +50,7 @@ body { width: 100%; max-width: unset; }
 @media screen {
 /* a virtual page */
 #vpage {
+    display: block;
     position: relative; box-sizing: border-box; overflow: hidden;
     top: 0; left: 0;
     width: 100%; max-width: var(--m-page-width);
@@ -68,6 +60,7 @@ body { width: 100%; max-width: unset; }
 }
 /* the content container */
 #manuscript {
+    display: block;
     position: relative; box-sizing: border-box; overflow: hidden;
     width: 100%; max-width: var(--m-content-width);
     margin: var(--m-page-margin) auto;
@@ -204,7 +197,7 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript .m-header > :is(h1, h2, h3, h4, h5, h6),
 #manuscript .m-header > p,
 #manuscript .m-header :is(:not(blockquote)) p {
-    text-align: center;
+    text-align: center !important;
 }
 manuscript .m-header p {
     font-size:   var(--m-font-size);
@@ -422,4 +415,4 @@ manuscript .m-header p {
     page-break-before: avoid !important;
     break-before: avoid !important;
 }
-} /* /print */
+} /* end @media print */
