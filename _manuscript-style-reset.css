@@ -16,6 +16,12 @@
  */
 
 /*
+ * pandoc-ism
+ */
+header#title-block-header { display: none; }
+
+
+/*
  * Joplin-isms
  * - turn off the base syntax highlighting (for pre/code)
  * - normalize a-links
