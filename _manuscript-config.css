@@ -283,4 +283,7 @@
      * A border wrapping the manuscript content. Set this to 0 in your
      * manuscript to disable. */      /* faded lightgray */
     --m-manuscript-border: 1px solid rgba(211,211,211,50%);
+
+    /*--m-link-color: rgb(0,0,238);*/ /* a browser default blue */
+    --m-link-color: rgb(0,32,194);  /* Cobalt Blue */
 }

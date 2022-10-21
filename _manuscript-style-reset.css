@@ -108,11 +108,11 @@ hr,
 blockquote, blockquote p,
 pre, code, p, q,
 mark,
-table, thead, tbody, tfoot, th, tr, td, colgroup, col ) {
+table, thead, tbody, tfoot, th, tr, td, colgroup, col {
     font-size: unset; font-weight: unset; font-style: unset;
     line-height: unset;
     text-align: unset;
-    color: unset; background-color unset;
+    color: unset; background-color: unset;
     background: unset;
     margin: unset; padding: unset;
     border: unset;
@@ -128,20 +128,21 @@ pre {
     white-space: pre;
     overflow-x: hidden;
 }
-
+}
 
 /*
  * Adapted from Firefox's ua.css
  */
-:any-link { cursor: pointer; }
-:link, :any-link, :active, :visited { color: rgb(0,0,238); }
-:focus-visible { outline: 1px auto; }
-
+a,
+a:any-link,
+a:link,
+a:active,
+a:visited { color: rgb(0,0,238); }
 
 
 /*
  * Pulled from Firefox' html.css
- * ToDo: scrub -moz pseudo-classes and values
+ * Note, I scrubbed a bunch of -moz-* values and things
  */
 p, dl, multicol {
   display: block;
@@ -243,7 +244,7 @@ h1 {
 
 listing {
   display: block;
-  font-family: -moz-fixed;
+  /*font-family: -moz-fixed;*/
   font-family: monospace;                                         /* my edit */
   font-size: medium;
   white-space: pre;
@@ -253,7 +254,7 @@ listing {
 
 xmp, pre, plaintext {
   display: block;
-  font-family: -moz-fixed;
+  /*font-family: -moz-fixed;*/
   font-family: monospace;                                         /* my edit */
   white-space: pre;
   margin-block-start: 1em;
@@ -301,10 +302,12 @@ table[rules] {
   /* :-moz-table-border-nonzero is like [border]:not([border="0"]) except it
      also checks for other zero-like values according to HTML attribute
      parsing rules */
+/*
 table:-moz-table-border-nonzero {
   border-width: thin;
   border-style: outset;
 }
+*/
 
 table[frame] {
   border: thin hidden;
@@ -326,6 +329,7 @@ table[frame="border"] { border-style: outset; }
 
   /* 'border' cell borders first */
 
+/*
 table:-moz-table-border-nonzero > * > tr > td,
 table:-moz-table-border-nonzero > * > tr > th,
 table:-moz-table-border-nonzero > * > td,
@@ -336,6 +340,7 @@ table:-moz-table-border-nonzero > th
   border-width: thin;
   border-style: inset;
 }
+*/
 
 /* collapse only if rules are really specified */
 table[rules]:not([rules="none"], [rules=""]) {
@@ -483,15 +488,18 @@ th {
   vertical-align: inherit;
   font-weight: bold;
   padding: 1px;
-  text-align: -moz-center-or-inherit;
+  /*text-align: -moz-center-or-inherit;*/
+  text-align: inherit;
 }
 
+/* Important: don't show these forms in HTML */
+/*
 tr > form:-moz-is-html, tbody > form:-moz-is-html,
 thead > form:-moz-is-html, tfoot > form:-moz-is-html,
 table > form:-moz-is-html {
-  /* Important: don't show these forms in HTML */
   display: none !important;
 }
+*/
 
 table[bordercolor] > tbody,
 table[bordercolor] > thead,
@@ -526,7 +534,7 @@ i, cite, em, var, dfn {
 }
 
 tt, code, kbd, samp {
-  font-family: -moz-fixed;
+  /*font-family: -moz-fixed;*/
   font-family: monospace;                                         /* my edit */
 }
 
@@ -682,10 +690,6 @@ li {
 
 /* leafs */
 
-/* <hr> noshade and color attributes are handled completely by
- * HTMLHRElement::MapAttributesIntoRule.
- * https://html.spec.whatwg.org/#the-hr-element-2
- */
 hr {
   color: gray;
   border-width: 1px;
@@ -695,9 +699,4 @@ hr {
   margin-inline-start: auto;
   margin-inline-end: auto;
   overflow: hidden;
-  /* FIXME: This is not really per spec */
-  display: block;
-}
-hr[size="1"] {
-  border-style: solid none none none;
 }

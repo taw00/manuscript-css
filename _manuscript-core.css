@@ -26,8 +26,10 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
     font-size: 1rem;
     font-weight: var(--m-font-weight);
     line-height: var(--m-line-spacing);
+    /* -- future feature (still in a w3c draft)
     hyphenate-limit-chars: 6 3 2;
     hyphenate-limit-lines: 2;
+    */
 }
 #manuscript * {
     opacity: 1;
@@ -36,10 +38,14 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
 #manuscript *:not(hr) {
     margin: 0; border: 0;
 }
-/* because hr is resistent to change, apparently (a mystery for now) */
+/* because hr is resistent to change apparently (a mystery for now) */
 #manuscript hr { color: black !important;
                  border-color: black !important; }
-
+#manuscript a, a:is(:any-link,:link,:active,:visited,:hover) {
+    color: var(--m-link-color);
+    text-decoration: none;
+}
+#manuscript a:hover { border-bottom: solid var(--m-link-color) 2px; }
 
 /* rendering to the screen
  * HTML and BODY are off-white. We add a pretty 3D virtual white page with
@@ -333,6 +339,14 @@ manuscript .m-header p {
 #manuscript section.m-part > .m-header {
     break-after: var(--m-page-break);
 }
+/* page break after a part */
+#manuscript section.m-part {
+    break-after: var(--m-page-break);
+}
+/* ...except for the last part */
+#manuscript section.m-part:last-of-type {
+    break-after: avoid !important;
+}
 /* page break after a chapter */
 #manuscript section.m-chapter {
     break-after: var(--m-page-break);
@@ -348,6 +362,14 @@ manuscript .m-header p {
 /* page break (simulated) after a title or part header */
 #manuscript > .m-header,
 #manuscript section.m-part > .m-header {
+    border-bottom: var(--m-page-break-simulated);
+}
+/* page break after a part */
+#manuscript section.m-part {
+    border-bottom: var(--m-page-break-simulated);
+}
+/* ...except for the last part */
+#manuscript section.m-part:last-of-type {
     border-bottom: var(--m-page-break-simulated);
 }
 /* page break (simulated) after a chapter */
