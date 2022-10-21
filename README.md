@@ -4,146 +4,18 @@ _Draft your novel or short story in markdown, then export to industry standard
 manuscript format._
 
 Are you a writer? In particular a narrative writer? Fiction, narrative
-non-fiction, memoir, personal narratives, etc.? Do you draft using a markdown
+nonfiction, memoir, personal narratives, etc.? Do you draft using a markdown
 text editor? And do you wish to share your drafts in a professional manner
-without having to jump toolchains? Save the fancy office word processors like
+without having to jump tool chains? Save the fancy office word processors like
 LibreOffice or Google Docs or Word for submission finalization. Now, you can
 stay in your favorite markdown editor and still have a means to present your
 working drafts in a professional manner for review, critique, or whatever.
 
-## How?
+## What do you mean by manuscript formatting?
 
-**TL;DR:** check out the example manuscripts in this repository.
-
-Or, in summary . . .
-
-0. Download this repository.
-   - From the commandline using `git`:
-     1. Copy (clone) the repository: `git clone https://github.com/taw00/manuscript-css/`
-     2. `cd manuscript-css`
-
-   - From the github UI:
-     1. browse to <https://github.com/taw00/manuscript-css/>
-     2. click on the Code button with the dropdown arrow
-     3. Click on Download zip.
-     4. Unzip the `manuscript-css-main.zip` file.
-     5. Change that name to `manuscript-css` if you like.
-     6. `cd manuscript-css'
-
-1. Copy one of the templates from the templates directory, renaming it to
-   whatever makes sense to you.
-2. Open that markdown document in your favorite editor. I recommend the
-   [Joplin](https://joplinapp.org) desktop note-taking application. It's has
-   the most seamless user experience.
-3. Fill in the blanks for contact info, title, etc.
-4. Write your story, scene by scene.
-5. When ready, convert to HTML
-6. Review it in HTML in your favorite browser
-   (Or directly in the Joplin desktop app if you use that.)
-7. If not to your satisfaction, continue to edit (and/or fix the errors)
-8. Save, convert, review
-9. Repeat until done.
-10. Convert to PDF by using `Print to file` from your browser
-    (Or `Export to PDF` from within the Joplin desktop application.)
-
-If you have an existing document already in markdown format, just examine
-the templates or examples and refactor your document accordingly.
-
-## Rendering your markdown to HTML or a PDF
-
-The great majority of markdown editors are great at editing text. Many can also
-preview your work, but they are only particularly good at showing you a
-prettier version of the text. And this is fine . . . unless you are trying to
-do something like generating a manuscript view of your document. Or any other
-stylings beyond the rudimentory.
-
-The [Joplin](https://joplinapp.org) note-taking application is one of the few
-exceptions. It honors your custom stylings. Plus it is a great general editor
-and manager of all your notes, documents, and more. I can't recommend it highly
-enough. It has an OK built in editor, but it also allows you to press a button
-and it will pull up your document in whatever editor you desire ... all nicely
-saved in the Joplin database.
-
-I digress.
-
-## My thoughts on various editors:
-
-### Editors for Writers
-
-- [Joplin](https://joplinapp.org): I've already sung Joplin's praises. But it
-  is, IMHO, the far superior application for developing text-heavy context.
-  Joplin provides a WYSIWYG editor as well as a text editor. Its included text
-  editor is modest, but it can open a "note" in any editor you want that can be
-  called from the command line. Finally, **it is the one and only editor here
-  that can go from text markdown to HTML to PDF without using a separate
-  tool.**
-- [GhostWriter](https://ghostwriter.kde.org/): great editor. It previews
-  manuscript-formated markdown incorrectly, but exports to HTML just fine. It's
-  a half solution. It also had writer-friendly features like focus mode, etc.
-  Skip it's previewer. Edit with Ghostwriter, export to HTML, and preview in
-  a browser. It saves you a step in that you don't have to use pandoc directly.
-  BUT! To export to HTML, it needs pandoc install.
-- [Marktext](): Man, I really like this editor as a writer's editor. Super
-  simple and distraction-free.
-- [Bear](https://bear.app/) and [Typora](https://typora.io/): I heard good
-  things about these, but I don't use any Apple products so, I have never tried
-  them.
-- All the minimalistic note-taking software applications out there—just avoid
-  them. They are a waste of your time except to jot down ideas to be
-  transferred later.
-
-### General purpose text/programming editors that highlight markdown syntax
-
-- [Xed](), [Puma](), and [Gedit](): these are great simple editors
-  that do nothing but that. I use Xed all the time, in fact.
-- [Text Editor](https://chrome.google.com/webstore/detail/text-editor/demheclfdlemkkpadenmajhjbdhbjjml?hl=en-US&utm_source=chrome-ntp-launcher)
-  Chrome Web App: This is actually a rather great bare-bones editor.
-- [Vim](https://www.vim.org/): Vim is hugely powerful and designed for hardcore
-  programmers. If you know what you are doing you can make it do anything, and
-  do it far more efficiently than the rest of these editors, including
-  automating the preview in HTML step. But Vim has a steep learning curve. I
-  have used it for decades, but, yeah, a steep learning curve. Vim is a
-  terminal program, but it also has a graphical version: `gvim`.
-- [Atom](https://atom.io/): AVOID. The project is
-  **[shutting down](https://github.blog/2022-06-08-sunsetting-atom/)**
-  Atom is great general purpose code editor but can get really complicated to
-  use. And it's markdown capabilities are both powerful but at the same time
-  fall very short or our needs. Microsoft (who now owns the project) is
-  shutting it down, Dec 2022.
-
-
-is one of the few exceptions in this bucket
-of technical sadness. Those editors will allow you to style things modestly,
-but that is just about it. Many (most?) will only half-listen to the stylings
-we provide (the Atom editor's Markdown Writer completely ignores them).
-
-### How to . . .
-
-Do you use GhostWriter? MarkText? Atom? ... etc. etc. To use `manuscript.css`
-you will have to periodically use a separate tool to convert the markdown to
-HTML and then to PDF. [Pandoc](https://pandoc.org/) is excellent for this.
-
-Using `manuscript-short-story.md` from the `examples/` folder, you would do
-this:
-
-``
-pandoc -s -
-
-You will likely have to use a separate
-> program to convert your markdown to HTML and then HTML to PDF (for example,
-> pandoc does an excellent job at d
-Joplin is just about the only application out there that
-> correctly honors in-document styling and allows for `@import`s.
-
-
-> Just remember, when you submit to an editor, they will likely have very
-> specific requirements for the format of your manuscript. The rule is: submit
-> in whatever format they demand. This is not for that.
-
-> Do you need to produce a book from your markdown? This is not that. But if
-> you do want to do that, check out [Bookdown](https://www.bookdown.org/).
-> Bookdown, though very intriguing, also looks rather daunting and geared for
-> the science community.
+Take a look at the example PDFs in the `examples/` folder in this repository.
+Those are examples of how manuscripts are formatted: no fluff, easy to read and
+review.
 
 ### Supported formatting
 
@@ -162,7 +34,158 @@ Joplin is just about the only application out there that
   breaking in weird places, like between a chapter title and the prose, but
   those rules are ignored. I don't know why.
 
-## What's completely untested
+> Just remember, when you submit to an editor, they will likely have very
+> specific requirements for the format of your manuscript. The rule is: submit
+> in whatever format they demand (you will likely have to port the document
+> to `.odt` or `.docx` format). This is not for that.
+
+## I want to produce a book from my writing
+
+This is not for that. This is for creating a professional reviewable document
+in an industry-standard format.
+
+To produce a book, when you have finished or are close to finishing your
+drafting process, port your document from markdown to LibreOffice, Word, or
+Google Docs and either submit that to an editor or import that into a book
+production application like [Reedsy](https://reedsy.com/write-a-book).
+
+Another possibility is to port the markdown to [Bookdown](https://www.bookdown.org/). Bookdown, though very
+intriguing, also looks rather daunting and is geared for the academic
+community.
+
+## How do I construct a manuscript from my markdown document?
+
+**TL;DR:** check out the example manuscripts in this repository in their
+original markdown and as PDFs. Use the examples as a template for your own work.
+And if you are already familiar with converting markdown to HTML to PDF then
+that should be enough to get you going.
+
+## How? With more detail
+
+Process summary - very high level: (1) write your document in the prescribed
+structure, (2) convert it to HTML, and then (3) convert that to PDF.
+
+Process summary - a bit more detailed: 
+
+0. Download this repository.
+   - From the command line using `git`:
+     1. Copy (clone) the repository: `git clone https://github.com/taw00/manuscript-css/`
+     2. `cd manuscript-css`
+
+   - From the GitHub UI:
+     1. browse to <https://github.com/taw00/manuscript-css/>
+     2. `Code` (big blue button) > `Download zip`
+     4. Unzip the `manuscript-css-main.zip` file.
+     5. Change that name to `manuscript-css` if you like.
+     6. `cd manuscript-css'
+
+1. Copy one of the templates from the templates directory, renaming it to
+   whatever makes sense to you.
+2. Open that markdown document in your favorite editor.  
+   I recommend the [Joplin](https://joplinapp.org) desktop note-taking
+   application. It has the most seamless user experience.
+3. Replace the templated content with yours
+4. Write your story, scene by scene.
+5. Convert to HTML using Pandoc (or preview natively in the Joplin application)
+6. Review the HTML in your favorite browser (or preview natively in the Joplin
+   application)
+7. If not to your satisfaction, revise your document  
+   and repeat from step 5 - rinse; repeat until done.
+9. Convert to PDF by using `Print to file` from your browser (or export
+   natively from within the Joplin application)
+
+If you have an existing document already in markdown format, just examine
+the templates or examples and refactor your document accordingly.
+
+## Rendering your markdown to HTML for review (step 5 above)
+
+### If using Joplin as your markdown editor (both steps 5 & 6)
+
+Click the `Toggle Editor Layout` button in the upper-right-hand corner of the
+application. There you have it. The HTML preview of the document. It's as
+accurate a presentation as your browser would present.
+
+### If using any other editor
+
+This requires you use the command line and to have Pandoc installed,
+<https://pandoc.org/>.
+
+1. Convert your markdown file to HTML (step 5)  
+
+_This example is using one of the documents from the examples folder._
+
+```plaintext
+pandoc -s --no-highlight --metadata title="-" manuscript-long-story.md -o manuscript-long-story.html 
+```
+
+2. Use your browser to review that HTML (step 6)
+
+```plaintext
+file://path-to-the-document/manuscript-long-story.html
+```
+
+> **A note about the HTML rendering of a long-form manuscript.**  
+>
+> Manuscripts formatted for things like novels will page break for every
+> part and chapter and place their title blocks 1/3rd of the way down the page.
+> Well, you can't do that for regular screen output. Instead, I display a faint
+> dashed line where the page break would go, and skip the big margin all
+> together. When you go to export the document to PDF or to the printer, those
+> extra lines (and the manuscript border for that matter) will go away.
+
+## Rendering your markdown to PDF (step 9)
+
+### If using Joplin
+
+`CTRL`-`SHIFT`-`E`
+
+Or, in the top menus of the application: `File` > `Export All` > `PDF - PDF File`
+
+Then use your favorite PDF viewer or browser to view the file.
+
+### If from the HTML view from the browser
+
+`Print` (CTRL-P) > `Save to PDF`
+
+Then use your favorite PDF viewer or browser to view the file.
+
+_Note, Pandoc can produce a PDF, but its renderings are not accurate. Joplin
+and your web browser do a better job._
+
+That's it!
+
+---
+
+## Todd is a Joplin shill!
+
+Nope. It's just the best option for this kind of work. IMHO.
+
+The great majority of markdown editors (see a selection and my thoughts later
+in this document) are great at editing text. Many can also preview your work,
+but they are only particularly good at showing you a prettier version of the
+text and not a fully customized rendering. This is fine if you just want nice
+looking notes and things. But not fine if you want _very specific_ looking
+notes and things. Generating a manuscript view of your document is a very
+specific look.
+
+This is where the [Joplin](https://joplinapp.org) note-taking application rises
+above its peers. Yes, your notes and documents look nice out of the box, but
+you also have the full ability to customize the results to your hearts content
+using standard CSS. Joplin is also a great personal document-management
+platform. And it can sync to the cloud. And you can publish things to the cloud
+for anyone to view. And it is fully end-to-end encrypted.  And it has a
+web-clipper (super handy!!!) and a mobile app. So, yes, I suppose I am a Joplin
+shill. But for all the right reasons.
+
+But I also use other editors out there. I use Vim, Xed, Marktext, and sometimes
+Obsidian. I am sure you have your preferred interface. Install Pandoc and
+follow the steps above. It's not complicated.
+
+---
+
+## Other things
+
+### What's completely untested
 
 - Tables
 - I have also done no styling for images. If you want to add images to your
@@ -177,18 +200,18 @@ Joplin is just about the only application out there that
   haven't tried it. I mean, markdown, in the end, is really just HTML with a
   bit of varnish.
 
-## For the Future
+### For the Future
 
 - The one big missing feature is, as I mentioned above, support for a per-page
   header with `LASTNAME / SHORT TITLE / PAGENUMBER` in the upper-right-hand
-  corner. If I can get that working (via javascript maybe?) I may be able to
+  corner. If I can get that working (via JavaScript maybe?) I may be able to
   never leave markdown, even for submissions (assuming they accept PDF). I
   mention this again because it annoys me.
 - More options for the placement of `#m-facts`.
 
-## My writer's workflow:
+### My writer's workflow:
 
-1. 0-draft: either in markdown or hand-written
+1. 0-draft: either in markdown or handwritten
 2. work-in-progress: markdown drafting via the Joplin desktop application
    <https://joplinapp.org>. (_Joplin is a note-taking software application that
    also serves as an excellent general purpose markdown editor._)
@@ -198,15 +221,69 @@ Joplin is just about the only application out there that
    publish-to-the-web feature.
 4. submission for publication: I port my markdown over to LibreOffice writer. I
    developed a manuscript template and it doesn't take me long to convert my
-   markdown to LibreOffice, do a final proofread, and then submit a .docx file.
+   markdown to LibreOffice, do a final proofread, and then submit a .`.docx` file.
+
+--- 
+
+### My thoughts on various text-based writing platforms . . .
+
+#### Editors for Writers
+
+- [Joplin](https://joplinapp.org): I've already sung Joplin's praises. But it
+  is, IMHO, the far superior application for developing text-heavy context.
+  Joplin provides a WYSIWYG editor as well as a text editor. Its included text
+  editor is modest, but it can open a "note" in any editor you want that can be
+  called from the command line. Finally, **it is the one and only editor here
+  that can go from text markdown to HTML to PDF without using a separate
+  tool.**
+- [Obsidian](https://obsidian.md/): Obsidian is similar type of application as
+  Joplin. It has a more modern vibe. I actually have used Obsidian and Joplin
+  side-by-side for some time, but I keep going back to Joplin. Joplin is just a
+  more complete solution. Obsidian is more useful as a
+  [Zettlekasten](https://en.wikipedia.org/wiki/Zettelkasten) application for
+  management of your ideas, thoughts, and mental bookmarks. It's pretty slick.
+  Check it out. As a markdown editor, it's okay. But it too can open files for
+  edit in a text editor of your choosing.
+- [GhostWriter](https://ghostwriter.kde.org/): great editor. It previews
+  manuscript-formatted markdown incorrectly, but exports to HTML just fine. It's
+  a half solution. It also had writer-friendly features like focus mode, etc.
+  Skip it's previewer. Edit with Ghostwriter, export to HTML, and preview in
+  a browser. It saves you a step in that you don't have to use Pandoc directly.
+  BUT! To export to HTML, it needs Pandoc installed.
+- [Marktext](https://github.com/marktext/marktext): Man, I really like this editor as a writer's editor. Super
+  simple and distraction free.
+- [Bear](https://bear.app/) and [Typora](https://typora.io/): I heard good
+  things about these, but I don't use any Apple products so, I have never tried
+  them.
+- All the minimalistic note-taking software applications out there—just avoid
+  them. They are a waste of your time except to jot down ideas to be
+  transferred later.
+
+#### General purpose text/programming editors
+
+- [Xed](https://github.com/linuxmint/xed): a great just-enough-features
+  lightweight text and code editor. I use Xed all the time.
+- [Text Editor](https://chrome.google.com/webstore/detail/text-editor/demheclfdlemkkpadenmajhjbdhbjjml?hl=en-US&utm_source=chrome-ntp-launcher)
+  Chrome Web App: This is actually a rather great bare-bones editor.
+- [Vim](https://www.vim.org/): Vim is hugely powerful and designed for hardcore
+  programmers. If you know what you are doing you can make it do anything, and
+  do it far more efficiently than the rest of these editors, including
+  automating the preview in HTML step. But Vim has a steep learning curve. I
+  have used it for decades, but, yeah, a steep learning curve. Vim is a
+  terminal program, but it also has a graphical version: `gvim`.
+- [Atom](https://atom.io/): AVOID. The project is
+  **[shutting down](https://github.blog/2022-06-08-sunsetting-atom/)** Atom is
+  great general purpose code editor but can get really complicated to use. And
+  it's markdown capabilities are both powerful but at the same time fall very
+  short or our needs. Microsoft (who now owns the project) is shutting it down,
+  Dec 2022. I only list this because it's on every markdown editor list out
+  there.
+
+---
 
 ## Structure summary of a manuscript drafted in markdown
 
-### The `<style>` and first `vpage` and `manuscript` wrappers
-
-These will be your first few lines of your markdown
-
-#### Example 1: The default format and behavior
+#### Example 1: The document beginning - default format and behavior
 
 ```markdown
 <!-- Formatting: US letter, 1in margins, short-form narrative -->
@@ -217,7 +294,7 @@ These will be your first few lines of your markdown
 ... your manuscript ...
 ```
 
-#### Example 2: The alternative high-level format and behavior adjustments
+#### Example 2: The document beginning - same as above with behavior adjustments
 
 ```markdown
 <!-- Formatting: A4, 25.4mm margins, long-form non-narrative          -->
@@ -230,20 +307,12 @@ These will be your first few lines of your markdown
 ... your manuscript ...
 ```
 
-> **A note about rendering a long-form manuscript.**  
-> Manuscripts formatted for things like novels will page break for every
-> part and chapter and place their title blocks 1/3rd of the way down the page.
-> Well, you can't do that for regular screen output. Instead, I display a faint
-> dashed line where the pagebreak would go, and skip the big margin all
-> together. When you go to export the document to PDF or to the printer, those
-> extra lines (and the manuscript border for that matter) will go away.
+### Example 3: The high-level containers
 
-### The high-level containers
-
-This is great for quick reference. Just remember that, depending on the nature
-of your prose, parts are not required, nor are chapters. But you will always
-have to have scenes (duh). And per-container `m-header`s are not required
-except for the main title and author section.
+`manuscript.css` structures the document into parts, chapters, and scenes. In
+the end, parts and chapters are not required, but all the text of your story or
+article lives within scenes. Most short-form documents use only scenes. Most
+things are optional.
 
 ```markdown
 <style>
@@ -251,12 +320,12 @@ except for the main title and author section.
 </style>
 <div id="vpage"><div id="manuscript">
 
-<!-- required: contact name, address, email, phone -->
+<!-- suggested: contact name, address, email, phone -->
 <div id="m-contact">
 </div>
 
-<!-- required: title, subtitle, by Author,
-     wordcount/genre facts, and epigraph (optional) -->
+<!-- suggested: title, subtitle, by Author, wordcount/genre facts, and
+     epigraph -->
 <div class="m-header">
 <div id="m-facts">
 </div>
@@ -268,7 +337,7 @@ except for the main title and author section.
 <div class="m-header">
 </div>
 
-<!-- optional (for short prose): chapter - chapters contain scenes -->
+<!-- optional: chapter - chapters contain scenes -->
 <section class="chapter">
 <!-- suggested: chapter title, subtitle, by Author, epigraph -->
 <div class="m-header">
@@ -276,7 +345,7 @@ except for the main title and author section.
 
 <!-- required: scene - scenes contain your prose (example, three scenes) -->
 <section class="scene">
-<!-- optional: scene title, subtitle, by Author, epigraph -->
+<!-- unusual: scene title, subtitle, by Author, epigraph -->
 <div class="m-header">
 </div>
 </section>
@@ -301,25 +370,42 @@ except for the main title and author section.
 ```
 
 
-### The `<div id="m-contact">`
+#### The `<div id="m-contact">`
 
-#### at the top-level ...
+The `m-contact` container is for your author or agent contact info. Example:
 
-`h1`, `h2`, `h3` represent Title, Subtitle, and by Author in this context. The
-`m-facts` represents facts about your prose, namely word count and sometimes
-genre, and audience (especially if not for adults). The `>` blockquote
-represents a
-[epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)) in this
-context, though I think epigraphs are unusual for a manuscript at the main
-title block.  But I use it at times.
+```markdown
+<div id="m-contact">
 
-<div id="contact">
+Todd Warner
+
+North Carolina Piedmont, USA
+
+email@example.com | +1 555-555-1212
+
+(_draft rev. 2022-10-21_)
+</div>
+```
+
+#### `<div class="m-header">`
+
+One exists at the top level for the title and whatnot of the work. Then each
+part, chapter, and scene can also optionally also have titles and things.
+
+Within this container, `h1` (`#` in markdown), `h2` (`##`), `h3`
+(`###`), and `blockquote` (`>`) are overloaded to represent . . .
+
+```markdown
+<div id="m-header">
 
 # Title of Story
 
 ## Subtitle of Story
 
 ### by Firstname Lastname
+
+> An epigraph for my story. _There is nothing to writing. All you do is sit
+> down at a typewriter and bleed._ —Ernest Hemingway
 
 <div id="m-facts">
 
@@ -329,17 +415,11 @@ Literary Fiction
 
 </div>
 
-> _There is nothing to writing. All you do is sit down at a typewriter and
-> bleed._ —Ernest Hemingway
+**What's an epigraph you ask?** <https://en.wikipedia.org/wiki/Epigraph_(literature)>
 
-</div>
+Note, the `m-header`s in the parts, chapters, and scenes don't have `m-facts`.
 
-#### `<div class="m-header">` at the part chapter and scene levels
-
-It works just the same, except that there is no `m-facts` div-block.
-
-
-### FONTS / TYPEFACES
+#### FONTS / TYPEFACES
 
 The default fonts used by the manuscript are ones selected to conform to what
 is expected—namely Times New Roman close equivalents, but also Arial and
@@ -371,6 +451,7 @@ Copyright (c) Todd Warner <t0dd@protonmail.com>
 This work is licensed under Attribution 4.0 International. To view a copy
 of this license, visit http://creativecommons.org/licenses/by/4.0/
 
+---
 ---
 
 ## Addendum
@@ -407,4 +488,3 @@ stuff like this, but if you want to maintain all of your writing drafts in a
 single format, for example, it makes sense.
 
 - <https://www.shunn.net/format/poetry/>
-
