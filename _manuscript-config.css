@@ -227,10 +227,10 @@
     --m-font-weight-epigraph: var(--m-font-weight);
     --m-font-family-epigraph: var(--m-font-family);
 
-    /* font settings - the section separators (dingus and -30-) */
-    --m-font-size-dingus-30-: var(--m-font-size);
-    --m-font-weight-dingus-30-: var(--m-font-weight);
-    --m-font-family-dingus-30-: var(--m-font-family);
+    /* font settings - the section separators (dinkus and -30-) */
+    --m-font-size-dinkus-30-: var(--m-font-size);
+    --m-font-weight-dinkus-30-: var(--m-font-weight);
+    --m-font-family-dinkus-30-: var(--m-font-family);
 
     /*
      * DEFAULTS
@@ -286,4 +286,13 @@
 
     /*--m-link-color: rgb(0,0,238);*/ /* a browser default blue */
     --m-link-color: rgb(0,32,194);  /* Cobalt Blue */
+
+    /* default / typical -30- and dinkus markers
+     * Note: for manuscript, the solitary # sign is the most typical/standard
+     *       scene-break marker. */
+    --m--30-: "The End";    /* not used yet */
+    --m-dinkus-alt0: "#";
+    --m-dinkus-alt1: "* * *";
+    --m-dinkus-alt2: "⁂";
+    --m-dinkus: var(--m-dinkus-alt0);
 }

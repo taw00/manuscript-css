@@ -193,13 +193,16 @@ html, body { background-color: rgba(0,0,0,0); }
  * header 1 through header 5 as you would expect. And the > (blockquote) also
  * works as you would expect there.
  *
- * H6, though, is always reserved as a dingus or a -30- marker */
-#manuscript h6,
+ * H6, though, is always reserved as a dinkus or a -30- marker */
+#manuscript section.m-scene::after, /* a dinkus separator */
+#manuscript h6, /* a dinkus separator */
 #manuscript .m-header > :is(h1, h2, h3, h4, h5, h6),
 #manuscript .m-header p {
+    display: block;
     line-height: var(--m-line-spacing);
     margin: 0; padding: 0; border: 0;
 }
+#manuscript section.m-scene::after,
 #manuscript h6,
 #manuscript .m-header > :is(h1, h2, h3, h4, h5, h6),
 #manuscript .m-header > p,
@@ -270,10 +273,11 @@ manuscript .m-header p {
     font-weight: var(--m-font-weight-author-scene);
     font-family: var(--m-font-family-author-scene);
 }
-#manuscript h6 {                   /* manuscript separators: dingus and -30- */
-    font-size: var(--m-font-size-dingus-30-);
-    font-weight: var(--m-font-weight-dingus-30-);
-    font-family: var(--m-font-family-dingus-30-);
+#manuscript section.m-scene::after,
+#manuscript h6 {                   /* manuscript separators: dinkus and -30- */
+    font-size: var(--m-font-size-dinkus-30-);
+    font-weight: var(--m-font-weight-dinkus-30-);
+    font-family: var(--m-font-family-dinkus-30-);
     margin-top: var(--m-elbow-room);
 }
 
@@ -303,6 +307,11 @@ manuscript .m-header p {
     margin: var(--m-elbow-room) auto 0;
     word-break: normal; overflow-wrap: break-word;
 }
+
+/* insert a dinkus between scenes */
+#manuscript section.m-scene::after { content: var(--m-dinkus); }
+#manuscript section.m-scene:last-of-type::after { content: ""; }
+
 
 /*
  * The prose
@@ -334,6 +343,7 @@ manuscript .m-header p {
 /* PAGE BREAK LOGIC */
 
 @media print {
+
 /* page break after a manuscript title block or part header */
 #manuscript > .m-header,
 #manuscript section.m-part > .m-header {
@@ -356,9 +366,11 @@ manuscript .m-header p {
     /*break-after: unset !important;*/
     break-after: avoid !important;
 }
-} /* end print */
+
+} /* end of print rules */
 
 @media screen {
+
 /* page break (simulated) after a title or part header */
 #manuscript > .m-header,
 #manuscript section.m-part > .m-header {
@@ -380,12 +392,17 @@ manuscript .m-header p {
 #manuscript section.m-chapter:last-of-type {
     border-bottom: 0 !important;
 }
-} /* /screen */
+
+} /* end of screen rules */
 
 /* END PAGE BREAK LOGIC */
 
 
-/*** PAGE BREAK AVOIDANCE RULES ***/
+
+
+/***
+ * PAGE BREAK AVOIDANCE RULES
+ ***/
 
 @media print {
     /* general page break behavior for print documents */
@@ -432,7 +449,8 @@ manuscript .m-header p {
     page-break-before: avoid !important;
     break-before: avoid !important;
 }
-/* don't page break before a dingus or -30- marker */
+/* don't page break before a dinkus or -30- marker */
+#manuscript section.m-scene::after,
 #manuscript h6 {
     page-break-before: avoid !important;
     break-before: avoid !important;
