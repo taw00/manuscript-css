@@ -38,9 +38,14 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
 #manuscript *:not(hr) {
     margin: 0; border: 0;
 }
-/* because hr is resistent to change apparently (a mystery for now) */
-#manuscript hr { color: black !important;
-                 border-color: black !important; }
+#manuscript hr {
+    /* because hr color is resistent to change apparently (a mystery for now) */
+    color: black !important;
+    border-color: black !important;
+    border-top: 0;  border-bottom-width: 1px;
+    border-left: 0; border-right: 0;
+    width: 80%;
+}
 #manuscript a, a:is(:any-link,:link,:active,:visited,:hover) {
     color: var(--m-link-color);
     text-decoration: none;
@@ -131,16 +136,26 @@ html, body { background-color: rgba(0,0,0,0); }
     text-align: left;
 }
 
-#manuscript #m-facts {
+#manuscript :not(section:is(.m-part,.m-chapter,.m-scene)) .m-facts {
     position: var(--m-position-facts);
     box-sizing: border-box; overflow: visible;
     top: var(--m-top-facts); bottom: var(--m-bottom-facts);
     left: var(--m-left-facts); right: var(--m-right-facts);
     margin: var(--m-margin-facts);
 }
-#manuscript #m-facts p {
+#manuscript :not(section:is(.m-part,.m-chapter,.m-scene)) .m-facts p {
     line-height: var(--m-line-spacing-facts);
     text-align: var(--m-text-align-facts);
+}
+
+#manuscript section:is(.m-part) .m-facts {
+    margin: var(--m-room-for-two) auto 0;
+}
+#manuscript section:is(.m-chapter,.m-scene) .m-facts {
+    margin: 0 auto;
+}
+#manuscript section:is(.m-part,.m-chapter,.m-scene) .m-facts p {
+    text-align: center;
 }
 
 /* per-component top margins
@@ -187,23 +202,23 @@ html, body { background-color: rgba(0,0,0,0); }
  * - H1 means title, H2 means subtitle, H3 means author
  * - > (i.e. blockquote) means epigraph
  * - And finally, if you want you can wrap word count, audience, and genre
- *   in an #m-facts div.
+ *   in an .m-facts div.
  *
- * Inside of a .m-scene where all the prose goes, H1 through H5 means ...
- * header 1 through header 5 as you would expect. And the > (blockquote) also
- * works as you would expect there.
+ * Outside of an .m-scene
+ * - H6 represents a dinkus or a -30- marker
  *
- * H6, though, is always reserved as a dinkus or a -30- marker */
-#manuscript section.m-scene::after, /* a dinkus separator */
-#manuscript h6, /* a dinkus separator */
+ * Inside of a .m-scene where all the prose goes, H1 through H6 means ...
+ * header 1 through header 6 as you would expect. And the > (blockquote) also
+ * works as you would expect there. */
+
 #manuscript .m-header > :is(h1, h2, h3, h4, h5, h6),
 #manuscript .m-header p {
     display: block;
     line-height: var(--m-line-spacing);
     margin: 0; padding: 0; border: 0;
 }
-#manuscript section.m-scene::after,
-#manuscript h6,
+#manuscript section.m-scene::after, /* a dinkus separator */
+#manuscript :not(section.m-scene) > h6, /* a dinkus separator */
 #manuscript .m-header > :is(h1, h2, h3, h4, h5, h6),
 #manuscript .m-header > p,
 #manuscript .m-header :is(:not(blockquote)) p {
@@ -273,14 +288,6 @@ manuscript .m-header p {
     font-weight: var(--m-font-weight-author-scene);
     font-family: var(--m-font-family-author-scene);
 }
-#manuscript section.m-scene::after,
-#manuscript h6 {                   /* manuscript separators: dinkus and -30- */
-    font-size: var(--m-font-size-dinkus-30-);
-    font-weight: var(--m-font-weight-dinkus-30-);
-    font-family: var(--m-font-family-dinkus-30-);
-    margin-top: var(--m-elbow-room);
-}
-
 #manuscript .m-header > :is(h4, h5),                     /* all header prose */
 #manuscript .m-header p {           /* h4, h5 were unaccounted for elements) */
     font-size: var(--m-font-size);
@@ -311,6 +318,20 @@ manuscript .m-header p {
 /* insert a dinkus between scenes */
 #manuscript section.m-scene::after { content: var(--m-dinkus); }
 #manuscript section.m-scene:last-of-type::after { content: ""; }
+/* formatted as such */
+#manuscript section.m-scene::after,              /* scene separators: dinkus */
+#manuscript :not(section.m-scene) > h6 {    /*  both dinkus and -30- markers */
+    display: block;
+    font-size: var(--m-font-size-dinkus-30-);
+    font-weight: var(--m-font-weight-dinkus-30-);
+    font-family: var(--m-font-family-dinkus-30-);
+    text-align: center !important;
+    line-height: var(--m-line-spacing);
+    hyphens: var(--m-hyphens);
+    /*margin: 0; padding: 0;*/ border: 0;
+    /*margin-top: var(--m-elbow-room);*/
+}
+
 
 
 /*
@@ -318,9 +339,14 @@ manuscript .m-header p {
  */
 
 /* Align left/start all the prose */
+#manuscript blockquote :is(h1,h2,h3,h4,h5,h6),
+#manuscript section.m-scene :is(h1,h2,h3,h4,h5,h6),
 #manuscript blockquote p,
 #manuscript section.m-scene p {
+    display: block;
+    margin: 0; padding: 0; border: 0;
     text-align: var(--m-text-align);
+    line-height: var(--m-line-spacing);
     hyphens: var(--m-hyphens);
 }
 
@@ -333,7 +359,8 @@ manuscript .m-header p {
 }
 
 /* ... but not after certain classes/elements */
-#manuscript section > :is(h1,h2,h3,h4,h5,h6) ~ p:first-of-type,
+/*#manuscript section > :is(h1,h2,h3,h4,h5,h6) ~ p:first-of-type,*/
+#manuscript :is(h1,h2,h3,h4,h5,h6) + p,
 #manuscript :is(blockquote, section.m-scene) > p:first-of-type {
     text-indent: var(--m-indent-first-paragraph) !important;
     margin-top: 0;
