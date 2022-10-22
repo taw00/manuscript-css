@@ -144,6 +144,7 @@ html, body { background-color: rgba(0,0,0,0); }
     text-align: left;
 }
 
+#manuscript > .m-facts,
 #manuscript :not(section:is(.m-part,.m-chapter,.m-scene)) .m-facts {
     position: var(--m-position-facts);
     box-sizing: border-box; overflow: visible;
@@ -151,6 +152,24 @@ html, body { background-color: rgba(0,0,0,0); }
     left: var(--m-left-facts); right: var(--m-right-facts);
     margin: var(--m-margin-facts);
 }
+/* .m-facts in this position in the document is in error. */
+#manuscript.long > .m-facts::after {
+    display: block;
+    content: 'ERROR!!! \<div class="m-facts"\> should be located '
+             'inside the top-level .m-header block below the title and things';
+    color: red !important;
+    background-color: rgba(0,0,0,7%);
+    font-family: var(--m-fontstack-sans);
+    font-weight: bold;
+    width: 100%;
+    max-width: 65%;
+    margin: 0 auto; padding: 1em;
+    text-align: center;
+    border: 2px solid red;
+}
+
+
+#manuscript > .m-facts p,
 #manuscript :not(section:is(.m-part,.m-chapter,.m-scene)) .m-facts p {
     line-height: var(--m-line-spacing-facts);
     text-align: var(--m-text-align-facts);
