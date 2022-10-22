@@ -207,7 +207,7 @@ follow the steps above. It's not complicated.
   corner. If I can get that working (via JavaScript maybe?) I may be able to
   never leave markdown, even for submissions (assuming they accept PDF). I
   mention this again because it annoys me.
-- More options for the placement of `#m-facts`.
+- More options for the placement of `.m-facts`.
 
 ### My writer's workflow:
 
