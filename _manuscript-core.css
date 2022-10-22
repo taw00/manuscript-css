@@ -194,14 +194,19 @@ html, body { background-color: rgba(0,0,0,0); }
  * - Scenes: '#m-scene div.m-header' ... doesn't have to (and probably
      shouldn't) exist. */
 
-/* .m-header can never match the breadth of the prose */
 #manuscript .m-header {
-    font-size: var(--m-font-size);
-    font-weight: var(--m-font-weight);
-    font-family: var(--m-font-family);
+    font-size: var(--m-font-size-header);
+    font-weight: var(--m-font-weight-header);
+    font-family: var(--m-font-family-header);
     line-height: var(--m-line-spacing);
     margin: 0 auto;
+    /* .m-header can never match the breadth of the prose */
     width: 100%; max-width: var(--m-max-width-headers);
+}
+#manuscript section:is(.m-part, .m-chapter) > .m-header {
+    font-size: var(--m-font-size-headers);
+    font-weight: var(--m-font-weight-headers);
+    font-family: var(--m-font-family-headers);
 }
 
 /* place the manuscript title block 1/3rd or 5/12th down the page */

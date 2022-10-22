@@ -66,6 +66,7 @@
 
     /* line-height (line spacing) - singlespace and doublespace */
     --m-line-spacing-single: 1.25;
+    --m-line-spacing-single-plus: 1.5;
     --m-line-spacing-double: 2;
 
     /* first-line indent/inter-paragraph spacing - narrative & non-narrative */
@@ -146,7 +147,7 @@
      */
 
     --m-font-size:                16px; /* 16px = 12pt */
-    --m-font-size-preformatted:   1rem;
+    --m-font-size-preformatted:   inherit;
     --m-font-weight:              normal;
     --m-font-family:              var(--m-font-family-narrative);
     --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
@@ -167,8 +168,8 @@
     /* additional font settings - code and preformatted text */
     --m-font-size-code-inline: inherit;
     --m-font-weight-code-inline: inherit;
-    --m-font-weight-preformatted: var(--m-font-weight);
-    --m-line-spacing-preformatted: var(--m-line-spacing);
+    --m-font-weight-preformatted: inherit;
+    --m-line-spacing-preformatted: inherit;
     --m-font-weight-code: inherit;
     --m-line-spacing-code: inherit;
 
@@ -185,6 +186,16 @@
     --m-font-weight-contact:  var(--m-font-weight);
     --m-font-family-contact:  var(--m-font-family);
     --m-line-spacing-contact: var(--m-line-spacing-single);
+
+    /* font settings - the main title-block header */
+    --m-font-size-header: var(--m-font-size);
+    --m-font-size-headers: var(--m-font-size);
+    --m-font-weight-header: var(--m-font-weight);
+    --m-font-weight-headers: var(--m-font-weight);
+    --m-font-family-header: var(--m-font-family);
+    --m-font-family-headers: var(--m-font-family);
+
+    /* font settings - the main other headers */
 
     /* font settings - the main titles, subtitles, and authors */
     --m-font-size-title: var(--m-font-size-titles);
@@ -231,9 +242,9 @@
     --m-font-family-author-scene: var(--m-font-family);
 
     /* font settings - the epigraphs */
-    /*--m-font-size-epigraph: .8125rem;*/ /* 13px or ~9.75pt */
-    /*--m-font-size-epigraph: .8333rem;*/ /* ~13.33px or 10pt */
-    --m-font-size-epigraph: .9166rem; /* ~14.7px or 11pt */
+    /*--m-font-size-epigraph: .8125em;*/ /* 13px or ~9.75pt (if parent 16px) */
+    /*--m-font-size-epigraph: .8333em;*/ /* ~13.33px or 10pt */
+    --m-font-size-epigraph: .9166em; /* ~14.7px or 11pt */
     --m-font-weight-epigraph: var(--m-font-weight);
     --m-font-family-epigraph: var(--m-font-family);
     --m-font-style-epigraph: italic;
