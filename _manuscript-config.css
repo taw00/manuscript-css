@@ -108,7 +108,7 @@
     --m-offset-scene-short: var(--m-elbow-room);
     --m-offset-scene-long:  var(--m-elbow-room);
 
-    --m-max-width-m-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+    --m-max-width-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
 
     /* left and right margins - pre and blockquote */
     /*--m-margins-preformatted: var(--m-elbow-room);*/
@@ -180,11 +180,11 @@
      * This is insanely pedantic, I know.
      */
 
-    /* font settings - top-heading */
-    --m-font-size-top-heading:    var(--m-font-size);
-    --m-font-weight-top-heading:  var(--m-font-weight);
-    --m-font-family-top-heading:  var(--m-font-family);
-    --m-line-spacing-top-heading: var(--m-line-spacing-single);
+    /* font settings - contact info (and facts if put in the right corner */
+    --m-font-size-contact:    var(--m-font-size);
+    --m-font-weight-contact:  var(--m-font-weight);
+    --m-font-family-contact:  var(--m-font-family);
+    --m-line-spacing-contact: var(--m-line-spacing-single);
 
     /* font settings - the main titles, subtitles, and authors */
     --m-font-size-title: var(--m-font-size-titles);
@@ -250,10 +250,10 @@
      *   (.m-facts is an oddball container)
      */
 
-    /* font settings - .m-facts ... its pattern is a little different */
-    --m-font-size-facts-short:    var(--m-font-size);
-    --m-font-weight-facts-short:  var(--m-font-weight);
-    --m-font-family-facts-short:  var(--m-font-family);
+    /* font settings short/long - .m-facts */
+    --m-font-size-facts-short:    var(--m-font-size-contact);
+    --m-font-weight-facts-short:  var(--m-font-weight-contact);
+    --m-font-family-facts-short:  var(--m-font-family-contact);
     --m-line-spacing-facts-short: var(--m-line-spacing-single);
 
     --m-font-size-facts-long:    inherit;
@@ -267,8 +267,13 @@
     --m-bottom-facts:       var(--m-bottom-facts-short);
     --m-left-facts:         var(--m-left-facts-short);
     --m-right-facts:        var(--m-right-facts-short);
+
     --m-margin-facts:       var(--m-margin-facts-short);
     --m-text-align-facts:   var(--m-text-align-facts-short);
+
+    --m-font-size-facts:    var(--m-font-size-facts-short);
+    --m-font-weight-facts:  var(--m-font-weight-facts-short);
+    --m-font-family-facts:  var(--m-font-family-facts-short);
     --m-line-spacing-facts: var(--m-line-spacing-facts-short);
 
     /*
