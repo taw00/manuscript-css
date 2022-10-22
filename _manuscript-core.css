@@ -124,7 +124,7 @@ html, body { background-color: rgba(0,0,0,0); }
 	color: inherit; background-color: inherit;
 }
 /* Allow scroll bars in HTML view, but not in print view. */
-@media print { #manuscript pre > code { overflow-x: hidden; } 
+@media print { #manuscript pre > code { overflow-x: hidden; } }
 #manuscript :not(pre) > code {
     font-size: var(--m-font-size-code-inline);
     font-weight: var(--m-font-weight-code-inline);
