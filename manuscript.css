@@ -64,6 +64,7 @@
 #manuscript.non-narrative {
     --m-font-family: var(--m-font-family-non-narrative);
     --m-font-family-preformatted: var(--m-font-family-non-narrative-preformatted);
+    --m-font-family-code: var(--m-font-family-non-narrative-code);
     --m-indent: var(--m-indent-non-narrative);
     --m-paragraph-spacing: var(--m-paragraph-spacing-non-narrative);
 }

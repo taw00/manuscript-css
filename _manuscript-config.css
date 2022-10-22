@@ -59,8 +59,10 @@
     /* font-family - narrative and non-narrative */
     --m-font-family-narrative: var(--m-fontstack-serif);
     --m-font-family-non-narrative: var(--m-fontstack-serif);
-    --m-font-family-narrative-preformatted: var(--m-fontstack-mono);
-    --m-font-family-non-narrative-preformatted: var(--m-fontstack-mono);
+    --m-font-family-narrative-preformatted: inherit;
+    --m-font-family-non-narrative-preformatted: inherit;
+    --m-font-family-narrative-code: var(--m-fontstack-mono);
+    --m-font-family-non-narrative-code: var(--m-fontstack-mono);
 
     /* line-height (line spacing) - singlespace and doublespace */
     --m-line-spacing-single: 1.25;
@@ -109,7 +111,8 @@
     --m-max-width-m-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
 
     /* left and right margins - pre and blockquote */
-    --m-margins-preformatted: var(--m-elbow-room);
+    /*--m-margins-preformatted: var(--m-elbow-room);*/
+    --m-margins-preformatted: 0;
     --m-margins-blockquote:   calc(var(--m-indent-narrative) * 1.5);
 
     /* page breaks & simulated page breaks - short-form and long-form
@@ -147,6 +150,7 @@
     --m-font-weight:              normal;
     --m-font-family:              var(--m-font-family-narrative);
     --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
+    --m-font-family-code:         var(--m-font-family-narrative-code);
     --m-line-spacing:             var(--m-line-spacing-double);
 
     --m-indent:                 var(--m-indent-narrative);
@@ -160,11 +164,13 @@
     --m-offset-parts-and-chapters-render: var(--m-offset-parts-and-chapters-render-short);
     --m-offset-scene: var(--m-offset-scene-short);
 
-    /* additional font settings - preformatted text */
-    --m-font-size-preformatted-inline: inherit;
-    --m-font-weight-preformatted-inline: inherit;
+    /* additional font settings - code and preformatted text */
+    --m-font-size-code-inline: inherit;
+    --m-font-weight-code-inline: inherit;
     --m-font-weight-preformatted: var(--m-font-weight);
     --m-line-spacing-preformatted: var(--m-line-spacing);
+    --m-font-weight-code: inherit;
+    --m-line-spacing-code: inherit;
 
     /*
      * DEFAULTS
@@ -225,9 +231,12 @@
     --m-font-family-author-scene: var(--m-font-family);
 
     /* font settings - the epigraphs */
-    --m-font-size-epigraph: .8125rem;
+    /*--m-font-size-epigraph: .8125rem;*/ /* 13px or ~9.75pt */
+    /*--m-font-size-epigraph: .8333rem;*/ /* ~13.33px or 10pt */
+    --m-font-size-epigraph: .9166rem; /* ~14.7px or 11pt */
     --m-font-weight-epigraph: var(--m-font-weight);
     --m-font-family-epigraph: var(--m-font-family);
+    --m-font-style-epigraph: italic;
     --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
 
     /* font settings - the section separators (dinkus and -30-) */
