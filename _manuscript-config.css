@@ -106,6 +106,8 @@
     --m-offset-scene-short: var(--m-elbow-room);
     --m-offset-scene-long:  var(--m-elbow-room);
 
+    --m-max-width-m-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+
     /* left and right margins - pre and blockquote */
     --m-margins-preformatted: var(--m-elbow-room);
     --m-margins-blockquote:   calc(var(--m-indent-narrative) * 1.5);
@@ -118,7 +120,7 @@
     --m-page-break-simulated-short: 0;            /* faded lightgray */
     --m-page-break-simulated-long:  5px dashed rgba(211,211,211,50%);
 
-    /* the document facts (#m-facts) - short-form and long-form */
+    /* the document facts (.m-facts) - short-form and long-form */
     --m-position-facts-short: absolute;
     --m-top-facts-short:  0;     --m-bottom-facts-short: unset;
     --m-left-facts-short: unset; --m-right-facts-short:  0;
@@ -168,7 +170,7 @@
      * DEFAULTS
      * - per-component font-size, font-weight, font-family, and line-spacing
      *   Initially all are set to what was set above.
-     * - line spacing for #m-facts is thrown in here as well
+     * - line spacing for .m-facts is thrown in here as well
      * This is insanely pedantic, I know.
      */
 
@@ -226,6 +228,7 @@
     --m-font-size-epigraph: .8125rem;
     --m-font-weight-epigraph: var(--m-font-weight);
     --m-font-family-epigraph: var(--m-font-family);
+    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
 
     /* font settings - the section separators (dinkus and -30-) */
     --m-font-size-dinkus-30-: var(--m-font-size);
@@ -234,11 +237,11 @@
 
     /*
      * DEFAULTS
-     * - #m-facts font settings, line spacing, and postioning
-     *   (#m-facts is an oddball container)
+     * - .m-facts font settings, line spacing, and postioning
+     *   (.m-facts is an oddball container)
      */
 
-    /* font settings - #m-facts ... its pattern is a little different */
+    /* font settings - .m-facts ... its pattern is a little different */
     --m-font-size-facts-short:    var(--m-font-size);
     --m-font-weight-facts-short:  var(--m-font-weight);
     --m-font-family-facts-short:  var(--m-font-family);
@@ -249,7 +252,7 @@
     --m-font-family-facts-long:  inherit;
     --m-line-spacing-facts-long: inherit;
 
-    /* #m-facts settings */
+    /* .m-facts settings */
     --m-position-facts:     var(--m-position-facts-short);
     --m-top-facts:          var(--m-top-facts-short);
     --m-bottom-facts:       var(--m-bottom-facts-short);
