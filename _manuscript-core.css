@@ -252,13 +252,11 @@ html, body { background-color: rgba(0,0,0,0); }
     margin: 0; padding: 0; border: 0;
     text-align: center !important;
 }
-#manuscript .m-header > pre {              /* a bare pre in the .m-header? */
+#manuscript .m-header > pre {              /* a bare pre in an .m-header? */
     display: block;
     margin: 0 auto; padding: 0; border: 0;
-    width: max-content;
-    max-width: 100%;
-    font-size: inherit;
-    font-weight: inherit;
+    width: max-content; max-width: 100%;
+    font-size: inherit; font-weight: inherit;
     font-family: var(--m-font-family-preformatted);
     line-height: inherit;
 }
@@ -324,8 +322,7 @@ html, body { background-color: rgba(0,0,0,0); }
 }
 
 #manuscript .m-header > blockquote {                        /* the epigraphs */
-    width: max-content;
-    max-width: var(--m-max-width-epigraph);
+    width: max-content; max-width: var(--m-max-width-epigraph);
     margin: var(--m-elbow-room) auto;
     font-size: var(--m-font-size-epigraph);
     font-weight: var(--m-font-weight-epigraph);
