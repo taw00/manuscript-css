@@ -127,7 +127,7 @@ div.m-part::before, div.m-chapter::before, div.m-scene::before,
 #manuscript section.chapter > section.chapter::before,
 #manuscript section.scene > section.chapter::before,
 #manuscript section.scene > section.scene::before,
-#manuscript.long > .m-facts::before {
+#manuscript.long > .m-facts::after {
     display: block; z-index: 999; opacity: 1;
     /*position: absolute; box-sizing: border-box; overflow: visible;
     top: 20px; left: 20px;*/
@@ -136,8 +136,8 @@ div.m-part::before, div.m-chapter::before, div.m-scene::before,
     text-align: center;
     width: 100%; max-width: 65%;
     margin: 0 auto; padding: 1em; border: 2px solid red;
-    content: 'ERROR! Check your HTML. Either something should be a class when'
-             'it is an id, or something should be a section when it is a div.'
+    content: 'ERROR! Check your HTML. Either something should be a class when '
+             'it is an id, or something should be a section when it is a div. '
              'Or the reverse. Or some element.class or element.id is position '
              'inside of the wrong container.';
 }
