@@ -193,7 +193,9 @@ html, body { background-color: rgba(0,0,0,0); }
  * Wrap a <div class=".poetry"> around a <pre><code> (or ```plaintext in
  * markdown) and the fonts styles and behavior change a bit.
  */
-#manuscript :is(.poem,.poetry),
+#manuscript :is(.poem,.poetry) {
+    margin: 0; padding: 0; border: 0;
+}
 #manuscript :is(.poem,.poetry) :is(p,pre),
 #manuscript :is(.poem,.poetry) pre > code {
     white-space: pre-wrap; /* we wrap poetry */
@@ -302,21 +304,6 @@ html, body { background-color: rgba(0,0,0,0); }
     margin: 0; padding: 0; border: 0;
     text-align: center !important;
 }
-#manuscript .m-header > :is(pre,.poem,.poetry) {   /* poetry in an .m-header */
-    display: block;
-    margin: 0 auto; padding: 0; border: 0;
-    width: max-content; max-width: 100%;
-    font-size: inherit; font-weight: inherit;
-    line-height: inherit;
-}
-#manuscript .m-header > :is(pre) {                 /* a pre in an .m-header? */
-    font-family: var(--m-font-family-preformatted);
-}
-#manuscript .m-header > :is(.poem,.poetry),        /* poetry in an .m-header */
-#manuscript .m-header > :is(.poem,.poetry) :is(p,pre),
-#manuscript .m-header > :is(.poem,.poetry) pre > code {
-    font-family: var(--m-font-family-poetry);
-}
 #manuscript > .m-header > h1 {                           /* title: main work */
     font-size:   var(--m-font-size-title);
     font-weight: var(--m-font-weight-title);
@@ -378,7 +365,7 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-author-scene);
 }
 
-#manuscript .m-header > blockquote {                        /* the epigraphs */
+#manuscript .m-header > blockquote :not(pre,code) {         /* the epigraphs */
     width: max-content; max-width: var(--m-max-width-epigraph);
     margin: var(--m-elbow-room) auto;
     font-size:   var(--m-font-size-epigraph);
@@ -387,13 +374,11 @@ html, body { background-color: rgba(0,0,0,0); }
     font-style:  var(--m-font-style-epigraph);
     line-height: var(--m-line-spacing);
 }
-#manuscript .m-header > blockquote pre {                    /* the epigraphs */
-    font-family: var(--m-font-family-preformatted);
-}
-#manuscript .m-header > blockquote :is(.poem,.poetry),      /* the epigraphs */
-#manuscript .m-header > blockquote :is(.poem,.poetry) :is(p,pre),
-#manuscript .m-header > blockquote :is(.poem,.poetry) pre > code{
-    font-family: var(--m-font-family-poetry);
+#manuscript .m-header > :is(pre,.poem,.poetry) {  /* .m-headers pre & poetry */
+    margin: 0 auto; padding: 0; border: 0;
+    width: max-content; max-width: 100%;
+    font-size: inherit; font-weight: inherit;
+    line-height: inherit;
 }
 
 #manuscript .m-header > :first-child { margin-top: 0; }
