@@ -24,9 +24,9 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
 #manuscript {
     color: black !important;
     background-color: rgba(0,0,0,0);
-    font-family: var(--m-font-family);
     font-size:   1rem;
     font-weight: var(--m-font-weight);
+    font-family: var(--m-font-family);
     line-height: var(--m-line-spacing);
     /* -- future feature (still in a w3c draft)
     hyphenate-limit-chars: 6 3 2;
@@ -39,11 +39,11 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
 #manuscript *:not(hr,ol,ul,dl,menu,li,dt,dd) {
     margin: 0; padding: 0; border: 0;
 }
-#manuscript :is(p,pre,.poetry,.poem) {
+#manuscript :is(p,pre) {
     word-break: normal; overflow-wrap: break-word;
 }
 #manuscript hr {
-    /* because hr color is resistent to change apparently (a mystery for now) */
+    /* because hr color is resistent to change (a mystery for now) */
     color: black !important;
     border-color: black !important;
     border-top: 0;  border-bottom-width: 1px;
@@ -55,6 +55,24 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
     text-decoration: none;
 }
 #manuscript a:hover { border-bottom: solid var(--m-link-color) 2px; }
+
+/* 2 deep (or more) ordered lists use lower-latin (a, b, c, ...) */
+:is(ol, ul, menu) ol {
+  /*list-style-type: circle;*/
+  list-style-type: lower-latin;
+}
+/* 2 deep unordered lists use an endash */
+:is(ol, ul, menu) ul,
+:is(ol, ul, menu) menu {
+  /*list-style-type: circle;*/
+  list-style-type: "- ";
+}
+/* 3+ deep unordered lists use an endash - here to override defaults */
+:is(ol, ul, menu) :is(ol, ul, menu) ul,
+:is(ol, ul, menu) :is(ol, ul, menu) menu {
+  /*list-style-type: square;*/
+  list-style-type: "- ";
+}
 
 /* rendering to the screen
  * HTML and BODY are off-white. We add a pretty 3D virtual white page with
@@ -92,7 +110,42 @@ html, body { background-color: rgb(204,204,204); } /* off-white */
 html, body { background-color: rgba(0,0,0,0); }
 } /* /print */
 
-/* blockquote, pre, code, and .poem/.poetry
+/*
+ * fonts and spacing for all the sections and divs
+ */
+#manuscript #m-contact {
+    font-size:   var(--m-font-size-contact);
+    font-weight: var(--m-font-weight-contact);
+    font-family: var(--m-font-family-contact);
+    line-height: var(--m-line-spacing-contact);
+}
+#manuscript .m-header {
+    font-size:   var(--m-font-size-header);
+    font-weight: var(--m-font-weight-header);
+    font-family: var(--m-font-family-header);
+    line-height: var(--m-line-spacing);
+}
+#manuscript section:is(.m-part, .m-chapter) > .m-header {
+    font-size:   var(--m-font-size-headers);
+    font-weight: var(--m-font-weight-headers);
+    font-family: var(--m-font-family-headers);
+}
+#manuscript > .m-facts,
+#manuscript :not(section:is(.m-part,.m-chapter,.m-scene)) .m-facts {
+    font-size:   var(--m-font-size-facts);
+    font-weight: var(--m-font-weight-facts);
+    font-family: var(--m-font-family-facts);
+    line-height: var(--m-line-spacing-facts);
+}
+#manuscript section:is(.m-chapter,.m-scene) .m-facts {
+    font-size:   inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+
+/* blockquote, pre, code
  * These are often specifically styled by markdown editors to something other
  * than the browser default. So we have to be a bit more "explicit" when we
  * style them for our purposes. (See also _manuscript-style-reset.css)
@@ -106,8 +159,8 @@ html, body { background-color: rgba(0,0,0,0); }
     /* so many markdown tools manipulate these. overriding */
     padding: 0; background-color: inherit;
 }
-#manuscript :is(pre,.poem,.poetry) {
-    white-space: pre-wrap; /* we wrap pre and poetry, but not code */
+#manuscript :is(pre) {
+    white-space: pre-wrap; /* we wrap pre but not code */
     font-size:   var(--m-font-size-preformatted);
     font-weight: var(--m-font-weight-preformatted);
     font-family: var(--m-font-family-preformatted);
@@ -116,14 +169,8 @@ html, body { background-color: rgba(0,0,0,0); }
     /* so many markdown tools manipulate these. overriding */
 	color: inherit; background-color: inherit;
 }
-#manuscript :is(pre,.poem,.poetry) {
-    font-size:   var(--m-font-size-poetry);
-    font-weight: var(--m-font-weight-poetry);
-    font-family: var(--m-font-family-poetry);
-    line-height: var(--m-line-spacing-poetry);
-}
 #manuscript pre > code {
-    white-space: pre; /* we wrap pre and poetry, but not code */
+    white-space: pre; /* we wrap pre but not code */
     overflow-x: auto; /* allow scroll bars */
     font-size:   var(--m-font-size-code);
     font-weight: var(--m-font-weight-code);
@@ -142,14 +189,24 @@ html, body { background-color: rgba(0,0,0,0); }
     /* so many markdown tools manipulate these. overriding */
 	color: inherit; background-color: inherit;
 }
+/* .poem and .poetry (aliases for each other)
+ * Wrap a <div class=".poetry"> around a <pre><code> (or ```plaintext in
+ * markdown) and the fonts styles and behavior change a bit.
+ */
+#manuscript :is(.poem,.poetry),
+#manuscript :is(.poem,.poetry) :is(p,pre),
+#manuscript :is(.poem,.poetry) pre > code {
+    white-space: pre-wrap; /* we wrap poetry */
+    overflow-x: hidden; /* no scroll bars */
+    font-size:   var(--m-font-size-poetry);
+    font-weight: var(--m-font-weight-poetry);
+    font-family: var(--m-font-family-poetry);
+    line-height: var(--m-line-spacing-poetry);
+}
 
 #manuscript #m-contact {
     position: absolute; box-sizing: border-box; overflow: visible;
     top: 0px; left: 0px;
-    font-size:   var(--m-font-size-contact);
-    font-weight: var(--m-font-weight-contact);
-    font-family: var(--m-font-family-contact);
-    line-height: var(--m-line-spacing-contact);
 }
 #manuscript #m-contact p {
     text-align: left;
@@ -161,13 +218,8 @@ html, body { background-color: rgba(0,0,0,0); }
     box-sizing: border-box; overflow: visible;
     top: var(--m-top-facts); bottom: var(--m-bottom-facts);
     left: var(--m-left-facts); right: var(--m-right-facts);
-    font-size:   var(--m-font-size-facts);
-    font-weight: var(--m-font-weight-facts);
-    font-family: var(--m-font-family-facts);
-    line-height: var(--m-line-spacing-facts);
     margin: var(--m-margin-facts);
 }
-
 
 #manuscript > .m-facts p,
 #manuscript :not(section:is(.m-part,.m-chapter,.m-scene)) .m-facts p {
@@ -178,10 +230,6 @@ html, body { background-color: rgba(0,0,0,0); }
     margin: var(--m-room-for-two) auto 0;
 }
 #manuscript section:is(.m-chapter,.m-scene) .m-facts {
-    font-size:   inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    line-height: inherit;
     margin: 0 auto;
 }
 #manuscript section:is(.m-part,.m-chapter,.m-scene) .m-facts p {
@@ -201,18 +249,9 @@ html, body { background-color: rgba(0,0,0,0); }
      shouldn't) exist. */
 
 #manuscript .m-header {
-    font-size:   var(--m-font-size-header);
-    font-weight: var(--m-font-weight-header);
-    font-family: var(--m-font-family-header);
-    line-height: var(--m-line-spacing);
     margin: 0 auto;
     /* .m-header can never match the breadth of the prose */
     width: 100%; max-width: var(--m-max-width-headers);
-}
-#manuscript section:is(.m-part, .m-chapter) > .m-header {
-    font-size:   var(--m-font-size-headers);
-    font-weight: var(--m-font-weight-headers);
-    font-family: var(--m-font-family-headers);
 }
 
 /* place the manuscript title block 1/3rd or 5/12th down the page */
@@ -268,10 +307,14 @@ html, body { background-color: rgba(0,0,0,0); }
     margin: 0 auto; padding: 0; border: 0;
     width: max-content; max-width: 100%;
     font-size: inherit; font-weight: inherit;
-    font-family: var(--m-font-family-preformatted);
     line-height: inherit;
 }
-#manuscript .m-header > :is(.poem,.poetry) {       /* poetry in an .m-header */
+#manuscript .m-header > :is(pre) {                 /* a pre in an .m-header? */
+    font-family: var(--m-font-family-preformatted);
+}
+#manuscript .m-header > :is(.poem,.poetry),        /* poetry in an .m-header */
+#manuscript .m-header > :is(.poem,.poetry) :is(p,pre),
+#manuscript .m-header > :is(.poem,.poetry) pre > code {
     font-family: var(--m-font-family-poetry);
 }
 #manuscript > .m-header > h1 {                           /* title: main work */
@@ -347,7 +390,9 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript .m-header > blockquote pre {                    /* the epigraphs */
     font-family: var(--m-font-family-preformatted);
 }
-#manuscript .m-header > blockquote :is(.poem,.poetry) {     /* the epigraphs */
+#manuscript .m-header > blockquote :is(.poem,.poetry),      /* the epigraphs */
+#manuscript .m-header > blockquote :is(.poem,.poetry) :is(p,pre),
+#manuscript .m-header > blockquote :is(.poem,.poetry) pre > code{
     font-family: var(--m-font-family-poetry);
 }
 
@@ -523,24 +568,19 @@ html, body { background-color: rgba(0,0,0,0); }
  ***/
 
 @media print {
-    /* general page break behavior for print documents */
     a { break-inside: avoid !important; }
-
-    /*blockquote { break-inside: avoid !important; }
-    :is(pre,.poem,.poetry) { break-inside: avoid !important; }*/
 
     h1, h2, h3, h4, h5, h6 {
         break-inside: avoid !important;
         break-after: avoid !important;
     }
 
-    img {
+    img, figure {
         break-inside: avoid !important;
         break-after: avoid !important;
     }
 
     tr { break-inside: avoid !important; }
-    li { break-inside: avoid !important; }
 
 /*
  * god knows why, but these avoidance rules are not working
