@@ -609,8 +609,8 @@ html, body { background-color: rgba(0,0,0,0); }
 /* ************************************************************************* */
 /* * DEBUGGING TOOLS  ****************************************************** */
 /* ************************************************************************* */
-/* Stick these _immediately after_ <div id="manuscript" ...> in the markdown
- * or html to see that things are aligning as expected.
+/* Stick these _immediately after_ <article id="manuscript" ...> in the
+ * markdown or html to see that things are aligning as expected.
 <div class="debug-vhalf-marker"></div>
 <div class="debug-third-marker"></div>
 <div class="debug-5-12-marker"></div>
@@ -679,21 +679,28 @@ html, body { background-color: rgba(0,0,0,0); }
 /* * VALIDATION TESTS ****************************************************** */
 /* ************************************************************************* */
 
-/* checks for inverted section vs. div */
+/* checks for wrong element choice */
+section.m-header::before, section.m-facts::before,
+article.m-header::before, article.m-facts::before,
 section#vpage::before, section#manuscript::before, section#m-contact::before,
-section.m-header::before, sections.m-facts::before,
+article#vpage::before, div#manuscript::before, article#m-contact::before,
 div.m-part::before, div.m-chapter::before, div.m-scene::before,
+article.m-part::before, article.m-chapter::before, article.m-scene::before,
+
 /* checks for inverted id vs. class */
-.vpage::before, .manuscript::before, .m-contact::before,
 #m-header::before, #m-facts::before,
+.vpage::before, .manuscript::before, .m-contact::before,
 #m-part::before, #m-chapter::before, #m-scene::before,
+/* ... and in the #manuscript article */
 #manuscript#US::before, #manuscript#A4::before,
 #manuscript#short::before, #manuscript#long::before,
 #manuscript#narrative::before, #manuscript#non-narrative::before,
+
 /* checks for mutually exclusive class values */
 #manuscript.long.short::before, #manuscript.short.long::before,
 #manuscript.narrative.non-narrative::before, #manuscript.non-narrative.narrative::before,
 #manuscript.US.A4::before, #manuscript.A4.US::before,
+
 /* check for incorrect positioning  */
 #manuscript section.part > section.part::before, /* -- ALLOWED */
 #manuscript section.chapter > section.part::before,
@@ -703,8 +710,6 @@ div.m-part::before, div.m-chapter::before, div.m-scene::before,
 #manuscript section.scene > section.scene::before,
 #manuscript.long > .m-facts::after {
     display: block; z-index: 999; opacity: 1;
-    /*position: absolute; box-sizing: border-box; overflow: visible;
-    top: 20px; left: 20px;*/
     color: red !important; background-color: rgb(20,20,20) !important;
     font-family: var(--m-fontstack-sans); font-weight: bold;
     text-align: center;
@@ -715,47 +720,60 @@ div.m-part::before, div.m-chapter::before, div.m-scene::before,
              'Or the reverse. Or some element.class or element.id is position '
              'inside of the wrong container.';
 }
-/* checks for inverted section vs. div or id vs. class */
-section#vpage::before, section#manuscript::before, section#m-contact::before,
-.vpage::before, .manuscript::before, .m-contact::before {
-    position: relative; box-sizing: border-box; overflow: visible;
-    top: 1in; left: 1in;
-    content: 'ERROR! section vs. div or id vs. class mismatch in your HTML. '
-             'vpage, manuscript, and m-contact must be ids of div elements. '
-             '<div id="..." ...>';
-}
+/* checks for wrong element for our classes and IDs */
 section.m-header::before, section.m-facts::before,
-#m-header::before, #m-facts::before {
+article.m-header::before, article.m-facts::before,
+section#vpage::before, section#manuscript::before, section#m-contact::before,
+article#vpage::before, div#manuscript::before, article#m-contact::before,
+div.m-part::before, div.m-chapter::before, div.m-scene::before,
+article.m-part::before, article.m-chapter::before, article.m-scene::before {
+    content: 'ERROR! Element mismatch. vpage and m-contact should be IDs of '
+      'DIV elements. manuscript should be an ID of an ARTICLE element. '
+      'm-header and m-facts should be CLASSes of DIVs.'
+      'm-part, m-chapter, m-scene should be IDs of DIVs. ';
+}
+section#vpage::before, section#manuscript::before,
+article#vpage::before, div#manuscript::before {
     position: relative; box-sizing: border-box; overflow: visible;
     top: 1in; left: 1in;
-    content: 'ERROR! section vs. div or id vs. class mismatch in your HTML. '
-             'm-header and m-facts must be classes of div elements. '
-             '<div class="..." ...>';
-}
-div.m-part::before, div.m-chapter::before, div.m-scene::before,
-#m-part::before, #m-chapter::before, #m-scene::before {
-    content: 'ERROR! section vs. div or id vs. class mismatch in your HTML. '
-         'm-part, m-chapter, and m-scene must be classes of section elements. '
-         '<section class="..." ...>';
 }
 
-/* checks for inverted id vs. class in the #manuscript div element */
+/* checks for class/ID mismatch */
+#m-header::before, #m-facts::before,
+.vpage::before, .manuscript::before, .m-contact::before,
+#m-part::before, #m-chapter::before, #m-scene::before {
+    content: 'ERROR! class/id mismatch. vpage and m-contact should be IDs of '
+      'DIV elements. manuscript should be an ID of an ARTICLE element. '
+      'm-header and m-facts should be CLASSes of DIVs. '
+      'm-part, m-chapter, m-scene should be IDs of DIVs. ';
+}
+.manuscript::before {
+    position: relative; box-sizing: border-box; overflow: visible;
+    top: 1in; left: 1in;
+}
+
+/* checks for inverted id vs. class in the #manuscript article element */
 #manuscript#US::before, #manuscript#A4::before,
 #manuscript#short::before, #manuscript#long::before,
 #manuscript#narrative::before, #manuscript#non-narrative::before {
-    content: 'ERROR! id vs. class mismatch in your HTML. ';
-             'US, A4, short, long, narrative, and non-narrative must be '
-             'classes and not ids of the #manuscript div element. '
-             '<div id="manuscript" class="...">';
+    position: relative; box-sizing: border-box; overflow: visible;
+    top: 1in; left: 1in;
+    content: 'ERROR! class/id mismatch. '
+      'US, A4, short, long, narrative, and non-narrative should be CLASSes '
+      'of the #manuscript ARTICLE element. '
+      '<article id="manuscript class="...">';
 }
 
 /* checks for mutually exclusive class values */
 #manuscript.long.short::before, #manuscript.short.long::before,
 #manuscript.narrative.non-narrative::before, #manuscript.non-narrative.narrative::before,
 #manuscript.US.A4::before, #manuscript.A4.US::before {
+    position: relative; box-sizing: border-box; overflow: visible;
+    top: 1in; left: 1in;
     content: 'ERROR! mutually exclusive class values. '
-             'Class values for the #manuscript div element can include '
-             'A4 or US, short or long, narrative or non-narrative, not both';
+             'Class values for the #manuscript article element can include '
+             'A4 or US, short or long, narrative or non-narrative, not both '
+             'of each pairing.';
 }
 
 /* check for incorrect positioning  */
@@ -796,5 +814,3 @@ div.m-part::before, div.m-chapter::before, div.m-scene::before,
              '<div class="m-facts"> should be located inside the top-level '
              '.m-header block below the title and things';
 }
-
-

@@ -290,7 +290,8 @@ follow the steps above. It's not complicated.
 <style>
     @import "manuscript.css";
 </style>
-<div id="vpage"><div id="manuscript">
+<div id="vpage">
+<article id="manuscript">
 ... your manuscript ...
 ```
 
@@ -303,7 +304,8 @@ follow the steps above. It's not complicated.
     @import "manuscript.css";
     @page { size: A4 portrait; margin: 25.4mm; }
 </style>
-<div id="vpage"><div id="manuscript" class="A4 long non-narrative">
+<div id="vpage">
+<article id="manuscript" class="A4 long non-narrative">
 ... your manuscript ...
 ```
 
@@ -318,7 +320,8 @@ things are optional.
 <style>
     @import "manuscript.css";
 </style>
-<div id="vpage"><div id="manuscript">
+<div id="vpage">
+<article id="manuscript">
 
 <!-- suggested: contact name, address, email, phone -->
 <div id="m-contact">
@@ -414,6 +417,7 @@ Within this container, `h1` (`#` in markdown), `h2` (`##`), `h3`
 Literary Fiction
 
 </div>
+```
 
 **What's an epigraph you ask?** <https://en.wikipedia.org/wiki/Epigraph_(literature)>
 
@@ -482,7 +486,7 @@ Here are some general guidelines.
 #### Poetry!
 
 Poetry is beyond the scope of this project, but it is doable by designating the
-`.short` for the `#manuscript` div, setting `--m-indent` to 0 and managing
+`.short` for the `#manuscript` article, setting `--m-indent` to 0 and managing
 the physical layout of the poetry by hand. Markdown was not truly designed for
 stuff like this, but if you want to maintain all of your writing drafts in a
 single format, for example, it makes sense.
