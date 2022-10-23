@@ -365,14 +365,17 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-author-scene);
 }
 
-#manuscript .m-header > blockquote :not(pre,code) {         /* the epigraphs */
+#manuscript .m-header > blockquote {                        /* the epigraphs */
     width: max-content; max-width: var(--m-max-width-epigraph);
     margin: var(--m-elbow-room) auto;
+    line-height: var(--m-line-spacing);
+}
+#manuscript .m-header > blockquote :not(pre,code) {         /* the epigraphs */
+    /*text-align: justify; hyphens: auto;*/
     font-size:   var(--m-font-size-epigraph);
     font-weight: var(--m-font-weight-epigraph);
     font-family: var(--m-font-family-epigraph);
     font-style:  var(--m-font-style-epigraph);
-    line-height: var(--m-line-spacing);
 }
 #manuscript .m-header > :is(pre,.poem,.poetry) {  /* .m-headers pre & poetry */
     margin: 0 auto; padding: 0; border: 0;
@@ -601,6 +604,75 @@ html, body { background-color: rgba(0,0,0,0); }
 }
 } /* end @media print */
 
+
+
+/* ************************************************************************* */
+/* * DEBUGGING TOOLS  ****************************************************** */
+/* ************************************************************************* */
+/* Stick these _immediately after_ <div id="manuscript" ...> in the markdown
+ * or html to see that things are aligning as expected.
+<div class="debug-vhalf-marker"></div>
+<div class="debug-third-marker"></div>
+<div class="debug-5-12-marker"></div>
+<div class="debug-half-marker"></div>
+ */
+@media all {
+#debug-vhalf-marker,
+#debug-third-marker,
+#debug-5-12-marker,
+#debug-half-marker {
+    box-sizing: border-box;
+    text-indent: 0 !important;
+    border: 3px dashed red !important;
+}
+#debug-third-marker,
+#debug-5-12-marker,
+#debug-half-marker {
+    width: 100%;
+    border-left: none !important; border-right: none !important;
+    border-bottom: none !important;
+    border-color: rgba(0,0,255,35%) !important; /* blue, 35% */
+}
+/* splits the page in half vertically */
+#debug-vhalf-marker {
+    top: 0in;
+    width: 50%; height: var(--m-content-height);
+    border-left: none !important;
+    border-top: none !important; border-bottom: none !important;
+    border-color: rgba(0,0,255,35%) !important; /* blue, 35% */
+}
+/* 1/3 offset horizontal rule - always by content measure */
+#debug-third-marker {
+    top: var(--m-content-offset-1-3rd);
+}
+/* 5/12 offset horizontal rule - always by content measure */
+#debug-5-12-marker {
+    top: var(--m-content-offset-5-12th);
+    border-color: rgba(255,0,255,35%) !important; /* purple, 35% */
+}
+/* 1/2 offset horizontal rule - always by content measure */
+#debug-half-marker {
+    top: var(--m-content-offset-half);
+}
+} /* end media all */
+
+@media screen {
+#debug-vhalf-marker,
+#debug-third-marker,
+#debug-5-12-marker,
+#debug-half-marker {
+    position: absolute; z-index: 999; overflow: visible;
+}
+} /* end screen */
+
+@media print {
+#debug-vhalf-marker,
+#debug-third-marker,
+#debug-5-12-marker,
+#debug-half-marker {
+    position: fixed; z-index: 999; overflow: visible;
+}
+} /* end print */
 
 
 /* ************************************************************************* */
