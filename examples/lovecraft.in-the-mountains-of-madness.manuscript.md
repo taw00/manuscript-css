@@ -45,7 +45,7 @@ crawlingchaos@example.com
 ### by H.P. Lovecraft
 
 > A classic tale presented here as an example of a manuscript formatted as a
-> long-form narrative. In this example we are not using parts, only chapters,
+> long-form narrative. For this example we are not using parts, only chapters,
 > each with a single scene.
 
 <div class="m-facts">
