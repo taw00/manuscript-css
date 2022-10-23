@@ -59,10 +59,15 @@
     /* font-family - narrative and non-narrative */
     --m-font-family-narrative: var(--m-fontstack-serif);
     --m-font-family-non-narrative: var(--m-fontstack-serif);
-    --m-font-family-narrative-preformatted: inherit;
-    --m-font-family-non-narrative-preformatted: inherit;
+
+    --m-font-family-narrative-preformatted: var(--m-fontstack-mono);
+    --m-font-family-non-narrative-preformatted: var(--m-fontstack-mono);
+
     --m-font-family-narrative-code: var(--m-fontstack-mono);
     --m-font-family-non-narrative-code: var(--m-fontstack-mono);
+
+    --m-font-family-narrative-poetry: inherit;
+    --m-font-family-non-narrative-poetry: inherit;
 
     /* line-height (line spacing) - singlespace and doublespace */
     --m-line-spacing-single: 1.25;
@@ -147,11 +152,11 @@
      */
 
     --m-font-size:                16px; /* 16px = 12pt */
-    --m-font-size-preformatted:   inherit;
     --m-font-weight:              normal;
     --m-font-family:              var(--m-font-family-narrative);
     --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
     --m-font-family-code:         var(--m-font-family-narrative-code);
+    --m-font-family-poetry:       var(--m-font-family-narrative-poetry);
     --m-line-spacing:             var(--m-line-spacing-double);
 
     --m-indent:                 var(--m-indent-narrative);
@@ -165,13 +170,20 @@
     --m-offset-parts-and-chapters-render: var(--m-offset-parts-and-chapters-render-short);
     --m-offset-scene: var(--m-offset-scene-short);
 
-    /* additional font settings - code and preformatted text */
-    --m-font-size-code-inline: inherit;
-    --m-font-weight-code-inline: inherit;
-    --m-font-weight-preformatted: inherit;
+    /* additional font settings - pre, code, poetry */
+    --m-font-size-preformatted:    inherit;
+    --m-font-size-code:            inherit;
+    --m-font-size-code-inline:     inherit;
+    --m-font-size-poetry:          inherit;
+
+    --m-font-weight-preformatted:  inherit;
+    --m-font-weight-code:          inherit;
+    --m-font-weight-code-inline:   inherit;
+    --m-font-weight-poetry:        inherit;
+
     --m-line-spacing-preformatted: inherit;
-    --m-font-weight-code: inherit;
-    --m-line-spacing-code: inherit;
+    --m-line-spacing-code:         inherit;
+    --m-line-spacing-poetry:       inherit;
 
     /*
      * DEFAULTS
@@ -318,16 +330,14 @@
     /* default / typical -30- and dinkus markers
      * Note: for manuscript, the solitary # sign is the most typical/standard
      *       scene-break marker. --m-dinkus is automatically inserted between
-     *       scenes. --m--30- is not yet. */
-    --m--30--alt0: "The End";
-    --m--30--alt1: "# # #"
-    --m--30--alt2: "🙞 ❦ 🙜"
-    --m--30--alt3: "🙞  🙜"
-    --m--30--alt4: "- 30 -"
-    --m-dinkus-alt0: "#";
-    --m-dinkus-alt1: "* * *";
-    --m-dinkus-alt2: "⁂";
-    --m-dinkus-alt3: "❦"
-    --m-dinkus: var(--m-dinkus-alt0);
-    --m--30-: var(--m--30--alt0);
+     *       scenes. --m-30- is automatically inserted at the end. */
+    --m-marker1: "# # #";
+    --m-marker2: "* * *";
+    --m-marker3: "⁂";
+    --m-marker4: "❦";
+    --m-marker5: "🙞 ❦ 🙜";
+    --m-marker6: "🙞  🙜";
+    --m-marker7: "- 30 -";
+    --m-dinkus: "#";
+    --m-30-: "The End";
 }

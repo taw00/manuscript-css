@@ -104,6 +104,7 @@ body * {
 
 /*body { width: 100%; max-width: unset; }*/
 h1,h2,h3,h4,h5,h6,
+ol,ul,dl,menu,li,dt,dd,
 hr,
 blockquote, blockquote p,
 pre, code, p, q,
@@ -670,7 +671,8 @@ ol {
 
 li {
   display: list-item;
-  text-align: match-parent;
+  /*text-align: match-parent;*/
+  text-align: inherit;                                            /* my edit */
 }
 
 /* nested lists have no top/bottom margins */
