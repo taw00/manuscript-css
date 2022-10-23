@@ -1,6 +1,6 @@
 <!--
-Example: long-form narrative. In this example we are not using parts, only
-chapters, each with a single scene.
+Example: long-form narrative. In this example we are not using the HTML and
+CSS for story parts, only chapters, each with a single scene.
 
 The narrative for our example: HP Lovecraft's classic, _At the Mountains of
 Madness_. This text was adapted a transcriptin found on the fansite
@@ -20,7 +20,8 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 [//]: / "----------------------------------------------------------------------"
 
-<div id="vpage"><div id="manuscript" class="long narrative">
+<div id="vpage">
+<article id="manuscript" class="long narrative">
 
 <div id="m-contact">
 
@@ -43,14 +44,14 @@ crawlingchaos@example.com
 
 ### by H.P. Lovecraft
 
-> A classic tale presented here as an example of a long-form narrative formatted
-> manuscript. In this example we are not using parts, only chapters, each with a
-> single scene.
+> A classic tale presented here as an example of a manuscript formatted as a
+> long-form narrative. In this example we are not using parts, only chapters,
+> each with a single scene.
 
 <div class="m-facts">
 
-40,000 Words /
-Suspense Fiction  
+40,000 Words / Suspense Fiction
+
 *(draft rev. 193102)*
 
 </div>
@@ -704,11 +705,6 @@ At the time his shrieks were confined to the repetition of a single mad word of 
 *“Tekeli-li! Tekeli-li!”*
 
 </section></section>
-
-###### The End
-
-<section class="m-scene">
-</section>
-
-</div></div>
+</article>
+</div>
 
