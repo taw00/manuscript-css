@@ -317,10 +317,17 @@
 
     /* default / typical -30- and dinkus markers
      * Note: for manuscript, the solitary # sign is the most typical/standard
-     *       scene-break marker. */
-    --m--30-: "The End";    /* not used yet */
+     *       scene-break marker. --m-dinkus is automatically inserted between
+     *       scenes. --m--30- is not yet. */
+    --m--30--alt0: "The End";
+    --m--30--alt1: "# # #"
+    --m--30--alt2: "🙞 ❦ 🙜"
+    --m--30--alt3: "🙞  🙜"
+    --m--30--alt4: "- 30 -"
     --m-dinkus-alt0: "#";
     --m-dinkus-alt1: "* * *";
     --m-dinkus-alt2: "⁂";
+    --m-dinkus-alt3: "❦"
     --m-dinkus: var(--m-dinkus-alt0);
+    --m--30-: var(--m--30--alt0);
 }
