@@ -403,57 +403,98 @@ html, body { background-color: rgba(0,0,0,0); }
 
 /* PAGE BREAK LOGIC */
 
+/* OLD PRINT RULES */
 @media print {
-
 /* page break after a manuscript title block or part header */
+/* page break after a part */
+/* ...except for the last part */
+/* page break after a chapter */
+/* ...except for the last chapter */
+/*
 #manuscript > .m-header,
 #manuscript section.m-part > .m-header {
     break-after: var(--m-page-break);
 }
-/* page break after a part */
 #manuscript section.m-part {
     break-after: var(--m-page-break);
 }
-/* ...except for the last part */
 #manuscript section.m-part:last-of-type {
     break-after: avoid !important;
 }
-/* page break after a chapter */
 #manuscript section.m-chapter {
     break-after: var(--m-page-break);
 }
-/* ...except for the last chapter */
 #manuscript section.m-chapter:last-of-type {
-    /*break-after: unset !important;*/
     break-after: avoid !important;
 }
-
+*/
 } /* end of print rules */
 
+/* OLD SCREEN RULES */
 @media screen {
-
 /* page break (simulated) after a title or part header */
+/* page break after a part */
+/* ...except for the last part */
+/* page break (simulated) after a chapter */
+/* ...except for the last chapter */
+/*
 #manuscript > .m-header,
 #manuscript section.m-part > .m-header {
     border-bottom: var(--m-page-break-simulated);
 }
-/* page break after a part */
 #manuscript section.m-part {
     border-bottom: var(--m-page-break-simulated);
 }
-/* ...except for the last part */
 #manuscript section.m-part:last-of-type {
     border-bottom: var(--m-page-break-simulated);
 }
-/* page break (simulated) after a chapter */
 #manuscript section.m-chapter {
     border-bottom: var(--m-page-break-simulated);
 }
-/* ...except for the last chapter */
 #manuscript section.m-chapter:last-of-type {
     border-bottom: 0 !important;
 }
+*/
+} /* end of screen rules */
 
+/* NEW */
+@media print {
+#manuscript > .m-header {
+    break-after: var(--m-page-break);
+}
+#manuscript section.m-part > .m-header {
+    break-before: var(--m-page-break);
+}
+#manuscript section.m-chapter > .m-header {
+    break-before: var(--m-page-break);
+}
+#manuscript > .m-header + section > .m-header {
+    break-before: avoid;
+}
+/* don't create long-form documents that only have scenes. It's weird. But...*/
+#manuscript > .m-header + section.m-scene {
+    break-before: var(--m-page-break);
+}
+} /* end of print rules */
+
+/* NEW */
+@media screen {
+#manuscript > .m-header {
+    border-bottom: var(--m-page-break-simulated);
+}
+#manuscript section.m-part > .m-header {
+    border-top: var(--m-page-break-simulated);
+}
+#manuscript section.m-chapter > .m-header {
+    border-top: var(--m-page-break-simulated);
+}
+#manuscript > .m-header + section > .m-header {
+    border-top: unset;
+}
+/* don't create long-form documents that only have scenes. It's weird. But...*/
+#manuscript > .m-header + section.m-scene {
+    border-top: var(--m-page-break-simulated);
+}
 } /* end of screen rules */
 
 /* END PAGE BREAK LOGIC */
@@ -469,7 +510,8 @@ html, body { background-color: rgba(0,0,0,0); }
     /* general page break behavior for print documents */
     a { break-inside: avoid !important; }
 
-    blockquote { break-inside: avoid !important; }
+    /*blockquote { break-inside: avoid !important; }
+    pre { break-inside: avoid !important; }*/
 
     h1, h2, h3, h4, h5, h6 {
         break-inside: avoid !important;
@@ -481,8 +523,8 @@ html, body { background-color: rgba(0,0,0,0); }
         break-after: avoid !important;
     }
 
-    table, pre { break-inside: avoid !important; }
-    ul, ol, dl { break-before: avoid !important; }
+    tr { break-inside: avoid !important; }
+    li { break-inside: avoid !important; }
 
 /*
  * god knows why, but these avoidance rules are not working
