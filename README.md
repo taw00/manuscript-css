@@ -112,10 +112,21 @@ This requires you use the command line and to have Pandoc installed,
 
 1. Convert your markdown file to HTML (step 5)  
 
-_This example is using one of the documents from the examples folder._
+In this example (really only `-V` and `--metadata` are optional):
+
+- `-s` means standalone rendering
+- `-V lang=en` inserts the correct locale info in the HTML head element.
+  Change `en` to your locale.
+- `--no-highlight` means to not do any syntax highlighting.
+- `-f markdown-native_divs+raw_html` tells pandoc to trust our markup and not
+  "autofix" certain things (that then break our markdown).
+- `--metadata title...` sets the HTML title.
+- `-o filename.html` sets the output filename
 
 ```plaintext
-pandoc -s --no-highlight --metadata title="-" manuscript-long-story.md -o manuscript-long-story.html 
+pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
+  --metadata title="TITLE" \
+  -o lastname.TITLE.manuscript.html lastname.TITLE.manuscript.md
 ```
 
 2. Use your browser to review that HTML (step 6)
@@ -132,6 +143,10 @@ file://path-to-the-document/manuscript-long-story.html
 > dashed line where the page break would go, and skip the big margin all
 > together. When you go to export the document to PDF or to the printer, those
 > extra lines (and the manuscript border for that matter) will go away.
+
+NOTE: **Chrome-based browsers manage the fonts better for export to PDF.** So,
+I recommend using one of them for review and then export to PDF. This is one of
+the few times I recommend Chrome over Firefox.
 
 ## Rendering your markdown to PDF (step 9)
 
@@ -485,10 +500,23 @@ Here are some general guidelines.
 
 #### Poetry!
 
-Poetry is beyond the scope of this project, but it is doable by designating the
-`.short` for the `#manuscript` article, setting `--m-indent` to 0 and managing
-the physical layout of the poetry by hand. Markdown was not truly designed for
-stuff like this, but if you want to maintain all of your writing drafts in a
-single format, for example, it makes sense.
+WARNING: THIS WILL CHANGE
+
+If the entire document is poetry, I haven't added an ideal way to do that yet.
+If the idea is to insert a poem here and there, you can do this.
+
+```markdown
+
+<div class="poem">
+
+```plaintext
+Your
+   Poem
+       Here.
+```
+
+</div>
+```
 
 - <https://www.shunn.net/format/poetry/>
+- <https://www.masterclass.com/articles/how-to-format-and-submit-your-poetry-manuscript>
