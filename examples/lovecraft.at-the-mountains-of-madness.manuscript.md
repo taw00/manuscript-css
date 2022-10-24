@@ -7,15 +7,16 @@ Madness_. This text was adapted a transcriptin found on the fansite
 hplovecraft.com. It can be found here:
 https://www.hplovecraft.com/writings/texts/fiction/mm.aspx
 
-This file is . . .
-Copyright (c) Todd Warner <t0dd@protonmail.com> | <todd@toddwarner.io>
+(c) Copyright 2022 Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy
 of this license, visit http://creativecommons.org/licenses/by/4.0/
 -->
 
 <style>
-	/*@import "https://toddwarner.io/pub/css/manuscript/manuscript.css"*/
-	@import "../manuscript.css"
+    /*
+    @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
+    */
+    @import "../manuscript.css";
 </style>
 
 [//]: / "----------------------------------------------------------------------"
@@ -34,7 +35,6 @@ Providence, RI 02906
 401.555.1212
 
 crawlingchaos@example.com
-
 
 </div>
 
@@ -87,13 +87,17 @@ The last lap of the voyage was vivid and fancy-stirring, great barren peaks of m
  
 On the seventh of November, sight of the westward range having been temporarily lost, we passed Franklin Island; and the next day descried the cones of Mts. Erebus and Terror on Ross Island ahead, with the long line of the Parry Mountains beyond. There now stretched off to the east the low, white line of the great ice barrier; rising perpendicularly to a height of 200 feet like the rocky cliffs of Quebec, and marking the end of southward navigation. In the afternoon we entered McMurdo Sound and stood off the coast in the lee of smoking Mt. Erebus. The scoriac peak towered up some 12,700 feet against the eastern sky, like a Japanese print of the sacred Fujiyama; while beyond it rose the white, ghost-like height of Mt. Terror, 10,900 feet in altitude, and now extinct as a volcano. Puffs of smoke from Erebus came intermittently, and one of the graduate assistants—a brilliant young fellow named Danforth—pointed out what looked like lava on the snowy slope; remarking that this mountain, discovered in 1840, had undoubtedly been the source of Poe’s image when he wrote seven years later of
  
-<pre style="text-align: center;">
+<div class="poem" style="text-align: center;">
+
+```plaintext
 “—the lavas that restlessly roll
 Their sulphurous currents down Yaanek
 In the ultimate climes of the pole—
 That groan as they roll down Mount Yaanek
 In the realms of the boreal pole.”
-</pre>
+```
+
+</div>
  
 Danforth was a great reader of bizarre material, and had talked a good deal of Poe. I was interested myself because of the antarctic scene of Poe’s only long story—the disturbing and enigmatical *Arthur Gordon Pym*. On the barren shore, and on the lofty ice barrier in the background, myriads of grotesque penguins squawked and flapped their fins; while many fat seals were visible on the water, swimming or sprawling across large cakes of slowly drifting ice.
  
