@@ -1,0 +1,44 @@
+/* Croscore Cousine (Courier New metric equivalent)
+ *
+ * Interesting factoid: Liberation Mono is a 2012 fork of this.
+ *
+ * font-family: Cousine, monospace;
+ *
+ * https://fonts.google.com/specimen/Cousine
+ *
+ * (c) Copyright 2022 Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@font-face {
+  font-family: Cousine;
+  src: url("mono/woff2/Cousine/Cousine-Regular.woff2") format("woff2");
+  font-weight: normal; /* 400 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Cousine;
+  src: url("mono/woff2/Cousine/Cousine-Italic.woff2") format("woff2");
+  font-weight: normal; /* 400 */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Cousine;
+  src: url("mono/woff2/Cousine/Cousine-Bold.woff2") format("woff2");
+  font-weight: bold; /* 700 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Cousine;
+  src: url("mono/woff2/Cousine/Cousine-BoldItalic.woff2") format("woff2");
+  font-weight: bold; /* 700 */
+  font-style: italic;
+  font-display: swap;
+}

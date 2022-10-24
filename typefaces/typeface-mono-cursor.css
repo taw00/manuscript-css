@@ -1,0 +1,76 @@
+/* TeX Gyre Cursor (Courier New metric equivalent)
+ *
+ * font-family: "TeX Gyre Cursor", monospace;
+ *
+ * (c) Copyright 2022 Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+/* short family name */
+
+@font-face {
+    font-family: "Cursor";
+    src: url("mono/woff2/TeXGyreCursor/texgyrecursor-regular.woff2") format("woff2");
+    font-weight: normal; /* 400 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Cursor";
+    src: url("mono/woff2/TeXGyreCursor/texgyrecursor-italic.woff2") format("woff2");
+    font-weight: normal; /* 400 */
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Cursor";
+    src: url("mono/woff2/TeXGyreCursor/texgyrecursor-bold.woff2") format("woff2");
+    font-weight: bold; /* 700 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Cursor";
+    src: url("mono/woff2/TeXGyreCursor/texgyrecursor-bolditalic.woff2") format("woff2");
+    font-weight: bold; /* 700 */
+    font-style: italic;
+    font-display: swap;
+}
+
+/* full family name */
+
+@font-face {
+    font-family: "TeX Grye Cursor";
+    src: url("mono/woff2/TeXGyreCursor/texgyrecursor-regular.woff2") format("woff2");
+    font-weight: normal; /* 400 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TeX Grye Cursor";
+    src: url("mono/woff2/TeXGyreCursor/texgyrecursor-italic.woff2") format("woff2");
+    font-weight: normal; /* 400 */
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TeX Grye Cursor";
+    src: url("mono/woff2/TeXGyreCursor/texgyrecursor-bold.woff2") format("woff2");
+    font-weight: bold; /* 700 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TeX Grye Cursor";
+    src: url("mono/woff2/TeXGyreCursor/texgyrecursor-bolditalic.woff2") format("woff2");
+    font-weight: bold; /* 700 */
+    font-style: italic;
+    font-display: swap;
+}

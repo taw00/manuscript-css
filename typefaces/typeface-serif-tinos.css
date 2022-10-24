@@ -1,0 +1,44 @@
+/* Croscore Tinos (Times New Roman metric equivalent)
+ *
+ * Interesting factoid: Liberation Serif is a 2012 fork of this.
+ *
+ * font-family: Tinos, serif;
+ *
+ * https://fonts.google.com/specimen/Tinos
+ *
+ * (c) Copyright 2022 Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@font-face {
+  font-family: Tinos;
+  src: url("serif/woff2/Tinos/Tinos-Regular.woff2") format("woff2");
+  font-weight: normal; /* 400 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Tinos;
+  src: url("serif/woff2/Tinos/Tinos-Italic.woff2") format("woff2");
+  font-weight: normal; /* 400 */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Tinos;
+  src: url("serif/woff2/Tinos/Tinos-Bold.woff2") format("woff2");
+  font-weight: bold; /* 700 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Tinos;
+  src: url("serif/woff2/Tinos/Tinos-BoldItalic.woff2") format("woff2");
+  font-weight: bold; /* 700 */
+  font-style: italic;
+  font-display: swap;
+}

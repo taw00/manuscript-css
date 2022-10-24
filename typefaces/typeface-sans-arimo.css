@@ -1,0 +1,30 @@
+/* Croscore Arimo (Arial metric equivalent)
+ *
+ * Interesting factoid: Liberation Sans is a 2012 fork of this.
+ *
+ * font-family: Arimo, sans-serif;
+ *
+ * https://fonts.google.com/specimen/Arimo
+ *
+ * (c) Copyright 2022 Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@font-face {
+    font-family: Arimo;
+    src: url("sans/woff2/Arimo/Arimo-VariableFont_wght.woff2") format("woff2-variations");
+    font-weight: 1 999;
+    font-stretch: 1% 999%;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: Arimo;
+    src: url("sans/woff2/Arimo/Arimo-Italic-VariableFont_wght.woff2") format("woff2-variations");
+    font-weight: 1 999;
+    font-stretch: 1% 999%;
+    font-style: italic;
+    font-display: swap;
+}
+
