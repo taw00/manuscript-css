@@ -1,0 +1,252 @@
+/* Manuscript via CSS v2.0 — debug and validation
+ *
+ * These can be helpful in running down problems in your markdown. The first
+ * bunch (debugging tools) are really only useful if you are programing these
+ * style sheets, but the validation checks later in the document should flag
+ * some of the more egregious problems with your end document.
+ *
+ * Warning. If -f markdown-native_divs+raw_html is left off when using Pandoc
+ * from the command line when converting markdown to HTML, things may break.
+ * Pandoc will "smartly" flip a div to a section (in particular)
+ * <div class="m-header"> because they usually contain a title (implemented
+ * with a single #, i.e., <h1>). Pandoc thinks divs should be sections. I
+ * disagree. Anyway. To avoid any bad things happening, don't skip that -f
+ * option.
+ *
+ * How to use: Just import this stylesheet after you import `manuscript.css`
+ * That will flip on the validation checks to automatically trigger when you
+ * do something like ... trying to wrap a chapter within a scene or some such.
+ * You can also add a debug lines to see the center of the document, the 1/3rd
+ * marker, etc. Here's an example how to do that.
+ *
+ * <style>
+ *     @import "../manuscript.css";
+ *     @import "../manuscript-debug.css";
+ * </style>
+ * <div id="vpage">
+ * <article id="manuscript">
+ * <!-- I want to see where the 1/2 page mark is both vertically and
+ *      horizontally -->
+ * <div class="debug-vhalf-marker"></div>
+ * <div class="debug-half-marker"></div>
+ * . . . the rest of your document . . .
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+/* ************************************************************************* */
+/* * DEBUGGING TOOLS  ****************************************************** */
+/* ************************************************************************* */
+/* Stick these _immediately after_ <article id="manuscript" ...> in the
+ * markdown or html to see that things are aligning as expected.
+<div class="debug-vhalf-marker"></div>
+<div class="debug-third-marker"></div>
+<div class="debug-5-12-marker"></div>
+<div class="debug-half-marker"></div>
+ */
+@media all {
+#debug-vhalf-marker,
+#debug-third-marker,
+#debug-5-12-marker,
+#debug-half-marker {
+    box-sizing: border-box;
+    text-indent: 0 !important;
+    border: 3px dashed red !important;
+}
+#debug-third-marker,
+#debug-5-12-marker,
+#debug-half-marker {
+    width: 100%;
+    border-left: none !important; border-right: none !important;
+    border-bottom: none !important;
+    border-color: rgba(0,0,255,35%) !important; /* blue, 35% */
+}
+/* splits the page in half vertically */
+#debug-vhalf-marker {
+    top: 0in;
+    width: 50%; height: var(--m-content-height);
+    border-left: none !important;
+    border-top: none !important; border-bottom: none !important;
+    border-color: rgba(0,0,255,35%) !important; /* blue, 35% */
+}
+/* 1/3 offset horizontal rule - always by content measure */
+#debug-third-marker {
+    top: var(--m-content-offset-1-3rd);
+}
+/* 5/12 offset horizontal rule - always by content measure */
+#debug-5-12-marker {
+    top: var(--m-content-offset-5-12th);
+    border-color: rgba(255,0,255,35%) !important; /* purple, 35% */
+}
+/* 1/2 offset horizontal rule - always by content measure */
+#debug-half-marker {
+    top: var(--m-content-offset-half);
+}
+} /* end media all */
+
+@media screen {
+#debug-vhalf-marker,
+#debug-third-marker,
+#debug-5-12-marker,
+#debug-half-marker {
+    position: absolute; z-index: 999; overflow: visible;
+}
+} /* end screen */
+
+@media print {
+#debug-vhalf-marker,
+#debug-third-marker,
+#debug-5-12-marker,
+#debug-half-marker {
+    position: fixed; z-index: 999; overflow: visible;
+}
+} /* end print */
+
+
+/* ************************************************************************* */
+/* * VALIDATION TESTS ****************************************************** */
+/* ************************************************************************* */
+
+/* checks for wrong element choice
+ * REDUCING THE CHECKS -- pandoc converts .m-header from a div to a section
+ * because there is that overloaded # TITLE there. Grr. */
+/*section.m-header::before,*/ section.m-facts::before,
+article.m-header::before, article.m-facts::before,
+section#vpage::before, section#manuscript::before, section#m-contact::before,
+article#vpage::before, div#manuscript::before, article#m-contact::before,
+div.m-part::before, div.m-chapter::before, div.m-scene::before,
+article.m-part::before, article.m-chapter::before, article.m-scene::before,
+
+/* checks for inverted id vs. class */
+#m-header::before, #m-facts::before,
+.vpage::before, .manuscript::before, .m-contact::before,
+#m-part::before, #m-chapter::before, #m-scene::before,
+/* ... and in the #manuscript article */
+#manuscript#US::before, #manuscript#A4::before,
+#manuscript#short::before, #manuscript#long::before,
+#manuscript#narrative::before, #manuscript#non-narrative::before,
+
+/* checks for mutually exclusive class values */
+#manuscript.long.short::before, #manuscript.short.long::before,
+#manuscript.narrative.non-narrative::before, #manuscript.non-narrative.narrative::before,
+#manuscript.US.A4::before, #manuscript.A4.US::before,
+
+/* check for incorrect positioning  */
+/*#manuscript section.m-part >    section.m-part::before,*/ /* -- ALLOWED */
+#manuscript section.m-chapter > section.m-part::before,
+#manuscript section.m-scene >   section.m-part::before,
+#manuscript section.m-chapter > section.m-chapter::before,
+#manuscript section.m-scene >   section.m-chapter::before,
+#manuscript section.m-scene >   section.m-scene::before,
+#manuscript.long > .m-facts::after {
+    display: block; z-index: 999; opacity: 1;
+    color: red !important; background-color: rgb(20,20,20) !important;
+    font-family: var(--m-fontstack-sans); font-weight: bold;
+    text-align: center;
+    width: 100%; max-width: 65%;
+    margin: 0 auto; padding: 1em; border: 2px solid red;
+    content: 'ERROR! Check your HTML. Either something should be a class when '
+             'it is an id, or something should be a section when it is a div. '
+             'Or the reverse. Or some element.class or element.id is position '
+             'inside of the wrong container.';
+}
+/* checks for wrong element for our classes and IDs
+ * REDUCING THE CHECKS -- pandoc converts .m-header from a div to a section
+ * because there is that overloaded # TITLE there. Grr. */
+/*section.m-header::before,*/ section.m-facts::before,
+article.m-header::before, article.m-facts::before,
+section#vpage::before, section#manuscript::before, section#m-contact::before,
+article#vpage::before, div#manuscript::before, article#m-contact::before,
+div.m-part::before, div.m-chapter::before, div.m-scene::before,
+article.m-part::before, article.m-chapter::before, article.m-scene::before {
+    content: 'ERROR! Element mismatch. vpage and m-contact should be IDs of '
+      'DIV elements. manuscript should be an ID of an ARTICLE element. '
+      'm-header and m-facts should be CLASSes of DIVs. '
+      'm-part, m-chapter, m-scene should be CLASSes of SECTIONSs. ';
+}
+section#vpage::before, section#manuscript::before,
+article#vpage::before, div#manuscript::before {
+    position: relative; box-sizing: border-box; overflow: visible;
+    top: 1in; left: 1in;
+}
+
+/* checks for class/ID mismatch */
+#m-header::before, #m-facts::before,
+.vpage::before, .manuscript::before, .m-contact::before,
+#m-part::before, #m-chapter::before, #m-scene::before {
+    content: 'ERROR! class/id mismatch. vpage and m-contact should be IDs of '
+      'DIV elements. manuscript should be an ID of an ARTICLE element. '
+      'm-header and m-facts should be CLASSes of DIVs. '
+      'm-part, m-chapter, m-scene should be CLASSes of SECTIONSs. ';
+}
+.manuscript::before {
+    position: relative; box-sizing: border-box; overflow: visible;
+    top: 1in; left: 1in;
+}
+
+/* checks for inverted id vs. class in the #manuscript article element */
+#manuscript#US::before, #manuscript#A4::before,
+#manuscript#short::before, #manuscript#long::before,
+#manuscript#narrative::before, #manuscript#non-narrative::before {
+    position: relative; box-sizing: border-box; overflow: visible;
+    top: 1in; left: 1in;
+    content: 'ERROR! class/id mismatch. '
+      'US, A4, short, long, narrative, and non-narrative should be CLASSes '
+      'of the #manuscript ARTICLE element. '
+      '<article id="manuscript class="...">';
+}
+
+/* checks for mutually exclusive class values */
+#manuscript.long.short::before, #manuscript.short.long::before,
+#manuscript.narrative.non-narrative::before, #manuscript.non-narrative.narrative::before,
+#manuscript.US.A4::before, #manuscript.A4.US::before {
+    position: relative; box-sizing: border-box; overflow: visible;
+    top: 1in; left: 1in;
+    content: 'ERROR! mutually exclusive class values. '
+             'Class values for the #manuscript article element can include '
+             'A4 or US, short or long, narrative or non-narrative, not both '
+             'of each pairing.';
+}
+
+/* check for incorrect positioning  */
+/* allow this one
+#manuscript section.m-part > section.m-part::before {
+    content: 'ERROR! HTML container inside of the wrong container. '
+             '<section class="m-part"> should not be a child of another '
+             '<section class="m-part">.';
+}
+*/
+#manuscript section.m-chapter > section.m-part::before {
+    content: 'ERROR! HTML container inside of the wrong container. '
+             '<section class="m-part"> should not be a child of a '
+             '<section class="m-chapter">.';
+}
+#manuscript section.m-scene > section.m-part::before {
+    content: 'ERROR! HTML container inside of the wrong container. '
+             '<section class="m-part"> should not be a child of a '
+             '<section class="m-scene">.';
+}
+#manuscript section.m-chapter > section.m-chapter::before {
+    content: 'ERROR! HTML container inside of the wrong container. '
+             '<section class="m-chapter"> should not be a child of another '
+             '<section class="m-chapter">.';
+}
+#manuscript section.m-scene > section.m-chapter::before {
+    content: 'ERROR! HTML container inside of the wrong container. '
+             '<section class="m-chapter"> should not be a child of a '
+             '<section class="m-scene">.';
+}
+#manuscript section.m-scene > section.m-scene::before {
+    content: 'ERROR! HTML container inside of the wrong container. '
+             '<section class="m-scene"> should not be a child of another '
+             '<section class="m-scene">.';
+}
+
+/* ... we only really care about this error for long-form documents */
+#manuscript.long > .m-facts::after {
+    content: 'ERROR! HTML container inside of the wrong container. '
+             '<div class="m-facts"> should be located inside the top-level '
+             '.m-header block below the title and things';
+}
