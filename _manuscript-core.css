@@ -388,10 +388,19 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript .m-header > :last-child { margin-bottom: 0; }
 
 /* automated content for the dinkuses between scenes */
-#manuscript section.m-scene::after { content: var(--m-dinkus); }
+#manuscript section.m-scene::after {
+    content: var(--m-dinkus);
+    white-space: pre-wrap; /* enables funtional escaping in the escaping */
+    line-height: var(--m-line-spacing-single-plus);
+}
 #manuscript section.m-scene:last-of-type::after { content: ""; }
 /* automated content for the -30- marker at the end */
-#manuscript > section:is(.m-part,.m-chapter,.m-scene):last-of-type::after { content: var(--m-30-); }
+#manuscript > section:is(.m-part,.m-chapter,.m-scene):last-of-type::after {
+    content: var(--m-30-);
+    white-space: pre-wrap; /* enables funtional escaping in the escaping */
+    line-height: var(--m-line-spacing-single-plus);
+    margin-top: var(--m-elbow-room);
+}
 
 /* dinkus and -30- markers are formatted as such */
 #manuscript > h6,                        /* manually inserted top-level -30- */

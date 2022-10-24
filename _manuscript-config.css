@@ -2,9 +2,14 @@
  *
  * This contains all of the switches you can flip to massage the formatting of
  * your manuscript. To see what is available (and there are far too many
- * available, look for DEFAULTS below (starting around line number 130). Check
- * the example manuscripts in this repo, but, essentially, this
- * is how you override these settings. In your markdown, just add a :root {}
+ * available, look for DEFAULTS below (starting around line number 130).
+ *
+ * Warning: if you override any of these, please be aware that they are subject
+ * to change. Especially the more esoteric ones. Right now there are far to
+ * many and I aim to simpify them in the future.
+ *
+ * Check the example manuscripts in this repo, but, essentially, this is how
+ * you override these settings. In your markdown, just add a :root {}
  * section in your <style> section ... and redeclare variable.
 
 <style>
@@ -328,9 +333,14 @@
     --m-link-color: rgb(0,32,194);  /* Cobalt Blue */
 
     /* default / typical -30- and dinkus markers
-     * Note: for manuscript, the solitary # sign is the most typical/standard
-     *       scene-break marker. --m-dinkus is automatically inserted between
-     *       scenes. --m-30- is automatically inserted at the end. */
+     * Note1: for manuscript, the solitary # sign is the most typical/standard
+     *        scene-break marker. --m-dinkus is automatically inserted between
+     *        scenes. --m-30- is automatically inserted at the end.
+     * Note2: marker8 and marker9 are examples of how you could add copyright ©
+     *        and licensing info after the -30- marker.  Also, (a) you need to
+     *        use CSS escapes and (b) they eat one space following. \a is a
+     *        newline. \a9 is the copyright symbol For reference:
+     *          https://www.w3.org/International/questions/qa-escapes */
     --m-marker1: "# # #";
     --m-marker2: "* * *";
     --m-marker3: "⁂";
@@ -338,6 +348,9 @@
     --m-marker5: "🙞 ❦ 🙜";
     --m-marker6: "🙞  🙜";
     --m-marker7: "- 30 -";
+    /* the end with copyright additions */
+    --m-marker8: "The End \00000a \00000a  (c) ";
+    --m-marker9: "The End \00000a \00000a \0000a9  ";
     --m-dinkus: "#";
     --m-30-: "The End";
 }
