@@ -729,7 +729,7 @@ div.m-part::before, div.m-chapter::before, div.m-scene::before,
 article.m-part::before, article.m-chapter::before, article.m-scene::before {
     content: 'ERROR! Element mismatch. vpage and m-contact should be IDs of '
       'DIV elements. manuscript should be an ID of an ARTICLE element. '
-      'm-header and m-facts should be CLASSes of DIVs.'
+      'm-header and m-facts should be CLASSes of DIVs. '
       'm-part, m-chapter, m-scene should be IDs of DIVs. ';
 }
 section#vpage::before, section#manuscript::before,
