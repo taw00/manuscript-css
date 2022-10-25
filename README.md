@@ -1,7 +1,7 @@
 # Manuscript Formatting (CSS) for Markdown for Writers
 
-_Draft your novel or short story in markdown, then export to industry standard
-manuscript format._
+_Draft your novel or short story in markdown, then export it for review or
+presentation in an industry standard manuscript format._
 
 Are you a writer? In particular a narrative writer? Fiction, narrative
 nonfiction, memoir, personal narratives, etc.? Do you draft using a markdown
@@ -29,7 +29,20 @@ review.
 
 - Nuanced out-of-the-box customization.
 - No 'Lastname / Short Title / Page number' in the headers of page 2 and
-  onward. Not yet anyway.
+  onward. Not yet anyway. Waiting for
+  [margin at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
+  to be finally supported (currently a w3c working draft spec.) At the minimum,
+  page numbers make life easier for reviewers when giving feedback. One way to
+  do that is to use something like
+  [jPDF Tweak](https://jpdftweak.sourceforge.net/) (there are a lot of online
+  tools as well that do this). It has an ancient interface, but it works. You
+  just have to be OK with approximating the header placement and helvetica font
+  as your only choice. Look in the examples folder after I added manuscript
+  page headers to the Lovecraft story. This screenshot shows what I did to
+  enable it.
+
+  <a style="width: 25%; margin: 8px auto;" href="README-screenshot-jPDF-Tweak.png"><img src="README-screenshot-jPDF-Tweak.png"></a>
+
 - There is a bug with page breaking. The CSS is configured to disallow page
   breaking in weird places, like between a chapter title and the prose, but
   those rules are ignored. I don't know why.
