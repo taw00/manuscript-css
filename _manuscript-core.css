@@ -417,8 +417,6 @@ html, body { background-color: rgba(0,0,0,0); }
     /*margin-top: var(--m-elbow-room);*/
 }
 
-
-
 /*
  * The prose
  */
@@ -461,61 +459,6 @@ html, body { background-color: rgba(0,0,0,0); }
 
 /* PAGE BREAK LOGIC */
 
-/* OLD PRINT RULES */
-@media print {
-/* page break after a manuscript title block or part header */
-/* page break after a part */
-/* ...except for the last part */
-/* page break after a chapter */
-/* ...except for the last chapter */
-/*
-#manuscript > .m-header,
-#manuscript section.m-part > .m-header {
-    break-after: var(--m-page-break);
-}
-#manuscript section.m-part {
-    break-after: var(--m-page-break);
-}
-#manuscript section.m-part:last-of-type {
-    break-after: avoid !important;
-}
-#manuscript section.m-chapter {
-    break-after: var(--m-page-break);
-}
-#manuscript section.m-chapter:last-of-type {
-    break-after: avoid !important;
-}
-*/
-} /* end of print rules */
-
-/* OLD SCREEN RULES */
-@media screen {
-/* page break (simulated) after a title or part header */
-/* page break after a part */
-/* ...except for the last part */
-/* page break (simulated) after a chapter */
-/* ...except for the last chapter */
-/*
-#manuscript > .m-header,
-#manuscript section.m-part > .m-header {
-    border-bottom: var(--m-page-break-simulated);
-}
-#manuscript section.m-part {
-    border-bottom: var(--m-page-break-simulated);
-}
-#manuscript section.m-part:last-of-type {
-    border-bottom: var(--m-page-break-simulated);
-}
-#manuscript section.m-chapter {
-    border-bottom: var(--m-page-break-simulated);
-}
-#manuscript section.m-chapter:last-of-type {
-    border-bottom: 0 !important;
-}
-*/
-} /* end of screen rules */
-
-/* NEW */
 @media print {
 #manuscript > .m-header {
     break-after: var(--m-page-break);
@@ -529,13 +472,13 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript > .m-header + section > .m-header {
     break-before: avoid;
 }
-/* don't create long-form documents that only have scenes. It's weird. But...*/
+/* I don't recommend creating long-form documents that only have scenes.
+ * This is weird but in keeping with the pattern . . .*/
 #manuscript > .m-header + section.m-scene {
     break-before: var(--m-page-break);
 }
 } /* end of print rules */
 
-/* NEW */
 @media screen {
 #manuscript > .m-header {
     border-bottom: var(--m-page-break-simulated);
@@ -549,7 +492,8 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript > .m-header + section > .m-header {
     border-top: unset;
 }
-/* don't create long-form documents that only have scenes. It's weird. But...*/
+/* I don't recommend creating long-form documents that only have scenes.
+ * This is weird but in keeping with the pattern . . .*/
 #manuscript > .m-header + section.m-scene {
     border-top: var(--m-page-break-simulated);
 }
