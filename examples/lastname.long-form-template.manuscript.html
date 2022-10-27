@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Long-Form Template</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Long-Form Template</h1>
+</header>
+<!--
+Convert this to PDF (reference README.md on how to do that).
+
+This is a typical long-form manuscript: Chapters and scenes.
+
+(c) Copyright 2022 Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy
+of this license, visit http://creativecommons.org/licenses/by/4.0/
+-->
+<style>
+    /*
+    @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
+    @import "../manuscript.css";
+    @import "/home/todd/git/github/taw00/manuscript-css/manuscript.css";
+    */
+    @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
+
+    /* Examples of overloading some CSS variables. Uncomment the font-weight
+       variable to flip the title to bold. Uncomment the other to turn off the
+       dotted like page-break simulator when presenting the document on the
+       web. */
+    :root {
+        /*
+        --m-font-weight-title: bold;
+        --m-page-break-simulated-long: 0;
+        */
+    }
+</style>
+<div id="vpage">
+<article id="manuscript" class="long narrative">
+<div id="m-contact">
+<p>Firstname Lastname</p>
+<p>North Carolina Piedmont, USA</p>
+<p>firstname.lastname@example.com</p>
+<p>+1 555-555-1212</p>
+</div>
+<div class="m-header">
+<h1 id="manuscript-formatting-via-css-a-long-form-example-typical">Manuscript Formatting via CSS: A Long-Form Example (typical)</h1>
+<h2 id="chapter-and-scenes-and-a-mostly-compliant-manuscript">Chapter and Scenes and a (<em>mostly</em>) Compliant Manuscript</h2>
+<h3 id="by-author-name">by Author Name</h3>
+<blockquote>
+<p>This is an <a href="https://en.wikipedia.org/wiki/Epigraph_(literature)">epigraph</a>. Some stories, parts, chapters, and even scenes will kick off with an epigraph.</p>
+<div class="poem">
+<pre class="plaintext"><code>A dreamer is one who can only find his way by moonlight, and his
+punishment is that he sees the dawn before the rest of the world.
+                                                             Oscar Wilde, 1888</code></pre>
+</div>
+</blockquote>
+<div class="m-facts">
+<p>95,000 words</p>
+<p>Contemporary Fiction</p>
+<p>(<em>draft rev 20221024</em>)</p>
+</div>
+</div>
+<section class="m-chapter">
+<div class="m-header">
+<h1 id="chapter-1">Chapter 1</h1>
+</div>
+<section class="m-scene">
+<p>This document templates a long-form narrative that is divided into the more typical chapters and scenes (no parts). Most short stories are just a series of scenes. Most books-length (long-form) manuscripts are divided into chapters and scenes w/o parts. But some books are also divided into books or parts. Of the three components, only scenes are required. But here, we demo the long-form typical: chapters and scenes.</p>
+<p>Side note: the dotted lines in the HTML view are simulalated page breaks. They can be turned off by setting the <code>--m-page-break-simulated-long</code> to <code>0</code>. If you look in the <code>&lt;style&gt;...&lt;/style&gt;</code> block above, I have that commented out. Uncomment it to see the change. HTML doesn’t “page break” so we put in an indicator as an approximation of the behavior.</p>
+<p>The only time I turn off the page break similation is when I am sharing the document as an HTML page. I.e., when the HTML becomes the primary end artifact.</p>
+</section>
+<!-- end scene -->
+<section class="m-scene">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia neque ultricies erat ullamcorper, non semper ex molestie. Duis sed odio at mauris ornare imperdiet nec ac turpis. Praesent ac tristique nunc, nec sodales ante. Sed posuere, risus nec molestie suscipit, velit massa volutpat sem, nec elementum leo eros ac felis. Fusce luctus tincidunt libero, vitae eleifend neque iaculis a. Curabitur molestie lobortis gravida. In eget tincidunt erat.</p>
+<p>Curabitur at tellus ac sapien blandit ullamcorper. Etiam tortor sapien, dignissim vel tempor sagittis, efficitur eget magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque eleifend, nulla ac bibendum tristique, massa lacus tincidunt risus, finibus lacinia sem magna id leo. Ut porttitor nulla nisl, et dictum nisi efficitur a. Aliquam tellus nulla, faucibus a luctus id, vestibulum nec enim. Nulla egestas pellentesque porttitor. In ac mollis arcu. Etiam est nulla, faucibus et tellus nec, congue sagittis metus.</p>
+</section>
+<!-- end scene -->
+<section class="m-scene">
+<p>Nam pharetra fermentum lectus nec malesuada. Nulla facilisi. Pellentesque volutpat odio vitae sapien convallis hendrerit. Nunc eu tincidunt quam. Praesent at urna molestie, tincidunt mi vitae, dapibus nulla.</p>
+<p>Sed suscipit mauris in dolor faucibus, et tempus dui placerat. Nam ultricies, quam quis ultrices sollicitudin, neque augue dapibus diam, at sodales justo diam eu massa. Duis id ex vitae sem tempus auctor non at est. Aenean ullamcorper orci vel massa volutpat hendrerit. Phasellus dui ex, efficitur in elementum a, efficitur auctor ipsum. Aenean sit amet nisi eu nibh imperdiet efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.</p>
+</section>
+<!-- end scene -->
+</section>
+<!-- end chapter -->
+<section class="m-chapter">
+<div class="m-header">
+<h1 id="chapter-2">Chapter 2</h1>
+</div>
+<section class="m-scene">
+<p>Only one scene for chapter 2 because I think you get the idea.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a placerat lorem, a sagittis risus. Curabitur erat risus, congue in lacinia ac, viverra molestie tellus. Morbi convallis velit non sem venenatis consectetur. Nam congue posuere magna nec vulputate. Donec sodales nisl id mi fringilla elementum. Donec in feugiat mauris, quis laoreet lorem. Suspendisse non mi velit.</p>
+<p>Nunc sed massa lacinia, accumsan est at, laoreet neque. Integer vestibulum eget eros eu molestie. Quisque facilisis molestie elit at suscipit. Cras et felis tortor. Morbi mi libero, luctus ut scelerisque at, cursus ac ex. Proin tristique ligula sed neque dapibus, quis fermentum dui faucibus. In consectetur sapien non rhoncus fermentum. Etiam sit amet leo dolor. Donec eget velit cursus mauris suscipit mattis ac sit amet purus.</p>
+</section>
+<!-- end scene -->
+</section>
+<!-- end chapter -->
+<section class="m-chapter">
+<div class="m-header">
+<h1 id="epilogue">Epilogue</h1>
+</div>
+<section class="m-scene">
+<p>You get the idea. I am ending this manuscript with this scene.</p>
+<p>Also, did you notice the <code>#</code> <a href="https://en.wikipedia.org/wiki/Dinkus">dinkuses</a> between the scenes? And the <code>The End</code> at the end? That’s a typographical marker called a <a href="https://en.wikipedia.org/wiki/-30-">-30-</a>. You can turned them off or change them by redefining CSS variabbles <code>--m-dinkus</code> and <code>--m-30-</code>. For example, set <code>--m-dinkus</code> to an empty string <code>""</code> to turn it off and set <code>--m-30-</code> to “La Fin” just because you think your critique readers reviewers will be impressed with your French.</p>
+</section>
+<!-- scene -->
+</section>
+<!-- chapter -->
+</article>
+<!-- manuscript -->
+</div>
+<pre><code> &lt;!-- vpage --&gt;</code></pre>
+</body>
+</html>
