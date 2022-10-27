@@ -10,7 +10,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 -->
 
 <style>
-	/*
+    /*
     @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
     */
     @import "../manuscript.css";

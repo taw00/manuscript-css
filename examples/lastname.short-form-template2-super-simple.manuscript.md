@@ -14,7 +14,6 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
     */
     @import "../manuscript.css";
-    
 
     /* Examples of overloading some CSS variables. Uncomment the font-weight
        variable to flip the title to bold. Uncomment the other to make a fancy

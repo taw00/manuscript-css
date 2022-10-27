@@ -24,6 +24,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-mono-cursor.css";
     @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-mono-cousine.css";
     ...or...
+    */
     @import "../manuscript.css";
     @import "../manuscript-counters.css";
     @import "../typefaces/typeface-serif-termes.css";
@@ -31,16 +32,6 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import "../typefaces/typeface-sans-arimo.css";
     @import "../typefaces/typeface-mono-cursor.css";
     @import "../typefaces/typeface-mono-cousine.css";
-    @import "/home/todd/git/github/taw00/manuscript-css/manuscript.css";
-    @import "/home/todd/git/github/taw00/manuscript-css/manuscript-counters.css";
-    */
-    @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
-    @import "https://toddwarner.io/pub/css/manuscript/manuscript-counters.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-serif-termes.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-serif-tinos.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-sans-arimo.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-mono-cursor.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-mono-cousine.css";
 
     /* Examples of overloading some CSS variables. Uncomment the font-weight
        variable to flip the title to bold. Uncomment the other to make a fancy
