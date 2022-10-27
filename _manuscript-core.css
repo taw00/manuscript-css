@@ -238,20 +238,14 @@ html, body { background-color: rgba(0,0,0,0); }
     text-align: center;
 }
 
-/* per-component top margins
- * Formatting notes -- (these assertions need to be retested)
- * - '#manuscript div.m-header' must always exist in the document.
- *   This block contains the manuscript title and whatnot.
- * - Parts: if there are multiple parts, '#m-part div.m-header'
- *   must exist for each part.
- * - Chapters: if there are multiple chapters '#m-part div.m-header'
-     must exist for each chapter. If this is a long-form manuscript,
-     this formatting CSS expects chapters.
- * - Scenes: '#m-scene div.m-header' ... doesn't have to (and probably
-     shouldn't) exist. */
 
+/* per-component page-breaks and top margins
+ * (actually, top-padding because page-breaks seem to sometimes act like 
+ * border and margins sometime get applied before the page break? At least that
+ * is what I think was happened at times.).
+ */
 #manuscript .m-header {
-    margin: 0 auto;
+    margin: 0 auto; padding: 0;
     /* .m-header can never match the breadth of the prose */
     width: 100%; max-width: var(--m-max-width-headers);
 }
@@ -261,18 +255,53 @@ html, body { background-color: rgba(0,0,0,0); }
     margin: var(--m-offset-title) auto var(--m-room-for-two);
 }
 
+@media screen {
+#manuscript > .m-header {
+    border-bottom: var(--m-page-break-simulated);
+}
 /* part and chapter top margins (may be large (long) or small (short))
  * But only if they have a title block, otherwise, it's assumed no margin */
-#manuscript section:is(.m-part, .m-chapter) > .m-header {
-    margin-top: var(--m-offset-parts-and-chapters-render) !important;
+#manuscript section.m-part > .m-header {
+    border-top: var(--m-page-break-simulated);
+    padding-top: var(--m-offset-parts-render) !important;
 }
+#manuscript section.m-chapter > .m-header {
+    border-top: var(--m-page-break-simulated);
+    padding-top: var(--m-offset-chapters-render) !important;
+}
+#manuscript > .m-header + section > .m-header {
+    border-top: unset;
+}
+/* I don't recommend creating long-form documents that only have scenes.
+ * This is weird but in keeping with the pattern . . .*/
+#manuscript > .m-header + section.m-scene {
+    border-top: var(--m-page-break-simulated);
+}
+} /* END SCREEN */
+
 @media print {
+#manuscript > .m-header {
+    break-after: var(--m-page-break);
+}
 /* part and chapter top margins (may be large (long) or small (short))
  * But only if they have a title block, otherwise, it's assumed no margin */
-#manuscript section:is(.m-part, .m-chapter) > .m-header {
-    margin-top: var(--m-offset-parts-and-chapters) !important;
+#manuscript section.m-part > .m-header {
+    break-before: var(--m-page-break);
+    padding-top: var(--m-offset-parts) !important;
 }
+#manuscript section.m-chapter > .m-header {
+    break-before: var(--m-page-break);
+    padding-top: var(--m-offset-chapters) !important;
 }
+#manuscript > .m-header + section > .m-header {
+    break-before: avoid;
+}
+/* I don't recommend creating long-form documents that only have scenes.
+ * This is weird but in keeping with the pattern . . .*/
+#manuscript > .m-header + section.m-scene {
+    break-before: var(--m-page-break);
+}
+} /* END PRINT */
 
 /* scenes: small margin betwen scenes and whatever precedes */
 #manuscript section.m-scene {
@@ -304,32 +333,32 @@ html, body { background-color: rgba(0,0,0,0); }
     margin: 0; padding: 0; border: 0;
     text-align: center !important;
 }
-#manuscript > .m-header > h1 {                           /* title: main work */
+#manuscript > .m-header > h1 {                          /* title of the work */
     font-size:   var(--m-font-size-title);
     font-weight: var(--m-font-weight-title);
     font-family: var(--m-font-family-title);
 }
-#manuscript > .m-header > h2 {                        /* subtitle: main work */
+#manuscript > .m-header > h2 {                       /* subtitle of the work */
     font-size:   var(--m-font-size-subtitle);
     font-weight: var(--m-font-weight-subtitle);
     font-family: var(--m-font-family-subtitle);
 }
-#manuscript > .m-header > h3 {                          /* author: main work */
+#manuscript > .m-header > h3 {                         /* author of the work */
     font-size:   var(--m-font-size-author);
     font-weight: var(--m-font-weight-author);
     font-family: var(--m-font-family-author);
 }
-#manuscript > section.m-part > .m-header > h1 {               /* title: part */
+#manuscript section.m-part > .m-header > h1 {                 /* title: part */
     font-size:   var(--m-font-size-title-part);
     font-weight: var(--m-font-weight-title-part);
     font-family: var(--m-font-family-title-part);
 }
-#manuscript > section.m-part > .m-header > h2 {            /* subtitle: part */
+#manuscript section.m-part > .m-header > h2 {              /* subtitle: part */
     font-size:   var(--m-font-size-subtitle-part);
     font-weight: var(--m-font-weight-subtitle-part);
     font-family: var(--m-font-family-subtitle-part);
 }
-#manuscript > section.m-part > .m-header > h3 {            /* subtitle: part */
+#manuscript section.m-part > .m-header > h3 {              /* subtitle: part */
     font-size:   var(--m-font-size-author-part);
     font-weight: var(--m-font-weight-author-part);
     font-family: var(--m-font-family-author-part);
@@ -455,51 +484,6 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript :is(section.m-scene) > p:first-of-type {
     margin-top: 0;
 }
-
-
-/* PAGE BREAK LOGIC */
-
-@media print {
-#manuscript > .m-header {
-    break-after: var(--m-page-break);
-}
-#manuscript section.m-part > .m-header {
-    break-before: var(--m-page-break);
-}
-#manuscript section.m-chapter > .m-header {
-    break-before: var(--m-page-break);
-}
-#manuscript > .m-header + section > .m-header {
-    break-before: avoid;
-}
-/* I don't recommend creating long-form documents that only have scenes.
- * This is weird but in keeping with the pattern . . .*/
-#manuscript > .m-header + section.m-scene {
-    break-before: var(--m-page-break);
-}
-} /* end of print rules */
-
-@media screen {
-#manuscript > .m-header {
-    border-bottom: var(--m-page-break-simulated);
-}
-#manuscript section.m-part > .m-header {
-    border-top: var(--m-page-break-simulated);
-}
-#manuscript section.m-chapter > .m-header {
-    border-top: var(--m-page-break-simulated);
-}
-#manuscript > .m-header + section > .m-header {
-    border-top: unset;
-}
-/* I don't recommend creating long-form documents that only have scenes.
- * This is weird but in keeping with the pattern . . .*/
-#manuscript > .m-header + section.m-scene {
-    border-top: var(--m-page-break-simulated);
-}
-} /* end of screen rules */
-
-/* END PAGE BREAK LOGIC */
 
 
 
