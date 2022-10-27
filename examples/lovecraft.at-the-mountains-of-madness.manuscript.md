@@ -1,9 +1,13 @@
 <!--
-Example: long-form narrative. In this example we are not using the HTML and
-CSS for story parts, only chapters, each with a single scene.
+A real story of some length.
+
+This example:
+- long-form narrative.
+- no parts. Just chapters and scenes. But actuality ...
+- only one scene per chapter, which is rather common.
 
 The narrative for our example: HP Lovecraft's classic, _At the Mountains of
-Madness_. This text was adapted a transcriptin found on the fansite
+Madness_. This text was adapted a transcription found on the fansite
 hplovecraft.com. It can be found here:
 https://www.hplovecraft.com/writings/texts/fiction/mm.aspx
 
