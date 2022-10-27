@@ -75,8 +75,10 @@
 
 #manuscript.long {
     --m-offset-title: var(--m-offset-title-long);
-    --m-offset-parts-and-chapters: var(--m-offset-parts-and-chapters-long);
-    --m-offset-parts-and-chapters-render: var(--m-offset-parts-and-chapters-render-long);
+    --m-offset-parts: var(--m-offset-parts-long);
+    --m-offset-chapters: var(--m-offset-chapters-long);
+    --m-offset-parts-render: var(--m-offset-parts-render-long);
+    --m-offset-chapters-render: var(--m-offset-chapters-render-long);
     --m-offset-scene: var(--m-offset-scene-long);
 
     --m-page-break-simulated: var(--m-page-break-simulated-long);
