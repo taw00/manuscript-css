@@ -111,12 +111,16 @@
     --m-offset-title-short: var(--m-content-offset-5-12th);
     --m-offset-title-long:  var(--m-content-offset-5-12th);
 
-    --m-offset-parts-and-chapters-short: var(--m-room-for-two);
-    --m-offset-parts-and-chapters-long:  var(--m-offset-title-long);
-    --m-offset-parts-and-chapters-render-short: var(--m-room-for-two);
-    --m-offset-parts-and-chapters-render-long:  var(--m-room-for-two);
-
+    --m-offset-parts-short: var(--m-room-for-two);
+    --m-offset-parts-render-short: var(--m-room-for-two);
+    --m-offset-chapters-short: var(--m-room-for-two);
+    --m-offset-chapters-render-short: var(--m-room-for-two);
     --m-offset-scene-short: var(--m-elbow-room);
+
+    --m-offset-parts-long:  var(--m-offset-title-long);
+    --m-offset-parts-render-long:  var(--m-room-for-two);
+    --m-offset-chapters-long:  var(--m-offset-title-long);
+    --m-offset-chapters-render-long:  var(--m-room-for-two);
     --m-offset-scene-long:  var(--m-elbow-room);
 
     --m-max-width-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
@@ -171,8 +175,10 @@
     --m-text-align:             start;
 
     --m-offset-title: var(--m-offset-title-short);
-    --m-offset-parts-and-chapters: var(--m-offset-parts-and-chapters-short);
-    --m-offset-parts-and-chapters-render: var(--m-offset-parts-and-chapters-render-short);
+    --m-offset-parts: var(--m-offset-parts-short);
+    --m-offset-chapters: var(--m-offset-chapters-short);
+    --m-offset-parts-render: var(--m-offset-parts-render-short);
+    --m-offset-chapters-render: var(--m-offset-chapters-render-short);
     --m-offset-scene: var(--m-offset-scene-short);
 
     /* additional font settings - pre, code, poetry */
