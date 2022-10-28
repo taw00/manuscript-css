@@ -306,20 +306,6 @@ table[rules] {
   border-style: hidden;
 }
 
-  /* 'border' before 'frame' so 'frame' overrides
-      A border with a given value should, of course, pass that value
-      as the border-width in pixels -> attr mapping */
-
-  /* :-moz-table-border-nonzero is like [border]:not([border="0"]) except it
-     also checks for other zero-like values according to HTML attribute
-     parsing rules */
-/*
-table:-moz-table-border-nonzero {
-  border-width: thin;
-  border-style: outset;
-}
-*/
-
 table[frame] {
   border: thin hidden;
 }
@@ -337,21 +323,6 @@ table[frame="border"] { border-style: outset; }
 
 
 /* Internal Table Borders */
-
-  /* 'border' cell borders first */
-
-/*
-table:-moz-table-border-nonzero > * > tr > td,
-table:-moz-table-border-nonzero > * > tr > th,
-table:-moz-table-border-nonzero > * > td,
-table:-moz-table-border-nonzero > * > th,
-table:-moz-table-border-nonzero > td,
-table:-moz-table-border-nonzero > th
-{
-  border-width: thin;
-  border-style: inset;
-}
-*/
 
 /* collapse only if rules are really specified */
 table[rules]:not([rules="none"], [rules=""]) {
@@ -401,7 +372,6 @@ table[rules][rules="rows"] > * > tr {
   border-block-start-style: solid;
   border-block-end-style: solid;
 }
-
 
 table[rules][rules="cols"] > tr > td,
 table[rules][rules="cols"] > * > tr > td,
@@ -503,15 +473,6 @@ th {
   text-align: inherit;
 }
 
-/* Important: don't show these forms in HTML */
-/*
-tr > form:-moz-is-html, tbody > form:-moz-is-html,
-thead > form:-moz-is-html, tfoot > form:-moz-is-html,
-table > form:-moz-is-html {
-  display: none !important;
-}
-*/
-
 table[bordercolor] > tbody,
 table[bordercolor] > thead,
 table[bordercolor] > tfoot,
@@ -587,57 +548,6 @@ mark {
 /* titles */
 abbr[title], acronym[title] {
   text-decoration: dotted underline;
-}
-
-/* lists */
-
-ul, menu, dir {
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  padding-inline-start: 40px;
-}
-
-ul, ol, menu {
-  counter-reset: list-item;
-}
-
-ol {
-  display: block;
-  list-style-type: decimal;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  padding-inline-start: 40px;
-}
-
-li {
-  display: list-item;
-  text-align: match-parent;
-}
-
-/* nested lists have no top/bottom margins */
-:is(ul, ol, dir, menu, dl) ul,
-:is(ul, ol, dir, menu, dl) ol,
-:is(ul, ol, dir, menu, dl) dir,
-:is(ul, ol, dir, menu, dl) menu,
-:is(ul, ol, dir, menu, dl) dl {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-/* 2 deep unordered lists use a circle */
-:is(ol, ul, menu, dir) ul,
-:is(ol, ul, menu, dir) menu,
-:is(ol, ul, menu, dir) dir {
-  list-style-type: circle;
-}
-
-/* 3 deep (or more) unordered lists use a square */
-:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) ul,
-:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) menu,
-:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) dir {
-  list-style-type: square;
 }
 
 
