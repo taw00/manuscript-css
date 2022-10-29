@@ -35,7 +35,7 @@
  *   `--m-autotitle-tally-off` -- (default is ""/off) unset this if you want
  *       excessive information that includes the total cummulative counts for
  *       part, chapters, & scenes. I don't recommend using this.
- * 
+ *
  * Finally, Anywhere you want to see the automated enumeration of your
  * manuscript part, chapter, or scene, you simply add an `m-header` block to
  * the section of interest with a # included (title). The string will be added
