@@ -18,21 +18,73 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  *
  * The class "switches":
- * - 'US' & 'A4': US Letter is the default
- * - 'short' & 'long': a manuscript formatted for short prose is the default.
- * - 'narrative' & 'non-narrative': formatted for narrative prose is the
- *     default.
+ * - 'US' or 'A4': US Letter is the default
+ * - 'prose' or 'poetry': prose is the default.
+ * - 'short' or 'long': a manuscript formatted for short prose is the default.
+ * - 'narrative' or 'non-narrative': prose-only - formatted for narrative
+ *   prose is the default.
  *
  * To enable any of these formatting adjustments, just add the relevant
  * "switch" to the class attribute of the <div id="manuscript"> element in the
- * markdown document. 'A4' has one difference; you need to add an @page rule
- * after the CSS import call in the style block of the markdown.
+ * markdown document. Enabling 'A4' has one difference: you need to add an
+ * @page rule after the CSS import call in the style block of the markdown.
+ *
+ * What these mean:
+ *
+ * - US or A4: changes the dimensions of printed/paged output.
+ *
+ * - prose:
+ *     - text is left (for LtR languages) justified, ragged-edged, and white
+ *       space is squashed.
+ *     - narrative: first-line indented, no spaces between paragraphs
+ *     - non-narrative: first line flush, spaces between paragraphs
+ *
+ * - poetry:
+ *     - left justified (for LtR languages).
+ *     - each m-poem class + multiple ```plaintext stanzas are one poem.
+ *     - ```plaintext blocks are considered "stanzas" of poetry and are
+ *       - single- or 1.5-spaced (single-plus?) within each stanza
+ *       - and spaced between each stanza
+ *       - no white-space control otherwise
+ *     - top-margins are reduced in certain scenarios
+ *     - structure
+ *       - title page (same as prose)
+ *       - table of content page: .m-chapter.toc -> .m-scene
+ *       - the poems: empty .m-chapter -> .m-poem .m-poem .m-poem ...
+ *       - acknowledgements page: .m-chapter -> .m-scene
+ *
+ * - short:
+ *     - prose or poetry:
+ *       - contact info in the upper-left-hand corner
+ *       - facts are posted in the upper-right-hand corner
+ *     - prose structure:
+ *       - main title block is 1/3 to 1/2 way down the page
+ *       - text starts immediately following the main title block.
+ *       - parts and chapters do not page break.
+ *         Note, most short stories do not have chapters and I can't think of
+ *         a reason to have parts.
+ *     - poetry structure:
+ *       - one poem per document
+ *       - no main title block
+ *       - no parts, no chapters
+ *       - one scene with its own title block
+ *       - the scene is a scene of ```plaintext stanzas
+ *
+ * - long:
+ *     - prose or poetry:
+ *       - contact info in the upper-left-hand corner
+ *       - facts are posted below the title in the title block
+ *     - prose or poetry: main title block is 1/3 to 1/2 way down the page
+ *     - prose or poetry: part title block is 1/3 to 1/2 way down its own page
+ *     - prose: chapter title block is 1/3 to 1/2 way down a new page
+ *     - poetry: chapter title block is at the top of a new page
+ *     - prose or poetry: double spaced for any prose elements
+ *     - poetry: single or 1.5 (single-plus) spaced within each stanza and a
+ *       space between each stanza. No white-space control otherwise.
+ *
+ * - narrative: see prose description above
+ * - non-narrative: see prose description above
  */
-
-/* CSS layers not universally supported or honored by the various toolchains
- * yet. Commenting out for now. Probably for indefinately.
-@layer manuscript {
-*/
 
 @import "./_manuscript-core.css";
 
@@ -61,7 +113,7 @@
     /* the default is already set for .narrative */
 }
 
-#manuscript.non-narrative {
+#manuscript.non-narrative:not(.poetry) {
     --m-font-family: var(--m-font-family-non-narrative);
     --m-font-family-preformatted: var(--m-font-family-non-narrative-preformatted);
     --m-font-family-code: var(--m-font-family-non-narrative-code);
@@ -72,17 +124,38 @@
 #manuscript.short {
     /* the default is already set for .short */
 }
+#manuscript.poetry,
+#manuscript.short.poetry {
+    --m-offset-title: var(--m-offset-title-short-poetry);
+}
+#manuscript.short.poetry {
+    --m-offset-chapters: var(--m-offset-chapters-short-poetry);
+    --m-offset-chapters-render: var(--m-offset-chapters-short-poetry);
+}
+#manuscript.long.poetry {
+    --m-offset-chapters: var(--m-offset-chapters-long-poetry);
+    --m-offset-chapters-render: var(--m-offset-chapters-long-poetry);
+}
+#manuscript.poetry {
+    --m-font-family:  var(--m-font-family-poetry);
+    --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
+    --m-font-family-code: var(--m-font-family-narrative-code);
+    --m-font-family-title-poem:  var(--m-font-family-poetry);
+    --m-font-family-byline-poem: var(--m-font-family-poetry);
+    /* why no "The End" at the end of a poetry manuscript? I don't know, but
+     * that's the way it is. */
+    --m-30-: "";
+}
 
 #manuscript.long {
     --m-offset-title: var(--m-offset-title-long);
     --m-offset-parts: var(--m-offset-parts-long);
-    --m-offset-chapters: var(--m-offset-chapters-long);
     --m-offset-parts-render: var(--m-offset-parts-render-long);
+    --m-offset-chapters: var(--m-offset-chapters-long);
     --m-offset-chapters-render: var(--m-offset-chapters-render-long);
     --m-offset-scene: var(--m-offset-scene-long);
 
     --m-page-break-simulated: var(--m-page-break-simulated-long);
-    --m-break-after: unset;
 
     --m-position-facts:     var(--m-position-facts-long);
     --m-top-facts:          var(--m-top-facts-long);
@@ -102,6 +175,24 @@
 }
 } /* /print */
 
-
-/* layers not universally supported by the various toolchains, sadly
-}*/ /* end @layer manuscript */
+/* ********************************************************************* *
+ * special-case stylings
+ * ********************************************************************* */
+.foothang p {
+    /* hanging indent */
+    padding-left: var(--m-indent) !important;
+    text-indent:  calc(var(--m-indent) * -1) !important;
+}
+.center-max-content,
+.table-of-contents,
+.toc {
+    width: max-content !important;
+    margin-left: auto !important; margin-right: auto !important;
+}
+.force-break-before {
+    break-before: page !important;
+}
+.force-break-after {
+    break-after: page !important;
+}
+/* ********************************************************************* */

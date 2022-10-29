@@ -131,7 +131,7 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-headers);
 }
 #manuscript > .m-facts,
-#manuscript :not(section:is(.m-part,.m-chapter,.m-scene)) .m-facts {
+#manuscript :not(section) .m-facts {
     font-size:   var(--m-font-size-facts);
     font-weight: var(--m-font-weight-facts);
     font-family: var(--m-font-family-facts);
@@ -167,7 +167,7 @@ html, body { background-color: rgba(0,0,0,0); }
     line-height: var(--m-line-spacing-preformatted);
     margin: var(--m-elbow-room) var(--m-margins-preformatted);
     /* so many markdown tools manipulate these. overriding */
-	color: inherit; background-color: inherit;
+    color: inherit; background-color: inherit;
 }
 #manuscript pre > code {
     white-space: pre; /* we wrap pre but not code */
@@ -177,34 +177,62 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-code);
     line-height: var(--m-line-spacing-code);
     /* so many markdown tools manipulate these. overriding */
-	color: inherit; background-color: inherit;
+    color: inherit; background-color: inherit;
 }
 /* Allow scroll bars in HTML view, but not in print view. */
-@media print { #manuscript pre > code { overflow-x: hidden; } }
+@media print { #manuscript pre > code { overflow: hidden; } }
 #manuscript :not(pre) > code {
     font-size:   var(--m-font-size-code-inline);
     font-weight: var(--m-font-weight-code-inline);
     font-family: var(--m-font-family-code);
     white-space: inherit;
     /* so many markdown tools manipulate these. overriding */
-	color: inherit; background-color: inherit;
+    color: inherit; background-color: inherit;
 }
-/* .poem and .poetry (aliases for each other)
- * Wrap a <div class=".poetry"> around a <pre><code> (or ```plaintext in
- * markdown) and the fonts styles and behavior change a bit.
+
+/*
+ * The poetry
+ *
+ * This has to come before all the .m-header stuff.
+ *
+ * #manuscript.poetry: i.e., the whole document is poetry. A single poem
+ * manuscript (#manuscript.poetry.short) or a collection
+ * (#manuscript.poetry.long).
+ *
+ * section.m-poem: a similar container to section.m-scene. It houses a poem.
+ * A section.m-poem should have an .m-header container (with title) and then a
+ * series of ```plaintext ``` blocks, each representing a stanza of poetry.
+ *
+ * div.x-poem: a miscellaneous poem whereever in any document. Example, if an
+ * epigraph contained a poem, you'd encase it in this and ```plaintext blocks.
  */
-#manuscript :is(.poem,.poetry) {
+#manuscript .x-poem {
     margin: 0; padding: 0; border: 0;
 }
-#manuscript :is(.poem,.poetry) :is(p,pre),
-#manuscript :is(.poem,.poetry) pre > code {
+#manuscript .x-poem pre,
+#manuscript .x-poem pre > code,
+#manuscript section.m-poem pre,
+#manuscript section.m-poem pre > code {
     white-space: pre-wrap; /* we wrap poetry */
-    overflow-x: hidden; /* no scroll bars */
+    overflow:    hidden; /* no scroll bars */
     font-size:   var(--m-font-size-poetry);
     font-weight: var(--m-font-weight-poetry);
     font-family: var(--m-font-family-poetry);
     line-height: var(--m-line-spacing-poetry);
 }
+#manuscript .x-poem pre,
+#manuscript section.m-poem pre {
+    margin-bottom: var(--m-room-for-two);
+}
+#manuscript .x-poem pre:last-of-type,
+#manuscript section.m-poem pre:last-of-type {
+    margin-bottom: 0;
+}
+
+#manuscript section.m-poem > .m-header > h1 {
+    text-transform: uppercase;
+}
+
 
 #manuscript #m-contact {
     position: absolute; box-sizing: border-box; overflow: visible;
@@ -214,8 +242,7 @@ html, body { background-color: rgba(0,0,0,0); }
     text-align: left;
 }
 
-#manuscript > .m-facts,
-#manuscript :not(section:is(.m-part,.m-chapter,.m-scene)) .m-facts {
+#manuscript .m-facts {
     position: var(--m-position-facts);
     box-sizing: border-box; overflow: visible;
     top: var(--m-top-facts); bottom: var(--m-bottom-facts);
@@ -223,8 +250,7 @@ html, body { background-color: rgba(0,0,0,0); }
     margin: var(--m-margin-facts);
 }
 
-#manuscript > .m-facts p,
-#manuscript :not(section:is(.m-part,.m-chapter,.m-scene)) .m-facts p {
+#manuscript .m-facts p {
     text-align: var(--m-text-align-facts);
 }
 
@@ -237,45 +263,75 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript section:is(.m-part,.m-chapter,.m-scene) .m-facts p {
     text-align: center;
 }
+#manuscript section.m-poem .m-facts {
+    margin: 0;
+}
+#manuscript section.m-poem .m-facts p {
+    text-align: start;
+}
 
-
-/* per-component page-breaks and top margins
- * (actually, top-padding because page-breaks seem to sometimes act like 
- * border and margins sometime get applied before the page break? At least that
- * is what I think was happened at times.).
- */
-#manuscript .m-header {
+#manuscript > .m-header,
+#manuscript :not(.m-poem) > .m-header {
     margin: 0 auto; padding: 0;
-    /* .m-header can never match the breadth of the prose */
     width: 100%; max-width: var(--m-max-width-headers);
 }
 
-/* place the manuscript title block 1/3rd or 5/12th down the page */
+
+
+/*
+ * page-breaks, simulated page-breaks, page-positioning
+ * `padding` and `margin` juggling to avoid any margin-collapsing issues. And
+ * ensuring the simulated page breaks look more sensible.
+ */
+
+/* place the manuscript title block 1/3 to 5/12 down the page and center it */
 #manuscript > .m-header {
-    margin: var(--m-offset-title) auto var(--m-room-for-two);
+    margin: var(--m-offset-title) auto 0;
 }
 
 @media screen {
 #manuscript > .m-header {
+    padding-bottom: var(--m-room-for-two);
     border-bottom: var(--m-page-break-simulated);
 }
 /* part and chapter top margins (may be large (long) or small (short))
- * But only if they have a title block, otherwise, it's assumed no margin */
+ * But only if they have a title block, otherwise, it's assumed no margin and
+ * no page breake */
 #manuscript section.m-part > .m-header {
     border-top: var(--m-page-break-simulated);
-    padding-top: var(--m-offset-parts-render) !important;
+    margin-top: 1px;
+    padding-top: var(--m-offset-parts-render);
+    padding-bottom: var(--m-offset-parts-render);
+    margin-bottom: 1px;
+    border-bottom: var(--m-page-break-simulated);
 }
 #manuscript section.m-chapter > .m-header {
     border-top: var(--m-page-break-simulated);
-    padding-top: var(--m-offset-chapters-render) !important;
+    padding-top: var(--m-offset-chapters-render);
+    margin-top: 1px;
 }
-#manuscript > .m-header + section > .m-header {
+#manuscript.poetry section.m-poem {
+    border-top: var(--m-page-break-simulated);
+}
+/* a little padding between poems in this simulated scenario */
+#manuscript.long.poetry section.m-poem + section {
+    margin-top: var(--m-room-for-two);
+    padding-top: 1px;
+}
+
+#manuscript section.m-chapter > .m-header ~ section:first-of-type {
     border-top: unset;
 }
-/* I don't recommend creating long-form documents that only have scenes.
- * This is weird but in keeping with the pattern . . .*/
-#manuscript > .m-header + section.m-scene {
-    border-top: var(--m-page-break-simulated);
+/* We page-broke after the main title-block and after a part title-block
+ * (but only if either existed). Now we need to reel-back some things so that
+ * we don't double up page breaks. */
+#manuscript > .m-header ~ section:first-of-type,
+#manuscript > .m-header ~ section:first-of-type > .m-header {
+    border-top: unset;
+}
+#manuscript section.m-part > .m-header ~ section:first-of-type,
+#manuscript section.m-part > .m-header ~ section:first-of-type > .m-header {
+    border-top: unset;
 }
 } /* END SCREEN */
 
@@ -287,48 +343,79 @@ html, body { background-color: rgba(0,0,0,0); }
  * But only if they have a title block, otherwise, it's assumed no margin */
 #manuscript section.m-part > .m-header {
     break-before: var(--m-page-break);
-    padding-top: var(--m-offset-parts) !important;
+    margin-top: var(--m-offset-parts);
+    padding-top: 1px;
+    break-after: var(--m-page-break);
 }
 #manuscript section.m-chapter > .m-header {
     break-before: var(--m-page-break);
-    padding-top: var(--m-offset-chapters) !important;
+    margin-top: var(--m-offset-chapters);
+    padding-top: 1px;
 }
-#manuscript > .m-header + section > .m-header {
-    break-before: avoid;
-}
-/* I don't recommend creating long-form documents that only have scenes.
- * This is weird but in keeping with the pattern . . .*/
-#manuscript > .m-header + section.m-scene {
+#manuscript.poetry section.m-poem {
     break-before: var(--m-page-break);
+}
+#manuscript section.m-chapter > .m-header ~ section:first-of-type {
+    break-before: avoid-page;
+}
+
+/* We page-broke after the main title-block and after a part title-block
+ * (but only if either existed). Now we need to reel-back some things so that
+ * we don't double up page breaks. */
+#manuscript > .m-header ~ section:first-of-type,
+#manuscript > .m-header ~ section:first-of-type > .m-header {
+    break-before: avoid-page;
+}
+#manuscript section.m-part > .m-header ~ section:first-of-type,
+#manuscript section.m-part > .m-header ~ section:first-of-type > .m-header {
+    break-before: avoid-page;
 }
 } /* END PRINT */
 
+/* poems: small margin betwen chapters and scenes or poems */
+#manuscript section.m-chapter > .m-header ~ section:first-of-type {
+    padding-top: var(--m-offset-scene) !important;
+}
 /* scenes: small margin betwen scenes and whatever precedes */
 #manuscript section.m-scene {
-    margin-top: var(--m-offset-scene) !important;
+    padding-top: var(--m-offset-scene) !important;
 }
-/* the prose content:
+/* prose content:
  * small margin between prose content and a scene's title block if it exists */
 #manuscript section.m-scene > .m-header + * {
-    margin-top: var(--m-elbow-room) !important;
+    padding-top: var(--m-elbow-room) !important;
+}
+/* poetry content:
+ * small margin between poetry content and a poem's title block if it exists */
+#manuscript section.m-poem > .m-header + * {
+    padding-top: var(--m-elbow-room) !important;
 }
 
+
+
 /* Inside of an .m-header:
- * - H1 means title, H2 means subtitle, H3 means author
+ * - H1 means title, H2 means subtitle, H3 means byline author
  * - > (i.e. blockquote) means epigraph
  * - And finally, if you want you can wrap word count, audience, and genre
  *   in an .m-facts div.
  *
- * Outside of an .m-scene
+ * Outside of an .m-scene or .m-poem
  * - H6 represents a dinkus or a -30- marker
+ * - but we don't uses dinkuses between .m-poem sections.
+ *
+ * #manuscript.m-poetry ...
+ * - -30- marker is "" by default
  *
  * Inside of a .m-scene where all the prose goes, H1 through H6 means ...
  * header 1 through header 6 as you would expect. And the > (blockquote) also
  * works as you would expect there. */
 
-#manuscript .m-header > :is(h1, h2, h3, h4, h5, h6),     /* all header prose */
-#manuscript .m-header > p,
-#manuscript .m-header :not(blockquote,.m-facts) p {       /* except bq&facts */
+#manuscript > .m-header > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
+#manuscript > .m-header > p,
+#manuscript > .m-header :not(blockquote,.m-facts) p,      /* except bq&facts */
+#manuscript :not(section.m-poem) > .m-header > :is(h1, h2, h3, h4, h5, h6),
+#manuscript :not(section.m-poem) > .m-header > p,
+#manuscript :not(section.m-poem) > .m-header :not(blockquote,.m-facts) p {
     display: block;
     margin: 0; padding: 0; border: 0;
     text-align: center !important;
@@ -344,9 +431,9 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-subtitle);
 }
 #manuscript > .m-header > h3 {                         /* author of the work */
-    font-size:   var(--m-font-size-author);
-    font-weight: var(--m-font-weight-author);
-    font-family: var(--m-font-family-author);
+    font-size:   var(--m-font-size-byline);
+    font-weight: var(--m-font-weight-byline);
+    font-family: var(--m-font-family-byline);
 }
 #manuscript section.m-part > .m-header > h1 {                 /* title: part */
     font-size:   var(--m-font-size-title-part);
@@ -359,9 +446,9 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-subtitle-part);
 }
 #manuscript section.m-part > .m-header > h3 {              /* subtitle: part */
-    font-size:   var(--m-font-size-author-part);
-    font-weight: var(--m-font-weight-author-part);
-    font-family: var(--m-font-family-author-part);
+    font-size:   var(--m-font-size-byline-part);
+    font-weight: var(--m-font-weight-byline-part);
+    font-family: var(--m-font-family-byline-part);
 }
 #manuscript section.m-chapter > .m-header > h1 {           /* title: chapter */
     font-size:   var(--m-font-size-title-chapter);
@@ -374,24 +461,24 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-subtitle-chapter);
 }
 #manuscript section.m-chapter > .m-header > h3 {          /* author: chapter */
-    font-size:   var(--m-font-size-author-chapter);
-    font-weight: var(--m-font-weight-author-chapter);
-    font-family: var(--m-font-family-author-chapter);
+    font-size:   var(--m-font-size-byline-chapter);
+    font-weight: var(--m-font-weight-byline-chapter);
+    font-family: var(--m-font-family-byline-chapter);
 }
-#manuscript section.m-scene > .m-header > h1 {               /* title: scene */
-    font-size:   var(--m-font-size-title-scene);
-    font-weight: var(--m-font-weight-title-scene);
-    font-family: var(--m-font-family-title-scene);
-}
-#manuscript section.m-scene > .m-header > h2 {            /* subtitle: scene */
-    font-size:   var(--m-font-size-subtitle-scene);
-    font-weight: var(--m-font-weight-subtitle-scene);
-    font-family: var(--m-font-family-subtitle-scene);
-}
-#manuscript section.m-scene > .m-header > h3 {              /* author: scene */
-    font-size:   var(--m-font-size-author-scene);
-    font-weight: var(--m-font-weight-author-scene);
-    font-family: var(--m-font-family-author-scene);
+#manuscript section:is(.m-scene,.m-poem) > .m-header > h1 {  /* title: scene */
+    font-size:   var(--m-font-size-title-poem);
+    font-weight: var(--m-font-weight-title-poem);
+    font-family: var(--m-font-family-title-poem);
+}                                                  /* subtitle: scene & poem */
+#manuscript section:is(.m-scene,.m-poem) > .m-header > h2 {
+    font-size:   var(--m-font-size-subtitle-poem);
+    font-weight: var(--m-font-weight-subtitle-poem);
+    font-family: var(--m-font-family-subtitle-poem);
+}                                             /* author byline: scene & poem */
+#manuscript section:is(.m-scene,.m-poem) > .m-header > h3 {
+    font-size:   var(--m-font-size-byline-poem);
+    font-weight: var(--m-font-weight-byline-poem);
+    font-family: var(--m-font-family-byline-poem);
 }
 
 #manuscript .m-header > blockquote {                        /* the epigraphs */
@@ -406,11 +493,8 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-epigraph);
     font-style:  var(--m-font-style-epigraph);
 }
-#manuscript .m-header > :is(pre,.poem,.poetry) {  /* .m-headers pre & poetry */
-    margin: 0 auto; padding: 0; border: 0;
-    width: max-content; max-width: 100%;
+#manuscript .m-header > :is(pre,.x-poem) {          /* .m-headers pre&poetry */
     font-size: inherit; font-weight: inherit;
-    line-height: inherit;
 }
 
 #manuscript .m-header > :first-child { margin-top: 0; }
@@ -423,15 +507,17 @@ html, body { background-color: rgba(0,0,0,0); }
     line-height: var(--m-line-spacing-single-plus);
 }
 #manuscript section.m-scene:last-of-type::after { content: ""; }
+
 /* automated content for the -30- marker at the end */
-#manuscript > section:is(.m-part,.m-chapter,.m-scene):last-of-type::after {
+#manuscript > section:is(.m-part,.m-chapter,.m-scene,.m-poem):last-of-type::after {
     content: var(--m-30-);
-    white-space: pre-wrap; /* enables funtional escaping in the escaping */
+    white-space: pre-wrap; /* enables functional escaping in the string */
     line-height: var(--m-line-spacing-single-plus);
     margin-top: var(--m-elbow-room);
 }
 
-/* dinkus and -30- markers are formatted as such */
+/* dinkus and -30- markers are formatted as such
+ * Note. Poems don't have separators */
 #manuscript > h6,                        /* manually inserted top-level -30- */
 #manuscript > section:last-of-type::after,             /* auto-inserted -30- */
 #manuscript section.m-scene::after,                  /* auto-inserted dinkus */
@@ -444,6 +530,19 @@ html, body { background-color: rgba(0,0,0,0); }
     line-height: var(--m-line-spacing);
     /*margin: 0; padding: 0;*/ border: 0;
     /*margin-top: var(--m-elbow-room);*/
+}
+
+/*
+ * More poetry things.
+ */
+/* make stuff in a poem section that isn't poem stuff red and wrong */
+#manuscript section.m-poem > :not(.m-header) :not(pre,code) {
+    color: red !important;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+#manuscript section.m-poem .m-header :is(p, h1, h2, h3, h4, h5, h6) {
+    text-align: start;
 }
 
 /*
@@ -463,21 +562,23 @@ html, body { background-color: rgba(0,0,0,0); }
 }
 
 /* paragraph indentation / spacing for all the prose
- * (which one is enabled is determined by .narrative or .non-narrative) */
-#manuscript blockquote p,
-#manuscript section.m-scene p {
+ * (which one is enabled is determined by .narrative or .non-narrative)
+ * Note, the exclusions are pedantic. I am unsure why ol,ul,dl,menu,table
+ * wasn't enough to stop the styling here. */
+#manuscript blockquote > p,
+#manuscript blockquote :not(ol,ul,dl,menu,table) p,
+#manuscript section.m-scene:not(.foothang) > p,
+#manuscript section.m-scene:not(.foothang)
+                       :not(.m-header, ol,ul,dl,menu, li,dt,dd,
+                            table,thead,tbody,tfoot,th,tr,td,colgroup,col) p {
     text-indent: var(--m-indent);
     margin-top: var(--m-paragraph-spacing);
 }
-/* ... but undo that if the prose is in the scene header. */
-#manuscript section.m-scene .m-header p {
-    text-indent: unset;
-    margin-top: unset;
-}
 
 /* ... and treat paragraphs after certain classes/elements different */
-#manuscript :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure) + p,
-#manuscript :is(blockquote, section.m-scene) > p:first-of-type {
+#manuscript > :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure) + p,
+#manuscript :not(.foothang) :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure) + p,
+#manuscript :is(blockquote, section.m-scene:not(.foothang)) > p:first-of-type {
     text-indent: var(--m-indent-first-paragraph) !important;
 }
 #manuscript :is(h1,h2,h3,h4,h5,h6) + p,
@@ -487,56 +588,57 @@ html, body { background-color: rgba(0,0,0,0); }
 
 
 
-
 /***
  * PAGE BREAK AVOIDANCE RULES
  ***/
 
 @media print {
-    a { break-inside: avoid !important; }
+    a { break-inside: avoid-page !important; }
 
     h1, h2, h3, h4, h5, h6 {
-        break-inside: avoid !important;
-        break-after: avoid !important;
+        break-inside: avoid-page !important;
+        break-after: avoid-page !important;
     }
 
     img, figure {
-        break-inside: avoid !important;
-        break-after: avoid !important;
+        break-inside: avoid-page !important;
+        break-after: avoid-page !important;
     }
 
-    tr { break-inside: avoid !important; }
+    tr { break-inside: avoid-page !important; }
 
 /*
  * god knows why, but these avoidance rules are not working
  * ********************************************************
  */
 
+/* avoid-page page break inside a poem stanza */
+#manuscript .x-poem pre,
+#manuscript section.m-poem pre {
+    break-inside: avoid-page !important;
+}
+
 /* don't page break inside a title-block header */
-#manuscript :is(section.m-part,section.m-chapter,section.m-scene) > .m-header {
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
+#manuscript :is(section.m-part,section.m-chapter,
+                section.m-scene,section.m-poem) > .m-header {
+    break-inside: avoid-page !important;
 }
 /* don't page break after a chapter header or scene header */
 #manuscript :is(section.m-chapter,section.m-scene) > .m-header {
-    page-break-after: avoid !important;
-    break-after: avoid !important;
+    break-after: avoid-page !important;
 }
 /* don't page break before scene */
 #manuscript section.m-scene,
 #manuscript section.m-scene > .m-header {
-    page-break-before: avoid !important;
-    break-before: avoid !important;
+    break-before: avoid-page !important;
 }
 /* don't page break before a chapter header's or scene header's first child */
 #manuscript :is(section.m-chapter, section.m-scene) > .m-header + * {
-    page-break-before: avoid !important;
-    break-before: avoid !important;
+    break-before: avoid-page !important;
 }
 /* don't page break before a dinkus or -30- marker */
 #manuscript section.m-scene::after,
 #manuscript h6 {
-    page-break-before: avoid !important;
-    break-before: avoid !important;
+    break-before: avoid-page !important;
 }
 } /* end @media print */

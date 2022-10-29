@@ -20,7 +20,7 @@
      --m-font-family: "TeX Gyre Pagella", Palladio, Palantino, serif;
      --m-font-family-title: "Comic Neue", "Comic Sans", cursive;
      --m-font-family-subtitle: "Comic Neue", "Comic Sans", cursive;
-     --m-font-family-author: "Comic Neue", "Comic Sans", cursive;
+     --m-font-family-byline: "Comic Neue", "Comic Sans", cursive;
      --m-font-size-title: 1.5;
      --m-font-weight-title: bold;
      --m-font-weight-subtitle: medium;
@@ -71,8 +71,7 @@
     --m-font-family-narrative-code: var(--m-fontstack-mono);
     --m-font-family-non-narrative-code: var(--m-fontstack-mono);
 
-    --m-font-family-narrative-poetry: inherit;
-    --m-font-family-non-narrative-poetry: inherit;
+    --m-font-family-poetry: var(--m-fontstack-serif);
 
     /* line-height (line spacing) - singlespace and doublespace */
     --m-line-spacing-single: 1.25;
@@ -93,9 +92,13 @@
      * header anywhere from 1/3rd to 1/2 down the page. And if a long-form
      * manuscript the same holds true for part headers and chapter headers.
      * Don't override or redefine these. */
+    --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
+    --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
     --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
     --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
     --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
     --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
     --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
     --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
@@ -108,20 +111,23 @@
      * I'm being a bit more than pedantic here. And note: parts & chapters have
      * different settings for screen rendering & print. (We "simulate" for the
      * screen.) */
-    --m-offset-title-short: var(--m-content-offset-5-12th);
-    --m-offset-title-long:  var(--m-content-offset-5-12th);
+    --m-offset-title-short:        var(--m-content-offset-5-12th);
+    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
+    --m-offset-title-long:         var(--m-content-offset-5-12th);
 
-    --m-offset-parts-short: var(--m-room-for-two);
-    --m-offset-parts-render-short: var(--m-room-for-two);
-    --m-offset-chapters-short: var(--m-room-for-two);
+    --m-offset-parts-short:           var(--m-room-for-two);
+    --m-offset-parts-render-short:    var(--m-room-for-two);
+    --m-offset-chapters-short:        var(--m-room-for-two);
     --m-offset-chapters-render-short: var(--m-room-for-two);
-    --m-offset-scene-short: var(--m-elbow-room);
+    --m-offset-chapters-short-poetry: var(--m-room-for-two);
+    --m-offset-scene-short:           var(--m-elbow-room);
 
-    --m-offset-parts-long:  var(--m-offset-title-long);
-    --m-offset-parts-render-long:  var(--m-room-for-two);
-    --m-offset-chapters-long:  var(--m-offset-title-long);
-    --m-offset-chapters-render-long:  var(--m-room-for-two);
-    --m-offset-scene-long:  var(--m-elbow-room);
+    --m-offset-parts-long:           var(--m-offset-title-long);
+    --m-offset-parts-render-long:    var(--m-room-for-two);
+    --m-offset-chapters-long:        var(--m-offset-title-long);
+    --m-offset-chapters-render-long: var(--m-room-for-two);
+    --m-offset-chapters-long-poetry: 0;
+    --m-offset-scene-long:           var(--m-elbow-room);
 
     --m-max-width-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
 
@@ -194,7 +200,9 @@
 
     --m-line-spacing-preformatted: inherit;
     --m-line-spacing-code:         inherit;
-    --m-line-spacing-poetry:       inherit;
+    --m-line-spacing-poetry:       var(--m-line-spacing-single);
+
+    --m-text-transform-title-poetry: uppercase;
 
     /*
      * DEFAULTS
@@ -223,46 +231,57 @@
     /* font settings - the main titles, subtitles, and authors */
     --m-font-size-title: var(--m-font-size-titles);
     --m-font-size-subtitle: var(--m-font-size-subtitles);
-    --m-font-size-author: var(--m-font-size-authors);
+    --m-font-size-byline: var(--m-font-size-bylines);
 
     --m-font-weight-title: var(--m-font-weight-titles);
-    --m-font-weight-author: var(--m-font-weight-authors);
+    --m-font-weight-byline: var(--m-font-weight-bylines);
 
     --m-font-family-title: var(--m-font-family-titles);
-    --m-font-family-author: var(--m-font-family-authors);
+    --m-font-family-byline: var(--m-font-family-bylines);
 
     /* font settings - part titles, subtitles, and authors */
     --m-font-size-title-part: var(--m-font-size-title);
     --m-font-size-subtitle-part: var(--m-font-size-subtitle);
-    --m-font-size-author-part: var(--m-font-size-author);
+    --m-font-size-byline-part: var(--m-font-size-byline);
 
     --m-font-weight-title-part: var(--m-font-weight-title);
-    --m-font-weight-author-part: var(--m-font-weight-author);
+    --m-font-weight-byline-part: var(--m-font-weight-byline);
 
     --m-font-family-title-part: var(--m-font-family-title);
-    --m-font-family-author-part: var(--m-font-family-author);
+    --m-font-family-byline-part: var(--m-font-family-byline);
 
     /* font settings - chapter titles, subtitles, and authors */
     --m-font-size-title-chapter:    var(--m-font-size);
     --m-font-size-subtitle-chapter: var(--m-font-size);
-    --m-font-size-author-chapter:   var(--m-font-size);
+    --m-font-size-byline-chapter:   var(--m-font-size);
 
     --m-font-weight-title-chapter:  var(--m-font-weight);
-    --m-font-weight-author-chapter: var(--m-font-weight);
+    --m-font-weight-byline-chapter: var(--m-font-weight);
 
     --m-font-family-title-chapter:  var(--m-font-family);
-    --m-font-family-author-chapter: var(--m-font-family);
+    --m-font-family-byline-chapter: var(--m-font-family);
 
     /* font settings - scene titles, subtitles, and authors */
     --m-font-size-title-scene:    var(--m-font-size);
     --m-font-size-subtitle-scene: var(--m-font-size);
-    --m-font-size-author-scene:   var(--m-font-size);
+    --m-font-size-byline-scene:   var(--m-font-size);
 
     --m-font-weight-title-scene:  var(--m-font-weight);
-    --m-font-weight-author-scene: var(--m-font-weight);
+    --m-font-weight-byline-scene: var(--m-font-weight);
 
     --m-font-family-title-scene:  var(--m-font-family);
-    --m-font-family-author-scene: var(--m-font-family);
+    --m-font-family-byline-scene: var(--m-font-family);
+
+    /* font settings - poem titles, subtitles, and authors */
+    --m-font-size-title-poem:    var(--m-font-size);
+    --m-font-size-subtitle-poem: var(--m-font-size);
+    --m-font-size-byline-poem:   var(--m-font-size);
+
+    --m-font-weight-title-poem:  var(--m-font-weight);
+    --m-font-weight-byline-poem: var(--m-font-weight);
+
+    --m-font-family-title-poem:  var(--m-font-family-poetry);
+    --m-font-family-byline-poem: var(--m-font-family-poetry);
 
     /* font settings - the epigraphs */
     /*--m-font-size-epigraph: .8125em;*/ /* 13px or ~9.75pt (if parent 16px) */
@@ -293,7 +312,7 @@
     --m-font-size-facts-long:    inherit;
     --m-font-weight-facts-long:  inherit;
     --m-font-family-facts-long:  inherit;
-    --m-line-spacing-facts-long: inherit;
+    --m-line-spacing-facts-long: var(--m-line-spacing-single);
 
     /* .m-facts settings */
     --m-position-facts:     var(--m-position-facts-short);

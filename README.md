@@ -19,16 +19,16 @@ review.
 
 ### Supported formatting
 
-1. A generalized manuscript format for prose.
-2. US Letter- or A4-dimensioned artifacts.
-3. Short-form (e.g. short stories) and long-form (novel and book-sized) works.
-4. Narrative and non-narrative prose.
+1. A generalized manuscript format for prose (both narrative and non-narrative) and
+   for poetry
+3. Formatting to produce US Letter- or A4-dimensioned artifacts (PDFs)
+4. Short-form works (e.g. short stories or single-poem manuscripts) and long-form works (novel and book-sized / poetry chapbooks and collections)
 5. A lot of customization if you know your CSS.
 
 ## What this does not support
 
 - Nuanced out-of-the-box customization.
-- No 'Lastname / Short Title / Page number' in the headers of page 2 and
+- Prose: No `Lastname / Short Title / Page number` in the headers of page 2 and
   onward. Not yet anyway. Waiting for
   [margin at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
   to be finally supported (currently a w3c working draft spec.) At the minimum,
@@ -42,10 +42,13 @@ review.
   enable it.
 
   <a style="width: 25%; margin: 8px auto;" href="README-screenshot-jPDF-Tweak.png"><img src="README-screenshot-jPDF-Tweak.png"></a>
-
+- Poetry manuscripts don't have 2nd page+ of poem continuation blocks. Again,
+  maybe in a few years as CSS matures.
 - There is a bug with page breaking. The CSS is configured to disallow page
   breaking in weird places, like between a chapter title and the prose, but
-  those rules are ignored. I don't know why.
+  those rules are ignored. I don't know why. In `manuscript.css`, there
+  are some special-case stylings available to force the issue. Namely, the
+  classes `force-break-before` and `force-break-after`.
 
 > Just remember, when you submit to an editor, they will likely have very
 > specific requirements for the format of your manuscript. The rule is: submit
@@ -69,16 +72,20 @@ community.
 ## How do I construct a manuscript from my markdown document?
 
 **TL;DR:** check out the example manuscripts in this repository in their
-original markdown and as PDFs. Use the examples as a template for your own work.
+original markdown and then as PDFs. Use the examples as a template for your own work.
 And if you are already familiar with converting markdown to HTML to PDF then
 that should be enough to get you going.
 
 ## How? With more detail
 
-Process summary - very high level: (1) write your document in the prescribed
-structure, (2) convert it to HTML, and then (3) convert that to PDF.
+#### Process summary:
+(1) write your document in the prescribed structure, (2) convert it to HTML, and then (3) convert that to PDF.
 
-Process summary - a bit more detailed: 
+If you use [Joplin](https://joplinapp.org) for your markdown editing, you can
+skip step (2) and directly produce a PDF from within the application. Otherwise,
+you convert to HTML with Pandoc and then PDF via a browser.
+
+#### Process summary - a bit more detailed:
 
 0. Download this repository.
    - From the command line using `git`:
@@ -124,8 +131,7 @@ This requires you use the command line and to have Pandoc installed,
 <https://pandoc.org/>.
 
 1. Convert your markdown file to HTML (step 5)  
-
-In this example (really only `-V` and `--metadata` are optional):
+   In this example (really only `-V` and `--metadata` are optional):
 
 - `-s` means standalone rendering
 - `-V lang=en` inserts the correct locale info in the HTML head element.
@@ -133,7 +139,7 @@ In this example (really only `-V` and `--metadata` are optional):
 - `--no-highlight` means to not do any syntax highlighting.
 - `-f markdown-native_divs+raw_html` tells pandoc to trust our markup and not
   "autofix" certain things (that then break our markdown).
-- `--metadata title...` sets the HTML title.
+- `--metadata title="YOUR TITLE"` sets the HTML title.
 - `-o filename.html` sets the output filename
 
 ```plaintext
@@ -145,21 +151,16 @@ pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
 2. Use your browser to review that HTML (step 6)
 
 ```plaintext
-file://path-to-the-document/manuscript-long-story.html
+file:///fullpath-to-the-document/lastname.TITLE.manuscript.html
 ```
 
-> **A note about the HTML rendering of a long-form manuscript.**  
+> **A note about the HTML rendering of a long-form manuscript.**
 >
-> Manuscripts formatted for things like novels will page break for every
-> part and chapter and place their title blocks 1/3rd of the way down the page.
-> Well, you can't do that for regular screen output. Instead, I display a faint
-> dashed line where the page break would go, and skip the big margin all
-> together. When you go to export the document to PDF or to the printer, those
-> extra lines (and the manuscript border for that matter) will go away.
-
-NOTE: **Chrome-based browsers manage the fonts better for export to PDF.** So,
-I recommend using one of them for review and then export to PDF. This is one of
-the few times I recommend Chrome over Firefox.
+> By default, simulated page breaks are inserted (dotted lines) in the HTML
+> where they would occur when converted to a PDF. Also, large positioning gaps
+> are squashed. When the document is rendered to PDF, the dotted lines will be
+> removed and, of course, the correct positioning will be rendered. That faint
+> margin border also disappears.
 
 ## Rendering your markdown to PDF (step 9)
 
@@ -171,20 +172,28 @@ Or, in the top menus of the application: `File` > `Export All` > `PDF - PDF File
 
 Then use your favorite PDF viewer or browser to view the file.
 
-### If from the HTML view from the browser
+### If reviewing the HTML from a browser
 
 `Print` (CTRL-P) > `Save to PDF`
 
 Then use your favorite PDF viewer or browser to view the file.
 
-_Note, Pandoc can produce a PDF, but its renderings are not accurate. Joplin
-and your web browser do a better job._
 
-That's it!
+> _Note1: **Chrome-based browsers manage the fonts better for export to PDF.** So,
+I recommend using one of them for review and then export to PDF. This is one of
+the few times I recommend Chrome over Firefox._
+
+> _Note2, Though Pandoc can produce a PDF, its renderings are not accurate.
+> Joplin and your web browser do a far better job._
+
+That's it! Congrats!
 
 ---
+---
 
-## Todd is a Joplin shill!
+## Other things
+
+### Todd is a Joplin shill!
 
 Nope. It's just the best option for this kind of work. IMHO.
 
@@ -208,10 +217,6 @@ shill. But for all the right reasons.
 But I also use other editors out there. I use Vim, Xed, Marktext, and sometimes
 Obsidian. I am sure you have your preferred interface. Install Pandoc and
 follow the steps above. It's not complicated.
-
----
-
-## Other things
 
 ### What's completely untested
 
@@ -251,7 +256,7 @@ follow the steps above. It's not complicated.
    developed a manuscript template and it doesn't take me long to convert my
    markdown to LibreOffice, do a final proofread, and then submit a .`.docx` file.
 
---- 
+---
 
 ### My thoughts on various text-based writing platforms . . .
 
@@ -308,6 +313,7 @@ follow the steps above. It's not complicated.
   there.
 
 ---
+---
 
 ## Structure summary of a manuscript drafted in markdown
 
@@ -339,10 +345,11 @@ follow the steps above. It's not complicated.
 
 ### Example 3: The high-level containers
 
-`manuscript.css` structures the document into parts, chapters, and scenes. In
-the end, parts and chapters are not required, but all the text of your story or
-article lives within scenes. Most short-form documents use only scenes. Most
-things are optional.
+`manuscript.css` structures the document into parts, chapters, and scenes. And
+if poetry, parts, chapters and poems. In the end, parts and chapters are not
+absolutely required (the meat of your manuscript lives either in a scene or a
+poem. Most short stories, for example, only use scenes. Often only one scene
+container.
 
 ```markdown
 <style>
@@ -364,13 +371,13 @@ things are optional.
 
 <!-- optional: part - parts contain chapters -->
 <section class="part">
-<!-- suggested: part title, subtitle, by Author, epigraph -->
+<!-- suggested: part title - rare: subtitle, by Author, epigraph -->
 <div class="m-header">
 </div>
 
 <!-- optional: chapter - chapters contain scenes -->
 <section class="chapter">
-<!-- suggested: chapter title, subtitle, by Author, epigraph -->
+<!-- suggested: chapter title - rare: subtitle, by Author, epigraph -->
 <div class="m-header">
 </div>
 
@@ -397,11 +404,11 @@ things are optional.
 <!-- the end of prose -30- marker -->
 ###### The End
 
-</div></div>
+</article></div>
 ```
 
 
-#### The `<div id="m-contact">`
+#### The container `<div id="m-contact">`
 
 The `m-contact` container is for your author or agent contact info. Example:
 
@@ -413,18 +420,16 @@ Todd Warner
 North Carolina Piedmont, USA
 
 email@example.com | +1 555-555-1212
-
-(_draft rev. 2022-10-21_)
 </div>
 ```
 
-#### `<div class="m-header">`
+#### The container `<div class="m-header">`
 
 One exists at the top level for the title and whatnot of the work. Then each
 part, chapter, and scene can also optionally also have titles and things.
 
 Within this container, `h1` (`#` in markdown), `h2` (`##`), `h3`
-(`###`), and `blockquote` (`>`) are overloaded to represent . . .
+(`###`), and `blockquote` (`>`) are overloaded to represent ...
 
 ```markdown
 <div id="m-header">
@@ -444,14 +449,16 @@ Within this container, `h1` (`#` in markdown), `h2` (`##`), `h3`
 
 Literary Fiction
 
+(_draft rev. 20221029_)
+
 </div>
 ```
 
 **What's an epigraph you ask?** <https://en.wikipedia.org/wiki/Epigraph_(literature)>
 
-Note, the `m-header`s in the parts, chapters, and scenes don't have `m-facts`.
+Note, the `m-header`s in the parts, chapters, and scenes don't usually have `m-facts`.
 
-#### FONTS / TYPEFACES
+#### Fonts / Typefaces
 
 The default fonts used by the manuscript are ones selected to conform to what
 is expected—namely Times New Roman close equivalents, but also Arial and
@@ -472,10 +479,37 @@ manuscript:
 </style>
 ```
 
+### Poetry!
+
+To insert a poem in a document arbitrarily, it will be structured like this:
+
+    <div class="x-poem">
+
+    ```plaintext
+       Poem stanza
+           Here.
+    ```
+
+    ```plaintext
+       Poem stanza
+           Here.
+    ```
+    </div>
+
+- If your document is a manuscript for a single poem, `#manuscript` will be of
+  `class="short poetry"` and instead of a `.m-chapter` + `.m-scene`, you will
+  have an _empty_ `.m-chapter` + a solitary `.m-poem` filled with ```plaintext
+  stanzas similar to `.x-poem` above.
+
+- If your document is a manuscript for a single poem, `#manuscript` will be of
+  `class="short poetry"` and instead of a `.m-chapter` + `.m-scene`, you will
+  have an _empty_ `.m-chapter` + a solitary `.m-poem` filled with ` ```plaintext`
+  stanzas similar to `.x-poem` above.
+
 ## Good luck!
 
 Check out the example manuscripts in this repository and I think how everything
-you work with `manuscript.css` becomes obvious.
+works with `manuscript.css` becomes obvious.
 
 Good luck. Now, quit fooling around on the internet and write something.
 
@@ -511,25 +545,7 @@ Here are some general guidelines.
 
 - <https://www.shunn.net/format/story/>
 
-#### Poetry!
-
-WARNING: THIS WILL CHANGE
-
-If the entire document is poetry, I haven't added an ideal way to do that yet.
-If the idea is to insert a poem here and there, you can do this.
-
-```markdown
-
-<div class="poem">
-
-```plaintext
-Your
-   Poem
-       Here.
-```
-
-</div>
-```
+#### Poetry
 
 - <https://www.shunn.net/format/poetry/>
 - <https://www.masterclass.com/articles/how-to-format-and-submit-your-poetry-manuscript>
