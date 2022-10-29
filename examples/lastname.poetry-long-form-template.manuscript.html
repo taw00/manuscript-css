@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Poetry, long-form template</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Poetry, long-form template</h1>
+</header>
+<!--
+Convert this to PDF (reference README.md on how to do that).
+
+NOTE: this is experimental! This will likely change.
+
+Poetry collections no matter the length are typically formatted similarly to
+a chapter-book, but a little different ...
+- title page (same as a long-form prose)
+- Table of contents chapter: .m-chapter.toc -> .m-scene
+- The poems: empty .m-chapter -> m-poem m-poem m-poem ...
+- Acknowledgements chapter: .m-chapter -> m-scene
+
+(c) Copyright 2022 Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy
+of this license, visit http://creativecommons.org/licenses/by/4.0/
+-->
+<style>
+    /*
+    @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
+    */
+    @import "../manuscript.css";
+
+    :root {
+        /*
+        --m-page-break-simulated-long: 0;
+        --m-font-weight-title: bold;
+        --m-font-weight-title-chapter: bold;
+        --m-font-weight-title-poem: bold;
+        */
+    }
+</style>
+<div id="vpage">
+<article id="manuscript" class="long poetry">
+<div id="m-contact">
+<p>Firstname Lastname</p>
+<p>123 Elm Street</p>
+<p>Example City, NC 12345 USA</p>
+<p>firstname.lastname@example.com</p>
+<p>+1 555-555-1212</p>
+</div>
+<div class="m-header">
+<h1 id="manuscript-formatting-via-css-a-poetry-collection">Manuscript Formatting via CSS: A Poetry Collection</h1>
+<h3 id="by-editor-name-ed.">by Editor Name, ed.</h3>
+<div class="m-facts">
+<p>2 poems | 72 lines</p>
+<p>(<em>draft rev20221027</em>)</p>
+</div>
+</div>
+<section class="m-chapter toc">
+<div class="m-header">
+<h1 id="table-of-contents">Table of Contents</h1>
+</div>
+<section class="m-scene">
+<ul>
+<li><p>I Wandered Lonely as a Cloud, William Wordsworth</p></li>
+<li><p>Jabberwocky, Lewis Carroll</p></li>
+</ul>
+</section>
+</section>
+<section class="m-chapter">
+<section class="m-poem">
+<div class="m-header">
+<h1 id="i-wandered-lonely-as-a-cloud">I Wandered Lonely as a Cloud</h1>
+<h3 id="by-william-wordsworth">by William Wordsworth</h3>
+<div class="m-facts">
+<p>24 lines</p>
+</div>
+</div>
+<pre class="plaintext"><code>I wandered lonely as a cloud
+That floats on high o&#39;er vales and hills,
+When all at once I saw a crowd,
+A host, of golden daffodils;
+Beside the lake, beneath the trees,
+Fluttering and dancing in the breeze.</code></pre>
+<pre class="plaintext"><code>Continuous as the stars that shine
+And twinkle on the milky way,
+They stretched in never-ending line
+Along the margin of a bay:
+Ten thousand saw I at a glance,
+Tossing their heads in sprightly dance.</code></pre>
+<pre class="plaintext"><code>The waves beside them danced; but they
+Out-did the sparkling waves in glee:
+A poet could not but be gay,
+In such a jocund company:
+I gazed—and gazed—but little thought
+What wealth the show to me had brought:</code></pre>
+<pre class="plaintext"><code>For oft, when on my couch I lie
+In vacant or in pensive mood,
+They flash upon that inward eye
+Which is the bliss of solitude;
+And then my heart with pleasure fills,
+And dances with the daffodils.</code></pre>
+</section>
+<!-- end scene -->
+<section class="m-poem">
+<div class="m-header">
+<h1 id="jabberwocky">Jabberwocky</h1>
+<h3 id="lewis-carroll">Lewis Carroll</h3>
+<div class="m-facts">
+<p>48 lines</p>
+</div>
+</div>
+<pre class="plaintext"><code>’Twas brillig, and the slithy toves
+   Did gyre and gimble in the wabe;
+All mimsy were the borogoves,
+   And the mome raths outgrabe.</code></pre>
+<pre class="plaintext"><code>“Beware the Jabberwock, my son
+   The jaws that bite, the claws that catch!
+Beware the Jubjub bird, and shun
+   The frumious Bandersnatch!”</code></pre>
+<pre class="plaintext"><code>He took his vorpal sword in hand;
+   Long time the manxome foe he sought—
+So rested he by the Tumtum tree,
+   And stood awhile in thought.</code></pre>
+<pre class="plaintext"><code>And, as in uffish thought he stood,
+   The Jabberwock, with eyes of flame,
+Came whiffling through the tulgey wood,
+   And burbled as it came!</code></pre>
+<pre class="plaintext"><code>One, two! One, two! And through and through
+   The vorpal blade went snicker-snack!
+He left it dead, and with its head
+   He went galumphing back.</code></pre>
+<pre class="plaintext"><code>“And hast thou slain the Jabberwock?
+   Come to my arms, my beamish boy!
+O frabjous day! Callooh! Callay!”
+   He chortled in his joy.</code></pre>
+<pre class="plaintext"><code>’Twas brillig, and the slithy toves
+   Did gyre and gimble in the wabe;
+All mimsy were the borogoves,
+   And the mome raths outgrabe.</code></pre>
+</section>
+<!-- end scene -->
+</section>
+<!-- chapter -->
+<section class="m-chapter">
+<div class="m-header">
+<h1 id="acknowledgments">Acknowledgments</h1>
+</div>
+<section class="m-scene foothang">
+<p>Woodsworth, William. 1807. (Revised 1815.) “I Wandered Lonely as a Cloud.” In <em>Poems, in Two Volumes</em>. London: Longman, Hurst, Rees, and Orms.</p>
+<p>Carroll, Lewis. “Jabberwocky.” 1871. In <em>Through the Looking-Glass</em>. London: Macmillan and Co.</p>
+</section>
+<!-- scene -->
+</section>
+<p><!-- chapter --></p>
+</article>
+<!-- manuscript -->
+</div>
+<p><!-- vpage --></p>
+</body>
+</html>
