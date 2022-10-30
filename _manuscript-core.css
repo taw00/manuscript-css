@@ -206,8 +206,12 @@ html, body { background-color: rgba(0,0,0,0); }
  * div.x-poem: a miscellaneous poem whereever in any document. Example, if an
  * epigraph contained a poem, you'd encase it in this and ```plaintext blocks.
  */
-#manuscript .x-poem {
+#manuscript .x-poem,
+#manuscript .x-poem pre {
     margin: 0; padding: 0; border: 0;
+}
+#manuscript .x-poem {
+    margin: var(--m-elbow-room) 0;
 }
 #manuscript .x-poem pre,
 #manuscript .x-poem pre > code,
