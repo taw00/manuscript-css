@@ -51,6 +51,9 @@ crawlingchaos@example.com
 > A classic tale presented here as an example of a manuscript formatted as a
 > long-form narrative. For this example we are not using parts, only chapters,
 > each with a single scene.
+>
+> This text was adapted from a transcription found on the fansite
+> hplovecraft.com. It can be found [here](https://www.hplovecraft.com/writings/texts/fiction/mm.aspx).
 
 <div class="m-facts">
 
