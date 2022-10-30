@@ -189,6 +189,9 @@ the few times I recommend Chrome over Firefox._
 
 That's it! Congrats!
 
+Questions? Comments? Post them in the Discussions section of this repository.  
+-todd
+
 ---
 ---
 
