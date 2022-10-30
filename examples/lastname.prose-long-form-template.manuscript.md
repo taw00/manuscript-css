@@ -33,13 +33,16 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 Firstname Lastname
 
-North Carolina Piedmont, USA
+123 Elm Street
+
+Example City, NC 12345 USA
 
 firstname.lastname@example.com
 
 +1 555-555-1212
 
 </div>
+
 <div class="m-header">
 
 # Manuscript Formatting via CSS: A Long-Form Example (typical)
@@ -51,7 +54,7 @@ firstname.lastname@example.com
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
 > Some stories, parts, chapters, and even scenes will kick off with an epigraph.
 >
-> <div class="poem">
+> <div class="x-poem">
 >
 > ```plaintext
 > A dreamer is one who can only find his way by moonlight, and his
@@ -67,10 +70,9 @@ firstname.lastname@example.com
 
 Contemporary Fiction
 
-(_draft rev 20221024_)
+(_draft rev20221024_)
 
-</div>
-</div>
+</div></div>
 
 <section class="m-chapter">
 <div class="m-header">
@@ -78,7 +80,6 @@ Contemporary Fiction
 # Chapter 1
 
 </div>
-
 <section class="m-scene">
 
 This document templates a long-form narrative that is divided into the more
@@ -132,6 +133,7 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 
 </section> <!-- end scene -->
 </section> <!-- end chapter -->
+
 <section class="m-chapter">
 <div class="m-header">
 
@@ -157,6 +159,7 @@ mauris suscipit mattis ac sit amet purus.
 
 </section> <!-- end scene -->
 </section> <!-- end chapter -->
+
 <section class="m-chapter">
 <div class="m-header">
 
@@ -177,6 +180,7 @@ will be impressed with your French.
 
 </section> <!-- scene -->
 </section> <!-- chapter -->
+
 </article> <!-- manuscript -->
-</div>     <!-- vpage -->
+</div> <!-- vpage -->
 

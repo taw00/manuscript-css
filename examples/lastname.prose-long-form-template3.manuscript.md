@@ -29,9 +29,9 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
         --m-page-break-simulated-long: 0;
         */
         --m-30-: var(--m-marker9) "2022 Firstname Lastname | All rights reserved.";
-		--m-autotitle-leaf-off: ""; /* turned off showing leaf values */
-		--m-autotitle-depth-off: unset; /* turned on full-depth enumeration */
-		--m-dinkus: unset;
+        --m-autotitle-leaf-off: ""; /* turned off showing leaf values */
+        --m-autotitle-depth-off: unset; /* turned on full-depth enumeration */
+        --m-dinkus: unset;
     }
 </style>
 
@@ -42,7 +42,9 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 Firstname Lastname
 
-North Carolina Piedmont, USA
+123 Elm Street
+
+Example City, NC 12345 USA
 
 firstname.lastname@example.com
 
@@ -57,7 +59,7 @@ firstname.lastname@example.com
 
 ### by Author Name
 
-> <div class="poem">
+> <div class="x-poem">
 >
 > ```plaintext
 >                  My epitaphs.
@@ -74,10 +76,9 @@ firstname.lastname@example.com
 
 Contemporary Fiction
 
-(_draft rev 20221024_)
+(_draft rev20221024_)
 
-</div>
-</div>
+</div></div>
 
 <section class="m-part">
 <div class="m-header">
@@ -167,8 +168,8 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
-</section>
-</section>
+</section> <!-- end scene -->
+</section> <!-- end chapter -->
 <section class="m-chapter">
 <div class="m-header">
 
@@ -202,6 +203,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 </section> <!-- end scene -->
 </section> <!-- end chapter -->
 </section> <!-- end part 1 -->
+
 <section class="m-part">
 <div class="m-header">
 
@@ -278,7 +280,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
 </section> <!-- scene -->
-</section> <!-- part -->
-</article> <!-- manuscript -->
-</div>     <!-- vpage -->
+</section> <!-- part Epilogue -->
 
+</article> <!-- manuscript -->
+</div> <!-- vpage -->

@@ -24,6 +24,13 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-mono-cursor.css";
     @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-mono-cousine.css";
     ...or...
+    @import "../manuscript.css";
+    @import "../manuscript-counters.css";
+    @import "../typefaces/typeface-serif-termes.css";
+    @import "../typefaces/typeface-serif-tinos.css";
+    @import "../typefaces/typeface-sans-arimo.css";
+    @import "../typefaces/typeface-mono-cursor.css";
+    @import "../typefaces/typeface-mono-cousine.css";
     */
     @import "../manuscript.css";
     @import "../manuscript-counters.css";
@@ -42,7 +49,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
         --m-page-break-simulated-long: 0;
         --m-30-: var(--m-marker9) "2022 Firstname Lastname | All rights reserved.";
         */
-		--m-append-to-scene-off: "";
+        --m-append-to-scene-off: "";
     }
 </style>
 
@@ -53,13 +60,16 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 Firstname Lastname
 
-North Carolina Piedmont, USA
+123 Elm Street
+
+Example City, NC 12345 USA
 
 firstname.lastname@example.com
 
 +1 555-555-1212
 
 </div>
+
 <div class="m-header">
 
 # Manuscript Formatting via CSS: A Long-Form Example (atypical)
@@ -70,7 +80,7 @@ firstname.lastname@example.com
 
 > Also, parts and chapters have auto-titling enabled.
 >
-> <div class="poem">
+> <div class="x-poem">
 >
 > ```plaintext
 >                  My epitaphs.
@@ -87,10 +97,9 @@ firstname.lastname@example.com
 
 Contemporary Fiction
 
-(_draft rev 20221024_)
+(_draft rev20221024_)
 
-</div>
-</div>
+</div></div>
 
 <section class="m-part">
 <div class="m-header">
@@ -98,15 +107,12 @@ Contemporary Fiction
 #
 
 </div>
-
-
 <section class="m-chapter">
 <div class="m-header">
 
 #
 
 </div>
-
 <section class="m-scene">
 
 This document templates a narrative that is divided into parts, chapters, and
@@ -158,8 +164,9 @@ at urna molestie, tincidunt mi vitae, dapibus nulla.
 
 [SCENE TEXT]
 
-</section>
-</section>
+</section> <!-- scene -->
+</section> <!-- chapter -->
+
 <section class="m-chapter">
 <div class="m-header">
 
@@ -211,6 +218,7 @@ and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
 </section> <!-- end scene -->
 </section> <!-- end chapter -->
 </section> <!-- end part 1 -->
+
 <section class="m-part">
 <div class="m-header">
 
@@ -246,7 +254,8 @@ will be impressed with your French.
 
 </section> <!-- scene -->
 </section> <!-- chapter -->
-</section> <!-- part -->
+</section> <!-- part 2 -->
+
 </article> <!-- manuscript -->
-</div>     <!-- vpage -->
+</div> <!-- vpage -->
 

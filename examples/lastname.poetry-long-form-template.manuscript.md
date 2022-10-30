@@ -47,6 +47,7 @@ firstname.lastname@example.com
 +1 555-555-1212
 
 </div>
+
 <div class="m-header">
 
 # Manuscript Formatting via CSS: A Poetry Collection
@@ -177,8 +178,10 @@ O frabjous day! Callooh! Callay!”
 All mimsy were the borogoves,
    And the mome raths outgrabe.
 ```
+
 </section> <!-- end scene -->
 </section> <!-- chapter -->
+
 <section class="m-chapter">
 <div class="m-header">
 

@@ -23,7 +23,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import "../manuscript.css";
 </style>
 
-[//]: / "----------------------------------------------------------------------"
+[//]: / "---------------------------------------------------------------------"
 
 <div id="vpage">
 <article id="manuscript" class="long narrative">
@@ -56,12 +56,11 @@ crawlingchaos@example.com
 
 40,000 Words / Suspense Fiction
 
-*(draft rev. 193102)*
+*(draft rev193102)*
 
-</div>
-</div>
+</div></div>
 
-[//]: / "----------------------------------------------------------------------"
+[//]: / "---------------------------------------------------------------------"
 
 <section class="m-chapter">
 <div class="m-header">
@@ -91,7 +90,7 @@ The last lap of the voyage was vivid and fancy-stirring, great barren peaks of m
  
 On the seventh of November, sight of the westward range having been temporarily lost, we passed Franklin Island; and the next day descried the cones of Mts. Erebus and Terror on Ross Island ahead, with the long line of the Parry Mountains beyond. There now stretched off to the east the low, white line of the great ice barrier; rising perpendicularly to a height of 200 feet like the rocky cliffs of Quebec, and marking the end of southward navigation. In the afternoon we entered McMurdo Sound and stood off the coast in the lee of smoking Mt. Erebus. The scoriac peak towered up some 12,700 feet against the eastern sky, like a Japanese print of the sacred Fujiyama; while beyond it rose the white, ghost-like height of Mt. Terror, 10,900 feet in altitude, and now extinct as a volcano. Puffs of smoke from Erebus came intermittently, and one of the graduate assistants—a brilliant young fellow named Danforth—pointed out what looked like lava on the snowy slope; remarking that this mountain, discovered in 1840, had undoubtedly been the source of Poe’s image when he wrote seven years later of
  
-<div class="poem" style="text-align: center;">
+<div class="x-poem" style="text-align: center;">
 
 ```plaintext
 “—the lavas that restlessly roll
@@ -715,4 +714,3 @@ At the time his shrieks were confined to the repetition of a single mad word of 
 </section></section>
 </article>
 </div>
-

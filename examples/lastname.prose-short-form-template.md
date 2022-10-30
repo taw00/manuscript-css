@@ -28,11 +28,14 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 <div id="vpage">
 <article id="manuscript">
+
 <div id="m-contact">
 
 Firstname Lastname
 
-North Carolina Piedmont, USA
+123 Elm Street
+
+Example City, NC 12345 USA
 
 firstname.lastname@example.com
 
@@ -41,7 +44,7 @@ firstname.lastname@example.com
 </div>
 <div class="m-header">
 
-# Manuscript Formatting via CSS: The Short Story Example
+# Manuscript Formatting via CSS: The Short Story (typical)
 
 ## Achieving a (_mostly_) Compliant Manuscript for Markdown or HTML
 
@@ -50,7 +53,7 @@ firstname.lastname@example.com
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
 > Some stories, parts, chapters, and even scenes will kick off with an epigraph.
 >
-> <div class="poem">
+> <div class="x-poem">
 >
 > ```plaintext
 > A dreamer is one who can only find his way by moonlight, and his
@@ -68,8 +71,7 @@ Contemporary Fiction
 
 (_draft rev 20221024_)
 
-</div>
-</div>
+</div></div>
 
 <section class="m-scene">
 
@@ -144,6 +146,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
-</section>
+</section> <!--end last scene -->
+
 </article>
 </div>

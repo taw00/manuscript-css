@@ -28,20 +28,24 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 <div id="vpage">
 <article id="manuscript">
+
 <div id="m-contact">
 
 Firstname Lastname
 
-North Carolina Piedmont, USA
+123 Elm Street
+
+Example City, NC 12345 USA
 
 firstname.lastname@example.com
 
 +1 555-555-1212
 
 </div>
+
 <div class="m-header">
 
-# Manuscript Formatting via CSS: The SUPER SIMPLE Short Story Example
+# Manuscript Formatting via CSS: The SUPER SIMPLE Short Story
 
 ## Achieving a (_mostly_) Compliant Manuscript for Markdown or HTML
 
@@ -58,8 +62,7 @@ Contemporary Fiction
 
 (_draft rev 20221024_)
 
-</div>
-</div>
+</div></div>
 
 <section class="m-scene">
 
@@ -171,6 +174,7 @@ Jack a dull boy. All work and no play makes Jack a dull boy. All work and no
 play makes Jack a dull boy. All work and no play makes Jack a dull boy. All work
 and no play makes Jack a dull boy. All work and no play makes Jack a dull boy.
 
-</section>
+</section> <!--end scene -->
+
 </article>
 </div>

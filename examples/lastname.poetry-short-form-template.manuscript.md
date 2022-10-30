@@ -22,10 +22,6 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
     */
     @import "../manuscript.css";
-
-    :root {
-        --m-line-spacing-poetry: 1.25;
-    }
 </style>
 
 <div id="vpage">
@@ -44,6 +40,7 @@ firstname.lastname@example.com
 +1 555-555-1212
 
 </div>
+
 <div class="m-header">
 
 # I Wandered Lonely as a Cloud
@@ -54,8 +51,7 @@ firstname.lastname@example.com
 
 24 lines
 
-</div>
-</div>
+</div></div>
 
 <section class="m-chapter">
 <section class="m-poem">
@@ -68,7 +64,6 @@ A host, of golden daffodils;
 Beside the lake, beneath the trees,
 Fluttering and dancing in the breeze.
 ```
-
 ```plaintext
 Continuous as the stars that shine
 And twinkle on the milky way,
@@ -77,7 +72,6 @@ Along the margin of a bay:
 Ten thousand saw I at a glance,
 Tossing their heads in sprightly dance.
 ```
-
 ```plaintext
 The waves beside them danced; but they
 Out-did the sparkling waves in glee:
@@ -86,7 +80,6 @@ In such a jocund company:
 I gazed—and gazed—but little thought
 What wealth the show to me had brought:
 ```
-
 ```plaintext
 For oft, when on my couch I lie
 In vacant or in pensive mood,
@@ -98,6 +91,7 @@ And dances with the daffodils.
 
 </section> <!-- end scene --> 
 </section> <!-- end chapter --> 
+
 <section class="m-chapter force-break-before">
 <div class="m-header">
 
@@ -109,6 +103,7 @@ And dances with the daffodils.
 Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *Poems, in Two Volumes*. London: Longman, Hurst, Rees, and Orms.
 
 </section> <!-- scene -->
-</section> <!-- end chapter --> 
+</section> <!-- end chapter -->
+
 </article> <!-- manuscript -->
 </div> <!-- vpage -->
