@@ -41,7 +41,8 @@ review.
   page headers to the Lovecraft story. This screenshot shows what I did to
   enable it.
 
-  <a style="width: 25%; margin: 8px auto;" href="README-screenshot-jPDF-Tweak.png"><img src="README-screenshot-jPDF-Tweak.png"></a>
+  <a style="width: 25%; margin: 8px auto;" href="misc/README-screenshot-jPDF-Tweak.png"><img src="misc/README-screenshot-jPDF-Tweak.png"></a>
+
 - Poetry manuscripts don't have 2nd page+ of poem continuation blocks. Again,
   maybe in a few years as CSS matures.
 - There is a bug with page breaking. The CSS is configured to disallow page
