@@ -21,6 +21,10 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
     */
     @import "../manuscript.css";
+    /* this is very specific because, for example, the the Markdown
+     * Viewer extension for Chrome will inject its own 
+     * text-align: left */
+    .centered-poem pre { text-align: center; }
 </style>
 
 [//]: / "---------------------------------------------------------------------"
@@ -93,7 +97,7 @@ The last lap of the voyage was vivid and fancy-stirring, great barren peaks of m
  
 On the seventh of November, sight of the westward range having been temporarily lost, we passed Franklin Island; and the next day descried the cones of Mts. Erebus and Terror on Ross Island ahead, with the long line of the Parry Mountains beyond. There now stretched off to the east the low, white line of the great ice barrier; rising perpendicularly to a height of 200 feet like the rocky cliffs of Quebec, and marking the end of southward navigation. In the afternoon we entered McMurdo Sound and stood off the coast in the lee of smoking Mt. Erebus. The scoriac peak towered up some 12,700 feet against the eastern sky, like a Japanese print of the sacred Fujiyama; while beyond it rose the white, ghost-like height of Mt. Terror, 10,900 feet in altitude, and now extinct as a volcano. Puffs of smoke from Erebus came intermittently, and one of the graduate assistants—a brilliant young fellow named Danforth—pointed out what looked like lava on the snowy slope; remarking that this mountain, discovered in 1840, had undoubtedly been the source of Poe’s image when he wrote seven years later of
  
-<div class="x-poem" style="text-align: center;">
+<div class="x-poem centered-poem">
 
 ```plaintext
 “—the lavas that restlessly roll

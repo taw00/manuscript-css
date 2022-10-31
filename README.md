@@ -82,11 +82,18 @@ that should be enough to get you going.
 #### Process summary:
 (1) write your document in the prescribed structure, (2) convert it to HTML, and then (3) convert that to PDF.
 
-If you use [Joplin](https://joplinapp.org) for your markdown editing, you can
-skip step (2) and directly produce a PDF from within the application. Otherwise,
-you convert to HTML with Pandoc and then PDF via a browser.
+If you use [Joplin](https://joplinapp.org) for your markdown editing, you use
+the application's built in previewer for the "convert to HTML" step. And then
+you directly produce a PDF from within the application.
 
-#### Process summary - a bit more detailed:
+Otherwise, you convert to HTML with Pandoc and then PDF via a browser.
+
+Or you render a preview of your markdown fie in Chrome (a preview is really a
+conversion to HTML) using the
+[Markdown Viewer](https://chrome.google.com/webstore/detail/markdown-viewer)
+extension and then `CTRL-P` > `Save as PDF`.
+
+#### Process summary - more detailed:
 
 0. Download this repository.
    - From the command line using `git`:
@@ -112,7 +119,7 @@ you convert to HTML with Pandoc and then PDF via a browser.
    application)
 7. If not to your satisfaction, revise your document  
    and repeat from step 5 - rinse; repeat until done.
-9. Convert to PDF by using `Print to file` from your browser (or export
+8. Convert to PDF by using `Print to file` from your browser (or export
    natively from within the Joplin application)
 
 If you have an existing document already in markdown format, just examine
@@ -120,13 +127,16 @@ the templates or examples and refactor your document accordingly.
 
 ## Rendering your markdown to HTML for review (step 5 above)
 
-### If using Joplin as your markdown editor (both steps 5 & 6)
+### If using Joplin as your markdown editor, just use the previewer (skip to
+    step 6)
 
 Click the `Toggle Editor Layout` button in the upper-right-hand corner of the
 application. There you have it. The HTML preview of the document. It's as
 accurate a presentation as your browser would present.
 
 ### If using any other editor
+
+#### The cleanest method: Pandoc
 
 This requires you use the command line and to have Pandoc installed,
 <https://pandoc.org/>.
@@ -163,7 +173,19 @@ file:///fullpath-to-the-document/lastname.TITLE.manuscript.html
 > removed and, of course, the correct positioning will be rendered. That faint
 > margin border also disappears.
 
-## Rendering your markdown to PDF (step 9)
+#### A simpler method: the Markdown Viewer extension for Chrome
+
+Simpler, but does introduce possible formatting oddities. I feel it work nearly
+perfectly.
+
+1. Install this: <https://chrome.google.com/webstore/detail/markdown-viewer>
+2. Click the puzzle-piece and pin the entension to the browser bar
+3. Click the M icon and turn on allowing opening local files. See
+   <https://github.com/simov/markdown-viewer> 
+4. Browser to a `.md` file on your system and it should render it perfectly as
+   HTML. Then you are ready for the next step.
+
+## Rendering your markdown to PDF (step 8)
 
 ### If using Joplin
 
