@@ -5,7 +5,7 @@ This example:
 - only one scene (for the story) - very typical for very short narratives
 - but we also incuded an additional scene for an Acknowledgement.
 - I overloaded the --m-dinkus with simple em-dash because I didn't want to use
-  the default # marker. And then I ended with flourish because ... it's Poe. :)
+  the default # marker. And then I ended with a flourish because... it's Poe. :)
 
 (c) Copyright 2022 Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy
