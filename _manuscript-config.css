@@ -80,11 +80,11 @@
 
     /* first-line indent/inter-paragraph spacing - narrative & non-narrative */
     --m-indent-narrative: calc(var(--m-page-margin) / 2);
-    --m-indent-narrative-first-paragraph: 0;
-    --m-paragraph-spacing-narrative: 0;
+    --m-indent-narrative-first-paragraph: 0px;
+    --m-paragraph-spacing-narrative: 0px;
 
-    --m-indent-non-narrative: 0;
-    --m-indent-non-narrative-first-paragraph: 0;
+    --m-indent-non-narrative: 0px;
+    --m-indent-non-narrative-first-paragraph: 0px;
     --m-paragraph-spacing-non-narrative: 1em;
 
     /* Offset calculations used to offset title-header blocks from top of the
@@ -126,14 +126,14 @@
     --m-offset-parts-render-long:    var(--m-room-for-two);
     --m-offset-chapters-long:        var(--m-offset-title-long);
     --m-offset-chapters-render-long: var(--m-room-for-two);
-    --m-offset-chapters-long-poetry: 0;
+    --m-offset-chapters-long-poetry: 0px;
     --m-offset-scene-long:           var(--m-elbow-room);
 
     --m-max-width-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
 
     /* left and right margins - pre and blockquote */
     /*--m-margins-preformatted: var(--m-elbow-room);*/
-    --m-margins-preformatted: 0;
+    --m-margins-preformatted: 0px;
     --m-margins-blockquote:   calc(var(--m-indent-narrative) * 1.5);
 
     /* page breaks & simulated page breaks - short-form and long-form
@@ -141,7 +141,7 @@
     --m-page-break-short: unset;
     --m-page-break-long:  page;
 
-    --m-page-break-simulated-short: 0;            /* faded lightgray */
+    --m-page-break-simulated-short: 0px;        /* faded lightgray */
     --m-page-break-simulated-long:  5px dashed rgba(211,211,211,50%);
 
     /* the document facts (.m-facts) - short-form and long-form */

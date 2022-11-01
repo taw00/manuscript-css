@@ -170,7 +170,7 @@
 #manuscript.long {
     /* long-form print behavior:
      * major component page break & position 1/3rd to 5/12th down the page */
-    --m-page-break-simulated: 0;
+    --m-page-break-simulated: 0px;
     --m-page-break: var(--m-page-break-long);
 }
 } /* /print */
@@ -181,7 +181,7 @@
 .foothang p {
     /* hanging indent */
     padding-left: var(--m-indent) !important;
-    text-indent:  calc(var(--m-indent) * -1) !important;
+    text-indent: calc(var(--m-indent) * -1) !important;
 }
 .center-max-content,
 .table-of-contents,
