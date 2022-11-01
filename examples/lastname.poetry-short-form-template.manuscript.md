@@ -89,7 +89,7 @@ And then my heart with pleasure fills,
 And dances with the daffodils.
 ```
 
-</section> <!-- end scene --> 
+</section> <!-- end poem --> 
 </section> <!-- end chapter --> 
 
 <section class="m-chapter force-break-before">
@@ -102,7 +102,7 @@ And dances with the daffodils.
 
 Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *Poems, in Two Volumes*. London: Longman, Hurst, Rees, and Orms.
 
-</section> <!-- scene -->
+</section> <!-- end "scene" -->
 </section> <!-- end chapter -->
 
 </article> <!-- manuscript -->

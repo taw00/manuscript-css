@@ -122,7 +122,7 @@ And then my heart with pleasure fills,
 And dances with the daffodils.
 ```
 
-</section> <!-- end scene --> 
+</section> <!-- end poem --> 
 <section class="m-poem">
 <div class="m-header">
 
@@ -179,8 +179,8 @@ All mimsy were the borogoves,
    And the mome raths outgrabe.
 ```
 
-</section> <!-- end scene -->
-</section> <!-- chapter -->
+</section> <!-- end poem -->
+</section> <!-- end chapter -->
 
 <section class="m-chapter">
 <div class="m-header">
@@ -194,8 +194,8 @@ Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *P
 
 Carroll, Lewis. "Jabberwocky." 1871. In *Through the Looking-Glass*. London: Macmillan and Co.
 
-</section> <!-- scene -->
-</section> <!-- chapter -->
+</section> <!-- end "scene" -->
+</section> <!-- end chapter -->
 
 </article> <!-- manuscript -->
 </div> <!-- vpage -->
