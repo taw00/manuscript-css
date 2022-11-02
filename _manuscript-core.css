@@ -239,16 +239,11 @@ html, body { background-color: rgba(0,0,0,0); }
     margin-bottom: 0px;
 }
 
-/* Joplin only */
-#manuscript .joplin-editable {
-    margin-bottom: var(--m-elbow-room);
-}
-#manuscript .joplin-editable:last-of-type {
-    margin-bottom: 0px;
-}
-#manuscript .joplin-editable pre {
-    margin: 0px;
-}
+/* Joplin only. It wraps all PREs with div.joplin-editable, so we have to
+ * adjust for that. Markdown tools can be . . . meddlesome. */
+#manuscript .joplin-editable { margin-bottom: var(--m-elbow-room); }
+#manuscript .joplin-editable:last-of-type { margin-bottom: 0px; }
+#manuscript .joplin-editable pre { margin: 0px; }
 
 #manuscript #m-contact {
     position: absolute; box-sizing: border-box; overflow: visible;
