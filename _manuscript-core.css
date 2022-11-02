@@ -206,13 +206,11 @@ html, body { background-color: rgba(0,0,0,0); }
  * div.x-poem: a miscellaneous poem whereever in any document. Example, if an
  * epigraph contained a poem, you'd encase it in this and ```plaintext blocks.
  */
-#manuscript .x-poem,
-#manuscript .x-poem pre {
-    margin: 0px; padding: 0px; border: 0px;
+
+#manuscript section.m-poem > .m-header > h1 {
+    text-transform: uppercase;
 }
-#manuscript .x-poem {
-    margin: var(--m-elbow-room) 0px;
-}
+
 #manuscript .x-poem pre,
 #manuscript .x-poem pre > code,
 #manuscript section.m-poem pre,
@@ -224,22 +222,33 @@ html, body { background-color: rgba(0,0,0,0); }
     font-family: var(--m-font-family-poetry);
     line-height: var(--m-line-spacing-poetry);
 }
+
+#manuscript .x-poem,
+#manuscript .x-poem pre {
+    margin: 0px; padding: 0px; border: 0px;
+}
 #manuscript section.m-poem pre {
     margin-top: 0px;
 }
 #manuscript .x-poem pre,
 #manuscript section.m-poem pre {
-    margin-bottom: var(--m-room-for-two);
+    margin-bottom: var(--m-elbow-room);
 }
 #manuscript .x-poem pre:last-of-type,
 #manuscript section.m-poem pre:last-of-type {
     margin-bottom: 0px;
 }
 
-#manuscript section.m-poem > .m-header > h1 {
-    text-transform: uppercase;
+/* Joplin only */
+#manuscript .joplin-editable {
+    margin-bottom: var(--m-elbow-room);
 }
-
+#manuscript .joplin-editable:last-of-type {
+    margin-bottom: 0px;
+}
+#manuscript .joplin-editable pre {
+    margin: 0px;
+}
 
 #manuscript #m-contact {
     position: absolute; box-sizing: border-box; overflow: visible;
