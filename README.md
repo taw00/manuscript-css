@@ -55,7 +55,7 @@ easy to read and review. Here are some screenshots of the results . . .
 
   <a style="width: 25%; margin: 8px auto;" href="misc/README-screenshot-jPDF-Tweak.png"><img src="misc/README-screenshot-jPDF-Tweak.png"></a>
 
-- Poetry manuscripts don't have 2nd page+ of poem continuation blocks. Again,
+- Poetry manuscripts won't have 2nd page+ of poem continuation blocks. Again,
   maybe in a few years as CSS matures.
 - There is a bug with page breaking. The CSS is configured to disallow page
   breaking in weird places, like between a chapter title and the prose, but
