@@ -131,8 +131,7 @@ the templates or examples and refactor your document accordingly.
 
 ## Rendering your markdown to HTML for review (step 5 above)
 
-### If using Joplin as your markdown editor, just use the previewer (skip to
-    step 6)
+### If using Joplin as your markdown editor, just use the previewer (skip to step 6)
 
 > Note, to use Joplin, you have to import the markdown file, of course, and
 > you'll have to change the `@import` to include the full path to get to the
