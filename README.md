@@ -13,7 +13,7 @@ working drafts in a professional manner for review, critique, or whatever.
 
 ## What do you mean by manuscript formatting?
 
-Take a look at the example PDFs in the [examples](file://./examples/) folder in
+Take a look at the example PDFs in the [examples](./examples/) folder in
 this repository. Those are examples of how manuscripts are formatted: no fluff,
 easy to read and review.
 
