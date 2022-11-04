@@ -22,7 +22,8 @@ review.
 1. A generalized manuscript format for prose (both narrative and non-narrative) and
    for poetry
 3. Formatting to produce US Letter- or A4-dimensioned artifacts (PDFs)
-4. Short-form works (e.g. short stories or single-poem manuscripts) and long-form works (novel and book-sized / poetry chapbooks and collections)
+4. Short-form works (e.g. short stories or single-poem manuscripts) and
+   long-form works (novel and book-sized / poetry chapbooks and collections)
 5. A lot of customization if you know your CSS.
 
 ## What this does not support
@@ -66,21 +67,23 @@ drafting process, port your document from markdown to LibreOffice, Word, or
 Google Docs and either submit that to an editor or import that into a book
 production application like [Reedsy](https://reedsy.com/write-a-book).
 
-Another possibility is to port the markdown to [Bookdown](https://www.bookdown.org/). Bookdown, though very
-intriguing, also looks rather daunting and is geared for the academic
-community.
+Another possibility is to port the markdown to
+[Bookdown](https://www.bookdown.org/). Bookdown, though very intriguing, also
+looks rather daunting and is geared for the academic community.
 
 ## How do I construct a manuscript from my markdown document?
 
 **TL;DR:** check out the example manuscripts in this repository in their
-original markdown and then as PDFs. Use the examples as a template for your own work.
-And if you are already familiar with converting markdown to HTML to PDF then
-that should be enough to get you going.
+original markdown and then as PDFs. Use the examples as a template for your own
+work.  And if you are already familiar with converting markdown to HTML to PDF
+then that should be enough to get you going.
 
 ## How? With more detail
 
 #### Process summary:
-(1) write your document in the prescribed structure, (2) convert it to HTML, and then (3) convert that to PDF.
+
+(1) write your document in the prescribed structure, (2) convert it to HTML,
+and then (3) convert that to PDF.
 
 If you use [Joplin](https://joplinapp.org) for your markdown editing, you use
 the application's built in previewer for the "convert to HTML" step. And then
@@ -97,7 +100,8 @@ extension and then `CTRL-P` > `Save as PDF`.
 
 0. Download this repository.
    - From the command line using `git`:
-     1. Copy (clone) the repository: `git clone https://github.com/taw00/manuscript-css/`
+     1. Copy (clone) the repository:
+        `git clone https://github.com/taw00/manuscript-css/`
      2. `cd manuscript-css`
 
    - From the GitHub UI:
@@ -129,6 +133,10 @@ the templates or examples and refactor your document accordingly.
 
 ### If using Joplin as your markdown editor, just use the previewer (skip to
     step 6)
+
+> Note, to use Joplin, you have to import the markdown file, of course, and
+> you'll have to change the `@import` to include the full path to get to the
+> the `manuscript.css` stylesheet.
 
 Click the `Toggle Editor Layout` button in the upper-right-hand corner of the
 application. There you have it. The HTML preview of the document. It's as
@@ -181,7 +189,7 @@ perfectly.
 1. Install this: <https://chrome.google.com/webstore/detail/markdown-viewer>
 2. Click the puzzle-piece and pin the entension to the browser bar
 3. Click the M icon and turn on allowing opening local files. See
-   <https://github.com/simov/markdown-viewer> 
+   <https://github.com/simov/markdown-viewer>
 4. Browser to a `.md` file on your system and it should render it perfectly as
    HTML. Then you are ready for the next step.
 
@@ -202,9 +210,9 @@ Then use your favorite PDF viewer or browser to view the file.
 Then use your favorite PDF viewer or browser to view the file.
 
 
-> _Note1: **Chrome-based browsers manage the fonts better for export to PDF.** So,
-I recommend using one of them for review and then export to PDF. This is one of
-the few times I recommend Chrome over Firefox._
+> _Note1: **Chrome-based browsers manage the fonts better for export to PDF.**
+> So, I recommend using one of them for review and then export to PDF. This is
+> one of the few times I recommend Chrome over Firefox._
 
 > _Note2, Though Pandoc can produce a PDF, its renderings are not accurate.
 > Joplin and your web browser do a far better job._
@@ -280,7 +288,8 @@ follow the steps above. It's not complicated.
    publish-to-the-web feature.
 4. submission for publication: I port my markdown over to LibreOffice writer. I
    developed a manuscript template and it doesn't take me long to convert my
-   markdown to LibreOffice, do a final proofread, and then submit a .`.docx` file.
+   markdown to LibreOffice, do a final proofread, and then submit a `.docx`
+   file.
 
 ---
 
@@ -309,8 +318,8 @@ follow the steps above. It's not complicated.
   Skip it's previewer. Edit with Ghostwriter, export to HTML, and preview in
   a browser. It saves you a step in that you don't have to use Pandoc directly.
   BUT! To export to HTML, it needs Pandoc installed.
-- [Marktext](https://github.com/marktext/marktext): Man, I really like this editor as a writer's editor. Super
-  simple and distraction free.
+- [Marktext](https://github.com/marktext/marktext): Man, I really like this
+  editor as a writer's editor. Super simple and distraction free.
 - [Bear](https://bear.app/) and [Typora](https://typora.io/): I heard good
   things about these, but I don't use any Apple products so, I have never tried
   them.
@@ -330,13 +339,20 @@ follow the steps above. It's not complicated.
   automating the preview in HTML step. But Vim has a steep learning curve. I
   have used it for decades, but, yeah, a steep learning curve. Vim is a
   terminal program, but it also has a graphical version: `gvim`.
+- [VSCode](https://code.visualstudio.com/Docs/languages/markdown): A very
+  popular code editor. And very much like the once-popular Atom editor. VSCode
+  also has an excellent previewer and a great
+  [Joplin plugin](https://joplin-utils.rxliuli.com/joplin-vscode-plugin/)!
+  Unfortunately, you can't take advantage of @importing manuscript.css locally
+  using VSCode. It's security model disallows it. But you can leverage it if
+  you use manuscript.css via an https connection.
 - [Atom](https://atom.io/): AVOID. The project is
   **[shutting down](https://github.blog/2022-06-08-sunsetting-atom/)** Atom is
   great general purpose code editor but can get really complicated to use. And
   it's markdown capabilities are both powerful but at the same time fall very
   short or our needs. Microsoft (who now owns the project) is shutting it down,
   Dec 2022. I only list this because it's on every markdown editor list out
-  there.
+  there. VS Code is essentially Atom's successor.
 
 ---
 ---
