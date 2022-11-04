@@ -19,7 +19,8 @@
  *
  * The class "switches":
  * - 'US' or 'A4': US Letter is the default
- * - 'prose' or 'poetry': prose is the default.
+ * - 'prose' or 'poetry': prose is the default and therefore it is usually not
+ *   explicitely used or defined here. By default, it is already employed.
  * - 'short' or 'long': a manuscript formatted for short prose is the default.
  * - 'narrative' or 'non-narrative': prose-only - formatted for narrative
  *   prose is the default.

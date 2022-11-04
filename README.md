@@ -406,16 +406,21 @@ webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 
 `manuscript.css` structures the document into parts, chapters, and scenes. And
 if poetry, parts, chapters and poems. In the end, parts and chapters are not
-absolutely required (the meat of your manuscript lives either in a scene or a
+absolutely required. The meat of your manuscript lives either in a scene or a
 poem. Most short stories, for example, only use scenes. Often only one scene
 container.
+
+Let's look at the containers in summary, and then we'll dive into a little
+depth afterward.
+
+#### The containers in summary (prose-focused)...
 
 ```markdown
 <style>
     @import "manuscript.css";
 </style>
 <div id="vpage">
-<article id="manuscript">
+<article id="manuscript" class="prose narrative">
 
 <!-- suggested: contact name, address, email, phone -->
 <div id="m-contact">
@@ -434,13 +439,14 @@ container.
 <div class="m-header">
 </div>
 
-<!-- optional: chapter - chapters contain scenes -->
+<!-- optional: chapter - chapters contain scenes (or poems) -->
 <section class="chapter">
 <!-- suggested: chapter title - rare: subtitle, by Author, epigraph -->
 <div class="m-header">
 </div>
 
-<!-- required: scene - scenes contain your prose (example, three scenes) -->
+<!-- required (for prose): scene - scenes contain your prose
+     An example of three scenes -->
 <section class="scene">
 <!-- unusual: scene title, subtitle, by Author, epigraph -->
 <div class="m-header">
@@ -457,13 +463,9 @@ container.
 </div>
 </section>
 
-</section>
-</section>
-
-<!-- the end of prose -30- marker -->
-###### The End
-
-</article></div>
+</section></section>
+</article>
+</div>
 ```
 
 
@@ -479,6 +481,7 @@ Todd Warner
 North Carolina Piedmont, USA
 
 email@example.com | +1 555-555-1212
+
 </div>
 ```
 
