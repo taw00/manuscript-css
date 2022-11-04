@@ -374,6 +374,10 @@ follow the steps above. It's not complicated.
 
 #### Example 1: The document beginning - default format and behavior
 
+_Note that "manuscript.css" here is a stand-in for
+"/path/to/manuscript-css/manuscript.css". Or if you decide to host it on some
+webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
+
 ```markdown
 <!-- Formatting: US letter, 1in margins, short-form narrative -->
 <style>
@@ -522,14 +526,14 @@ Courier New, depending on need.
 You really don't need to import new typefaces (your computer should know how to
 handle a request for any one of those), but if you want to explore my open
 source font recommendations, just add these imports to the top of your
-manuscript:
+manuscript (adding the path as needed, of course):
 
 ```markdown
 <style>
-    @import "https://toddwarner.io/pub/css/m-font-serif-termes.css";
-    @import "https://toddwarner.io/pub/css/m-font-serif-tinos.css";
-    @import "https://toddwarner.io/pub/css/m-font-sans-arimo.css";
-    @import "https://toddwarner.io/pub/css/m-font-mono-cousine.css";
+    @import "typeface/typeface-serif-termes.css";
+    @import "typeface/typeface-serif-tinos.css";
+    @import "typeface/typeface-sans-arimo.css";
+    @import "typeface/typeface-mono-cousine.css";
     @import "manuscript.css";
 </style>
 ```
@@ -544,7 +548,6 @@ To insert a poem in a document arbitrarily, it will be structured like this:
        Poem stanza
            Here.
     ```
-
     ```plaintext
        Poem stanza
            Here.
