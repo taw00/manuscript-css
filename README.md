@@ -133,9 +133,9 @@ the templates or examples and refactor your document accordingly.
 
 ### If using Joplin as your markdown editor, just use the previewer (skip to step 6)
 
-> Note, to use Joplin, you have to import the markdown file, of course, and
-> you'll have to change the `@import` to include the full path to get to the
-> the `manuscript.css` stylesheet.
+> Note, to use Joplin, you have to `File` > `Import` the markdown file, of
+> course, and then you'll have to change the `@import` to include the full path
+> to the `manuscript.css` stylesheet.
 
 Click the `Toggle Editor Layout` button in the upper-right-hand corner of the
 application. There you have it. The HTML preview of the document. It's as
@@ -344,7 +344,8 @@ follow the steps above. It's not complicated.
   [Joplin plugin](https://joplin-utils.rxliuli.com/joplin-vscode-plugin/)!
   Unfortunately, you can't take advantage of @importing manuscript.css locally
   using VSCode. It's security model disallows it. But you can leverage it if
-  you use manuscript.css via an https connection.
+  you use `manuscript.css` via an https connection. VSCode's Markdown
+  All-in-One extension can export to HTML, negating a need to use Pandoc.
 - [Atom](https://atom.io/): AVOID. The project is
   **[shutting down](https://github.blog/2022-06-08-sunsetting-atom/)** Atom is
   great general purpose code editor but can get really complicated to use. And
