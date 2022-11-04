@@ -12,6 +12,7 @@
  *
  * Included in this stylesheet
  * - some Joplin-specific adjustments
+ * - some VSCode-specific adjustments
  * - general CSS resets (I pulled a lot from Firefox's ua.css and html.css.)
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
@@ -26,7 +27,8 @@ header#title-block-header { display: none; }
 
 
 /*
- * Joplin-isms
+ * JOPLIN adjustments
+ *
  * - turn off the base syntax highlighting (for pre/code)
  * - normalize a-links
  * - neurtalize inline code stylings
@@ -82,6 +84,18 @@ div.note-main > h1.title { display: none; }
 /* Exported print from Joplin Cloud: remove the footer */
 body.page-note > div.footer div.content { display: none !important; }
 }
+
+/*
+ * VSCODE adjustments
+ */
+
+/* remove the automated title display */
+body.vscode-body .markdown-body > h1 { display: none; }
+
+
+/*
+ * GENERAL RESETS
+ */
 
 /* fighting off any belligerent css wrappers */
 html, body { all: initial; }
