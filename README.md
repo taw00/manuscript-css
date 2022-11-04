@@ -18,17 +18,13 @@ this repository. Those are examples of how manuscripts are formatted: no fluff,
 easy to read and review. Here are some screenshots of the results . . .
 
 <a href="misc/README-short-story-poe.png"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.png" alt="short format: The Tell-Tale Heart" /></a>
-
+<a href="misc/README-long-story-lovecraft.png"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.png" alt="long format: At the Mountains of Madness" /></a>
 <!-- ![short format: The Tell-Tale Heart](misc/README-short-story-poe.png) -->
+<!-- ![long format: At the Mountains of Madness](misc/README-long-story-lovecraft.pdf) -->
 
-<div style="float: left; width: 49%;">
-
-![long format: At the Mountains of Madness](misc/README-long-story-lovecraft.pdf)
-
-</div>
 <div style="clear: both;"></div>
 
-![multi-scene short story example](misc/README-short-example-multi-scene.pdf)
+![multi-scene short story example](misc/README-short-example-multi-scene.png)
 
 <div style="clear: both;"></div>
 
@@ -253,7 +249,7 @@ looking notes and things. But not fine if you want _very specific_ looking
 notes and things. Generating a manuscript view of your document is a very
 specific look.
 
-![Joplin in action](misc/README-joplin.pdf)
+![Joplin in action](misc/README-joplin.png)
 
 This is where the [Joplin](https://joplinapp.org) note-taking application rises
 above its peers. Yes, your notes and documents look nice out of the box, but
