@@ -478,7 +478,9 @@ The `m-contact` container is for your author or agent contact info. Example:
 
 Todd Warner
 
-North Carolina Piedmont, USA
+123 Main St
+
+Example Town, NC 27560
 
 email@example.com | +1 555-555-1212
 
