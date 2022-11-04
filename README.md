@@ -17,11 +17,10 @@ Take a look at the example PDFs in the [examples folder](./examples/) in
 this repository. Those are examples of how manuscripts are formatted: no fluff,
 easy to read and review. Here are some screenshots of the results . . .
 
-<div style="float: left; width: 49%;">
+<a href="misc/README-short-story-poe.png"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.png" alt="short format: The Tell-Tale Heart" /></a>
 
-![short format: The Tell-Tale Heart](misc/README-short-story-poe.png)
+<!-- ![short format: The Tell-Tale Heart](misc/README-short-story-poe.png) -->
 
-</div>
 <div style="float: left; width: 49%;">
 
 ![long format: At the Mountains of Madness](misc/README-long-story-lovecraft.pdf)
