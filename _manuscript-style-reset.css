@@ -11,20 +11,15 @@
  * @laurent!). <https://joplinapp.org>
  *
  * Included in this stylesheet
- * - some Joplin-specific adjustments
- * - some VSCode-specific adjustments
+ * - Joplin-specific adjustments
+ * - Pandoc-specific adjustments
+ * - VSCode-specific adjustments
  * - general CSS resets (I pulled a lot from Firefox's ua.css and html.css.)
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
-
-/*
- * pandoc-ism
- */
-header#title-block-header { display: none; }
-
 
 /*
  * JOPLIN adjustments
@@ -91,6 +86,13 @@ body.page-note > div.footer div.content { display: none !important; }
 
 /* remove the automated title display */
 body.vscode-body .markdown-body > h1 { display: none; }
+/* markdown all-in-one extension's html export's title addition */
+body.vscode-body > h1 { display: none; }
+
+/*
+ * pandoc-ism
+ */
+header#title-block-header { display: none; }
 
 
 /*
