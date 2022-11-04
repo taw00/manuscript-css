@@ -13,9 +13,25 @@ working drafts in a professional manner for review, critique, or whatever.
 
 ## What do you mean by manuscript formatting?
 
-Take a look at the example PDFs in the [examples](./examples/) folder in
+Take a look at the example PDFs in the [examples folder](./examples/) in
 this repository. Those are examples of how manuscripts are formatted: no fluff,
-easy to read and review.
+easy to read and review. Here are some screenshots of the results . . .
+
+<div style="float: left; width: 49%;">
+
+![short format: The Tell-Tale Heart](misc/README-short-story-poe.png)
+
+</div>
+<div style="float: left; width: 49%;">
+
+![long format: At the Mountains of Madness](misc/README-long-story-lovecraft.pdf)
+
+</div>
+<div style="clear: both;"></div>
+
+![multi-scene short story example](misc/README-short-example-multi-scene.pdf)
+
+<div style="clear: both;"></div>
 
 ### Supported formatting
 
@@ -38,9 +54,9 @@ easy to read and review.
   [jPDF Tweak](https://jpdftweak.sourceforge.net/) (there are a lot of online
   tools as well that do this). It has an ancient interface, but it works. You
   just have to be OK with approximating the header placement and helvetica font
-  as your only choice. Look in the examples folder after I added manuscript
-  page headers to the Lovecraft story. This screenshot shows what I did to
-  enable it.
+  as your only choice. Look in the [examples folder](./examples/) after I added
+  manuscript page headers to the Lovecraft story. This screenshot shows what I
+  did to enable it.
 
   <a style="width: 25%; margin: 8px auto;" href="misc/README-screenshot-jPDF-Tweak.png"><img src="misc/README-screenshot-jPDF-Tweak.png"></a>
 
@@ -74,9 +90,9 @@ looks rather daunting and is geared for the academic community.
 ## How do I construct a manuscript from my markdown document?
 
 **TL;DR:** check out the example manuscripts in this repository in their
-original markdown and then as PDFs. Use the examples as a template for your own
-work.  And if you are already familiar with converting markdown to HTML to PDF
-then that should be enough to get you going.
+original markdown and then as PDFs. Use one of the [examples](./examples/) as a
+template for your own work.  And if you are already familiar with converting
+markdown to HTML to PDF then that should be enough to get you going.
 
 ## How? With more detail
 
@@ -127,7 +143,7 @@ extension and then `CTRL-P` > `Save as PDF`.
    natively from within the Joplin application)
 
 If you have an existing document already in markdown format, just examine
-the templates or examples and refactor your document accordingly.
+the [templates/examples](./examples/) and refactor your document accordingly.
 
 ## Rendering your markdown to HTML for review (step 5 above)
 
@@ -237,6 +253,8 @@ text and not a fully customized rendering. This is fine if you just want nice
 looking notes and things. But not fine if you want _very specific_ looking
 notes and things. Generating a manuscript view of your document is a very
 specific look.
+
+![Joplin in action](misc/README-joplin.pdf)
 
 This is where the [Joplin](https://joplinapp.org) note-taking application rises
 above its peers. Yes, your notes and documents look nice out of the box, but
