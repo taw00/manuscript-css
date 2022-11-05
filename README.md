@@ -169,7 +169,7 @@ It's easier to work with a template than from scratch.
 
 ### Joplin: edited markdown to exported PDF
 
-**(1) editing, (2) previewing, and then (3) rendering a PDF**
+*(1) editing, (2) previewing, and then (3) rendering a PDF*
 
 If you use [Joplin](https://joplinapp.org) for your markdown editing, use
 the application's built in previewer for the "convert to HTML" step. And then
@@ -190,7 +190,7 @@ to producing a publicly viewable manuscript.
 
 ### VSCode: edited markdown to exported HTML
 
-**(1) editing, (2) previewing, and then (2.5) exporting to HTML**
+*(1) editing, (2) previewing, and then (2.5) exporting to HTML*
 
 > **A BIG CAVEAT WITH VSCODE**: VSCode blocks importing (`@import`) from the
 > filesystem. If you want to use the previewer and renderer in VSCode, you will
@@ -217,6 +217,8 @@ believe, in the same directory as the markdown document.
 > instructions for usage.
 
 ### Pandoc: markdown exported to HTML
+
+*Step 2.5: converting a markdown file to an HTML file.*
 
 This requires you use the command line and to have Pandoc installed,
 <https://pandoc.org/>.
