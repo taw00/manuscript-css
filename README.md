@@ -247,7 +247,7 @@ Note, the filename format is just what I prefer.
 
 ### Chrome: markdown or HTML to exported PDF
 
-**markdown (2) previewing as HTML and then (3) exporting a PDF**
+*markdown (2) previewing as HTML and then (3) exporting a PDF*
 
 Within Chrome, prep it for markdown rendering . . .
 
@@ -267,7 +267,7 @@ Finally, of course, if you so choose, you can directly produce a PDF:
 The HTML preview will not be as clean as Joplin's or VSCode's, IMHO, but it is
 pretty darn good.
 
-**HTML file exported to PDF**
+*HTML file exported to PDF*
 
 If you produced an HTML file from Pandoc or VSCode, you open the file in the
 Chrome browser . . .
