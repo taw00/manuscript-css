@@ -11,7 +11,9 @@ LibreOffice or Google Docs or Word for submission finalization. Now, you can
 stay in your favorite markdown editor and still have a means to present your
 working drafts in a professional manner for review, critique, or whatever.
 
-## What do you mean by manuscript formatting?
+# What this process is
+
+## Manuscript formatting?
 
 Take a look at the example PDFs in the [examples folder](./examples/) in
 this repository. Those are examples of how manuscripts are formatted: no fluff,
@@ -28,19 +30,47 @@ easy to read and review. Here are some screenshots of the results . . .
 
 <div style="clear: both;"></div>
 
-### Supported formatting
+**I.e., this process provides . . .**
 
-1. A generalized manuscript format for prose (both narrative and non-narrative) and
-   for poetry
+1. A generalized manuscript format for prose and poetry (for prose, both
+   narrative and non-narrative)
 3. Formatting to produce US Letter- or A4-dimensioned artifacts (PDFs)
-4. Short-form works (e.g. short stories or single-poem manuscripts) and
-   long-form works (novel and book-sized / poetry chapbooks and collections)
-5. A lot of customization if you know your CSS.
+4. Formatting adjusted for short-form works (e.g. short stories or single-poem manuscripts)
+5. Formatting adjusted for long-form works (novel and book-sized / poetry
+   chapbooks and collections)
+6. Formatting broadly adjusted for non-narrative works (non-narrative
+   non-fiction, primarily)
+7. A lot of customability if you know your CSS.
 
-## What this does not support
+# What this process is not
 
-- Nuanced out-of-the-box customization.
-- Prose: No `Lastname / Short Title / Page number` in the headers of page 2 and
+## This process is not for book production
+
+This set of stylesheets designed to produce a professional reviewable
+document in an industry-standard format from your markdown. Producing a book is
+a different animal.
+
+To produce a book, when you have finished or are close to finishing your
+drafting process, port your document from markdown to LibreOffice, Word, or
+Google Docs and either submit that to an editor or import that into a book
+production application like [Reedsy](https://reedsy.com/write-a-book).
+
+Another possibility is to port the markdown to
+[Bookdown](https://www.bookdown.org/). Bookdown, though very intriguing, also
+looks rather daunting and is geared for the academic community.
+
+## This is not for producing a 100% compliant manuscript
+
+**I.e., this process does not provide . . .
+
+- Nuanced out-of-the-box customization. Some publishing houses have very
+  specific manuscript requirements. This process doesn't support that. Import
+  your markdown, when complete, into Google Docs or LibreOffice or Word and
+  go from there: `pandoc -o your-manuscript.odt your-manuscript.md`
+
+<a href="misc/README-screenshot-jPDF-Tweak.png"><img style="width: 25%; float: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
+
+- For prose: No `Lastname / Short Title / Page number` in the headers of page 2 and
   onward. Not yet anyway. Waiting for
   [margin at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
   to be finally supported (currently a w3c working draft spec.) At the minimum,
@@ -52,11 +82,8 @@ easy to read and review. Here are some screenshots of the results . . .
   as your only choice. Look in the [examples folder](./examples/) after I added
   manuscript page headers to the Lovecraft story. This screenshot shows what I
   did to enable it.
-
-  <a style="width: 25%; margin: 8px auto;" href="misc/README-screenshot-jPDF-Tweak.png"><img src="misc/README-screenshot-jPDF-Tweak.png"></a>
-
-- Poetry manuscripts won't have 2nd page+ of poem continuation blocks. Again,
-  maybe in a few years as CSS matures.
+- For poetry: Manuscripts won't have 2nd page+ of poem continuation blocks.
+  Again, maybe in a few years as CSS matures.
 - There is a bug with page breaking. The CSS is configured to disallow page
   breaking in weird places, like between a chapter title and the prose, but
   those rules are ignored. I don't know why. In `manuscript.css`, there
@@ -68,99 +95,140 @@ easy to read and review. Here are some screenshots of the results . . .
 > in whatever format they demand (you will likely have to port the document
 > to `.odt` or `.docx` format). This is not for that.
 
-## I want to produce a book from my writing
-
-This is not for that. This is for creating a professional reviewable document
-in an industry-standard format.
-
-To produce a book, when you have finished or are close to finishing your
-drafting process, port your document from markdown to LibreOffice, Word, or
-Google Docs and either submit that to an editor or import that into a book
-production application like [Reedsy](https://reedsy.com/write-a-book).
-
-Another possibility is to port the markdown to
-[Bookdown](https://www.bookdown.org/). Bookdown, though very intriguing, also
-looks rather daunting and is geared for the academic community.
-
-## How do I construct a manuscript from my markdown document?
+# How do I produce a manuscript-formatted artifact from my markdown document?
 
 **TL;DR:** check out the example manuscripts in this repository in their
 original markdown and then as PDFs. Use one of the [examples](./examples/) as a
 template for your own work.  And if you are already familiar with converting
-markdown to HTML to PDF then that should be enough to get you going.
+markdown to HTML and then HTML to PDF then that should be enough to get you
+going.
 
-## How? With more detail
+**How? With more detail . . .**
 
-#### Process summary:
+## Process summary
 
-(1) write your document in the prescribed structure, (2) convert it to HTML,
-and then (3) convert that to PDF.
+(1) write your document in the prescribed structure, (2) preview it in HTML,
+(2.5) potentially save it as HTML, and then (3) convert the document to PDF.
 
-If you use [Joplin](https://joplinapp.org) for your markdown editing, you use
-the application's built in previewer for the "convert to HTML" step. And then
-you directly produce a PDF from within the application.
+**Step 1** is done with any editor: Joplin, VSCode, Ghostwriter, Xed, Vim, etc. Even
+Notepad if you like.
 
-Otherwise, you convert to HTML with Pandoc and then PDF via a browser.
+**Step 2** is done natively with Joplin, VSCode, or the Chrome browser. Or
+converted to HTML with Pandoc.
 
-Or you render a preview of your markdown fie in Chrome (a preview is really a
-conversion to HTML) using the
-[Markdown Viewer](https://chrome.google.com/webstore/detail/markdown-viewer)
-extension and then `CTRL-P` > `Save as PDF`.
+**Step 2.5** is done natively with VSCode or Pandoc
 
-#### Process summary - more detailed:
+**Step 3** is done natively from Markdown with Joplin or the Chrome browser, or
+From from HTML via a Chrome browser.
 
-0. Download this repository.
-   - From the command line using `git`:
-     1. Copy (clone) the repository:
-        `git clone https://github.com/taw00/manuscript-css/`
-     2. `cd manuscript-css`
+> **A note about the HTML rendering of a long-form manuscript.**
+>
+> An HTML rendering is not a page-by-page format. Therefore the HTML renderings
+> will be a simulation which is fine for presentation over the web. By default,
+> simulated page breaks are inserted (dotted lines) in the HTML where they
+> would occur when converted to a PDF. Also, large positioning gaps are
+> squashed just to make it easier to view. When the document is rendered to PDF,
+> the dotted lines will be removed and, of course, the correct positioning will
+> be rendered. That faint margin border also disappears.
 
-   - From the GitHub UI:
-     1. browse to <https://github.com/taw00/manuscript-css/>
-     2. `Code` (big blue button) > `Download zip`
-     4. Unzip the `manuscript-css-main.zip` file.
-     5. Change that name to `manuscript-css` if you like.
-     6. `cd manuscript-css'
+## Process summary - prepping this repository for use
 
-1. Copy one of the templates from the templates directory, renaming it to
-   whatever makes sense to you.
-2. Open that markdown document in your favorite editor.  
-   I recommend the [Joplin](https://joplinapp.org) desktop note-taking
-   application. It has the most seamless user experience.
+Download this repository.
+
+- From the command line using `git`:
+
+  1. Copy (clone) the repository:
+     `git clone https://github.com/taw00/manuscript-css/`
+  2. `cd manuscript-css`
+
+- From the GitHub UI:
+  1. browse to <https://github.com/taw00/manuscript-css/>
+  2. `Code` (big blue button) > `Download zip`
+  4. Unzip the `manuscript-css-main.zip` file.
+  5. Change that name to `manuscript-css` if you like.
+  6. `cd manuscript-css'
+
+And if you own a webserver somewhere. Stick this repo in your /pub/ directory
+so you can import over the web.
+
+## Process summary - Step 1 - the markdown
+
+It's easier to work with a template than from scratch.
+
+1. Copy one of the templates from the [templates directory](./examples/),
+   renaming it to whatever makes sense to you. If you have an existing document
+   already in markdown format, just examine a template and refactor your
+   document accordingly.
+2. Open that markdown document in your favorite editor.
 3. Replace the templated content with yours
-4. Write your story, scene by scene.
-5. Convert to HTML using Pandoc (or preview natively in the Joplin application)
-6. Review the HTML in your favorite browser (or preview natively in the Joplin
-   application)
-7. If not to your satisfaction, revise your document  
-   and repeat from step 5 - rinse; repeat until done.
-8. Convert to PDF by using `Print to file` from your browser (or export
-   natively from within the Joplin application)
+4. Write your story, scene by scene. (Or poetry collection, poem by poem.)
 
-If you have an existing document already in markdown format, just examine
-the [templates/examples](./examples/) and refactor your document accordingly.
+## Process summary - rendering to HTML for review or presentation and then to PDF
 
-## Rendering your markdown to HTML for review (step 5 above)
+#### Joplin: edited markdown to exported PDF
 
-### If using Joplin as your markdown editor, just use the previewer (skip to step 6)
+**(1) editing, (2) previewing, and then (3) rendering a PDF**
 
-> Note, to use Joplin, you have to `File` > `Import` the markdown file, of
-> course, and then you'll have to change the `@import` to include the full path
-> to the `manuscript.css` stylesheet.
+If you use [Joplin](https://joplinapp.org) for your markdown editing, use
+the application's built in previewer for the "convert to HTML" step. And then
+later, if you so choose, you can directly produce a PDF (`CTRL-SHIFT-E`) from
+within the application.
 
-Click the `Toggle Editor Layout` button in the upper-right-hand corner of the
-application. There you have it. The HTML preview of the document. It's as
-accurate a presentation as your browser would present.
+> Click the `Toggle Editor Layout` button in the upper-right-hand corner of the
+> application. There you have it. The HTML preview of the document. It's as
+> accurate a representation as your browser can produce.
 
-### If using any other editor
+If you want the end result to be an HTML file on disk, then you will need to use
+Pandoc to do that. See below. Joplin does have markdown to HTML functionality,
+but you have to export every document in your Joplin application to HTML and
+then pick out the one in question. Joplin is seamless at previewing and then
+exporting to PDF. Not so much to HTML on disk. Personally, I use the
+[Joplin Cloud](https://joplincloud.com) publish functionality to skip straight
+to producing a publicly viewable manuscript.
 
-#### The cleanest method: Pandoc
+#### VSCode: edited markdown to exported HTML
+
+**(1) editing, (2) previewing, and then (2.5) exporting to HTML**
+
+> **A BIG CAVEAT WITH VSCODE**: VSCode blocks importing (`@import`) from the
+> filesystem. If you want to use the previewer and renderer in VSCode, you will
+> have to host the `manuscript-css` folder on the web somewhere. Or in the
+> meantime, as of this writing, just use my instance:
+> `@import "https://toddwarner.io/pub/css/manuscript/manuscript.css";`
+> That is not guaranteed to be a functional link forever though.
+
+Install (`CTRL-SHIFT-X`) these extensions: `Markdown All-in-One`,
+`Markdown Preview Mermaid Support`, `Markdown Footnotes`, and
+`Markdown Superscript`.
+
+To preview the HTML: `CTRL-k` release then `v`
+
+To export to HTML on disk:  `CTRL-SHIFT-P` and then
+`>Markdown All in One: Print current document to HTML`. It will be saved, I
+believe, in the same directory as the markdown document.
+
+> Side note. If you are Joplin user but also love VSCode, there is an excellent
+> VSCode extension that enables it to plug into the Joplin application
+> ecosystem and largely replace Joplin's editor (and some of the front end).
+> It's rather excellent, though the @import caveat mentioned above is hugely
+> annoying. For that, install the extension `joplin-vscode-plugin` and follow the
+> instructions for usage.
+
+#### Pandoc: markdown exported to HTML
 
 This requires you use the command line and to have Pandoc installed,
 <https://pandoc.org/>.
 
-1. Convert your markdown file to HTML (step 5)  
-   In this example (really only `-V` and `--metadata` are optional):
+Edit the markdown document with your editor of choice. Then . . .
+
+Convert your markdown file to HTML:  
+(In this example really only `-V` and `--metadata` are optional.)
+
+```plaintext
+pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
+  --metadata title="TITLE" \
+  -o lastname.TITLE.manuscript.html lastname.TITLE.manuscript.md
+```
 
 - `-s` means standalone rendering
 - `-V lang=en` inserts the correct locale info in the HTML head element.
@@ -171,61 +239,48 @@ This requires you use the command line and to have Pandoc installed,
 - `--metadata title="YOUR TITLE"` sets the HTML title.
 - `-o filename.html` sets the output filename
 
-```plaintext
-pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
-  --metadata title="TITLE" \
-  -o lastname.TITLE.manuscript.html lastname.TITLE.manuscript.md
-```
+Note, the filename format is just what I prefer.
 
-2. Use your browser to review that HTML (step 6)
+#### Chrome: markdown or HTML to exported PDF
+
+**markdown (2) previewing as HTML and then (3) exporting a PDF**
+
+Within Chrome, prep it for markdown rendering . . .
+
+1. Install: <https://chrome.google.com/webstore/detail/markdown-viewer>
+2. Click the puzzle-piece and pin the entension to the browser bar
+3. Click the M icon and turn on allowing opening local files. Reference:
+   <https://github.com/simov/markdown-viewer>
+
+Edit the markdown document with your editor of choice.
+
+Then browser to that `.md` file and it should render it perfectly as an HTML
+preview.
+
+Finally, of course, if you so choose, you can directly produce a PDF:
+`CTRL-P > Save as PDF`
+
+The HTML preview will not be as clean as Joplin's or VSCode's, IMHO, but it is
+pretty darn good.
+
+**HTML file exported to PDF**
+
+If you produced an HTML file from Pandoc or VSCode, you open the file in the
+Chrome browser . . .
 
 ```plaintext
 file:///fullpath-to-the-document/lastname.TITLE.manuscript.html
 ```
 
-> **A note about the HTML rendering of a long-form manuscript.**
->
-> By default, simulated page breaks are inserted (dotted lines) in the HTML
-> where they would occur when converted to a PDF. Also, large positioning gaps
-> are squashed. When the document is rendered to PDF, the dotted lines will be
-> removed and, of course, the correct positioning will be rendered. That faint
-> margin border also disappears.
-
-#### A simpler method: the Markdown Viewer extension for Chrome
-
-Simpler, but does introduce possible formatting oddities. I feel it work nearly
-perfectly.
-
-1. Install this: <https://chrome.google.com/webstore/detail/markdown-viewer>
-2. Click the puzzle-piece and pin the entension to the browser bar
-3. Click the M icon and turn on allowing opening local files. See
-   <https://github.com/simov/markdown-viewer>
-4. Browser to a `.md` file on your system and it should render it perfectly as
-   HTML. Then you are ready for the next step.
-
-## Rendering your markdown to PDF (step 8)
-
-### If using Joplin
-
-`CTRL`-`SHIFT`-`E`
-
-Or, in the top menus of the application: `File` > `Export All` > `PDF - PDF File`
-
-Then use your favorite PDF viewer or browser to view the file.
-
-### If reviewing the HTML from a browser
-
-`Print` (CTRL-P) > `Save to PDF`
-
-Then use your favorite PDF viewer or browser to view the file.
-
+and then `CTRL-P > Save as PDF`. That easy.
 
 > _Note1: **Chrome-based browsers manage the fonts better for export to PDF.**
 > So, I recommend using one of them for review and then export to PDF. This is
 > one of the few times I recommend Chrome over Firefox._
 
 > _Note2, Though Pandoc can produce a PDF, its renderings are not accurate.
-> Joplin and your web browser do a far better job._
+> Joplin and your web browser do a far better job. Pandoc's HTML renderings are
+> solid._
 
 That's it! Congrats!
 
