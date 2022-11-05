@@ -11,8 +11,6 @@ LibreOffice or Google Docs or Word for submission finalization. Now, you can
 stay in your favorite markdown editor and still have a means to present your
 working drafts in a professional manner for review, critique, or whatever.
 
-# What this process is
-
 ## Manuscript formatting?
 
 Take a look at the example PDFs in the [examples folder](./examples/) in
@@ -29,6 +27,8 @@ easy to read and review. Here are some screenshots of the results . . .
 ![multi-scene short story example](misc/README-short-example-multi-scene.png)
 
 <div style="clear: both;"></div>
+
+# What this process is
 
 **I.e., this process provides . . .**
 
@@ -61,7 +61,7 @@ looks rather daunting and is geared for the academic community.
 
 ## This is not for producing a 100% compliant manuscript
 
-**I.e., this process does not provide . . .
+**I.e., this process does not provide . . .**
 
 - Nuanced out-of-the-box customization. Some publishing houses have very
   specific manuscript requirements. This process doesn't support that. Import
@@ -103,9 +103,7 @@ template for your own work.  And if you are already familiar with converting
 markdown to HTML and then HTML to PDF then that should be enough to get you
 going.
 
-**How? With more detail . . .**
-
-## Process summary
+## Process summary - super high-level
 
 (1) write your document in the prescribed structure, (2) preview it in HTML,
 (2.5) potentially save it as HTML, and then (3) convert the document to PDF.
@@ -130,6 +128,8 @@ From from HTML via a Chrome browser.
 > squashed just to make it easier to view. When the document is rendered to PDF,
 > the dotted lines will be removed and, of course, the correct positioning will
 > be rendered. That faint margin border also disappears.
+
+**The process, with more detail . . .**
 
 ## Process summary - prepping this repository for use
 
@@ -165,7 +165,7 @@ It's easier to work with a template than from scratch.
 
 ## Process summary - rendering to HTML for review or presentation and then to PDF
 
-#### Joplin: edited markdown to exported PDF
+### Joplin: edited markdown to exported PDF
 
 **(1) editing, (2) previewing, and then (3) rendering a PDF**
 
@@ -186,7 +186,7 @@ exporting to PDF. Not so much to HTML on disk. Personally, I use the
 [Joplin Cloud](https://joplincloud.com) publish functionality to skip straight
 to producing a publicly viewable manuscript.
 
-#### VSCode: edited markdown to exported HTML
+### VSCode: edited markdown to exported HTML
 
 **(1) editing, (2) previewing, and then (2.5) exporting to HTML**
 
@@ -214,7 +214,7 @@ believe, in the same directory as the markdown document.
 > annoying. For that, install the extension `joplin-vscode-plugin` and follow the
 > instructions for usage.
 
-#### Pandoc: markdown exported to HTML
+### Pandoc: markdown exported to HTML
 
 This requires you use the command line and to have Pandoc installed,
 <https://pandoc.org/>.
@@ -241,7 +241,7 @@ pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
 
 Note, the filename format is just what I prefer.
 
-#### Chrome: markdown or HTML to exported PDF
+### Chrome: markdown or HTML to exported PDF
 
 **markdown (2) previewing as HTML and then (3) exporting a PDF**
 
@@ -290,7 +290,7 @@ Questions? Comments? Post them in the Discussions section of this repository.
 ---
 ---
 
-## Other things
+# Other things
 
 ### Todd is a Joplin shill!
 
@@ -360,9 +360,9 @@ follow the steps above. It's not complicated.
 
 ---
 
-### My thoughts on various text-based writing platforms . . .
+# My thoughts on various text-based writing platforms . . .
 
-#### Editors for Writers
+### Editors for Writers
 
 - [Joplin](https://joplinapp.org): I've already sung Joplin's praises. But it
   is, IMHO, the far superior application for developing text-heavy context.
@@ -394,7 +394,7 @@ follow the steps above. It's not complicated.
   them. They are a waste of your time except to jot down ideas to be
   transferred later.
 
-#### General purpose text/programming editors
+### General purpose text/programming editors
 
 - [Xed](https://github.com/linuxmint/xed): a great just-enough-features
   lightweight text and code editor. I use Xed all the time.
@@ -425,9 +425,9 @@ follow the steps above. It's not complicated.
 ---
 ---
 
-## Structure summary of a manuscript drafted in markdown
+# Structure summary of a manuscript drafted in markdown
 
-#### Example 1: The document beginning - default format and behavior
+### Example 1: The document beginning - default format and behavior
 
 _Note that "manuscript.css" here is a stand-in for
 "/path/to/manuscript-css/manuscript.css". Or if you decide to host it on some
@@ -443,7 +443,7 @@ webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 ... your manuscript ...
 ```
 
-#### Example 2: The document beginning - same as above with behavior adjustments
+### Example 2: The document beginning - same as above with behavior adjustments
 
 ```markdown
 <!-- Formatting: A4, 25.4mm margins, long-form non-narrative          -->
@@ -468,7 +468,7 @@ container.
 Let's look at the containers in summary, and then we'll dive into a little
 depth afterward.
 
-#### The containers in summary (prose-focused)...
+# The containers in summary (prose-focused)...
 
 ```markdown
 <style>
@@ -524,7 +524,7 @@ depth afterward.
 ```
 
 
-#### The container `<div id="m-contact">`
+### The container `<div id="m-contact">`
 
 The `m-contact` container is for your author or agent contact info. Example:
 
@@ -542,7 +542,7 @@ email@example.com | +1 555-555-1212
 </div>
 ```
 
-#### The container `<div class="m-header">`
+### The container `<div class="m-header">`
 
 One exists at the top level for the title and whatnot of the work. Then each
 part, chapter, and scene can also optionally also have titles and things.
@@ -577,7 +577,7 @@ Literary Fiction
 
 Note, the `m-header`s in the parts, chapters, and scenes don't usually have `m-facts`.
 
-#### Fonts / Typefaces
+# Fonts / Typefaces
 
 The default fonts used by the manuscript are ones selected to conform to what
 is expected—namely Times New Roman close equivalents, but also Arial and
@@ -598,7 +598,7 @@ manuscript (adding the path as needed, of course):
 </style>
 ```
 
-### Poetry!
+# Poetry!
 
 To insert a poem in a document arbitrarily, it will be structured like this:
 
@@ -624,7 +624,7 @@ To insert a poem in a document arbitrarily, it will be structured like this:
   have an _empty_ `.m-chapter` + a solitary `.m-poem` filled with ` ```plaintext`
   stanzas similar to `.x-poem` above.
 
-## Good luck!
+# Good luck!
 
 Check out the example manuscripts in this repository and I think how everything
 works with `manuscript.css` becomes obvious.
@@ -638,9 +638,9 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 ---
 ---
 
-## Addendum
+# Addendum
 
-### General manuscript formatting guidelines
+## General manuscript formatting guidelines
 
 Please note, again, that manuscript formatting is a loose standard and
 ultimately governed by to whomever you are submitting. For example, if a
@@ -649,21 +649,21 @@ in Comic Sans.
 
 Here are some general guidelines.
 
-#### Novels
+### Novels
 
 - <https://www.shunn.net/format/novel/>
 - <https://graemeshimmin.com/manuscript-format-for-novel-submission/> A4!
 - <https://blog.reedsy.com/guide/book-manuscript-format/>
 
-#### Novellas
+### Novellas
 
 - <https://www.shunn.net/format/2009/03/proper_novella_format.html>
 
-#### Short Narratives
+### Short Narratives
 
 - <https://www.shunn.net/format/story/>
 
-#### Poetry
+### Poetry
 
 - <https://www.shunn.net/format/poetry/>
 - <https://www.masterclass.com/articles/how-to-format-and-submit-your-poetry-manuscript>
