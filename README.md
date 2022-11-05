@@ -59,7 +59,7 @@ Another possibility is to port the markdown to
 [Bookdown](https://www.bookdown.org/). Bookdown, though very intriguing, also
 looks rather daunting and is geared for the academic community.
 
-## This is not for producing a 100% compliant manuscript
+## This process is not for producing a 100% compliant manuscript
 
 **I.e., this process does not provide . . .**
 
@@ -151,7 +151,7 @@ Download this repository.
 And if you own a webserver somewhere. Stick this repo in your /pub/ directory
 so you can import over the web.
 
-## Process summary - Step 1 - the markdown
+## Process summary - Step 1 - editing markdown manuscript
 
 It's easier to work with a template than from scratch.
 
@@ -163,7 +163,9 @@ It's easier to work with a template than from scratch.
 3. Replace the templated content with yours
 4. Write your story, scene by scene. (Or poetry collection, poem by poem.)
 
-## Process summary - rendering to HTML for review or presentation and then to PDF
+## Process summary - Steps 2-3 - processing that markdown
+
+*Rendering to HTML for review or presentation and then to PDF.*
 
 ### Joplin: edited markdown to exported PDF
 
