@@ -30,8 +30,6 @@ easy to read and review. Here are some screenshots of the results . . .
 
 # What this process is
 
-**I.e., this process provides . . .**
-
 1. A generalized manuscript format for prose and poetry (for prose, both
    narrative and non-narrative)
 3. Formatting to produce US Letter- or A4-dimensioned artifacts (PDFs)
@@ -46,8 +44,8 @@ easy to read and review. Here are some screenshots of the results . . .
 
 ## This process is not for book production
 
-This set of stylesheets designed to produce a professional reviewable
-document in an industry-standard format from your markdown. Producing a book is
+This set of stylesheets designed to produce a professional, reviewable document
+in an industry-standard format rendered from your markdown. Producing a book is
 a different animal.
 
 To produce a book, when you have finished or are close to finishing your
@@ -61,17 +59,34 @@ looks rather daunting and is geared for the academic community.
 
 ## This process is not for producing a 100% compliant manuscript
 
-**I.e., this process does not provide . . .**
+- This process does not provide nuanced out-of-the-box customization. Some
+  publishing houses have very specific manuscript requirements. This process
+  doesn't support that. Import your markdown, when complete, into Google Docs
+  or LibreOffice or Word and refactor the document to the needed format.
 
-- Nuanced out-of-the-box customization. Some publishing houses have very
-  specific manuscript requirements. This process doesn't support that. Import
-  your markdown, when complete, into Google Docs or LibreOffice or Word and
-  go from there: `pandoc -o your-manuscript.odt your-manuscript.md`
+  `pandoc -o your-manuscript.odt your-manuscript.md`
+
+  Note: I have included Libreoffice templates in this repository. Copy the
+  templates into `$HOME/Templates/` (Linux), open LibreOffice, and then
+  `File > New > Templates...` and pick the appropriate template. Then, perform
+  the pandoc conversion shown above. Pandoc can't convert to `.odt` with
+  correct formatting, so, my favorite way of importing that text is to clean
+  out the new document I created from the template. Click in the text body, and
+  then `Insert > Text from file` and insert all of `your-manuscript.odt`. And
+  manually clean everything up. Changing the style of most of the text to
+  `First Line Indent`, adding in dinkuses, etc. etc. It's a PITA but it goes
+  faster than you think. Or just cut-and-paste big chunks of text (paste with
+  `CTRL-SHIFT-V`).
+
+  There is a guy out there who has created an automated
+  short story manuscript generator thingy using LibreOffice, but I don't care
+  for it. His website can be found
+  [here](https://www.autodidacts.io/convert-markdown-to-standard-manuscript-format-odts-docs-and-pdfs-with-pandoc/).
 
 <a href="misc/README-screenshot-jPDF-Tweak.png"><img style="width: 25%; float: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
 
-- For prose: No `Lastname / Short Title / Page number` in the headers of page 2 and
-  onward. Not yet anyway. Waiting for
+- For prose: No `Lastname / Short Title / Page number` in the headers of page 2
+  and onward. Not yet anyway. Waiting for
   [margin at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
   to be finally supported (currently a w3c working draft spec.) At the minimum,
   page numbers make life easier for reviewers when giving feedback. One way to
@@ -125,9 +140,9 @@ From from HTML via a Chrome browser.
 > will be a simulation which is fine for presentation over the web. By default,
 > simulated page breaks are inserted (dotted lines) in the HTML where they
 > would occur when converted to a PDF. Also, large positioning gaps are
-> squashed just to make it easier to view. When the document is rendered to PDF,
-> the dotted lines will be removed and, of course, the correct positioning will
-> be rendered. That faint margin border also disappears.
+> squashed just to make it easier to view. When the document is rendered to
+> PDF, the dotted lines will be removed and, of course, the correct positioning
+> will be rendered. That faint margin border also disappears.
 
 **The process, with more detail . . .**
 
@@ -245,6 +260,11 @@ pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
 
 Note, the filename format is just what I prefer.
 
+> Note this Pandoc limitation that so many folks forget. Pandoc doesn't do CSS.
+> What this means is that converting from Mardown to HTML works just fine
+> because Pandoc just passes along your CSS. But Markdown (or HTML) to most
+> other formats will have all that fancy CSS just dropped and not translated.
+
 ### Chrome: markdown or HTML to exported PDF
 
 *markdown (2) previewing as HTML and then (3) exporting a PDF*
@@ -282,9 +302,10 @@ and then `CTRL-P > Save as PDF`. That easy.
 > So, I recommend using one of them for review and then export to PDF. This is
 > one of the few times I recommend Chrome over Firefox._
 
-> _Note2, Though Pandoc can produce a PDF, its renderings are not accurate.
-> Joplin and your web browser do a far better job. Pandoc's HTML renderings are
-> solid._
+> _Note2, Though Pandoc can produce a PDF, Pandoc doesn't grok custom-CSS.
+> Therefore its renderings will not be accurate. Joplin and your web browser do
+> a far better job. Pandoc's HTML renderings are solid though since Markdown
+> is really just a sping of HTML._
 
 That's it! Congrats!
 
@@ -384,11 +405,11 @@ follow the steps above. It's not complicated.
   Check it out. As a markdown editor, it's okay. But it too can open files for
   edit in a text editor of your choosing.
 - [GhostWriter](https://ghostwriter.kde.org/): great editor. It previews
-  manuscript-formatted markdown incorrectly, but exports to HTML just fine. It's
-  a half solution. It also had writer-friendly features like focus mode, etc.
-  Skip it's previewer. Edit with Ghostwriter, export to HTML, and preview in
-  a browser. It saves you a step in that you don't have to use Pandoc directly.
-  BUT! To export to HTML, it needs Pandoc installed.
+  manuscript-formatted markdown incorrectly, but exports to HTML just fine.
+  It's a half solution. It also had writer-friendly features like focus mode,
+  etc.  Skip it's previewer. Edit with Ghostwriter, export to HTML, and preview
+  in a browser. It saves you a step in that you don't have to use Pandoc
+  directly. BUT! To export to HTML, it needs Pandoc installed.
 - [Marktext](https://github.com/marktext/marktext): Man, I really like this
   editor as a writer's editor. Super simple and distraction free.
 - [Bear](https://bear.app/) and [Typora](https://typora.io/): I heard good
@@ -625,8 +646,8 @@ To insert a poem in a document arbitrarily, it will be structured like this:
 
 - If your document is a manuscript for a single poem, `#manuscript` will be of
   `class="short poetry"` and instead of a `.m-chapter` + `.m-scene`, you will
-  have an _empty_ `.m-chapter` + a solitary `.m-poem` filled with ` ```plaintext`
-  stanzas similar to `.x-poem` above.
+  have an _empty_ `.m-chapter` + a solitary `.m-poem` filled with
+  ````plaintext` stanzas similar to `.x-poem` above.
 
 # Good luck!
 
