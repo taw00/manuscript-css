@@ -24,6 +24,11 @@
  * - 'short' or 'long': a manuscript formatted for short prose is the default.
  * - 'narrative' or 'non-narrative': prose-only - formatted for narrative
  *   prose is the default.
+ * - 'text-only': Use this if you want a view of the document that excludes all
+ *   of the metadata on the first page (and m-facts in other sections of the
+ *   document). This will hide the manuscript frontmatter (first page stuff),
+ *   any page breaks, decorations, and it will simplify some of the spacing and
+ *   whatnot.
  *
  * To enable any of these formatting adjustments, just add the relevant
  * "switch" to the class attribute of the <div id="manuscript"> element in the
@@ -175,6 +180,23 @@
     --m-page-break: var(--m-page-break-long);
 }
 } /* /print */
+
+/* ********************************************************************* *
+ * .text-only stylings
+ * ********************************************************************* */
+
+#manuscript.text-only #m-contact { display: none !important; }
+#manuscript.text-only .m-facts { display: none !important; }
+#manuscript.text-only > .m-header { display: none !important; }
+#manuscript.text-only {
+    --m-page-break: unset !important;
+    --m-page-break-simulated: 0px !important;
+    --m-offset-parts: var(--m-elbow-room) !important;
+    --m-offset-chapters: var(--m-elbow-room) !important;
+    --m-offset-parts-render: var(--m-elbow-room) !important;
+    --m-offset-chapters-render: var(--m-elbow-room) !important;
+    --m-manuscript-border: 0px !important;
+}
 
 /* ********************************************************************* *
  * special-case stylings
