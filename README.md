@@ -61,27 +61,7 @@ looks rather daunting and is geared for the academic community.
 
 - This process does not provide nuanced out-of-the-box customization. Some
   publishing houses have very specific manuscript requirements. This process
-  doesn't support that. Import your markdown, when complete, into Google Docs
-  or LibreOffice or Word and refactor the document to the needed format.
-
-  `pandoc -o your-manuscript.odt your-manuscript.md`
-
-  Note: I have included Libreoffice templates in this repository. Copy the
-  templates into `$HOME/Templates/` (Linux), open LibreOffice, and then
-  `File > New > Templates...` and pick the appropriate template. Then, perform
-  the pandoc conversion shown above. Pandoc can't convert to `.odt` with
-  correct formatting, so, my favorite way of importing that text is to clean
-  out the new document I created from the template. Click in the text body, and
-  then `Insert > Text from file` and insert all of `your-manuscript.odt`. And
-  manually clean everything up. Changing the style of most of the text to
-  `First Line Indent`, adding in dinkuses, etc. etc. It's a PITA but it goes
-  faster than you think. Or just cut-and-paste big chunks of text (paste with
-  `CTRL-SHIFT-V`).
-
-  There is a guy out there who has created an automated
-  short story manuscript generator thingy using LibreOffice, but I don't care
-  for it. His website can be found
-  [here](https://www.autodidacts.io/convert-markdown-to-standard-manuscript-format-odts-docs-and-pdfs-with-pandoc/).
+  doesn't support that.
 
 <a href="misc/README-screenshot-jPDF-Tweak.png"><img style="width: 25%; float: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
 
@@ -260,10 +240,11 @@ pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
 
 Note, the filename format is just what I prefer.
 
-> Note this Pandoc limitation that so many folks forget. Pandoc doesn't do CSS.
-> What this means is that converting from Mardown to HTML works just fine
-> because Pandoc just passes along your CSS. But Markdown (or HTML) to most
-> other formats will have all that fancy CSS just dropped and not translated.
+> _Note there is a Pandoc limitation that so many folks forget. Pandoc doesn't
+> do CSS.  What this means is that converting from Mardown to HTML works just
+> fine because Pandoc just passes along your CSS. But Markdown (or HTML) to
+> most other formats will have all that fancy CSS just dropped and not
+> translated._
 
 ### Chrome: markdown or HTML to exported PDF
 
@@ -358,6 +339,71 @@ follow the steps above. It's not complicated.
 - Using this with HTML instead of markdown. Well, it should just work, I just
   haven't tried it. I mean, markdown, in the end, is really just HTML with a
   bit of varnish.
+
+### Porting your finished draft to LibreOffice and/or Google Docs
+
+**LibreOffice**
+
+I have included Libreoffice templates in this repository. Copy the templates
+into the `$HOME/Templates/` folder.  (Look in `Tools > Options, LibreOffice >
+Paths` for your Templates fold location.)
+
+Now, you are going to use Pandoc to generate a functional, but messy
+LibreOffice .odt document. Then you will create a fresh document in LibreOffice
+from one of the templates. And finally, you will cut and paste text from the
+messy document to the new document, adjusting formatting as needed. Not ideal,
+but it works and it goes faster than it sounds.
+
+To generate that messy .odt file:
+
+```plaintext
+pandoc -o your-manuscript.odt your-manuscript.md
+```
+
+To create a nice clean fresh-from-a-template LibreOffice document:
+- Open LibreOffice
+- `File > New > Templates...` and pick the appropriate template.
+- Remove most of the example text, though first make sure you understand what
+  things are. These templates are templated as such because they closely match
+  Google Docs import/export style names. Looking at all the styles, everything
+  under "normal" represents everything in thed document: "normal" is the text
+  and other random things. "Heading 1" is for part titles. "Heading 2" is for
+  chapter titles. "Heading 6" is for dinkus markers and the -30- marker. You
+  will have to figure out how to wedge everything else in if you did a bunch of
+  fancy things.
+- Either cut-and-paste blocks of text from the "messy .odt" (use
+  `CTRL-SHIFT-V`) to the new document. Or, after you get pretty good at this,
+  you can find an appropriate spot and import the whole messy document in:
+  `Insert > Text from file` . . . and then clean up the mess.
+
+> There is a guy out there who uses Pandoc's reference mechanism (templating)
+> to convert markdown to .odt and .docx into a short story manuscript format.
+> It's not the worst way of doing things, but I don't care for it. If you want
+> to play around with it, check it out
+> [here](https://www.autodidacts.io/convert-markdown-to-standard-manuscript-format-odts-docs-and-pdfs-with-pandoc/).
+
+**Google Docs**
+
+Check out my Google Docs templates
+[here](https://drive.google.com/drive/folders/1VHZiNtNyCqU3BOJG7sGdywo_8Ag2DcUL).
+
+You can get your document into Google Docs one of two ways: 1. port it to
+LibreOffice, generate a .odt and then import that into Google Docs. Or 2. you
+could create a new clean document from one of those templates and do the
+cut-and-paste shuffle as described earlier.
+
+> Note. Importing and explorting documents into and out of Google Docs is
+> error-prone. Google Docs is not the best at this. Office 365 is probably much
+> better, but I have never used it. One thing is for sure though, Google Docs
+> can import and export .odt better than .docx. Often, Google Docs won't even
+> recognize a legit .docx file.
+>
+> Also, I recommend turning on document conversion:
+> `Gear Icon > Settings > General > Convert Uploads`
+>
+> Finally, I have not played with it a ton, but you can connect and use Zoho
+> Writer from within Google Docs and it is a far more featureful application.
+> And it can handle importing and exporting better than Google Docs itself.
 
 ### For the Future
 
