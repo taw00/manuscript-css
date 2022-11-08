@@ -59,6 +59,13 @@ looks rather daunting and is geared for the academic community.
 
 ## This process is not for producing a 100% compliant manuscript
 
+For that, you will need to port your document to a wordprocessor. I use
+LibreOffice, sometimes Google Docs, and Zoho Writer. There are also a myriad
+of authoring platforms out there, that I have never used: Scrivener, Novlr,
+LivingWriter, Dabble, Ulysses, Storyist (Apply-only, blech!), Final Draft (for
+screenwriters), Quoll Writer (not sure if Quoll Writer can produce a
+manuscript), and others.
+
 - This process does not provide nuanced out-of-the-box customization. Some
   publishing houses have very specific manuscript requirements. This process
   doesn't support that.
