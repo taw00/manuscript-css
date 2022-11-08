@@ -162,7 +162,10 @@ Nam pharetra fermentum lectus nec malesuada. Nulla facilisi. Pellentesque
 volutpat odio vitae sapien convallis hendrerit. Nunc eu tincidunt quam. Praesent
 at urna molestie, tincidunt mi vitae, dapibus nulla.
 
-[SCENE TEXT]
+Ut porttitor nulla nisl, et dictum nisi efficitur a.
+Aliquam tellus nulla, faucibus a luctus id, vestibulum nec enim. Nulla egestas
+pellentesque porttitor. In ac mollis arcu. Etiam est nulla, faucibus et tellus
+nec, congue sagittis metus.
 
 </section> <!-- scene -->
 </section> <!-- chapter -->
@@ -258,4 +261,3 @@ will be impressed with your French.
 
 </article> <!-- manuscript -->
 </div> <!-- vpage -->
-
