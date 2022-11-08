@@ -63,7 +63,7 @@ looks rather daunting and is geared for the academic community.
   publishing houses have very specific manuscript requirements. This process
   doesn't support that.
 
-<a href="misc/README-screenshot-jPDF-Tweak.png"><img style="width: 25%; float: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
+<a href="misc/README-screenshot-jPDF-Tweak.png"><img style="wXidth: 25%; fXloat: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
 
 - For prose: No `Lastname / Short Title / Page number` in the headers of page 2
   and onward. Not yet anyway. Waiting for
