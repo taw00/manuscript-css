@@ -298,7 +298,7 @@ Questions? Comments? Post them in the Discussions section of this repository.
 
 # Other things
 
-### Todd is a Joplin shill!
+## Todd is a Joplin shill!
 
 Nope. It's just the best application that I have found for this kind of work.
 IMHO.
@@ -326,7 +326,7 @@ But I also use other editors out there. I use Vim, Xed, Marktext, and sometimes
 Obsidian. I am sure you have your preferred interface. Install Pandoc and
 follow the steps above. It's not complicated.
 
-### What's completely untested
+## What's completely untested
 
 - Tables
 - I have also done no styling for images. If you want to add images to your
@@ -341,7 +341,7 @@ follow the steps above. It's not complicated.
   haven't tried it. I mean, markdown, in the end, is really just HTML with a
   bit of varnish.
 
-### Porting your finished draft to LibreOffice and/or Google Docs
+## Porting your finished draft to LibreOffice and/or Google Docs
 
 **LibreOffice**
 
@@ -406,7 +406,7 @@ cut-and-paste shuffle as described earlier.
 > Writer from within Google Docs and it is a far more featureful application.
 > And it can handle importing and exporting better than Google Docs itself.
 
-### For the Future
+## For the Future
 
 - The one big missing feature is, as I mentioned above, support for a per-page
   header with `LASTNAME / SHORT TITLE / PAGENUMBER` in the upper-right-hand
@@ -415,7 +415,7 @@ cut-and-paste shuffle as described earlier.
   mention this again because it annoys me.
 - More options for the placement of `.m-facts`.
 
-### My writer's workflow:
+## My writer's workflow:
 
 1. 0-draft: either in markdown or handwritten
 2. work-in-progress: markdown drafting via the Joplin desktop application
@@ -434,7 +434,7 @@ cut-and-paste shuffle as described earlier.
 
 # My thoughts on various text-based writing platforms . . .
 
-### Editors for Writers
+## Editors for Writers
 
 - [Joplin](https://joplinapp.org): I've already sung Joplin's praises. But it
   is, IMHO, the far superior application for developing text-heavy context.
@@ -466,7 +466,7 @@ cut-and-paste shuffle as described earlier.
   them. They are a waste of your time except to jot down ideas to be
   transferred later.
 
-### General purpose text/programming editors
+## General purpose text/programming editors
 
 - [Xed](https://github.com/linuxmint/xed): a great just-enough-features
   lightweight text and code editor. I use Xed all the time.
@@ -503,7 +503,7 @@ cut-and-paste shuffle as described earlier.
 
 Please note, again, that manuscript formatting is a loose standard and
 ultimately governed by to whomever you are submitting. For example, if a
-publishing house demands the typeface by Comic Sans, you format your manuscript
+publishing house demands the typeface be Comic Sans, you format your manuscript
 in Comic Sans.
 
 Here are some general guidelines.
