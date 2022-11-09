@@ -68,8 +68,8 @@ to a wordprocessor. I use LibreOffice, sometimes Google Docs, and Zoho Writer.
 
 Also check out the myriad of authoring platforms out there: Scrivener, Novlr,
 LivingWriter, Dabble, Ulysses, Storyist (Apply-only, blech!), Final Draft (for
-screenwriters), Quoll Writer (not sure if Quoll Writer can produce a
-manuscript), others.
+screenwriters), Quoll Writer (Windows-only and not sure if Quoll Writer can
+produce a manuscript), others.
 
 **What's missing?**
 
