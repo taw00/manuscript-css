@@ -28,19 +28,20 @@ easy to read and review. Here are some screenshots of the results . . .
 
 <div style="clear: both;"></div>
 
-# What this process is
+# This process is . . .
 
-1. A generalized manuscript format for prose and poetry (for prose, both
-   narrative and non-narrative)
+1. A generalized manuscript formatting process for prose and poetry (for prose,
+   both narrative and non-narrative)
 3. Formatting to produce US Letter- or A4-dimensioned artifacts (PDFs)
-4. Formatting adjusted for short-form works (e.g. short stories or single-poem manuscripts)
-5. Formatting adjusted for long-form works (novel and book-sized / poetry
-   chapbooks and collections)
-6. Formatting broadly adjusted for non-narrative works (non-narrative
-   non-fiction, primarily)
+4. Formatting that can be adjusted for short-form works (e.g. short-story or
+   single-poem manuscripts)
+5. Formatting that can be adjusted for long-form works (novel and book-sized /
+   poetry chapbooks and collections)
+6. Formatting that can be broadly adjusted for non-narrative works
+   (non-narrative non-fiction, primarily)
 7. A lot of customability if you know your CSS.
 
-# What this process is not
+# This process is not . . .
 
 ## This process is not for book production
 
@@ -50,68 +51,76 @@ a different animal.
 
 To produce a book, when you have finished or are close to finishing your
 drafting process, port your document from markdown to LibreOffice, Word, or
-Google Docs and either submit that to an editor or import that into a book
-production application like [Reedsy](https://reedsy.com/write-a-book).
+Google Docs and either submit that to an editor or import the document into a
+book production application like [Reedsy](https://reedsy.com/write-a-book) if
+you intend to self-publish.
 
-Another possibility is to port the markdown to
-[Bookdown](https://www.bookdown.org/). Bookdown, though very intriguing, also
-looks rather daunting and is geared for the academic community.
+[Bookdown](https://www.bookdown.org/) is another toolset for those who are
+self-publishing. Bookdown, though very intriguing, also looks rather daunting
+and is geared for the academic community.
 
 ## This process is not for producing a 100% compliant manuscript
 
-For that, you will need to port your document to a wordprocessor. I use
-LibreOffice, sometimes Google Docs, and Zoho Writer. There are also a myriad
-of authoring platforms out there, that I have never used: Scrivener, Novlr,
+This set of stylesheets designed to produce a professional, reviewable document
+in an industry-standard format rendered from your markdown. But not a
+publishing-house-ready document. For that, you will need to port your document
+to a wordprocessor. I use LibreOffice, sometimes Google Docs, and Zoho Writer.
+
+Also check out the myriad of authoring platforms out there: Scrivener, Novlr,
 LivingWriter, Dabble, Ulysses, Storyist (Apply-only, blech!), Final Draft (for
 screenwriters), Quoll Writer (not sure if Quoll Writer can produce a
-manuscript), and others.
+manuscript), others.
 
-- This process does not provide nuanced out-of-the-box customization. Some
-  publishing houses have very specific manuscript requirements. This process
-  doesn't support that.
+**What's missing?**
+
+Only a few critical bits of formatting are missing that can't be easily fixed
+with markdown + CSS.
+
+- Nuanced out-of-the-box customization.  
+  Some publishing houses have certain quirky requirements for manuscripts
+  during the submission process. If their requirements travel far from the
+  generic standard, the process represented here probably won't support that.
+- Automated porting to `.odt` or `.docx` file formatting.  
+  That process is rather manual, unfortunately. Read more about that in
+  [README-structure-summary.md](README-structure-summary.md).
+- (Prose) No `Lastname / Short Title / Page number` headers from page 2
+  onward.  
+  Not yet anyway. Waiting for
+  [margin at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
+  to be finally supported (currently a w3c working draft spec.)
+
+> One possible solution is to add those headers to the generated PDF. There are
+> many online tools that enable this. But a desktop-based tool, at least for
+> linux users is [jPDF Tweak](https://jpdftweak.sourceforge.net/). It's an
+> ancient and inflexible application, but it works. You
+> just have to be OK with approximating the header placement and with the
+> helvetica typeface as your only choice. Look in the
+> [examples](./examples/) folder after I added manuscript page headers to the
+> Lovecraft story. This screenshot shows what I did to enable it.
 
 <a href="misc/README-screenshot-jPDF-Tweak.png"><img style="wXidth: 25%; fXloat: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
 
-- For prose: No `Lastname / Short Title / Page number` in the headers of page 2
-  and onward. Not yet anyway. Waiting for
-  [margin at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
-  to be finally supported (currently a w3c working draft spec.) At the minimum,
-  page numbers make life easier for reviewers when giving feedback. One way to
-  do that is to use something like
-  [jPDF Tweak](https://jpdftweak.sourceforge.net/) (there are a lot of online
-  tools as well that do this). It has an ancient interface, but it works. You
-  just have to be OK with approximating the header placement and helvetica font
-  as your only choice. Look in the [examples folder](./examples/) after I added
-  manuscript page headers to the Lovecraft story. This screenshot shows what I
-  did to enable it.
-- For poetry: Manuscripts won't have 2nd page+ of poem continuation blocks.
+- (Poetry) No 2nd page+ of poem continuation blocks.  
   Again, maybe in a few years as CSS matures.
-- There is a bug with page breaking. The CSS is configured to disallow page
-  breaking in weird places, like between a chapter title and the prose, but
-  those rules are ignored. I don't know why. In `manuscript.css`, there
-  are some special-case stylings available to force the issue. Namely, the
-  classes `force-break-before` and `force-break-after`.
+- Page break avoidance is buggy.  
+  The CSS is configured to disallow page breaking in weird places, like between
+  a chapter title and the prose, but those rules are ignored. I don't know why.
 
-> Just remember, when you submit to an editor, they will likely have very
-> specific requirements for the format of your manuscript. The rule is: submit
-> in whatever format they demand (you will likely have to port the document
-> to `.odt` or `.docx` format). This is not for that.
+# TL;DR Just show me how to do it!
 
-# How do I produce a manuscript-formatted artifact from my markdown document?
-
-**TL;DR:** check out the example manuscripts in this repository in their
-original markdown and then as PDFs. Use one of the [examples](./examples/) as a
-template for your own work.  And if you are already familiar with converting
-markdown to HTML and then HTML to PDF then that should be enough to get you
-going.
+Check out the example manuscripts in this repository in their original markdown
+and then as PDFs. Use one of the [examples](./examples/) as a template for your
+own work.  And if you are already familiar with converting markdown to HTML and
+then HTML to PDF then that should be enough to get you going.
 
 ## Process summary - super high-level
 
 (1) write your document in the prescribed structure, (2) preview it in HTML,
-(2.5) potentially save it as HTML, and then (3) convert the document to PDF.
+(2.5) potentially save it as an HTML file, and then (3) convert the document to
+PDF.
 
-**Step 1** is done with any editor: Joplin, VSCode, Ghostwriter, Xed, Vim, etc. Even
-Notepad if you like.
+**Step 1** is done with any editor: Joplin, VSCode, Ghostwriter, Xed, Vim, etc.
+Even Notepad if you like.
 
 **Step 2** is done natively with Joplin, VSCode, or the Chrome browser. Or
 converted to HTML with Pandoc.
@@ -121,12 +130,14 @@ converted to HTML with Pandoc.
 **Step 3** is done natively from Markdown with Joplin or the Chrome browser, or
 From from HTML via a Chrome browser.
 
-> **A note about the HTML rendering of a long-form manuscript.**
+> **A note about the HTML rendering of a long-form manuscript using this
+> stylesheet.**
 >
-> An HTML rendering is not a page-by-page format. Therefore the HTML renderings
-> will be a simulation which is fine for presentation over the web. By default,
-> simulated page breaks are inserted (dotted lines) in the HTML where they
-> would occur when converted to a PDF. Also, large positioning gaps are
+> An HTML rendering is not a paged format. Therefore the HTML rendering of the
+> manuscript will always be an approximation of a paper or PDF document.  A
+> simulation. Which is fine for the purposes of critique and review. By
+> default, simulated page breaks are inserted (dotted lines) in the HTML where
+> they would occur when converted to a PDF. Also, large positioning gaps are
 > squashed just to make it easier to view. When the document is rendered to
 > PDF, the dotted lines will be removed and, of course, the correct positioning
 > will be rendered. That faint margin border also disappears.
