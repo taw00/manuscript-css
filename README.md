@@ -504,7 +504,7 @@ cut-and-paste shuffle as described earlier.
   using VSCode. It's security model disallows it. But you can leverage it if
   you use `manuscript.css` via an https connection. VSCode's Markdown
   All-in-One extension can export to HTML, negating a need to use Pandoc.
-- [Atom](https://atom.io/): AVOID. The project is
+- ~~[Atom](https://atom.io/)~~: AVOID. The project is
   **[shutting down](https://github.blog/2022-06-08-sunsetting-atom/)** Atom is
   great general purpose code editor but can get really complicated to use. And
   it's markdown capabilities are both powerful but at the same time fall very
