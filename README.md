@@ -488,8 +488,10 @@ cut-and-paste shuffle as described earlier.
 
 - [Xed](https://github.com/linuxmint/xed): a great just-enough-features
   lightweight text and code editor. I use Xed all the time.
-- [Text Editor](https://chrome.google.com/webstore/detail/text-editor/demheclfdlemkkpadenmajhjbdhbjjml?hl=en-US&utm_source=chrome-ntp-launcher)
-  Chrome Web App: This is actually a rather great bare-bones editor.
+- Text Editor
+  [Chrome Web App](https://chrome.google.com/webstore/detail/text-editor/demheclfdlemkkpadenmajhjbdhbjjml?hl=en-US&utm_source=chrome-ntp-launcher)
+  and
+  [Firefox Extension](https://addons.mozilla.org/en-US/firefox/addon/text-editor-extension/): This is actually a rather nice bare-bones editor.
 - [Vim](https://www.vim.org/): Vim is hugely powerful and designed for hardcore
   programmers. If you know what you are doing you can make it do anything, and
   do it far more efficiently than the rest of these editors, including
