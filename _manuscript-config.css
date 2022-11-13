@@ -34,6 +34,8 @@
  */
 
 @page { size: A4 portrait; margin: 25.4mm; }
+@page { size: A5 portrait; margin: 25.4mm; }
+@page { size: A6 portrait; margin: 25.4mm; }
 @page { size: letter portrait; margin: 1in; }
 
 :root {
@@ -41,6 +43,8 @@
      * BASE CONSTANTS
      */
     --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginA4: 25.4mm;
+    --m-page-widthA5: 148mm; --m-page-heightA4: 210mm; --m-page-marginA4: 25.4mm;
+    --m-page-widthA6: 105mm; --m-page-heightA4: 148mm; --m-page-marginA4: 12.7mm;
     --m-page-widthUS: 8.5in; --m-page-heightUS: 11in;  --m-page-marginUS: 1in;
 
     --m-page-width:  var(--m-page-widthUS);

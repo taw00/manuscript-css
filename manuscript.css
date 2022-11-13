@@ -18,7 +18,7 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  *
  * The class "switches":
- * - 'US' or 'A4': US Letter is the default
+ * - 'US', 'A4', 'A5', or 'A6': US Letter is the default
  * - 'prose' or 'poetry': prose is the default and therefore it is usually not
  *   explicitely used or defined here. By default, it is already employed.
  * - 'short' or 'long': a manuscript formatted for short prose is the default.
@@ -96,9 +96,11 @@
 
 @page {
     /* The default is already set for US letter.
-     * For A4 you need to add this at-page declaration after your imports in
-     * your markdown (or HTML) file's <style> block.
+     * For A4, A5, or A6 you need to add this at-page declaration after your
+     * imports in your markdown (or HTML) file's <style> block.
 @page { size: A4 portrait; margin: 25.4mm; }
+@page { size: A5 portrait; margin: 25.4mm; }
+@page { size: A6 portrait; margin: 12.7mm; }
      */
 }
 
@@ -110,7 +112,20 @@
     --m-page-width:  var(--m-page-widthA4);
     --m-page-height: var(--m-page-heightA4);
     --m-page-margin: var(--m-page-marginA4);
-
+}
+#manuscript.A5 {
+    --m-page-width:  var(--m-page-widthA5);
+    --m-page-height: var(--m-page-heightA5);
+    --m-page-margin: var(--m-page-marginA5);
+}
+#manuscript.A6 {
+    --m-page-width:  var(--m-page-widthA6);
+    --m-page-height: var(--m-page-heightA6);
+    --m-page-margin: var(--m-page-marginA6);
+}
+#manuscript.A4,
+#manuscript.A5,
+#manuscript.A6 {
     --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 }
