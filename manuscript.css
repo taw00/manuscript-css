@@ -31,14 +31,28 @@
  *   any page breaks, decorations, and it will simplify some of the spacing and
  *   whatnot.
  *
- * To enable any of these formatting adjustments, just add the relevant
- * "switch" to the class attribute of the <div id="manuscript"> element in the
- * markdown document. Enabling 'A4' has one difference: you need to add an
- * @page rule after the CSS import call in the style block of the markdown.
+ * To enable a change to the default page dimenions, you need to do two things:
+ * 1. add the relevant "switch" to the class attribute of the <div id="vpage">
+ *    element in the markdown document. Example: <div id="vpage" class="US">
+ * 2. add the appropriate @page rule after the CSS import in the style block of
+ *    your markdown document. Look below these comments for the @page
+ *    possibilies. An example: @page { size: letter portrait; margin: 1in; }
  *
  * What these mean:
  *
- * - US or A4: changes the dimensions of printed/paged output.
+ * - US, A4, A5, or A6: changes the dimensions of printed/paged output.
+ *   (Note, this is the only switch set via the <div id="vpage"> element.
+ *    For example: <div id="vpage" class="US">)
+ *
+ * To enable other document "switches", just the relevant switch to the class
+ * attribute of the <article id="manuscript"> element in your markdown
+ * document.
+ *
+ * All the switches both for #vpage and #manuscript:
+ *
+ * - US, A4, A5, or A6: changes the dimensions of printed/paged output.
+ *   (Note, this is the only switch set via the <div id="vpage"> element.
+ *    For example: <div id="vpage" class="US">)
  *
  * - prose:
  *     - text is left (for LtR languages) justified, ragged-edged, and white
@@ -96,7 +110,7 @@
 @import "./_manuscript-core.css";
 
 @page {
-    /* The default is already set for US letter.
+    /* The default (US letter) is already set. This serves as documentation.
      * For A4, A5, or A6 you need to add this at-page declaration after your
      * imports in your markdown (or HTML) file's <style> block.
 @page { size: A4 portrait; margin: 25.4mm; }
