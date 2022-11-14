@@ -27,8 +27,8 @@
  * <article id="manuscript">
  * <!-- I want to see where the 1/2 page mark is both vertically and
  *      horizontally -->
- * <div class="debug-vhalf-marker"></div>
- * <div class="debug-half-marker"></div>
+ * <div id="debug-vhalf-marker"></div>
+ * <div id="debug-half-marker"></div>
  * . . . the rest of your document . . .
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
@@ -41,10 +41,10 @@
 /* ************************************************************************* */
 /* Stick these _immediately after_ <article id="manuscript" ...> in the
  * markdown or html to see that things are aligning as expected.
-<div class="debug-vhalf-marker"></div>
-<div class="debug-third-marker"></div>
-<div class="debug-5-12-marker"></div>
-<div class="debug-half-marker"></div>
+<div id="debug-vhalf-marker"></div>
+<div id="debug-third-marker"></div>
+<div id="debug-5-12-marker"></div>
+<div id="debug-half-marker"></div>
  */
 @media all {
 #debug-vhalf-marker,
@@ -61,7 +61,7 @@
     width: 100%;
     border-left: none !important; border-right: none !important;
     border-bottom: none !important;
-    border-color: rgba(0,0,255,35%) !important; /* blue, 35% */
+    border-color: rgba(0,0,155,35%) !important; /* blue, 35% */
 }
 /* splits the page in half vertically */
 #debug-vhalf-marker {
@@ -69,7 +69,7 @@
     width: 50%; height: var(--m-content-height);
     border-left: none !important;
     border-top: none !important; border-bottom: none !important;
-    border-color: rgba(0,0,255,35%) !important; /* blue, 35% */
+    border-color: rgba(0,0,155,35%) !important; /* blue, 35% */
 }
 /* 1/3 offset horizontal rule - always by content measure */
 #debug-third-marker {
@@ -78,11 +78,12 @@
 /* 5/12 offset horizontal rule - always by content measure */
 #debug-5-12-marker {
     top: var(--m-content-offset-5-12th);
-    border-color: rgba(255,0,255,35%) !important; /* purple, 35% */
+    border-color: rgba(155,0,155,35%) !important; /* purple, 35% */
 }
 /* 1/2 offset horizontal rule - always by content measure */
 #debug-half-marker {
     top: var(--m-content-offset-half);
+    border-color: rgba(0,155,0,35%) !important; /* green, 35% */
 }
 } /* end media all */
 
