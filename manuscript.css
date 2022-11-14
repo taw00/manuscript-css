@@ -17,8 +17,9 @@
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  *
- * The class "switches":
+ * The div #vpage class "switches":
  * - 'US', 'A4', 'A5', or 'A6': US Letter is the default
+ * The article #manuscript class "switches":
  * - 'prose' or 'poetry': prose is the default and therefore it is usually not
  *   explicitely used or defined here. By default, it is already employed.
  * - 'short' or 'long': a manuscript formatted for short prose is the default.
@@ -104,30 +105,61 @@
      */
 }
 
-#manuscript.US {
+#vpage.US,
+#vpage.letter {
     /* the default is already set for .US */
 }
 
-#manuscript.A4 {
+#vpage.A4 {
     --m-page-width:  var(--m-page-widthA4);
     --m-page-height: var(--m-page-heightA4);
     --m-page-margin: var(--m-page-marginA4);
 }
-#manuscript.A5 {
+#vpage.A5 {
     --m-page-width:  var(--m-page-widthA5);
     --m-page-height: var(--m-page-heightA5);
     --m-page-margin: var(--m-page-marginA5);
 }
-#manuscript.A6 {
+#vpage.A6 {
     --m-page-width:  var(--m-page-widthA6);
     --m-page-height: var(--m-page-heightA6);
     --m-page-margin: var(--m-page-marginA6);
 }
-#manuscript.A4,
-#manuscript.A5,
-#manuscript.A6 {
+#vpage {
+    /*recalculate */
     --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+
+    --m-max-width-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
+
+    --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
+    --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
+    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
+    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
+    --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
+
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
+    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
+    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
+    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
+
+    --m-indent-narrative: calc(var(--m-page-margin) / 2);
+
+    --m-offset-title-short:        var(--m-content-offset-5-12th);
+    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
+    --m-offset-title-long:         var(--m-content-offset-5-12th);
+}
+
+@media screen {
+#vpage {
+    width: 100%; max-width: var(--m-page-width);
+}
+#manuscript {
+    width: 100%; max-width: var(--m-content-width);
+    margin: var(--m-page-margin) auto;
+}
 }
 
 #manuscript.narrative {
