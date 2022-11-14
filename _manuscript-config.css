@@ -35,22 +35,58 @@
 
 @page { size: A4 portrait; margin: 25.4mm; }
 @page { size: A5 portrait; margin: 25.4mm; }
-@page { size: A6 portrait; margin: 25.4mm; }
+@page { size: 105mm 148mm; margin: 12.7mm; } /* A6 and .5in */
 @page { size: letter portrait; margin: 1in; }
 
 :root {
     /*
-     * BASE CONSTANTS
+     * BASELINE CONSTANTS
      */
-    --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginA4: 25.4mm;
-    --m-page-widthA5: 148mm; --m-page-heightA4: 210mm; --m-page-marginA4: 25.4mm;
-    --m-page-widthA6: 105mm; --m-page-heightA4: 148mm; --m-page-marginA4: 12.7mm;
+    --m-page-widthA6: 105mm; --m-page-heightA6: 148mm; --m-page-marginA6: .5in;
+    --m-page-widthA5: 148mm; --m-page-heightA5: 210mm; --m-page-marginA5: .75in;
+    --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginA4: 1in;
     --m-page-widthUS: 8.5in; --m-page-heightUS: 11in;  --m-page-marginUS: 1in;
+
+    --m-font-size:   16px; /* 16px = 12pt */
+    --m-font-weight: normal;
+    --m-text-align:  start;
+
+    /* line-height (line spacing) - singlespace and doublespace */
+    --m-line-spacing-single: 1.25;
+    --m-line-spacing-single-plus: 1.5;
+    --m-line-spacing-double: 2;
+
+    /* -30- and dinkus markers
+     * Note1: for manuscript, the solitary # sign is the most typical/standard
+     *        scene-break marker. --m-dinkus is automatically inserted between
+     *        scenes. --m-30- is automatically inserted at the end.
+     * Note2: marker8 and marker9 are examples of how you could add copyright ©
+     *        and licensing info after the -30- marker.  Also, (a) you need to
+     *        use CSS escapes and (b) they eat one space following. \a is a
+     *        newline. \a9 is the copyright symbol For reference:
+     *          https://www.w3.org/International/questions/qa-escapes */
+    --m-marker1: "# # #";
+    --m-marker2: "* * *";
+    --m-marker3: "⁂";
+    --m-marker4: "❦";
+    --m-marker5: "🙞 ❦ 🙜";
+    --m-marker6: "🙞  🙜";
+    --m-marker7: "- 30 -";
+    /* the end with copyright additions */
+    --m-marker8: "The End \00000a \00000a  (c) ";
+    --m-marker9: "The End \00000a \00000a \0000a9  ";
+
+    /*
+     * VARIABLES - i.e., non-constants (mostly)
+     */
+
+    --m-dinkus: "#";
+    --m-30-: "The End";
 
     --m-page-width:  var(--m-page-widthUS);
     --m-page-height: var(--m-page-heightUS);
     --m-page-margin: var(--m-page-marginUS);
-    --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
+    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 
     /* typefaces (fontstacks)
@@ -75,12 +111,8 @@
     --m-font-family-narrative-code: var(--m-fontstack-mono);
     --m-font-family-non-narrative-code: var(--m-fontstack-mono);
 
-    --m-font-family-poetry: var(--m-fontstack-serif);
-
-    /* line-height (line spacing) - singlespace and doublespace */
-    --m-line-spacing-single: 1.25;
-    --m-line-spacing-single-plus: 1.5;
-    --m-line-spacing-double: 2;
+    --m-font-family-narrative-poetry: var(--m-fontstack-serif);
+    --m-font-family-non-narrative-poetry: var(--m-fontstack-serif);
 
     /* first-line indent/inter-paragraph spacing - narrative & non-narrative */
     --m-indent-narrative: calc(var(--m-page-margin) / 2);
@@ -170,8 +202,6 @@
      * - All are initially set to expected manuscript standards
      */
 
-    --m-font-size:                16px; /* 16px = 12pt */
-    --m-font-weight:              normal;
     --m-font-family:              var(--m-font-family-narrative);
     --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
     --m-font-family-code:         var(--m-font-family-narrative-code);
@@ -181,8 +211,6 @@
     --m-indent:                 var(--m-indent-narrative);
     --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
     --m-paragraph-spacing:      var(--m-paragraph-spacing-narrative);
-
-    --m-text-align:             start;
 
     --m-offset-title: var(--m-offset-title-short);
     --m-offset-parts: var(--m-offset-parts-short);
@@ -233,15 +261,22 @@
     /* font settings - the main other headers */
 
     /* font settings - the main titles, subtitles, and authors */
-    --m-font-size-title: var(--m-font-size-titles);
-    --m-font-size-subtitle: var(--m-font-size-subtitles);
-    --m-font-size-byline: var(--m-font-size-bylines);
+    --m-font-size-title: var(--m-font-size);
+    --m-font-size-titles: var(--m-font-size);
+    --m-font-size-subtitle: var(--m-font-size);
+    --m-font-size-subtitles: var(--m-font-size);
+    --m-font-size-byline: var(--m-font-size);
+    --m-font-size-bylines: var(--m-font-size);
 
-    --m-font-weight-title: var(--m-font-weight-titles);
-    --m-font-weight-byline: var(--m-font-weight-bylines);
+    --m-font-weight-title: var(--m-font-weight);
+    --m-font-weight-titles: var(--m-font-weight);
+    --m-font-weight-byline: var(--m-font-weight);
+    --m-font-weight-bylines: var(--m-font-weight);
 
-    --m-font-family-title: var(--m-font-family-titles);
-    --m-font-family-byline: var(--m-font-family-bylines);
+    --m-font-family-title: var(--m-font-family);
+    --m-font-family-titles: var(--m-font-family);
+    --m-font-family-byline: var(--m-font-family);
+    --m-font-family-bylines: var(--m-font-family);
 
     /* font settings - part titles, subtitles, and authors */
     --m-font-size-title-part: var(--m-font-size-title);
@@ -360,26 +395,4 @@
 
     /*--m-link-color: rgb(0,0,238);*/ /* a browser default blue */
     --m-link-color: rgb(0,32,194);  /* Cobalt Blue */
-
-    /* default / typical -30- and dinkus markers
-     * Note1: for manuscript, the solitary # sign is the most typical/standard
-     *        scene-break marker. --m-dinkus is automatically inserted between
-     *        scenes. --m-30- is automatically inserted at the end.
-     * Note2: marker8 and marker9 are examples of how you could add copyright ©
-     *        and licensing info after the -30- marker.  Also, (a) you need to
-     *        use CSS escapes and (b) they eat one space following. \a is a
-     *        newline. \a9 is the copyright symbol For reference:
-     *          https://www.w3.org/International/questions/qa-escapes */
-    --m-marker1: "# # #";
-    --m-marker2: "* * *";
-    --m-marker3: "⁂";
-    --m-marker4: "❦";
-    --m-marker5: "🙞 ❦ 🙜";
-    --m-marker6: "🙞  🙜";
-    --m-marker7: "- 30 -";
-    /* the end with copyright additions */
-    --m-marker8: "The End \00000a \00000a  (c) ";
-    --m-marker9: "The End \00000a \00000a \0000a9  ";
-    --m-dinkus: "#";
-    --m-30-: "The End";
 }
