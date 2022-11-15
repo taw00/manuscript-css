@@ -119,9 +119,14 @@
      */
 }
 
-#vpage.US,
-#vpage.letter {
+#vpage.US, #vpage.letter {
     /* the default is already set for .US */
+}
+
+#vpage.USh, #vpage.hletter {
+    --m-page-width:  var(--m-page-widthUSh);
+    --m-page-height: var(--m-page-heightUSh);
+    --m-page-margin: var(--m-page-marginUSh);
 }
 
 #vpage.A4 {

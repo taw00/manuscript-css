@@ -33,18 +33,26 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@page { size: A4 portrait; margin: 25.4mm; }
-@page { size: A5 portrait; margin: 25.4mm; }
-@page { size: 105mm 148mm; margin: 12.7mm; } /* A6 and .5in */
+@page { size: A4 portrait; margin: 1in; }
+@page { size: A5 portrait; margin: .75in; }
+@page { size: 5.5in 8.5in; margin: .75in; } /* US Half Letter */
+@page { size: 105mm 148mm; margin: .5in; } /* A6 */
 @page { size: letter portrait; margin: 1in; }
 
 :root {
     /*
      * BASELINE CONSTANTS
+     * Note,
+     * - A6 is 106mm x 148mm or 4.1in x 5.8in
+     * - A5 is 148mm x 210mm or 5.8in x 8.3in (roughly half of US letter)
+     * - A4 is 210mm x 297mm or 8.3in x 11.7in
+     * - USh (US Half Letter) is 140m x 216mm or 5.5in x 8.5in
+     * - US Letter is 216mm x 279mm or 8.5in x 11in
      */
     --m-page-widthA6: 105mm; --m-page-heightA6: 148mm; --m-page-marginA6: .5in;
     --m-page-widthA5: 148mm; --m-page-heightA5: 210mm; --m-page-marginA5: .75in;
     --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginA4: 1in;
+    --m-page-widthUSh: 5.5in; --m-page-heightUSh: 8.5in; --m-page-marginUSh: .75in;
     --m-page-widthUS: 8.5in; --m-page-heightUS: 11in;  --m-page-marginUS: 1in;
 
     --m-font-size:   16px; /* 16px = 12pt */
