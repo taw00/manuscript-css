@@ -63,6 +63,8 @@
     --m-line-spacing-single: 1.25;
     --m-line-spacing-single-plus: 1.5;
     --m-line-spacing-double: 2;
+    --m-line-spacing-double-plus: 2.5;
+    --m-line-spacing-triple: 3;
 
     /* -30- and dinkus markers
      * Note1: for manuscript, the solitary # sign is the most typical/standard
