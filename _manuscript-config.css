@@ -106,7 +106,7 @@
      * - Courier New - when a monospaced typeface is needed
      * Those are all proprietary. But these font stacks below enable some
      * excellent close-equivalent open options for each category. */
-    --m-fontstack-serif: "Times New Roman", "TeX Gyre Termes", "Croscore Tinos", Tinos, "Liberation Serif", serif;
+    --m-fontstack-serif: "Times New Roman", "Croscore Tinos", Tinos, "Liberation Serif", "TeX Gyre Termes", serif;
     --m-fontstack-sans: Arial, "Croscore Arimo", Arimo, "Liberation Sans", sans-serif;
     --m-fontstack-sans-alt: Helvetica, "TeX Gyre Heros", "Nimbus Sans L", sans-serif;
     --m-fontstack-mono: "Courier New", "TeX Gyre Cursor", "Croscore Cousine", Cousine, "Liberation Mono", monospace;
