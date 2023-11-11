@@ -153,7 +153,7 @@ Note, the `m-header`s in the parts, chapters, and scenes don't usually have `m-f
 # Fonts / Typefaces
 
 The default fonts used by the manuscript are ones selected to conform to what
-is expected—namely Times New Roman close equivalents, but also Arial and
+is expected—namely Times New Roman (or close equivalents), but also Arial and
 Courier New, depending on need.
 
 You really don't need to import new typefaces (your computer should know how to
@@ -163,7 +163,6 @@ manuscript (adding the path as needed, of course):
 
 ```markdown
 <style>
-    @import "typeface/typeface-serif-termes.css";
     @import "typeface/typeface-serif-tinos.css";
     @import "typeface/typeface-sans-arimo.css";
     @import "typeface/typeface-mono-cousine.css";
