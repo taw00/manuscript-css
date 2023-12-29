@@ -109,7 +109,7 @@
     --m-fontstack-serif: "Times New Roman", "Croscore Tinos", Tinos, "Liberation Serif", "TeX Gyre Termes", serif;
     --m-fontstack-sans: Arial, "Croscore Arimo", Arimo, "Liberation Sans", sans-serif;
     --m-fontstack-sans-alt: Helvetica, "TeX Gyre Heros", "Nimbus Sans L", sans-serif;
-    --m-fontstack-mono: "Courier New", "Courier Prime", "TeX Gyre Cursor", "Croscore Cousine", Cousine, "Liberation Mono", monospace;
+    --m-fontstack-mono: "Courier New", "Courier Prime Code", "Courier Prime", "TeX Gyre Cursor", "Croscore Cousine", Cousine, "Liberation Mono", monospace;
 
     /* font-family - narrative and non-narrative */
     --m-font-family-narrative: var(--m-fontstack-serif);
