@@ -13,8 +13,8 @@ working drafts in a professional manner for review, critique, or whatever.
 
 ## Manuscript formatting?
 
-Take a look at the example PDFs in the [examples folder](./examples/) in
-this repository. Those are examples of how manuscripts are formatted: no fluff,
+Take a look at the example PDFs in the [templates folder](./templates/) in
+this repository. Those are templates of how manuscripts are formatted: no fluff,
 easy to read and review. Here are some screenshots of the results . . .
 
 <a href="misc/README-short-story-poe.png"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.png" alt="short format: The Tell-Tale Heart" /></a>
@@ -95,7 +95,7 @@ with markdown + CSS.
 > ancient and inflexible application, but it works. You
 > just have to be OK with approximating the header placement and with the
 > helvetica typeface as your only choice. Look in the
-> [examples](./examples/) folder after I added manuscript page headers to the
+> [templates](./templates/) folder after I added manuscript page headers to the
 > Lovecraft story. This screenshot shows what I did to enable it.
 
 <a href="misc/README-screenshot-jPDF-Tweak.png"><img style="wXidth: 25%; fXloat: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
@@ -109,7 +109,7 @@ with markdown + CSS.
 # TL;DR Just show me how to do it!
 
 Check out the example manuscripts in this repository in their original markdown
-and then as PDFs. Use one of the [examples](./examples/) as a template for your
+and then as PDFs. Use one of the [templates](./templates/) as a template for your
 own work.  And if you are already familiar with converting markdown to HTML and
 then HTML to PDF then that should be enough to get you going.
 
@@ -168,7 +168,7 @@ so you can import over the web.
 
 It's easier to work with a template than from scratch.
 
-1. Copy one of the templates from the [templates directory](./examples/),
+1. Copy one of the templates from the [templates directory](./templates/),
    renaming it to whatever makes sense to you. If you have an existing document
    already in markdown format, just examine a template and refactor your
    document accordingly.
