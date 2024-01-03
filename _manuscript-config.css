@@ -82,9 +82,11 @@
     --m-marker5: "🙞 ❦ 🙜";
     --m-marker6: "🙞  🙜";
     --m-marker7: "- 30 -";
-    /* the end with copyright additions */
+    /* The End + copyright */
     --m-marker8: "The End \00000a \00000a  (c) ";
     --m-marker9: "The End \00000a \00000a \0000a9  ";
+    --m-marker10: "The End \00000a \00000a Copyright (c) ";
+    --m-marker11: "The End \00000a \00000a Copyright \0000a9  ";
 
     /*
      * VARIABLES - i.e., non-constants (mostly)
