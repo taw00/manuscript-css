@@ -25,6 +25,7 @@
  * JOPLIN adjustments
  *
  * - turn off the base syntax highlighting (for pre/code)
+ * - turn off filter for pre
  * - normalize a-links
  * - neurtalize inline code stylings
  * - Rendered view: make the viewport 100%
@@ -51,6 +52,10 @@ code.inline-code {
 #rendered-md { width: 100%; max-width: unset; margin: 0 auto; padding: unset; }
 #rendered-md { box-shadow: unset; } /* cuz I set this in my CSS for this ID */
 #rendered-md { background-color: transparent; }
+/* filter and background settings in userstyle.css would leave a verticle gray
+ * line in some configurations, but only in the print version. Marvelously
+ * difficult to troubleshoot. */
+#rendered-md pre.hljs { border: 0px; filter: unset; background: unset; }
 /* Remove the padding and bg that frames #rendered-md */
 #joplin-container-content { background-color: transparent; padding: 0px; }
 /* Joplin Cloud view: remove note title */
@@ -134,6 +139,7 @@ table, thead, tbody, tfoot, th, tr, td, colgroup, col {
     margin: unset; padding: unset;
     border: unset;
     opacity: unset;
+    filter: unset;
 }
 /* I don't think we have to reset these
 strong, b, em, i, u, s,
