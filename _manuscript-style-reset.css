@@ -70,13 +70,20 @@ body.page-note .note-main { margin: 0 auto; padding: 0px; max-width: 100%;}
 /* Joplin Cloud view: viewport to 100% */
 body.page-note .note-main { margin: 0 auto; padding: 0px; max-width: 100%;}
 
-@media print {
+
+/* remove HTML and PDF Joplin-inserted title and excess padding */
+@media screen { /* HTML */
+div.exported-note { margin: 0px; padding: 0px; }
+div.exported-note div.exported-note-title { visibility: hidden; display: none !important; }
+}
+@media print { /* PDF */
+div.exported-note { margin: 0px; padding: 0px; }
+div.exported-note div.exported-note-title { visibility: hidden; display: none !important; }
+}
+
+@media print { /* PDF */
 /* Exported print: remove document last-update line at the top */
 div.note-main > p.last-updated { display: none; }
-/* Exported print: remove excess padding
- *                 remove the Joplin note title */
-.exported-note { margin: 0px; padding: 0px; }
-.exported-note-title { display: none !important; }
 /* Exported print from Joplin Cloud: remove the top-header branding */
 body.page-note > main.main { margin: 0px; padding: 0px; }
 body.page-note nav.navbar { display: none !important; }
@@ -84,6 +91,7 @@ div.note-main > h1.title { display: none; }
 /* Exported print from Joplin Cloud: remove the footer */
 body.page-note > div.footer div.content { display: none !important; }
 }
+
 
 /*
  * VSCODE adjustments
