@@ -63,10 +63,9 @@ div.note-main > h1.title { display: none; }
 /* Joplin Cloud view: remove document last-updated line at the top */
 div.note-main > p.last-updated { display: none; }
 /* Joplin Cloud view: branded navbar - fade to watermark */
-body.page-note nav.navbar { opacity: .15; }
+body.page-note nav.navbar { opacity: .15; background-color: inherit; }
 /* Joplin Cloud view: footer with copright and T&Cs - fade to watermark */
 body.page-note > div.footer { opacity: .5; }
-body.page-note .note-main { margin: 0 auto; padding: 0px; max-width: 100%;}
 /* Joplin Cloud view: viewport to 100% */
 body.page-note .note-main { margin: 0 auto; padding: 0px; max-width: 100%;}
 
