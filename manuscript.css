@@ -25,11 +25,11 @@
  * - 'short' or 'long': a manuscript formatted for short prose is the default.
  * - 'narrative' or 'non-narrative': prose-only - formatted for narrative
  *   prose is the default.
- * - 'text-only': Use this if you want a view of the document that excludes all
- *   of the metadata on the first page (and m-facts in other sections of the
- *   document). This will hide the manuscript frontmatter (first page stuff),
- *   any page breaks, decorations, and it will simplify some of the spacing and
- *   whatnot.
+ * - 'text-only' or 'simple': Use this if you want a view of the document that
+ *   excludes all of the metadata on the first page (and m-facts in other
+ *   sections of the document). This will hide the manuscript frontmatter (first
+ *   page stuff), any page breaks, decorations, and it will simplify some of the 
+ *   spacing and whatnot.
  *
  * To enable a change to the default page dimenions, you need to do two things:
  * 1. add the relevant "switch" to the class attribute of the <div id="vpage">
@@ -105,6 +105,8 @@
  *
  * - narrative: see prose description above
  * - non-narrative: see prose description above
+ *
+ * - text-only (or) simple: strip out the metadata
  */
 
 @import "./_manuscript-core.css";
@@ -251,10 +253,14 @@
  * .text-only stylings
  * ********************************************************************* */
 
-#manuscript.text-only #m-contact { display: none !important; }
-#manuscript.text-only .m-facts { display: none !important; }
-#manuscript.text-only > .m-header { display: none !important; }
-#manuscript.text-only {
+#manuscript.text-only #m-contact,
+#manuscript.simple #m-contact { display: none !important; }
+#manuscript.text-only .m-facts,
+#manuscript.simple .m-facts { display: none !important; }
+/*#manuscript.text-only > .m-header,
+#manuscript.simple > .m-header { display: none !important; }*/
+#manuscript.text-only, #manuscript.simple {
+    --m-offset-title: 0;
     --m-page-break: unset !important;
     --m-page-break-simulated: 0px !important;
     --m-offset-parts: var(--m-elbow-room) !important;
