@@ -1,4 +1,4 @@
-# Manuscript Formatting (CSS) for Markdown for Writers
+# Manuscript Formatting (CSS) of Markdown for Writers
 
 _Draft your novel or short story in markdown, then export it for review or
 presentation in an industry standard manuscript format._
