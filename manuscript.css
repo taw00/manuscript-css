@@ -25,11 +25,10 @@
  * - 'short' or 'long': a manuscript formatted for short prose is the default.
  * - 'narrative' or 'non-narrative': prose-only - formatted for narrative
  *   prose is the default.
- * - 'text-only' or 'simple': Use this if you want a view of the document that
- *   excludes all of the metadata on the first page (and m-facts in other
- *   sections of the document). This will hide the manuscript frontmatter (first
- *   page stuff), any page breaks, decorations, and it will simplify some of the 
- *   spacing and whatnot.
+ * - 'simple' or 'text-only': Use this if you want a view of the document that
+ *   excludes all of the metadata on the first page and the document "facts"
+ *   throughout. It will also remove any page breaks, decorations, and it will
+ *   simplify some of the spacing.
  *
  * To enable a change to the default page dimenions, you need to do two things:
  * 1. add the relevant "switch" to the class attribute of the <div id="vpage">
@@ -106,7 +105,7 @@
  * - narrative: see prose description above
  * - non-narrative: see prose description above
  *
- * - text-only (or) simple: strip out the metadata
+ * - simple (or) text-only: a simplified view of the document (see above)
  */
 
 @import "./_manuscript-core.css";
@@ -250,16 +249,20 @@
 } /* /print */
 
 /* ********************************************************************* *
- * .text-only stylings
+ * .simple or .text-only stylings
  * ********************************************************************* */
 
 #manuscript.text-only #m-contact,
 #manuscript.simple #m-contact { display: none !important; }
+
 #manuscript.text-only .m-facts,
 #manuscript.simple .m-facts { display: none !important; }
+
 /*#manuscript.text-only > .m-header,
 #manuscript.simple > .m-header { display: none !important; }*/
-#manuscript.text-only, #manuscript.simple {
+
+#manuscript.text-only,
+#manuscript.simple {
     --m-offset-title: 0;
     --m-page-break: unset !important;
     --m-page-break-simulated: 0px !important;
