@@ -92,11 +92,12 @@ with markdown + CSS.
 > One possible solution is to add those headers to the generated PDF. There are
 > many online tools that enable this. But a desktop-based tool, at least for
 > linux users is [jPDF Tweak](https://jpdftweak.sourceforge.net/). It's an
-> ancient and inflexible application, but it works. You
+> ancient (and I mean _ancient_) and inflexible application, but it works. You
 > just have to be OK with approximating the header placement and with the
 > helvetica typeface as your only choice. Look in the
-> [templates](./templates/) folder after I added manuscript page headers to the
-> Lovecraft story. This screenshot shows what I did to enable it.
+> [templates](./templates/extra/) folder after I added manuscript page headers
+> and numbers and to the Lovecraft story. This screenshot shows what I did to
+> enable it.
 
 <a href="misc/README-screenshot-jPDF-Tweak.png"><img style="wXidth: 25%; fXloat: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
 
@@ -133,14 +134,15 @@ From from HTML via a Chrome browser.
 > **A note about the HTML rendering of a long-form manuscript using this
 > stylesheet.**
 >
-> An HTML rendering is not a paged format. Therefore the HTML rendering of the
-> manuscript will always be an approximation of a paper or PDF document.  A
-> simulation. Which is fine for the purposes of critique and review. By
-> default, simulated page breaks are inserted (dotted lines) in the HTML where
-> they would occur when converted to a PDF. Also, large positioning gaps are
-> squashed just to make it easier to view. When the document is rendered to
-> PDF, the dotted lines will be removed and, of course, the correct positioning
-> will be rendered. That faint margin border also disappears.
+> An HTML rendering is not a paged format. Therefore the HTML rendering of a
+> long-form manuscript will always be an approximation of a paper or PDF
+> document—a simulation, if you will. Which is fine for the purposes of
+> critique and review. By default, simulated page breaks are inserted (dotted
+> lines) in the HTML where they would occur when converted to a PDF. Also,
+> large positioning gaps are squashed just to make it easier to view. When the
+> document is rendered to PDF, the dotted lines will be removed and, of course,
+> the correct positioning will be rendered. That faint margin border also
+> disappears.
 
 **The process, with more detail . . .**
 
@@ -169,9 +171,9 @@ so you can import over the web.
 It's easier to work with a template than from scratch.
 
 1. Copy one of the templates from the [templates directory](./templates/),
-   renaming it to whatever makes sense to you. If you have an existing document
-   already in markdown format, just examine a template and refactor your
-   document accordingly.
+   renaming it to whatever makes sense to you (lastname-yourtitle.md is pretty
+   standard). If you have an existing document already in markdown format, just
+   examine a template and refactor your document accordingly.
 2. Open that markdown document in your favorite editor.
 3. Replace the templated content with yours
 4. Write your story, scene by scene. (Or poetry collection, poem by poem.)
@@ -243,8 +245,8 @@ Convert your markdown file to HTML:
 
 ```plaintext
 pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
-  --metadata title="TITLE" \
-  -o lastname.TITLE.manuscript.html lastname.TITLE.manuscript.md
+  --metadata title="yourtitle" \
+  -o lastname.yourtitle.html lastname.yourtitle.md
 ```
 
 - `-s` means standalone rendering
@@ -253,7 +255,7 @@ pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
 - `--no-highlight` means to not do any syntax highlighting.
 - `-f markdown-native_divs+raw_html` tells pandoc to trust our markup and not
   "autofix" certain things (that then break our markdown).
-- `--metadata title="YOUR TITLE"` sets the HTML title.
+- `--metadata title="your title goes here"` sets the HTML title.
 - `-o filename.html` sets the output filename
 
 Note, the filename format is just what I prefer.
@@ -292,7 +294,7 @@ If you produced an HTML file from Pandoc or VSCode, you open the file in the
 Chrome browser . . .
 
 ```plaintext
-file:///fullpath-to-the-document/lastname.TITLE.manuscript.html
+file:///fullpath-to-the-document/lastname.yourtitle.html
 ```
 
 and then `CTRL-P > Save as PDF`. That easy.
@@ -467,8 +469,8 @@ cut-and-paste shuffle as described earlier.
   more complete solution. Obsidian is more useful as a
   [Zettlekasten](https://en.wikipedia.org/wiki/Zettelkasten) application for
   management of your ideas, thoughts, and mental bookmarks. It's pretty slick.
-  Check it out. As a markdown editor, it's okay. But it too can open files for
-  edit in a text editor of your choosing.
+  Check it out. As a markdown editor, it's merely okay. But it too can open
+  files for edit in a text editor of your choosing.
 - [GhostWriter](https://ghostwriter.kde.org/): great editor. It previews
   manuscript-formatted markdown incorrectly, but exports to HTML just fine.
   It's a half solution. It also had writer-friendly features like focus mode,
@@ -486,33 +488,41 @@ cut-and-paste shuffle as described earlier.
 
 ## General purpose text/programming editors
 
+- [Gnome Text Editor](https://gitlab.gnome.org/GNOME/gnome-text-editor): a
+  great just-enough-features lightweight text and code editor. It's my go-to
+  GP editor.
 - [Xed](https://github.com/linuxmint/xed): a great just-enough-features
-  lightweight text and code editor. I use Xed all the time.
+  lightweight text and code editor much like Gnome Text Editor (see above), but
+  with a slightly more dated interface. I use Xed all the time, if for no other
+  reason that `xed` is faster to type than `gnome-text-editor`. Hmm, I should
+  create an alias (digression).
 - Text Editor
   [Chrome Web App](https://chrome.google.com/webstore/detail/text-editor/demheclfdlemkkpadenmajhjbdhbjjml?hl=en-US&utm_source=chrome-ntp-launcher)
   and
   [Firefox Extension](https://addons.mozilla.org/en-US/firefox/addon/text-editor-extension/): This is actually a rather nice bare-bones editor.
 - [Vim](https://www.vim.org/): Vim is hugely powerful and designed for hardcore
   programmers. If you know what you are doing you can make it do anything, and
-  do it far more efficiently than the rest of these editors, including
-  automating the preview in HTML step. But Vim has a steep learning curve. I
-  have used it for decades, but, yeah, a steep learning curve. Vim is a
-  terminal program, but it also has a graphical version: `gvim`.
+  do it offers a far more efficiently editing experience (with some complexity
+  added) than the rest of these editors, including automating the preview in
+  HTML step. But Vim has a steep learning curve. I have used it for decades.
+  Vim is a terminal program, but it also has a graphical version: `gvim`. This
+  is my go-to GP editor for raw text editing of code, css, html, and sometimes
+  markdown and text.
 - [VSCode](https://code.visualstudio.com/Docs/languages/markdown): A very
-  popular code editor. And very much like the once-popular Atom editor. VSCode
-  also has an excellent previewer and a great
+  popular, somewhat-complicated, code editor. And very much like the
+  once-popular Atom editor. VSCode also has an excellent previewer and a great
   [Joplin plugin](https://joplin-utils.rxliuli.com/joplin-vscode-plugin/)!
   Unfortunately, you can't take advantage of @importing manuscript.css locally
   using VSCode. It's security model disallows it. But you can leverage it if
   you use `manuscript.css` via an https connection. VSCode's Markdown
   All-in-One extension can export to HTML, negating a need to use Pandoc.
-- ~~[Atom](https://atom.io/)~~: AVOID. The project is
-  **[shutting down](https://github.blog/2022-06-08-sunsetting-atom/)** Atom is
-  great general purpose code editor but can get really complicated to use. And
-  it's markdown capabilities are both powerful but at the same time fall very
-  short or our needs. Microsoft (who now owns the project) is shutting it down,
-  Dec 2022. I only list this because it's on every markdown editor list out
-  there. VS Code is essentially Atom's successor.
+- ~~[Atom](https://atom.io/)~~: DO NOT USE. The project has **[shut
+  down](https://github.blog/2022-06-08-sunsetting-atom/)** Atom was a great
+  general purpose code editor but was rather complicated to use. It's markdown
+  capabilities were powerful but at the same time fell very short or our needs.
+  Microsoft (who now owns the project) shut it down on December 7, 2022. I only
+  list this here because it's on every markdown editor list out there. _VS Code
+  is essentially Atom's successor._
 
 ---
 ---
