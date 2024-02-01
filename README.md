@@ -13,12 +13,13 @@ working drafts in a professional manner for review, critique, or whatever.
 
 ## Manuscript formatting?
 
-Take a look at the example PDFs in the [templates folder](./templates/) in
-this repository. Those are templates of how manuscripts are formatted: no fluff,
-easy to read and review. Here are some screenshots of the results . . .
+Take a look at the PDFs in the [templates folder](./templates/) in
+this repository. They were rendered from their corresponding markdown documents
+and represent manuscript-formatted works achieved from a markdown-formatted: no
+fluff, easy to read and review. Here are some screenshots of the results . . .
 
-<a href="misc/README-short-story-poe.png"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.png" alt="short format: The Tell-Tale Heart" /></a>
-<a href="misc/README-long-story-lovecraft.png"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.png" alt="long format: At the Mountains of Madness" /></a>
+<a href="misc/README-short-story-poe.png"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.png" alt="short format: The Tell-Tale Heart (Poe)" /></a>
+<a href="misc/README-long-story-lovecraft.png"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.png" alt="long format: At the Mountains of Madness (Lovecraft)" /></a>
 <!-- ![short format: The Tell-Tale Heart](misc/README-short-story-poe.png) -->
 <!-- ![long format: At the Mountains of Madness](misc/README-long-story-lovecraft.pdf) -->
 
@@ -46,20 +47,22 @@ easy to read and review. Here are some screenshots of the results . . .
 ## This process is not for book production
 
 This set of stylesheets designed to produce a professional, reviewable document
-in an industry-standard format rendered from your markdown. Producing a book is
-a different animal.
+in an industry-standard format rendered from your markdown. Producing a
+document that will then be used for the text block of a book is a different
+animal entirely.
 
-To produce a book, when you have finished or are close to finishing your
-drafting process, port your document from markdown to LibreOffice, Word, or
-Google Docs and either submit that to an editor or import the document into a
-book production application like [Reedsy](https://reedsy.com/write-a-book) if
-you intend to self-publish.
+To produce a book (self-publishing), when you have finished or are close to
+finishing your drafting process, port your document from markdown to
+LibreOffice, Word, or Google Docs and either submit that to an editor or import
+the document into a book production application like
+[Reedsy](https://reedsy.com/write-a-book). Then work through the process of
+adjusting it in preparation for publication.
 
 [Bookdown](https://www.bookdown.org/) is another toolset for those who are
 self-publishing. Bookdown, though very intriguing, also looks rather daunting
 and is geared for the academic community.
 
-## This process is not for producing a 100% compliant manuscript
+## This process is not capable of producing a 100%-compliant manuscript
 
 This set of stylesheets designed to produce a professional, reviewable document
 in an industry-standard format rendered from your markdown. But not a
@@ -71,7 +74,7 @@ LivingWriter, Dabble, Ulysses, Storyist (Apply-only, blech!), Final Draft (for
 screenwriters), Quoll Writer (Windows-only and not sure if Quoll Writer can
 produce a manuscript), others.
 
-**What's missing?**
+**What's missing that would make it 100% compliant?**
 
 Only a few critical bits of formatting are missing that can't be easily fixed
 with markdown + CSS.
@@ -80,12 +83,12 @@ with markdown + CSS.
   Some publishing houses have certain quirky requirements for manuscripts
   during the submission process. If their requirements travel far from the
   generic standard, the process represented here probably won't support that.
-- Automated porting to `.odt` or `.docx` file formatting.  
+- Automated porting to `.odt` or `.docx` file formatting (most publishing
+  houses require editable, `.docx`-formatted documents.  
   That process is rather manual, unfortunately. Read more about that in
   [README-structure-summary.md](README-structure-summary.md).
-- (Prose) No `Lastname / Short Title / Page number` headers from page 2
-  onward.  
-  Not yet anyway. Waiting for
+- (Prose) No `Lastname / Short Title / Page number` headers from page 2 onward.
+  Currently-supported CSS won't support this. Not yet anyway. Waiting for
   [margin at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
   to be finally supported (currently a w3c working draft spec.)
 
