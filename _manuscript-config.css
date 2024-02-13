@@ -1,30 +1,38 @@
 /* Manuscript via CSS v2.0 — constants and configurations
  *
- * This contains all of the switches you can flip to massage the formatting of
+ * This sets most of of the switches you can flip to massage the formatting of
  * your manuscript. To see what is available (and there are far too many
- * available, look for DEFAULTS below (starting around line number 130).
+ * available, search for the comments that start with "DEFAULTS" in this file.
  *
  * Warning: if you override any of these, please be aware that they are subject
- * to change. Especially the more esoteric ones. Right now there are far to
+ * to change. Especially the more esoteric ones. Right now there are far too
  * many and I aim to simpify them in the future.
  *
  * Check the example manuscripts in this repo, but, essentially, this is how
- * you override these settings. In your markdown, just add a :root {}
- * section in your <style> section ... and redeclare variable.
+ * you override these settings. In your markdown, just add a :root {} section
+ * in your <style> block ... and redeclare variables. Here's an example:
 
 <style>
 @import "manuscript.css";
-@page { size: A4 portrait; margin: 25.4mm; }
+@page { size: A4 portrait; margin: 1in; }
+@page { size: A5 portrait; margin: .75in; }
+@page { size: A6 portrait; margin: 12.7mm; }
+@page { size: 5.5in 8.5in; margin: .75in; }
+@page { size: letter portrait; margin: 1in; }
 
 :root {
-     --m-font-family: "TeX Gyre Pagella", Palladio, Palantino, serif;
-     --m-font-family-title: "Comic Neue", "Comic Sans", cursive;
-     --m-font-family-subtitle: "Comic Neue", "Comic Sans", cursive;
-     --m-font-family-byline: "Comic Neue", "Comic Sans", cursive;
-     --m-font-size-title: 1.5;
-     --m-font-weight-title: bold;
-     --m-font-weight-subtitle: medium;
-     --m-indent: 2.5em;
+    --m-font-family: "TeX Gyre Pagella", Palladio, Palantino, serif;
+    --m-font-family-title: "Comic Neue", "Comic Sans", cursive;
+    --m-font-family-subtitle: "Comic Neue", "Comic Sans", cursive;
+    --m-font-family-byline: "Comic Neue", "Comic Sans", cursive;
+    --m-font-size: 19px;
+    --m-font-size-title: 1.5em;
+    --m-font-weight-title: bold;
+    --m-font-weight-subtitle: medium;
+    --m-line-spacing: 2.5;
+    --m-indent: .35in;
+    --m-dinkus: "~"
+    --m-30-: "~ ~ ~;
 }
 
  *
@@ -33,85 +41,57 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@page { size: A4 portrait; margin: 1in; }
-@page { size: A5 portrait; margin: .75in; }
-@page { size: 5.5in 8.5in; margin: .75in; } /* US Half Letter */
-@page { size: 105mm 148mm; margin: .5in; } /* A6 */
+@import "_manuscript-constants.css";
+
 @page { size: letter portrait; margin: 1in; }
 
 :root {
     /*
-     * BASELINE CONSTANTS
-     * Note,
-     * - A6 is 106mm x 148mm or 4.1in x 5.8in
-     * - A5 is 148mm x 210mm or 5.8in x 8.3in (roughly half of US letter)
-     * - A4 is 210mm x 297mm or 8.3in x 11.7in
-     * - USh (US Half Letter) is 140m x 216mm or 5.5in x 8.5in
-     * - US Letter is 216mm x 279mm or 8.5in x 11in
+     * DEFAULTS - section 1
      */
-    --m-page-widthA6: 105mm; --m-page-heightA6: 148mm; --m-page-marginA6: .5in;
-    --m-page-widthA5: 148mm; --m-page-heightA5: 210mm; --m-page-marginA5: .75in;
-    --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginA4: 1in;
-    --m-page-widthUSh: 5.5in; --m-page-heightUSh: 8.5in; --m-page-marginUSh: .75in;
-    --m-page-widthUS: 8.5in; --m-page-heightUS: 11in;  --m-page-marginUS: 1in;
-
-    --m-font-size:   16px; /* 16px = 12pt */
-    --m-font-weight: normal;
-    --m-text-align:  start;
-
-    /* line-height (line spacing) - singlespace and doublespace */
-    --m-line-spacing-single: 1.25;
-    --m-line-spacing-single-plus: 1.5;
-    --m-line-spacing-double: 2;
-    --m-line-spacing-double-plus: 2.5;
-    --m-line-spacing-triple: 3;
-
-    /* -30- and dinkus markers
-     * Note1: for manuscript, the solitary # sign is the most typical/standard
-     *        scene-break marker. --m-dinkus is automatically inserted between
-     *        scenes. --m-30- is automatically inserted at the end.
-     * Note2: marker8 and marker9 are examples of how you could add copyright ©
-     *        and licensing info after the -30- marker.  Also, (a) you need to
-     *        use CSS escapes and (b) they eat one space following. \a is a
-     *        newline. \a9 is the copyright symbol For reference:
-     *          https://www.w3.org/International/questions/qa-escapes */
-    --m-marker1: "# # #";
-    --m-marker2: "* * *";
-    --m-marker3: "⁂";
-    --m-marker4: "❦";
-    --m-marker5: "🙞 ❦ 🙜";
-    --m-marker6: "🙞  🙜";
-    --m-marker7: "- 30 -";
-    /* The End + copyright */
-    --m-marker8: "The End \00000a \00000a  (c) ";
-    --m-marker9: "The End \00000a \00000a \0000a9  ";
-    --m-marker10: "The End \00000a \00000a Copyright (c) ";
-    --m-marker11: "The End \00000a \00000a Copyright \0000a9  ";
-
-    /*
-     * VARIABLES - i.e., non-constants (mostly)
-     */
-
-    --m-dinkus: "#";
-    --m-30-: "The End";
 
     --m-page-width:  var(--m-page-widthUS);
     --m-page-height: var(--m-page-heightUS);
     --m-page-margin: var(--m-page-marginUS);
+
+    --m-fontstack-serif: var(--m-fontstack-times);
+    --m-fontstack-sans: var(--m-fontstack--arial);
+    --m-fontstack-mono: var(--m-fontstack-courier);
+
+    --m-font-size: var(--m-font-size-standard); /* 16px (12pt) */
+    --m-font-weight: var(--m-font-weight-standard); /* normal */
+    --m-line-spacing: var(--m-line-spacing-standard); /* 2 (double) */
+
+    /*
+     * DEFAULTS - section 2
+     * pedantic and shouldn't really be overidden
+     */
+
+    /* baseline font things and line spacing */
+    --m-font-size-poetry:          inherit;
+    --m-font-size-preformatted:    inherit;
+    --m-font-size-code:            inherit;
+    --m-font-size-code-inline:     inherit;
+
+    --m-font-weight-poetry:        inherit;
+    --m-font-weight-preformatted:  inherit;
+    --m-font-weight-code:          inherit;
+    --m-font-weight-code-inline:   inherit;
+
+    --m-line-spacing-poetry:       var(--m-line-spacing-single);
+    --m-line-spacing-preformatted: inherit;
+    --m-line-spacing-code:         inherit;
+
+    --m-text-transform-title-poetry: uppercase;
+
+
+    /*
+     * DO NOT OVERRIDE
+     */
+
+    /* constraining the content between the margins */
     --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
-
-    /* typefaces (fontstacks)
-     * Manuscript standards, these or close equivalents:
-     * - Times New Roman - for narrative works
-     * - Arial or Helvetica - for non-narrative works . . . sometimes
-     * - Courier New - when a monospaced typeface is needed
-     * Those are all proprietary. But these font stacks below enable some
-     * excellent close-equivalent open options for each category. */
-    --m-fontstack-serif: "Times New Roman", "Croscore Tinos", Tinos, "Nimbus Roman", "Liberation Serif", "TeX Gyre Termes", Thorndale, serif;
-    --m-fontstack-sans: Arial, "Croscore Arimo", Arimo, "Nimbus Sans L", "Liberation Sans", Albany, sans-serif;
-    --m-fontstack-sans-alt: Helvetica, "TeX Gyre Heros", "Croscore Arimo", Arimo, "Nimbus Sans L", "Liberation Sans", sans-serif;
-    --m-fontstack-mono: "Courier New", "Courier Prime", "Croscore Cousine", Cousine, "TeX Gyre Cursor", "Liberation Mono", Cumberland, "Courier Prime Code", Courier, monospace;
 
     /* font-family - narrative and non-narrative */
     --m-font-family-narrative: var(--m-fontstack-serif);
@@ -127,7 +107,7 @@
     --m-font-family-non-narrative-poetry: var(--m-fontstack-serif);
 
     /* first-line indent/inter-paragraph spacing - narrative & non-narrative */
-    --m-indent-narrative: calc(var(--m-page-margin) / 2);
+    --m-indent-narrative: var(--m-indentUS);
     --m-indent-narrative-first-paragraph: 0px;
     --m-paragraph-spacing-narrative: 0px;
 
@@ -138,8 +118,7 @@
     /* Offset calculations used to offset title-header blocks from top of the
      * page. Manuscripts standards recommend placing the main title-block
      * header anywhere from 1/3rd to 1/2 down the page. And if a long-form
-     * manuscript the same holds true for part headers and chapter headers.
-     * Don't override or redefine these. */
+     * manuscript the same holds true for part headers and chapter headers. */
     --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
     --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
     --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
@@ -151,62 +130,39 @@
     --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
     --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
 
-    /* additional margin/spacing nudges used here and there */
-    --m-elbow-room: 1em;
-    --m-room-for-two: 2em;
-
     /* Title-block headers offset settings - for short-form and long-form
      * I'm being a bit more than pedantic here. And note: parts & chapters have
-     * different settings for screen rendering & print. (We "simulate" for the
-     * screen.) */
+     * different settings depending if you are rendering to the screen or if
+     * rendering to print. (We "simulate" for the screen.) */
     --m-offset-title-short:        var(--m-content-offset-5-12th);
     --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
     --m-offset-title-long:         var(--m-content-offset-5-12th);
 
-    --m-offset-parts-short:           var(--m-room-for-two);
-    --m-offset-parts-render-short:    var(--m-room-for-two);
-    --m-offset-chapters-short:        var(--m-room-for-two);
-    --m-offset-chapters-render-short: var(--m-room-for-two);
-    --m-offset-chapters-short-poetry: var(--m-room-for-two);
+    --m-offset-part-short:           var(--m-room-for-two);
+    --m-offset-part-render-short:    var(--m-room-for-two);
+    --m-offset-chapter-short:        var(--m-room-for-two);
+    --m-offset-chapter-render-short: var(--m-room-for-two);
+    --m-offset-chapter-short-poetry: var(--m-room-for-two);
     --m-offset-scene-short:           var(--m-elbow-room);
 
-    --m-offset-parts-long:           var(--m-offset-title-long);
-    --m-offset-parts-render-long:    var(--m-room-for-two);
-    --m-offset-chapters-long:        var(--m-offset-title-long);
-    --m-offset-chapters-render-long: var(--m-room-for-two);
-    --m-offset-chapters-long-poetry: 0px;
+    --m-offset-part-long:           var(--m-offset-title-long);
+    --m-offset-part-render-long:    var(--m-room-for-two);
+    --m-offset-chapter-long:        var(--m-offset-title-long);
+    --m-offset-chapter-render-long: var(--m-room-for-two);
+    --m-offset-chapter-long-poetry: 0px;
     --m-offset-scene-long:           var(--m-elbow-room);
 
-    --m-max-width-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
 
     /* left and right margins - pre and blockquote */
-    /*--m-margins-preformatted: var(--m-elbow-room);*/
     --m-margins-preformatted: 0px;
     --m-margins-blockquote:   calc(var(--m-indent-narrative) * 1.5);
 
-    /* page breaks & simulated page breaks - short-form and long-form
-     * DON'T MESS WITH THESE */
-    --m-page-break-short: unset;
-    --m-page-break-long:  page;
-
-    --m-page-break-simulated-short: 0px;        /* faded lightgray */
-    --m-page-break-simulated-long:  5px dashed rgba(211,211,211,50%);
-
-    /* the document facts (.m-facts) - short-form and long-form */
-    --m-position-facts-short: absolute;
-    --m-top-facts-short:  0;     --m-bottom-facts-short: unset;
-    --m-left-facts-short: unset; --m-right-facts-short:  0;
-    --m-margin-facts-short: unset;
-    --m-text-align-facts-short: right;
-
-    --m-position-facts-long: static;
-    --m-top-facts-long:  unset; --m-bottom-facts-long: unset;
-    --m-left-facts-long: unset; --m-right-facts-long:  unset;
-    --m-margin-facts-long:  var(--m-room-for-two) auto 0;
-    --m-text-align-facts-long: center;
-
     /*
-     * DEFAULTS
+     * DEFAULTS - section 3
+     */
+
+    /* - dinkus and -30-
      * - baseline font-size, font-weight, font-family, and line-spacing
      * - indent and inter-paragraph spacing settings when needed
      * - text-alignment
@@ -214,45 +170,33 @@
      * - All are initially set to expected manuscript standards
      */
 
+    --m-dinkus: var(--m-marker0);
+    --m-30-: var(--m-marker10);
+
+    /* everything is defaulted to -narrative and then that gets reset
+     * by manuscript.css to something different if necessary */
     --m-font-family:              var(--m-font-family-narrative);
     --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
     --m-font-family-code:         var(--m-font-family-narrative-code);
     --m-font-family-poetry:       var(--m-font-family-narrative-poetry);
-    --m-line-spacing:             var(--m-line-spacing-double);
 
     --m-indent:                 var(--m-indent-narrative);
     --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
     --m-paragraph-spacing:      var(--m-paragraph-spacing-narrative);
 
     --m-offset-title: var(--m-offset-title-short);
-    --m-offset-parts: var(--m-offset-parts-short);
-    --m-offset-chapters: var(--m-offset-chapters-short);
-    --m-offset-parts-render: var(--m-offset-parts-render-short);
-    --m-offset-chapters-render: var(--m-offset-chapters-render-short);
+    --m-offset-part: var(--m-offset-part-short);
+    --m-offset-chapter: var(--m-offset-chapter-short);
+    --m-offset-part-render: var(--m-offset-part-render-short);
+    --m-offset-chapter-render: var(--m-offset-chapter-render-short);
     --m-offset-scene: var(--m-offset-scene-short);
 
-    /* additional font settings - pre, code, poetry */
-    --m-font-size-preformatted:    inherit;
-    --m-font-size-code:            inherit;
-    --m-font-size-code-inline:     inherit;
-    --m-font-size-poetry:          inherit;
-
-    --m-font-weight-preformatted:  inherit;
-    --m-font-weight-code:          inherit;
-    --m-font-weight-code-inline:   inherit;
-    --m-font-weight-poetry:        inherit;
-
-    --m-line-spacing-preformatted: inherit;
-    --m-line-spacing-code:         inherit;
-    --m-line-spacing-poetry:       var(--m-line-spacing-single);
-
-    --m-text-transform-title-poetry: uppercase;
-
     /*
-     * DEFAULTS
-     * - per-component font-size, font-weight, font-family, and line-spacing
-     *   Initially all are set to what was set above.
-     * - line spacing for .m-facts is thrown in here as well
+     * Per-component font-size, font-weight, font-family, line-spacing, …
+     * Initially all are set to what was set above.
+     * - contact, header(s), facts, title/subtitle, byline
+     * - part, chapter, scene, poem
+     * - epigraph, dingus, -30-
      * This is insanely pedantic, I know.
      */
 
@@ -274,21 +218,14 @@
 
     /* font settings - the main titles, subtitles, and authors */
     --m-font-size-title: var(--m-font-size);
-    --m-font-size-titles: var(--m-font-size);
     --m-font-size-subtitle: var(--m-font-size);
-    --m-font-size-subtitles: var(--m-font-size);
     --m-font-size-byline: var(--m-font-size);
-    --m-font-size-bylines: var(--m-font-size);
 
     --m-font-weight-title: var(--m-font-weight);
-    --m-font-weight-titles: var(--m-font-weight);
     --m-font-weight-byline: var(--m-font-weight);
-    --m-font-weight-bylines: var(--m-font-weight);
 
     --m-font-family-title: var(--m-font-family);
-    --m-font-family-titles: var(--m-font-family);
     --m-font-family-byline: var(--m-font-family);
-    --m-font-family-bylines: var(--m-font-family);
 
     /* font settings - part titles, subtitles, and authors */
     --m-font-size-title-part: var(--m-font-size-title);
@@ -348,10 +285,9 @@
     --m-font-weight-dinkus-30-: var(--m-font-weight);
     --m-font-family-dinkus-30-: var(--m-font-family);
 
-    /*
-     * DEFAULTS
-     * - .m-facts font settings, line spacing, and postioning
-     *   (.m-facts is an oddball container)
+    /* Class "m-facts" settings
+     * fonts, line spacing, and postioning
+     * (.m-facts is an oddball container)
      */
 
     /* font settings short/long - .m-facts */
@@ -379,32 +315,4 @@
     --m-font-weight-facts:  var(--m-font-weight-facts-short);
     --m-font-family-facts:  var(--m-font-family-facts-short);
     --m-line-spacing-facts: var(--m-line-spacing-facts-short);
-
-    /*
-     * DEFAULTS -- other things
-     * - hyphenation and #manuscript's fancy border for the screen rendered
-     *   document.
-     */
-
-    /* page break settings */
-    --m-page-break: var(--m-page-break-short);
-    --m-page-break-simulated: var(--m-page-break-simulated-short);
-
-    /* Hyphenation - DON'T CHANGE THIS
-     * Manuscript standards almost universally state never fully justified and
-     * never hyphenated. But here's the variable switch if you want to play
-     * around: manual or auto.
-     *
-     * IMPORTANT: hyphenation only works if the lang attribute is set in the
-     * html element (eg: <html lang="en"> or set in the elements managing the
-     * text you want to be hyphenated. Most markdown editors don't set this. */
-    --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
-
-    /* Decorative border (screen rendering only) - DISABLED FOR NOW
-     * A border wrapping the manuscript content. Set this to 0 in your
-     * manuscript to disable. */      /* faded lightgray */
-    --m-manuscript-border: 1px solid rgba(211,211,211,50%);
-
-    /*--m-link-color: rgb(0,0,238);*/ /* a browser default blue */
-    --m-link-color: rgb(0,32,194);  /* Cobalt Blue */
 }

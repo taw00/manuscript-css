@@ -112,45 +112,52 @@
 
 @page {
     /* The default (US letter) is already set. This serves as documentation.
-     * For A4, A5, or A6 you need to add this at-page declaration after your
-     * imports in your markdown (or HTML) file's <style> block.
+     * For A4, A5, or A6, or whatever, you need to add this @page declaration
+     * after your imports in your markdown (or HTML) file's <style></style>
+     * block.
 @page { size: A4 portrait; margin: 25.4mm; }
 @page { size: A5 portrait; margin: 25.4mm; }
 @page { size: A6 portrait; margin: 12.7mm; }
+@page { size: 5.5in 8.5in; margin: .75in; }
+@page { size: letter portrait; margin: 1in; }
      */
 }
 
 #vpage.US, #vpage.letter {
-    /* the default is already set for .US */
+    /* US letter is already set as the default */
 }
 
 #vpage.USh, #vpage.hletter {
     --m-page-width:  var(--m-page-widthUSh);
     --m-page-height: var(--m-page-heightUSh);
     --m-page-margin: var(--m-page-marginUSh);
+    --m-indent-narrative: var(--m-indentUSh)
 }
 
 #vpage.A4 {
     --m-page-width:  var(--m-page-widthA4);
     --m-page-height: var(--m-page-heightA4);
     --m-page-margin: var(--m-page-marginA4);
+    --m-indent-narrative: var(--m-indentA4)
 }
 #vpage.A5 {
     --m-page-width:  var(--m-page-widthA5);
     --m-page-height: var(--m-page-heightA5);
     --m-page-margin: var(--m-page-marginA5);
+    --m-indent-narrative: var(--m-indentA5)
 }
 #vpage.A6 {
     --m-page-width:  var(--m-page-widthA6);
     --m-page-height: var(--m-page-heightA6);
     --m-page-margin: var(--m-page-marginA6);
+    --m-indent-narrative: var(--m-indentA6);
 }
 #vpage {
-    /*recalculate */
+    /*recalculate - not quite sure why this has to happen, but it does */
     --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 
-    --m-max-width-headers: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
     --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
 
     --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
@@ -164,8 +171,6 @@
     --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
     --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
     --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
-
-    --m-indent-narrative: calc(var(--m-page-margin) / 2);
 
     --m-offset-title-short:        var(--m-content-offset-5-12th);
     --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
@@ -202,12 +207,12 @@
     --m-offset-title: var(--m-offset-title-short-poetry);
 }
 #manuscript.short.poetry {
-    --m-offset-chapters: var(--m-offset-chapters-short-poetry);
-    --m-offset-chapters-render: var(--m-offset-chapters-short-poetry);
+    --m-offset-chapter: var(--m-offset-chapter-short-poetry);
+    --m-offset-chapter-render: var(--m-offset-chapter-short-poetry);
 }
 #manuscript.long.poetry {
-    --m-offset-chapters: var(--m-offset-chapters-long-poetry);
-    --m-offset-chapters-render: var(--m-offset-chapters-long-poetry);
+    --m-offset-chapter: var(--m-offset-chapter-long-poetry);
+    --m-offset-chapter-render: var(--m-offset-chapter-long-poetry);
 }
 #manuscript.poetry {
     --m-font-family:  var(--m-font-family-poetry);
@@ -222,10 +227,10 @@
 
 #manuscript.long {
     --m-offset-title: var(--m-offset-title-long);
-    --m-offset-parts: var(--m-offset-parts-long);
-    --m-offset-parts-render: var(--m-offset-parts-render-long);
-    --m-offset-chapters: var(--m-offset-chapters-long);
-    --m-offset-chapters-render: var(--m-offset-chapters-render-long);
+    --m-offset-part: var(--m-offset-part-long);
+    --m-offset-part-render: var(--m-offset-part-render-long);
+    --m-offset-chapter: var(--m-offset-chapter-long);
+    --m-offset-chapter-render: var(--m-offset-chapter-render-long);
     --m-offset-scene: var(--m-offset-scene-long);
 
     --m-page-break-simulated: var(--m-page-break-simulated-long);
@@ -266,10 +271,10 @@
     --m-offset-title: 0;
     --m-page-break: unset !important;
     --m-page-break-simulated: 0px !important;
-    --m-offset-parts: var(--m-elbow-room) !important;
-    --m-offset-chapters: var(--m-elbow-room) !important;
-    --m-offset-parts-render: var(--m-elbow-room) !important;
-    --m-offset-chapters-render: var(--m-elbow-room) !important;
+    --m-offset-part: var(--m-elbow-room) !important;
+    --m-offset-chapter: var(--m-elbow-room) !important;
+    --m-offset-part-render: var(--m-elbow-room) !important;
+    --m-offset-chapter-render: var(--m-elbow-room) !important;
     --m-manuscript-border: 0px !important;
 }
 
@@ -277,8 +282,8 @@
  * special-case stylings
  * ********************************************************************* */
 .foothang p {
-    /* hanging indent */
     padding-left: var(--m-indent) !important;
+    /* hanging indent */
     text-indent: calc(var(--m-indent) * -1) !important;
 }
 .center-max-content,

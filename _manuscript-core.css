@@ -284,7 +284,7 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript > .m-header,
 #manuscript :not(.m-poem) > .m-header {
     margin: 0 auto; padding: 0px;
-    width: 100%; max-width: var(--m-max-width-headers);
+    width: 100%; max-width: var(--m-max-width-header);
 }
 
 
@@ -311,14 +311,14 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript section.m-part > .m-header {
     border-top: var(--m-page-break-simulated);
     margin-top: 1px;
-    padding-top: var(--m-offset-parts-render);
-    padding-bottom: var(--m-offset-parts-render);
+    padding-top: var(--m-offset-part-render);
+    padding-bottom: var(--m-offset-part-render);
     margin-bottom: 1px;
     border-bottom: var(--m-page-break-simulated);
 }
 #manuscript section.m-chapter > .m-header {
     border-top: var(--m-page-break-simulated);
-    padding-top: var(--m-offset-chapters-render);
+    padding-top: var(--m-offset-chapter-render);
     margin-top: 1px;
 }
 #manuscript.poetry section.m-poem {
@@ -354,13 +354,13 @@ html, body { background-color: rgba(0,0,0,0); }
  * But only if they have a title block, otherwise, it's assumed no margin */
 #manuscript section.m-part > .m-header {
     break-before: var(--m-page-break);
-    margin-top: var(--m-offset-parts);
+    margin-top: var(--m-offset-part);
     padding-top: 1px;
     break-after: var(--m-page-break);
 }
 #manuscript section.m-chapter > .m-header {
     break-before: var(--m-page-break);
-    margin-top: var(--m-offset-chapters);
+    margin-top: var(--m-offset-chapter);
     padding-top: 1px;
 }
 #manuscript.poetry section.m-poem {

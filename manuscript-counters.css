@@ -25,11 +25,11 @@
  *       append the leaf-node count: Part 1, Part 2, Chapter 1, Scene 1 etc.
  *       (Don't turn on both -depth-off and -leaf-off.)
  *
- *   `--m-autotitle-for-parts-off` -- (default is unset/ON!) append to the part
+ *   `--m-autotitle-for-part-off` -- (default is unset/ON!) append to the part
  *       titles?
- *   `--m-autotitle-for-chapters-off` -- (default is unset/ON!) append to the
+ *   `--m-autotitle-for-chapter-off` -- (default is unset/ON!) append to the
  *       chapter titles?
- *   `--m-autotitle-for-scenes-off` -- (default is unset/ON!) append to the
+ *   `--m-autotitle-for-scene-off` -- (default is unset/ON!) append to the
  *       scene titles?
  *
  *   `--m-autotitle-tally-off` -- (default is ""/off) unset this if you want
@@ -91,9 +91,9 @@
     --m-autotitle-depth-off: "";
     --m-autotitle-leaf-off: unset;
     --m-autotitle-tally-off: "";
-    --m-autotitle-for-parts-off: unset;
-    --m-autotitle-for-chapters-off: unset;
-    --m-autotitle-for-scenes-off: unset;
+    --m-autotitle-for-part-off: unset;
+    --m-autotitle-for-chapter-off: unset;
+    --m-autotitle-for-scene-off: unset;
 
     /* --- do not touch these --- */
     --_m-autotitle-tally: " (p" counter(npart) ", c" counter(nchapter) ", s" counter(nscene) ")";
@@ -201,13 +201,13 @@
 
 /* build the string to append to a title */
 #manuscript section.m-part {
-    --m-autotitle: var(--m-autotitle-for-parts-off, var(--m-autotitle-name-off, "Part ") var(--_m-autotitle));
+    --m-autotitle: var(--m-autotitle-for-part-off, var(--m-autotitle-name-off, "Part ") var(--_m-autotitle));
 }
 #manuscript section.m-chapter {
-    --m-autotitle: var(--m-autotitle-for-chapters-off, var(--m-autotitle-name-off, "Chapter ") var(--_m-autotitle));
+    --m-autotitle: var(--m-autotitle-for-chapter-off, var(--m-autotitle-name-off, "Chapter ") var(--_m-autotitle));
 }
 #manuscript section.m-scene {
-    --m-autotitle: var(--m-autotitle-for-scenes-off, var(--m-autotitle-name-off, "Scene ") var(--_m-autotitle));
+    --m-autotitle: var(--m-autotitle-for-scene-off, var(--m-autotitle-name-off, "Scene ") var(--_m-autotitle));
 }
 
 /* application f the autotitle title string */
