@@ -47,7 +47,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
         /*
         --m-font-weight-title: bold;
         --m-page-break-simulated-long: 0;
-        --m-30-: var(--m-marker9) "2022 Firstname Lastname | All rights reserved.";
+        --m-30-: var(--m-marker31) "2022 Firstname Lastname | All rights reserved.";
         */
         --m-append-to-scene-off: "";
     }

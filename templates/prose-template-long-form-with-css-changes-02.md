@@ -3,10 +3,10 @@ Convert this to PDF (reference README.md on how to do that).
 
 This example:
 - we are using parts (and chapters and scenes)
-- we are using automated title generation for parts and chapters and scenes.
-  we turned on full-depth enumeration. This is helpful if you are sharing the
-  document with reviewers. In lieu of page numbers they can reference part,
-  chapter, and scene numbers.
+- we are using automated title generation (defined in -counters.css) for parts
+  and chapters and scenes. W turned on full-depth enumeration. This is helpful
+  if you are sharing the document with reviewers. In lieu of page numbers they
+  can reference part, chapter, and scene numbers.
 - turned off the dinkus in this because we have scene titles and that renders
   moot the need for a dinkus scene separator.
 
@@ -28,7 +28,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
         --m-font-weight-title: bold;
         --m-page-break-simulated-long: 0;
         */
-        --m-30-: var(--m-marker9) "2022 Firstname Lastname | All rights reserved.";
+        --m-30-: var(--m-marker31) "2022 Firstname Lastname | All rights reserved.";
         --m-autotitle-leaf-off: ""; /* turned off showing leaf values */
         --m-autotitle-depth-off: unset; /* turned on full-depth enumeration */
         --m-dinkus: unset;
