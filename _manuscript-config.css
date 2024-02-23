@@ -95,7 +95,7 @@
 
     /* font-family - narrative and non-narrative */
     --m-font-family-narrative: var(--m-fontstack-serif);
-    --m-font-family-non-narrative: var(--m-fontstack-serif);
+    --m-font-family-non-narrative: var(--m-fontstack-sans);
 
     --m-font-family-narrative-preformatted: var(--m-fontstack-mono);
     --m-font-family-non-narrative-preformatted: var(--m-fontstack-mono);
