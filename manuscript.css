@@ -108,7 +108,7 @@
  * - simple (or) text-only: a simplified view of the document (see above)
  */
 
-@import "./_manuscript-core.css";
+@import "./_manuscript-core.css?rev=20240224";
 
 @page {
     /* The default (US letter) is already set. This serves as documentation.
