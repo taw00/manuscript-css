@@ -192,11 +192,39 @@
 }
 
 #manuscript.non-narrative:not(.poetry) {
+    /* non-narrative paragraphs are space-seperated and not indented */
+    --m-indent: var(--m-indent-non-narrative);
+    --m-paragraph-spacing: var(--m-paragraph-spacing-non-narrative);
+    /* need to reset font-family for most everything */
     --m-font-family: var(--m-font-family-non-narrative);
     --m-font-family-preformatted: var(--m-font-family-non-narrative-preformatted);
     --m-font-family-code: var(--m-font-family-non-narrative-code);
-    --m-indent: var(--m-indent-non-narrative);
-    --m-paragraph-spacing: var(--m-paragraph-spacing-non-narrative);
+    /* reset font settings - the main title-block header */
+    --m-font-family-header: var(--m-font-family);
+    --m-font-family-headers: var(--m-font-family);
+    /* reset font settings - contact info (and facts if put in the right corner */
+    --m-font-family-contact:  var(--m-font-family);
+    /* reset font settings - the main titles, subtitles, and authors */
+    --m-font-family-title: var(--m-font-family);
+    --m-font-family-byline: var(--m-font-family);
+    /* reset font settings - part titles, subtitles, and authors */
+    --m-font-family-title-part: var(--m-font-family-title);
+    --m-font-family-byline-part: var(--m-font-family-byline);
+    /* reset font settings - chapter titles, subtitles, and authors */
+    --m-font-family-title-chapter:  var(--m-font-family);
+    --m-font-family-byline-chapter: var(--m-font-family);
+    /* reset font settings - scene titles, subtitles, and authors */
+    --m-font-family-title-scene:  var(--m-font-family);
+    --m-font-family-byline-scene: var(--m-font-family);
+    /* reset font settings - the epigraphs */
+    --m-font-family-epigraph: var(--m-font-family);
+    /* reset font settings - the section separators (dinkus and -30-) */
+    --m-font-family-dinkus-30-: var(--m-font-family);
+    /* reset font settings short/long - .m-facts */
+    --m-font-family-facts-short:  var(--m-font-family-contact);
+    --m-font-family-facts-long:  inherit;
+    /* reset .m-facts font settings */
+    --m-font-family-facts:  var(--m-font-family-facts-short);
 }
 
 #manuscript.short {

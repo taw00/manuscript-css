@@ -55,7 +55,7 @@
     --m-page-margin: var(--m-page-marginUS);
 
     --m-fontstack-serif: var(--m-fontstack-times);
-    --m-fontstack-sans: var(--m-fontstack--arial);
+    --m-fontstack-sans: var(--m-fontstack-arial);
     --m-fontstack-mono: var(--m-fontstack-courier);
 
     --m-font-size: var(--m-font-size-standard); /* 16px (12pt) */
