@@ -108,7 +108,7 @@
  * - simple (or) text-only: a simplified view of the document (see above)
  */
 
-@import "./_manuscript-core.css?rev=20240224";
+@import "./_manuscript-core.css?rev=20240319";
 
 @page {
     /* The default (US letter) is already set. This serves as documentation.
@@ -131,26 +131,30 @@
     --m-page-width:  var(--m-page-widthUSh);
     --m-page-height: var(--m-page-heightUSh);
     --m-page-margin: var(--m-page-marginUSh);
-    --m-indent-narrative: var(--m-indentUSh)
+    --m-indent-narrative: var(--m-indentUSh);
+    --m-indent-foothang: var(--m-indentUSh);
 }
 
 #vpage.A4 {
     --m-page-width:  var(--m-page-widthA4);
     --m-page-height: var(--m-page-heightA4);
     --m-page-margin: var(--m-page-marginA4);
-    --m-indent-narrative: var(--m-indentA4)
+    --m-indent-narrative: var(--m-indentA4);
+    --m-indent-foothang: var(--m-indentA4);
 }
 #vpage.A5 {
     --m-page-width:  var(--m-page-widthA5);
     --m-page-height: var(--m-page-heightA5);
     --m-page-margin: var(--m-page-marginA5);
-    --m-indent-narrative: var(--m-indentA5)
+    --m-indent-narrative: var(--m-indentA5);
+    --m-indent-foothang: var(--m-indentA5);
 }
 #vpage.A6 {
     --m-page-width:  var(--m-page-widthA6);
     --m-page-height: var(--m-page-heightA6);
     --m-page-margin: var(--m-page-marginA6);
     --m-indent-narrative: var(--m-indentA6);
+    --m-indent-foothang: var(--m-indentA6);
 }
 #vpage {
     /*recalculate - not quite sure why this has to happen, but it does */
@@ -310,9 +314,9 @@
  * special-case stylings
  * ********************************************************************* */
 .foothang p {
-    padding-left: var(--m-indent) !important;
+    padding-left: var(--m-indent-foothang) !important;
     /* hanging indent */
-    text-indent: calc(var(--m-indent) * -1) !important;
+    text-indent: calc(var(--m-indent-foothang) * -1) !important;
 }
 .center-max-content,
 .table-of-contents,

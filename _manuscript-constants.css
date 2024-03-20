@@ -101,6 +101,8 @@
     --m-indent-non-narrative-first-paragraph: 0px;
     --m-paragraph-spacing-non-narrative: 1em;
 
+    --m-indent-foothang: var(--m-indentUS);
+
     /* Measurements default to US Letter and are redefined in -config.css.
      * Offset calculations used to offset title-header blocks from top of the
      * page. Manuscripts standards recommend placing the main title-block
