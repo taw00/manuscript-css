@@ -14,7 +14,7 @@
  */
 
 @import "_manuscript-style-reset.css?rev=20240224";
-@import "_manuscript-config.css?rev=20240318";
+@import "_manuscript-config.css?rev=20240325";
 
 html { font-size: var(--m-font-size); } /* 1rem defined */
 html, body { background-color: rgb(204,204,204); } /* off-white */
@@ -189,6 +189,22 @@ html, body { background-color: rgba(0,0,0,0); }
     /* so many markdown tools manipulate these. overriding */
     color: inherit; background-color: inherit;
 }
+
+/* Headers margin zeroing
+ * The margins for headers default to various things. We need to zero them out
+ * here and then reset the to our specific needs later.
+ */
+
+/*
+#manuscript :is(h1,h2,h3,h4,h5,h6),
+#manuscript p {
+    margin: unset;
+    margin-block: unset;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+*/
 
 /*
  * The poetry
@@ -575,7 +591,18 @@ html, body { background-color: rgba(0,0,0,0); }
 /* paragraph indentation / spacing for all the prose
  * (which one is enabled is determined by .narrative or .non-narrative)
  * Note, the exclusions are pedantic. I am unsure why ol,ul,dl,menu,table
- * wasn't enough to stop the styling here. */
+ * wasn't enough to stop the styling here. Also, headers that are free-floating
+ * need some room, regardless of narrative or non-narrative.*/
+#manuscript blockquote > :is(h1,h2,h3,h4,h5,h6),
+#manuscript blockquote :not(ol,ul,dl,menu,table) :is(h1,h2,h3,h4,h5,h6),
+#manuscript section.m-scene:not(.foothang) > :is(h1,h2,h3,h4,h5,h6),
+#manuscript section.m-scene:not(.foothang)
+                       :not(.m-header, ol,ul,dl,menu, li,dt,dd,
+                            table,thead,tbody,tfoot,th,tr,td,colgroup,col) :is(h1,h2,h3,h4,h5,h6) {
+    margin-top: var(--m-elbow-room);
+    margin-block-start: var(--m-elbow-room);
+}
+
 #manuscript blockquote > p,
 #manuscript blockquote :not(ol,ul,dl,menu,table) p,
 #manuscript section.m-scene:not(.foothang) > p,
@@ -584,6 +611,7 @@ html, body { background-color: rgba(0,0,0,0); }
                             table,thead,tbody,tfoot,th,tr,td,colgroup,col) p {
     text-indent: var(--m-indent);
     margin-top: var(--m-paragraph-spacing);
+    margin-block-start: var(--m-paragraph-spacing);
 }
 
 /* ... and treat paragraphs after certain classes/elements different */
@@ -592,9 +620,15 @@ html, body { background-color: rgba(0,0,0,0); }
 #manuscript :is(blockquote, section.m-scene:not(.foothang)) > p:first-of-type {
     text-indent: var(--m-indent-first-paragraph) !important;
 }
-#manuscript :is(h1,h2,h3,h4,h5,h6) + p,
-#manuscript :is(section.m-scene) > p:first-of-type {
-    margin-top: 0px;
+#manuscript :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
+#manuscript :is(article) :is(h1,h2,h3,h4,h5,h6) + p,
+#manuscript :is(article) :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
+#manuscript :is(section.m-scene)
+  > :is(p:first-of-type,
+        h1:first-child, h2:first-child, h3:first-child,
+        h4:first-child, h5:first-child, h6:first-child) {
+    margin-top: 0px !important;
+    margin-block-start: 0px !important;
 }
 
 
