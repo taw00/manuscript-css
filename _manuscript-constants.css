@@ -40,8 +40,8 @@
     --m-line-spacing-triple: 3;
 
     /* additional margin/spacing nudges used here and there */
-    --m-elbow-room: 1em;
-    --m-room-for-two: 2em;
+    --m-elbow-room: 1rem;
+    --m-room-for-two: 2rem;
 
     --m-text-align:  start;
 
@@ -99,7 +99,7 @@
 
     --m-indent-non-narrative: 0px;
     --m-indent-non-narrative-first-paragraph: 0px;
-    --m-paragraph-spacing-non-narrative: 1em;
+    --m-paragraph-spacing-non-narrative: 1rem;
 
     --m-indent-foothang: var(--m-indentUS);
 

@@ -26,7 +26,7 @@
     --m-font-family-subtitle: "Comic Neue", "Comic Sans", cursive;
     --m-font-family-byline: "Comic Neue", "Comic Sans", cursive;
     --m-font-size: 19px;
-    --m-font-size-title: 1.5em;
+    --m-font-size-title: 1.5rem;
     --m-font-weight-title: bold;
     --m-font-weight-subtitle: medium;
     --m-line-spacing: 2.5;
@@ -41,7 +41,7 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import "_manuscript-constants.css?rev=20240318";
+@import "_manuscript-constants.css?rev=20240325";
 
 @page { size: letter portrait; margin: 1in; }
 
@@ -113,7 +113,7 @@
 
     --m-indent-non-narrative: 0px;
     --m-indent-non-narrative-first-paragraph: 0px;
-    --m-paragraph-spacing-non-narrative: 1em;
+    --m-paragraph-spacing-non-narrative: 1rem;
 
     /* Offset calculations used to offset title-header blocks from top of the
      * page. Manuscripts standards recommend placing the main title-block
@@ -272,9 +272,9 @@
     --m-font-family-byline-poem: var(--m-font-family-poetry);
 
     /* font settings - the epigraphs */
-    /*--m-font-size-epigraph: .8125em;*/ /* 13px or ~9.75pt (if parent 16px) */
-    /*--m-font-size-epigraph: .8333em;*/ /* ~13.33px or 10pt */
-    --m-font-size-epigraph: .9166em; /* ~14.7px or 11pt */
+    /*--m-font-size-epigraph: .8125rem;*/ /* 13px or ~9.75pt (if parent 16px) */
+    /*--m-font-size-epigraph: .8333rem;*/ /* ~13.33px or 10pt */
+    --m-font-size-epigraph: .9166rem; /* ~14.7px or 11pt */
     --m-font-weight-epigraph: var(--m-font-weight);
     --m-font-family-epigraph: var(--m-font-family);
     --m-font-style-epigraph: italic;
