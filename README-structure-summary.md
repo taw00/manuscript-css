@@ -19,14 +19,14 @@ webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 ### Example 2: The document beginning - same as above with behavior adjustments
 
 ```markdown
-<!-- Formatting: A4, 1in margins, long-form non-narrative          -->
+<!-- Formatting: A4, 1in margins, long-form nonnarrative                    -->
 <!--             I.e. All the big prose switches reversed from the default. -->
 <style>
     @import "manuscript.css";
     @page { size: A4 portrait; margin: 1in; }
 </style>
 <div id="vpage" class="A4">
-<article id="manuscript" class="long non-narrative">
+<article id="manuscript" class="long nonnarrative">
 ... your manuscript ...
 ```
 

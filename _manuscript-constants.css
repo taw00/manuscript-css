@@ -78,7 +78,7 @@
     /* typefaces (fontstacks)
      * Manuscript standards, these or close equivalents:
      * - Times New Roman - for narrative works
-     * - Arial or Helvetica - for non-narrative works . . . sometimes
+     * - Arial or Helvetica - for nonnarrative works . . . sometimes
      * - Courier New - when a monospaced typeface is needed
      * Those are all proprietary. But these font stacks below call for some
      * excellent close-equivalent open options for each category. */
@@ -92,14 +92,17 @@
     --m-content-height: calc(var(--m-page-heightUS) - calc(var(--m-page-marginUS) * 2));
 
     /* Measurements default to US Letter and are redefined in -config.css.
-     * first-line indent/inter-paragraph spacing - narrative & non-narrative */
+     * first-line indent/inter-paragraph spacing - narrative & nonnarrative */
     --m-indent-narrative: var(--m-indentUS);
     --m-indent-narrative-first-paragraph: 0px;
     --m-paragraph-spacing-narrative: 0px;
 
-    --m-indent-non-narrative: 0px;
-    --m-indent-non-narrative-first-paragraph: 0px;
-    --m-paragraph-spacing-non-narrative: 1rem;
+    --m-indent-nonnarrative: 0px;
+    --m-indent-nonnarrative-first-paragraph: 0px;
+    --m-paragraph-spacing-nonnarrative: 1rem;
+    --m-indent-non-narrative: var(--m-indent-nonnarrative);
+    --m-indent-non-narrative-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
+    --m-paragraph-spacing-non-narrative: var(--m-paragraph-spacing-nonnarrative);
 
     --m-indent-foothang: var(--m-indentUS);
 

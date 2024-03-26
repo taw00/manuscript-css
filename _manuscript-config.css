@@ -93,27 +93,34 @@
     --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 
-    /* font-family - narrative and non-narrative */
+    /* font-family - narrative and nonnarrative */
     --m-font-family-narrative: var(--m-fontstack-serif);
-    --m-font-family-non-narrative: var(--m-fontstack-sans);
+    --m-font-family-nonnarrative: var(--m-fontstack-sans);
+    --m-font-family-non-narrative: var(--m-font-family-nonnarrative);
 
     --m-font-family-narrative-preformatted: var(--m-fontstack-mono);
-    --m-font-family-non-narrative-preformatted: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-preformatted: var(--m-fontstack-mono);
+    --m-font-family-non-narrative-preformatted: var(--m-font-family-nonnarrative-preformatted);
 
     --m-font-family-narrative-code: var(--m-fontstack-mono);
-    --m-font-family-non-narrative-code: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-code: var(--m-fontstack-mono);
+    --m-font-family-non-narrative-code: var(--m-font-family-nonnarrative-code);
 
     --m-font-family-narrative-poetry: var(--m-fontstack-serif);
-    --m-font-family-non-narrative-poetry: var(--m-fontstack-serif);
+    --m-font-family-nonnarrative-poetry: var(--m-fontstack-serif);
+    --m-font-family-non-narrative-poetry: var(--m-font-family-nonnarrative-poetry);
 
-    /* first-line indent/inter-paragraph spacing - narrative & non-narrative */
+    /* first-line indent/inter-paragraph spacing - narrative & nonnarrative */
     --m-indent-narrative: var(--m-indentUS);
     --m-indent-narrative-first-paragraph: 0px;
     --m-paragraph-spacing-narrative: 0px;
 
-    --m-indent-non-narrative: 0px;
-    --m-indent-non-narrative-first-paragraph: 0px;
-    --m-paragraph-spacing-non-narrative: 1rem;
+    --m-indent-nonnarrative: 0px;
+    --m-indent-nonnarrative-first-paragraph: 0px;
+    --m-paragraph-spacing-nonnarrative: 1rem;
+    --m-indent-non-narrative: var(--m-indent-nonnarrative);
+    --m-indent-non-narrative-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
+    --m-paragraph-spacing-non-narrative: var(--m-paragraph-spacing-nonnarrative);
 
     /* Offset calculations used to offset title-header blocks from top of the
      * page. Manuscripts standards recommend placing the main title-block

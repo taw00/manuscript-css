@@ -32,14 +32,14 @@ fluff, easy to read and review. Here are some screenshots of the results . . .
 # This process is . . .
 
 1. A generalized manuscript formatting process for prose and poetry (for prose,
-   both narrative and non-narrative)
+   both narrative and nonnarrative)
 3. Formatting to produce US Letter- or A4-dimensioned artifacts (PDFs)
 4. Formatting that can be adjusted for short-form works (e.g. short-story or
    single-poem manuscripts)
 5. Formatting that can be adjusted for long-form works (novel and book-sized /
    poetry chapbooks and collections)
-6. Formatting that can be broadly adjusted for non-narrative works
-   (non-narrative non-fiction, primarily)
+6. Formatting that can be broadly adjusted for nonnarrative works
+   (nonnarrative non-fiction, primarily)
 7. A lot of customability if you know your CSS.
 
 # This process is not . . .

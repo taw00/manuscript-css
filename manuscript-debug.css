@@ -127,11 +127,12 @@ article.m-part::before, article.m-chapter::before, article.m-scene::before,
 /* ... and in the #manuscript article */
 #manuscript#US::before, #manuscript#A4::before,
 #manuscript#short::before, #manuscript#long::before,
-#manuscript#narrative::before, #manuscript#non-narrative::before,
+#manuscript#narrative::before, #manuscript#nonnarrative::before, #manuscript#non-narrative::before,
 
 /* checks for mutually exclusive class values */
 #manuscript.long.short::before, #manuscript.short.long::before,
-#manuscript.narrative.non-narrative::before, #manuscript.non-narrative.narrative::before,
+#manuscript.narrative.nonnarrative::before, #manuscript.narrative.non-narrative::before,
+#manuscript.nonnarrative.narrative::before, #manuscript.non-narrative.narrative::before,
 #manuscript.US.A4::before, #manuscript.A4.US::before,
 
 /* check for incorrect positioning  */
@@ -190,24 +191,25 @@ article#vpage::before, div#manuscript::before {
 /* checks for inverted id vs. class in the #manuscript article element */
 #manuscript#US::before, #manuscript#A4::before,
 #manuscript#short::before, #manuscript#long::before,
-#manuscript#narrative::before, #manuscript#non-narrative::before {
+#manuscript#narrative::before, #manuscript#nonnarrative::before, #manuscript#non-narrative::before {
     position: relative; box-sizing: border-box; overflow: visible;
     top: 1in; left: 1in;
     content: 'ERROR! class/id mismatch. '
-      'US, A4, short, long, narrative, and non-narrative should be CLASSes '
+      'US, A4, short, long, narrative, and nonnarrative should be CLASSes '
       'of the #manuscript ARTICLE element. '
       '<article id="manuscript class="...">';
 }
 
 /* checks for mutually exclusive class values */
 #manuscript.long.short::before, #manuscript.short.long::before,
+#manuscript.narrative.nonnarrative::before, #manuscript.nonnarrative.narrative::before,
 #manuscript.narrative.non-narrative::before, #manuscript.non-narrative.narrative::before,
 #manuscript.US.A4::before, #manuscript.A4.US::before {
     position: relative; box-sizing: border-box; overflow: visible;
     top: 1in; left: 1in;
     content: 'ERROR! mutually exclusive class values. '
              'Class values for the #manuscript article element can include '
-             'A4 or US, short or long, narrative or non-narrative, not both '
+             'A4 or US, short or long, narrative or nonnarrative, not both '
              'of each pairing.';
 }
 

@@ -589,10 +589,10 @@ html, body { background-color: rgba(0,0,0,0); }
 }
 
 /* paragraph indentation / spacing for all the prose
- * (which one is enabled is determined by .narrative or .non-narrative)
+ * (which one is enabled is determined by .narrative or .nonnarrative)
  * Note, the exclusions are pedantic. I am unsure why ol,ul,dl,menu,table
  * wasn't enough to stop the styling here. Also, headers that are free-floating
- * need some room, regardless of narrative or non-narrative.*/
+ * need some room, regardless of narrative or nonnarrative.*/
 #manuscript blockquote > :is(h1,h2,h3,h4,h5,h6),
 #manuscript blockquote :not(ol,ul,dl,menu,table) :is(h1,h2,h3,h4,h5,h6),
 #manuscript section.m-scene:not(.foothang) > :is(h1,h2,h3,h4,h5,h6),

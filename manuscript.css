@@ -5,7 +5,7 @@
  * This stylesheet imports its companion -core.css logic stylesheet. The core
  * styles enable US letter-dimensioned short-prose narratives. This stylesheet
  * layers on functionality to enable A4-dimensioned documents, plus long-form
- * and both narrative and non-narrative formatting.
+ * and both narrative and nonnarrative formatting.
  *
  * Why does this exist?
  *
@@ -23,7 +23,7 @@
  * - 'prose' or 'poetry': prose is the default and therefore it is usually not
  *   explicitely used or defined here. By default, it is already employed.
  * - 'short' or 'long': a manuscript formatted for short prose is the default.
- * - 'narrative' or 'non-narrative': prose-only - formatted for narrative
+ * - 'narrative' or 'nonnarrative': prose-only - formatted for narrative
  *   prose is the default.
  * - 'simple' or 'text-only': Use this if you want a view of the document that
  *   excludes all of the metadata on the first page and the document "facts"
@@ -57,7 +57,7 @@
  *     - text is left (for LtR languages) justified, ragged-edged, and white
  *       space is squashed.
  *     - narrative: first-line indented, no spaces between paragraphs
- *     - non-narrative: first line flush, spaces between paragraphs
+ *     - nonnarrative: first line flush, spaces between paragraphs
  *
  * - poetry:
  *     - left justified (for LtR languages).
@@ -103,7 +103,7 @@
  *       space between each stanza. No white-space control otherwise.
  *
  * - narrative: see prose description above
- * - non-narrative: see prose description above
+ * - nonnarrative: see prose description above
  *
  * - simple (or) text-only: a simplified view of the document (see above)
  */
@@ -195,14 +195,15 @@
     /* the default is already set for .narrative */
 }
 
+#manuscript.nonnarrative:not(.poetry),
 #manuscript.non-narrative:not(.poetry) {
-    /* non-narrative paragraphs are space-seperated and not indented */
-    --m-indent: var(--m-indent-non-narrative);
-    --m-paragraph-spacing: var(--m-paragraph-spacing-non-narrative);
+    /* nonnarrative paragraphs are space-seperated and not indented */
+    --m-indent: var(--m-indent-nonnarrative);
+    --m-paragraph-spacing: var(--m-paragraph-spacing-nonnarrative);
     /* need to reset font-family for most everything */
-    --m-font-family: var(--m-font-family-non-narrative);
-    --m-font-family-preformatted: var(--m-font-family-non-narrative-preformatted);
-    --m-font-family-code: var(--m-font-family-non-narrative-code);
+    --m-font-family: var(--m-font-family-nonnarrative);
+    --m-font-family-preformatted: var(--m-font-family-nonnarrative-preformatted);
+    --m-font-family-code: var(--m-font-family-nonnarrative-code);
     /* reset font settings - the main title-block header */
     --m-font-family-header: var(--m-font-family);
     --m-font-family-headers: var(--m-font-family);
