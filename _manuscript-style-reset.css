@@ -115,8 +115,8 @@ header#title-block-header { display: none; }
 html, body { all: initial; }
 /* For reference: what I used to do.
 html {
-    color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0);
+    color: rgb(0 0 0);
+    background-color: rgb(0 0 0 / 0);
 }
 body {
     color: inherit;
@@ -124,7 +124,7 @@ body {
     margin: 8px;
 }
 body * {
-    color: rgb(0,0,0);
+    color: rgb(0 0 0);
     background-color: inherit;
     opacity: inherit;
 }
@@ -167,7 +167,7 @@ a,
 a:any-link,
 a:link,
 a:active,
-a:visited { color: rgb(0,0,238); }
+a:visited { color: rgb(0 0 238); }
 
 
 /*
