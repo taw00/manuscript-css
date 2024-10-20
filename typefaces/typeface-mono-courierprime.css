@@ -1,0 +1,42 @@
+/* Courier Prime
+ *
+ * font-family: CourierPrime, monospace;
+ *
+ * https://fonts.google.com/specimen/Courier+Prime
+ *
+ * (c) Copyright 2022 Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@font-face {
+  font-family: CourierPrime;
+  src: url("mono/woff2/CourierPrime/CourierPrime-Regular.woff2") format("woff2");
+  font-weight: normal; /* 400 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CourierPrime;
+  src: url("mono/woff2/CourierPrime/CourierPrime-Italic.woff2") format("woff2");
+  font-weight: normal; /* 400 */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CourierPrime;
+  src: url("mono/woff2/CourierPrime/CourierPrime-Bold.woff2") format("woff2");
+  font-weight: bold; /* 700 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: CourierPrime;
+  src: url("mono/woff2/CourierPrime/CourierPrime-BoldItalic.woff2") format("woff2");
+  font-weight: bold; /* 700 */
+  font-style: italic;
+  font-display: swap;
+}
