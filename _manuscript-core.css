@@ -528,10 +528,18 @@ html, body { background-color: rgb(0 0 0 / 0); }
 #manuscript .m-header > :last-child { margin-bottom: 0px; }
 
 /* automated content for the dinkuses between scenes */
-#manuscript section.m-scene::after {
+#manuscript section.m-scene:not(.hide-dinkus):not(.no-dinkus)::after {
     content: var(--m-dinkus);
     white-space: pre-wrap; /* enables funtional escaping in the escaping */
     line-height: var(--m-line-spacing-single-plus);
+}
+#manuscript section.m-scene.hide-dinkus::after {
+    /*content: "\00A0"; / * &nbps; */
+    content: "\200B"; /* &zerowidthspace */
+    line-height: var(--m-line-spacing-single-plus);
+}
+#manuscript section.m-scene.no-dinkus::after {
+    /* there will be a small separation between scenes */
 }
 #manuscript section.m-scene:last-of-type::after { content: ""; }
 
@@ -548,7 +556,7 @@ html, body { background-color: rgb(0 0 0 / 0); }
 #manuscript > h6,                        /* manually inserted top-level -30- */
 #manuscript > section:last-of-type::after,             /* auto-inserted -30- */
 #manuscript section.m-scene::after,                  /* auto-inserted dinkus */
-#manuscript :not(section.m-scene:not(.skip-dinkus)) > h6 {   /* manually ins. between sections */
+#manuscript :not(section.m-scene) > h6 {   /* manually ins. between sections */
     display: block;
     font-size:   var(--m-font-size-dinkus-30-);
     font-weight: var(--m-font-weight-dinkus-30-);
