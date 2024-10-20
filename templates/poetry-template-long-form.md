@@ -122,7 +122,7 @@ And then my heart with pleasure fills,
 And dances with the daffodils.
 ```
 
-</section> <!-- end poem --> 
+</section> <!-- end poem -->
 <section class="m-poem">
 <div class="m-header">
 

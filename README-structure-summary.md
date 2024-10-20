@@ -154,7 +154,7 @@ Note, the `m-header`s in the parts, chapters, and scenes don't usually have `m-f
 
 The default fonts used by the manuscript are ones selected to conform to what
 is expected—namely Times New Roman (or close equivalents), but also Arial and
-Courier New, depending on need.
+Courier Prime, depending on need.
 
 You really don't need to import new typefaces (your computer should know how to
 handle a request for any one of those), but if you want to explore my open

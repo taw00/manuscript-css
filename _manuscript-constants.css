@@ -79,13 +79,13 @@
      * Manuscript standards, these or close equivalents:
      * - Times New Roman - for narrative works
      * - Arial or Helvetica - for nonnarrative works . . . sometimes
-     * - Courier New - when a monospaced typeface is needed
+     * - Courier Prime - when a monospaced typeface is needed
      * Those are all proprietary. But these font stacks below call for some
      * excellent close-equivalent open options for each category. */
     --m-fontstack-times: "Times New Roman", "Croscore Tinos", Tinos, "Nimbus Roman", "Liberation Serif", "TeX Gyre Termes", Thorndale, serif;
     --m-fontstack-arial: Arial, "Croscore Arimo", Arimo, "Nimbus Sans L", "Liberation Sans", Albany, sans-serif;
     --m-fontstack-helvetica: Helvetica, "TeX Gyre Heros", "Croscore Arimo", Arimo, "Nimbus Sans L", "Liberation Sans", sans-serif;
-    --m-fontstack-courier: "Courier New", "Courier Prime", "Croscore Cousine", Cousine, "TeX Gyre Cursor", "Liberation Mono", Cumberland, "Courier Prime Code", Courier, monospace;
+    --m-fontstack-courier: "Courier Prime", "Croscore Cousine", Cousine, "TeX Gyre Cursor", "Liberation Mono", Cumberland, "Courier Prime Code", "Courier New", Courier, monospace;
 
     /* dimensions default to US letter; redefined in -config.css */
     --m-content-width: calc(var(--m-page-widthUS) - calc(var(--m-page-marginUS) * 2));
