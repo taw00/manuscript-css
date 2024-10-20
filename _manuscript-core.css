@@ -548,7 +548,7 @@ html, body { background-color: rgb(0 0 0 / 0); }
 #manuscript > h6,                        /* manually inserted top-level -30- */
 #manuscript > section:last-of-type::after,             /* auto-inserted -30- */
 #manuscript section.m-scene::after,                  /* auto-inserted dinkus */
-#manuscript :not(section.m-scene) > h6 {   /* manually ins. between sections */
+#manuscript :not(section.m-scene:not(.skip-dinkus)) > h6 {   /* manually ins. between sections */
     display: block;
     font-size:   var(--m-font-size-dinkus-30-);
     font-weight: var(--m-font-weight-dinkus-30-);
