@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "Termes";
-  src: url("serif/woff2/TeXGyreTermes/texgyretermes-regular.woff2") format("woff2");
+  src: url("serif/TeXGyreTermes/texgyretermes-regular.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: normal;
   font-display: swap;
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: "Termes";
-  src: url("serif/woff2/TeXGyreTermes/texgyretermes-italic.woff2") format("woff2");
+  src: url("serif/TeXGyreTermes/texgyretermes-italic.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: italic;
   font-display: swap;
@@ -28,7 +28,7 @@
 
 @font-face {
   font-family: "Termes";
-  src: url("serif/woff2/TeXGyreTermes/texgyretermes-bold.woff2") format("woff2");
+  src: url("serif/TeXGyreTermes/texgyretermes-bold.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: normal;
   font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: "Termes";
-  src: url("serif/woff2/TeXGyreTermes/texgyretermes-bolditalic.woff2") format("woff2");
+  src: url("serif/TeXGyreTermes/texgyretermes-bolditalic.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: italic;
   font-display: swap;
@@ -46,7 +46,7 @@
 
 @font-face {
   font-family: "TeX Gyre Termes";
-  src: url("serif/woff2/TeXGyreTermes/texgyretermes-regular.woff2") format("woff2");
+  src: url("serif/TeXGyreTermes/texgyretermes-regular.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: normal;
   font-display: swap;
@@ -54,7 +54,7 @@
 
 @font-face {
   font-family: "TeX Gyre Termes";
-  src: url("serif/woff2/TeXGyreTermes/texgyretermes-italic.woff2") format("woff2");
+  src: url("serif/TeXGyreTermes/texgyretermes-italic.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: italic;
   font-display: swap;
@@ -62,7 +62,7 @@
 
 @font-face {
   font-family: "TeX Gyre Termes";
-  src: url("serif/woff2/TeXGyreTermes/texgyretermes-bold.woff2") format("woff2");
+  src: url("serif/TeXGyreTermes/texgyretermes-bold.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: normal;
   font-display: swap;
@@ -70,7 +70,7 @@
 
 @font-face {
   font-family: "TeX Gyre Termes";
-  src: url("serif/woff2/TeXGyreTermes/texgyretermes-bolditalic.woff2") format("woff2");
+  src: url("serif/TeXGyreTermes/texgyretermes-bolditalic.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: italic;
   font-display: swap;

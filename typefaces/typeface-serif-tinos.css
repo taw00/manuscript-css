@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: Tinos;
-  src: url("serif/woff2/Tinos/Tinos-Regular.woff2") format("woff2");
+  src: url("serif/Tinos/Tinos-Regular.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: normal;
   font-display: swap;
@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: Tinos;
-  src: url("serif/woff2/Tinos/Tinos-Italic.woff2") format("woff2");
+  src: url("serif/Tinos/Tinos-Italic.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: italic;
   font-display: swap;
@@ -29,7 +29,7 @@
 
 @font-face {
   font-family: Tinos;
-  src: url("serif/woff2/Tinos/Tinos-Bold.woff2") format("woff2");
+  src: url("serif/Tinos/Tinos-Bold.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: normal;
   font-display: swap;
@@ -37,7 +37,7 @@
 
 @font-face {
   font-family: Tinos;
-  src: url("serif/woff2/Tinos/Tinos-BoldItalic.woff2") format("woff2");
+  src: url("serif/Tinos/Tinos-BoldItalic.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: italic;
   font-display: swap;

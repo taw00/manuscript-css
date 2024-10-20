@@ -13,7 +13,7 @@
 
 @font-face {
     font-family: Arimo;
-    src: url("sans/woff2/Arimo/Arimo-VariableFont_wght.woff2") format("woff2-variations");
+    src: url("sans/Arimo/Arimo-VariableFont_wght.woff2") format("woff2-variations");
     font-weight: 1 999;
     font-stretch: 1% 999%;
     font-style: normal;
@@ -21,7 +21,7 @@
 }
 @font-face {
     font-family: Arimo;
-    src: url("sans/woff2/Arimo/Arimo-Italic-VariableFont_wght.woff2") format("woff2-variations");
+    src: url("sans/Arimo/Arimo-Italic-VariableFont_wght.woff2") format("woff2-variations");
     font-weight: 1 999;
     font-stretch: 1% 999%;
     font-style: italic;

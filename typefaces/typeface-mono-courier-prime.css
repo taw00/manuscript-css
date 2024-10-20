@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: CourierPrime;
-  src: url("mono/woff2/CourierPrime/CourierPrime-Regular.woff2") format("woff2");
+  src: url("mono/CourierPrime/CourierPrime-Regular.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: CourierPrime;
-  src: url("mono/woff2/CourierPrime/CourierPrime-Italic.woff2") format("woff2");
+  src: url("mono/CourierPrime/CourierPrime-Italic.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: italic;
   font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
   font-family: CourierPrime;
-  src: url("mono/woff2/CourierPrime/CourierPrime-Bold.woff2") format("woff2");
+  src: url("mono/CourierPrime/CourierPrime-Bold.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: normal;
   font-display: swap;
@@ -35,7 +35,7 @@
 
 @font-face {
   font-family: CourierPrime;
-  src: url("mono/woff2/CourierPrime/CourierPrime-BoldItalic.woff2") format("woff2");
+  src: url("mono/CourierPrime/CourierPrime-BoldItalic.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: italic;
   font-display: swap;

@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: Cousine;
-  src: url("mono/woff2/Cousine/Cousine-Regular.woff2") format("woff2");
+  src: url("mono/Cousine/Cousine-Regular.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: normal;
   font-display: swap;
@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: Cousine;
-  src: url("mono/woff2/Cousine/Cousine-Italic.woff2") format("woff2");
+  src: url("mono/Cousine/Cousine-Italic.woff2") format("woff2");
   font-weight: normal; /* 400 */
   font-style: italic;
   font-display: swap;
@@ -29,7 +29,7 @@
 
 @font-face {
   font-family: Cousine;
-  src: url("mono/woff2/Cousine/Cousine-Bold.woff2") format("woff2");
+  src: url("mono/Cousine/Cousine-Bold.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: normal;
   font-display: swap;
@@ -37,7 +37,7 @@
 
 @font-face {
   font-family: Cousine;
-  src: url("mono/woff2/Cousine/Cousine-BoldItalic.woff2") format("woff2");
+  src: url("mono/Cousine/Cousine-BoldItalic.woff2") format("woff2");
   font-weight: bold; /* 700 */
   font-style: italic;
   font-display: swap;
