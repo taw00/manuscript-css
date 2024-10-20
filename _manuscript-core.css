@@ -541,7 +541,14 @@ html, body { background-color: rgb(0 0 0 / 0); }
 #manuscript section.m-scene.no-dinkus::after {
     /* there will be a small separation between scenes */
 }
-#manuscript section.m-scene:last-of-type::after { content: ""; }
+#manuscript section.m-scene:last-of-type::after,
+#manuscript section.m-chapter section.m-scene:last-of-type::after,
+#manuscript section.m-part section.m-scene:last-of-type::after,
+#manuscript section.m-part section.m-chapter section.m-scene:last-of-type::after
+{
+    /* not sure why we have to be this pedantic */
+    content: "";
+}
 
 /* automated content for the -30- marker at the end */
 #manuscript:not(.poetry) > section:is(.m-part,.m-chapter,.m-scene):last-of-type::after {
