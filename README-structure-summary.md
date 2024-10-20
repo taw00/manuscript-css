@@ -163,9 +163,9 @@ manuscript (adding the path as needed, of course):
 
 ```markdown
 <style>
-    @import "typeface/typeface-serif-tinos.css";
-    @import "typeface/typeface-sans-arimo.css";
-    @import "typeface/typeface-mono-cousine.css";
+    @import "typeface/typeface-serif-tinos.css"; <!-- fiction -->
+    @import "typeface/typeface-sans-arimo.css";  <!-- non-fiction -->
+    @import "typeface/typeface-mono-courier-prime.css"; <!-- monospace -->
     @import "manuscript.css";
 </style>
 ```
