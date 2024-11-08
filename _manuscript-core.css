@@ -13,8 +13,8 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import "_manuscript-style-reset.css?rev=20240224";
-@import "_manuscript-config.css?rev=20240325";
+@import "./_manuscript-style-reset.css";
+@import "./_manuscript-config.css";
 
 html { font-size: var(--m-font-size); } /* 1rem defined */
 html, body { background-color: rgb(204 204 204); } /* off-white */

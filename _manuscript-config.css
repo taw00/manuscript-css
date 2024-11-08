@@ -11,9 +11,12 @@
  * Check the example manuscripts in this repo, but, essentially, this is how
  * you override these settings. In your markdown, just add a :root {} section
  * in your <style> block ... and redeclare variables. Here's an example:
+ *
+ * (remove the X's in the first two lines. They exist because this comment
+ * block confuses some CSS parsers)
 
-<style>
-@import "manuscript.css";
+X<XstyleX>X
+X@Ximport "/path/to/manuscript.css?refresh=20241019";
 @page { size: A4 portrait; margin: 1in; }
 @page { size: A5 portrait; margin: .75in; }
 @page { size: A6 portrait; margin: 12.7mm; }
@@ -41,7 +44,7 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import "_manuscript-constants.css?rev=20241019";
+@import "./_manuscript-constants.css";
 
 @page { size: letter portrait; margin: 1in; }
 

@@ -49,7 +49,9 @@ code.inline-code {
 }
 
 /* Rendered view: viewport to 100% */
-#rendered-md { width: 100%; max-width: unset; margin: 0 auto; padding: unset; }
+/* NOTE: can remove that !important when Joplin gets its local import ordering
+   right. */
+#rendered-md { width: 100%; max-width: unset !important; margin: 0 auto; padding: unset; }
 #rendered-md { box-shadow: unset; } /* cuz I set this in my CSS for this ID */
 #rendered-md { background-color: transparent; }
 /* filter and background settings in userstyle.css would leave a verticle gray
