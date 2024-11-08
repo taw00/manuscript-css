@@ -20,8 +20,8 @@
  * marker, etc. Here's an example how to do that.
  *
  * <style>
- *     @import "../manuscript.css";
- *     @import "../manuscript-debug.css";
+ *     @import "/path/to/manuscript.css";
+ *     @import "/path/to/manuscript-debug.css";
  * </style>
  * <div id="vpage">
  * <article id="manuscript">
