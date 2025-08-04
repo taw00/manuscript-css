@@ -9,7 +9,7 @@ webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 ```markdown
 <!-- Formatting: US letter, 1in margins, short-form narrative -->
 <style>
-    @import "manuscript.css";
+    @import url("manuscript.css");
 </style>
 <div id="vpage">
 <article id="manuscript">
@@ -22,7 +22,7 @@ webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 <!-- Formatting: A4, 1in margins, long-form nonnarrative                    -->
 <!--             I.e. All the big prose switches reversed from the default. -->
 <style>
-    @import "manuscript.css";
+    @import url("manuscript.css");
     @page { size: A4 portrait; margin: 1in; }
 </style>
 <div id="vpage" class="A4">
@@ -45,7 +45,7 @@ depth afterward.
 
 ```markdown
 <style>
-    @import "manuscript.css";
+    @import url("manuscript.css");
 </style>
 <div id="vpage">
 <article id="manuscript" class="prose narrative">
@@ -163,10 +163,10 @@ manuscript (adding the path as needed, of course):
 
 ```markdown
 <style>
-    @import "typeface/typeface-serif-tinos.css"; <!-- fiction -->
-    @import "typeface/typeface-sans-arimo.css";  <!-- non-fiction -->
-    @import "typeface/typeface-mono-courier-prime.css"; <!-- monospace -->
-    @import "manuscript.css";
+    @import url("typeface/typeface-serif-tinos.css");a         /* fiction */
+    @import url("typeface/typeface-sans-arimo.css");        /* nonfiction */
+    @import url("typeface/typeface-mono-courier-prime.css"); /* monospace */
+    @import url("manuscript.css");
 </style>
 ```
 

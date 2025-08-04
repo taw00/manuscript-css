@@ -214,7 +214,7 @@ to producing a publicly viewable manuscript.
 > filesystem. If you want to use the previewer and renderer in VSCode, you will
 > have to host the `manuscript-css` folder on the web somewhere. Or in the
 > meantime, as of this writing, just use my instance:
-> `@import "https://toddwarner.io/pub/css/manuscript/manuscript.css";`
+> `@import url("https://toddwarner.io/pub/css/manuscript/manuscript.css");`
 > That is not guaranteed to be a functional link forever though.
 
 Install (`CTRL-SHIFT-X`) these extensions: `Markdown All-in-One`,

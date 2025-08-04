@@ -44,7 +44,7 @@ X@Ximport "/path/to/manuscript.css?refresh=20241019";
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import "./_manuscript-constants.css";
+@import url("./_manuscript-constants.css");
 
 @page { size: letter portrait; margin: 1in; }
 

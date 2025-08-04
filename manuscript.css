@@ -21,7 +21,7 @@
  * - 'US', 'A4', 'A5', or 'A6': US Letter is the default
  * The article #manuscript class "switches":
  * - 'prose' or 'poetry': prose is the default and therefore it is usually not
- *   explicitely used or defined here. By default, it is already employed.
+ *   explicitly used or defined here. By default, it is already employed.
  * - 'short' or 'long': a manuscript formatted for short prose is the default.
  * - 'narrative' or 'nonnarrative': prose-only - formatted for narrative
  *   prose is the default.
@@ -30,12 +30,12 @@
  *   throughout. It will also remove any page breaks, decorations, and it will
  *   simplify some of the spacing.
  *
- * To enable a change to the default page dimenions, you need to do two things:
+ * To enable a change to the default page dimensions, you need to do two things:
  * 1. add the relevant "switch" to the class attribute of the <div id="vpage">
  *    element in the markdown document. Example: <div id="vpage" class="US">
  * 2. add the appropriate @page rule after the CSS import in the style block of
  *    your markdown document. Look below these comments for the @page
- *    possibilies. An example: @page { size: letter portrait; margin: 1in; }
+ *    possibilities. An example: @page { size: letter portrait; margin: 1in; }
  *
  * What these mean:
  *
@@ -108,7 +108,7 @@
  * - simple (or) text-only: a simplified view of the document (see above)
  */
 
-@import "./_manuscript-core.css?rev=20250801";
+@import url("./_manuscript-core.css?rev=20250801");
 
 @page {
     /* The default (US letter) is already set. This serves as documentation.

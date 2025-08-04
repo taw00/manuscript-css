@@ -65,7 +65,7 @@
 }
 /* splits the page in half vertically */
 #debug-vhalf-marker {
-    top: 0in;
+    top: 0;
     width: 50%; height: var(--m-content-height);
     border-left: none !important;
     border-top: none !important; border-bottom: none !important;

@@ -46,8 +46,8 @@
  *  their default values here.)
  *
  * <style>
- *     @import "../manuscript.css";
- *     @import "../manuscript-counters.css";
+ *     @import url("../manuscript.css");
+ *     @import url("../manuscript-counters.css");
  *     :root {
  *         --m-append-name-off: unset;
  *         --m-append-depth-off: "";

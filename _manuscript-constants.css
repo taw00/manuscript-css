@@ -82,10 +82,10 @@
      * - Courier Prime - when a monospaced typeface is needed
      * Those are all proprietary. But these font stacks below call for some
      * excellent close-equivalent open options for each category. */
-    --m-fontstack-times: "Times New Roman", "Croscore Tinos", Tinos, "Nimbus Roman", "Liberation Serif", "TeX Gyre Termes", Thorndale, serif;
-    --m-fontstack-arial: Arial, "Croscore Arimo", Arimo, "Nimbus Sans L", "Liberation Sans", Albany, sans-serif;
-    --m-fontstack-helvetica: Helvetica, "TeX Gyre Heros", "Croscore Arimo", Arimo, "Nimbus Sans L", "Liberation Sans", sans-serif;
-    --m-fontstack-courier: "Courier Prime", "Croscore Cousine", Cousine, "TeX Gyre Cursor", "Liberation Mono", Cumberland, "Courier Prime Code", "Courier New", Courier, monospace;
+    --m-fontstack-times: "Times New Roman", "Croscore Tinos", tinos, "Nimbus Roman", "Liberation Serif", "TeX Gyre Termes", thorndale, serif;
+    --m-fontstack-arial: arial, "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", albany, sans-serif;
+    --m-fontstack-helvetica: helvetica, "TeX Gyre Heros", "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", sans-serif;
+    --m-fontstack-courier: "Courier Prime", "Croscore Cousine", cousine, "TeX Gyre Cursor", "Liberation Mono", cumberland, "Courier Prime Code", "Courier New", courier, monospace;
 
     /* dimensions default to US letter; redefined in -config.css */
     --m-content-width: calc(var(--m-page-widthUS) - calc(var(--m-page-marginUS) * 2));
@@ -194,7 +194,7 @@
     /* Decorative border (screen rendering only) - DISABLED FOR NOW
      * A border wrapping the manuscript content. Set this to 0 in your
      * manuscript to disable. */      /* faded lightgray */
-    --m-manuscript-border: 1px solid rgb(211 211 211 / 50%);
+    /*--m-manuscript-border: 1px solid rgb(211 211 211 / 50%);*/
     --m-manuscript-border: 0;
 
     /* --m-link-color: rgb(0 0 238); ----- a browser default blue */
