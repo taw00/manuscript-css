@@ -402,12 +402,55 @@ html, body { background-color: rgb(0 0 0 / 0%); }
 
 /* poems: small margin betwen chapters and scenes or poems */
 #manuscript section.m-chapter > .m-header ~ section:first-of-type {
-    padding-top: var(--m-offset-scene) !important;
+    padding-top: var(--m-offset-scene);
 }
-/* scenes: small margin betwen scenes and whatever precedes */
+/* each scene or a set up subscenes: small padding at top */
+/*#manuscript section.m-subscenes,*/
 #manuscript section.m-scene {
-    padding-top: var(--m-offset-scene) !important;
+    padding-top: var(--m-offset-scene);
 }
+#manuscript section.m-scene > section.m-subscenes:first-child,
+#manuscript section.m-subscenes > section.m-scene:first-child {
+    padding-top: 0;
+}
+#manuscript section.m-subscenes > section.m-scene:last-child {
+    Xpadding-bottom: calc(var(--m-offset-scene) * 3);
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+/* ... subscenes: subscenes dinkus and spacing BEFORE subscenes block */
+#manuscript section.m-scene > :not(div,section,article,h1,h2,h3,h4,h5,h6) + section.m-subscenes:before {
+    content: var(--m-dinkus-subscenes);
+    white-space: pre-wrap; /* enablesnn functional escaping in the escaping */
+    line-height: 0;
+    padding-top: 0 !important;
+    margin-top: calc(var(--m-offset-scene) * 1.5);
+    margin-bottom: calc(var(--m-offset-scene) * 1.5);
+    margin-top: calc(var(--m-offset-scene) * 2);
+    margin-bottom: calc(var(--m-offset-scene) * 1);
+}
+/* ... subscenes: subscenes dinkus and spacing AFTER subscenes block */
+#manuscript section.m-scene section.m-subscenes:after {
+    content: var(--m-dinkus-subscenes);
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    line-height: 0;
+    margin-top: calc(var(--m-offset-scene) * 1.5);
+    margin-bottom: calc(var(--m-offset-scene) * 1.5);
+    margin-top: calc(var(--m-offset-scene) * 1);
+    margin-bottom: calc(var(--m-offset-scene) * 2);
+}
+/* all last elements within a scene: zero-out bottom spacing */
+#manuscript section.m-scene > *:last-child {
+    margin-bottom: 0; padding-bottom: 0;
+}
+/* all last elements within a scene: zero-out ::after content and spacing  */
+#manuscript section.m-scene > *:last-child:after {
+    content: "" !important;
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    margin-top: 0; padding-top: 0;
+    margin-bottom: 0; padding-bottom: 0;
+}
+
 /* prose content:
  * small margin between prose content and a scene's title block if it exists */
 #manuscript section.m-scene > .m-header + * {
@@ -528,37 +571,64 @@ html, body { background-color: rgb(0 0 0 / 0%); }
 #manuscript .m-header > :first-child { margin-top: 0; }
 #manuscript .m-header > :last-child { margin-bottom: 0; }
 
-/* automated content for the dinkuses between scenes */
-#manuscript section.m-scene:not(.hide-dinkus):not(.no-dinkus)::after {
+/* scene dinkus! automated content for the dinkuses between scenes */
+#manuscript > section.m-scene:not(.hide-dinkus):not(.no-dinkus)::after,
+#manuscript :not(section.m-scene) >  section.m-scene:not(.hide-dinkus):not(.no-dinkus)::after {
     content: var(--m-dinkus);
-    white-space: pre-wrap; /* enables funtional escaping in the escaping */
-    line-height: var(--m-line-spacing-single);
-    margin-top: var(--m-elbow-room);
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    line-height: 0;
+    margin-top: var(--m-offset-scene);
 }
-#manuscript section.m-scene.hide-dinkus::after {
-    /*content: "\00A0"; / * &nbps; */
-    content: "\200B"; /* &zerowidthspace */
-    line-height: var(--m-line-spacing-single);
-    margin-top: var(--m-elbow-room);
+/* subscene dinkus! */
+#manuscript section.m-subscenes > section.m-scene::after {
+    content: var(--m-dinkus-subscene) !important;
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    line-height: 0;
+    margin-top: var(--m-offset-scene);
 }
-#manuscript section.m-scene.no-dinkus::after {
-    /* there will be a small separation between scenes */
+
+/* right now classes no-dinkus and hide-dinkus do the same thing */
+/* ... class hide-dinkus: if want hide scene dinkus */
+#manuscript > section.m-scene.hide-dinkus::after,
+/* ... class hide-dinkus: if want hide scene dinkus */
+#manuscript :not(section.m-subscenes) > section.m-scene.hide-dinkus::after {
+    content: var(--m-marker-zws); /* &zerowidthspace */
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    line-height: 0;
+    margin-top: var(--m-offset-scene);
 }
+/* ... class no-dinkus: if no want scene dinkus */
+#manuscript > section.m-scene.no-dinkus::after,
+/* ... class no-dinkus: if no want subscene dinkus */
+#manuscript :not(section.m-subscenes) > section.m-scene.no-dinkus::after {
+    /* just a small separation between scenes (mostly for forced subscenes) */
+    content: var(--m-marker-zws) !important; /* &zerowidthspace */
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    line-height: 0;
+    margin-top: var(--m-offset-scene);
+}
+/* ... remove dinkuses for scenes if they are last in any structure EXCEPT for
+       final subscene scenes. Those are handed elsewhere and differently */
+#manuscript section.m-subscenes > section.m-scene:last-of-type::after,
 #manuscript section.m-scene:last-of-type::after,
 #manuscript section.m-chapter section.m-scene:last-of-type::after,
 #manuscript section.m-part section.m-scene:last-of-type::after,
 #manuscript section.m-part section.m-chapter section.m-scene:last-of-type::after
 {
     /* not sure why we have to be this pedantic */
-    content: "";
+    content: "" !important;
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    margin-top: 0; padding-top: 0;
+    margin-bottom: 0; padding-bottom: 0;
 }
 
 /* automated content for the -30- marker at the end */
 #manuscript:not(.poetry) > section:is(.m-part,.m-chapter,.m-scene):last-of-type::after {
-    content: var(--m-30-);
+    content: var(--m-30-) !important;
     white-space: pre-wrap; /* enables functional escaping in the string */
-    line-height: var(--m-line-spacing-single-plus);
+    line-height: 0;
     margin-top: var(--m-elbow-room);
+    margin-bottom: var(--m-elbow-room);
 }
 
 /* dinkus and -30- markers are formatted as such
@@ -566,6 +636,8 @@ html, body { background-color: rgb(0 0 0 / 0%); }
 #manuscript > h6,                        /* manually inserted top-level -30- */
 #manuscript > section:last-of-type::after,             /* auto-inserted -30- */
 #manuscript section.m-scene::after,                  /* auto-inserted dinkus */
+#manuscript section.m-subscenes::before,             /* auto-inserted dinkus */
+#manuscript section.m-subscenes::after,              /* auto-inserted dinkus */
 #manuscript :not(section.m-scene) > h6 {   /* manually ins. between sections */
     display: block;
     font-size:   var(--m-font-size-dinkus-30-);
@@ -633,8 +705,8 @@ html, body { background-color: rgb(0 0 0 / 0%); }
 }
 
 /* ... and treat paragraphs after certain classes/elements different */
-#manuscript > :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure) + p,
-#manuscript :not(.foothang) :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure) + p,
+#manuscript > :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
+#manuscript :not(.foothang) :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
 #manuscript :is(blockquote, section.m-scene:not(.foothang)) > p:first-of-type {
     text-indent: var(--m-indent-first-paragraph) !important;
 }
@@ -648,7 +720,6 @@ html, body { background-color: rgb(0 0 0 / 0%); }
     margin-top: 0 !important;
     margin-block-start: 0 !important;
 }
-
 
 
 /***
