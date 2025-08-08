@@ -181,8 +181,11 @@ X@Ximport "/path/to/manuscript.css?refresh=20241019";
      * - All are initially set to expected manuscript standards
      */
 
-    --m-dinkus: var(--m-marker0);
-    --m-30-: var(--m-marker10);
+    --m-dinkus: var(--m-marker-hash);
+    --m-dinkus-subscene: var(--m-marker-hyphen);
+    /*--m-dinkus-subscenes: var(--m-marker-3hyphens);*/
+    --m-dinkus-subscenes: var(--m-marker-zws);
+    --m-30-: var(--m-marker-the-end);
 
     /* everything is defaulted to -narrative and then that gets reset
      * by manuscript.css to something different if necessary */
