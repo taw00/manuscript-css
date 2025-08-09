@@ -3,20 +3,21 @@
 _Draft your novel or short story in markdown, then export it for review or
 presentation in an industry standard manuscript format._
 
-Are you a writer? In particular a narrative writer? Fiction, narrative
-nonfiction, memoir, personal narratives, etc.? Do you draft using a markdown
-text editor? And do you wish to share your drafts in a professional manner
-without having to jump tool chains? Save the fancy office word processors like
-LibreOffice or Google Docs or Word for submission finalization. Now, you can
-stay in your favorite markdown editor and still have a means to present your
-working drafts in a professional manner for review, critique, or whatever.
+Are you a writer? In particular, a writer of narrative works? Fiction,
+narrative nonfiction, memoir, etc? Do you draft using a markdown text editor?
+And do you wish to share your drafts in a professional manner without having to
+jump tool chains? Save the fancy office word processors like LibreOffice or
+Google Docs or Word for finalization when you are ready to submit your work
+somewhere. Now, you can stay in your favorite markdown editor and still have a
+means to present your working drafts in a professional manner for review,
+critique, or whatever.
 
 ## Manuscript formatting?
 
-Take a look at the PDFs in the [templates folder](./templates/) in
-this repository. They were rendered from their corresponding markdown documents
-and represent manuscript-formatted works achieved from a markdown-formatted: no
-fluff, easy to read and review. Here are some screenshots of the results . . .
+Take a look at the PDFs in the [templates folder](./templates/) in this
+repository. These manuscript-like documents were rendered from their
+corresponding markdown-formatted draft documents. No fluff and easy to read and
+review. Here are some screenshots of the results . . .
 
 <a href="misc/README-short-story-poe.png"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.png" alt="short format: The Tell-Tale Heart (Poe)" /></a>
 <a href="misc/README-long-story-lovecraft.png"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.png" alt="long format: At the Mountains of Madness (Lovecraft)" /></a>
@@ -29,32 +30,28 @@ fluff, easy to read and review. Here are some screenshots of the results . . .
 
 <div style="clear: both;"></div>
 
-# This process is . . .
+# What is this? CSS to be used with Markdown. It provides . . .
 
-1. A generalized manuscript formatting process for prose and poetry (for prose,
-   both narrative and nonnarrative)
-3. Formatting to produce US Letter- or A4-dimensioned artifacts (PDFs)
-4. Formatting that can be adjusted for short-form works (e.g. short-story or
-   single-poem manuscripts)
-5. Formatting that can be adjusted for long-form works (novel and book-sized /
-   poetry chapbooks and collections)
-6. Formatting that can be broadly adjusted for nonnarrative works
-   (nonnarrative non-fiction, primarily)
-7. A lot of customability if you know your CSS.
+1. A generalized process to write in markdown, formatted to generate
+   manuscript-like results for prose and poetry (and for prose, both narrative
+   and nonnarrative)
+3. … to render US Letter- or A4-dimensioned artifacts (PDFs)
+4. … that can be adjusted for short-form works (e.g. short-story or single-poem
+   manuscripts) or for long-form works (novel and book-sized / poetry chapbooks
+   and collections)
+6. … whether they be nonnarrative works (nonnarrative non-fiction, primarily)
 
 # This process is not . . .
 
 ## This process is not for book production
 
-This set of stylesheets designed to produce a professional, reviewable document
+These stylesheets are designed to produce a professional, reviewable manuscript
 in an industry-standard format rendered from your markdown. Producing a
 document that will then be used for the text block of a book is a different
 animal entirely.
 
-To produce a book (self-publishing), when you have finished or are close to
-finishing your drafting process, port your document from markdown to
-LibreOffice, Word, or Google Docs and either submit that to an editor or import
-the document into a book production application like
+If you are looking for something to format your work for self-publication,
+import your work into something like Vellum, Scribus, InDesign, Atticus,
 [Reedsy](https://reedsy.com/write-a-book). Then work through the process of
 adjusting it in preparation for publication.
 
@@ -70,7 +67,7 @@ publishing-house-ready document. For that, you will need to port your document
 to a wordprocessor. I use LibreOffice, sometimes Google Docs, and Zoho Writer.
 
 Also check out the myriad of authoring platforms out there: Scrivener, Novlr,
-LivingWriter, Dabble, Ulysses, Storyist (Apply-only, blech!), Final Draft (for
+LivingWriter, Dabble, Ulysses, Storyist (Apple-only, blech!), Final Draft (for
 screenwriters), Quoll Writer (Windows-only and not sure if Quoll Writer can
 produce a manuscript), others.
 
@@ -79,36 +76,39 @@ produce a manuscript), others.
 Only a few critical bits of formatting are missing that can't be easily fixed
 with markdown + CSS.
 
-- Nuanced out-of-the-box customization.  
-  Some publishing houses have certain quirky requirements for manuscripts
-  during the submission process. If their requirements travel far from the
-  generic standard, the process represented here probably won't support that.
-- Automated porting to `.odt` or `.docx` file formatting (most publishing
-  houses require editable, `.docx`-formatted documents.  
-  That process is rather manual, unfortunately. Read more about that in
-  [README-structure-summary.md](README-structure-summary.md).
-- (Prose) No `Lastname / Short Title / Page number` headers from page 2 onward.
-  Currently-supported CSS won't support this. Not yet anyway. Waiting for
+- These stylesheets cannot add the per-page headers that a true manuscript
+  requires. I.e., the `Lastname / Short Title / Page number` headers that you
+  need on every page from page two onwards. Someday CSS will support this. We
+  all eagerly away for
   [margin at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
   to be finally supported (currently a w3c working draft spec.)
-
-> One possible solution is to add those headers to the generated PDF. There are
-> many online tools that enable this. But a desktop-based tool, at least for
-> linux users is [jPDF Tweak](https://jpdftweak.sourceforge.net/). It's an
-> ancient (and I mean _ancient_) and inflexible application, but it works. You
-> just have to be OK with approximating the header placement and with the
-> helvetica typeface as your only choice. Look in the
-> [templates](./templates/extra/) folder after I added manuscript page headers
-> and numbers and to the Lovecraft story. This screenshot shows what I did to
-> enable it.
-
-<a href="misc/README-screenshot-jPDF-Tweak.png"><img style="wXidth: 25%; fXloat: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
-
+- These stylesheets to not readily support nuanced customization. At least not
+  out-of-the-box. Some publishing houses have certain quirky requirements for
+  manuscripts during the submission process. If their requirements travel far
+  from the generic standard, the process represented here probably won't
+  support that.
+- We can't easily produce `.odt` or, the almost ubiquidous `.docx` file format
+  using these tools. And most publishing houses require one of those formats.
+  THere are possibilities out there, but it is mostly manual.Read more about
+  that in [README-structure-summary.md](README-structure-summary.md).
 - (Poetry) No 2nd page+ of poem continuation blocks.  
   Again, maybe in a few years as CSS matures.
 - Page break avoidance is buggy.  
   The CSS is configured to disallow page breaking in weird places, like between
   a chapter title and the prose, but those rules are ignored. I don't know why.
+
+> A word about those pesky headers: There are tools out there to add headers to
+> a rendered `.pdf`. None of these options are of high quality, but it is
+> possible. There are many online tools that enable this. But one desktop-based
+> tool, at least for linux users, is [jPDF
+> Tweak](https://jpdftweak.sourceforge.net/).  It's an ancient (and I mean
+> _ancient_) and inflexible application, but it works.  You just have to be OK
+> with approximating the header placement and with the helvetica typeface as
+> your only choice. Look in the [templates](./templates/extra/) folder after I
+> added manuscript page headers and numbers and to the Lovecraft story. This
+> screenshot shows what I did to enable it.
+
+<a href="misc/README-screenshot-jPDF-Tweak.png"><img style="wXidth: 25%; fXloat: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
 
 # TL;DR Just show me how to do it!
 
@@ -119,19 +119,19 @@ then HTML to PDF then that should be enough to get you going.
 
 ## Process summary - super high-level
 
-(1) write your document in the prescribed structure, (2) preview it in HTML,
-(2.5) potentially save it as an HTML file, and then (3) convert the document to
-PDF.
+(1) Copy one of `.md` templates and rename it. (2) Replace the text with your
+contact information, your story, etc. (3) Preview it in HTML.  (3b) Potentially
+save it as an HTML file. And then (4) convert the document to PDF.
 
-**Step 1** is done with any editor: Joplin, VSCode, Ghostwriter, Xed, Vim, etc.
+**Step 2** is done with any editor: Joplin, VSCode, Ghostwriter, Xed, Vim, etc.
 Even Notepad if you like.
 
-**Step 2** is done natively with Joplin, VSCode, or the Chrome browser. Or
+**Step 3** is done natively with Joplin, VSCode, or the Chrome browser. Or
 converted to HTML with Pandoc.
 
-**Step 2.5** is done natively with VSCode or Pandoc
+**Step 3b** is done natively with VSCode or Pandoc
 
-**Step 3** is done natively from Markdown with Joplin or the Chrome browser, or
+**Step 4** is done natively from Markdown with Joplin or the Chrome browser, or
 From from HTML via a Chrome browser.
 
 > **A note about the HTML rendering of a long-form manuscript using this
@@ -169,19 +169,18 @@ Download this repository.
 And if you own a webserver somewhere. Stick this repo in your /pub/ directory
 so you can import over the web.
 
-## Process summary - Step 1 - editing markdown manuscript
+## Process summary - Step 1 - copy the template
 
-It's easier to work with a template than from scratch.
+- Look in the [templates directory](./templates/), and rename it to whatever
+  makes sense to you (lastname-yourtitle.md is pretty standard).
 
-1. Copy one of the templates from the [templates directory](./templates/),
-   renaming it to whatever makes sense to you (lastname-yourtitle.md is pretty
-   standard). If you have an existing document already in markdown format, just
-   examine a template and refactor your document accordingly.
-2. Open that markdown document in your favorite editor.
-3. Replace the templated content with yours
-4. Write your story, scene by scene. (Or poetry collection, poem by poem.)
+## Process summary - Step 2 - editing the markdown manuscript
 
-## Process summary - Steps 2-3 - processing that markdown
+- Open that markdown document in your favorite editor.
+- Replace the templated content with yours
+- Write your story, scene by scene. (Or poetry collection, poem by poem.)
+
+## Process summary - Steps 3 & 4 - processing that markdown
 
 *Rendering to HTML for review or presentation and then to PDF.*
 
