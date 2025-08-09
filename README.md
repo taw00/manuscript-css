@@ -1,7 +1,11 @@
-# Manuscript Formatting (CSS) of Markdown for Writers
+# For Writers: Mimic Industry Standard Manuscript Formatting of Markdown via CSS
 
-_Draft your novel or short story in markdown, then export it for review or
-presentation in an industry standard manuscript format._
+1. *Draft your novel or short story or poetry in your favorite text editor*
+2. *Structure it in markdown*
+3. *Style the markdown with these Manuscript CSS stylesheets*
+4. *Impress your friends and family (or critique group) with your work that
+   mimics
+   [industry standard manuscript formatting](https://www.shunn.net/format/story/)*
 
 Are you a writer? In particular, a writer of narrative works? Fiction,
 narrative nonfiction, memoir, etc? Do you draft using a markdown text editor?
