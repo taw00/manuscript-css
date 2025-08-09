@@ -3,8 +3,7 @@
 1. *Draft your novel or short story or poetry in your favorite text editor*
 2. *Structure it in markdown*
 3. *Style the markdown with these Manuscript CSS stylesheets*
-4. *Impress your friends and family (or critique group) with your work that
-   mimics
+4. *Impress your friends and family (or critique group) with a work that mimics
    [industry standard manuscript formatting](https://www.shunn.net/format/story/)*
 
 Are you a writer? In particular, a writer of narrative works? Fiction,

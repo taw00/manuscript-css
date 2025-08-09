@@ -109,6 +109,7 @@
  */
 
 @import url("./_manuscript-core.css?rev=20250808");
+@import url("./_manuscript-core.css");
 
 @page {
     /* The default (US letter) is already set. This serves as documentation.
