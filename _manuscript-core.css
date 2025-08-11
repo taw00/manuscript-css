@@ -95,7 +95,8 @@ html, body { background-color: rgb(204 204 204); } /* off-white */
 #manuscript {
     display: block;
     position: relative; box-sizing: border-box; overflow: hidden;
-    width: 100%; max-width: var(--m-content-width);
+    /* the 95% keeps a small margin on small screens */
+    width: 95%; max-width: var(--m-content-width);
     margin: var(--m-page-margin) auto;
     border: var(--m-manuscript-border);
 }

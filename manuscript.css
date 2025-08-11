@@ -108,8 +108,7 @@
  * - simple (or) text-only: a simplified view of the document (see above)
  */
 
-@import url("./_manuscript-core.css?rev=20250808");
-@import url("./_manuscript-core.css");
+@import url("./_manuscript-core.css?rev=20250811");
 
 @page {
     /* The default (US letter) is already set. This serves as documentation.
@@ -183,11 +182,12 @@
 }
 
 @media screen {
+/* adjusting what was defined previously */
 #vpage {
-    width: 100%; max-width: var(--m-page-width);
+    max-width: var(--m-page-width);
 }
 #manuscript {
-    width: 100%; max-width: var(--m-content-width);
+    max-width: var(--m-content-width);
     margin: var(--m-page-margin) auto;
 }
 }
