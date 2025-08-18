@@ -1,0 +1,25 @@
+/* Manuscript via CSS v2.0 — the core styles
+ *
+ * This contains all of the baseline logic for formatting—via CSS styles—a
+ * a markdown or HTML document to present a rendered artifact that closely
+ * follows industry-standard prose manuscript guidelines.
+ *
+ * Though this stylesheet alone is sufficient to enable formatting manuscripts
+ * for US letter-dimensioned short-prose narratives, it's really intended to
+ * act as support for manuscript.css. Import that stylesheet instead.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@import url("./m-style-reset.css");
+@import url("./m-config.css");
+@import url("./m-init-raw-elements.css");
+@import url("./m-init-vpage-manuscript.css");
+@import url("./m-init-headers-contacts-facts.css");
+@import url("./m-core-page-positioning.css");
+@import url("./m-core-poetry.css");
+@import url("./m-core-prose.css");
+@import url("./m-core-dinkuses.css");
+

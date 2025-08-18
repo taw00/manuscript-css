@@ -1,0 +1,111 @@
+/* each scene or a set of subscenes: small padding at top */
+/*#manuscript section.m-subscenes,*/
+#manuscript section.m-scene {
+    padding-top: var(--m-offset-scene);
+}
+/* prose content:
+ * small margin between prose content and a scene's title block if it exists */
+#manuscript section.m-scene > .m-header + * {
+    padding-top: var(--m-elbow-room) !important;
+}
+
+#manuscript section.m-scene > section.m-subscenes:first-child,
+#manuscript section.m-subscenes > section.m-scene:first-child {
+    padding-top: 0;
+}
+#manuscript section.m-subscenes > section.m-scene:last-child {
+    /*padding-bottom: calc(var(--m-offset-scene) * 3);*/
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+/* ... subscenes: subscenes dinkus and spacing BEFORE subscenes block */
+#manuscript section.m-scene > :not(div,section,article,h1,h2,h3,h4,h5,h6) + section.m-subscenes::before {
+    content: var(--m-dinkus-subscenes);
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    line-height: 0;
+    padding-top: 0;
+    /*margin-top: calc(var(--m-offset-scene) * 1.5);
+    margin-bottom: calc(var(--m-offset-scene) * 1.5);*/
+    margin-top: calc(var(--m-offset-scene) * 2);
+    margin-bottom: calc(var(--m-offset-scene) * 1);
+}
+/* ... subscenes: subscenes dinkus and spacing AFTER subscenes block */
+#manuscript section.m-scene section.m-subscenes::after {
+    content: var(--m-dinkus-subscenes);
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    line-height: 0;
+    /*margin-top: calc(var(--m-offset-scene) * 1.5);
+    margin-bottom: calc(var(--m-offset-scene) * 1.5);*/
+    margin-top: calc(var(--m-offset-scene) * 1);
+    margin-bottom: calc(var(--m-offset-scene) * 2);
+}
+/* all last elements within a scene: zero-out bottom spacing */
+#manuscript section.m-scene > *:last-child {
+    margin-bottom: 0; padding-bottom: 0;
+}
+/* all last elements within a scene: zero-out ::after content and spacing  */
+#manuscript section.m-scene > *:last-child::after {
+    content: "";
+    white-space: pre-wrap; /* enables functional escaping in the escaping */
+    margin-top: 0; padding-top: 0;
+    margin-bottom: 0; padding-bottom: 0;
+}
+
+
+/* Align left/start all the prose */
+#manuscript blockquote :is(h1,h2,h3,h4,h5,h6),
+#manuscript section.m-scene :is(h1,h2,h3,h4,h5,h6),
+#manuscript blockquote p,
+#manuscript section.m-scene p {
+    display: block;
+    margin: 0; padding: 0; border: 0;
+    text-align: var(--m-text-align);
+    line-height: var(--m-line-spacing);
+    hyphens: var(--m-hyphens);
+}
+
+/* paragraph indentation / spacing for all the prose
+ * (which one is enabled is determined by .narrative or .nonnarrative)
+ * Note, the exclusions are pedantic. I am unsure why ol,ul,dl,menu,table
+ * wasn't enough to stop the styling here. Also, headers that are free-floating
+ * need some room, regardless of narrative or nonnarrative.*/
+#manuscript blockquote > :is(h1,h2,h3,h4,h5,h6),
+#manuscript blockquote :not(ol,ul,dl,menu,table) :is(h1,h2,h3,h4,h5,h6),
+#manuscript section.m-scene:not(.foothang) > :is(h1,h2,h3,h4,h5,h6),
+#manuscript section.m-scene:not(.foothang)
+                       :not(.m-header, ol,ul,dl,menu, li,dt,dd,
+                            table,thead,tbody,tfoot,th,tr,td,colgroup,col) :is(h1,h2,h3,h4,h5,h6) {
+    margin-top: var(--m-elbow-room);
+    margin-block-start: var(--m-elbow-room);
+}
+
+#manuscript blockquote > p,
+#manuscript blockquote :not(ol,ul,dl,menu,table) p,
+#manuscript section.m-scene:not(.foothang) > p,
+#manuscript section.m-scene:not(.foothang)
+                       :not(.m-header, ol,ul,dl,menu, li,dt,dd,
+                            table,thead,tbody,tfoot,th,tr,td,colgroup,col) p {
+    text-indent: var(--m-indent);
+    margin-top: var(--m-paragraph-spacing);
+    margin-block-start: var(--m-paragraph-spacing);
+}
+
+/* ... and treat paragraphs after certain classes/elements different */
+#manuscript > :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
+#manuscript :not(.foothang) :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
+#manuscript :is(blockquote, section.m-scene:not(.foothang)) > p:first-of-type {
+    text-indent: var(--m-indent-first-paragraph) !important;
+}
+#manuscript :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
+#manuscript :is(article) :is(h1,h2,h3,h4,h5,h6) + p,
+#manuscript :is(article) :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
+#manuscript :is(section.m-scene)
+  > :is(p:first-of-type,
+        h1:first-child, h2:first-child, h3:first-child,
+        h4:first-child, h5:first-child, h6:first-child) {
+    margin-top: 0 !important;
+    margin-block-start: 0 !important;
+}
+
+
+

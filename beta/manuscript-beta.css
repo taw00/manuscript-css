@@ -1,0 +1,134 @@
+/* Manuscript via CSS v2.0
+ *
+ * Manuscript formatting for authors who draft in markdown.
+ *
+ * This stylesheet imports its companion -core.css logic stylesheet. The core
+ * styles enable US letter-dimensioned short-prose narratives. This stylesheet
+ * layers on functionality to enable A4-dimensioned documents, plus long-form
+ * and both narrative and nonnarrative formatting.
+ *
+ * Why does this exist?
+ *
+ * Because many of us writers draft in markdown and want a means to present our
+ * work professionally, even if still a preliminary work. Additionally, it
+ * offers a means to webify a finished manuscript.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ *
+ * The div #vpage class "switches":
+ * - 'US', 'A4', 'A5', or 'A6': US Letter is the default
+ * The article #manuscript class "switches":
+ * - 'prose' or 'poetry': prose is the default and therefore it is usually not
+ *   explicitly used or defined here. By default, it is already employed.
+ * - 'short' or 'long': a manuscript formatted for short prose is the default.
+ * - 'narrative' or 'nonnarrative': prose-only - formatted for narrative
+ *   prose is the default.
+ * - 'simple' or 'text-only': Use this if you want a view of the document that
+ *   excludes all of the metadata on the first page and the document "facts"
+ *   throughout. It will also remove any page breaks, decorations, and it will
+ *   simplify some of the spacing.
+ *
+ * To enable a change to the default page dimensions, you need to do two things:
+ * 1. add the relevant "switch" to the class attribute of the <div id="vpage">
+ *    element in the markdown document. Example: <div id="vpage" class="US">
+ * 2. add the appropriate @page rule after the CSS import in the style block of
+ *    your markdown document. Look below these comments for the @page
+ *    possibilities. An example: @page { size: letter portrait; margin: 1in; }
+ *
+ * What these mean:
+ *
+ * - US, A4, A5, or A6: changes the dimensions of printed/paged output.
+ *   (Note, this is the only switch set via the <div id="vpage"> element.
+ *    For example: <div id="vpage" class="US">)
+ *
+ * To enable other document "switches", just the relevant switch to the class
+ * attribute of the <article id="manuscript"> element in your markdown
+ * document.
+ *
+ * All the switches both for #vpage and #manuscript:
+ *
+ * - US, A4, A5, or A6: changes the dimensions of printed/paged output.
+ *   (Note, this is the only switch set via the <div id="vpage"> element.
+ *    For example: <div id="vpage" class="US">)
+ *
+ * - prose:
+ *     - text is left (for LtR languages) justified, ragged-edged, and white
+ *       space is squashed.
+ *     - narrative: first-line indented, no spaces between paragraphs
+ *     - nonnarrative: first line flush, spaces between paragraphs
+ *
+ * - poetry:
+ *     - left justified (for LtR languages).
+ *     - each m-poem class + multiple ```plaintext stanzas are one poem.
+ *     - ```plaintext blocks are considered "stanzas" of poetry and are
+ *       - single- or 1.5-spaced (single-plus?) within each stanza
+ *       - and spaced between each stanza
+ *       - no white-space control otherwise
+ *     - top-margins are reduced in certain scenarios
+ *     - structure
+ *       - title page (same as prose)
+ *       - table of content page: .m-chapter.toc -> .m-scene
+ *       - the poems: empty .m-chapter -> .m-poem .m-poem .m-poem ...
+ *       - acknowledgements page: .m-chapter -> .m-scene
+ *
+ * - short:
+ *     - prose or poetry:
+ *       - contact info in the upper-left-hand corner
+ *       - facts are posted in the upper-right-hand corner
+ *     - prose structure:
+ *       - main title block is 1/3 to 1/2 way down the page
+ *       - text starts immediately following the main title block.
+ *       - parts and chapters do not page break.
+ *         Note, most short stories do not have chapters and I can't think of
+ *         a reason to have parts.
+ *     - poetry structure:
+ *       - one poem per document
+ *       - no main title block
+ *       - no parts, no chapters
+ *       - one scene with its own title block
+ *       - the scene is a scene of ```plaintext stanzas
+ *
+ * - long:
+ *     - prose or poetry:
+ *       - contact info in the upper-left-hand corner
+ *       - facts are posted below the title in the title block
+ *     - prose or poetry: main title block is 1/3 to 1/2 way down the page
+ *     - prose or poetry: part title block is 1/3 to 1/2 way down its own page
+ *     - prose: chapter title block is 1/3 to 1/2 way down a new page
+ *     - poetry: chapter title block is at the top of a new page
+ *     - prose or poetry: double spaced for any prose elements
+ *     - poetry: single or 1.5 (single-plus) spaced within each stanza and a
+ *       space between each stanza. No white-space control otherwise.
+ *
+ * - narrative: see prose description above
+ * - nonnarrative: see prose description above
+ *
+ * - simple (or) text-only: a simplified view of the document (see above)
+ */
+
+/*Ximport url("./m-core.css?rev=20250808");*/
+@import url("./m-core.css");
+
+/* ********************************************************************* *
+ * special-case stylings
+ * ********************************************************************* */
+.foothang p {
+    padding-left: var(--m-indent-foothang) !important;
+    /* hanging indent */
+    text-indent: calc(var(--m-indent-foothang) * -1) !important;
+}
+.center-max-content,
+.table-of-contents,
+.toc {
+    width: max-content !important;
+    margin-left: auto !important; margin-right: auto !important;
+}
+.force-break-before {
+    break-before: page !important;
+}
+.force-break-after {
+    break-after: page !important;
+}
+/* ********************************************************************* */

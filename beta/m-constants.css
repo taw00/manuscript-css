@@ -1,0 +1,225 @@
+/* Manuscript via CSS v2.0 — constants and configurations
+ *
+ * This contains most of the constants and some baseline defaults that are then
+ * leveraged by m-config.css and all the rest of the stack.
+ *
+ * Warning: if you override any of these, please be aware that they are subject
+ * to change. Especially the more esoteric ones. Right now there are far too
+ * many and I aim to simpify them in the future.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+:root {
+    /*
+     * BASELINE CONSTANTS
+     * Note,
+     * - A6 is 106mm x 148mm or 4.1in x 5.8in
+     * - A5 is 148mm x 210mm or 5.8in x 8.3in (roughly half of US letter)
+     * - A4 is 210mm x 297mm or 8.3in x 11.7in
+     * - USh (US Half Letter) is 140m x 216mm or 5.5in x 8.5in
+     * - US Letter is 216mm x 279mm or 8.5in x 11in
+     */
+    --m-page-widthA6: 105mm; --m-page-heightA6: 148mm; --m-page-marginA6: .5in;
+    --m-page-widthA5: 148mm; --m-page-heightA5: 210mm; --m-page-marginA5: .75in;
+    --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginA4: 1in;
+    --m-page-widthUSh: 5.5in; --m-page-heightUSh: 8.5in; --m-page-marginUSh: .75in;
+    --m-page-widthUS: 8.5in; --m-page-heightUS: 11in;  --m-page-marginUS: 1in;
+
+    /* default for each is 1/2 the default margin widths */
+    --m-indentA6: .25in; --m-indentA5: .375in; --m-indentA4: .5in;
+    --m-indentUSh: .375in; --m-indentUS: .5in;
+
+    /* line-height (line spacing) - singlespace and doublespace */
+    --m-line-spacing-single: 1.25;
+    --m-line-spacing-single-plus: 1.5;
+    --m-line-spacing-double: 2;
+    --m-line-spacing-double-plus: 2.5;
+    --m-line-spacing-triple: 3;
+
+    /* additional margin/spacing nudges used here and there */
+    --m-elbow-room: 1rem;
+    --m-room-for-two: 2rem;
+
+    --m-text-align:  start;
+
+    --m-font-size-standard:   16px; /* 16px=12pt; 19px=14pt; 14px=10pt */
+    --m-font-weight-standard: normal;
+    --m-line-spacing-standard: var(--m-line-spacing-double);
+
+    /* -30- and dinkus markers
+     * Note1: for manuscript, the solitary # sign is the most typical/standard
+     *        scene-break marker. --m-dinkus is automatically inserted between
+     *        scenes. --m-30- is automatically inserted at the end.
+     * Note2: marker30+ are examples of how you could add copyright © and
+     *        licensing info after the -30- marker.  Also, (a) you need to use
+     *        CSS escapes and (b) they eat one space following. \a is a
+     *        newline. \a9 is the copyright symbol For reference:
+     *          https://www.w3.org/International/questions/qa-escapes */
+    --m-marker0:     "#";
+    --m-marker-hash: "#";          /* THE DEFAULT (scene dinkuses) */
+    --m-marker1:    "*";
+    --m-marker-ast: "*";
+
+   /* for subscenes and subscene blocks, perhaps */
+    --m-marker-hyphen: "-";
+    --m-marker-3hyphens: "- - -";
+    --m-marker2:        "—";
+    --m-marker-em-dash: "—";
+    --m-marker-3em-dashes: "— — —";
+
+    /* Manuscript End, common */
+    --m-marker10:       "The End";
+    --m-marker-the-end: "The End"; /* THE DEFAULT (manuscript end (30)) */
+    --m-marker11:     "# # #";
+    --m-marker-3hash: "# # #";
+    --m-marker12:    "* * *";
+    --m-marker-3ast: "* * *";
+    --m-marker13: "⁂";
+    --m-marker14: "❦";
+    --m-marker15: "🙞 ❦ 🙜";
+    --m-marker16: "🙞  🙜";
+    --m-marker17:   "- 30 -";
+    --m-marker-30-: "- 30 -";
+
+    /* The End + copyright */
+    --m-marker30: "The End \00000a \00000a  (c) ";
+    --m-marker31: "The End \00000a \00000a \0000a9  ";
+    --m-marker32: "The End \00000a \00000a Copyright (c) ";
+    --m-marker33: "The End \00000a \00000a Copyright \0000a9  ";
+
+    /* White Space Markers */
+    --m-marker90:    "\200B"; /* &zerowidthspace */
+    --m-marker-zws:  "\200B"; /* &zerowidthspace */
+    --m-marker91:    "\00A0"; /* &nbps; */
+    --m-marker-nbsp: "\00A0"; /* &nbps; */
+
+    /* typefaces (fontstacks)
+     * Manuscript standards, these or close equivalents:
+     * - Times New Roman - for narrative works
+     * - Arial or Helvetica - for nonnarrative works . . . sometimes
+     * - Courier Prime - when a monospaced typeface is needed
+     * Those are all proprietary. But these font stacks below call for some
+     * excellent close-equivalent open options for each category. */
+    --m-fontstack-times: "Times New Roman", "Croscore Tinos", tinos, "Nimbus Roman", "Liberation Serif", "TeX Gyre Termes", thorndale, serif;
+    --m-fontstack-arial: arial, "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", albany, sans-serif;
+    --m-fontstack-helvetica: helvetica, "TeX Gyre Heros", "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", sans-serif;
+    --m-fontstack-courier: "Courier Prime", "Croscore Cousine", cousine, "TeX Gyre Cursor", "Liberation Mono", cumberland, "Courier Prime Code", "Courier New", courier, monospace;
+
+    /* dimensions default to US letter; redefined in -config.css */
+    --m-content-width: calc(var(--m-page-widthUS) - calc(var(--m-page-marginUS) * 2));
+    --m-content-height: calc(var(--m-page-heightUS) - calc(var(--m-page-marginUS) * 2));
+
+    /* Measurements default to US Letter and are redefined in -config.css.
+     * first-line indent/inter-paragraph spacing - narrative & nonnarrative */
+    --m-indent-narrative: var(--m-indentUS);
+    --m-indent-narrative-first-paragraph: 0px;
+    --m-paragraph-spacing-narrative: 0px;
+
+    --m-indent-nonnarrative: 0px;
+    --m-indent-nonnarrative-first-paragraph: 0px;
+    --m-paragraph-spacing-nonnarrative: 1rem;
+    --m-indent-non-narrative: var(--m-indent-nonnarrative);
+    --m-indent-non-narrative-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
+    --m-paragraph-spacing-non-narrative: var(--m-paragraph-spacing-nonnarrative);
+
+    --m-indent-foothang: var(--m-indentUS);
+
+    /* Measurements default to US Letter and are redefined in -config.css.
+     * Offset calculations used to offset title-header blocks from top of the
+     * page. Manuscripts standards recommend placing the main title-block
+     * header anywhere from 1/3rd to 1/2 down the page. And if a long-form
+     * manuscript the same holds true for part headers and chapter headers. */
+    --m-page-offset-1-5th: calc(var(--m-page-heightUS) / 5);
+    --m-page-offset-1-4th: calc(var(--m-page-heightUS) / 4);
+    --m-page-offset-1-3rd: calc(var(--m-page-heightUS) / 3); /* or 3.66666in US */
+    --m-page-offset-5-12th: calc(var(--m-page-heightUS) * 5 / 12); /* or 4.58333in US */
+    --m-page-offset-half: calc(var(--m-page-heightUS) / 2); /* or 5.5in US */
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-marginUS));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-marginUS));
+    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-marginUS));
+    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-marginUS));
+    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-marginUS));
+
+    /* Measurements default to US Letter and are redefined in -config.css.
+     * Title-block headers offset settings - for short-form and long-form
+     * I'm being a bit more than pedantic here. And note: parts & chapters have
+     * different settings for screen rendering & print. (We "simulate" for the
+     * screen.) */
+    --m-offset-title-short:        var(--m-content-offset-5-12th);
+    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
+    --m-offset-title-long:         var(--m-content-offset-5-12th);
+
+    --m-offset-part-short:           var(--m-room-for-two);
+    --m-offset-part-render-short:    var(--m-room-for-two);
+    --m-offset-chapter-short:        var(--m-room-for-two);
+    --m-offset-chapter-render-short: var(--m-room-for-two);
+    --m-offset-chapter-short-poetry: var(--m-room-for-two);
+    --m-offset-scene-short:          var(--m-elbow-room);
+    --m-offset-poem-short:           var(--m-elbow-room);
+
+    --m-offset-part-long:           var(--m-offset-title-long);
+    --m-offset-part-render-long:    var(--m-room-for-two);
+    --m-offset-chapter-long:        var(--m-offset-title-long);
+    --m-offset-chapter-render-long: var(--m-room-for-two);
+    --m-offset-chapter-long-poetry: 0px;
+    --m-offset-scene-long:          var(--m-elbow-room);
+    --m-offset-poem-long:           var(--m-elbow-room);
+
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+
+    /* Measurements default to US Letter and are redefined in -config.css.
+     * left and right margins - pre and blockquote */
+    --m-margins-preformatted: 0px;
+    --m-margins-blockquote:   calc(var(--m-indent-narrative) * 1.5);
+
+    /* page breaks & simulated page breaks - short-form and long-form */
+    --m-page-break-short: unset;
+    --m-page-break-long:  page;
+
+    --m-page-break-simulated-short: 0px;        /* faded lightgray */
+    --m-page-break-simulated-long:  5px dashed rgb(211 211 211 / 50%);
+
+    /* the document facts (.m-facts) - short-form and long-form */
+    --m-position-facts-short: absolute;
+    --m-top-facts-short:  0;     --m-bottom-facts-short: unset;
+    --m-left-facts-short: unset; --m-right-facts-short:  0;
+    --m-margin-facts-short: unset;
+    --m-text-align-facts-short: right;
+
+    --m-position-facts-long: static;
+    --m-top-facts-long:  unset; --m-bottom-facts-long: unset;
+    --m-left-facts-long: unset; --m-right-facts-long:  unset;
+    --m-margin-facts-long:  var(--m-room-for-two) auto 0;
+    --m-text-align-facts-long: center;
+
+    /*
+     * hyphenation and #manuscript's fancy border for the screen rendered
+     * document.
+     */
+
+    /* page break settings */
+    --m-page-break: var(--m-page-break-short);
+    --m-page-break-simulated: var(--m-page-break-simulated-short);
+
+    /* Hyphenation - DON'T CHANGE THIS
+     * Manuscript standards almost universally state never fully justified and
+     * never hyphenated. But here's the variable switch if you want to play
+     * around: manual or auto.
+     *
+     * IMPORTANT: hyphenation only works if the lang attribute is set in the
+     * html element (eg: <html lang="en"> or set in the elements managing the
+     * text you want to be hyphenated. Most markdown editors don't set this. */
+    --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
+
+    /* Decorative border (screen rendering only) - DISABLED FOR NOW
+     * A border wrapping the manuscript content. Set this to 0 in your
+     * manuscript to disable. */      /* faded lightgray */
+    /*--m-manuscript-border: 1px solid rgb(211 211 211 / 50%);*/
+    --m-manuscript-border: 0;
+
+    /* --m-link-color: rgb(0 0 238); ----- a browser default blue */
+    --m-link-color: rgb(0 32 194);  /* Cobalt Blue */
+}
