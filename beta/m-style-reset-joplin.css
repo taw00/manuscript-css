@@ -32,9 +32,110 @@
  * - remove extra padding in exported/printed notes
  */
 
-/* rendering a virtual paper look: the "desk" behind the paper is darkgray */
-body#joplin-container-body { background-color: darkgray; }
-@media print { body#joplin-container-body { background-color: transparent; } }
+@media screen { /* HTML */
+    body#joplin-container-body {
+        /* rendering a virtual paper look:
+         * the "desk" behind the paper is darkgray */
+        background-color: darkgray;
+        /* Remove the padding and bg that frames #rendered-md */
+        & > #joplin-container-content {
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+    /*
+     * Joplin Cloud rendering of the document
+     */
+    body.page-note {
+        /* footer with copright and T&Cs - fade to watermark */
+        & > div.footer { opacity: .5; }
+        & > main.main > div.container.main-container {
+            /* branded navbar - fade to watermark */
+            & > nav.navbar {
+                opacity: .15;
+                background-color: inherit;
+            }
+            & > div.note-main {
+                /* viewport to 100% */
+                margin: 0 auto;
+                padding: 0;
+                max-width: 100%;
+                /* remove note title */
+                /* remove "Last updated" line */
+                & > h1.title,
+                & > p.last-updated { display: none; }
+            }
+        }
+    }
+
+} /* end @media screen */
+
+@media print { /* PDF */
+    body#joplin-container-body {
+        /* Exported print: the body should be colorless for print */
+        background-color: transparent;
+        /* Exported print: Remove the padding & bg that frames #rendered-md */
+        & > #joplin-container-content {
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+    /*  Exported print: filter and background settings in userstyle.css would
+     *  leave a verticle gray line in some configurations, but only in the
+     *  print version.  Marvelously difficult to troubleshoot. */
+    #rendered-md pre.hljs {
+        border: 0;
+        filter: unset;
+        background: unset;
+    }
+
+    /* Exported print: remove document last-update line at the top */
+    div.note-main > p.last-updated {
+        display: none;
+    }
+    /*
+     * Exported print: Joplin Cloud view
+     */
+    body.page-note {
+        /* remove footer with copright and T&Cs */
+        & > div.footer { display: none; }
+        & > main.main > div.container.main-container {
+            /* remove branded navbar */
+            & > nav.navbar { display: none; }
+            & > div.note-main {
+                /* viewport to 100% */
+                margin: 0 auto;
+                padding: 0;
+                max-width: 100%;
+                /* remove note title */
+                /* remove "Last updated" line */
+                & > h1.title,
+                & > p.last-updated { display: none; }
+            }
+        }
+    }
+
+    /*  Exported print: remove Joplin-inserted title and excess padding */
+    div.exported-note {
+        margin: 0;
+        padding: 0;
+    }
+    div.exported-note div.exported-note-title {
+        visibility: hidden;
+        display: none !important;
+    }
+} /* end @media print */
+
+
+/* rendered note main box */
+#rendered-md {
+    /* Rendered view: viewport to 100% */
+    width: 100%; max-width: unset; margin: 0 auto; padding: unset;
+    /* I under what I personally set in my Joplin CSS. We want to manage the
+     * virtual paper look with the #vpage ID. */
+    box-shadow: unset;
+    background-color: transparent;
+}
 
 /* syntax highlighting: turn off the base level tweak for pre/code */
 .hljs {
@@ -62,93 +163,5 @@ code.inline-code {
     font-size: unset; font-weight: unset;
     font-family: unset; margin: 0; border: 0;
 }
-
-#rendered-md {
-    /* Rendered view: viewport to 100% */
-    width: 100%; max-width: unset; margin: 0 auto; padding: unset;
-    /* cuz I set this in my CSS for this ID */
-    box-shadow: unset;
-    background-color: transparent;
-}
-/* Remove the padding and bg that frames #rendered-md */
-#joplin-container-content {
-    background-color: transparent;
-    padding: 0;
-}
-/* Joplin Cloud view: remove note title */
-div.note-main > h1.title { display: none; }
-/* Joplin Cloud view: remove document last-updated line at the top */
-div.note-main > p.last-updated { display: none; }
-/* Joplin Cloud view: branded navbar - fade to watermark */
-body.page-note nav.navbar {
-    opacity: .15;
-    background-color: inherit;
-}
-/* Joplin Cloud view: footer with copright and T&Cs - fade to watermark */
-body.page-note > div.footer { opacity: .5; }
-/* Joplin Cloud view: viewport to 100% */
-body.page-note .note-main {
-    margin: 0 auto;
-    padding: 0;
-    max-width: 100%;
-}
-
-
-/* remove HTML and PDF Joplin-inserted title and excess padding */
-@media screen { /* HTML */
-    div.exported-note {
-        margin: 0;
-        padding: 0;
-    }
-    div.exported-note div.exported-note-title {
-        visibility: hidden;
-        display: none !important;
-    }
-}
-
-@media print { /* PDF */
-    div.exported-note {
-        margin: 0;
-        padding: 0;
-    }
-    div.exported-note div.exported-note-title {
-        visibility: hidden;
-        display: none !important;
-    }
-    /* filter and background settings in userstyle.css would leave a verticle
-     * gray line in some configurations, but only in the print version.
-     * Marvelously difficult to troubleshoot. */
-    #rendered-md pre.hljs {
-        border: 0;
-        filter: unset;
-        background: unset;
-    }
-
-
-    #rendered-md {
-        width: unset;
-        max-width: unset;
-    }
-    /* Exported print: remove document last-update line at the top */
-    div.note-main > p.last-updated {
-        display: none;
-    }
-    /* Exported print from Joplin Cloud: remove the top-header branding */
-    body.page-note > main.main {
-        margin: 0; padding: 0;
-    }
-    body.page-note nav.navbar {
-        display: none !important;
-    }
-    div.note-main > h1.title {
-        display: none;
-    }
-    /* Exported print from Joplin Cloud: remove the footer */
-    body.page-note > div.footer div.content {
-        display: none !important;
-    }
-} /* end @media print */
-
-
 
 
