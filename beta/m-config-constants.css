@@ -12,6 +12,8 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
+@layer lm-config-constants {
+
 :root {
     /*
      * BASELINE CONSTANTS
@@ -223,3 +225,5 @@
     /* --m-link-color: rgb(0 0 238); ----- a browser default blue */
     --m-link-color: rgb(0 32 194);  /* Cobalt Blue */
 }
+
+} /* end @layer lm-config-constants */

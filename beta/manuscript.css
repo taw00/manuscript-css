@@ -1,4 +1,4 @@
-/* Manuscript via CSS v2.0
+/* Manuscript via CSS v3.0
  *
  * Manuscript formatting for authors who draft in markdown.
  *
@@ -108,16 +108,18 @@
  * - simple (or) text-only: a simplified view of the document (see above)
  */
 
+@layer lm-core, lm-core-config lm-config-defaults, lm-config-constants;
+
 /*Ximport url("./m-core.css?rev=20250808");*/
 @import url("./m-core.css");
 
 /* ********************************************************************* *
  * special-case stylings
  * ********************************************************************* */
-.foothang p {
-    padding-left: var(--m-indent-foothang) !important;
+#manuscript :is(section,blockquote,div).foothang p {
+    padding-left: var(--m-indent-foothang);
     /* hanging indent */
-    text-indent: calc(var(--m-indent-foothang) * -1) !important;
+    text-indent: calc(var(--m-indent-foothang) * -1);
 }
 .center-max-content,
 .table-of-contents,
@@ -130,5 +132,37 @@
 }
 .force-break-after {
     break-after: page !important;
+}
+
+/* ********************************************************************* *
+ * .simple or .text-only stylings
+ * ********************************************************************* */
+
+div#vpage article#manuscript:is(.text-only,.simple) {
+    & div.m-facts,
+    & div#m-contact {
+        display: none !important;
+    }
+}
+
+/* if we want to make text-only, text only */
+div#vpage article#manuscript.text-only div.m-header {
+    display: none !important;
+}
+
+#manuscript.text-only,
+#manuscript.simple {
+    --m-offset-title: 0;
+    --m-page-break: unset !important;
+    --m-page-break-simulated: 0px !important;
+    --m-offset-part: var(--m-elbow-room) !important;
+    --m-offset-chapter: var(--m-elbow-room) !important;
+    --m-offset-part-render: var(--m-elbow-room) !important;
+    --m-offset-chapter-render: var(--m-elbow-room) !important;
+    --m-manuscript-border: 0px !important;
+}
+#manuscript.text-only {
+    --m-dinkus: "" !important;
+    --m-30-: "" !important;
 }
 /* ********************************************************************* */

@@ -1,12 +1,9 @@
 /* Manuscript via CSS v2.0 — the core styles
+ * Not intended for direct import by the user. Instead inport manuscript.css.
  *
- * This contains all of the baseline logic for formatting—via CSS styles—a
+ * This corrals all of the baseline logic for formatting—via CSS styles—a
  * a markdown or HTML document to present a rendered artifact that closely
  * follows industry-standard prose manuscript guidelines.
- *
- * Though this stylesheet alone is sufficient to enable formatting manuscripts
- * for US letter-dimensioned short-prose narratives, it's really intended to
- * act as support for manuscript.css. Import that stylesheet instead.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy

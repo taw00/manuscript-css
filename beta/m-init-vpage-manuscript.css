@@ -1,7 +1,7 @@
 /* we are not explicit here, but call #manuscript within your markdown or
  * HTML as <article id="manuscript" ...> */
 #manuscript {
-    color: black !important;
+    color: black;
     background-color: rgb(0 0 0 / 0%);
     font-size:   1rem;
     font-weight: var(--m-font-weight);
@@ -23,8 +23,8 @@
 }
 #manuscript hr {
     /* because hr color is resistent to change (a mystery for now) */
-    color: black !important;
-    border-color: black !important;
+    color: black;
+    border-color: black;
     border-top: 0;  border-bottom-width: 1px;
     border-left: 0; border-right: 0;
     width: 80%;
@@ -49,8 +49,8 @@
     position: relative; box-sizing: border-box; overflow: hidden;
     top: 0; left: 0;
     width: 100%; max-width: var(--m-page-width);
-    margin: 10px auto;
-    background-color: white !important;
+    margin: 20px auto;
+    background-color: white;
     box-shadow: 0 0 20px black;
 }
 #manuscript {
@@ -147,9 +147,35 @@
     color: inherit; background-color: inherit;
 }
 
-/* Joplin only. It wraps all PREs with div.joplin-editable, so we have to
- * adjust for that. Markdown tools can be . . . meddlesome. */
-#manuscript .joplin-editable { margin-bottom: var(--m-elbow-room); }
-#manuscript .joplin-editable:last-of-type { margin-bottom: 0; }
-#manuscript .joplin-editable pre { margin: 0; }
+/* Joplin only.
+ *
+ * It wraps all PREs with div.joplin-editable, so we have to
+ * adjust for that. Markdown tools can be . . . meddlesome.
+ * I am not completely confident that I have all the margin-spacing correctly
+ * configured for all permutations of pre.
+ * Note: we have to do all of this hoop-jumping because you can't
+ * :last-of-type a css class.
+ */
+#manuscript div.joplin-editable { margin: 0; }
+#manuscript div.joplin-editable:has(+ div.joplin-editable) pre {
+    margin: var(--m-elbow-room) var(--m-margins-preformatted);
+}
+#manuscript div.joplin-editable:not(:has + div.joplin-editable) pre {
+    margin: var(--m-elbow-room) var(--m-margins-preformatted) 0;
+}
+#manuscript * > div.joplin-editable pre,
+#manuscript *:not(div.joplin-editable) + div.joplin-editable pre {
+    margin-top: 0;
+}
+
+
+/* In Joplin, a pre is rendered twice, depending on things I don't understand.
+ * We need to blip out the extra pre. Note that this is duplicated in
+ * m-style-reset-joplin, but I wanted to have it here as well in order to have
+ * this well understood and in control.
+ */
+#rendered-md pre.joplin-source {
+    display: none;
+}
+
 

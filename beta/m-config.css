@@ -1,16 +1,17 @@
 @import url("./m-config-defaults.css");
-@page {
-    /* The default (US letter) is already set. This serves as documentation.
-     * For A4, A5, or A6, or whatever, you need to add this @page declaration
-     * after your imports in your markdown (or HTML) file's <style></style>
-     * block.
+
+@layer lm-core-config {
+
+/* The default (US letter) is already set. This serves as documentation.
+ * For A4, A5, or A6, or whatever, you need to add this @page declaration
+ * after your imports in your markdown (or HTML) file's <style></style>
+ * block.
 @page { size: A4 portrait; margin: 25.4mm; }
 @page { size: A5 portrait; margin: 25.4mm; }
 @page { size: A6 portrait; margin: 12.7mm; }
 @page { size: 5.5in 8.5in; margin: .75in; }
 @page { size: letter portrait; margin: 1in; }
-     */
-}
+ */
 
 #vpage.US, #vpage.letter {
     /* US letter is already set as the default */
@@ -177,29 +178,4 @@
 }
 } /* /print */
 
-/* ********************************************************************* *
- * .simple or .text-only stylings
- * ********************************************************************* */
-
-#vpage article#manuscript.text-only div#m-contact,
-#vpage article#manuscript.simple div#m-contact
-{ display: none !important; }
-
-#manuscript.text-only .m-facts,
-#manuscript.simple .m-facts { display: none !important; }
-
-/*#manuscript.text-only > .m-header,
-#manuscript.simple > .m-header { display: none !important; }*/
-
-#manuscript.text-only,
-#manuscript.simple {
-    --m-offset-title: 0;
-    --m-page-break: unset !important;
-    --m-page-break-simulated: 0px !important;
-    --m-offset-part: var(--m-elbow-room) !important;
-    --m-offset-chapter: var(--m-elbow-room) !important;
-    --m-offset-part-render: var(--m-elbow-room) !important;
-    --m-offset-chapter-render: var(--m-elbow-room) !important;
-    --m-manuscript-border: 0px !important;
-}
-
+} /* end @layer lm-core-config */

@@ -1,0 +1,154 @@
+/* Manuscript via CSS v2.0 — reset/normalize core stylings
+ *
+ * Markdown toolchains manipulate the stylings. This attempts to reset those
+ * stylings back to a more "browser default" expected behavior. Note, that many
+ * markdown editors (GhostWriter for example) will still override this
+ * regardless (at least for their preview renderings) and you will have to do
+ * the true rendering outside of those toolchains.
+ *
+ * The Joplin desktop note-taking application (and excellent markdown editor)
+ * is not so belligerent and will honor your layered on stylings (thank you
+ * @laurent!). <https://joplinapp.org>
+ *
+ * Included in this stylesheet
+ * - Joplin-specific adjustments
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+/*
+ * JOPLIN adjustments
+ *
+ * - normalize a-links
+ * - neutralize inline code stylings
+ *   - base syntax hightlighting for pre/code
+ *   - turn off background filters and things for pre/code (mostly an issue
+ *     with exported/printed notes
+ * - Rendered view: make the viewport 100%
+ * - Joplin Cloud view: remove note title, last-update, watermark the header
+ *   and footer, viewport to 100%
+ * - remove extra padding in exported/printed notes
+ */
+
+/* rendering a virtual paper look: the "desk" behind the paper is darkgray */
+body#joplin-container-body { background-color: darkgray; }
+@media print { body#joplin-container-body { background-color: transparent; } }
+
+/* syntax highlighting: turn off the base level tweak for pre/code */
+.hljs {
+    color: inherit;
+    background: inherit;
+}
+/* In Joplin, a pre is rendered twice, depending on things I don't understand.
+ * We need to blip out the extra pre */
+#rendered-md pre.joplin-source {
+    display: none;
+}
+
+/* remove Joplin internal link icon and extra styling */
+a .resource-icon { display: none; }
+a:any-link {
+    color: unset;
+    background: unset;
+    filter: unset;
+}
+a:any-link[href='#'] { color: unset; }
+a:hover[href='#'] { color: unset; }
+/* negate the .inline-code stylings (we take over later) */
+code.inline-code {
+    color: unset; background: unset;
+    font-size: unset; font-weight: unset;
+    font-family: unset; margin: 0; border: 0;
+}
+
+#rendered-md {
+    /* Rendered view: viewport to 100% */
+    width: 100%; max-width: unset; margin: 0 auto; padding: unset;
+    /* cuz I set this in my CSS for this ID */
+    box-shadow: unset;
+    background-color: transparent;
+}
+/* Remove the padding and bg that frames #rendered-md */
+#joplin-container-content {
+    background-color: transparent;
+    padding: 0;
+}
+/* Joplin Cloud view: remove note title */
+div.note-main > h1.title { display: none; }
+/* Joplin Cloud view: remove document last-updated line at the top */
+div.note-main > p.last-updated { display: none; }
+/* Joplin Cloud view: branded navbar - fade to watermark */
+body.page-note nav.navbar {
+    opacity: .15;
+    background-color: inherit;
+}
+/* Joplin Cloud view: footer with copright and T&Cs - fade to watermark */
+body.page-note > div.footer { opacity: .5; }
+/* Joplin Cloud view: viewport to 100% */
+body.page-note .note-main {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+}
+
+
+/* remove HTML and PDF Joplin-inserted title and excess padding */
+@media screen { /* HTML */
+    div.exported-note {
+        margin: 0;
+        padding: 0;
+    }
+    div.exported-note div.exported-note-title {
+        visibility: hidden;
+        display: none !important;
+    }
+}
+
+@media print { /* PDF */
+    div.exported-note {
+        margin: 0;
+        padding: 0;
+    }
+    div.exported-note div.exported-note-title {
+        visibility: hidden;
+        display: none !important;
+    }
+    /* filter and background settings in userstyle.css would leave a verticle
+     * gray line in some configurations, but only in the print version.
+     * Marvelously difficult to troubleshoot. */
+    #rendered-md pre.hljs {
+        border: 0;
+        filter: unset;
+        background: unset;
+    }
+
+
+    #rendered-md {
+        width: unset;
+        max-width: unset;
+    }
+    /* Exported print: remove document last-update line at the top */
+    div.note-main > p.last-updated {
+        display: none;
+    }
+    /* Exported print from Joplin Cloud: remove the top-header branding */
+    body.page-note > main.main {
+        margin: 0; padding: 0;
+    }
+    body.page-note nav.navbar {
+        display: none !important;
+    }
+    div.note-main > h1.title {
+        display: none;
+    }
+    /* Exported print from Joplin Cloud: remove the footer */
+    body.page-note > div.footer div.content {
+        display: none !important;
+    }
+} /* end @media print */
+
+
+
+

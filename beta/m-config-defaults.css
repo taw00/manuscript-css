@@ -44,7 +44,9 @@ X@Ximport "/path/to/manuscript.css?refresh=20241019";
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./m-constants.css");
+@import url("./m-config-constants.css");
+
+@layer lm-config-defaults {
 
 @page { size: letter portrait; margin: 1in; }
 
@@ -333,3 +335,5 @@ X@Ximport "/path/to/manuscript.css?refresh=20241019";
     --m-font-family-facts:  var(--m-font-family-facts-short);
     --m-line-spacing-facts: var(--m-line-spacing-facts-short);
 }
+
+} /* end @layer lm-config-defaults */
