@@ -1,27 +1,23 @@
-/* Manuscript via CSS v2.0 — constants and configurations
+/* CSS for Manuscript Formating v3.0
  *
- * This sets most of of the switches you can flip to massage the formatting of
- * your manuscript. To see what is available (and there are far too many
- * available, search for the comments that start with "DEFAULTS" in this file.
+ * @layer lm-config-defaults
+ * :root { --m-XXXXX: var(--m-YYYY-from-m-config-constants.css) }
  *
- * Warning: if you override any of these, please be aware that they are subject
- * to change. Especially the more esoteric ones. Right now there are far too
- * many and I aim to simpify them in the future.
+ * Configuration of baseline default :root variables leveraging the constants
+ * established in m-config-constants.css.
  *
+ * There are values in here that can be overridden, but others that really
+ * should not be (they are calculated or usually inherit).
+ *
+ * FOR EXAMPLE:
  * Check the example manuscripts in this repo, but, essentially, this is how
  * you override these settings. In your markdown, just add a :root {} section
  * in your <style> block ... and redeclare variables. Here's an example:
  *
- * (remove the X's in the first two lines. They exist because this comment
- * block confuses some CSS parsers)
+ * (NOTE: Xs added because the style declaration confuses some CSS parsers)
 
 X<XstyleX>X
-X@Ximport "/path/to/manuscript.css?refresh=20241019";
-@page { size: A4 portrait; margin: 1in; }
-@page { size: A5 portrait; margin: .75in; }
-@page { size: A6 portrait; margin: 12.7mm; }
-@page { size: 5.5in 8.5in; margin: .75in; }
-@page { size: letter portrait; margin: 1in; }
+X@Ximport url("/path/to/manuscript.css");
 
 :root {
     --m-font-family: "TeX Gyre Pagella", Palladio, Palantino, serif;
@@ -92,88 +88,6 @@ X@Ximport "/path/to/manuscript.css?refresh=20241019";
 
 
     /*
-     * DO NOT OVERRIDE
-     */
-
-    /* constraining the content between the margins */
-    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
-    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
-
-    /* font-family - narrative and nonnarrative */
-    --m-font-family-narrative: var(--m-fontstack-serif);
-    --m-font-family-nonnarrative: var(--m-fontstack-sans);
-    --m-font-family-non-narrative: var(--m-font-family-nonnarrative);
-
-    --m-font-family-narrative-preformatted: var(--m-fontstack-mono);
-    --m-font-family-nonnarrative-preformatted: var(--m-fontstack-mono);
-    --m-font-family-non-narrative-preformatted: var(--m-font-family-nonnarrative-preformatted);
-
-    --m-font-family-narrative-code: var(--m-fontstack-mono);
-    --m-font-family-nonnarrative-code: var(--m-fontstack-mono);
-    --m-font-family-non-narrative-code: var(--m-font-family-nonnarrative-code);
-
-    --m-font-family-narrative-poetry: var(--m-fontstack-serif);
-    --m-font-family-nonnarrative-poetry: var(--m-fontstack-serif);
-    --m-font-family-non-narrative-poetry: var(--m-font-family-nonnarrative-poetry);
-
-    /* first-line indent/inter-paragraph spacing - narrative & nonnarrative */
-    --m-indent-narrative: var(--m-indentUS);
-    --m-indent-narrative-first-paragraph: 0px;
-    --m-paragraph-spacing-narrative: 0px;
-
-    --m-indent-nonnarrative: 0px;
-    --m-indent-nonnarrative-first-paragraph: 0px;
-    --m-paragraph-spacing-nonnarrative: 1rem;
-    --m-indent-non-narrative: var(--m-indent-nonnarrative);
-    --m-indent-non-narrative-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
-    --m-paragraph-spacing-non-narrative: var(--m-paragraph-spacing-nonnarrative);
-
-    /* Offset calculations used to offset title-header blocks from top of the
-     * page. Manuscripts standards recommend placing the main title-block
-     * header anywhere from 1/3rd to 1/2 down the page. And if a long-form
-     * manuscript the same holds true for part headers and chapter headers. */
-    --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
-    --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
-    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
-    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
-    --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
-    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
-    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
-    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
-    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
-    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
-
-    /* Title-block headers offset settings - for short-form and long-form
-     * I'm being a bit more than pedantic here. And note: parts & chapters have
-     * different settings depending if you are rendering to the screen or if
-     * rendering to print. (We "simulate" for the screen.) */
-    --m-offset-title-short:        var(--m-content-offset-5-12th);
-    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
-    --m-offset-title-long:         var(--m-content-offset-5-12th);
-
-    --m-offset-part-short:           var(--m-room-for-two);
-    --m-offset-part-render-short:    var(--m-room-for-two);
-    --m-offset-chapter-short:        var(--m-room-for-two);
-    --m-offset-chapter-render-short: var(--m-room-for-two);
-    --m-offset-chapter-short-poetry: var(--m-room-for-two);
-    --m-offset-scene-short:          var(--m-elbow-room);
-    --m-offset-poem-short:           var(--m-elbow-room);
-
-    --m-offset-part-long:           var(--m-offset-title-long);
-    --m-offset-part-render-long:    var(--m-room-for-two);
-    --m-offset-chapter-long:        var(--m-offset-title-long);
-    --m-offset-chapter-render-long: var(--m-room-for-two);
-    --m-offset-chapter-long-poetry: 0px;
-    --m-offset-scene-long:          var(--m-elbow-room);
-    --m-offset-poem-long:           var(--m-elbow-room);
-
-    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
-
-    /* left and right margins - pre and blockquote */
-    --m-margins-preformatted: 0px;
-    --m-margins-blockquote:   calc(var(--m-indent-narrative) * 1.5);
-
-    /*
      * DEFAULTS - section 3
      */
 
@@ -198,8 +112,8 @@ X@Ximport "/path/to/manuscript.css?refresh=20241019";
     --m-font-family-code:         var(--m-font-family-narrative-code);
     --m-font-family-poetry:       var(--m-font-family-narrative-poetry);
 
-    --m-indent:                 var(--m-indent-narrative);
-    --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
+    --m-indent:                 var(--m-indentUS);
+    --m-indent-first-paragraph: var(--m-indentUS);  /* set 0 in m-config.css */
     --m-paragraph-spacing:      var(--m-paragraph-spacing-narrative);
 
     --m-offset-title:          var(--m-offset-title-short);
@@ -334,6 +248,113 @@ X@Ximport "/path/to/manuscript.css?refresh=20241019";
     --m-font-weight-facts:  var(--m-font-weight-facts-short);
     --m-font-family-facts:  var(--m-font-family-facts-short);
     --m-line-spacing-facts: var(--m-line-spacing-facts-short);
+
+
+    /*
+     * DEFAULTS THAT YOU PROBABLY SHOULD NOT OVERRIDE
+     */
+
+    /* constraining the content between the margins now that we have a
+     * --m-page-width, --m-page-height, and --m-page-margin defined */
+    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
+    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+
+    /* font-family - narrative and nonnarrative */
+    --m-font-family-narrative: var(--m-fontstack-serif);
+    --m-font-family-nonnarrative: var(--m-fontstack-sans);
+    --m-font-family-non-narrative: var(--m-font-family-nonnarrative);
+
+    --m-font-family-narrative-preformatted: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-preformatted: var(--m-fontstack-mono);
+    --m-font-family-non-narrative-preformatted: var(--m-font-family-nonnarrative-preformatted);
+
+    --m-font-family-narrative-code: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-code: var(--m-fontstack-mono);
+    --m-font-family-non-narrative-code: var(--m-font-family-nonnarrative-code);
+
+    --m-font-family-narrative-poetry: var(--m-fontstack-serif);
+    --m-font-family-nonnarrative-poetry: var(--m-fontstack-serif);
+    --m-font-family-non-narrative-poetry: var(--m-font-family-nonnarrative-poetry);
+
+    /* first-line indent/inter-paragraph spacing - narrative & nonnarrative */
+    --m-indent-narrative:                 var(--m-indent);
+    --m-indent-narrative-first-paragraph: var(--m-indent-first-paragraph);
+    --m-paragraph-spacing-narrative: 0;
+
+    --m-indent-nonnarrative: 0;
+    --m-indent-nonnarrative-first-paragraph: 0;
+    --m-paragraph-spacing-nonnarrative: 1rem;
+    --m-indent-non-narrative: var(--m-indent-nonnarrative);
+    --m-indent-non-narrative-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
+    --m-paragraph-spacing-non-narrative: var(--m-paragraph-spacing-nonnarrative);
+
+    --m-indent-foothang: var(--m-indent);
+
+    /* Offset calculations used to offset title-header blocks from top of the
+     * page. Manuscripts standards recommend placing the main title-block
+     * header anywhere from 1/3rd to 1/2 down the page. And if a long-form
+     * manuscript the same holds true for part headers and chapter headers. */
+    --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
+    --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
+    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
+    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
+    --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
+    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
+    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
+    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
+
+    /* Title-block headers offset settings - for short-form and long-form
+     * I'm being a bit more than pedantic here. And note: parts & chapters have
+     * different settings depending if you are rendering to the screen or if
+     * rendering to print. (We "simulate" for the screen.) */
+    --m-offset-title-short:        var(--m-content-offset-5-12th);
+    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
+    --m-offset-title-long:         var(--m-content-offset-5-12th);
+
+    --m-offset-part-short:           var(--m-room-for-two);
+    --m-offset-part-render-short:    var(--m-room-for-two);
+    --m-offset-chapter-short:        var(--m-room-for-two);
+    --m-offset-chapter-render-short: var(--m-room-for-two);
+    --m-offset-chapter-short-poetry: var(--m-room-for-two);
+    --m-offset-scene-short:          var(--m-elbow-room);
+    --m-offset-poem-short:           var(--m-elbow-room);
+
+    --m-offset-part-long:           var(--m-offset-title-long);
+    --m-offset-part-render-long:    var(--m-room-for-two);
+    --m-offset-chapter-long:        var(--m-offset-title-long);
+    --m-offset-chapter-render-long: var(--m-room-for-two);
+    --m-offset-chapter-long-poetry: 0;
+    --m-offset-scene-long:          var(--m-elbow-room);
+    --m-offset-poem-long:           var(--m-elbow-room);
+
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+
+    /* left and right margins - pre and blockquote */
+    --m-margins-preformatted: 0;
+    --m-margins-blockquote:   calc(var(--m-indent-narrative) * 1.5);
+
+    /* --m-link-color: rgb(0 0 238); ----- a browser default blue */
+    --m-link-color: rgb(0 32 194);  /* Cobalt Blue */
+
+    /* page break settings - these get refined settings elsewhere */
+    --m-page-break: var(--m-page-break-short);                     /* unset */
+    --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); /* 0 */
+    --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
+
+    /*
+     * hyphenation
+     *
+     * Manuscript standards almost universally state never fully justified and
+     * never hyphenated. But here's the variable switch if you want to play
+     * around: manual or auto.
+     *
+     * IMPORTANT: hyphenation only works if the lang attribute is set in the
+     * html element (eg: <html lang="en"> or set in the elements managing the
+     * text you want to be hyphenated. Most markdown editors don't set this. */
+    --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
 }
 
 } /* end @layer lm-config-defaults */
+

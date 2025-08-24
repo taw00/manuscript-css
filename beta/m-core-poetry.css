@@ -1,7 +1,6 @@
-/*
- * The poetry
+/* CSS for Manuscript Formating v3.0
  *
- * This has to come before all the .m-header stuff.
+ * poetry stylings
  *
  * #manuscript.poetry: i.e., the whole document is poetry. A single poem
  * manuscript (#manuscript.poetry.short) or a collection
@@ -13,6 +12,10 @@
  *
  * div.x-poem: a miscellaneous poem whereever in any document. Example, if an
  * epigraph contained a poem, you'd encase it in this and ```plaintext blocks.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
 #manuscript section.m-poem > .m-header > h1 {
@@ -76,5 +79,4 @@
 #manuscript section.m-poem .m-header :is(p, h1, h2, h3, h4, h5, h6) {
     text-align: start;
 }
-
 

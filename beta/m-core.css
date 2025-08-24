@@ -1,9 +1,6 @@
-/* Manuscript via CSS v2.0 — the core styles
- * Not intended for direct import by the user. Instead inport manuscript.css.
+/* CSS for Manuscript Formating v3.0
  *
- * This corrals all of the baseline logic for formatting—via CSS styles—a
- * a markdown or HTML document to present a rendered artifact that closely
- * follows industry-standard prose manuscript guidelines.
+ * the core styles - this corrals all of the baseline logic.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
@@ -12,8 +9,7 @@
 
 @import url("./m-style-reset.css");
 @import url("./m-config.css");
-@import url("./m-init-raw-elements.css");
-@import url("./m-init-vpage-manuscript.css");
+@import url("./m-init-page.css");
 @import url("./m-init-headers-contacts-facts.css");
 @import url("./m-core-page-positioning.css");
 @import url("./m-core-poetry.css");

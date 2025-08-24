@@ -1,7 +1,15 @@
-/*
+/* CSS for Manuscript Formating v3.0
+ *
  * page-positioning, page-breaks, simulated page-breaks
  * `padding` and `margin` juggling to avoid any margin-collapsing issues. And
  * ensuring the simulated page breaks look more sensible.
+ *
+ * This defines how chapters, scenes, and poems are generally presented on the
+ * page. This and m-init-headers-contacts-facts do some of the same things.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
 /* place the manuscript title block 1/3 to 5/12 down the page and center it */
@@ -9,12 +17,20 @@
     margin: var(--m-offset-title) auto 0;
 }
 
+/* Foothang management. I don't know where else to put this. */
+#manuscript :is(section,blockquote,div).foothang p {
+    padding-left: var(--m-indent-foothang);
+    /* hanging indent */
+    text-indent: calc(var(--m-indent-foothang) * -1);
+}
+
 
 @media screen {
     #manuscript > .m-header {
         /*padding-bottom: var(--m-room-for-two);*/
-        padding-bottom: 0;
         border-bottom: var(--m-page-break-simulated);
+        /* the title page needs padding before the similuated page break */
+        padding-bottom: var(--m-page-break-simulated-padding);
     }
     /* part and chapter top margins (may be large (long) or small (short)) But
      * only if they have a title block, otherwise, it's assumed no margin and
@@ -159,3 +175,4 @@
         break-before: avoid-page !important;
     }
 } /* end @media print */
+

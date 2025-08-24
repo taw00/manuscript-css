@@ -1,91 +1,19 @@
-/* Manuscript via CSS v2.0 — reset/normalize core stylings
+/* CSS for Manuscript Formating v3.0
  *
- * Markdown toolchains manipulate the stylings. This attempts to reset those
- * stylings back to a more "browser default" expected behavior. Note, that many
- * markdown editors (GhostWriter for example) will still override this
- * regardless (at least for their preview renderings) and you will have to do
- * the true rendering outside of those toolchains.
- *
- * Included in this stylesheet
- * - vscode-specific adjustments
+ * m-style-reset-vscode.css - reset the VSCode (Visual Studio Code) app's base
+ * styles to more friendly defaults for manuscript.css when attempting to
+ * render from the application.
+ * <https://code.visualstudio.com/>
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-/*
- *
- * VSCODE adjustments
- *
- */
-
-/* remove the automated title display */
-body.vscode-body .markdown-body > h1 { display: none; }
-/* markdown all-in-one extension's html export's title addition */
-body.vscode-body > h1 { display: none; }
-
-/*
- * pandoc-ism
- */
-header#title-block-header { display: none; }
-
-
-/*
- * GENERAL RESETS
- */
-
-/* fighting off any belligerent css wrappers */
-html, body { all: initial; }
-/* For reference: what I used to do.
-html {
-    color: rgb(0 0 0);
-    background-color: rgb(0 0 0 / 0);
+body.vscode-body {
+    /* remove the automated title display */
+    & .markdown-body > h1 { display: none; }
+    /* markdown all-in-one extension's html export's title addition */
+    & > h1 { display: none; }
 }
-body {
-    color: inherit;
-    background-color: inherit;
-    margin: 8px;
-}
-body * {
-    color: rgb(0 0 0);
-    background-color: inherit;
-    opacity: inherit;
-}
-*/
-
-/*body { width: 100%; max-width: unset; }*/
-h1,h2,h3,h4,h5,h6,
-ol,ul,dl,menu,li,dt,dd,
-hr,
-blockquote, blockquote p,
-pre, code, p, q,
-mark,
-table, thead, tbody, tfoot, th, tr, td, colgroup, col {
-    font-size: unset; font-weight: unset; font-style: unset;
-    line-height: unset;
-    text-align: unset;
-    color: unset;
-    background-color: unset;
-    background: unset;
-    margin: unset; padding: unset;
-    border: unset;
-    opacity: unset;
-    filter: unset;
-}
-/* I don't think we have to reset these
-strong, b, em, i, u, s,
-img
-*/
-
-@media print {
-    pre {
-        white-space: pre;
-        overflow-x: hidden;
-    }
-}
-
-
-
-
 

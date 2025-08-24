@@ -1,3 +1,14 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * Base definitions for #m-contact, .m-header, and .m-facts and the content
+ * managed by them. This and m-core-page-positioning do some of the same
+ * things.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
 #manuscript {
     #m-contact {
         position: absolute; box-sizing: border-box; overflow: visible;

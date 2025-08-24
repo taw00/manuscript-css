@@ -1,3 +1,34 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * m-init-page.css sets default beginning manuscript-relevant values for html,
+ * body, div#vpage, and article#manuscript
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+/* baseline font-size: 1rem defined */
+html { font-size: var(--m-font-size); }
+
+@media screen {
+    /* rendered view: "desktop" background that the manuscript page sits on */
+    /*html, body { background-color: rgb(204 204 204); }*/ /* off-white */
+    html, body { background-color: darkgray; }
+} /* end @media screen */
+
+
+/* exported view (printed or PDF)
+ * HTML and BODY need to be transparent and the vpage container becomes
+ * undefined (@page replaces its purpose) and the manuscript container goes
+ * back to being a plain 'ol box filling the page.
+ */
+@media print {
+    html, body { background-color: rgb(0 0 0 / 0%); }
+} /* end @media print */
+
+
+
 /* we are not explicit here, but call #manuscript within your markdown or
  * HTML as <article id="manuscript" ...> */
 #manuscript {
@@ -150,7 +181,7 @@
 /* Joplin only.
  *
  * It wraps all PREs with div.joplin-editable, so we have to
- * adjust for that. Markdown tools can be . . . meddlesome.
+ * adjust margination for that. Markdown tools can be . . . meddlesome.
  * I am not completely confident that I have all the margin-spacing correctly
  * configured for all permutations of pre.
  * Note: we have to do all of this hoop-jumping because you can't

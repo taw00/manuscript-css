@@ -1,14 +1,18 @@
-/* Manuscript via CSS v2.0 — reset/normalize core stylings
+/* CSS for Manuscript Formating v3.0
  *
- * Markdown toolchains manipulate the stylings. This attempts to reset those
- * stylings back to a more "browser default" expected behavior. Note, that many
- * markdown editors (GhostWriter for example) will still override this
- * regardless (at least for their preview renderings) and you will have to do
- * the true rendering outside of those toolchains.
+ * m-style-reset-joplin.css - reset the Joplin app's base styles to more
+ * friendly defaults for manuscript.css when attempting to render from the
+ * application.
+ * <https://joplinapp.org>
  *
- * The Joplin desktop note-taking application (and excellent markdown editor)
- * is not so belligerent and will honor your layered on stylings (thank you
- * @laurent!). <https://joplinapp.org>
+ * Markdown toolchains manipulate stylings. This attempts to reset those
+ * stylings to a more "browser default" expected behavior plus some other
+ * changes.
+ *
+ * The Joplin desktop note-taking application (an excellent markdown editor)
+ * will honor your layered on external (hosted on the web) stylings (thank you
+ * @laurent!). For locally hosted imports, install the "Import Local CSS"
+ * plugin by the developer who goes by the pseudonmym @personalrefridgerator.
  *
  * Included in this stylesheet
  * - Joplin-specific adjustments
@@ -33,6 +37,7 @@
  */
 
 @media screen { /* HTML */
+    /* rendered view: the "desk" darkgray and the content box trans */
     body#joplin-container-body {
         /* rendering a virtual paper look:
          * the "desk" behind the paper is darkgray */
@@ -43,9 +48,7 @@
             padding: 0;
         }
     }
-    /*
-     * Joplin Cloud rendering of the document
-     */
+    /* rendered view: Joplin Cloud's version */
     body.page-note {
         /* footer with copright and T&Cs - fade to watermark */
         & > div.footer { opacity: .5; }
@@ -71,6 +74,7 @@
 } /* end @media screen */
 
 @media print { /* PDF */
+    /* exported view: the body color needs to be irrelevant (trans) */
     body#joplin-container-body {
         /* Exported print: the body should be colorless for print */
         background-color: transparent;
@@ -80,7 +84,7 @@
             padding: 0;
         }
     }
-    /*  Exported print: filter and background settings in userstyle.css would
+    /* exported view: filter and background settings in userstyle.css would
      *  leave a verticle gray line in some configurations, but only in the
      *  print version.  Marvelously difficult to troubleshoot. */
     #rendered-md pre.hljs {
@@ -89,13 +93,11 @@
         background: unset;
     }
 
-    /* Exported print: remove document last-update line at the top */
+    /* exported view: remove document last-update line at the top */
     div.note-main > p.last-updated {
         display: none;
     }
-    /*
-     * Exported print: Joplin Cloud view
-     */
+    /* exported view: Joplin Cloud's version */
     body.page-note {
         /* remove footer with copright and T&Cs */
         & > div.footer { display: none; }
@@ -115,7 +117,7 @@
         }
     }
 
-    /*  Exported print: remove Joplin-inserted title and excess padding */
+    /* exported view: remove Joplin-inserted title and excess padding */
     div.exported-note {
         margin: 0;
         padding: 0;
@@ -149,19 +151,20 @@
 }
 
 /* remove Joplin internal link icon and extra styling */
-a .resource-icon { display: none; }
-a:any-link {
-    color: unset;
-    background: unset;
-    filter: unset;
+a {
+    & .resource-icon { display: none; }
+    &:any-link {
+        color: unset;
+        background: unset;
+        filter: unset;
+    }
+    &:any-link[href='#'] { color: unset; }
+    &:hover[href='#'] { color: unset; }
 }
-a:any-link[href='#'] { color: unset; }
-a:hover[href='#'] { color: unset; }
 /* negate the .inline-code stylings (we take over later) */
 code.inline-code {
     color: unset; background: unset;
     font-size: unset; font-weight: unset;
     font-family: unset; margin: 0; border: 0;
 }
-
 

@@ -1,3 +1,19 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * prose stylings
+ *
+ * #manuscript (There is no .prose. Prose is the default.)
+ * #manuscript.short: short prose (this is the default)
+ * #manuscript.long: long prose (novel, novella, novelette)
+ *
+ * .m-scene: a prose manuscript is represented as primarly a series of scenes
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+
 /* each scene or a set of subscenes: small padding at top */
 /*#manuscript section.m-subscenes,*/
 #manuscript section.m-scene {
@@ -6,7 +22,7 @@
 /* prose content:
  * small margin between prose content and a scene's title block if it exists */
 #manuscript section.m-scene > .m-header + * {
-    padding-top: var(--m-elbow-room) !important;
+    padding-top: var(--m-elbow-room);
 }
 
 #manuscript section.m-scene > section.m-subscenes:first-child,

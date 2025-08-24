@@ -1,4 +1,7 @@
-/* Manuscript via CSS v2.0 — constants and configurations
+/* CSS for Manuscript Formating v3.0
+ *
+ * @layer lm-config-constants
+ * :root { --m-XXXXXX } variable constants.
  *
  * This contains most of the constants and some baseline defaults that are then
  * leveraged by m-config.css and all the rest of the stack.
@@ -110,79 +113,19 @@
     --m-fontstack-helvetica: helvetica, "TeX Gyre Heros", "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", sans-serif;
     --m-fontstack-courier: "Courier Prime", "Croscore Cousine", cousine, "TeX Gyre Cursor", "Liberation Mono", cumberland, "Courier Prime Code", "Courier New", courier, monospace;
 
-    /* dimensions default to US letter; redefined in -config.css */
-    --m-content-width: calc(var(--m-page-widthUS) - calc(var(--m-page-marginUS) * 2));
-    --m-content-height: calc(var(--m-page-heightUS) - calc(var(--m-page-marginUS) * 2));
-
-    /* Measurements default to US Letter and are redefined in -config.css.
-     * first-line indent/inter-paragraph spacing - narrative & nonnarrative */
-    --m-indent-narrative: var(--m-indentUS);
-    --m-indent-narrative-first-paragraph: 0px;
-    --m-paragraph-spacing-narrative: 0px;
-
-    --m-indent-nonnarrative: 0px;
-    --m-indent-nonnarrative-first-paragraph: 0px;
-    --m-paragraph-spacing-nonnarrative: 1rem;
-    --m-indent-non-narrative: var(--m-indent-nonnarrative);
-    --m-indent-non-narrative-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
-    --m-paragraph-spacing-non-narrative: var(--m-paragraph-spacing-nonnarrative);
-
-    --m-indent-foothang: var(--m-indentUS);
-
-    /* Measurements default to US Letter and are redefined in -config.css.
-     * Offset calculations used to offset title-header blocks from top of the
-     * page. Manuscripts standards recommend placing the main title-block
-     * header anywhere from 1/3rd to 1/2 down the page. And if a long-form
-     * manuscript the same holds true for part headers and chapter headers. */
-    --m-page-offset-1-5th: calc(var(--m-page-heightUS) / 5);
-    --m-page-offset-1-4th: calc(var(--m-page-heightUS) / 4);
-    --m-page-offset-1-3rd: calc(var(--m-page-heightUS) / 3); /* or 3.66666in US */
-    --m-page-offset-5-12th: calc(var(--m-page-heightUS) * 5 / 12); /* or 4.58333in US */
-    --m-page-offset-half: calc(var(--m-page-heightUS) / 2); /* or 5.5in US */
-    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-marginUS));
-    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-marginUS));
-    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-marginUS));
-    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-marginUS));
-    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-marginUS));
-
-    /* Measurements default to US Letter and are redefined in -config.css.
-     * Title-block headers offset settings - for short-form and long-form
-     * I'm being a bit more than pedantic here. And note: parts & chapters have
-     * different settings for screen rendering & print. (We "simulate" for the
-     * screen.) */
-    --m-offset-title-short:        var(--m-content-offset-5-12th);
-    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
-    --m-offset-title-long:         var(--m-content-offset-5-12th);
-
-    --m-offset-part-short:           var(--m-room-for-two);
-    --m-offset-part-render-short:    var(--m-room-for-two);
-    --m-offset-chapter-short:        var(--m-room-for-two);
-    --m-offset-chapter-render-short: var(--m-room-for-two);
-    --m-offset-chapter-short-poetry: var(--m-room-for-two);
-    --m-offset-scene-short:          var(--m-elbow-room);
-    --m-offset-poem-short:           var(--m-elbow-room);
-
-    --m-offset-part-long:           var(--m-offset-title-long);
-    --m-offset-part-render-long:    var(--m-room-for-two);
-    --m-offset-chapter-long:        var(--m-offset-title-long);
-    --m-offset-chapter-render-long: var(--m-room-for-two);
-    --m-offset-chapter-long-poetry: 0px;
-    --m-offset-scene-long:          var(--m-elbow-room);
-    --m-offset-poem-long:           var(--m-elbow-room);
-
-    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
-
-    /* Measurements default to US Letter and are redefined in -config.css.
-     * left and right margins - pre and blockquote */
-    --m-margins-preformatted: 0px;
-    --m-margins-blockquote:   calc(var(--m-indent-narrative) * 1.5);
-
-    /* page breaks & simulated page breaks - short-form and long-form */
+    /* page breaks & simulated page breaks - short-form and long-form
+     * Short form docs don't have any page breaks by default.
+     * Long form docs have page breaks after the title page and then before
+     * each chapter.
+     */
     --m-page-break-short: unset;
     --m-page-break-long:  page;
-
-    --m-page-break-simulated-short: 0px;        /* faded lightgray */
-    --m-page-break-simulated-long:  5px dashed rgb(211 211 211 / 50%);
+    --m-page-break-simulated-short: 0;
+    --m-page-break-simulated-padding-short: 0;
+    /* … for the simulated page break for long-form docs, we use a heavy faded
+     *   dashed line. For the title page, we add padding before that line. */
+    --m-page-break-simulated-long:  5px dashed rgb(211 211 211 / 50%); /* faded lightgray */
+    --m-page-break-simulated-padding-long: calc(var(--m-offset-title) - 1in);
 
     /* the document facts (.m-facts) - short-form and long-form */
     --m-position-facts-short: absolute;
@@ -197,33 +140,13 @@
     --m-margin-facts-long:  var(--m-room-for-two) auto 0;
     --m-text-align-facts-long: center;
 
-    /*
-     * hyphenation and #manuscript's fancy border for the screen rendered
-     * document.
-     */
-
-    /* page break settings */
-    --m-page-break: var(--m-page-break-short);
-    --m-page-break-simulated: var(--m-page-break-simulated-short);
-
-    /* Hyphenation - DON'T CHANGE THIS
-     * Manuscript standards almost universally state never fully justified and
-     * never hyphenated. But here's the variable switch if you want to play
-     * around: manual or auto.
-     *
-     * IMPORTANT: hyphenation only works if the lang attribute is set in the
-     * html element (eg: <html lang="en"> or set in the elements managing the
-     * text you want to be hyphenated. Most markdown editors don't set this. */
-    --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
-
-    /* Decorative border (screen rendering only) - DISABLED FOR NOW
+    /* FOR DEBUGGING:
+     * Decorative border (screen rendering only) - DISABLED FOR NOW
      * A border wrapping the manuscript content. Set this to 0 in your
      * manuscript to disable. */      /* faded lightgray */
     /*--m-manuscript-border: 1px solid rgb(211 211 211 / 50%);*/
     --m-manuscript-border: 0;
-
-    /* --m-link-color: rgb(0 0 238); ----- a browser default blue */
-    --m-link-color: rgb(0 32 194);  /* Cobalt Blue */
 }
 
 } /* end @layer lm-config-constants */
+

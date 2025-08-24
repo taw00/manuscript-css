@@ -1,29 +1,64 @@
-/* Manuscript via CSS v2.0 — reset/normalize core stylings
+/* CSS for Manuscript Formating v3.0
  *
- * Markdown toolchains manipulate the stylings. This attempts to reset those
- * stylings back to a more "browser default" expected behavior. Note, that many
- * markdown editors (GhostWriter for example) will still override this
- * regardless (at least for their preview renderings) and you will have to do
- * the true rendering outside of those toolchains.
- *
- * Included in this stylesheet
- * - reverting some to common browser defaults
+ * General normalizations. First some unsets and then normalization based on
+ * Firefox's default user-agent settings.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
+
+/*
+ * General resets
+ */
+
+/* fighting off any belligerent css wrappers */
+html, body { all: initial; }
+
+/*body { width: 100%; max-width: unset; }*/
+h1,h2,h3,h4,h5,h6,
+ol,ul,dl,menu,li,dt,dd,
+hr,
+blockquote, blockquote p,
+pre, code, p, q,
+mark,
+table, thead, tbody, tfoot, th, tr, td, colgroup, col {
+    font-size: unset; font-weight: unset; font-style: unset;
+    line-height: unset;
+    text-align: unset;
+    color: unset;
+    background-color: unset;
+    background: unset;
+    margin: unset; padding: unset;
+    border: unset;
+    opacity: unset;
+    filter: unset;
+}
+
+/* I don't think we have to reset these
+strong, b, em, i, u, s, img */
+
+@media print {
+    pre {
+        white-space: pre;
+        overflow-x: hidden;
+    }
+}
+
+
+
+
 /*
  *
- * Adapted from Firefox's ua.css
+ * Normalization to Browser Defaults: adapted from Firefox's ua.css
  *
  */
 a,
-a:any-link,
-a:link,
-a:active,
-a:visited { color: rgb(0 0 238); }
+ a:any-link,
+ a:link,
+ a:active,
+ a:visited { color: rgb(0 0 238); }
 
 
 /*
@@ -179,13 +214,12 @@ table[align="right"] {
 }
 
 
-/* border collapse rules */
-
-  /* Set hidden if we have 'frame' or 'rules' attribute.
-     Set it on all sides when we do so there's more consistency
-     in what authors should expect */
-
-  /* Put this first so 'border' and 'frame' rules can override it. */
+/* border collapse rules
+ *
+ * Set hidden if we have 'frame' or 'rules' attribute.
+ * Set it on all sides when we do so there's more consistency
+ * in what authors should expect
+ * (putting this first so that later 'border' & 'frame' rules can override.) */
 table[rules] {
   border-width: thin;
   border-style: hidden;
@@ -354,7 +388,7 @@ th {
   font-weight: bold;
   padding: 1px;
   /*text-align: -moz-center-or-inherit;*/
-  text-align: inherit;
+  text-align: inherit;                  /* my edit that differs from firefox */
 }
 
 table[bordercolor] > tbody,
@@ -391,7 +425,7 @@ i, cite, em, var, dfn {
 
 tt, code, kbd, samp {
   /*font-family: -moz-fixed;*/
-  font-family: monospace;                                         /* my edit */
+  font-family: monospace;               /* my edit that differs from firefox */
 }
 
 u, ins {
@@ -460,7 +494,7 @@ ol {
 li {
   display: list-item;
   /*text-align: match-parent;*/
-  text-align: inherit;                                            /* my edit */
+  text-align: inherit;                  /* my edit that differs from firefox */
 }
 
 /* nested lists have no top/bottom margins */
@@ -500,3 +534,4 @@ hr {
   margin-inline-end: auto;
   overflow: hidden;
 }
+
