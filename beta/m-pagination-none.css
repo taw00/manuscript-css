@@ -1,0 +1,24 @@
+/*
+ * Pagination Logic — no headers!
+ *
+ * An example (note, this is the default setting for that variable):
+ * <style
+ *     @import url("url-or-path/that/leads/to/manuscript.css");
+ *     @import url("url-or-path/that/leads/to/m-pagination-none.css");
+ * </style>
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@page {
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+    size: letter portrait; margin: var(--m-page-margin);
+}
+

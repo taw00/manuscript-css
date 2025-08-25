@@ -20,8 +20,9 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  *
  * The div #vpage class "switches":
- * - 'plain', 'veryplain': (use only one) simplify the rendering by removing fancy the 3D
- *   paper look (probably not commonly used)
+ * - the defaults are 'US', and not 'plain', and not 'veryplain'
+ * - 'plain', 'veryplain': (use only one) simplify the rendering by removing
+ *    fancy the 3D paper look (probably not commonly used)
  * - 'US', 'USh', 'A4', 'A5', or 'A6': (use only one) US Letter is the default
  *   For USh, A4, A5, or A6, or whatever, you need to add the appropriate @page
  *   declaration after your imports in your markdown (or HTML) file's style
@@ -33,18 +34,35 @@
 @page { size: letter portrait; margin: 1in; }
  *
  * The article #manuscript class "switches":
- * - 'prose' or 'poetry': prose is the default
- * - 'short' or 'long': short
- * - 'narrative' or 'nonnarrative': if prose, narrative is the default
+ * - the defaults are short narrative prose, to change them …
+ * - 'poetry': if your work is … poetry
+ * - ''long': if your work is long form
+ * - 'nonnarrative': for prose, if your work is not a narrative work
  * - 'simple' or 'text-only': used to present a simplified version (no
  *   first-page metadata and simulated page breaks and such)
  *
+ * Pagination headers is enabled with twitchy CSS stuff.
+ * The default is set in the upper right-hand of the document.
+ * If you want pagination headers different than the default, add to your
+ * document styles, and use one of the m-pagination-___-___.css files that is
+ * matches your desired outcome. Example, for bottom-right, I would do this:
+ * <style
+ *   @import url("url-or-path/to/the/manuscript.css");
+ *   @import url("url-or-path/to/the/m-pagination-bottom-right.css");
+ *   :root {
+ *     --m-pagination-header: "MyLastname / My Short Title" counter(page);
+ *   }
+ * </style>
  */
 
-@layer lm-core-config lm-config-defaults, lm-config-constants;
+@layer lm-config-permutations lm-config-defaults, lm-config-constants;
 
-/*Ximport url("./m-core.css?rev=20250808");*/
+@import url("./m-style-reset.css");
+@import url("./m-config.css");
+@import url("./m-init.css");
 @import url("./m-core.css");
+
+@import url("./m-pagination-top-right.css");
 
 
 /*
