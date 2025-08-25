@@ -2,16 +2,29 @@
  *
  * poetry stylings
  *
- * #manuscript.poetry: i.e., the whole document is poetry. A single poem
- * manuscript (#manuscript.poetry.short) or a collection
- * (#manuscript.poetry.long).
+ * Poetry is styled by adding the 'poetry' class value to the
+ * 'article#manuscript' entity. By default, it is configured as a short form
+ * manuscript. If you wish a 'long' form manuscript, you would add 'long' to that
+ * same entity.
  *
- * section.m-poem: a similar container to section.m-scene. It houses a poem.
- * A section.m-poem should have an .m-header container (with title) and then a
- * series of ```plaintext ``` blocks, each representing a stanza of poetry.
+ * A prose manuscript is structured as a series of scenes. Crudely, it looks
+ * something like this:
  *
- * div.x-poem: a miscellaneous poem whereever in any document. Example, if an
- * epigraph contained a poem, you'd encase it in this and ```plaintext blocks.
+ * <div id="vpage"><article id="manuscript" class="poetry">
+ * <section class="m-poem">
+ * ```plaintext
+ * …a poem…
+ * ```
+ * </section>
+ * <section class="m-poem">
+ * ```plaintext
+ * …a poem…
+ * ```
+ * </section>
+ * </article>
+ * </div>
+ *
+ * Please reference the provided examples.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy

@@ -1,14 +1,12 @@
 /* CSS for Manuscript Formating v3.0
  *
- * the core styles - this corrals all of the baseline logic.
+ * Initialization of the manuscript elements, IDs, and classes.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./m-core-page-positioning.css");
-@import url("./m-core-poetry.css");
-@import url("./m-core-prose.css");
-@import url("./m-core-dinkuses.css");
+@import url("./m-init-page.css");
+@import url("./m-init-headers-contacts-facts.css");
 

@@ -2,11 +2,44 @@
  *
  * prose stylings
  *
- * #manuscript (There is no .prose. Prose is the default.)
- * #manuscript.short: short prose (this is the default)
- * #manuscript.long: long prose (novel, novella, novelette)
+ * Note, 'prose' is the default. There is no configuration if you are writing
+ * prose to differentiate it from poetry.
  *
- * .m-scene: a prose manuscript is represented as primarly a series of scenes
+ * Note, 'narrative' is the default. If you wish to format things to a
+ * 'nonnarrative' standard, add the 'nonnarrative' class value to the
+ * article#manuscript element in your document. See examples.
+ *
+ * Note, short form formatting is the default. If you want to format things
+ * to a a more 'long' form standard, add the 'long' class value to the
+ * article#manuscript element in your document. See examples.
+ *
+ * A prose manuscript is structured as a series of scenes. Crudely, it looks
+ * something like this:
+ *
+ * <div id="vpage"><article id="manuscript">
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * </article>
+ * </div>
+ *
+ * … or, for example, two chapters …
+ *
+ * <div id="vpage"><article id="manuscript" class="long">
+ * <section class="m-chapter">
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * </section>
+ * <section class="m-chapter">
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * </section>
+ * </article>
+ * </div>
+ *
+ * Please reference the provided examples.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy

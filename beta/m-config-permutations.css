@@ -1,0 +1,306 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * @layer lm-config-permuations
+ * This stylesheet will re-configuration variables found in m-config-defaults
+ * to match switches fliped by the user. Paper-sizes, Narrative/Nonnarrative,
+ * Short and Long forms, Prose versus Poetry, Simple renderings vs. not, etc.
+ *
+ * There are values in here that can be overridden, but others that really
+ * should not be (they are calculated or usually inherit).
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-config-permutations {
+
+#vpage {
+    /* recalculate - not quite sure why this has to happen, but it does */
+    --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
+    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
+
+    --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
+    --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
+    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
+    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
+    --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
+
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
+    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
+    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
+    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
+
+    --m-offset-title-short:        var(--m-content-offset-5-12th);
+    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
+    --m-offset-title-long:         var(--m-content-offset-5-12th);
+    --m-indent-narrative-first-paragraph: 0;
+    --m-indent-nonnarrative-first-paragraph: 0;
+    &.US, &.letter {
+        /* US letter is already set as the default, but let's be explicit */
+        --m-page-width:  var(--m-page-widthUS);
+        --m-page-height: var(--m-page-heightUS);
+        --m-page-margin: var(--m-page-marginUS);
+        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-indent: var(--m-indentUS);
+        --m-indent-narrative: var(--m-indent);
+        --m-indent-foothang: var(--m-indent);
+    }
+
+    &.USh, &.hletter { /* US half-letter */
+        --m-page-width:  var(--m-page-widthUSh);
+        --m-page-height: var(--m-page-heightUSh);
+        --m-page-margin: var(--m-page-marginUSh);
+        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-indent: var(--m-indentUSh);
+        --m-indent-narrative: var(--m-indent);
+        --m-indent-foothang: var(--m-indent);
+    }
+    &.A4 {
+        --m-page-width:  var(--m-page-widthA4);
+        --m-page-height: var(--m-page-heightA4);
+        --m-page-margin: var(--m-page-marginA4);
+        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-indent: var(--m-indentA4);
+        --m-indent-narrative: var(--m-indent);
+        --m-indent-foothang: var(--m-indent);
+    }
+    &.A5 {
+        --m-page-width:  var(--m-page-widthA5);
+        --m-page-height: var(--m-page-heightA5);
+        --m-page-margin: var(--m-page-marginA5);
+        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-indent: var(--m-indentA5);
+        --m-indent-narrative: var(--m-indent);
+        --m-indent-foothang: var(--m-indent);
+    }
+    &.A6 {
+        --m-page-width:  var(--m-page-widthA6);
+        --m-page-height: var(--m-page-heightA6);
+        --m-page-margin: var(--m-page-marginA6);
+        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-indent: var(--m-indentA6);
+        --m-indent-narrative: var(--m-indent);
+        --m-indent-foothang: var(--m-indent);
+    }
+}
+
+@media screen {
+    /* adjusting what was defined previously */
+    #vpage {
+        max-width: var(--m-page-width);
+    }
+    #manuscript {
+        max-width: var(--m-content-width);
+        margin: var(--m-page-margin) auto;
+    }
+}
+
+#manuscript {
+    &:not(:is(.nonnarrative,.non-narrative) {
+    /* the default is already set for .narrative, but we are being explicit */
+    /* narrative paragraphs first not indented, then indented */
+    --m-indent: var(--m-indent-narrative);
+    --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
+    --m-paragraph-spacing: var(--m-paragraph-spacing-narrative);
+    /* need to reset font-family for most everything */
+    --m-font-family: var(--m-font-family-narrative);
+    --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
+    --m-font-family-code: var(--m-font-family-narrative-code);
+    /* reset font settings - the main title-block header */
+    --m-font-family-header: var(--m-font-family);
+    --m-font-family-headers: var(--m-font-family);
+    /* reset font settings - contact info (and facts if put in the right corner */
+    --m-font-family-contact:  var(--m-font-family);
+    /* reset font settings - the main titles, subtitles, and authors */
+    --m-font-family-title: var(--m-font-family);
+    --m-font-family-byline: var(--m-font-family);
+    /* reset font settings - part titles, subtitles, and authors */
+    --m-font-family-title-part: var(--m-font-family-title);
+    --m-font-family-byline-part: var(--m-font-family-byline);
+    /* reset font settings - chapter titles, subtitles, and authors */
+    --m-font-family-title-chapter:  var(--m-font-family);
+    --m-font-family-byline-chapter: var(--m-font-family);
+    /* reset font settings - scene titles, subtitles, and authors */
+    --m-font-family-title-scene:  var(--m-font-family);
+    --m-font-family-byline-scene: var(--m-font-family);
+    /* reset font settings - the epigraphs */
+    --m-font-family-epigraph: var(--m-font-family);
+    /* reset font settings - the section separators (dinkus and -30-) */
+    --m-font-family-dinkus-30-: var(--m-font-family);
+    /* reset font settings short/long - .m-facts */
+    --m-font-family-facts-short:  var(--m-font-family-contact);
+    --m-font-family-facts-long:  inherit; /* will inherit from m-header */
+    /* reset .m-facts font settings */
+    --m-font-family-facts:  var(--m-font-family-facts-short);
+    }
+
+    &:is(.nonnarrative,.non-narrative):not(.poetry) {
+        /* nonnarrative paragraphs are space-seperated and not indented */
+        --m-indent: var(--m-indent-nonnarrative);
+        --m-indent-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
+        --m-paragraph-spacing: var(--m-paragraph-spacing-nonnarrative);
+        /* need to reset font-family for most everything */
+        --m-font-family: var(--m-font-family-nonnarrative);
+        --m-font-family-preformatted: var(--m-font-family-nonnarrative-preformatted);
+        --m-font-family-code: var(--m-font-family-nonnarrative-code);
+        /* reset font settings - the main title-block header */
+        --m-font-family-header: var(--m-font-family);
+        --m-font-family-headers: var(--m-font-family);
+        /* reset font settings - contact info (and facts if put in the right corner */
+        --m-font-family-contact:  var(--m-font-family);
+        /* reset font settings - the main titles, subtitles, and authors */
+        --m-font-family-title: var(--m-font-family);
+        --m-font-family-byline: var(--m-font-family);
+        /* reset font settings - part titles, subtitles, and authors */
+        --m-font-family-title-part: var(--m-font-family-title);
+        --m-font-family-byline-part: var(--m-font-family-byline);
+        /* reset font settings - chapter titles, subtitles, and authors */
+        --m-font-family-title-chapter:  var(--m-font-family);
+        --m-font-family-byline-chapter: var(--m-font-family);
+        /* reset font settings - scene titles, subtitles, and authors */
+        --m-font-family-title-scene:  var(--m-font-family);
+        --m-font-family-byline-scene: var(--m-font-family);
+        /* reset font settings - the epigraphs */
+        --m-font-family-epigraph: var(--m-font-family);
+        /* reset font settings - the section separators (dinkus and -30-) */
+        --m-font-family-dinkus-30-: var(--m-font-family);
+        /* reset font settings short/long - .m-facts */
+        --m-font-family-facts-short:  var(--m-font-family-contact);
+        --m-font-family-facts-long:  inherit; /* will inherit from m-header */
+        /* reset .m-facts font settings */
+        --m-font-family-facts:  var(--m-font-family-facts-short);
+    }
+}
+
+#manuscript:not(.long):not(:is(.poetry,.simple)) {
+    --m-offset-title: var(--m-offset-title-short);
+}
+#manuscript.poetry {
+    --m-font-family:  var(--m-font-family-poetry);
+    --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
+    --m-font-family-code: var(--m-font-family-narrative-code);
+    --m-font-family-title-poem:  var(--m-font-family-poetry);
+    --m-font-family-byline-poem: var(--m-font-family-poetry);
+    /* why no "The End" at the end of a poetry manuscript? I don't know, but
+     * that's the way it is. */
+    --m-30-: "";
+    &.long {
+        --m-offset-chapter: var(--m-offset-chapter-long-poetry);
+        --m-offset-chapter-render: var(--m-offset-chapter-long-poetry);
+    }
+    &:not(.long) {
+        --m-offset-chapter: var(--m-offset-chapter-short-poetry);
+        --m-offset-chapter-render: var(--m-offset-chapter-short-poetry);
+        &:not(:is(.simple)) {
+            --m-offset-title: var(--m-offset-title-short-poetry);
+        }
+    }
+}
+
+#manuscript { /* prose or poetry */
+    &.long {
+        --m-offset-title: var(--m-offset-title-long);
+        --m-offset-part: var(--m-offset-part-long);
+        --m-offset-part-render: var(--m-offset-part-render-long);
+        --m-offset-chapter: var(--m-offset-chapter-long);
+        --m-offset-chapter-render: var(--m-offset-chapter-render-long);
+        --m-offset-scene: var(--m-offset-scene-long);
+        --m-offset-poem: var(--m-offset-poem-long);
+
+        --m-position-facts:     var(--m-position-facts-long);
+        --m-top-facts:          var(--m-top-facts-long);
+        --m-bottom-facts:       var(--m-bottom-facts-long);
+        --m-left-facts:         var(--m-left-facts-long);
+        --m-right-facts:        var(--m-right-facts-long);
+        --m-margin-facts:       var(--m-margin-facts-long);
+        --m-text-align-facts:   var(--m-text-align-facts-long);
+        --m-line-spacing-facts: var(--m-line-spacing-facts-long);
+    }
+    &:not(.long) { /* the default, but let's be explicit */
+        --m-offset-title: var(--m-offset-title-short);
+        --m-offset-part: var(--m-offset-part-short);
+        --m-offset-part-render: var(--m-offset-part-render-short);
+        --m-offset-chapter: var(--m-offset-chapter-short);
+        --m-offset-chapter-render: var(--m-offset-chapter-render-short);
+        --m-offset-scene: var(--m-offset-scene-short);
+        --m-offset-poem: var(--m-offset-poem-short);
+
+        --m-position-facts:     var(--m-position-facts-short);
+        --m-top-facts:          var(--m-top-facts-short);
+        --m-bottom-facts:       var(--m-bottom-facts-short);
+        --m-left-facts:         var(--m-left-facts-short);
+        --m-right-facts:        var(--m-right-facts-short);
+        --m-margin-facts:       var(--m-margin-facts-short);
+        --m-text-align-facts:   var(--m-text-align-facts-short);
+        --m-line-spacing-facts: var(--m-line-spacing-facts-short);
+    }
+}
+
+
+/* .simple and .text-only (and amped specificity) */
+div#vpage article#manuscript:is(.text-only,.simple) {
+    & div.m-facts,
+    & div#m-contact {
+        display: none !important;
+    }
+}
+/* make text-only, text only (and amped specificity) */
+div#vpage article#manuscript.text-only {
+    --m-dinkus: "" !important;
+    --m-30-: "" !important;
+    & div.m-header {
+        display: none !important;
+    }
+}
+
+#manuscript:is(.text-only,.simple) {
+    --m-offset-title: 0;
+    --m-page-break: unset !important;
+    --m-page-break-simulated: 0px !important;
+    --m-offset-part: var(--m-elbow-room) !important;
+    --m-offset-chapter: var(--m-elbow-room) !important;
+    --m-offset-part-render: var(--m-elbow-room) !important;
+    --m-offset-chapter-render: var(--m-elbow-room) !important;
+    --m-manuscript-border: 0px !important;
+}
+
+
+@media screen {
+    #manuscript:not(.long) { /* the default, but let's be explicit */
+        /* note, these are, more or less, no-op settings by default. For short
+         * stories, we don't want to do forced page breaks anywhere. */
+        --m-page-break: var(--m-page-break-short); /* unset */
+        --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
+        --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); /* 0 */
+    }
+    #manuscript.long {
+        --m-page-break: var(--m-page-break-long);
+        --m-page-break-simulated: var(--m-page-break-simulated-long);
+        --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-long);
+
+    }
+} /* end @media screen */
+
+@media print {
+    #manuscript:not(.long) { /* the default, but let's be explicit */
+        /* short-form print behavior: if page break simulation was set for some
+         * reason, we unset it. */
+        --m-page-break-simulated: 0;
+        --m-page-break-simulated-padding: 0;
+        --m-page-break: var(--m-page-break-short);
+    }
+    #manuscript.long {
+        /* long-form print behavior: no longer simulated, there will be a page
+         * after the title page header */
+        --m-page-break-simulated: 0;
+        --m-page-break-simulated-padding: 0;
+        --m-page-break: var(--m-page-break-long);
+    }
+} /* end @media print */
+
+} /* end @layer lm-config-permutations */
