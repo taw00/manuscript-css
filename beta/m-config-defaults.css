@@ -354,6 +354,13 @@ X@Ximport url("/path/to/manuscript.css");
      * html element (eg: <html lang="en"> or set in the elements managing the
      * text you want to be hyphenated. Most markdown editors don't set this. */
     --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
+
+    /* the desktop and paper */
+    --m-desktop-color: var(--m-desktop-color-darkgray);
+    --m-desktop-color: var(--m-desktop-color-darkgray);
+    --m-desktop-color-plain: var(--m-desktop-color-darkdarkgray);
+    --m-desktop-color-veryplain: var(--m-desktop-color-darkdarkgray);
+    --m-paper-color: var(--m-paper-color-white);
 }
 
 } /* end @layer lm-config-defaults */

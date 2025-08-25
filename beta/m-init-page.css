@@ -14,7 +14,12 @@ html { font-size: var(--m-font-size); }
 @media screen {
     /* rendered view: "desktop" background that the manuscript page sits on */
     /*html, body { background-color: rgb(204 204 204); }*/ /* off-white */
-    html, body { background-color: darkgray; }
+    html { background-color: rgb(0 0 0 / 0%); }
+    body { background-color: var(--m-desktop-color); }
+    /* if we use class="plain" to simplify the virtual page */
+    body:has(#vpage.plain) { background-color: var(--m-desktop-color-plain); }
+    /* if we use class="veryplain" to super-simplify the virtual page */
+    body:has(#vpage.veryplain) { background-color: var(--m-desktop-color-veryplain); }
 } /* end @media screen */
 
 
@@ -77,12 +82,26 @@ html { font-size: var(--m-font-size); }
 /* a virtual page */
 #vpage {
     display: block;
-    position: relative; box-sizing: border-box; overflow: hidden;
+    position: relative;
+    box-sizing: border-box; overflow: hidden;
     top: 0; left: 0;
     width: 100%; max-width: var(--m-page-width);
-    margin: 20px auto;
-    background-color: white;
-    box-shadow: 0 0 20px black;
+    background-color: var(--m-paper-color);
+    &:not(:is(.plain,.veryplain)) {
+        margin: 20px auto;
+        box-shadow: 0 0 20px black;
+    }
+    &.plain {
+        margin: 20px auto;
+        /*box-shadow: 0 0 20px black;*/
+        /*border: 1px solid darkgray;*/
+    }
+    &.veryplain {
+        /*position: relative;*/ 
+        /*margin: 20px auto;*/
+        /*box-shadow: 0 0 20px black;*/
+        /*border: 1px solid darkgray;*/
+    }
 }
 #manuscript {
     display: block;

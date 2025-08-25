@@ -140,6 +140,13 @@
     --m-margin-facts-long:  var(--m-room-for-two) auto 0;
     --m-text-align-facts-long: center;
 
+    --m-desktop-color-darkgray: darkgray;
+    --m-desktop-color-dimgray: dimgray;
+    --m-desktop-color-trans: transparent;
+    --m-desktop-color-darkdarkgray: rgb(29 32 36 / 100%);
+    --m-paper-color-white: white;
+    --m-paper-color-notwite: gainsboro;
+
     /* FOR DEBUGGING:
      * Decorative border (screen rendering only) - DISABLED FOR NOW
      * A border wrapping the manuscript content. Set this to 0 in your

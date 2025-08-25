@@ -20,7 +20,9 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  *
  * The div #vpage class "switches":
- * - 'US', 'USh', 'A4', 'A5', or 'A6': US Letter is the default
+ * - 'plain', 'veryplain': (use only one) simplify the rendering by removing fancy the 3D
+ *   paper look (probably not commonly used)
+ * - 'US', 'USh', 'A4', 'A5', or 'A6': (use only one) US Letter is the default
  *   For USh, A4, A5, or A6, or whatever, you need to add the appropriate @page
  *   declaration after your imports in your markdown (or HTML) file's style
  *   block:
@@ -29,7 +31,6 @@
 @page { size: A6 portrait; margin: 12.7mm; }
 @page { size: 5.5in 8.5in; margin: .75in; }
 @page { size: letter portrait; margin: 1in; }
- *
  *
  * The article #manuscript class "switches":
  * - 'prose' or 'poetry': prose is the default

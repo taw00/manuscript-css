@@ -40,7 +40,7 @@
     /* rendered view: the "desk" darkgray and the content box trans */
     body#joplin-container-body {
         /* rendering a virtual paper look:
-         * the "desk" behind the paper is darkgray */
+         * the "desk" behind the paper is darkgray by default */
         background-color: darkgray;
         /* Remove the padding and bg that frames #rendered-md */
         & > #joplin-container-content {
@@ -70,7 +70,6 @@
             }
         }
     }
-
 } /* end @media screen */
 
 @media print { /* PDF */
@@ -127,6 +126,31 @@
         display: none !important;
     }
 } /* end @media print */
+
+
+
+@media screen { /* Joplin's explicit HTML export to disk vs. screen */
+    /* exported view (Joplin HTML EXPORT): remove Joplin-inserted title and
+     * excess padding */
+    html { background-color: rgb(0 0 0 / 0%); }
+    body:not(#joplin-container-body) {
+        background-color: darkgray;
+        /* Remove the padding & bg that frames #rendered-md */
+        & > #joplin-container-content {
+            background-color: transparent;
+            padding: 0;
+        }
+        & > div.exported-note {
+            margin: 0;
+            padding: 0;
+        }
+        & > div.exported-note div.exported-note-title {
+            display: none !important;
+        }
+    }
+} /* end @media screen v2 (HTML export to disk) */
+
+
 
 
 /* rendered note main box */
