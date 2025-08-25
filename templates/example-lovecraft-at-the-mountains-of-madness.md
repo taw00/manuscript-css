@@ -18,13 +18,14 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 <style>
     /*
-    @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
     */
     @import "../manuscript.css";
     /* this is very specific because, for example, the the Markdown
      * Viewer extension for Chrome will inject its own 
      * text-align: left */
     .centered-poem pre { text-align: center; }
+    :root { --m-pagination-header: "Lovecraft / Mountains of Madness / " counter(page); }
 </style>
 
 [//]: / "---------------------------------------------------------------------"

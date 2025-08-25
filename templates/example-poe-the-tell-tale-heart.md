@@ -14,7 +14,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 <style>
     /*
-    @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
     */
     @import "../manuscript.css";
 
@@ -22,6 +22,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
         --m-font-size-title: 1.25em;
         --m-dinkus: "—";
         --m-30-: "🙞 ❦ 🙜";
+        --m-pagination-header: "Poe / Telltale Heart / " counter(page);
     }
 </style>
 

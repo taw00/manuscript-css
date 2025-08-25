@@ -16,13 +16,13 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 <style>
     /*
-    @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
-    @import "https://toddwarner.io/pub/css/manuscript/manuscript-counters.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-serif-termes.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-serif-tinos.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-sans-arimo.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-mono-cursor.css";
-    @import "https://toddwarner.io/pub/css/manuscript/typefaces/typeface-mono-cousine.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript-counters.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/typefaces/typeface-serif-termes.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/typefaces/typeface-serif-tinos.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/typefaces/typeface-sans-arimo.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/typefaces/typeface-mono-cursor.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/typefaces/typeface-mono-cousine.css";
     ...or...
     @import "../manuscript.css";
     @import "../manuscript-counters.css";
@@ -50,6 +50,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
         --m-30-: var(--m-marker31) "2022 Firstname Lastname | All rights reserved.";
         */
         --m-append-to-scene-off: "";
+        --m-pagination-header: "Lastname / Long-form Prose (customized 01) / " counter(page);
     }
 </style>
 

@@ -10,7 +10,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 <style>
     /*
-    @import "https://toddwarner.io/pub/css/manuscript/manuscript.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
     */
     @import "../manuscript.css";
 
@@ -23,6 +23,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
         --m-font-weight-title: bold;
         --m-page-break-simulated-long: 0;
         */
+        --m-pagination-header: "Lastname / Long-form Prose / " counter(page);
     }
 </style>
 
