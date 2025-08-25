@@ -9,11 +9,11 @@
 Are you a writer? In particular, a writer of narrative works? Fiction,
 narrative nonfiction, memoir, etc? Do you draft using a markdown text editor?
 And do you wish to share your drafts in a professional manner without having to
-jump tool chains? Save the fancy office word processors like LibreOffice or
-Google Docs or Word for finalization when you are ready to submit your work
-somewhere. Now, you can stay in your favorite markdown editor and still have a
-means to present your working drafts in a professional manner for review,
-critique, or whatever.
+port your work to a word processor? Save the fancy office word processors like
+LibreOffice or Google Docs or Word for finalization when you are ready to
+submit your work somewhere. Now, you can stay in your favorite markdown editor
+and still have a means to present your working drafts in a professional manner
+for review, critique, or whatever.
 
 ## Manuscript formatting?
 
@@ -33,85 +33,49 @@ review. Here are some screenshots of the results . . .
 
 <div style="clear: both;"></div>
 
-# What is this? CSS to be used with Markdown. It provides . . .
+# What is supported
 
-1. A generalized process to write in markdown, formatted to generate
-   manuscript-like results for prose and poetry (and for prose, both narrative
-   and nonnarrative)
-3. … to render US Letter- or A4-dimensioned artifacts (PDFs)
-4. … that can be adjusted for short-form works (e.g. short-story or single-poem
-   manuscripts) or for long-form works (novel and book-sized / poetry chapbooks
-   and collections)
-6. … whether they be nonnarrative works (nonnarrative non-fiction, primarily)
+- Manuscript formatting similar to what many call Shunn Formatting:
+  https://www.shunn.net/format/ (the "modern" formats)
+- Prose manuscripts: short (scenes), long (chapters, scenes), narrative, nonnarrative
+- Poetry manuscripts: single or multiple poems, many poems (chapters, poems)
+- US Letter, A4, and … though you shouldn't, A5, A6, US Half-letter
+- If you are CSS savvy, easy-to-alter settings for nearly everything (fonts,
+  margins, spacing, even the dinkuses and the -30- indicator).
 
-# This process is not . . .
+# What is NOT supported
 
-## This process is not for book production
+1. This process is not for book production
 
-These stylesheets are designed to produce a professional, reviewable manuscript
-in an industry-standard format rendered from your markdown. Producing a
-document that will then be used for the text block of a book is a different
-animal entirely.
+A manuscript is not a formatted book. It's an industry standard format used to
+share your work with other humans for review and comment.
 
 If you are looking for something to format your work for self-publication,
 import your work into something like Vellum, Scribus, InDesign, Atticus,
 [Reedsy](https://reedsy.com/write-a-book). Then work through the process of
 adjusting it in preparation for publication.
 
-[Bookdown](https://www.bookdown.org/) is another toolset for those who are
-self-publishing. Bookdown, though very intriguing, also looks rather daunting
-and is geared for the academic community.
+2. This process is not capable of producing a 100%-compliant manuscript
 
-## This process is not capable of producing a 100%-compliant manuscript
+… and you need a 100%-compliant manuscript to submit to publishers and agents …
 
-This set of stylesheets designed to produce a professional, reviewable document
-in an industry-standard format rendered from your markdown. But not a
-publishing-house-ready document. For that, you will need to port your document
-to a wordprocessor. I use LibreOffice, sometimes Google Docs, and Zoho Writer.
+- Missing: per page headers—`Lastname / Short Title / Page number`—because CSS
+  is not capable of doing this. Someday CSS will support this. We all eagerly
+  away for [margin
+  at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
+  to be finally supported (currently a w3c working draft spec.)
+- Missing: the seamless ability to port to `.docx`. Some publishers and agents
+  will accept a `.pdf`, but most in the industry require `.docx`. There are
+  ways to automate generating `.docx` files, but it's not a piece of cake. Read more about
+  that in [README-structure-summary.md](README-structure-summary.md).
+- Missing: (Poetry) No 2nd page+ of poem continuation blocks.
+
 
 Also check out the myriad of authoring platforms out there: Scrivener, Novlr,
 LivingWriter, Dabble, Ulysses, Storyist (Apple-only, blech!), Final Draft (for
 screenwriters), Quoll Writer (Windows-only and not sure if Quoll Writer can
 produce a manuscript), others.
 
-**What's missing that would make it 100% compliant?**
-
-Only a few critical bits of formatting are missing that can't be easily fixed
-with markdown + CSS.
-
-- These stylesheets cannot add the per-page headers that a true manuscript
-  requires. I.e., the `Lastname / Short Title / Page number` headers that you
-  need on every page from page two onwards. Someday CSS will support this. We
-  all eagerly away for
-  [margin at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
-  to be finally supported (currently a w3c working draft spec.)
-- These stylesheets to not readily support nuanced customization. At least not
-  out-of-the-box. Some publishing houses have certain quirky requirements for
-  manuscripts during the submission process. If their requirements travel far
-  from the generic standard, the process represented here probably won't
-  support that.
-- We can't easily produce `.odt` or, the almost ubiquidous `.docx` file format
-  using these tools. And most publishing houses require one of those formats.
-  THere are possibilities out there, but it is mostly manual.Read more about
-  that in [README-structure-summary.md](README-structure-summary.md).
-- (Poetry) No 2nd page+ of poem continuation blocks.  
-  Again, maybe in a few years as CSS matures.
-- Page break avoidance is buggy.  
-  The CSS is configured to disallow page breaking in weird places, like between
-  a chapter title and the prose, but those rules are ignored. I don't know why.
-
-> A word about those pesky headers: There are tools out there to add headers to
-> a rendered `.pdf`. None of these options are of high quality, but it is
-> possible. There are many online tools that enable this. But one desktop-based
-> tool, at least for linux users, is [jPDF
-> Tweak](https://jpdftweak.sourceforge.net/).  It's an ancient (and I mean
-> _ancient_) and inflexible application, but it works.  You just have to be OK
-> with approximating the header placement and with the helvetica typeface as
-> your only choice. Look in the [templates](./templates/extra/) folder after I
-> added manuscript page headers and numbers and to the Lovecraft story. This
-> screenshot shows what I did to enable it.
-
-<a href="misc/README-screenshot-jPDF-Tweak.png"><img style="wXidth: 25%; fXloat: right; margin: 8px;" src="misc/README-screenshot-jPDF-Tweak.png"></a>
 
 # TL;DR Just show me how to do it!
 
@@ -137,20 +101,9 @@ converted to HTML with Pandoc.
 **Step 4** is done natively from Markdown with Joplin or the Chrome browser, or
 From from HTML via a Chrome browser.
 
-> **A note about the HTML rendering of a long-form manuscript using this
-> stylesheet.**
->
-> An HTML rendering is not a paged format. Therefore the HTML rendering of a
-> long-form manuscript will always be an approximation of a paper or PDF
-> document—a simulation, if you will. Which is fine for the purposes of
-> critique and review. By default, simulated page breaks are inserted (dotted
-> lines) in the HTML where they would occur when converted to a PDF. Also,
-> large positioning gaps are squashed just to make it easier to view. When the
-> document is rendered to PDF, the dotted lines will be removed and, of course,
-> the correct positioning will be rendered. That faint margin border also
-> disappears.
-
 **The process, with more detail . . .**
+
+
 
 ## Process summary - prepping this repository for use
 
@@ -169,8 +122,8 @@ Download this repository.
   5. Change that name to `manuscript-css` if you like.
   6. `cd manuscript-css'
 
-And if you own a webserver somewhere. Stick this repo in your /pub/ directory
-so you can import over the web.
+And if you own a webserver somewhere. Stick this repo in your `/pub/` directory
+so you can import it over the web.
 
 ## Process summary - Step 1 - copy the template
 
@@ -181,7 +134,7 @@ so you can import over the web.
 
 - Open that markdown document in your favorite editor.
 - Replace the templated content with yours
-- Write your story, scene by scene. (Or poetry collection, poem by poem.)
+- Write your story, scene by scene. (Or if a poetry collection, poem by poem.)
 
 ## Process summary - Steps 3 & 4 - processing that markdown
 
@@ -200,13 +153,12 @@ within the application.
 > application. There you have it. The HTML preview of the document. It's as
 > accurate a representation as your browser can produce.
 
-If you want the end result to be an HTML file on disk, then you will need to use
-Pandoc to do that. See below. Joplin does have markdown to HTML functionality,
-but you have to export every document in your Joplin application to HTML and
-then pick out the one in question. Joplin is seamless at previewing and then
-exporting to PDF. Not so much to HTML on disk. Personally, I use the
-[Joplin Cloud](https://joplincloud.com) publish functionality to skip straight
-to producing a publicly viewable manuscript.
+If you want the end result to be an HTML file on disk, the two best options
+that I know about are pan (see below) and the Joplin app (right-click your
+document, Export, HTML file). If I want to share an HTML version of my
+document, I personally like to use the [Joplin Cloud](https://joplincloud.com)
+publish functionality to skip straight to producing a publicly viewable
+manuscript.
 
 ### VSCode: edited markdown to exported HTML
 
