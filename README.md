@@ -55,26 +55,23 @@ import your work into something like Vellum, Scribus, InDesign, Atticus,
 [Reedsy](https://reedsy.com/write-a-book). Then work through the process of
 adjusting it in preparation for publication.
 
-2. This process is not capable of producing a 100%-compliant manuscript
+2. This process does not easily produce a `.docx` document which most publishers
+require
 
-… and you need a 100%-compliant manuscript to submit to publishers and agents …
+Some publishers and agents will accept a `.pdf`, but most in the industry
+require `.docx`. There are ways to automate generating `.docx` files, but it's
+not a piece of cake. Read more about that in
+[README-structure-summary.md](README-structure-summary.md).
 
-- Missing: per page headers—`Lastname / Short Title / Page number`—because CSS
-  is not capable of doing this. Someday CSS will support this. We all eagerly
-  away for [margin
-  at-rules](https://www.quackit.com/css/at-rules/css_top-right_at-rule.cfm)
-  to be finally supported (currently a w3c working draft spec.)
-- Missing: the seamless ability to port to `.docx`. Some publishers and agents
-  will accept a `.pdf`, but most in the industry require `.docx`. There are
-  ways to automate generating `.docx` files, but it's not a piece of cake. Read more about
-  that in [README-structure-summary.md](README-structure-summary.md).
-- Missing: (Poetry) No 2nd page+ of poem continuation blocks.
+3. Missing: (Poetry) No 2nd page+ of poem continuation blocks.
 
 
 Also check out the myriad of authoring platforms out there: Scrivener, Novlr,
 LivingWriter, Dabble, Ulysses, Storyist (Apple-only, blech!), Final Draft (for
 screenwriters), Quoll Writer (Windows-only and not sure if Quoll Writer can
-produce a manuscript), others.
+produce a manuscript), others. This project can do marvelous things with HTML:
+<https://pagedjs.org/>. And if you are data-scientist, check out
+<https://bookdown.org/>.
 
 
 # TL;DR Just show me how to do it!
