@@ -55,12 +55,12 @@
  * </style>
  */
 
-@import url("./m-reset.css");
-@import url("./m-config.css");
-@import url("./m-init.css");
-@import url("./m-core.css");
+@import url("./m-reset.css?rev=20250826");
+@import url("./m-config.css?rev=20250826");
+@import url("./m-init.css?rev=20250826");
+@import url("./m-core.css?rev=20250826");
 
-@import url("./pagination-styles/top-right.css");
+@import url("./pagination-styles/top-right.css?rev=20250826");
 
 
 /*
