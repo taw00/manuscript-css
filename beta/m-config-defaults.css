@@ -219,7 +219,7 @@ X@Ximport url("/path/to/manuscript.css");
     --m-font-size-poetry:            inherit;
     --m-font-weight-poetry:          inherit;
     --m-line-spacing-poetry:         var(--m-line-spacing-single);
-    --m-text-transform-title-poetry: uppercase;
+    --m-text-transform-title-poetry: none; /*uppercase used to be the standard;*/
 
     /* --------------------------------------------------------------------- */
 

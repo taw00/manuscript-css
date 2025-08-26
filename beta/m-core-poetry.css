@@ -32,7 +32,7 @@
  */
 
 #manuscript section.m-poem > .m-header > h1 {
-    text-transform: uppercase;
+    text-transform: var(--m-text-transform-title-poetry);
 }
 
 #manuscript :is(section.m-poem, div.x-poem) {
