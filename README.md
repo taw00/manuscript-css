@@ -4,7 +4,11 @@
 2. *Structure it in markdown*
 3. *Style the markdown with these Manuscript CSS stylesheets*
 4. *Impress your friends and family (or critique group) with a work that mimics
-   [industry standard manuscript formatting](https://www.shunn.net/format/story/)*
+   industry standard manuscript formatting for a [[short
+   story]](https://format.ms/story) or [[novel]](https://format.ms/story)*  
+   <small>(Caveat: the
+   [[poetry manuscript formatting]](https://format.ms/poetry) is not quite
+   there yet.)</small>
 
 Are you a writer? In particular, a writer of narrative works? Fiction,
 narrative nonfiction, memoir, etc? Do you draft using a markdown text editor?
@@ -64,6 +68,11 @@ not a piece of cake. Read more about that in
 [README-structure-summary.md](README-structure-summary.md).
 
 3. Missing: (Poetry) No 2nd page+ of poem continuation blocks.
+
+It's on my to-do list to fix the poetry manuscript stuff. Right now, this set
+of CSS can produce a document that present poetry. But right now, it cannot
+produce a document that matches the industry standard poetry manuscript
+formatting.
 
 
 Also check out the myriad of authoring platforms out there: Scrivener, Novlr,
