@@ -150,6 +150,7 @@ X@Ximport url("/path/to/manuscript.css");
     --m-offset-title-short:        var(--m-content-offset-5-12th);
     --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
     --m-offset-title-long:         var(--m-content-offset-5-12th);
+    --m-offset-title-long-poetry:  var(--m-content-offset-5-12th);
 
     --m-offset-part-short:           var(--m-room-for-two);
     --m-offset-part-render-short:    var(--m-room-for-two);
