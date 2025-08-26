@@ -48,13 +48,14 @@ firstname.lastname@example.com
 
 # Manuscript Formatting via CSS: The Short Story (w/chapters)
 
-## Achieving a (_mostly_) Compliant Manuscript for Markdown or HTML
+## A (_mostly_)Compliant Manuscript for Markdown or HTML (use long form if doing chapters)
 
 ### by Author Name
 
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
 > Some stories, parts, chapters, and even scenes will kick off with an epigraph.
 >
+> &nbsp;
 > <div class="x-poem">
 >
 > ```plaintext

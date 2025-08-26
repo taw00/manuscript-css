@@ -48,15 +48,16 @@ firstname.lastname@example.com
 </div>
 <div class="m-header">
 
-# Manuscript Formatting via CSS: The Short Story (typical)
+# Formatting via CSS: The Short Story (simplified format)
 
-## Achieving a (_mostly_) Compliant Manuscript for Markdown or HTML
+## Simplifying a manuscript, stripping out the header (typical for casual presentation)
 
 ### by Author Name
 
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
 > Some stories, parts, chapters, and even scenes will kick off with an epigraph.
 >
+> &nbsp;
 > <div class="x-poem">
 >
 > ```plaintext

@@ -48,13 +48,14 @@ firstname.lastname@example.com
 
 # Manuscript Formatting via CSS: A Long-Form Example (typical)
 
-## Chapter and Scenes and a (_mostly_) Compliant Manuscript
+## A Compliant Manuscript with Chapters and Scenes
 
 ### by Author Name
 
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
 > Some stories, parts, chapters, and even scenes will kick off with an epigraph.
 >
+> &nbsp;
 > <div class="x-poem">
 >
 > ```plaintext

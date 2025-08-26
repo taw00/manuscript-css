@@ -47,7 +47,7 @@ firstname.lastname@example.com
 
 # Manuscript Formatting via CSS: The Short Story (typical)
 
-## Achieving a (_mostly_) Compliant Manuscript for Markdown or HTML
+## A Compliant Manuscript for Markdown or HTML
 
 ### by Author Name
 
