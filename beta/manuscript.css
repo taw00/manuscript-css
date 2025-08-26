@@ -55,8 +55,6 @@
  * </style>
  */
 
-@layer lm-config-permutations lm-config-defaults, lm-config-constants;
-
 @import url("./m-style-reset.css");
 @import url("./m-config.css");
 @import url("./m-init.css");

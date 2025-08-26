@@ -13,6 +13,8 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
+@layer lm-config-constants, lm-config-defaults, lm-config-permutations;
+
 @import url("./m-config-constants.css");
 @import url("./m-config-defaults.css");
 @import url("./m-config-permutations.css");
