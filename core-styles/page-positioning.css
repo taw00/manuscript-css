@@ -17,14 +17,6 @@
     margin: var(--m-offset-title) auto 0;
 }
 
-/* Foothang management. I don't know where else to put this. */
-#manuscript :is(section,blockquote,div).foothang p {
-    padding-left: var(--m-indent-foothang);
-    /* hanging indent */
-    text-indent: calc(var(--m-indent-foothang) * -1);
-}
-
-
 @media screen {
     #manuscript > .m-header {
         /*padding-bottom: var(--m-room-for-two);*/

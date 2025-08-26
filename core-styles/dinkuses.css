@@ -66,7 +66,8 @@
     }
 }
 
-/* automated content for the -30- marker at the end */
+/* automated content for the -30- marker at the end
+ * NOTE: poetry manuscripts do not use dinkus or -30- markers */
 #manuscript:not(.poetry) > section:is(.m-part,.m-chapter,.m-scene):last-of-type::after {
     content: var(--m-30-);
     /* white-space … enables functional escaping in the escaping */
@@ -77,7 +78,7 @@
 }
 
 /* dinkus and -30- markers are formatted as such
- * Note. Poems don't have separators */
+ * NOTE: poetry manuscripts do not use dinkus or -30- markers */
 #manuscript > h6,                        /* manually inserted top-level -30- */
 #manuscript > section:last-of-type::after,             /* auto-inserted -30- */
 #manuscript section.m-scene::after,                  /* auto-inserted dinkus */

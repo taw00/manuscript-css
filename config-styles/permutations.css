@@ -16,7 +16,7 @@
 @layer lm-config-permutations {
 
 #vpage {
-    /* recalculate - not quite sure why this has to happen, but it does */
+    /* recalculate - not quite sure why this has to happen, but it does * /
     --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 
@@ -25,9 +25,9 @@
 
     --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
     --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
-    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
-    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
-    --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
+    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); / * or 3.66666in US * /
+    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); / * or 4.58333in US * /
+    --m-page-offset-half: calc(var(--m-page-height) / 2); / * or 5.5in US * /
 
     --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
     --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
@@ -42,7 +42,7 @@
     --m-indent-nonnarrative-first-paragraph: 0;
     --m-indent-foothang: var(--m-indentUS);
     --m-indent: var(--m-indent-narrative);
-    --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
+    --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph); */
     &.US, &.letter {
         /* US letter is already set as the default, but let's be explicit */
         --m-page-width:  var(--m-page-widthUS);
@@ -234,13 +234,11 @@
     --m-font-family-title: var(--m-font-family-poetry);
     --m-font-family-title-poem:  var(--m-font-family-poetry);
     --m-font-family-byline-poem: var(--m-font-family-poetry);
-    --m-30-: ""; /* poetry, oddly, doesn't use a -30- */
+    --m-offset-title: var(--m-offset-title-short-poetry);
     --m-offset-chapter: var(--m-offset-chapter-short-poetry);
-    --m-offset-chapter-render: var(--m-offset-chapter-short-poetry);
     &.long {
-        --m-offset-chapter: var(--m-offset-chapter-long-poetry);
-        --m-offset-chapter-render: var(--m-offset-chapter-long-poetry);
         --m-offset-title: var(--m-offset-title-long-poetry);
+        --m-offset-chapter: var(--m-offset-chapter-long-poetry);
     }
 }
 
@@ -263,6 +261,8 @@ div#vpage article#manuscript.text-only {
 
 #manuscript:is(.text-only,.simple) {
     --m-offset-title: 0;
+}
+#manuscript:is(.text-only) {
     --m-page-break: unset !important;
     --m-page-break-simulated: 0px !important;
     --m-offset-part: var(--m-elbow-room) !important;

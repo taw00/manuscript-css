@@ -156,5 +156,13 @@
     margin-block-start: 0 !important;
 }
 
+/* Foothang management
+ * Note, this has to follow all of the previous blocks of css */
+#manuscript :is(section,blockquote,div).foothang p {
+    padding-left: var(--m-indent-foothang);
+    /* hanging indent */
+    text-indent: calc(var(--m-indent-foothang) * -1);
+}
+
 
 

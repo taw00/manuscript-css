@@ -1,325 +1,71 @@
-/* Manuscript via CSS v2.0
+/* CSS for Manuscript Formating v3.0
  *
- * Manuscript formatting for authors who draft in markdown.
+ * Use this CSS to format your markdown-drafted short story or novel into an
+ * approximates of industry standard manuscript formatting.
+ * This is useful for:
+ * - sharing with others in a format they are familiar with
+ * - submitting to critique groups in a professional way
+ * - post the manuscript-formated doc on the web for review
+ * … all without having to port your draft to a word processing document
  *
- * This stylesheet imports its companion -core.css logic stylesheet. The core
- * styles enable US letter-dimensioned short-prose narratives. This stylesheet
- * layers on functionality to enable A4-dimensioned documents, plus long-form
- * and both narrative and nonnarrative formatting.
- *
- * Why does this exist?
- *
- * Because many of us writers draft in markdown and want a means to present our
- * work professionally, even if still a preliminary work. Additionally, it
- * offers a means to webify a finished manuscript.
+ * Supported: Manuscripts formated as …
+ * - short and long form documents
+ * - narrative and nonnarrative prose
+ * - prose and poetry
+ * - chapters and scenes/poems
+ * - US Letter, A4, etc. or print and digital presentation.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  *
  * The div #vpage class "switches":
- * - 'US', 'A4', 'A5', or 'A6': US Letter is the default
- * The article #manuscript class "switches":
- * - 'prose' or 'poetry': prose is the default and therefore it is usually not
- *   explicitly used or defined here. By default, it is already employed.
- * - 'short' or 'long': a manuscript formatted for short prose is the default.
- * - 'narrative' or 'nonnarrative': prose-only - formatted for narrative
- *   prose is the default.
- * - 'simple' or 'text-only': Use this if you want a view of the document that
- *   excludes all of the metadata on the first page and the document "facts"
- *   throughout. It will also remove any page breaks, decorations, and it will
- *   simplify some of the spacing.
- *
- * To enable a change to the default page dimensions, you need to do two things:
- * 1. add the relevant "switch" to the class attribute of the <div id="vpage">
- *    element in the markdown document. Example: <div id="vpage" class="US">
- * 2. add the appropriate @page rule after the CSS import in the style block of
- *    your markdown document. Look below these comments for the @page
- *    possibilities. An example: @page { size: letter portrait; margin: 1in; }
- *
- * What these mean:
- *
- * - US, A4, A5, or A6: changes the dimensions of printed/paged output.
- *   (Note, this is the only switch set via the <div id="vpage"> element.
- *    For example: <div id="vpage" class="US">)
- *
- * To enable other document "switches", just the relevant switch to the class
- * attribute of the <article id="manuscript"> element in your markdown
- * document.
- *
- * All the switches both for #vpage and #manuscript:
- *
- * - US, A4, A5, or A6: changes the dimensions of printed/paged output.
- *   (Note, this is the only switch set via the <div id="vpage"> element.
- *    For example: <div id="vpage" class="US">)
- *
- * - prose:
- *     - text is left (for LtR languages) justified, ragged-edged, and white
- *       space is squashed.
- *     - narrative: first-line indented, no spaces between paragraphs
- *     - nonnarrative: first line flush, spaces between paragraphs
- *
- * - poetry:
- *     - left justified (for LtR languages).
- *     - each m-poem class + multiple ```plaintext stanzas are one poem.
- *     - ```plaintext blocks are considered "stanzas" of poetry and are
- *       - single- or 1.5-spaced (single-plus?) within each stanza
- *       - and spaced between each stanza
- *       - no white-space control otherwise
- *     - top-margins are reduced in certain scenarios
- *     - structure
- *       - title page (same as prose)
- *       - table of content page: .m-chapter.toc -> .m-scene
- *       - the poems: empty .m-chapter -> .m-poem .m-poem .m-poem ...
- *       - acknowledgements page: .m-chapter -> .m-scene
- *
- * - short:
- *     - prose or poetry:
- *       - contact info in the upper-left-hand corner
- *       - facts are posted in the upper-right-hand corner
- *     - prose structure:
- *       - main title block is 1/3 to 1/2 way down the page
- *       - text starts immediately following the main title block.
- *       - parts and chapters do not page break.
- *         Note, most short stories do not have chapters and I can't think of
- *         a reason to have parts.
- *     - poetry structure:
- *       - one poem per document
- *       - no main title block
- *       - no parts, no chapters
- *       - one scene with its own title block
- *       - the scene is a scene of ```plaintext stanzas
- *
- * - long:
- *     - prose or poetry:
- *       - contact info in the upper-left-hand corner
- *       - facts are posted below the title in the title block
- *     - prose or poetry: main title block is 1/3 to 1/2 way down the page
- *     - prose or poetry: part title block is 1/3 to 1/2 way down its own page
- *     - prose: chapter title block is 1/3 to 1/2 way down a new page
- *     - poetry: chapter title block is at the top of a new page
- *     - prose or poetry: double spaced for any prose elements
- *     - poetry: single or 1.5 (single-plus) spaced within each stanza and a
- *       space between each stanza. No white-space control otherwise.
- *
- * - narrative: see prose description above
- * - nonnarrative: see prose description above
- *
- * - simple (or) text-only: a simplified view of the document (see above)
- */
-
-@import url("./_manuscript-core.css?rev=20250811.01");
-
-@page {
-    /* The default (US letter) is already set. This serves as documentation.
-     * For A4, A5, or A6, or whatever, you need to add this @page declaration
-     * after your imports in your markdown (or HTML) file's <style></style>
-     * block.
+ * - the defaults are 'US', and not 'plain', and not 'veryplain'
+ * - 'plain', 'veryplain': (use only one) simplify the rendering by removing
+ *    fancy the 3D paper look (probably not commonly used)
+ * - 'US', 'USh', 'A4', 'A5', or 'A6': (use only one) US Letter is the default
+ *   For USh, A4, A5, or A6, or whatever, you need to add the appropriate @page
+ *   declaration after your imports in your markdown (or HTML) file's style
+ *   block:
 @page { size: A4 portrait; margin: 25.4mm; }
 @page { size: A5 portrait; margin: 25.4mm; }
 @page { size: A6 portrait; margin: 12.7mm; }
 @page { size: 5.5in 8.5in; margin: .75in; }
 @page { size: letter portrait; margin: 1in; }
-     */
-}
+ *
+ * The article #manuscript class "switches":
+ * - the defaults are short narrative prose, to change them …
+ * - 'poetry': if your work is … poetry
+ * - ''long': if your work is long form
+ * - 'nonnarrative': for prose, if your work is not a narrative work
+ * - 'simple' or 'text-only': used to present a simplified version (no
+ *   first-page metadata and simulated page breaks and such)
+ *
+ * Pagination headers is enabled with twitchy CSS stuff.
+ * The default is set in the upper right-hand of the document.
+ * If you want pagination headers different than the default, add to your
+ * document styles, and use one of the m-pagination-___-___.css files that is
+ * matches your desired outcome. Example, for bottom-right, I would do this:
+ * <style
+ *   @import url("url-or-path/to/the/manuscript.css");
+ *   @import url("url-or-path/to/the/m-pagination-bottom-right.css");
+ *   :root {
+ *     --m-pagination-header: "MyLastname / My Short Title" counter(page);
+ *   }
+ * </style>
+ */
 
-#vpage.US, #vpage.letter {
-    /* US letter is already set as the default */
-}
+@import url("./m-reset.css");
+@import url("./m-config.css");
+@import url("./m-init.css");
+@import url("./m-core.css");
 
-#vpage.USh, #vpage.hletter {
-    --m-page-width:  var(--m-page-widthUSh);
-    --m-page-height: var(--m-page-heightUSh);
-    --m-page-margin: var(--m-page-marginUSh);
-    --m-indent-narrative: var(--m-indentUSh);
-    --m-indent-foothang: var(--m-indentUSh);
-}
+@import url("./pagination-styles/top-right.css");
 
-#vpage.A4 {
-    --m-page-width:  var(--m-page-widthA4);
-    --m-page-height: var(--m-page-heightA4);
-    --m-page-margin: var(--m-page-marginA4);
-    --m-indent-narrative: var(--m-indentA4);
-    --m-indent-foothang: var(--m-indentA4);
-}
-#vpage.A5 {
-    --m-page-width:  var(--m-page-widthA5);
-    --m-page-height: var(--m-page-heightA5);
-    --m-page-margin: var(--m-page-marginA5);
-    --m-indent-narrative: var(--m-indentA5);
-    --m-indent-foothang: var(--m-indentA5);
-}
-#vpage.A6 {
-    --m-page-width:  var(--m-page-widthA6);
-    --m-page-height: var(--m-page-heightA6);
-    --m-page-margin: var(--m-page-marginA6);
-    --m-indent-narrative: var(--m-indentA6);
-    --m-indent-foothang: var(--m-indentA6);
-}
-#vpage {
-    /*recalculate - not quite sure why this has to happen, but it does */
-    --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
-    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 
-    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
-    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
-
-    --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
-    --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
-    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
-    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
-    --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
-
-    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
-    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
-    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
-    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
-    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
-
-    --m-offset-title-short:        var(--m-content-offset-5-12th);
-    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
-    --m-offset-title-long:         var(--m-content-offset-5-12th);
-}
-
-@media screen {
-/* adjusting what was defined previously */
-#vpage {
-    max-width: var(--m-page-width);
-}
-#manuscript {
-    max-width: var(--m-content-width);
-    margin: var(--m-page-margin) auto;
-}
-}
-
-#manuscript.narrative {
-    /* the default is already set for .narrative */
-}
-
-#manuscript.nonnarrative:not(.poetry),
-#manuscript.non-narrative:not(.poetry) {
-    /* nonnarrative paragraphs are space-seperated and not indented */
-    --m-indent: var(--m-indent-nonnarrative);
-    --m-paragraph-spacing: var(--m-paragraph-spacing-nonnarrative);
-    /* need to reset font-family for most everything */
-    --m-font-family: var(--m-font-family-nonnarrative);
-    --m-font-family-preformatted: var(--m-font-family-nonnarrative-preformatted);
-    --m-font-family-code: var(--m-font-family-nonnarrative-code);
-    /* reset font settings - the main title-block header */
-    --m-font-family-header: var(--m-font-family);
-    --m-font-family-headers: var(--m-font-family);
-    /* reset font settings - contact info (and facts if put in the right corner */
-    --m-font-family-contact:  var(--m-font-family);
-    /* reset font settings - the main titles, subtitles, and authors */
-    --m-font-family-title: var(--m-font-family);
-    --m-font-family-byline: var(--m-font-family);
-    /* reset font settings - part titles, subtitles, and authors */
-    --m-font-family-title-part: var(--m-font-family-title);
-    --m-font-family-byline-part: var(--m-font-family-byline);
-    /* reset font settings - chapter titles, subtitles, and authors */
-    --m-font-family-title-chapter:  var(--m-font-family);
-    --m-font-family-byline-chapter: var(--m-font-family);
-    /* reset font settings - scene titles, subtitles, and authors */
-    --m-font-family-title-scene:  var(--m-font-family);
-    --m-font-family-byline-scene: var(--m-font-family);
-    /* reset font settings - the epigraphs */
-    --m-font-family-epigraph: var(--m-font-family);
-    /* reset font settings - the section separators (dinkus and -30-) */
-    --m-font-family-dinkus-30-: var(--m-font-family);
-    /* reset font settings short/long - .m-facts */
-    --m-font-family-facts-short:  var(--m-font-family-contact);
-    --m-font-family-facts-long:  inherit;
-    /* reset .m-facts font settings */
-    --m-font-family-facts:  var(--m-font-family-facts-short);
-}
-
-#manuscript.short {
-    /* the default is already set for .short */
-}
-#manuscript.poetry,
-#manuscript.short.poetry {
-    --m-offset-title: var(--m-offset-title-short-poetry);
-}
-#manuscript.short.poetry {
-    --m-offset-chapter: var(--m-offset-chapter-short-poetry);
-    --m-offset-chapter-render: var(--m-offset-chapter-short-poetry);
-}
-#manuscript.long.poetry {
-    --m-offset-chapter: var(--m-offset-chapter-long-poetry);
-    --m-offset-chapter-render: var(--m-offset-chapter-long-poetry);
-}
-#manuscript.poetry {
-    --m-font-family:  var(--m-font-family-poetry);
-    --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
-    --m-font-family-code: var(--m-font-family-narrative-code);
-    --m-font-family-title-poem:  var(--m-font-family-poetry);
-    --m-font-family-byline-poem: var(--m-font-family-poetry);
-    /* why no "The End" at the end of a poetry manuscript? I don't know, but
-     * that's the way it is. */
-    --m-30-: "";
-}
-
-#manuscript.long {
-    --m-offset-title: var(--m-offset-title-long);
-    --m-offset-part: var(--m-offset-part-long);
-    --m-offset-part-render: var(--m-offset-part-render-long);
-    --m-offset-chapter: var(--m-offset-chapter-long);
-    --m-offset-chapter-render: var(--m-offset-chapter-render-long);
-    --m-offset-scene: var(--m-offset-scene-long);
-
-    --m-page-break-simulated: var(--m-page-break-simulated-long);
-
-    --m-position-facts:     var(--m-position-facts-long);
-    --m-top-facts:          var(--m-top-facts-long);
-    --m-bottom-facts:       var(--m-bottom-facts-long);
-    --m-left-facts:         var(--m-left-facts-long);
-    --m-right-facts:        var(--m-right-facts-long);
-    --m-margin-facts:       var(--m-margin-facts-long);
-    --m-text-align-facts:   var(--m-text-align-facts-long);
-    --m-line-spacing-facts: var(--m-line-spacing-facts-long);
-}
-@media print {
-#manuscript.long {
-    /* long-form print behavior:
-     * major component page break & position 1/3rd to 5/12th down the page */
-    --m-page-break-simulated: 0px;
-    --m-page-break: var(--m-page-break-long);
-}
-} /* /print */
-
-/* ********************************************************************* *
- * .simple or .text-only stylings
- * ********************************************************************* */
-
-#manuscript.text-only #m-contact,
-#manuscript.simple #m-contact { display: none !important; }
-
-#manuscript.text-only .m-facts,
-#manuscript.simple .m-facts { display: none !important; }
-
-/*#manuscript.text-only > .m-header,
-#manuscript.simple > .m-header { display: none !important; }*/
-
-#manuscript.text-only,
-#manuscript.simple {
-    --m-offset-title: 0;
-    --m-page-break: unset !important;
-    --m-page-break-simulated: 0px !important;
-    --m-offset-part: var(--m-elbow-room) !important;
-    --m-offset-chapter: var(--m-elbow-room) !important;
-    --m-offset-part-render: var(--m-elbow-room) !important;
-    --m-offset-chapter-render: var(--m-elbow-room) !important;
-    --m-manuscript-border: 0px !important;
-}
-
-/* ********************************************************************* *
- * special-case stylings
- * ********************************************************************* */
-.foothang p {
-    padding-left: var(--m-indent-foothang) !important;
-    /* hanging indent */
-    text-indent: calc(var(--m-indent-foothang) * -1) !important;
-}
+/*
+ * useful classes
+ */
 .center-max-content,
 .table-of-contents,
 .toc {
@@ -332,4 +78,4 @@
 .force-break-after {
     break-after: page !important;
 }
-/* ********************************************************************* */
+
