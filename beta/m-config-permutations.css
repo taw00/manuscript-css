@@ -76,7 +76,7 @@
         --m-pagination-margin: calc(var(--m-page-margin) * .75);
         --m-indent-narrative: var(--m-indentA5);
         --m-indent-foothang:  var(--m-indentA5);
-   }
+    }
     &.A6 {
         --m-page-width:  var(--m-page-widthA6);
         --m-page-height: var(--m-page-heightA6);
@@ -99,7 +99,7 @@
 }
 
 #manuscript { /* very pedantic */
-    &:not(:is(.nonnarrative,.non-narrative) { /* i.e., narrative */
+    &:not(:is(.nonnarrative,.non-narrative)) { /* i.e., narrative */
         /* the default is already set for .narrative, but we are being explicit */
         /* narrative paragraphs first not indented, then indented */
         --m-indent: var(--m-indent-narrative);
@@ -182,10 +182,7 @@
         --m-font-weight-facts-long:  inherit;
         --m-line-spacing-facts-long: var(--m-line-spacing-single);
     }
-}
 
-
-#manuscript { /* prose or poetry */
     &:not(.long) { /* short, the default, but let's be explicit */
         --m-offset-title: var(--m-offset-title-short);
         --m-offset-part: var(--m-offset-part-short);

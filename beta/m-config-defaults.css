@@ -85,7 +85,7 @@ X@Ximport url("/path/to/manuscript.css");
 
     /* left and right margins - pre and blockquote */
     --m-margins-preformatted: 0;
-    --m-margins-blockquote: calc(var(--m-page-margin) * .75); /* reset later in file */
+    /*--m-margins-blockquote: calc(var(--m-page-margin) * .75);*/ /* set later in file */
 
     /* Offset calculations used to offset title-header blocks from top of the
      * page. Manuscripts standards recommend placing the main title-block
@@ -121,7 +121,6 @@ X@Ximport url("/path/to/manuscript.css");
     /* -------------------- */
 
     /* the desktop and paper */
-    --m-desktop-color: var(--m-desktop-color-darkgray);
     --m-desktop-color: var(--m-desktop-color-darkgray);
     --m-desktop-color-plain: var(--m-desktop-color-darkdarkgray);
     --m-desktop-color-veryplain: var(--m-desktop-color-darkdarkgray);
