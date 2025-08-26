@@ -7,8 +7,8 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./m-core-page-positioning.css");
-@import url("./m-core-poetry.css");
-@import url("./m-core-prose.css");
-@import url("./m-core-dinkuses.css");
+@import url("./core-styles/page-positioning.css");
+@import url("./core-styles/poetry.css");
+@import url("./core-styles/prose.css");
+@import url("./core-styles/dinkuses.css");
 

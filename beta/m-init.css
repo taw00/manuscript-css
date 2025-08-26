@@ -7,6 +7,6 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./m-init-page.css");
-@import url("./m-init-headers-contacts-facts.css");
+@import url("./init-styles/page.css");
+@import url("./init-styles/headers-contacts-facts.css");
 

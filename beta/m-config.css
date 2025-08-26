@@ -15,7 +15,7 @@
 
 @layer lm-config-constants, lm-config-defaults, lm-config-permutations;
 
-@import url("./m-config-constants.css");
-@import url("./m-config-defaults.css");
-@import url("./m-config-permutations.css");
+@import url("./config-styles/constants.css");
+@import url("./config-styles/defaults.css");
+@import url("./config-styles/permutations.css");
 
