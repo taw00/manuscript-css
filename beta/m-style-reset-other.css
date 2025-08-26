@@ -28,7 +28,7 @@ table, thead, tbody, tfoot, th, tr, td, colgroup, col {
     line-height: unset;
     text-align: unset;
     color: unset;
-    background-color: unset;
+    /*background-color: unset;*/
     background: unset;
     margin: unset; padding: unset;
     border: unset;
@@ -67,8 +67,7 @@ a,
  */
 p, dl, multicol {
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block: 1em;
 }
 
 dd {
@@ -78,10 +77,8 @@ dd {
 
 blockquote, figure {
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 40px;
-  margin-inline-end: 40px;
+  margin-block: 1em;
+  margin-inline: 40px;
 }
 
 /* my addition for reference purposes
@@ -99,8 +96,7 @@ h1 {
   display: block;
   font-size: 2em;
   font-weight: bold;
-  margin-block-start: .67em;
-  margin-block-end: .67em;
+  margin-block: .67em;
 }
 
 h2
@@ -111,8 +107,7 @@ h1*/
   display: block;
   font-size: 1.5em;
   font-weight: bold;
-  margin-block-start: .83em;
-  margin-block-end: .83em;
+  margin-block: .83em;
 }
 
 h3
@@ -124,8 +119,7 @@ h1*/
   display: block;
   font-size: 1.17em;
   font-weight: bold;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block: 1em;
 }
 
 h4
@@ -138,8 +132,7 @@ h1*/
   display: block;
   font-size: 1.00em;
   font-weight: bold;
-  margin-block-start: 1.33em;
-  margin-block-end: 1.33em;
+  margin-block: 1.33em;
 }
 
 h5
@@ -153,8 +146,7 @@ h1*/
   display: block;
   font-size: 0.83em;
   font-weight: bold;
-  margin-block-start: 1.67em;
-  margin-block-end: 1.67em;
+  margin-block: 1.67em;
 }
 
 h6
@@ -169,8 +161,7 @@ h1*/
   display: block;
   font-size: 0.67em;
   font-weight: bold;
-  margin-block-start: 2.33em;
-  margin-block-end: 2.33em;
+  margin-block: 2.33em;
 }
 
 listing {
@@ -179,8 +170,7 @@ listing {
   font-family: monospace;                                         /* my edit */
   font-size: medium;
   white-space: pre;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block: 1em;
 }
 
 xmp, pre, plaintext {
@@ -188,8 +178,7 @@ xmp, pre, plaintext {
   /*font-family: -moz-fixed;*/
   font-family: monospace;                                         /* my edit */
   white-space: pre;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block: 1em;
 }
 
 
@@ -324,8 +313,7 @@ caption {
 }
 
 table[align="center"] > caption {
-  margin-inline-start: auto;
-  margin-inline-end: auto;
+  margin-inline: auto;
 }
 
 table[align="center"] > caption[align="left"]:dir(ltr) {
@@ -474,8 +462,7 @@ abbr[title], acronym[title] {
 ul, menu, dir {
   display: block;
   list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block: 1em;
   padding-inline-start: 40px;
 }
 
@@ -486,8 +473,7 @@ ul, ol, menu {
 ol {
   display: block;
   list-style-type: decimal;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  margin-block: 1em;
   padding-inline-start: 40px;
 }
 
@@ -503,8 +489,7 @@ li {
 :is(ul, ol, dir, menu, dl) dir,
 :is(ul, ol, dir, menu, dl) menu,
 :is(ul, ol, dir, menu, dl) dl {
-  margin-block-start: 0;
-  margin-block-end: 0;
+  margin-block: 0;
 }
 
 /* 2 deep unordered lists use a circle */
@@ -528,10 +513,8 @@ hr {
   color: gray;
   border-width: 1px;
   border-style: inset;
-  margin-block-start: 0.5em;
-  margin-block-end: 0.5em;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
+  margin-block: 0.5em;
+  margin-inline: auto;
   overflow: hidden;
 }
 
