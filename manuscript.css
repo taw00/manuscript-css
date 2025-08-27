@@ -59,12 +59,12 @@
 
 @layer lm-var-constants, lm-var-defaults, lm-var-permutations, lm-reset-joplin-constants;
 
-@import url("./m-reset.css?rev=2025082701");
-@import   url("./m-var.css?rev=2025082701");
-@import  url("./m-init.css?rev=2025082701");
-@import  url("./m-core.css?rev=2025082701");
+@import   url("./m-var.css?rev=2025082702");
+@import url("./m-reset.css?rev=2025082702");
+@import  url("./m-init.css?rev=2025082702");
+@import  url("./m-core.css?rev=2025082702");
 
-@import url("./m-pagination/top-right.css?rev=2025082701");
+@import url("./m-pagination/top-right.css?rev=2025082702");
 
 @page { size: letter portrait; margin: 1in; }
 
