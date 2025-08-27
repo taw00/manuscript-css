@@ -36,11 +36,15 @@
  * - remove extra padding in exported/printed notes
  */
 
+
 @layer lm-reset-joplin-constants {
-:root {
-    --m-reset-joplin-body-background-color: var(--m-desktop-color);
-}
+
+    :root {
+        --m-reset-joplin-body-background-color: var(--m-desktop-color);
+    }
+
 } /* end @layer lm-reset-joplin-constants */
+
 
 @media screen {
     /* a darkgray "desk" and a "trans" content box framing the #rendered-md */
