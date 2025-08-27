@@ -1,4 +1,4 @@
-#manuscript {
+#manuscript:not(.text-only) {
     /* scene dinkus! automated content for the dinkuses between scenes */
     & > section.m-scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
         content: var(--m-dinkus);
@@ -68,7 +68,7 @@
 
 /* automated content for the -30- marker at the end
  * NOTE: poetry manuscripts do not use dinkus or -30- markers */
-#manuscript:not(.poetry) > section:is(.m-part,.m-chapter,.m-scene):last-of-type::after {
+#manuscript:not(.poetry,.text-only) > section:is(.m-part,.m-chapter,.m-scene):last-of-type::after {
     content: var(--m-30-);
     /* white-space … enables functional escaping in the escaping */
     white-space: pre-wrap;

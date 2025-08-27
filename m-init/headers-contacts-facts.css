@@ -50,8 +50,24 @@
     }
 
 
-    & > .m-header,
-    & :not(.m-poem) > .m-header {
+    /* Inside of an .m-header:
+     * - H1 means title, H2 means subtitle, H3 means byline author
+     * - > (i.e. blockquote) means epigraph
+     * - And finally, if you want you can wrap word count, audience, and genre
+     *   in an .m-facts div.
+     *
+     * Outside of an .m-scene or .m-poem
+     * - H6 represents a dinkus or a -30- marker
+     * - but we don't uses dinkuses between .m-poem sections.
+     *
+     * #manuscript.m-poetry ...
+     * - -30- marker is "" by default
+     *
+     * Inside of a .m-scene where all the prose goes, H1 through H6 means ...
+     * header 1 through header 6 as you would expect. And the > (blockquote) also
+     * works as you would expect there. */
+
+    & .m-header {
         margin-left: auto; margin-right: auto; /*padding: 0;*/
         /* this should be, for a 8.5in page, about 77% 
          * not sure why this calculation does not work correctly
@@ -59,160 +75,136 @@
          */
         width: 77%;
         max-width: var(--m-max-width-header);
-    }
-}
 
+        & > blockquote {             /* the epigraphs, layout */
+            /* I would have preferred, width: min(max-content, 100%);, but it does
+             * not work for some reason. Instead we use a min on the max-width */
+            width: max-content;
+            max-width: min(var(--m-max-width-epigraph),100%);
+            margin: var(--m-elbow-room) auto;
+            line-height: var(--m-line-spacing);
 
-/* Inside of an .m-header:
- * - H1 means title, H2 means subtitle, H3 means byline author
- * - > (i.e. blockquote) means epigraph
- * - And finally, if you want you can wrap word count, audience, and genre
- *   in an .m-facts div.
- *
- * Outside of an .m-scene or .m-poem
- * - H6 represents a dinkus or a -30- marker
- * - but we don't uses dinkuses between .m-poem sections.
- *
- * #manuscript.m-poetry ...
- * - -30- marker is "" by default
- *
- * Inside of a .m-scene where all the prose goes, H1 through H6 means ...
- * header 1 through header 6 as you would expect. And the > (blockquote) also
- * works as you would expect there. */
+            :not(pre,code) {         /* the epigraphs, fonts */
+                /*text-align: justify; hyphens: auto;*/
+                font-size:   var(--m-font-size-epigraph);
+                font-weight: var(--m-font-weight-epigraph);
+                font-family: var(--m-font-family-epigraph);
+                font-style:  var(--m-font-style-epigraph);
+            }
+        }
+        & > :is(pre,.x-poem) {          /* .m-headers pre or .x-poem */
+            font-size: inherit;
+            font-weight: inherit;
+        }
 
-#manuscript > .m-header {
-    & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
-    & > p,
-    :not(blockquote,.m-facts) p {      /* except blockquotes or .m-facts */
-        display: block;
-        margin: 0; padding: 0; border: 0;
-        text-align: center !important;
-    }
-    
-    & > h1 {                          /* title of the work */
-        font-size:   var(--m-font-size-title);
-        font-weight: var(--m-font-weight-title);
-        font-family: var(--m-font-family-title);
-    }
-    & > h2 {                       /* subtitle of the work */
-        font-size:   var(--m-font-size-subtitle);
-        font-weight: var(--m-font-weight-subtitle);
-        font-family: var(--m-font-family-subtitle);
-    }
-    & > h3 {                         /* author of the work */
-        font-size:   var(--m-font-size-byline);
-        font-weight: var(--m-font-weight-byline);
-        font-family: var(--m-font-family-byline);
-    }
-}
-
-#manuscript :not(section.m-poem) > .m-header {
-    & > :is(h1, h2, h3, h4, h5, h6),
-    & > p,
-    :not(blockquote,.m-facts) p {
-        display: block;
-        margin: 0; padding: 0; border: 0;
-        text-align: center !important;
-    }
-}
-
-#manuscript section.m-part > .m-header {
-    & > h1 {              /* title: part */
-        font-size:   var(--m-font-size-title-part);
-        font-weight: var(--m-font-weight-title-part);
-        font-family: var(--m-font-family-title-part);
-    }
-    & > h2 {              /* subtitle: part */
-        font-size:   var(--m-font-size-subtitle-part);
-        font-weight: var(--m-font-weight-subtitle-part);
-        font-family: var(--m-font-family-subtitle-part);
-    }
-    & > h3 {              /* subtitle: part */
-        font-size:   var(--m-font-size-byline-part);
-        font-weight: var(--m-font-weight-byline-part);
-        font-family: var(--m-font-family-byline-part);
-    }
-}
-
-#manuscript section.m-chapter > .m-header {
-    & > h1 {        /* title: chapter */
-        font-size:   var(--m-font-size-title-chapter);
-        font-weight: var(--m-font-weight-title-chapter);
-        font-family: var(--m-font-family-title-chapter);
-    }
-    & > h2 {        /* subtitle: chapter */
-        font-size:   var(--m-font-size-subtitle-chapter);
-        font-weight: var(--m-font-weight-subtitle-chapter);
-        font-family: var(--m-font-family-subtitle-chapter);
-    }
-    & > h3 {        /* author: chapter */
-        font-size:   var(--m-font-size-byline-chapter);
-        font-weight: var(--m-font-weight-byline-chapter);
-        font-family: var(--m-font-family-byline-chapter);
-    }
-}
-
-#manuscript section:is(.m-scene,.m-poem) > .m-header {
-    & > h1 {         /* title: scene or poem*/
-        font-size:   var(--m-font-size-title-poem);
-        font-weight: var(--m-font-weight-title-poem);
-        font-family: var(--m-font-family-title-poem);
-    }                
-    & > h2 {         /* subtitle: scene or poem */
-        font-size:   var(--m-font-size-subtitle-poem);
-        font-weight: var(--m-font-weight-subtitle-poem);
-        font-family: var(--m-font-family-subtitle-poem);
-    }
-    & > h3 {         /* author byline: scene or poem */
-        font-size:   var(--m-font-size-byline-poem);
-        font-weight: var(--m-font-weight-byline-poem);
-        font-family: var(--m-font-family-byline-poem);
-    }
-}
-
-#manuscript .m-header {
-    & > blockquote {             /* the epigraphs, layout */
-        /* I would have preferred, width: min(max-content, 100%);, but it does
-         * not work for some reason. Instead we use a min on the max-width */
-        width: max-content;
-        max-width: min(var(--m-max-width-epigraph),100%);
-        margin: var(--m-elbow-room) auto;
-        line-height: var(--m-line-spacing);
-
-        :not(pre,code) {         /* the epigraphs, fonts */
-            /*text-align: justify; hyphens: auto;*/
-            font-size:   var(--m-font-size-epigraph);
-            font-weight: var(--m-font-weight-epigraph);
-            font-family: var(--m-font-family-epigraph);
-            font-style:  var(--m-font-style-epigraph);
+        & > :first-child {
+            margin-top: 0;
+        }
+        & > :last-child {
+            margin-bottom: 0;
         }
     }
-    & > :is(pre,.x-poem) {          /* .m-headers pre or .x-poem */
-        font-size: inherit;
-        font-weight: inherit;
-    }
-    
-    & > :first-child {
-        margin-top: 0;
-    }
-    & > :last-child {
-        margin-bottom: 0;
-    }
-}
 
-/* .simple and .text-only (and amped specificity) */
-div#vpage article#manuscript:is(.text-only,.simple) {
-    & div.m-facts,
-    & div#m-contact {
-        display: none;
+    & > .m-header {
+        & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
+        & > p,
+        :not(blockquote,.m-facts) p {      /* except blockquotes or .m-facts */
+            display: block;
+            margin: 0; padding: 0; border: 0;
+            text-align: center !important;
+        }
+
+        & > h1 {                          /* title of the work */
+            font-size:   var(--m-font-size-title);
+            font-weight: var(--m-font-weight-title);
+            font-family: var(--m-font-family-title);
+        }
+        & > h2 {                       /* subtitle of the work */
+            font-size:   var(--m-font-size-subtitle);
+            font-weight: var(--m-font-weight-subtitle);
+            font-family: var(--m-font-family-subtitle);
+        }
+        & > h3 {                         /* author of the work */
+            font-size:   var(--m-font-size-byline);
+            font-weight: var(--m-font-weight-byline);
+            font-family: var(--m-font-family-byline);
+        }
     }
-}
-/* make text-only, text only (and amped specificity) */
-div#vpage article#manuscript.text-only {
-    --m-dinkus: unset;
-    --m-30-: unset;
-    & div.m-header {
-        display: none;
+
+    & section.m-part > .m-header {
+        & > h1 {              /* title: part */
+            font-size:   var(--m-font-size-title-part);
+            font-weight: var(--m-font-weight-title-part);
+            font-family: var(--m-font-family-title-part);
+        }
+        & > h2 {              /* subtitle: part */
+            font-size:   var(--m-font-size-subtitle-part);
+            font-weight: var(--m-font-weight-subtitle-part);
+            font-family: var(--m-font-family-subtitle-part);
+        }
+        & > h3 {              /* subtitle: part */
+            font-size:   var(--m-font-size-byline-part);
+            font-weight: var(--m-font-weight-byline-part);
+            font-family: var(--m-font-family-byline-part);
+        }
     }
-}
+
+    & section.m-chapter > .m-header {
+        & > h1 {        /* title: chapter */
+            font-size:   var(--m-font-size-title-chapter);
+            font-weight: var(--m-font-weight-title-chapter);
+            font-family: var(--m-font-family-title-chapter);
+        }
+        & > h2 {        /* subtitle: chapter */
+            font-size:   var(--m-font-size-subtitle-chapter);
+            font-weight: var(--m-font-weight-subtitle-chapter);
+            font-family: var(--m-font-family-subtitle-chapter);
+        }
+        & > h3 {        /* author: chapter */
+            font-size:   var(--m-font-size-byline-chapter);
+            font-weight: var(--m-font-weight-byline-chapter);
+            font-family: var(--m-font-family-byline-chapter);
+        }
+    }
+
+    & section:is(.m-scene,.m-poem) > .m-header {
+        & > h1 {         /* title: scene or poem*/
+            font-size:   var(--m-font-size-title-poem);
+            font-weight: var(--m-font-weight-title-poem);
+            font-family: var(--m-font-family-title-poem);
+        }
+        & > h2 {         /* subtitle: scene or poem */
+            font-size:   var(--m-font-size-subtitle-poem);
+            font-weight: var(--m-font-weight-subtitle-poem);
+            font-family: var(--m-font-family-subtitle-poem);
+        }
+        & > h3 {         /* author byline: scene or poem */
+            font-size:   var(--m-font-size-byline-poem);
+            font-weight: var(--m-font-weight-byline-poem);
+            font-family: var(--m-font-family-byline-poem);
+        }
+    }
+
+    & :not(section.m-poem) > .m-header {
+        & > :is(h1, h2, h3, h4, h5, h6),
+        & > p,
+        :not(blockquote,.m-facts) p {
+            display: block;
+            margin: 0; padding: 0; border: 0;
+            text-align: center !important;
+        }
+    }
+
+    &.text-only {
+        #m-contact, .m-facts, .m-header {
+            display: none;
+        }
+    }
+    &.simple {
+        #m-contact, .m-facts {
+            display: none;
+        }
+    }
+
+} /* end article#manuscript */
 
