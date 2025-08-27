@@ -59,6 +59,11 @@
         --m-indent-narrative: var(--m-indentA6);
         --m-indent-foothang:  var(--m-indentA6);
     }
+
+    /* if we use class="plain" to simplify the virtual page */
+    &.plain { --m-desktop-color: var(--m-desktop-color-plain); }
+    /* if we use class="veryplain" to super-simplify the virtual page */
+    &.veryplain { --m-desktop-color: var(--m-desktop-color-veryplain); }
 }
 
 #manuscript { /* very pedantic */

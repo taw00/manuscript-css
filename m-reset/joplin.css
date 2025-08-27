@@ -49,6 +49,8 @@
 @media screen {
     /* a darkgray "desk" and a "trans" content box framing the #rendered-md */
     html { background-color: rgb(0 0 0 / 0%); }
+    body:not(:has(#vpage)) {
+    }
     /* rendered view:  */
     body#joplin-container-body {
         /* rendering a virtual paper look:

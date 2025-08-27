@@ -57,7 +57,7 @@
  * </style>
  */
 
-@layer lm-var-constants, lm-var-defaults, lm-var-permutations, lm-reset-joplin-constants;
+@layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations;
 
 @import   url("./m-var.css?rev=2025082702");
 @import url("./m-reset.css?rev=2025082702");
