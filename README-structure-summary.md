@@ -41,7 +41,7 @@ container.
 The containers, in summary:
 (Notice, anything defined by a section can be repeated infinit times.)
 
-```markdown
+```html
 <div id="vpage">                                            <!-- 1 required -->
     <article id="manuscript">                               <!-- 1 required --> 
         <div id="m-contact"></div>                   <!-- 0 or 1 is allowed -->
@@ -180,18 +180,21 @@ of the sense?—now, I say, there came to my ears [ … ]
 
 To insert a poem in a document arbitrarily, it will be structured like this:
 
-    <div class="x-poem">
+~~~markdown
 
-    ```plaintext
-       Poem stanza
-           Here.
-    ```
-    ```plaintext
-       Poem stanza
-           Here.
-    ```
+<div class="x-poem">
 
-    </div>
+```plaintext
+   Poem stanza
+       Here.
+```
+```plaintext
+   Poem stanza
+       Here.
+```
+
+</div>
+~~~
 
 - If your document is a manuscript for a single poem, `#manuscript` will be of
   `class="short poetry"` and a `.m-poem` instead of a `.m-scene`, you will have
