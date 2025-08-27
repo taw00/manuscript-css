@@ -1,0 +1,21 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * m-var/constants: baseline variable constants
+ * m-var/defaults:  everything variable set to their defaults
+ * m-var/permutations: the defaults adjusted based on classes the user sets for
+ *                     each: narrative/nonnarrative, short/long, etc.
+ *
+ * There are values in here that can be overridden, but others that really
+ * should not be. Tread carefully.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-var-constants, lm-var-defaults, lm-var-permutations;
+
+@import url("./m-var/constants.css");
+@import url("./m-var/defaults.css");
+@import url("./m-var/permutations.css");
+

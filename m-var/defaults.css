@@ -1,10 +1,9 @@
 /* CSS for Manuscript Formating v3.0
  *
- * @layer lm-config-defaults
- * :root { --m-XXXXX: var(--m-YYYY-from-m-config-constants.css) }
+ * @layer lm-var-defaults
  *
  * Configuration of baseline default :root variables leveraging the constants
- * established in m-config-constants.css.
+ * established in m-var/constants.css.
  *
  * There are values in here that can be overridden, but others that really
  * should not be (they are calculated or usually inherit).
@@ -14,35 +13,31 @@
  * you override these settings. In your markdown, just add a :root {} section
  * in your <style> block ... and redeclare variables. Here's an example:
  *
- * (NOTE: Xs added because the style declaration confuses some CSS parsers)
-
-X<XstyleX>X
-X@Ximport url("/path/to/manuscript.css");
-
-:root {
-    --m-font-family: "TeX Gyre Pagella", Palladio, Palantino, serif;
-    --m-font-family-title: "Comic Neue", "Comic Sans", cursive;
-    --m-font-family-subtitle: "Comic Neue", "Comic Sans", cursive;
-    --m-font-family-byline: "Comic Neue", "Comic Sans", cursive;
-    --m-font-size: 19px;
-    --m-font-size-title: 1.5rem;
-    --m-font-weight-title: bold;
-    --m-font-weight-subtitle: medium;
-    --m-line-spacing: 2.5;
-    --m-indent: .35in;
-    --m-dinkus: "~"
-    --m-30-: "~ ~ ~;
-}
-
+ * <style>
+ * @import url("/path/to/manuscript.css");
+ * 
+ * :root {
+ *     --m-font-family: "TeX Gyre Pagella", Palladio, Palantino, serif;
+ *     --m-font-family-title: "Comic Neue", "Comic Sans", cursive;
+ *     --m-font-family-subtitle: "Comic Neue", "Comic Sans", cursive;
+ *     --m-font-family-byline: "Comic Neue", "Comic Sans", cursive;
+ *     --m-font-size: 19px;
+ *     --m-font-size-title: 1.5rem;
+ *     --m-font-weight-title: bold;
+ *     --m-font-weight-subtitle: medium;
+ *     --m-line-spacing: 2.5;
+ *     --m-indent: .35in;
+ *     --m-dinkus: "~"
+ *     --m-30-: "~ ~ ~;
+ * }
+ * </style> 
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@layer lm-config-defaults {
-
-@page { size: letter portrait; margin: 1in; }
+@layer lm-var-defaults {
 
 :root {
     /*
@@ -371,5 +366,5 @@ X@Ximport url("/path/to/manuscript.css");
 
 } /* end :root */
 
-} /* end @layer lm-config-defaults */
+} /* end @layer lm-var-defaults */
 

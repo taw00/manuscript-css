@@ -1,10 +1,10 @@
 /* CSS for Manuscript Formating v3.0
  *
- * @layer lm-config-constants
+ * @layer lm-var-constants
  * :root { --m-XXXXXX } variable constants.
  *
  * This contains most of the constants and some baseline defaults that are then
- * leveraged by m-config.css and all the rest of the stack.
+ * leveraged by m-var.css and all the rest of the stack.
  *
  * Warning: if you override any of these, please be aware that they are subject
  * to change. Especially the more esoteric ones. Right now there are far too
@@ -15,7 +15,7 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@layer lm-config-constants {
+@layer lm-var-constants {
 
 :root {
     /*
@@ -158,5 +158,5 @@
     --m-manuscript-border: 0;
 }
 
-} /* end @layer lm-config-constants */
+} /* end @layer lm-var-constants */
 

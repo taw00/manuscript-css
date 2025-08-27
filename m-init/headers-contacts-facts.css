@@ -9,6 +9,22 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
+/* .simple and .text-only (and amped specificity) */
+div#vpage article#manuscript:is(.text-only,.simple) {
+    & div.m-facts,
+    & div#m-contact {
+        display: none !important;
+    }
+}
+/* make text-only, text only (and amped specificity) */
+div#vpage article#manuscript.text-only {
+    --m-dinkus: unset !important;
+    --m-30-: unset !important;
+    & div.m-header {
+        display: none !important;
+    }
+}
+
 #manuscript {
     #m-contact {
         position: absolute; box-sizing: border-box; overflow: visible;
