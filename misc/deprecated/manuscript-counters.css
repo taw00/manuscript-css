@@ -121,97 +121,114 @@
 }
 
 /* Initialize counters for all the major manuscript components. */
-#manuscript { counter-reset: npage npart nchapter nscene
-                nsection nsection1 nsection2 nsection3 nsection4; }
-#manuscript > section { counter-reset: nsection2; }
-#manuscript > section > section { counter-reset: nsection3; }
-#manuscript > section > section > section { counter-reset: nsection4; }
-#manuscript > section { --_m-autotitle: var(--_m-autotitle1); }
-#manuscript > section > section { --_m-autotitle: var(--_m-autotitle2); }
-#manuscript > section > section > section { --_m-autotitle: var(--_m-autotitle3); }
-#manuscript > section > section > section > section { --_m-autotitle: var(--_m-autotitle4); }
-#manuscript > section > section > section > section > section { --_m-autotitle: var(--_m-autotitle5); }
+#manuscript {
+    counter-reset: npage npart nchapter nscene
+                   nsection nsection1 nsection2 nsection3 nsection4;
+    & > section::before {
+        counter-increment: nsection nsection1;
+        content: "";
+    }
+    & > section {
+        counter-reset: nsection2;
+        --_m-autotitle: var(--_m-autotitle1);
+        &.m-part::before {
+            counter-increment: npart nsection nsection1;
+            content: "";
+        }
+        &.m-chapter::before {
+            counter-increment: nchapter nsection nsection1;
+            content: "";
+        }
+        &.m-scene::before {
+            counter-increment: nscene nsection nsection1;
+            content: "";
+        }
+        & > section::before {
+            counter-increment: nsection nsection2;
+            content: "";
+        }
+        & > section {
+            counter-reset: nsection3;
+            --_m-autotitle: var(--_m-autotitle2);
+            &.m-part::before {
+                    counter-increment: npart nsection nsection2;
+                    content: "";
+            }
+            &.m-chapter::before {
+                counter-increment: nchapter nsection nsection2;
+                content: "";
+            }
+            &.m-scene::before {
+                counter-increment: nscene nsection nsection2;
+                content: "";
+            }
+            & > section::before {
+                counter-increment: nsection nsection3;
+                content: "";
+            }
+            & > section {
+                counter-reset: nsection4;
+                --_m-autotitle: var(--_m-autotitle3);
+                &.m-part::before {
+                    counter-increment: npart nsection nsection3;
+                    content: "";
+                }
+                &.m-chapter::before {
+                    counter-increment: nchapter nsection nsection3;
+                    content: "";
+                }
+                &.m-scene::before {
+                    counter-increment: nscene nsection nsection3;
+                    content: "";
+                }
+                & > section::before {
+                    counter-increment: nsection nsection4;
+                    content: "";
+                }
+                & > section {
+                    --_m-autotitle: var(--_m-autotitle4);
+                    &.m-part::before {
+                        counter-increment: npart nsection nsection4;
+                        content: "";
+                    }
+                    &.m-chapter::before {
+                        counter-increment: nchapter nsection nsection4;
+                        content: "";
+                    }
+                    &.m-scene::before {
+                        counter-increment: nscene nsection nsection4;
+                        content: "";
+                    }
+                    & > section::before {
+                        counter-increment: nsection nsection5;
+                        content: "";
+                    }
+                    & > section {
+                        --_m-autotitle: var(--_m-autotitle5);
+                    }
+                }
+            }
+        }
+    }
 
-/* non-scene tally of all sections, and each section depth
- * This should always be overriden by the new couple blocks of logic unless we
- * come up with a new section variety. - leaving it in for now. */
-#manuscript > section::before {
-    counter-increment: nsection nsection1; content: "";
-}
-#manuscript > section > section::before {
-    counter-increment: nsection nsection2; content: "";
-}
-#manuscript > section > section > section::before {
-    counter-increment: nsection nsection3; content: "";
-}
-#manuscript > section > section > section > section::before {
-    counter-increment: nsection nsection4; content: "";
-}
-#manuscript > section > section > section > section > section::before {
-    counter-increment: nsection nsection5; content: "";
+    /* build the string to append to a title */
+    & section.m-part {
+        --m-autotitle: var(--m-autotitle-for-part-off, var(--m-autotitle-name-off, "Part ") var(--_m-autotitle));
+    }
+    & section.m-chapter {
+        --m-autotitle: var(--m-autotitle-for-chapter-off, var(--m-autotitle-name-off, "Chapter ") var(--_m-autotitle));
+    }
+    & section.m-scene {
+        --m-autotitle: var(--m-autotitle-for-scene-off, var(--m-autotitle-name-off, "Scene ") var(--_m-autotitle));
+    }
+
+    /* application f the autotitle title string */
+    & section > .m-header > h1::after {
+        content: var(--m-autotitle);
+    }
+
 }
 
-/* tally of all m-parts, all sections, and each section depth */
-/* The specificity of this will override the logic above if we are operating
- * on an m-part block */
-#manuscript > section.m-part::before {
-    counter-increment: npart nsection nsection1; content: "";
-}
-#manuscript > section > section.m-part::before {
-    counter-increment: npart nsection nsection2; content: "";
-}
-#manuscript > section > section > section.m-part::before {
-    counter-increment: npart nsection nsection3; content: "";
-}
 
-/* tally of all m-chapters, all sections, and each section depth */
-/* The specificity of this will override the logic above if we are operating
- * on an m-chapter block */
-#manuscript > section.m-chapter::before {
-    counter-increment: nchapter nsection nsection1; content: "";
-}
-#manuscript > section > section.m-chapter::before {
-    counter-increment: nchapter nsection nsection2; content: "";
-}
-#manuscript > section > section > section.m-chapter::before {
-    counter-increment: nchapter nsection nsection3; content: "";
-}
-#manuscript > section > section > section > section.m-chapter::before {
-    counter-increment: nchapter nsection nsection4; content: "";
-}
 
-/* tally of all m-scenes, all sections, and each section depth */
-/* The specificity of this will override the logic above if we are operating
- * on an m-scene block */
-#manuscript > section.m-scene::before {
-    counter-increment: nscene nsection nsection1; content: "";
-}
-#manuscript > section > section.m-scene::before {
-    counter-increment: nscene nsection nsection2; content: "";
-}
-#manuscript > section > section > section.m-scene::before {
-    counter-increment: nscene nsection nsection3; content: "";
-}
-#manuscript > section > section > section > section.m-scene::before {
-    counter-increment: nscene nsection nsection4; content: "";
-}
-#manuscript > section > section > section > section > section.m-scene::before {
-    counter-increment: nscene nsection nsection5; content: "";
-}
-
-/* build the string to append to a title */
-#manuscript section.m-part {
-    --m-autotitle: var(--m-autotitle-for-part-off, var(--m-autotitle-name-off, "Part ") var(--_m-autotitle));
-}
-#manuscript section.m-chapter {
-    --m-autotitle: var(--m-autotitle-for-chapter-off, var(--m-autotitle-name-off, "Chapter ") var(--_m-autotitle));
-}
-#manuscript section.m-scene {
-    --m-autotitle: var(--m-autotitle-for-scene-off, var(--m-autotitle-name-off, "Scene ") var(--_m-autotitle));
-}
-
-/* application f the autotitle title string */
-#manuscript section > .m-header > h1::after {
-    content: var(--m-autotitle);
-}
 
