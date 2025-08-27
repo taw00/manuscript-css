@@ -67,7 +67,7 @@
             border-top: unset;
         }
     }
-} /* END SCREEN */
+} /* end @media screen */
 
 
 @media print {
@@ -109,15 +109,6 @@
             break-before: avoid-page;
         }
     }
-} /* END PRINT */
-
-
-
-/***
- * PAGE BREAK AVOIDANCE RULES
- ***/
-
-@media print {
     a { break-inside: avoid-page !important; }
 
     h1, h2, h3, h4, h5, h6 {
@@ -131,6 +122,7 @@
     }
 
     tr { break-inside: avoid-page !important; }
+
 
     /*
      * god knows why, but these avoidance rules are not working
@@ -166,5 +158,5 @@
     #manuscript h6 {
         break-before: avoid-page !important;
     }
-} /* end @media print */
+} /* end @media print -- page breake avoidance rules */
 
