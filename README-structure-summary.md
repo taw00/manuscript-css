@@ -44,15 +44,20 @@ The containers, in summary:
 ```markdown
 <div id="vpage">                                            <!-- 1 required -->
     <article id="manuscript">                               <!-- 1 required --> 
-        <div id="m-contact">                         <!-- 0 or 1 is allowed -->
+        <div id="m-contact"></div>                   <!-- 0 or 1 is allowed -->
         <div class="m-header">                       <!-- 0 or 1 is allowed -->
-            <div class="m-facts">                    <!-- 0 or 1 is allowed -->
-        <section class="m-part">            <!-- 0 to many allowed -->
-            <div class="m-header">                   <!-- 0 or 1 is allowed -->
-            <section class="m-chapter">     <!-- 0 to many allowed -->
-                <div class="m-header">               <!-- 0 or 1 is allowed -->
-                <section class="m-scene">   <!-- 1 required; many allowed -->
-                    <div class="m-header">           <!-- 0 or 1 is allowed -->
+            <div class="m-facts"></div></div>        <!-- 0 or 1 is allowed -->
+        <section class="m-part">              <!-- 0 to many allowed --------->
+            <div class="m-header"></div>             <!-- 0 or 1 is allowed -->
+            <section class="m-chapter">       <!-- 0 to many allowed --------->
+                <div class="m-header"></div>         <!-- 0 or 1 is allowed -->
+                <section class="m-scene">     <!-- 1 required; many allowed -->
+                    <div class="m-header"></div>     <!-- 0 or 1 is allowed -->
+                </section
+            </section>
+        </section>
+    </article>
+</div>
 ```
 
 
