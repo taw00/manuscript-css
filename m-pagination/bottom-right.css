@@ -24,10 +24,10 @@
 
 @page :first {
     @bottom-right { content: none; }
-    size: letter portrait; margin: var(--m-page-margin);
+    size: letter portrait; margin: var(--m-page-margins);
 }
 @page {
-    @bottom-right { vertical-align: bottom; margin: 0 0 var(--m-page-margin); content: var(--m-pagination-header); }
-    size: letter portrait; margin: var(--m-page-margin) var(--m-page-margin) var(--m-paginated-margin); 
+    @bottom-right { vertical-align: bottom; margin: 0 0 var(--m-page-margins); content: var(--m-pagination-header); }
+    size: letter portrait; margin: var(--m-page-margins) var(--m-page-margins) var(--m-paginated-margin); 
 }
 

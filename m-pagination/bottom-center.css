@@ -29,13 +29,13 @@
     @bottom-left { content: none; }
     @bottom-right { content: none; }
     @bottom-center { content: none; }
-    size: letter portrait; margin: var(--m-page-margin);
+    size: letter portrait; margin: var(--m-page-margins);
 }
 @page {
     @top-left { content: none; }
     @top-right { content: none; }
     @top-center { content: none; }
-    @bottom-center { vertical-align: bottom; margin: 0 0 var(--m-page-margin); content: var(--m-pagination-header); }
-    size: letter portrait; margin: var(--m-page-margin) var(--m-page-margin) var(--m-paginated-margin); 
+    @bottom-center { vertical-align: bottom; margin: 0 0 var(--m-page-margins); content: var(--m-pagination-header); }
+    size: letter portrait; margin: var(--m-page-margins) var(--m-page-margins) var(--m-paginated-margin); 
 }
 

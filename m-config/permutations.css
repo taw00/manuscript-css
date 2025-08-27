@@ -17,11 +17,11 @@
 
 #vpage {
     /* recalculate - not quite sure why this has to happen, but it does * /
-    --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
-    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+    --m-content-width:  calc(var(--m-page-width) - calc(var(--m-page-margins) * 2));
+    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margins) * 2));
 
-    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
-    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margins) * 1.5));
+    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margins) * 2));
 
     --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
     --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
@@ -29,11 +29,11 @@
     --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); / * or 4.58333in US * /
     --m-page-offset-half: calc(var(--m-page-height) / 2); / * or 5.5in US * /
 
-    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
-    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
-    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
-    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
-    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margins));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margins));
+    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margins));
+    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margins));
+    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margins));
 
     --m-offset-title-short:        var(--m-content-offset-5-12th);
     --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
@@ -47,8 +47,8 @@
         /* US letter is already set as the default, but let's be explicit */
         --m-page-width:  var(--m-page-widthUS);
         --m-page-height: var(--m-page-heightUS);
-        --m-page-margin: var(--m-page-marginUS);
-        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-page-margins: var(--m-page-marginsUS);
+        --m-pagination-margin: calc(var(--m-page-margins) * .75);
         --m-indent-narrative: var(--m-indentUS);
         --m-indent-foothang:  var(--m-indentUS);
     }
@@ -56,32 +56,32 @@
     &.USh, &.hletter { /* US half-letter */
         --m-page-width:  var(--m-page-widthUSh);
         --m-page-height: var(--m-page-heightUSh);
-        --m-page-margin: var(--m-page-marginUSh);
-        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-page-margins: var(--m-page-marginsUSh);
+        --m-pagination-margin: calc(var(--m-page-margins) * .75);
         --m-indent-narrative: var(--m-indentUSh);
         --m-indent-foothang:  var(--m-indentUSh);
     }
     &.A4 {
         --m-page-width:  var(--m-page-widthA4);
         --m-page-height: var(--m-page-heightA4);
-        --m-page-margin: var(--m-page-marginA4);
-        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-page-margins: var(--m-page-marginsA4);
+        --m-pagination-margin: calc(var(--m-page-margins) * .75);
         --m-indent-narrative: var(--m-indentA4);
         --m-indent-foothang:  var(--m-indentA4);
     }
     &.A5 {
         --m-page-width:  var(--m-page-widthA5);
         --m-page-height: var(--m-page-heightA5);
-        --m-page-margin: var(--m-page-marginA5);
-        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-page-margins: var(--m-page-marginsA5);
+        --m-pagination-margin: calc(var(--m-page-margins) * .75);
         --m-indent-narrative: var(--m-indentA5);
         --m-indent-foothang:  var(--m-indentA5);
     }
     &.A6 {
         --m-page-width:  var(--m-page-widthA6);
         --m-page-height: var(--m-page-heightA6);
-        --m-page-margin: var(--m-page-marginA6);
-        --m-pagination-margin: calc(var(--m-page-margin) * .75);
+        --m-page-margins: var(--m-page-marginsA6);
+        --m-pagination-margin: calc(var(--m-page-margins) * .75);
         --m-indent-narrative: var(--m-indentA6);
         --m-indent-foothang:  var(--m-indentA6);
     }
@@ -94,7 +94,7 @@
     }
     #manuscript {
         max-width: var(--m-content-width);
-        margin: var(--m-page-margin) auto;
+        margin: var(--m-page-margins) auto;
     }
 }
 

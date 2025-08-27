@@ -108,7 +108,7 @@ html { font-size: var(--m-font-size); }
     position: relative; box-sizing: border-box; overflow: hidden;
     /* the 95% keeps a small margin on small screens */
     width: 95%; max-width: var(--m-content-width);
-    margin: var(--m-page-margin) auto;
+    margin: var(--m-page-margins) auto;
     border: var(--m-manuscript-border);
 }
 } /* /screen */
