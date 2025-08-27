@@ -235,9 +235,9 @@
 
     }
     /* if we use class="plain" to simplify the virtual page */
-    body:has(#vpage.plain) { --m-desktop-color: var(--m-desktop-color-plain); }
+    #vpage.plain { --m-desktop-color: var(--m-desktop-color-plain); }
     /* if we use class="veryplain" to super-simplify the virtual page */
-    body:has(#vpage.veryplain) { --m-desktop-color: var(--m-desktop-color-veryplain); }
+    #vpage.veryplain { --m-desktop-color: var(--m-desktop-color-veryplain) !important; }
 } /* end @media screen */
 
 @media print {
