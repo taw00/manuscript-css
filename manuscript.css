@@ -59,12 +59,12 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations;
 
-@import   url("./m-var.css?rev=2025082703");
-@import url("./m-reset.css?rev=2025082703");
-@import  url("./m-init.css?rev=2025082703");
-@import  url("./m-core.css?rev=2025082703");
+@import   url("./m-var.css?rev=2025082704");
+@import url("./m-reset.css?rev=2025082704");
+@import  url("./m-init.css?rev=2025082704");
+@import  url("./m-core.css?rev=2025082704");
 
-@import url("./m-pagination/top-right.css?rev=2025082703");
+@import url("./m-pagination/top-right.css?rev=2025082704");
 
 /*
  * useful misc classes
