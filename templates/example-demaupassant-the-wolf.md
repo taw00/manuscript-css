@@ -12,8 +12,6 @@
     }
 </style>
 
-[published link]: https://862b2pcoar.joplinusercontent.com/shares/cH0vN27kYJoqobmjjKtxZ3
-
 <div id="vpage">
 <article id="manuscript">
 

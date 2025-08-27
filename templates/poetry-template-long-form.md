@@ -20,7 +20,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
     */
     @import "../manuscript.css";
-    @import "../pagination/none.css";
+    @import "../m-pagination/none.css";
 
     :root {
         /*

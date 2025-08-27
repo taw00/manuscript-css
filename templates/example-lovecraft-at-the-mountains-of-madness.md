@@ -25,7 +25,9 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
      * Viewer extension for Chrome will inject its own 
      * text-align: left */
     .centered-poem pre { text-align: center; }
-    :root { --m-pagination-header: "Lovecraft / Mountains of Madness / " counter(page); }
+    :root {
+        --m-pagination-header: "Lovecraft / Mountains of Madness / " counter(page);
+    }
 </style>
 
 [//]: / "---------------------------------------------------------------------"

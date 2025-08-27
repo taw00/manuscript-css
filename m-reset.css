@@ -16,10 +16,10 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./reset-styles/joplin.css");
-@import url("./reset-styles/vscode.css");
-@import url("./reset-styles/pandoc.css");
-@import url("./reset-styles/other.css");
+@import url("./m-reset/joplin.css");
+@import url("./m-reset/vscode.css");
+@import url("./m-reset/pandoc.css");
+@import url("./m-reset/other.css");
 
 /*
  * configuration of some raw html elements that seem to be reasonable defaults
