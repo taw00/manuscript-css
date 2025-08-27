@@ -116,13 +116,11 @@
     /* -------------------- */
 
     /* the desktop and paper */
-    #vpage { /* I do not understand why I have to wrap --m-desktop-color in a
-                #vpage, but I do */
-      --m-desktop-color: var(--m-desktop-color-darkgray);
-      --m-paper-color: var(--m-paper-color-white);
-    }
-    --m-desktop-color-plain: var(--m-desktop-color-darkdarkgray);
-    --m-desktop-color-veryplain: var(--m-desktop-color-darkdarkgray);
+    --m-desktop-color: var(--m-desktop-color-darkgray);
+    --m-paper-color: var(--m-paper-color-white);
+    --m-desktop-color-plain: var(--m-desktop-color-dimgray);
+    --m-desktop-color-vplain: var(--m-desktop-color-darkdarkgray);
+    --m-desktop-color-vvplain: white;
 
     /* -------------------- */
 

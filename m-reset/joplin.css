@@ -39,9 +39,9 @@
 
 @layer lm-reset-joplin-constants {
 
-    :root {
-        --m-reset-joplin-body-background-color: var(--m-desktop-color);
-    }
+:root {
+    --m-reset-joplin-body-background-color: var(--m-desktop-color);
+}
 
 } /* end @layer lm-reset-joplin-constants */
 
@@ -49,12 +49,9 @@
 @media screen {
     /* a darkgray "desk" and a "trans" content box framing the #rendered-md */
     html { background-color: rgb(0 0 0 / 0%); }
-    body:not(:has(#vpage)) {
-    }
     /* rendered view:  */
     body#joplin-container-body {
-        /* rendering a virtual paper look:
-         * the "desk" behind the paper is darkgray by default */
+        /* a virtual paper look: <body> is the "desk" behind the paper */
         background-color: var(--m-reset-joplin-body-background-color);
         /* Remove the padding and bg that frames #rendered-md */
         & > #joplin-container-content {
@@ -63,19 +60,14 @@
         }
     }
     /* rendered view: explicitly exported to HTML version */ 
-    body:not(#joplin-container-body):has(> #joplin-container-content) {
+    body:not(#joplin-container-body) {
         background-color: var(--m-reset-joplin-body-background-color);
-        /* Remove the padding & bg that frames #rendered-md */
-        & > #joplin-container-content {
-            background-color: transparent;
-            padding: 0;
-        }
         & > div.exported-note {
             margin: 0;
             padding: 0;
-        }
-        & > div.exported-note div.exported-note-title {
-            display: none !important;
+            & > div.exported-note-title {
+                display: none !important;
+            }
         }
     }
     /* rendered view: Joplin Cloud's version */
@@ -102,15 +94,27 @@
     }
 } /* end @media screen */
 
+
+
 @media print { /* PDF */
-    /* exported view: the body color needs to be irrelevant (trans) */
-    body#joplin-container-body {
+    /* exported view: both from the Joplin viewer and from Joplin's HTML export
+       the body color needs to be irrelevant (trans) */
+    body#joplin-container-body,
+    body:has(.exported-note) {
         /* Exported print: the body should be colorless for print */
         background-color: transparent;
         /* Exported print: Remove the padding & bg that frames #rendered-md */
         & > #joplin-container-content {
             background-color: transparent;
             padding: 0;
+        }
+    }
+    /* exported view: remove Joplin-inserted title and excess padding */
+    body:not(#joplin-container-body) > div.exported-note {
+        margin: 0;
+        padding: 0;
+        & > div.exported-note-title {
+            display: none !important;
         }
     }
     /* exported view: filter and background settings in userstyle.css would
@@ -146,16 +150,17 @@
         }
     }
 
-    /* exported view: remove Joplin-inserted title and excess padding */
+    /* exported view: remove Joplin-inserted title and excess padding
     div.exported-note {
         margin: 0;
         padding: 0;
     }
-    div.exported-note div.exported-note-title {
+    div.exported-note > div.exported-note-title {
         visibility: hidden;
         display: none !important;
-    }
+    }*/
 } /* end @media print */
+
 
 
 /* rendered note main box */

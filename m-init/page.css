@@ -63,6 +63,19 @@ html { font-size: var(--m-font-size); }
     }
     body {
         background-color: var(--m-desktop-color);
+        &:has(#vpage.plain) {
+            background-color: var(--m-desktop-color-plain);
+            /*--m-desktop-color: var(--m-desktop-color-plain);*/
+        }
+        &:has(#vpage.vplain) {
+            background-color: var(--m-desktop-color-vplain);
+            /*--m-desktop-color: var(--m-desktop-color-vplain);*/
+        }
+        &:has(#vpage.vvplain) {
+            background-color: var(--m-desktop-color-vvplain);
+            /*--m-desktop-color: var(--m-desktop-color-vvplain);*/
+            --m-paper-color: transparent;
+        }
     }
     /* the content container */
     /* a virtual page */
@@ -73,7 +86,7 @@ html { font-size: var(--m-font-size); }
         top: 0; left: 0;
         width: 100%; max-width: var(--m-page-width);
         background-color: var(--m-paper-color);
-        &:not(:is(.plain,.veryplain)) {
+        &:not(:is(.plain,.vplain,.vvplain)) {
             margin: 20px auto;
             box-shadow: 0 0 20px black;
         }
@@ -82,7 +95,7 @@ html { font-size: var(--m-font-size); }
             /*box-shadow: 0 0 20px black;*/
             /*border: 1px solid darkgray;*/
         }
-        &.veryplain {
+        &.vplain, &.vvplain {
             /*position: relative;*/ 
             /*margin: 20px auto;*/
             /*box-shadow: 0 0 20px black;*/
@@ -170,7 +183,7 @@ html { font-size: var(--m-font-size); }
 
 /* PRINT rendering - do not allow code scrollbars */
 @media print {
-#manuscript pre > code { overflow: hidden; }
+    #manuscript pre > code { overflow: hidden; }
 }
 
 /* HTML rendering - allow code scrollbars */

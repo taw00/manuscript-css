@@ -20,9 +20,9 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  *
  * The div #vpage class "switches":
- * - defaults: 'US', and not 'plain', and not 'veryplain'
- * - 'plain', 'veryplain': simplify the rendering by removing fancy the 3D
- *    paper look (probably not commonly used)
+ * - defaults: 'US', and not 'plain', and not 'vplain' or 'vvplain'
+ * - 'plain', 'vplain', 'vvplain': simplify the rendering by removing fancy the
+ *   3D paper look and more (probably not commonly used)
  * - 'US', 'USh', 'A4', 'A5', or 'A6': (use only one) US Letter is the default.
  *   For USh, A4, A5, or A6, or whatever, you need to add the appropriate @page
  *   declaration after your imports in your markdown (or HTML) file's style

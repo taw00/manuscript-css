@@ -59,11 +59,6 @@
         --m-indent-narrative: var(--m-indentA6);
         --m-indent-foothang:  var(--m-indentA6);
     }
-
-    /* if we use class="plain" to simplify the virtual page */
-    &.plain { --m-desktop-color: var(--m-desktop-color-plain); }
-    /* if we use class="veryplain" to super-simplify the virtual page */
-    &.veryplain { --m-desktop-color: var(--m-desktop-color-veryplain); }
 }
 
 #manuscript { /* very pedantic */
@@ -226,39 +221,55 @@
 
 
 @media screen {
-    #manuscript:not(.long) { /* the default, but let's be explicit */
-        /* note, these are, more or less, no-op settings by default. For short
-         * stories, we don't want to do forced page breaks anywhere. */
-        --m-page-break: var(--m-page-break-short); /* unset */
-        --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
-        --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); /* 0 */
+    #manuscript {
+        &:not(.long) { /* the default, but let's be explicit */
+            /* note, these are, more or less, no-op settings by default. For short
+             * stories, we don't want to do forced page breaks anywhere. */
+            --m-page-break: var(--m-page-break-short); /* unset */
+            --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
+            --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); /* 0 */
+        }
+        &.long {
+            --m-page-break: var(--m-page-break-long);
+            --m-page-break-simulated: var(--m-page-break-simulated-long);
+            --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-long);
+        }
     }
-    #manuscript.long {
-        --m-page-break: var(--m-page-break-long);
-        --m-page-break-simulated: var(--m-page-break-simulated-long);
-        --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-long);
-
+    /* this does not work for whatever reason
+    #vpage {
+        / * if we use class="plain" to simplify the virtual page * /
+        &.plain { --m-desktop-color: var(--m-desktop-color-plain); }
+        / * if we use class="vplain" to super-simplify the virtual page * /
+        &:.vplain { --m-desktop-color: var(--m-desktop-color-vplain); }
+        / * if we use class="vvplain" to super-duper-simplify the virtual page * /
+        &:.vvplain {
+            --m-desktop-color: var(--m-desktop-color-vvplain);
+            --m-paper-color: transparent !important;
+        }
     }
-    /* if we use class="plain" to simplify the virtual page */
-    #vpage.plain { --m-desktop-color: var(--m-desktop-color-plain); }
-    /* if we use class="veryplain" to super-simplify the virtual page */
-    #vpage.veryplain { --m-desktop-color: var(--m-desktop-color-veryplain) !important; }
+    */
 } /* end @media screen */
 
 @media print {
-    #manuscript:not(.long) { /* the default, but let's be explicit */
-        /* short-form print behavior: if page break simulation was set for some
-         * reason, we unset it. */
-        --m-page-break-simulated: 0;
-        --m-page-break-simulated-padding: 0;
-        --m-page-break: var(--m-page-break-short);
+    :root {
+        --m-desktop-color: transparent;
+        --m-paper-color: transparent;
     }
-    #manuscript.long {
-        /* long-form print behavior: no longer simulated, there will be a page
-         * after the title page header */
-        --m-page-break-simulated: 0;
-        --m-page-break-simulated-padding: 0;
-        --m-page-break: var(--m-page-break-long);
+    #manuscript {
+        &:not(.long) { /* the default, but let's be explicit */
+            /* short-form print behavior: if page break simulation was set for some
+             * reason, we unset it. */
+            --m-page-break-simulated: 0;
+            --m-page-break-simulated-padding: 0;
+            --m-page-break: var(--m-page-break-short);
+        }
+        &.long {
+            /* long-form print behavior: no longer simulated, there will be a page
+             * after the title page header */
+            --m-page-break-simulated: 0;
+            --m-page-break-simulated-padding: 0;
+            --m-page-break: var(--m-page-break-long);
+        }
     }
 } /* end @media print */
 
