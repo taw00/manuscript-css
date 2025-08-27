@@ -37,8 +37,9 @@
  */
 
 @layer lm-reset-joplin-constants {
+:root {
     --m-reset-joplin-body-background-color: var(--m-desktop-color);
-
+}
 } /* end @layer lm-reset-joplin-constants */
 
 @media screen {
