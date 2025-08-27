@@ -1,13 +1,13 @@
 # Structure summary of a manuscript drafted in markdown
 
-### Example 1: The document beginning - default format and behavior
+### Example 1: The document beginning
 
 _Note that "manuscript.css" here is a stand-in for
 "/path/to/manuscript-css/manuscript.css". Or if you decide to host it on some
 webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 
 ```markdown
-<!-- Formatting: US letter, 1in margins, short-form narrative -->
+<!-- Formatting: US letter, 1in margins, short-form narrative (the default) -->
 <style>
     @import url("manuscript.css");
 </style>
@@ -16,14 +16,14 @@ webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 ... your manuscript ...
 ```
 
-### Example 2: The document beginning - same as above with behavior adjustments
+### Example 2: The document beginning - w/ alterations
 
 ```markdown
-<!-- Formatting: A4, 1in margins, long-form nonnarrative                    -->
+<!-- Formatting: A4, 2.54cm margins, long-form nonnarrative                 -->
 <!--             I.e. All the big prose switches reversed from the default. -->
 <style>
     @import url("manuscript.css");
-    @page { size: A4 portrait; margin: 1in; }
+    @page { size: A4 portrait; margin: var(--m-page-marginsA4); }
 </style>
 <div id="vpage" class="A4">
 <article id="manuscript" class="long nonnarrative">
@@ -38,136 +38,137 @@ absolutely required. The meat of your manuscript lives either in a scene or a
 poem. Most short stories, for example, only use scenes. Often only one scene
 container.
 
-Let's look at the containers in summary, and then we'll dive into a little
-depth afterward.
+The containers, in summary:
+(Notice, anything defined by a section can be repeated infinit times.)
 
-# The containers in summary (prose-focused)...
+```markdown
+<div id="vpage">                                            <!-- 1 required -->
+    <article id="manuscript">                               <!-- 1 required --> 
+        <div id="m-contact">                         <!-- 0 or 1 is allowed -->
+        <div class="m-header">                       <!-- 0 or 1 is allowed -->
+            <div class="m-facts">                    <!-- 0 or 1 is allowed -->
+        <section class="m-part">            <!-- 0 to many allowed -->
+            <div class="m-header">                   <!-- 0 or 1 is allowed -->
+            <section class="m-chapter">     <!-- 0 to many allowed -->
+                <div class="m-header">               <!-- 0 or 1 is allowed -->
+                <section class="m-scene">   <!-- 1 required; many allowed -->
+                    <div class="m-header">           <!-- 0 or 1 is allowed -->
+```
+
+
+
+### A fuller example (also see templates in the templates folder)
+
+This is a truncated example of short story prose. It's three scenes contained
+in one chapter and one part. But you can have many parts containing many
+chapters containing many scenes.
+
+
 
 ```markdown
 <style>
     @import url("manuscript.css");
 </style>
+
 <div id="vpage">
-<article id="manuscript" class="prose narrative">
+<article id="manuscript">
 
-<!-- suggested: contact name, address, email, phone -->
+<!-- contact name, address, email, phone (m-contact is optional) -->
 <div id="m-contact">
+
+Edgar Allan Poe
+
+Coates Street, Philadelphia, PA 19079 USA
+
+telleroftales@example.com
+
 </div>
 
-<!-- suggested: title, subtitle, by Author, wordcount/genre facts, and
-     epigraph -->
+<!-- title, subtitle, author byline, wordcount/genre facts, and epigraph -->
 <div class="m-header">
+
+# The Tell-Tale Heart
+
+# … a subtitle if there were one …
+
+### by Edgar Allan Poe
+
+> An epigraph goes here: They heard!—they suspected!—they knew!
+
 <div id="m-facts">
+
+2200 words
+
+Gothic Horror
+
 </div>
 </div>
 
-<!-- optional: part - parts contain chapters -->
+<!-- parts contain chapters -->
 <section class="part">
-<!-- suggested: part title - rare: subtitle, by Author, epigraph -->
+<!-- part title, subtitle, author byline, epigraph -->
 <div class="m-header">
+
+# Part 1
+
 </div>
 
-<!-- optional: chapter - chapters contain scenes (or poems) -->
+<!-- chapters contain scenes (or poems) -->
 <section class="chapter">
-<!-- suggested: chapter title - rare: subtitle, by Author, epigraph -->
+<!-- chapter title, subtitle, author byline, epigraph -->
+<div class="m-header">
+
+# Chapter 1
+
+</div>
+
+<!-- scenes contain your prose - an example of three scenes -->
+<section class="scene">
+<!-- scene title, subtitle, author byline, epigraph
+     (I rarely use m-headers in scenes) -->
 <div class="m-header">
 </div>
 
-<!-- required (for prose): scene - scenes contain your prose
-     An example of three scenes -->
-<section class="scene">
-<!-- unusual: scene title, subtitle, by Author, epigraph -->
-<div class="m-header">
-</div>
+True!—nervous—very, very dreadfully nervous I had been and am; but why *will*
+you say that I am mad? The disease had sharpened my senses—not destroyed—not
+dulled them. Above all was the sense of hearing acute. I heard all things in
+the heaven and in the earth. I heard many things in hell. How, then, am I mad?
+Hearken! and observe how healthily—how calmly I can tell you the whole story.
+
+It is impossible to say how first the idea entered my brain; but once
+conceived, it haunted me day and night. Object there was none. Passion there
+was none. I loved the old man. He had never wronged me. He had never given me
+insult. For his gold I had no desire. I think it was his eye! [ … ]
+
 </section>
 
 <section class="scene">
-<div class="m-header">
-</div>
+
+Upon the eighth night I was more than usually cautious in opening the door. A
+watch's minute hand moves more quickly than did mine. Never before that night
+had I *felt* the extent of my own powers—of my sagacity. I could scarcely
+contain my feelings of triumph. To think that there I was, opening the door,
+little by little, and he not even to dream of my secret deeds or thoughts. I
+fairly chuckled at the idea; and perhaps he heard me; for [ … ]
+
 </section>
 
 <section class="scene">
-<div class="m-header">
-</div>
+
+It was open—wide, wide open—and I grew furious as I gazed upon it. I saw it
+with perfect distinctness—all a dull blue, with a hideous veil over it that
+chilled the very marrow in my bones; but I could see nothing else of the old
+man's face or person: for I had directed the ray as if by instinct, precisely
+upon the damned spot.
+
+And have I not told you that what you mistake for madness is but over-acuteness
+of the sense?—now, I say, there came to my ears [ … ]
+
 </section>
 
 </section></section>
 </article>
 </div>
-```
-
-
-### The container `<div id="m-contact">`
-
-The `m-contact` container is for your author or agent contact info. Example:
-
-```markdown
-<div id="m-contact">
-
-Todd Warner
-
-123 Main St
-
-Example Town, NC 27560
-
-email@example.com | +1 555-555-1212
-
-</div>
-```
-
-### The container `<div class="m-header">`
-
-One exists at the top level for the title and whatnot of the work. Then each
-part, chapter, and scene can also optionally also have titles and things.
-
-Within this container, `h1` (`#` in markdown), `h2` (`##`), `h3`
-(`###`), and `blockquote` (`>`) are overloaded to represent ...
-
-```markdown
-<div id="m-header">
-
-# Title of Story
-
-## Subtitle of Story
-
-### by Firstname Lastname
-
-> An epigraph for my story. _There is nothing to writing. All you do is sit
-> down at a typewriter and bleed._ —Ernest Hemingway
-
-<div id="m-facts">
-
-2000 words
-
-Literary Fiction
-
-(_draft rev. 20221029_)
-
-</div>
-```
-
-**What's an epigraph you ask?** <https://en.wikipedia.org/wiki/Epigraph_(literature)>
-
-Note, the `m-header`s in the parts, chapters, and scenes don't usually have `m-facts`.
-
-# Fonts / Typefaces
-
-The default fonts used by the manuscript are ones selected to conform to what
-is expected—namely Times New Roman (or close equivalents), but also Arial and
-Courier Prime, depending on need.
-
-You really don't need to import new typefaces (your computer should know how to
-handle a request for any one of those), but if you want to explore my open
-source font recommendations, just add these imports to the top of your
-manuscript (adding the path as needed, of course):
-
-```markdown
-<style>
-    @import url("typeface/typeface-serif-tinos.css");a         /* fiction */
-    @import url("typeface/typeface-sans-arimo.css");        /* nonfiction */
-    @import url("typeface/typeface-mono-courier-prime.css"); /* monospace */
-    @import url("manuscript.css");
-</style>
 ```
 
 # Poetry!
@@ -184,17 +185,17 @@ To insert a poem in a document arbitrarily, it will be structured like this:
        Poem stanza
            Here.
     ```
+
     </div>
 
 - If your document is a manuscript for a single poem, `#manuscript` will be of
-  `class="short poetry"` and instead of a `.m-chapter` + `.m-scene`, you will
-  have an _empty_ `.m-chapter` + a solitary `.m-poem` filled with ```plaintext
-  stanzas similar to `.x-poem` above.
+  `class="short poetry"` and a `.m-poem` instead of a `.m-scene`, you will have
+  a solitary `.m-poem` filled with ```plaintext stanzas similar to `.x-poem`
+  above.
 
-- If your document is a manuscript for a single poem, `#manuscript` will be of
-  `class="short poetry"` and instead of a `.m-chapter` + `.m-scene`, you will
-  have an _empty_ `.m-chapter` + a solitary `.m-poem` filled with
-  ````plaintext` stanzas similar to `.x-poem` above.
+- If your document is a manuscript of many poems, `#manuscript` will be of
+  `class="long poetry"` and then many `.m-scene`s filled with ````plaintext`
+  stanzas similar to `.x-poem` above.
 
 ## Good luck!
 
