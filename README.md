@@ -101,7 +101,7 @@ Manuscript formatting similar to what many call Shunn Formatting:
     * Limitation: (1) you can't export to PDF directly within VSCode
       (not accurately), and (2) you MUST import manuscript.css from
       a webhost
-- [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)) - Linux only
+- [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)) - Linux only - Note, the interface can be quirky at times. But it has things like … a Hemingway Mode and a Focus Mode, which are nice for writing.
     * Edit
     * Preview: render preview of the manuscript
 
@@ -110,19 +110,17 @@ Manuscript formatting similar to what many call Shunn Formatting:
     * PDF: convert your markdown document to PDF: `CTRL-P` in the browser (super simple). Alternatively, convert an exported HTML document to PDF: `CTRL-P`.
 
 - [Pandoc](https://pandoc.org/) - not an editor, but …
-    * HTML: convert your saved markdown document to a compliant HTML document
+    * HTML: convert your saved markdown document to a compliant HTML document. From the commandline! :)
 
 
 ## Editors to Specifically Avoid
 
 Note, I have only tested maybe a dozen editors. These ones are particularly painful to use, IMHO.
 
-- [Ghostwriter](https://ghostwriter.kde.org/) - Linux only
-    * Edit only
-- [Obsidian](https://obsidian.md/)
-    * Edit only and has challenges importing and exporting the manuscript
-- [Atom](https://atom.io/)
-    * A wildly-popular and great editor, that got overly complicated, and now it is a defunct project. Do not use it if you can even find it anymore. VSCode more or less replaced every use case that Atom served.
+- [Ghostwriter](https://ghostwriter.kde.org/) - Linux only - Edit only. Terrible rendering capabilities, crashes a lot.
+- [Obsidian](https://obsidian.md/) - Edit only. A Joplin competitor, but without the functionality. Terrible at importing and exporting. Can't render anything correctly.
+- [Atom](https://atom.io/) - Edit and preview. A wildly-popular editor. Now unmaintained. Dead project.
+- [Marktext](https://github.com/marktext/marktext) - Edit only. Great, minimalistic writer's editor. Now unmaintained. a dead project.
 
 
 # TL;DR Just show me how to do it!
@@ -156,7 +154,7 @@ then HTML to PDF then that should be enough to get you going.
 
 **Step 1 - Copying from a template:** Choose a template to from the `manuscript-css/templates/` folder. For your first time, I recommend `prose-template-short-form.md`. Rename it to whatever makes sense to you like `lastname-storytitle.md` which is a pretty standard filename for a manuscript.
 
-**Step 2 - Edit the markdown document:** Use any editor: [Joplin](https://joplinapp.org), [VSCode](https://code.visualstudio.com/), [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)), [Zed editor](https://zed.dev/), Xed, Vim, [Marktext](https://github.com/marktext/marktext), [Gnome Text Editor](https://gitlab.gnome.org/GNOME/gnome-text-editor), even Notepad if you like.
+**Step 2 - Edit the markdown document:** Use any editor: [Joplin](https://joplinapp.org), [VSCode](https://code.visualstudio.com/), [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)), [Zed editor](https://zed.dev/), Xed, Vim, [Gnome Text Editor](https://gitlab.gnome.org/GNOME/gnome-text-editor), even Notepad if you like.
 
 - Open that markdown document (`lastname-storytitle.md` in our example) in your favorite editor.
 - Replace the templated content with yours
