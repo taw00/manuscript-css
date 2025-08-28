@@ -1,25 +1,18 @@
 # Manuscript-Formatted Markdown for Creative Writers
 
 1. *Draft your novel or short story or poetry in your favorite text editor*
-2. *Structure it in markdown*
+2. *Structure it in [markdown](https://www.markdownguide.org/)*
 3. *Style the markdown with these Manuscript CSS stylesheets*
 4. *Impress your friends and family (or critique group) with a work
-   rendered to industry standard manuscript formatting for a [[short
-   story]](https://format.ms/story) or [[novel]](https://format.ms/story)*  
+   rendered to industry standard manuscript formatting for a
+   [[short story]](https://format.ms/story) or [[novel]](https://format.ms/novel)*  
    <small>(Disclaimer: the
    [[poetry manuscript formatting]](https://format.ms/poetry) is not quite
    there yet.)</small>
 
-Are you a writer? In particular, a writer of narrative works? Fiction,
-narrative nonfiction, memoir, etc? Do you draft using a markdown text editor?
-And do you wish to share your drafts in a professional manner without having to
-port your work to a word processor and therefore maintain two copies of the document?
+Are you a writer? In particular, a writer of narrative works? Fiction, narrative nonfiction, memoir, etc? Do you draft using a text editor? And do you wish to share your drafts in a professional manner without having to port your work to a word processor?
 
-Save the fancy office word processors like
-LibreOffice or Google Docs or Word for finalization when you are ready to
-submit your work somewhere. Now, you can stay in your favorite markdown editor
-and still have a means to present your working drafts in a professional manner
-for review, critique, or whatever.
+Save the fancy office word processors like LibreOffice or Google Docs or Word for finalization when you are ready to submit your work somewhere. Now, you can stay in your favorite markdown editor and still have a means to present your working drafts in a professional manner for review, critique, or whatever.
 
 # Manuscript formatting?
 
@@ -30,6 +23,7 @@ review. Here are some screenshots of the results . . .
 
 <a href="misc/README-short-story-poe.png"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.png" alt="short format: The Tell-Tale Heart (Poe)" /></a>
 <a href="misc/README-long-story-lovecraft.png"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.png" alt="long format: At the Mountains of Madness (Lovecraft)" /></a>
+
 <!-- ![short format: The Tell-Tale Heart](misc/README-short-story-poe.png) -->
 <!-- ![long format: At the Mountains of Madness](misc/README-long-story-lovecraft.pdf) -->
 
@@ -78,32 +72,37 @@ Manuscript formatting similar to what many call Shunn Formatting:
 - If you are CSS savvy, easy-to-alter settings for nearly everything (fonts,
   margins, spacing, even the dinkuses and the -30- indicator).
 
-### Recommended Editors (and two other tools)
+### Recommended Editors and Tools
 
 - Any text editor
     * Edit - any editor can be used to edit your manuscript
 - [Joplin](https://joplinapp.com) - the seamless experience
     * Edit
-    * Preview: render preview as a manuscript
+	+ Preview: renders an accurate preview of the manuscript
     * HTML: export to compliant HTML file
     * PDF: export to compliant PDF file
     * Recommended: install the *Import Local CSS* plugin so you can
       import the CSS from a webhost, or from your local harddrive
-- [VSCode](https://code.visualstudio.com/)
+- [VSCodium](https://vscodium.com/), the open-source version of [VSCode](https://code.visualstudio.com/)
     * Edit
-    * Preview: render preview of the manuscript
+	+ Preview: renders an accurate preview of the manuscript
     * HTML: export to compliant HTML file
     * PDF: export to compliant HTML file …  
       - then export to compliant PDF using a Chromium-based browser  
         (Chrome, Vivaldi, Edge, Safari (desktop only), Opera, etc.)  
         *<small>NOTE: Firefox-based browsers CAN VIEW an the exported HTML document just fine, but it CANNOT render the PDF correctly because they cannot process @page rules correctly.</small>*
-    * Required: install the *Markdown All-in-One* extension
-    * Limitation: (1) you can't export to PDF directly within VSCode
+    * **Required:** install the *Markdown All-in-One* extension
+    * **Limitations:** (1) you can't export to PDF directly within VSCodium/VSCode
       (not accurately), and (2) you MUST import manuscript.css from
       a webhost
+- [Ghostwriter](https://ghostwriter.kde.org/) - love this editor
+	+ Edit: has focus and Hemingway modes!
+	+ Preview: renders an accurate preview of the manuscript
+	+ HTML: export to compliant HTML file
 - [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)) - Linux only - Note, the interface can be quirky at times. But it has things like … a Hemingway Mode and a Focus Mode, which are nice for writing.
-    * Edit
-    * Preview: render preview of the manuscript
+	+ Edit: has focus and Hemingway modes!
+	+ Preview: renders an accurate preview of the manuscript
+    * Caveat: sometimes Apostrophe can be flaky.
 
 - Chrome browser + [Markdown Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) extension - not an editor, but …
     * Preview: render a preview of the manuscript
@@ -113,11 +112,10 @@ Manuscript formatting similar to what many call Shunn Formatting:
     * HTML: convert your saved markdown document to a compliant HTML document. From the commandline! :)
 
 
-## Editors to Specifically Avoid
+### Editors to Specifically Avoid
 
 Note, I have only tested maybe a dozen editors. These ones are particularly painful to use, IMHO.
 
-- [Ghostwriter](https://ghostwriter.kde.org/) - Linux only - Edit only. Terrible rendering capabilities, crashes a lot.
 - [Obsidian](https://obsidian.md/) - Edit only. A Joplin competitor, but without the functionality. Terrible at importing and exporting. Can't render anything correctly.
 - [Atom](https://atom.io/) - Edit and preview. A wildly-popular editor. Now unmaintained. Dead project.
 - [Marktext](https://github.com/marktext/marktext) - Edit only. Great, minimalistic writer's editor. Now unmaintained. a dead project.
@@ -152,30 +150,36 @@ then HTML to PDF then that should be enough to get you going.
 
 **(1) Copy and rename** one of `.md` templates. **(2) Edit and replace** the text with your contact information, your story, etc. **(3) Preview it** either in-application or in a Chrome browser. Then **(4) export to PDF** using either Joplin (the direct way) or a Chrome-based browser (Firefox cannot do this, unfortunately).
 
-**Step 1 - Copying from a template:** Choose a template to from the `manuscript-css/templates/` folder. For your first time, I recommend `prose-template-short-form.md`. Rename it to whatever makes sense to you like `lastname-storytitle.md` which is a pretty standard filename for a manuscript.
+### Step 1 - Copying from a template
 
-**Step 2 - Edit the markdown document:** Use any editor: [Joplin](https://joplinapp.org), [VSCode](https://code.visualstudio.com/), [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)), [Zed editor](https://zed.dev/), Xed, Vim, [Gnome Text Editor](https://gitlab.gnome.org/GNOME/gnome-text-editor), even Notepad if you like.
+Choose a template to from the `manuscript-css/templates/` folder. For your first time, I recommend `prose-template-short-form.md`. Rename it to whatever makes sense to you like `lastname-storytitle.md` which is a pretty standard filename for a manuscript.
+
+### Step 2 - Edit the markdown document
+
+Use any editor: [Joplin](https://joplinapp.org), [VSCodium](https://vscodium.com/), [Ghostwriter](https://ghostwriter.kde.org/), [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)), [Zed editor](https://zed.dev/), Xed, Vim, [Gnome Text Editor](https://gitlab.gnome.org/GNOME/gnome-text-editor), even Notepad if you like.
 
 - Open that markdown document (`lastname-storytitle.md` in our example) in your favorite editor.
 - Replace the templated content with yours
 - Write your story, scene by scene. (Or if a poetry collection, poem by poem.)
 
-**Step 3 - Preview the manuscript**
+### Step 3 - Preview the manuscript
 
-- Method 1 - in-app: This can done natively with Joplin, VSCode, or Apostrophe
+- Method 1 - in-app: This can done natively with Joplin, VSCodium/VSCode, or Apostrophe
 - Method 2 - in-browser: This is done using a Chrome-based browser and the *Markdown Viewer* extension. Or by viewing an exported HTML document with the browser.
 
-**Step 4 - Export the manuscript to a PDF document**
+### Step 4 - Export the manuscript to a PDF document
 
 - Method 1 - [Joplin](https://joplinapp.org): CTRL-SHIFT-E
 - Method 2 - [Markdown Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) extension in Chrome: CTRL-P  
   (*The easiest way if not using Joplin.*)
-- Method 3 - [VSCode](https://code.visualstudio.com/): export the HTML to your harddive, then use your browser (Chromium-based only!) to view it and "print to file."
+- Method 3 - [VSCodium](https://vscodium.com/)/VSCode: export the HTML to your harddive, then use your browser (Chromium-based only!) to view it and "print to file."
 - Method 4: [Pandoc](https://pandoc.org/): convert the markdown document to HTML, then use your browser (Chromium-based only!) to view it and "print to file."
+
+## Notes about using some of the tools
 
 ### Joplin: edited markdown to exported PDF
 
-*Editing, Previewing, and then export a PDF, all in the same application interface.*
+*Edit, Preview, and then export a PDF, all in the same application interface.*
 
 Install [Joplin](https://joplinapp.org), but then also install the *Import Local CSS* plugin.
 
@@ -187,33 +191,49 @@ within the application.
 - You can also export to HTML if you prefer that (right-click on the "note" and export to *HTML file*).
 - If you subscribe to the [Joplin Cloud](https://joplincloud.com) service, you can share the document in a browser with friends and family and critique groups by just sending them a link to view.
 
-### VSCode: edited markdown to exported HTML
+### VSCodium/VSCode: edited markdown to exported HTML
 
-*Editing, Previewing, and, if you like, exporting to an HTML document.*
+*Edit, Preview, and, if you like, export to an HTML document.*
 
-Install [VSCode](https://code.visualstudio.com/), but then also install (`CTRL-SHIFT-X`) these extensions: `Markdown All-in-One`, and optionally `Markdown Preview Mermaid Support`, `Markdown Footnotes`, and `Markdown Superscript`. (The first extension is required.)
+Install [VSCodium](https://vscodium.com/), but then also install (`CTRL-SHIFT-X`) these extensions: `Markdown All-in-One`, and optionally `Markdown Preview Mermaid Support`, `Markdown Footnotes`, and `Markdown Superscript`. (The first extension is required.)
 
-VSCode has a built-in previewer (`CTRL-k` release then `v`) so you can see what the manuscript will look like. To convert to a PDF document you have to either export it to HTML then convert that to PDF with the browser or Pandoc, or use the browser + the *Markdown Viewer* extension to view the markdown document and convert that to a PDF document.
+VSCodium has a built-in previewer (`CTRL-k` release then `v`) so you can see what the manuscript will look like. To convert to a PDF document you have to either export it to HTML then convert that to PDF with the browser or Pandoc, or use the browser + the *Markdown Viewer* extension to view the markdown document and convert that to a PDF document.
 
 To export to HTML on disk:  `CTRL-SHIFT-P` and then
 `>Markdown All in One: Print current document to HTML`. It will be saved, in the same directory as the markdown document.
 
-Easier yet is to use your browser + the *Markdown Viewer* extension (see configuration notes below) to preview and then use the browser to convert to a PDF document: `CTRL-P`.
+Of course, exporting to HTML is optional if your goal is a compliant PDF. If that is the case, then use VSCodium just for editing and previewing and *Markdown Viewer* + Chrome for creating the PDF.
 
-> <small>**A BIG CAVEAT WITH VSCODE**: VSCode blocks importing (`@import`) from the
-> filesystem. If you want to use the previewer and renderer in VSCode, you will
-> have to host the `manuscript-css` folder on the web somewhere. Or in the
-> meantime, as of this writing, just use my instance:
-> `@import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");`
+> <small>**A BIG CAVEAT WITH VSCODIUM & VSCODE**  
+> These editors block importing
+> (`@import`) from the filesystem. If you want to use the previewer and renderer
+> in VSCodium, you will have to host the `manuscript-css` folder on the web
+> somewhere. Or in the meantime, as of this writing, just use my instance:
+> ```markdown
+> @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
+> ```
 > That is not guaranteed to be a functional link forever though.</small>
 
 **Side note**  
-With Joplin, you can use its native editor, or any other editor. If you are Joplin user but also love VSCode, there is an excellent
-VSCode extension `joplin-vscode-plugin` that enables it to plug into the Joplin application. Other editors are simpler to use with Joplin. I personally use the [Zed editor](https://zed.dev/).
+With Joplin, you can use its native editor, or any other editor. If you are Joplin user but also love VSCodium, there is an excellent extension
+`joplin-vscode-plugin` that enables it to plug into the Joplin application. Other editors are simpler to use with Joplin, though. I personally use the [Zed editor](https://zed.dev/).
 
-### *Markdown Viewer* browser extension: markdown document to PDF document
+### Ghostwriter: edited markdown to exported HTML
 
-*Previewing, and then when ready, export a PDF.*
+Out of the box, [Ghostwriter](https://ghostwriter.kde.org/) will not render a correct preview of your work. You just need to adjust a couple settings so you can preview correctly and export to HTML correctly.
+
+- Configure Ghostwriter to preview correctly: Settings > Preview Options… > Markdown Flavor: Pandoc CommonMark
+- To export to HTML file: `CTRL-E`
+	+ Markdown Converter: Pandoc CommonMark
+	+ File Format: HTML 5
+	+ Command line options: --metadata title="storytitle"    
+	  <small>(optional, and, of course, replace the title with the title of your work)</small>
+
+Of course, exporting to HTML is optional if your goal is a compliant PDF. If that is the case, then use Ghostwriter just for editing and previewing and *Markdown Viewer* + Chrome for creating the PDF.
+
+### Markdown Viewer browser extension: markdown document to PDF document
+
+*Preview, and then when ready, export a PDF.*
 
 This enables you to use any text editor to work with your manuscript.
 
@@ -270,7 +290,7 @@ Questions? Comments? Post them in the Discussions section of this repository.
 - I have also done no styling for images. If you want to add images to your document, you are on your own. For now. I'll probably play with that in the future.
 - Using this process with HTML instead of Markdown. Well, it should just work, I just haven't tried it. I mean, markdown, in the end, is really just HTML with a bit of varnish.
 
-### Porting your finished draft to LibreOffice and/or Google Docs
+### Porting your finished draft to LibreOffice and/or Google Docs (or any other word processor)
 
 **LibreOffice**
 
@@ -313,17 +333,16 @@ You can get your document into Google Docs one of two ways: 1. port it to LibreO
 
 ### Is Todd a Joplin shill?
 
-Nope. It's just the best application that I have found for this kind of work. IMHO.
+Nope. It's just the best application that I have found for this kind of work.
 
-The great majority of markdown editors are great at editing text. Some can also preview your work (most cannot). Joplin is, I think, the only text editor with full CSS rendering capability.
+The great majority of markdown editors are great at editing text. Some can also preview your work (most cannot). Joplin is, I think, the only text editor with full CSS rendering capability and that can also export to HTML or PDF natively.
 
 <a href="misc/README-joplin.png"><img src="misc/README-joplin.png" width="100%" alt="Joplin in action!" /></a>
 
 
-The [Joplin](https://joplinapp.org) note-taking application (like Obsidian but much better) gives you the full ability to customize the results of whatever you write to your hearts content using standard CSS. Joplin is also a great personal document-management
-platform (like Evernote, but better). And it can sync to the cloud. And you can publish things to the cloud for anyone to view. And it is fully end-to-end encrypted.  And it has a web-clipper (super handy!!!) and a mobile app. So, yes, I suppose I am a Joplin shill. But for all the right reasons.
+The [Joplin](https://joplinapp.org) note-taking application (like Obsidian but much better) gives you the full ability to customize the results of whatever you write to your hearts content using standard CSS. Joplin is also a great personal document-management platform (like Evernote, but better). And it can sync to the cloud. And you can publish things to the cloud for anyone to view. And it is fully end-to-end encrypted. And it has a web-clipper (super handy!!!) and a mobile app. And, and! So, yes, I suppose I am a Joplin shill. But for all the right reasons.
 
-But I also use other editors out there—primarely Vim and Zed. I am sure you have your preferred interface. Install Chrome and the *Markdown Viewer* extension and ollow the steps above. It's not complicated.
+But I also use other editors out there—primarily Zed, Ghostwriter, and Vim. I am sure you have your preferred interface. To work with any other edit, just install Chrome and the *Markdown Viewer* extension and follow the steps above. It's not complicated.
 
 ---
 ---
@@ -353,7 +372,7 @@ But I also use other editors out there—primarely Vim and Zed. I am sure you ha
 
 # Good luck!
 
-Check out the example manuscripts in this repository and I think how everything works with `manuscript.css` becomes obvious.
+Check out the [example manuscripts](templates/) in this repository and I think how everything works with `manuscript.css` becomes obvious.
 
 Good luck. Now, quit fooling around on the internet and write something.
 
