@@ -1,21 +1,12 @@
 /* CSS for Manuscript Formating v3.0
  *
- * m-style-reset-joplin.css - reset the Joplin app's base styles to more
+ * m-reset/joplin.css - reset the Joplin app's base styles to more
  * friendly defaults for manuscript.css when attempting to render from the
  * application.
  * <https://joplinapp.org>
  *
- * Markdown toolchains manipulate stylings. This attempts to reset those
- * stylings to a more "browser default" expected behavior plus some other
- * changes.
- *
- * The Joplin desktop note-taking application (an excellent markdown editor)
- * will honor your layered on external (hosted on the web) stylings (thank you
- * @laurent!). For locally hosted imports, install the "Import Local CSS"
- * plugin by the developer who goes by the pseudonmym @personalrefridgerator.
- *
- * Included in this stylesheet
- * - Joplin-specific adjustments
+ * Markdown toolchains manipulate stylings. This attempts to reset those to
+ * play nice with manuscript-css.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
