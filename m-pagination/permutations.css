@@ -1,5 +1,38 @@
 #vpage {
-    page: us-portrait-top-right-header;      /* default: US Letter, Portrait */
+    /* default permutations are based off of US if no size declared */
+    page: us-portrait-top-right-header;
+    &.landscape {
+        &.landscape { page: us-landscape-top-right-header; }
+    }
+    &.no-header {
+        page: us-portrait-no-header;
+        &.landscape { page: us-landscape-no-header; }
+    }
+    &.top-left-header {
+        page: us-portrait-top-left-header;
+        &.landscape { page: us-landscape-top-left-header; }
+    }
+    &.top-center-header {
+        page: us-portrait-top-center-header;
+        &.landscape { page: us-landscape-top-center-header; }
+    }
+    &.top-right-header {
+        page: us-portrait-top-right-header;
+        &.landscape { page: us-landscape-top-right-header; }
+    }
+    &.bottom-left-header {
+        page: us-portrait-bottom-left-header;
+        &.landscape { page: us-landscape-bottom-left-header; }
+    }
+    &.bottom-center-header {
+        page: us-portrait-bottom-center-header;
+        &.landscape { page: us-landscape-bottom-center-header; }
+    }
+    &.bottom-right-header {
+        page: us-portrait-bottom-right-header;
+        &.landscape { page: us-landscape-bottom-right-header; }
+    }
+    /* now, all of the per-page-dimension permutaions */
     &.US, &.us, &.letter {
         page: us-portrait-top-right-header; 
         &.no-header {
