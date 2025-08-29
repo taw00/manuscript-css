@@ -1,6 +1,6 @@
 /* CSS for Manuscript Formating v3.0
  *
- * m-style-reset-pandoc.css - pandoc does mostly the right things but there is
+ * m-reset/pandoc.css - pandoc does mostly the right things but there is
  * a pesky setting that interferes with proper rendering: I.e., a title-block.
  * We make it go away.
  *
