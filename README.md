@@ -222,11 +222,11 @@ With Joplin, you can use its native editor, or any other editor. If you are Jopl
 
 Out of the box, [Ghostwriter](https://ghostwriter.kde.org/) will not render a correct preview of your work. You just need to adjust a couple settings so you can preview correctly and export to HTML correctly.
 
-- Configure Ghostwriter to preview correctly: Settings > Preview Options… > Markdown Flavor: Pandoc CommonMark
+- Configure Ghostwriter to preview correctly: Settings > Preview&nbsp;Options… > Markdown&nbsp;Flavor: `Pandoc CommonMark`
 - To export to HTML file: `CTRL-E`
-	+ Markdown Converter: Pandoc CommonMark
-	+ File Format: HTML 5
-	+ Command line options: --metadata title="storytitle"    
+	+ Markdown&nbsp;Converter: `Pandoc CommonMark`
+	+ File&nbsp;Format: `HTML 5`
+	+ Command&nbsp;line&nbsp;options: `--metadata title="storytitle" --no-highlight -f markdown-native_divs+raw_html`   
 	  <small>(optional, and, of course, replace the title with the title of your work)</small>
 
 Of course, exporting to HTML is optional if your goal is a compliant PDF. If that is the case, then use Ghostwriter just for editing and previewing and *Markdown Viewer* + Chrome for creating the PDF.
