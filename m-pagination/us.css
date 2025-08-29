@@ -1,0 +1,270 @@
+/* Pagination Logic and Per-page Headers
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+
+/*
+ * **************** US header rules ****************
+ * *************************************************
+ */
+
+/*
+ * US, portrait, top (not :first) rules
+ */
+
+@page us-portrait-top-left-header {
+    size: 8.5in 11in;
+    margin: 1.25in 1in 1in;
+    @top-left {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page us-portrait-top-center-header {
+    size: 8.5in 11in;
+    margin: 1.25in 1in 1in;
+    @top-center {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page us-portrait-top-right-header {
+    size: 8.5in 11in;
+    margin: 1.25in 1in 1in;
+    @top-right {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * US, landscape, top (not :first) rules
+ */
+
+@page us-landscape-top-left-header {
+    size: 11in 8.5in;
+    margin: 1.25in 1in 1in;
+    @top-left {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page us-landscape-top-center-header {
+    size: 11in 8.5in;
+    margin: 1.25in 1in 1in;
+    @top-center {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page us-landscape-top-right-header {
+    size: 11in 8.5in;
+    margin: 1.25in 1in 1in;
+    @top-right {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * US, portrait, bottom (not :first) rules
+ */
+
+@page us-portrait-bottom-left-header {
+    size: 8.5in 11in;
+    margin: 1in 1in 1.25in;
+    @bottom-left {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+@page us-portrait-bottom-center-header {
+    size: 8.5in 11in;
+    margin: 1in 1in 1.25in;
+    @bottom-center {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+@page us-portrait-bottom-right-header {
+    size: 8.5in 11in;
+    margin: 1in 1in 1.25in;
+    @bottom-right {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * US, landscape, bottom (not :first) rules
+ */
+
+@page us-landscape-bottom-left-header {
+    size: 11in 8.5in;
+    margin: 1in 1in 1.25in;
+    @bottom-left {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+@page us-landscape-bottom-center-header {
+    size: 11in 8.5in;
+    margin: 1in 1in 1.25in;
+    @bottom-center {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+@page us-landscape-bottom-right-header {
+    size: 11in 8.5in;
+    margin: 1in 1in 1.25in;
+    @bottom-right {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * ******** US :first rules ********
+ */
+
+/*
+ * US, portrait, top & bottom :first rules
+ */
+
+@page us-portrait-top-left-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page us-portrait-top-center-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page us-portrait-top-right-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
+@page us-portrait-bottom-left-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page us-portrait-bottom-center-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page us-portrait-bottom-right-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
+
+/*
+ * US, landscape, top & bottom :first rules
+ */
+
+@page us-landscape-top-left-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page us-landscape-top-center-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page us-landscape-top-right-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
+@page us-landscape-bottom-left-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page us-landscape-bottom-center-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page us-landscape-bottom-right-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+

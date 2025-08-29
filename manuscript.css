@@ -28,12 +28,6 @@
  *   declaration after your imports in your markdown (or HTML) file's style
  *   block (remove the *'s):
  *
- * @page { size: A4 portrait; margin: 25.4mm; }
- * @page { size: A5 portrait; margin: 25.4mm; }
- * @page { size: A6 portrait; margin: 12.7mm; }
- * @page { size: 5.5in 8.5in; margin: .75in; }
- * @page { size: letter portrait; margin: 1in; }
- *
  * The article #manuscript class "switches":
  * - the defaults are short narrative prose, to change them …
  * - 'poetry': if your work is … poetry
@@ -57,14 +51,15 @@
  * </style>
  */
 
-@layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations;
+@layer lm-reset-joplin-constants, lm-user-resets, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-user-overrides;
 
-@import   url("./m-var.css?rev=2025082704");
-@import url("./m-reset.css?rev=2025082704");
-@import  url("./m-init.css?rev=2025082704");
-@import  url("./m-core.css?rev=2025082704");
+@import          url("./m-var.css?rev=20250829");
+@import        url("./m-reset.css?rev=20250829");
+@import         url("./m-init.css?rev=20250829");
+@import         url("./m-core.css?rev=20250829");
+@import   url("./m-pagination.css?rev=20250829");
+@import url("./user-overrides.css?rev=20250829");
 
-@import url("./m-pagination/top-right.css?rev=2025082704");
 
 /*
  * useful misc classes

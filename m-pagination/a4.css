@@ -1,0 +1,270 @@
+/* Pagination Logic and Per-page Headers
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+
+/*
+ * **************** A4 header rules ****************
+ * *************************************************
+ */
+
+/*
+ * A4, portrait, top (not :first) rules
+ */
+
+@page a4-portrait-top-left-header {
+    size: 210mm 297mm;
+    margin: 1.25in 1in 1in;
+    @top-left {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page a4-portrait-top-center-header {
+    size: 210mm 297mm;
+    margin: 1.25in 1in 1in;
+    @top-center {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page a4-portrait-top-right-header {
+    size: 210mm 297mm;
+    margin: 1.25in 1in 1in;
+    @top-right {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * A4, landscape, top (not :first) rules
+ */
+
+@page a4-landscape-top-left-header {
+    size: 297mm 210mm;
+    margin: 1.25in 1in 1in;
+    @top-left {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page a4-landscape-top-center-header {
+    size: 297mm 210mm;
+    margin: 1.25in 1in 1in;
+    @top-center {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page a4-landscape-top-right-header {
+    size: 297mm 210mm;
+    margin: 1.25in 1in 1in;
+    @top-right {
+        vertical-align: top;
+        margin: 1in 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * A4, portrait, bottom (not :first) rules
+ */
+
+@page a4-portrait-bottom-left-header {
+    size: 210mm 297mm;
+    margin: 1in 1in 1.25in;
+    @bottom-left {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+@page a4-portrait-bottom-center-header {
+    size: 210mm 297mm;
+    margin: 1in 1in 1.25in;
+    @bottom-center {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+@page a4-portrait-bottom-right-header {
+    size: 210mm 297mm;
+    margin: 1in 1in 1.25in;
+    @bottom-right {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * A4, landscape, bottom (not :first) rules
+ */
+
+@page a4-landscape-bottom-left-header {
+    size: 297mm 210mm;
+    margin: 1in 1in 1.25in;
+    @bottom-left {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+@page a4-landscape-bottom-center-header {
+    size: 297mm 210mm;
+    margin: 1in 1in 1.25in;
+    @bottom-center {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+@page a4-landscape-bottom-right-header {
+    size: 297mm 210mm;
+    margin: 1in 1in 1.25in;
+    @bottom-right {
+        vertical-align: bottom;
+        margin: 0 0 1in;
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * ******** A4 :first rules ********
+ */
+
+/*
+ * A4, portrait, top & bottom :first rules
+ */
+
+@page a4-portrait-top-left-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page a4-portrait-top-center-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page a4-portrait-top-right-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
+@page a4-portrait-bottom-left-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page a4-portrait-bottom-center-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page a4-portrait-bottom-right-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
+
+/*
+ * A4, landscape, top & bottom :first rules
+ */
+
+@page a4-landscape-top-left-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page a4-landscape-top-center-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page a4-landscape-top-right-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
+@page a4-landscape-bottom-left-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page a4-landscape-bottom-center-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page a4-landscape-bottom-right-header:first {
+    margin: 1in;
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+

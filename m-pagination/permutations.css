@@ -1,0 +1,142 @@
+#vpage {
+    page: us-portrait-top-right-header;      /* default: US Letter, Portrait */
+    &.US, &.us, &.letter {
+        page: us-portrait-top-right-header; 
+        &.top-left-header {
+            page: us-portrait-top-left-header;
+            &.landscape { page: us-landscape-top-left-header; }
+        }
+        &.top-center-header {
+            page: us-portrait-top-center-header;
+            &.landscape { page: us-landscape-top-center-header; }
+        }
+        &.top-right-header {
+            page: us-portrait-top-right-header;
+            &.landscape { page: us-landscape-top-right-header; }
+        }
+        &.bottom-left-header {
+            page: us-portrait-bottom-left-header;
+            &.landscape { page: us-landscape-bottom-left-header; }
+        }
+        &.bottom-center-header {
+            page: us-portrait-bottom-center-header;
+            &.landscape { page: us-landscape-bottom-center-header; }
+        }
+        &.bottom-right-header {
+            page: us-portrait-bottom-right-header;
+            &.landscape { page: us-landscape-bottom-right-header; }
+        }
+    }
+
+    &.USh, &.ush, &.hletter { /* US half-letter */
+        page: ush-portrait-top-right-header; 
+        &.top-left-header {
+            page: ush-portrait-top-left-header;
+            &.landscape { page: ush-landscape-top-left-header; }
+        }
+        &.top-center-header {
+            page: ush-portrait-top-center-header;
+            &.landscape { page: ush-landscape-top-center-header; }
+        }
+        &.top-right-header {
+            page: ush-portrait-top-right-header;
+            &.landscape { page: ush-landscape-top-right-header; }
+        }
+        &.bottom-left-header {
+            page: ush-portrait-bottom-left-header;
+            &.landscape { page: ush-landscape-bottom-left-header; }
+        }
+        &.bottom-center-header {
+            page: ush-portrait-bottom-center-header;
+            &.landscape { page: ush-landscape-bottom-center-header; }
+        }
+        &.bottom-right-header {
+            page: ush-portrait-bottom-right-header;
+            &.landscape { page: ush-landscape-bottom-right-header; }
+        }
+    }
+
+    &.A4, &.a4 {
+        page: a4-portrait-top-right-header; 
+        &.top-left-header {
+            page: a4-portrait-top-left-header;
+            &.landscape { page: a4-landscape-top-left-header; }
+        }
+        &.top-center-header {
+            page: a4-portrait-top-center-header;
+            &.landscape { page: a4-landscape-top-center-header; }
+        }
+        &.top-right-header {
+            page: a4-portrait-top-right-header;
+            &.landscape { page: a4-landscape-top-right-header; }
+        }
+        &.bottom-left-header {
+            page: a4-portrait-bottom-left-header;
+            &.landscape { page: a4-landscape-bottom-left-header; }
+        }
+        &.bottom-center-header {
+            page: a4-portrait-bottom-center-header;
+            &.landscape { page: a4-landscape-bottom-center-header; }
+        }
+        &.bottom-right-header {
+            page: a4-portrait-bottom-right-header;
+            &.landscape { page: a4-landscape-bottom-right-header; }
+        }
+    }
+
+    &.A5, &.a5 {
+        page: a5-portrait-top-right-header;
+        &.top-left-header {
+            page: a5-portrait-top-left-header;
+            &.landscape { page: a5-landscape-top-left-header; }
+        }
+        &.top-center-header {
+            page: a5-portrait-top-center-header;
+            &.landscape { page: a5-landscape-top-center-header; }
+        }
+        &.top-right-header {
+            page: a5-portrait-top-right-header;
+            &.landscape { page: a5-landscape-top-right-header; }
+        }
+        &.bottom-left-header {
+            page: a5-portrait-bottom-left-header;
+            &.landscape { page: a5-landscape-bottom-left-header; }
+        }
+        &.bottom-center-header {
+            page: a5-portrait-bottom-center-header;
+            &.landscape { page: a5-landscape-bottom-center-header; }
+        }
+        &.bottom-right-header {
+            page: a5-portrait-bottom-right-header;
+            &.landscape { page: a5-landscape-bottom-right-header; }
+        }
+    }
+    &.A6, &.a6 {
+        page: a6-portrait-top-right-header;
+        &.top-left-header {
+            page: a6-portrait-top-left-header;
+            &.landscape { page: a6-landscape-top-left-header; }
+        }
+        &.top-center-header {
+            page: a6-portrait-top-center-header;
+            &.landscape { page: a6-landscape-top-center-header; }
+        }
+        &.top-right-header {
+            page: a6-portrait-top-right-header;
+            &.landscape { page: a6-landscape-top-right-header; }
+        }
+        &.bottom-left-header {
+            page: a6-portrait-bottom-left-header;
+            &.landscape { page: a6-landscape-bottom-left-header; }
+        }
+        &.bottom-center-header {
+            page: a6-portrait-bottom-center-header;
+            &.landscape { page: a6-landscape-bottom-center-header; }
+        }
+        &.bottom-right-header {
+            page: a6-portrait-bottom-right-header;
+            &.landscape { page: a6-landscape-bottom-right-header; }
+        }
+    }
+}
+
