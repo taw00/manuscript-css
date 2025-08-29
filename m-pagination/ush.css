@@ -11,6 +11,15 @@
  * *************************************************
  */
 
+@page ush-portrait-no-header {
+    size: 5.5in 8.5in;
+    margin: .5in;
+}
+@page ush-landscape-no-header {
+    size: 8.5in 5.5in;
+    margin: .5in;
+}
+
 /*
  * USh, portrait, top (not :first) rules
  */

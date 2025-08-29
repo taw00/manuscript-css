@@ -11,6 +11,15 @@
  * *************************************************
  */
 
+@page us-portrait-no-header {
+    size: 8.5in 11in;
+    margin: 1in;
+}
+@page us-landscape-no-header {
+    size: 11in 8.5in;
+    margin: 1in;
+}
+
 /*
  * US, portrait, top (not :first) rules
  */

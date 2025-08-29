@@ -2,6 +2,10 @@
     page: us-portrait-top-right-header;      /* default: US Letter, Portrait */
     &.US, &.us, &.letter {
         page: us-portrait-top-right-header; 
+        &.no-header {
+            page: us-portrait-no-header;
+            &.landscape { page: us-landscape-no-header; }
+        }
         &.top-left-header {
             page: us-portrait-top-left-header;
             &.landscape { page: us-landscape-top-left-header; }
@@ -28,8 +32,12 @@
         }
     }
 
-    &.USh, &.ush, &.hletter { /* US half-letter */
+    &.USh, &.USH, &.ush, &.hletter { /* US half-letter */
         page: ush-portrait-top-right-header; 
+        &.no-header {
+            page: ush-portrait-no-header;
+            &.landscape { page: ush-landscape-no-header; }
+        }
         &.top-left-header {
             page: ush-portrait-top-left-header;
             &.landscape { page: ush-landscape-top-left-header; }
@@ -58,6 +66,10 @@
 
     &.A4, &.a4 {
         page: a4-portrait-top-right-header; 
+        &.no-header {
+            page: a4-portrait-no-header;
+            &.landscape { page: a4-landscape-no-header; }
+        }
         &.top-left-header {
             page: a4-portrait-top-left-header;
             &.landscape { page: a4-landscape-top-left-header; }
@@ -86,6 +98,10 @@
 
     &.A5, &.a5 {
         page: a5-portrait-top-right-header;
+        &.no-header {
+            page: a5-portrait-no-header;
+            &.landscape { page: a5-landscape-no-header; }
+        }
         &.top-left-header {
             page: a5-portrait-top-left-header;
             &.landscape { page: a5-landscape-top-left-header; }
@@ -113,6 +129,10 @@
     }
     &.A6, &.a6 {
         page: a6-portrait-top-right-header;
+        &.no-header {
+            page: a6-portrait-no-header;
+            &.landscape { page: a6-landscape-no-header; }
+        }
         &.top-left-header {
             page: a6-portrait-top-left-header;
             &.landscape { page: a6-landscape-top-left-header; }

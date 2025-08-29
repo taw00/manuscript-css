@@ -11,6 +11,15 @@
  * *************************************************
  */
 
+@page a6-portrait-no-header {
+    size: 105mm 148mm;
+    margin: .5in;
+}
+@page a6-landscape-no-header {
+    size: 148mm 105mm;
+    margin: .5in;
+}
+
 /*
  * A6, portrait, top (not :first) rules
  */

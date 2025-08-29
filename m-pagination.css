@@ -1,3 +1,12 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * m-var/*.css - page rules for 5 paper dimensions and pagination headers
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
 @import url("./m-pagination/permutations.css");
 @import url("./m-pagination/us.css");
 @import url("./m-pagination/ush.css");

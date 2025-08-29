@@ -20,31 +20,30 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  *
  * The div #vpage class "switches":
- * - defaults: 'US', and not 'plain', and not 'vplain' or 'vvplain'
- * - 'plain', 'vplain', 'vvplain': simplify the rendering by removing fancy the
- *   3D paper look and more (probably not commonly used)
- * - 'US', 'USh', 'A4', 'A5', or 'A6': (use only one) US Letter is the default.
- *   For USh, A4, A5, or A6, or whatever, you need to add the appropriate @page
- *   declaration after your imports in your markdown (or HTML) file's style
- *   block (remove the *'s):
+ * - default: class="US portrait top-right-header"
+ *   If there is no classes are set, those are still the default.  
+ *   Others available:
+ *   - 'plain', 'vplain', 'vvplain' - these simplify the rendering by removing
+ *     fancy things.
+ *   - 'US', 'USh', 'A4', 'A5', or 'A6' paper sizes
+ *   - 'top-left-header', 'top-right-header', 'top-center-header',  
+ *     'bottom-left-header', 'bottom-center-header', 'bottom-right-header',  
+ *     'no-header' (if you don't want any header)
+ *     and when you set a --m-pagination-header variable in your <style> block
+ *     it will appear in one of those. You can only use one of those switches.
  *
  * The article #manuscript class "switches":
- * - the defaults are short narrative prose, to change them …
- * - 'poetry': if your work is … poetry
- * - ''long': if your work is long form
- * - 'nonnarrative': for prose, if your work is not a narrative work
- * - 'simple' or 'text-only': used to present a simplified version (no
- *   first-page metadata and simulated page breaks and such)
- *
- * Pagination headers is enabled with twitchy CSS stuff.
- * The default is set in the upper right-hand of the document.
- * If you want pagination headers different than the default, add to your
- * document styles, and use one of the m-pagination-___-___.css files that is
- * matches your desired outcome. Example, for bottom-right, I would do this:
+ * - default: class="short narrative prose"  
+ *   If there is no classes are set, those are still the default.  
+ *   Others avaiable:
+ *   - 'poetry' - if your work is … poetry
+ *   - 'long' - if your work is long form
+ *   - 'nonnarrative' - for prose, if your work is not a narrative work
+ *   - 'simple' or 'text-only' - used to present a simplified version (no
+ *     first-page metadata and simulated page breaks and such)
  *
  * <style
  *   @import url("url-or-path/to/the/manuscript.css");
- *   @import url("url-or-path/to/the/m-pagination-bottom-right.css");
  *   :root {
  *     --m-pagination-header: "MyLastname / My Short Title" counter(page);
  *   }

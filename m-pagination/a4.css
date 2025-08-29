@@ -11,6 +11,15 @@
  * *************************************************
  */
 
+@page a4-portrait-no-header {
+    size: 210mm 297mm;
+    margin: 1in;
+}
+@page a4-landscape-no-header {
+    size: 297mm 210mm;
+    margin: 1in;
+}
+
 /*
  * A4, portrait, top (not :first) rules
  */

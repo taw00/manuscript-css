@@ -25,7 +25,7 @@
         --m-indent-foothang:  var(--m-indentUS);
     }
 
-    &.USh, &.ush, &.hletter { /* US half-letter */
+    &.USh, &.USH, &.ush, &.hletter { /* US half-letter */
         --m-page-width:  var(--m-page-widthUSh);
         --m-page-height: var(--m-page-heightUSh);
         --m-page-margins: var(--m-page-marginsUSh);
