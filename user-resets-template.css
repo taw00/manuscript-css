@@ -1,0 +1,52 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * user-resets.css - user-defined resets to adjust for meddling toolchains.
+ *
+ * To use:
+ * 1. Copy this file to user-resets.css.
+ * 2. Edit for whatever application you need to adjust for.
+ * 3. Enjoy with a tasty beverage.
+ *
+ * Markdown toolchains manipulate stylings. This should attempt to reset those
+ * to play nice with manuscript-css.
+ *
+ * Disclaimer: CSS is tricky. Good luck. :)
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-user-resets-constants {
+
+:root {
+    /* constants for My Editor */
+	--m-reset-myeditors-weird-background-color-for-some-class: var(--m-paper-color, transparent);
+    /* constants for My Other Editor */
+	--m-reset-myothereditors-some-class: var(--m-indent, 0.5in);
+}
+
+} /* end @layer lm-user-resets-constants */
+
+
+/*
+ * Resets for My Editor - an example
+ */
+
+pre.meditor_pre {
+    background-color: var(--m-reset-myeditors-weird-background-color-for-some-class);
+}
+
+/*
+ * Resets for My Other Editor - an example
+ */
+
+h1#myoeditor_title {
+    display: none;
+}
+
+.someClass {
+    margin-left: unset;
+    margin-inline-start: var(--m-reset-myothereditors-some-class);
+}
+

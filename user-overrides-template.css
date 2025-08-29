@@ -1,0 +1,33 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * user-overrides.css - user-defined CSS overrides.
+ *
+ * To use:
+ * 1. Copy this file to user-overrides.css.
+ * 2. Edit.
+ * 3. Enjoy with a tasty beverage.
+ *
+ * Disclaimer: CSS is tricky. Good luck. :)
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+/* Insert semi-permanent, user-defined customizations here. */
+
+
+@layer lm-user-overrides {
+
+:root {
+    /* example override for <pre> stuff */
+	--m-font-size-preformatted: 75%;
+}
+
+} /* end @layer lm-usercustomization */
+
+/* example override for what happens if you hover over a link */
+a:hover {
+    color: red !important;
+    font-size: 150%;
+}
+
