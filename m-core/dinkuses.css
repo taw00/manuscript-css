@@ -68,9 +68,20 @@
 
 /* automated content for the -30- marker at the end
  * NOTE: poetry manuscripts do not use dinkus or -30- markers */
+/*
 #manuscript:not(.poetry,.text-only) > section:is(.m-part,.m-chapter,.m-scene):last-of-type::after {
     content: var(--m-30-);
-    /* white-space … enables functional escaping in the escaping */
+    white-space: pre-wrap;
+    line-height: 0;
+    margin-top: var(--m-elbow-room);
+    margin-bottom: var(--m-elbow-room);
+}
+*/
+
+/* automated content for the -30- marker at the end
+ * NOTE: poetry manuscripts do not use dinkus or -30- markers */
+#manuscript:not(.poetry,.text-only)::after {
+    content: var(--m-30-);
     white-space: pre-wrap;
     line-height: 0;
     margin-top: var(--m-elbow-room);
@@ -79,6 +90,7 @@
 
 /* dinkus and -30- markers are formatted as such
  * NOTE: poetry manuscripts do not use dinkus or -30- markers */
+#manuscript::after,
 #manuscript > h6,                        /* manually inserted top-level -30- */
 #manuscript > section:last-of-type::after,             /* auto-inserted -30- */
 #manuscript section.m-scene::after,                  /* auto-inserted dinkus */
