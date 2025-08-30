@@ -16,6 +16,15 @@
         p {
             text-align: left;
         }
+        a {
+            color: var(--m-text-color);
+            text-decoration: unset;
+            border: unset;
+            &:hover {
+                color: var(--m-link-color);
+            }
+        }
+
     }
 
 
@@ -27,6 +36,17 @@
         left: var(--m-left-facts); right: var(--m-right-facts);
 
         margin: var(--m-margin-facts);
+
+        #manuscript > .m-header > & {
+            a {
+                color: var(--m-text-color);
+                text-decoration: unset;
+                border: unset;
+                &:hover {
+                    color: var(--m-link-color);
+                }
+            }
+        }
 
         section:is(.m-part) & {
             margin: var(--m-room-for-two) auto 0;
