@@ -14,7 +14,7 @@ html { font-size: var(--m-font-size); }
 /* we are not explicit here, but call #manuscript within your markdown or
  * HTML as <article id="manuscript" ...> */
 #manuscript {
-    color: black;
+    color: var(--m-text-color);
     background-color: rgb(0 0 0 / 0%);
     font-size:   1rem;
     font-weight: var(--m-font-weight);
@@ -35,18 +35,19 @@ html { font-size: var(--m-font-size); }
     word-break: normal; overflow-wrap: break-word;
 }
 #manuscript hr {
-    /* because hr color is resistent to change (a mystery for now) */
-    color: black;
-    border-color: black;
+    color: var(--m-text-color);
+    border-color: var(--m-text-color);
     border-top: 0;  border-bottom-width: 1px;
     border-left: 0; border-right: 0;
     width: 80%;
 }
 #manuscript a, a:is(:any-link,:link,:active,:visited,:hover) {
     color: var(--m-link-color);
-    text-decoration: none;
+    text-decoration: unset;
+    &:hover {
+        border-bottom: solid var(--m-link-color) 2px;
+    }
 }
-#manuscript a:hover { border-bottom: solid var(--m-link-color) 2px; }
 
 /* rendering to the screen
  * HTML is trans and BODY is off-white.

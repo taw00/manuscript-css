@@ -146,6 +146,7 @@
     --m-desktop-color-darkdarkgray: rgb(29 32 36 / 100%);
     --m-paper-color-white: white;
     --m-paper-color-notwite: gainsboro;
+    --m-text-color: black;
 
     /* for the page 2+ headers */
     --m-pagination-header: "Lastname / Short Title / " counter(page);
