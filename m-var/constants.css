@@ -140,13 +140,19 @@
     --m-margin-facts-long:  var(--m-room-for-two) auto 0;
     --m-text-align-facts-long: center;
 
-    --m-desktop-color-darkgray: darkgray;
-    --m-desktop-color-dimgray: dimgray;
-    --m-desktop-color-trans: transparent;
-    --m-desktop-color-darkdarkgray: rgb(29 32 36 / 100%);
-    --m-paper-color-white: white;
-    --m-paper-color-notwite: gainsboro;
-    --m-text-color: black;
+    /* colors used mainly for desktop, paper, and text / links */
+    --m-color-white: white;
+    --m-color-notwhite: gainsboro;
+    --m-color-black: black;
+    --m-color-darkgray: darkgray;                 /* a lighter gray */
+    --m-color-dimgray: dimgray;                   /* a darker gray */
+    --m-color-darkdarkgray: rgb(29 32 36 / 100%); /* a very dark gray */
+
+    --m-color-browser-link-blue: rgb(0 0 238);
+    --m-color-cobalt-blue: rgb(0 32 194);
+    --m-color-union-blue: #0d1e51;
+    --m-color-professional-blue: #02195c;
+    --m-color-professional-blue2: #122b73;
 
     /* for the page 2+ headers */
     --m-pagination-header: "Lastname / Short Title / " counter(page);

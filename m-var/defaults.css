@@ -97,9 +97,6 @@
     --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margins));
     --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margins));
 
-    /* --m-link-color: rgb(0 0 238); ----- a browser default blue */
-    --m-link-color: rgb(0 32 194);  /* Cobalt Blue */
-
     /* -------------------- */
 
     /* hyphenation
@@ -116,11 +113,15 @@
     /* -------------------- */
 
     /* the desktop and paper */
-    --m-desktop-color: var(--m-desktop-color-darkgray);
-    --m-paper-color: var(--m-paper-color-white);
-    --m-desktop-color-plain: var(--m-desktop-color-dimgray);
-    --m-desktop-color-vplain: var(--m-desktop-color-darkdarkgray);
-    --m-desktop-color-vvplain: white;
+    --m-desktop-color: var(--m-color-darkgray);
+    --m-paper-color: var(--m-color-white);
+    --m-desktop-color-plain: var(--m-color-dimgray);
+    --m-desktop-color-vplain: var(--m-color-darkdarkgray);
+    --m-desktop-color-vvplain: var(--m-color-white);
+
+    --m-text-color: var(--m-color-black);
+    --m-link-color: var(--m-color-professional-blue2);
+    --m-link-hover-color: var(--m-color-dimgray);
 
     /* -------------------- */
 
