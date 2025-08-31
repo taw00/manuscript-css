@@ -9,7 +9,13 @@
  */
 
 /* baseline font-size: 1rem defined */
-html { font-size: var(--m-font-size); }
+html {
+    font-size: var(--m-font-size);
+    * {
+        font-size: 1rem;
+    }
+}
+
 
 #vpage {
     display: block;
