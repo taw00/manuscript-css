@@ -52,6 +52,9 @@
 #manuscript section.m-scene {
     padding-top: var(--m-offset-scene);
 }
+#manuscript section.m-scene:not(:first-child) {
+    padding-top: 0;
+}
 /* prose content:
  * small margin between prose content and a scene's title block if it exists */
 #manuscript section.m-scene > .m-header + * {
@@ -67,25 +70,14 @@
     margin-bottom: 0;
     padding-bottom: 0;
 }
-/* ... subscenes: subscenes dinkus and spacing BEFORE subscenes block */
+/* ... subscenes: subscenes spacing BEFORE subscenes block */
 #manuscript section.m-scene > :not(div,section,article,h1,h2,h3,h4,h5,h6) + section.m-subscenes::before {
-    content: var(--m-dinkus-subscenes);
-    white-space: pre-wrap; /* enables functional escaping in the escaping */
-    line-height: 0;
-    padding-top: 0;
-    /*margin-top: calc(var(--m-offset-scene) * 1.5);
-    margin-bottom: calc(var(--m-offset-scene) * 1.5);*/
+    content: var(--m-marker-zws); /* &zerowidthspace */
     margin-top: calc(var(--m-offset-scene) * 2);
-    margin-bottom: calc(var(--m-offset-scene) * 1);
 }
-/* ... subscenes: subscenes dinkus and spacing AFTER subscenes block */
+/* ... subscenes: subscenes spacing AFTER subscenes block */
 #manuscript section.m-scene section.m-subscenes::after {
-    content: var(--m-dinkus-subscenes);
-    white-space: pre-wrap; /* enables functional escaping in the escaping */
-    line-height: 0;
-    /*margin-top: calc(var(--m-offset-scene) * 1.5);
-    margin-bottom: calc(var(--m-offset-scene) * 1.5);*/
-    margin-top: calc(var(--m-offset-scene) * 1);
+    content: var(--m-marker-zws); /* &zerowidthspace */
     margin-bottom: calc(var(--m-offset-scene) * 2);
 }
 /* all last elements within a scene: zero-out bottom spacing */
@@ -95,7 +87,6 @@
 /* all last elements within a scene: zero-out ::after content and spacing  */
 #manuscript section.m-scene > *:last-child::after {
     content: "";
-    white-space: pre-wrap; /* enables functional escaping in the escaping */
     margin-top: 0; padding-top: 0;
     margin-bottom: 0; padding-bottom: 0;
 }
