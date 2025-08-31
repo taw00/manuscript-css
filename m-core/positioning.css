@@ -1,6 +1,6 @@
 /* CSS for Manuscript Formating v3.0
  *
- * page-positioning, page-breaks, simulated page-breaks
+ * positioning on the page, page-breaks, simulated page-breaks
  * `padding` and `margin` juggling to avoid any margin-collapsing issues. And
  * ensuring the simulated page breaks look more sensible.
  *
@@ -126,7 +126,8 @@
 
     /*
      * god knows why, but these avoidance rules are not working
-     * ********************************************************
+     * (maybe, it has been a long time since we comprehensively tested them)
+     * *********************************************************************
      */
     
     /* avoid-page page break inside a poem stanza */
@@ -155,6 +156,7 @@
     }
     /* don't page break before a dinkus or -30- marker */
     #manuscript section.m-scene::after,
+    #manuscript::after,
     #manuscript h6 {
         break-before: avoid-page !important;
     }
