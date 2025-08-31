@@ -31,65 +31,63 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-#manuscript section.m-poem > .m-header > h1 {
-    text-transform: var(--m-text-transform-title-poetry);
-}
+#manuscript {
+    & section.m-poem {
+        padding-top: 0;
+        & .m-header > h1 {
+            text-transform: var(--m-text-transform-title-poetry);
+        }
+        & .m-header :is(p, h1, h2, h3, h4, h5, h6) {
+            text-align: start;
+        }
+        & pre:not(:last-of-type) {
+            margin-top: 0;
+            margin-bottom: var(--m-elbow-room);
+        }
 
-#manuscript :is(section.m-poem, div.x-poem) {
-    pre,
-    pre > code {
-        white-space: pre-wrap; /* we wrap poetry */
-        overflow:    hidden; /* no scroll bars */
-        font-size:   var(--m-font-size-poetry);
-        font-weight: var(--m-font-weight-poetry);
-        font-family: var(--m-font-family-poetry);
-        line-height: var(--m-line-spacing-poetry);
+        /*
+         * Spacing, poetry
+         */
+
+        /* poetry content:
+         * small margin between poetry content and a poem's title block if it
+         * exists */
+        & > .m-header + * {
+            padding-top: var(--m-room-for-two);
+        }
+
+        /* ALERT! ALERT! ALERT! ERROR IN FORMATING
+         * make stuff in a poem section that isn't poem stuff red and wrong */
+        & > :not(.m-header) :not(pre,code) {
+            color: red !important;
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+    } /* end section.m-poem */
+
+    & :is(section.m-poem, div.x-poem) {
+        pre,
+        pre > code {
+            white-space: pre-wrap; /* we wrap poetry */
+            overflow:    hidden; /* no scroll bars */
+            font-size:   var(--m-font-size-poetry);
+            font-weight: var(--m-font-weight-poetry);
+            font-family: var(--m-font-family-poetry);
+            line-height: var(--m-line-spacing-poetry);
+        }
     }
-}
+    & :is(section.m-poem, div.x-poem) pre:last-of-type {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 
-#manuscript .x-poem {
-    margin: 0;
-    padding: 0; border: 0;
-    pre:not(:last-of-type) {
-        margin: 0 0 var(--m-elbow-room);
+    & .x-poem {
+        margin: 0;
         padding: 0; border: 0;
+        pre:not(:last-of-type) {
+            margin: 0 0 var(--m-elbow-room);
+            padding: 0; border: 0;
+        }
     }
-}
-#manuscript section.m-poem pre:not(:last-of-type) {
-    margin-top: 0;
-    margin-bottom: var(--m-elbow-room);
-}
-#manuscript :is(section.m-poem, div.x-poem) pre:last-of-type {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-/*
- * Spacing, poetry
- */
-
-/* each poem: small padding at top */
-#manuscript section.m-poem {
-    padding-top: var(--m-offset-poem);
-}
-
-/* poetry content:
- * small margin between poetry content and a poem's title block if it exists */
-#manuscript section.m-poem > .m-header + * {
-    padding-top: var(--m-elbow-room);
-}
-
-
-/*
- * ERROR IN FORMATING
- */
-/* make stuff in a poem section that isn't poem stuff red and wrong */
-#manuscript section.m-poem > :not(.m-header) :not(pre,code) {
-    color: red !important;
-    font-weight: bold;
-    text-decoration: line-through;
-}
-#manuscript section.m-poem .m-header :is(p, h1, h2, h3, h4, h5, h6) {
-    text-align: start;
-}
+} /* end #manuscript */
 
