@@ -13,8 +13,30 @@
  */
 
 /* place the manuscript title block 1/3 to 5/12 down the page and center it */
-#manuscript > .m-header {
-    margin: var(--m-offset-title) auto 0;
+#manuscript {
+    & #m-contact {
+        position: absolute;
+        top: 0; left: 0;
+    }
+    & > .m-header {
+        margin: var(--m-offset-title) auto 0;
+        position: static; /* .m-facts has to be able to float */
+        overflow: visible;
+        & > .m-facts {
+            position: var(--m-position-facts);
+            inset: var(--m-top-facts) var(--m-right-facts) auto auto;
+            margin: var(--m-margin-facts);
+        }
+    }
+    & .m-header {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    & > :not(.m-header) > .m-facts {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media screen {

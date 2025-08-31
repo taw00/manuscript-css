@@ -111,6 +111,10 @@
     text-align: var(--m-text-align);
     line-height: var(--m-line-spacing);
     hyphens: var(--m-hyphens);
+    /* -- also, check out this future feature (still in a w3c draft)
+    hyphenate-limit-chars: 6 3 2;
+    hyphenate-limit-lines: 2;
+    */
 }
 
 /* paragraph indentation / spacing for all the prose

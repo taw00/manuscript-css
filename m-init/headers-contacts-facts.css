@@ -10,9 +10,9 @@
  */
 
 #manuscript {
-    #m-contact {
-        position: absolute; box-sizing: border-box; overflow: visible;
-        top: 0; left: 0;
+    & #m-contact {
+        box-sizing: border-box;
+        overflow: visible;
         p {
             text-align: var(--m-text-align);
         }
@@ -27,48 +27,10 @@
 
     }
 
-
-    .m-facts {
-        position: var(--m-position-facts);
-        box-sizing: border-box; overflow: visible;
-        /*inset: var(--m-top-facts) var(--m-right-facts) var(--m-bottom-facts) var(--m-left-facts);*/
-        top: var(--m-top-facts); bottom: var(--m-bottom-facts);
-        left: var(--m-left-facts); right: var(--m-right-facts);
-
-        margin: var(--m-margin-facts);
-
-        #manuscript > .m-header > & {
-            a {
-                color: var(--m-text-color);
-                text-decoration: unset;
-                border: unset;
-                &:hover {
-                    color: var(--m-link-color);
-                }
-            }
-        }
-
-        section:is(.m-part) & {
-            margin: var(--m-room-for-two) auto 0;
-        }
-        section:is(.m-chapter,.m-scene) & {
-            margin: 0 auto;
-        }
-        section.m-poem & {
-            margin: 0;
-        }
-
-        p {
-            text-align: var(--m-text-align-facts);
-        }
+    & .m-facts {
+        box-sizing: border-box;
+        overflow: visible;
     }
-    section:is(.m-part,.m-chapter,.m-scene) .m-facts p {
-        text-align: center;
-    }
-    section.m-poem .m-facts p {
-        text-align: var(--m-text-align);
-    }
-
 
     /* Inside of an .m-header:
      * - H1 means title, H2 means subtitle, H3 means byline author
@@ -88,7 +50,7 @@
      * works as you would expect there. */
 
     & .m-header {
-        margin-left: auto; margin-right: auto; /*padding: 0;*/
+        /*padding: 0;*/
         /* this should be, for a 8.5in page, about 77% 
          * not sure why this calculation does not work correctly
         width: calc((var(--m-max-width-header)/var(--m-content-width))*100%);
@@ -149,41 +111,66 @@
             font-weight: var(--m-font-weight-byline);
             font-family: var(--m-font-family-byline);
         }
-    }
-
-    & section.m-part > .m-header {
-        & > h1 {              /* title: part */
-            font-size:   var(--m-font-size-title-part);
-            font-weight: var(--m-font-weight-title-part);
-            font-family: var(--m-font-family-title-part);
-        }
-        & > h2 {              /* subtitle: part */
-            font-size:   var(--m-font-size-subtitle-part);
-            font-weight: var(--m-font-weight-subtitle-part);
-            font-family: var(--m-font-family-subtitle-part);
-        }
-        & > h3 {              /* subtitle: part */
-            font-size:   var(--m-font-size-byline-part);
-            font-weight: var(--m-font-weight-byline-part);
-            font-family: var(--m-font-family-byline-part);
+        & > .m-facts {
+            a {
+                color: var(--m-text-color);
+                text-decoration: unset;
+                border: unset;
+                &:hover {
+                    color: var(--m-link-color);
+                }
+            }
+            & p {
+                text-align: var(--m-text-align-facts);
+            }
         }
     }
 
-    & section.m-chapter > .m-header {
-        & > h1 {        /* title: chapter */
-            font-size:   var(--m-font-size-title-chapter);
-            font-weight: var(--m-font-weight-title-chapter);
-            font-family: var(--m-font-family-title-chapter);
+    & section.m-part {
+        & > .m-header {
+            & > h1 {              /* title: part */
+                font-size:   var(--m-font-size-title-part);
+                font-weight: var(--m-font-weight-title-part);
+                font-family: var(--m-font-family-title-part);
+            }
+            & > h2 {              /* subtitle: part */
+                font-size:   var(--m-font-size-subtitle-part);
+                font-weight: var(--m-font-weight-subtitle-part);
+                font-family: var(--m-font-family-subtitle-part);
+            }
+            & > h3 {              /* subtitle: part */
+                font-size:   var(--m-font-size-byline-part);
+                font-weight: var(--m-font-weight-byline-part);
+                font-family: var(--m-font-family-byline-part);
+            }
         }
-        & > h2 {        /* subtitle: chapter */
-            font-size:   var(--m-font-size-subtitle-chapter);
-            font-weight: var(--m-font-weight-subtitle-chapter);
-            font-family: var(--m-font-family-subtitle-chapter);
+        & .m-facts {
+            margin: var(--m-room-for-two) auto 0;
+            & p { text-align: center; }
         }
-        & > h3 {        /* author: chapter */
-            font-size:   var(--m-font-size-byline-chapter);
-            font-weight: var(--m-font-weight-byline-chapter);
-            font-family: var(--m-font-family-byline-chapter);
+    }
+
+    & section.m-chapter {
+        & > .m-header {
+            & > h1 {        /* title: chapter */
+                font-size:   var(--m-font-size-title-chapter);
+                font-weight: var(--m-font-weight-title-chapter);
+                font-family: var(--m-font-family-title-chapter);
+            }
+            & > h2 {        /* subtitle: chapter */
+                font-size:   var(--m-font-size-subtitle-chapter);
+                font-weight: var(--m-font-weight-subtitle-chapter);
+                font-family: var(--m-font-family-subtitle-chapter);
+            }
+            & > h3 {        /* author: chapter */
+                font-size:   var(--m-font-size-byline-chapter);
+                font-weight: var(--m-font-weight-byline-chapter);
+                font-family: var(--m-font-family-byline-chapter);
+            }
+        }
+        & .m-facts {
+            margin: 0 auto;
+            & p { text-align: center; }
         }
     }
 
@@ -202,6 +189,22 @@
             font-size:   var(--m-font-size-byline-poem);
             font-weight: var(--m-font-weight-byline-poem);
             font-family: var(--m-font-family-byline-poem);
+        }
+    }
+    & section.m-scene {
+        & .m-facts {
+            margin: 0 auto;
+            & p { text-align: center; }
+        }
+    }
+
+    & section.m-poem {
+        & .m-header {
+            margin-left: 0; margin-right: auto;
+        }
+        & .m-facts {
+            margin: 0;
+            & p { text-align: var(--m-text-align); }
         }
     }
 
@@ -226,5 +229,6 @@
         }
     }
 
-} /* end article#manuscript */
+
+} /* end #manuscript */
 

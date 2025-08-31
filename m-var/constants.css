@@ -128,7 +128,8 @@
     --m-page-break-simulated-long:  5px dashed rgb(211 211 211 / 50%); /* faded lightgray */
     --m-page-break-simulated-padding-long: calc(var(--m-offset-title) - 1in);
 
-    /* the document facts (.m-facts) - short-form and long-form */
+    /* the document facts (.m-facts) - short-form and long-form
+     * (document, not part, chapter, or scene facts */
     --m-position-facts-short: absolute;
     --m-top-facts-short:  0;     --m-bottom-facts-short: unset;
     --m-left-facts-short: unset; --m-right-facts-short:  0;
