@@ -11,10 +11,25 @@
 /* baseline font-size: 1rem defined */
 html { font-size: var(--m-font-size); }
 
-/* we are not explicit here, but call #manuscript within your markdown or
- * HTML as <article id="manuscript" ...> */
+#vpage {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
 #manuscript {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
     color: var(--m-text-color);
+    text-align: var(--m-text-align);
+    text-justify: var(--m-text-justify);
     background-color: rgb(0 0 0 / 0%);
     font-size:   1rem;
     font-weight: var(--m-font-weight);
@@ -81,10 +96,6 @@ html { font-size: var(--m-font-size); }
     /* the content container */
     /* a virtual page */
     #vpage {
-        display: block;
-        position: relative;
-        box-sizing: border-box; overflow: hidden;
-        top: 0; left: 0;
         width: 100%; max-width: var(--m-page-width);
         background-color: var(--m-paper-color);
         &:not(:is(.plain,.vplain,.vvplain)) {
@@ -104,8 +115,6 @@ html { font-size: var(--m-font-size); }
         }
     }
     #manuscript {
-        display: block;
-        position: relative; box-sizing: border-box; overflow: hidden;
         /* the 95% keeps a small margin on small screens */
         width: 95%; max-width: var(--m-content-width);
         margin: var(--m-page-margins) auto;
@@ -113,34 +122,45 @@ html { font-size: var(--m-font-size); }
     }
 } /* /screen */
 
+
 /*
  * fonts and line spacing for all the sections and divs
  */
 #manuscript #m-contact {
+    display: block;
+    box-sizing: border-box;
     font-size:   var(--m-font-size-contact);
     font-weight: var(--m-font-weight-contact);
     font-family: var(--m-font-family-contact);
     line-height: var(--m-line-spacing-contact);
 }
 #manuscript .m-header {
+    display: block;
+    box-sizing: border-box;
     font-size:   var(--m-font-size-header);
     font-weight: var(--m-font-weight-header);
     font-family: var(--m-font-family-header);
     line-height: var(--m-line-spacing);
 }
 #manuscript section:is(.m-part, .m-chapter) > .m-header {
+    display: block;
+    box-sizing: border-box;
     font-size:   var(--m-font-size-headers);
     font-weight: var(--m-font-weight-headers);
     font-family: var(--m-font-family-headers);
 }
 #manuscript > .m-facts,
 #manuscript :not(section) .m-facts {
+    display: block;
+    box-sizing: border-box;
     font-size:   var(--m-font-size-facts);
     font-weight: var(--m-font-weight-facts);
     font-family: var(--m-font-family-facts);
     line-height: var(--m-line-spacing-facts);
 }
 #manuscript section:is(.m-chapter,.m-scene) .m-facts {
+    display: block;
+    box-sizing: border-box;
     font-size:   inherit;
     font-weight: inherit;
     font-family: inherit;
@@ -182,8 +202,10 @@ html { font-size: var(--m-font-size); }
     color: inherit; background-color: inherit;
 }
 
-/* PRINT rendering - do not allow code scrollbars */
 @media print {
+    html, body { width: 100%; max-width: 100%; border: 0; padding: 0; margin: 0; }
+    #vpage, #manuscript { width: 100%; max-width: 100%; padding: 0; margin: 0; }
+    /* print rendering - do not allow code scrollbars */
     #manuscript pre > code { overflow: hidden; }
 }
 
