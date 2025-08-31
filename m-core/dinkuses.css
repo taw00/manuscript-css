@@ -1,31 +1,56 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * Stylings for the # dinkuses and # # # -30-'s
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+/*
+ * this needs a cleanup!!!
+ */
+
 #manuscript:not(.text-only) {
     /* scene dinkus! automated content for the dinkuses between scenes */
-    & > section.m-scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
+    &:not(.hide-dinkuses,.no-dinkuses) > section.m-scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
         content: var(--m-dinkus);
         /* white-space … enables functional escaping in the escaping */
         white-space: pre-wrap;
         line-height: 0;
-        margin-top: var(--m-offset-scene);
+        padding-top: var(--m-offset-scene);
+        padding-bottom: .5rem; /* prevents (I think) the half-height characters
+                                * at bottoms of pages here and there. */
+        /*margin-top: var(--m-offset-scene);*/
     }
-    :not(section.m-scene) > section.m-scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
+    &:not(.hide-dinkuses,.no-dinkuses) :not(section.m-scene) > section.m-scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
         content: var(--m-dinkus);
         /* white-space … enables functional escaping in the escaping */
         white-space: pre-wrap;
         line-height: 0;
-        margin-top: var(--m-offset-scene);
+        padding-top: var(--m-offset-scene);
+        padding-bottom: .5rem; /* prevents (I think) the half-height characters
+                                * at bottoms of pages here and there. */
+        /*margin-top: var(--m-offset-scene);*/
     }
 
     /* subscene dinkus! */
-    section.m-subscenes > section.m-scene:not(:last-of-type)::after {
+    &:not(.hide-dinkuses,.no-dinkuses) section.m-subscenes > section.m-scene:not(:last-of-type)::after {
         content: var(--m-dinkus-subscene);
         /* white-space … enables functional escaping in the escaping */
         white-space: pre-wrap;
         line-height: 0;
-        margin-top: var(--m-offset-scene);
+        padding-top: var(--m-offset-scene);
+        padding-bottom: .5rem; /* prevents (I think) the half-height characters
+                                * at bottoms of pages here and there. */
+        /*margin-top: var(--m-offset-scene);*/
     }
 
     /* right now classes no-dinkus and hide-dinkus do the same thing */
     /* ... class hide-dinkus: if want hide scene dinkus */
+    /*     (really need to clean all of this up)    */
+    &.hide-dinkuses > section.m-scene::after,
+    &.hide-dinkuses :not(section.m-subscenes) > section.m-scene::after,
     & > section.m-scene.hide-dinkus:not(:last-of-type)::after,
     /* ... class hide-dinkus: if want hide scene dinkus */
     :not(section.m-subscenes) > section.m-scene.hide-dinkus:not(:last-of-type)::after {
@@ -33,10 +58,16 @@
         /* white-space … enables functional escaping in the escaping */
         white-space: pre-wrap;
         line-height: 0;
-        margin-top: var(--m-offset-scene);
+        padding-top: var(--m-offset-scene);
+        padding-bottom: .5rem; /* prevents (I think) the half-height characters
+                                * at bottoms of pages here and there. */
+        /*margin-top: var(--m-offset-scene);*/
     }
 
     /* ... class no-dinkus: if no want scene dinkus */
+    /*     (really need to clean all of this up)    */
+    &.no-dinkuses > section.m-scene::after,
+    &.no-dinkuses :not(section.m-subscenes) > section.m-scene::after,
     & > section.m-scene.no-dinkus:not(:last-of-type)::after,
     /* ... class no-dinkus: if no want subscene dinkus */
     :not(section.m-subscenes) > section.m-scene.no-dinkus:not(:last-of-type)::after {
@@ -45,7 +76,10 @@
         /* white-space … enables functional escaping in the escaping */
         white-space: pre-wrap;
         line-height: 0;
-        margin-top: var(--m-offset-scene);
+        padding-top: var(--m-offset-scene);
+        padding-bottom: .5rem; /* prevents (I think) the half-height characters
+                                * at bottoms of pages here and there. */
+        /*margin-top: var(--m-offset-scene);*/
     }
 
     /* ... remove dinkuses for scenes if they are last in any structure EXCEPT
@@ -56,12 +90,7 @@
     section.m-part {
         section.m-scene:last-of-type::after,
         section.m-chapter section.m-scene:last-of-type::after {
-            /* not sure why we have to be this pedantic */
-            content: "";
-            /* white-space … enables functional escaping in the escaping */
-            white-space: pre-wrap;
-            margin-top: 0; padding-top: 0;
-            margin-bottom: 0; padding-bottom: 0;
+            display: none;
         }
     }
 }
@@ -84,8 +113,10 @@
     content: var(--m-30-);
     white-space: pre-wrap;
     line-height: 0;
-    margin-top: var(--m-elbow-room);
-    margin-bottom: var(--m-elbow-room);
+    margin: 0;
+    padding-top: var(--m-elbow-room);
+    padding-bottom: .5rem; /* prevents (I think) the half-height characters
+                            * at bottoms of pages here and there. */
 }
 
 /* dinkus and -30- markers are formatted as such
@@ -97,16 +128,13 @@
 #manuscript section.m-subscenes::before,             /* auto-inserted dinkus */
 #manuscript section.m-subscenes::after,              /* auto-inserted dinkus */
 #manuscript :not(section.m-scene) > h6 {   /* manually ins. between sections */
-    display: block;
+    display: block !important;
+    box-sizing: border-box;
+    position: relative;
     font-size:   var(--m-font-size-dinkus-30-);
     font-weight: var(--m-font-weight-dinkus-30-);
     font-family: var(--m-font-family-dinkus-30-);
     text-align: center;
     line-height: var(--m-line-spacing);
-    /*margin: 0; padding: 0;*/ border: 0;
-    /*margin-top: var(--m-elbow-room);*/
 }
-
-
-
 
