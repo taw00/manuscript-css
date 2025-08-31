@@ -50,12 +50,8 @@
      * works as you would expect there. */
 
     & .m-header {
-        /*padding: 0;*/
-        /* this should be, for a 8.5in page, about 77% 
-         * not sure why this calculation does not work correctly
-        width: calc((var(--m-max-width-header)/var(--m-content-width))*100%);
-         */
-        width: 77%;
+        /* this should be, for a 8.5in page, or about 77% */
+        width: calc(calc(var(--m-max-width-header)/var(--m-content-width))*100%);
         max-width: var(--m-max-width-header);
 
         & > blockquote {             /* the epigraphs, layout */
@@ -195,6 +191,9 @@
         & .m-facts {
             margin: 0 auto;
             & p { text-align: center; }
+        }
+        & .m-header > blockquote {
+            margin: 0 auto; /* different than top-level, part, and chapter */
         }
     }
 
