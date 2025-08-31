@@ -1,42 +1,55 @@
 # Manuscript-Formatted Markdown for Creative Writers
 
-1. *Draft your novel or short story or poetry in your favorite text editor*
-2. *Structure it in [markdown](https://www.markdownguide.org/)*
-3. *Style the markdown with these Manuscript CSS stylesheets*
-4. *Impress your friends and family (or critique group) with a work
-   rendered to industry standard manuscript formatting for a
-   [[short story]](https://format.ms/story) or
-   [[novel]](https://format.ms/novel)*  
-   <small>(Disclaimer: the
-   [[poetry manuscript formatting]](https://format.ms/poetry) is not quite
-   there yet.)</small>
-
 Are you a writer? In particular, a writer of narrative works? Fiction,
 narrative nonfiction, memoir, etc? Do you draft using a text editor? And do you
 wish to share your drafts in a professional manner without having to port your
 work to a word processor?
 
-Save the fancy office word processors like LibreOffice or Google Docs or Word
-for finalization when you are ready to submit your work somewhere. Now, you can
-stay in your favorite markdown editor and still have a means to present your
-working drafts in a professional manner for review, critique, or whatever.
+Now, you can stay in your favorite text editor and still have a means to
+present your work in a professional manner for review, critique, or whatever,
+from working draft to finalized manuscript.
+
+1. Copy one of the templates from the [templates](./templates) folder that best
+   matches your project—novel, short story, poetry collection, or poem—to a new
+   [markdown](https://www.markdownguide.org/) file. For example to
+   "`mylastname-mystory.md`"
+2. Draft your novel, story, or poetry in your favorite text editor.
+3. Export your work to HTML or PDF/Print: "`mylastname-mystory.html`"
+   or "`mylastname-mystory.pdf`"
+4. Submit your work for review by friends, family, and your critique group with
+   a work in industry standard
+   [short story](https://format.ms/story),
+   [novel](https://format.ms/novel), or [poetry](https://format.ms/poetry)
+   manuscript format.
+5. Submit your work to publishers who accept manuscripts in PDF format.
+
+#### <small>Of note:</small>
+
+- <small>The manuscript formatting provided here does not meet the spec
+  just yet for long-form poetry. It's sufficient for presentation though. I'm
+  working on improving it.
+- Some publishers (and nearly all traditional book publishers) insist on your
+  work being submitted in `.docx` format. For that, use this process until you
+  are absolutely ready to submit to such a publisher and then port the project
+  to `.docx` using LibreOffice, Google Docs, or MS Word. More information on
+ some of the techniques to do that are listed later in this document.</small>
 
 # Manuscript formatting?
 
-Take a look at the PDFs in the [templates folder](./templates/) in this
-repository. These manuscript-like documents were rendered from their
+Take a look at the PDFs in the [examples folder](./examples/) in this
+repository. These manuscriptss were rendered from their
 corresponding markdown-formatted draft documents. No fluff and easy to read and
 review. Here are some screenshots of the results . . .
 
-<a href="misc/README-short-story-poe.png"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.png" alt="short format: The Tell-Tale Heart (Poe)" /></a>
-<a href="misc/README-long-story-lovecraft.png"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.png" alt="long format: At the Mountains of Madness (Lovecraft)" /></a>
+<a href="misc/README-short-story-poe.jpg"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.jpg" alt="short story: The Tell-Tale Heart (Poe)" /></a>
+<a href="misc/README-long-story-lovecraft.jpg"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.jpg" alt="long long: At the Mountains of Madness (Lovecraft)" /></a>
 
 <!-- ![short format: The Tell-Tale Heart](misc/README-short-story-poe.png) -->
 <!-- ![long format: At the Mountains of Madness](misc/README-long-story-lovecraft.pdf) -->
 
 <div style="clear: both;"></div>
 
-<a href="misc/README-short-example-multi-scene.png"><img src="misc/README-short-example-multi-scene.png" width="100%" alt="multi-scene short story example" /></a>
+<a href="misc/README-long-form-prose.jpg"><img src="misc/README-long-form-prose.jpg" width="100%" alt="long form prose (novel) example" /></a>
 
 <div style="clear: both;"></div>
 
@@ -139,7 +152,8 @@ Manuscript formatting similar to what many call Shunn Formatting:
 
 ### Editors to Specifically Avoid
 
-Note, I have only tested maybe a dozen editors. These ones are particularly painful to use, IMHO.
+Note, I have only tested maybe a dozen editors. These ones are particularly
+painful to use, IMHO.
 
 - [Obsidian](https://obsidian.md/) - A Joplin competitor, but without Joplin's
   functionality. Terrible at importing and exporting. Can't render anything
@@ -173,9 +187,9 @@ Note, I have only tested maybe a dozen editors. These ones are particularly pain
      Joplin as your editor.)
 
 Check out the example manuscripts in this repository in their original markdown
-and then as PDFs. Use one of the [templates](./templates/) as a template for your
-own work.  And if you are already familiar with converting markdown to HTML and
-then HTML to PDF then that should be enough to get you going.
+and then as PDFs. Use one of the [templates](./templates/) as a template for
+your own work. And if you are already familiar with converting markdown to HTML
+and then HTML to PDF then that should be enough to get you going.
 
 
 ## Process summary - super high-level
@@ -331,8 +345,8 @@ This enables you to use any text editor to work with your manuscript, and then
 this browser extension to do the conversion.
 
 First, in your Chrome-based browser (Chrome, Vivaldi, Edge, Safari on the
-desktop, etc.), install the [Markdown
-Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)
+desktop, etc.), install the
+[Markdown Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk)
 extension.
 
 Configure the extension:
@@ -520,6 +534,6 @@ how everything works with `manuscript.css` becomes obvious.
 
 Good luck. Now, quit fooling around on the internet and write something.
 
-Copyright (c) Todd Warner <t0dd@protonmail.com> This work is licensed under
-Attribution 4.0 International. To view a copy of this license, visit
-http://creativecommons.org/licenses/by/4.0/
+Copyright (c) Todd Warner <t0dd@protonmail.com>  
+This work is licensed under Attribution 4.0 International. To view a copy of
+this license, visit <http://creativecommons.org/licenses/by/4.0/>.
