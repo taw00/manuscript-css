@@ -11,9 +11,7 @@
 /* baseline font-size: 1rem defined */
 html {
     font-size: var(--m-font-size);
-    * {
-        font-size: 1rem;
-    }
+    & * { font-size: 1rem; }
 }
 
 
@@ -41,34 +39,32 @@ html {
     font-weight: var(--m-font-weight);
     font-family: var(--m-font-family);
     line-height: var(--m-line-spacing);
-    /* -- future feature (still in a w3c draft)
-    hyphenate-limit-chars: 6 3 2;
-    hyphenate-limit-lines: 2;
-    */
-}
-#manuscript * {
-    opacity: 1;
-}
-#manuscript *:not(hr,ol,ul,dl,menu,li,dt,dd) {
-    margin: 0; padding: 0; border: 0;
-}
-#manuscript :is(p,pre) {
-    word-break: normal; overflow-wrap: break-word;
-}
-#manuscript hr {
-    color: var(--m-text-color);
-    border-color: var(--m-text-color);
-    border-top: 0;  border-bottom-width: 1px;
-    border-left: 0; border-right: 0;
-    width: 80%;
-}
-#manuscript a, a:is(:any-link,:link,:active,:visited,:hover) {
-    color: var(--m-link-color);
-    text-decoration: unset;
-    &:hover {
-        border-bottom: solid var(--m-link-color) 2px;
+    & * {
+        opacity: 1;
     }
-}
+    & *:not(hr,ol,ul,dl,menu,li,dt,dd) {
+        margin: 0; padding: 0; border: 0;
+    }
+    & :is(p,pre) {
+        word-break: normal; overflow-wrap: break-word;
+    }
+    & hr {
+        color: var(--m-text-color);
+        border-color: var(--m-text-color);
+        border-top: 0;  border-bottom-width: 1px;
+        border-left: 0; border-right: 0;
+        width: 80%;
+    }
+    & a,
+    & a:is(:any-link,:link,:active,:visited,:hover) {
+        color: var(--m-link-color);
+        text-decoration: unset;
+        &:hover {
+            border-bottom: solid var(--m-link-color) 2px;
+        }
+    }
+} /* end #manuscript */
+
 
 /* rendering to the screen
  * HTML is trans and BODY is off-white.
@@ -126,87 +122,101 @@ html {
         margin: var(--m-page-margins) auto;
         border: var(--m-manuscript-border);
     }
-} /* /screen */
+} /* end @media screen */
 
 
 /*
  * fonts and line spacing for all the sections and divs
  */
-#manuscript #m-contact {
-    display: block;
-    box-sizing: border-box;
-    font-size:   var(--m-font-size-contact);
-    font-weight: var(--m-font-weight-contact);
-    font-family: var(--m-font-family-contact);
-    line-height: var(--m-line-spacing-contact);
-}
-#manuscript .m-header {
-    display: block;
-    box-sizing: border-box;
-    font-size:   var(--m-font-size-header);
-    font-weight: var(--m-font-weight-header);
-    font-family: var(--m-font-family-header);
-    line-height: var(--m-line-spacing);
-}
-#manuscript section:is(.m-part, .m-chapter) > .m-header {
-    display: block;
-    box-sizing: border-box;
-    font-size:   var(--m-font-size-headers);
-    font-weight: var(--m-font-weight-headers);
-    font-family: var(--m-font-family-headers);
-}
-#manuscript > .m-facts,
-#manuscript :not(section) .m-facts {
-    display: block;
-    box-sizing: border-box;
-    font-size:   var(--m-font-size-facts);
-    font-weight: var(--m-font-weight-facts);
-    font-family: var(--m-font-family-facts);
-    line-height: var(--m-line-spacing-facts);
-}
-#manuscript section:is(.m-chapter,.m-scene) .m-facts {
-    display: block;
-    box-sizing: border-box;
-    font-size:   inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    line-height: inherit;
-}
+#manuscript {
+    & #m-contact {
+        display: block;
+        box-sizing: border-box;
+        font-size:   var(--m-font-size-contact);
+        font-weight: var(--m-font-weight-contact);
+        font-family: var(--m-font-family-contact);
+        line-height: var(--m-line-spacing-contact);
+    }
+    & .m-header {
+        display: block;
+        box-sizing: border-box;
+        font-size:   var(--m-font-size-header);
+        font-weight: var(--m-font-weight-header);
+        font-family: var(--m-font-family-header);
+        line-height: var(--m-line-spacing);
+    }
+    & section:is(.m-part, .m-chapter) > .m-header {
+        display: block;
+        box-sizing: border-box;
+        font-size:   var(--m-font-size-headers);
+        font-weight: var(--m-font-weight-headers);
+        font-family: var(--m-font-family-headers);
+    }
+    & > .m-facts,
+    & :not(section) .m-facts {
+        display: block;
+        box-sizing: border-box;
+        font-size:   var(--m-font-size-facts);
+        font-weight: var(--m-font-weight-facts);
+        font-family: var(--m-font-family-facts);
+        line-height: var(--m-line-spacing-facts);
+    }
+    & section:is(.m-chapter,.m-scene) .m-facts {
+        display: block;
+        box-sizing: border-box;
+        font-size:   inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        line-height: inherit;
+    }
 
-/* blockquote, pre, code
- * These are often specifically styled by markdown editors to something other
- * than the browser default. So we have to be a bit more "explicit" when we
- * style them for our purposes. (See also m-style-reset.css)
- * Note. <pre> and <code> will be monospaced (by default). Finally, <pre>
- * wraps, <code> does not, and you will have scrollbars in the HTML view. But
- * not in the generated PDF (print view).
- */
-#manuscript blockquote {
-    border: 0;
-    margin: var(--m-elbow-room) var(--m-margins-blockquote);
-    /* so many markdown tools manipulate these. overriding */
-    padding: 0; background-color: inherit;
-}
-#manuscript :is(pre) {
-    white-space: pre-wrap; /* we wrap pre but not code */
-    font-size:   var(--m-font-size-preformatted);
-    font-weight: var(--m-font-weight-preformatted);
-    font-family: var(--m-font-family-preformatted);
-    line-height: var(--m-line-spacing-preformatted);
-    margin: var(--m-elbow-room) var(--m-margins-preformatted);
-    /* so many markdown tools manipulate these. overriding */
-    color: inherit; background-color: inherit;
-}
-#manuscript pre > code {
-    white-space: pre; /* we wrap pre but not code */
-    overflow-x: auto; /* allow scroll bars */
-    font-size:   var(--m-font-size-code);
-    font-weight: var(--m-font-weight-code);
-    font-family: var(--m-font-family-code);
-    line-height: var(--m-line-spacing-code);
-    /* so many markdown tools manipulate these. overriding */
-    color: inherit; background-color: inherit;
-}
+    /* blockquote, pre, code
+     * These are often specifically styled by markdown editors to something
+     * other than the browser default. So we have to be a bit more "explicit"
+     * when we style them for our purposes. (See also m-style-reset.css) Note.
+     * <pre> and <code> will be monospaced (by default). Finally, <pre> wraps,
+     * <code> does not, and you will have scrollbars in the HTML view. But not
+     * in the generated PDF (print view).
+     */
+
+    & blockquote {
+        border: 0;
+        margin: var(--m-elbow-room) var(--m-margins-blockquote);
+        /* so many markdown tools manipulate these. overriding */
+        padding: 0; background-color: inherit;
+    }
+    & :is(pre) {
+        white-space: pre-wrap; /* we wrap pre but not code */
+        font-size:   var(--m-font-size-preformatted);
+        font-weight: var(--m-font-weight-preformatted);
+        font-family: var(--m-font-family-preformatted);
+        line-height: var(--m-line-spacing-preformatted);
+        margin: var(--m-elbow-room) var(--m-margins-preformatted);
+        /* so many markdown tools manipulate these. overriding */
+        color: inherit; background-color: inherit;
+    }
+    & pre > code {
+        white-space: pre; /* we wrap pre but not code */
+        overflow-x: auto; /* allow scroll bars */
+        font-size:   var(--m-font-size-code);
+        font-weight: var(--m-font-weight-code);
+        font-family: var(--m-font-family-code);
+        line-height: var(--m-line-spacing-code);
+        /* so many markdown tools manipulate these. overriding */
+        color: inherit; background-color: inherit;
+    }
+
+    /* html rendering - allow code scrollbars */
+    & :not(pre) > code {
+        font-size:   var(--m-font-size-code-inline);
+        font-weight: var(--m-font-weight-code-inline);
+        font-family: var(--m-font-family-code);
+        white-space: inherit;
+        /* so many markdown tools manipulate these. overriding */
+        color: inherit; background-color: inherit;
+    }
+} /* end #manuscript */
+
 
 @media print {
     html, body { width: 100%; max-width: 100%; border: 0; padding: 0; margin: 0; }
@@ -215,15 +225,6 @@ html {
     #manuscript pre > code { overflow: hidden; }
 }
 
-/* HTML rendering - allow code scrollbars */
-#manuscript :not(pre) > code {
-    font-size:   var(--m-font-size-code-inline);
-    font-weight: var(--m-font-weight-code-inline);
-    font-family: var(--m-font-family-code);
-    white-space: inherit;
-    /* so many markdown tools manipulate these. overriding */
-    color: inherit; background-color: inherit;
-}
 
 /* Joplin only.
  *
@@ -234,16 +235,18 @@ html {
  * Note: we have to do all of this hoop-jumping because you can't
  * :last-of-type a css class.
  */
-#manuscript div.joplin-editable { margin: 0; }
-#manuscript div.joplin-editable:has(+ div.joplin-editable) pre {
-    margin: var(--m-elbow-room) var(--m-margins-preformatted);
-}
-#manuscript div.joplin-editable:not(:has + div.joplin-editable) pre {
-    margin: var(--m-elbow-room) var(--m-margins-preformatted) 0;
-}
-#manuscript * > div.joplin-editable pre,
-#manuscript *:not(div.joplin-editable) + div.joplin-editable pre {
-    margin-top: 0;
+#manuscript {
+    & div.joplin-editable { margin: 0; }
+    & div.joplin-editable:has(+ div.joplin-editable) pre {
+        margin: var(--m-elbow-room) var(--m-margins-preformatted);
+    }
+    & div.joplin-editable:not(:has + div.joplin-editable) pre {
+        margin: var(--m-elbow-room) var(--m-margins-preformatted) 0;
+    }
+    & * > div.joplin-editable pre,
+    & *:not(div.joplin-editable) + div.joplin-editable pre {
+        margin-top: 0;
+    }
 }
 
 
