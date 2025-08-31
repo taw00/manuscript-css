@@ -48,7 +48,8 @@
     --m-elbow-room: 1rem;
     --m-room-for-two: 2rem;
 
-    --m-text-align:  start;
+    --m-text-align: start;
+    --m-text-justify: inter-word;
 
     --m-font-size-standard:   16px; /* 16px=12pt; 19px=14pt; 14px=10pt */
     --m-font-weight-standard: normal;
@@ -132,7 +133,7 @@
     --m-top-facts-short:  0;     --m-bottom-facts-short: unset;
     --m-left-facts-short: unset; --m-right-facts-short:  0;
     --m-margin-facts-short: unset;
-    --m-text-align-facts-short: right;
+    --m-text-align-facts-short: end;
 
     --m-position-facts-long: static;
     --m-top-facts-long:  unset; --m-bottom-facts-long: unset;
