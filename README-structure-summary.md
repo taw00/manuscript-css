@@ -2,14 +2,14 @@
 
 ### Example 1: The document beginning
 
-_Note that "manuscript.css" here is a stand-in for
+_Note that "./manuscript.css" here is a stand-in for
 "/path/to/manuscript-css/manuscript.css". Or if you decide to host it on some
 webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 
 ```markdown
-<!-- Formatting: US letter, 1in margins, short-form narrative (the default) -->
+<!-- Default Formatting: US letter, 1in margins, short-form narrative -->
 <style>
-    @import url("manuscript.css");
+    @import url("./manuscript.css");
 </style>
 <div id="vpage">
 <article id="manuscript">
@@ -20,17 +20,15 @@ webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 
 ```markdown
 <!-- Formatting: A4, 2.54cm margins, long-form nonnarrative                 -->
-<!--             I.e. All the big prose switches reversed from the default. -->
 <style>
-    @import url("manuscript.css");
-    @page { size: A4 portrait; margin: var(--m-page-marginsA4); }
+    @import url("./manuscript.css");
 </style>
 <div id="vpage" class="A4">
 <article id="manuscript" class="long nonnarrative">
 ... your manuscript ...
 ```
 
-### Example 3: The high-level containers
+### Example 3: the high-level containers
 
 `manuscript.css` structures the document into parts, chapters, and scenes. And
 if poetry, parts, chapters and poems. In the end, parts and chapters are not
@@ -38,8 +36,8 @@ absolutely required. The meat of your manuscript lives either in a scene or a
 poem. Most short stories, for example, only use scenes. Often only one scene
 container.
 
-The containers, in summary:
-(Notice, anything defined by a section can be repeated infinit times.)
+The containers, in summary:  
+(*Note: section blocks can be repeated infinite times.*)
 
 ```html
 <div id="vpage">                                            <!-- 1 required -->
@@ -62,23 +60,23 @@ The containers, in summary:
 
 
 
-### A fuller example (also see templates in the templates folder)
+### A fuller example (*also see templates in the templates folder*)
 
-This is a truncated example of short story prose. It's three scenes contained
-in one chapter and one part. But you can have many parts containing many
-chapters containing many scenes.
+This is a truncated example of a short story. It's three scenes contained
+within one chapter, and that chapter within one part. But you can have many parts containing many chapters containing many scenes.
 
 
 
 ```markdown
 <style>
-    @import url("manuscript.css");
+    @import url("./manuscript.css");
 </style>
 
 <div id="vpage">
 <article id="manuscript">
 
-<!-- contact name, address, email, phone (m-contact is optional) -->
+<!-- contact name, address, email, phone --
+  -- (note: m-contact is optional)       -->
 <div id="m-contact">
 
 Edgar Allan Poe
@@ -89,7 +87,8 @@ telleroftales@example.com
 
 </div>
 
-<!-- title, subtitle, author byline, wordcount/genre facts, and epigraph -->
+<!-- title, subtitle, author byline, and epigraph --
+  -- then wordcount and genre facts               -->
 <div class="m-header">
 
 # The Tell-Tale Heart
@@ -98,7 +97,9 @@ telleroftales@example.com
 
 ### by Edgar Allan Poe
 
-> An epigraph goes here: They heard!—they suspected!—they knew!
+> They heard!—they suspected!—they knew!
+
+<!-- notice that .m-facts in contained within .m-header -->
 
 <div id="m-facts">
 
@@ -109,29 +110,37 @@ Gothic Horror
 </div>
 </div>
 
-<!-- parts contain chapters -->
+<!-- "section.part"s contain "section.chapter"s -->
 <section class="part">
-<!-- part title, subtitle, author byline, epigraph -->
+
+<!-- the part's title (and could have, subtitle, author byline, & epigraph) -->
 <div class="m-header">
 
 # Part 1
 
 </div>
 
-<!-- chapters contain scenes (or poems) -->
+<!-- "section.chapter"s contain section.scene"s (or "section.poem"s) -->
 <section class="chapter">
-<!-- chapter title, subtitle, author byline, epigraph -->
+
+<!-- the chapter's  title, subtitle, author byline, epigraph -->
 <div class="m-header">
 
 # Chapter 1
 
 </div>
 
-<!-- scenes contain your prose - an example of three scenes -->
+<!-- "section.scene"s contain your prose - an example of three scenes -->
 <section class="scene">
+
 <!-- scene title, subtitle, author byline, epigraph
      (I rarely use m-headers in scenes) -->
 <div class="m-header">
+
+# My Scene Title
+
+### Contributing Author: Joe Blough
+
 </div>
 
 True!—nervous—very, very dreadfully nervous I had been and am; but why *will*
@@ -202,8 +211,9 @@ To insert a poem in a document arbitrarily, it will be structured like this:
   above.
 
 - If your document is a manuscript of many poems, `#manuscript` will be of
-  `class="long poetry"` and then many `.m-scene`s filled with ````plaintext`
-  stanzas similar to `.x-poem` above.
+  `class="long poetry"` and then many `.m-poem`s filled with ````plaintext`
+  stanzas similar to `.x-poem` above. For long-form poetry, you probably want to
+  add the `no-header` class to the `div#vpage` element: `<div id="vpage" class="no-header">`
 
 ## Good luck!
 

@@ -104,35 +104,38 @@ Manuscript formatting similar to what many call Shunn Formatting:
 	+ Preview: renders an accurate preview of the manuscript
     * Caveat: sometimes Apostrophe can be flaky.
 
-- Chrome browser + [Markdown Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) extension - not an editor, but …
-    * Preview: render a preview of the manuscript
-    * PDF: convert your markdown document to PDF: `CTRL-P` in the browser (super simple). Alternatively, convert an exported HTML document to PDF: `CTRL-P`.
+** … not editors:**
 
-- [Pandoc](https://pandoc.org/) - not an editor, but …
+- Chrome browser + [Markdown Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) extension
+    * Preview: render a preview of the manuscript, whether in markdown format or HTML.
+    * PDF: convert your markdown document to PDF: `CTRL-P` in the browser (super simple).
+
+- [Pandoc](https://pandoc.org/) - markdown to HTML command line tool
     * HTML: convert your saved markdown document to a compliant HTML document. From the commandline! :)
+    * I only include this here for the folks who like to experiment.
 
 
 ### Editors to Specifically Avoid
 
 Note, I have only tested maybe a dozen editors. These ones are particularly painful to use, IMHO.
 
-- [Obsidian](https://obsidian.md/) - Edit only. A Joplin competitor, but without the functionality. Terrible at importing and exporting. Can't render anything correctly.
-- [Atom](https://atom.io/) - Edit and preview. A wildly-popular editor. Now unmaintained. Dead project.
-- [Marktext](https://github.com/marktext/marktext) - Edit only. Great, minimalistic writer's editor. Now unmaintained. a dead project.
+- [Obsidian](https://obsidian.md/) - A Joplin competitor, but without Joplin's functionality. Terrible at importing and exporting. Can't render anything correctly.
+- [Atom](https://atom.io/) - DEAD PROJECT. Once, wildly-popular. Now unmaintained. VSCodium/VSCode replaces this editor's look and feel.
+- [Marktext](https://github.com/marktext/marktext) - DEAD PROJECT. Once, a great, minimalistic writer's editor. Now unmaintained.
 
 
 # TL;DR Just show me how to do it!
 
 ## First, download this repository
 
-- Copy (clone) the `git` repository from the command line:
+- Command line: copy (clone) the `git` repository:
 
   ```shell
   git clone https://github.com/taw00/manuscript-css/
   cd manuscript-css
   ```
 
-- From the GitHub UI:
+- Via a browser:
   1. browse to <https://github.com/taw00/manuscript-css/>
   2. Click `Code` (big blue button) > `Download zip`
   4. Unzip the `manuscript-css-main.zip` file.
@@ -145,6 +148,7 @@ Check out the example manuscripts in this repository in their original markdown
 and then as PDFs. Use one of the [templates](./templates/) as a template for your
 own work.  And if you are already familiar with converting markdown to HTML and
 then HTML to PDF then that should be enough to get you going.
+
 
 ## Process summary - super high-level
 
@@ -175,9 +179,10 @@ Use any editor: [Joplin](https://joplinapp.org), [VSCodium](https://vscodium.com
 - Method 3 - [VSCodium](https://vscodium.com/)/VSCode: export the HTML to your harddive, then use your browser (Chromium-based only!) to view it and "print to file."
 - Method 4: [Pandoc](https://pandoc.org/): convert the markdown document to HTML, then use your browser (Chromium-based only!) to view it and "print to file."
 
+
 ## Notes about using some of the tools
 
-### Joplin: edited markdown to exported PDF
+### Joplin: markdown to exported PDF
 
 *Edit, Preview, and then export a PDF, all in the same application interface.*
 
@@ -191,7 +196,7 @@ within the application.
 - You can also export to HTML if you prefer that (right-click on the "note" and export to *HTML file*).
 - If you subscribe to the [Joplin Cloud](https://joplincloud.com) service, you can share the document in a browser with friends and family and critique groups by just sending them a link to view.
 
-### VSCodium/VSCode: edited markdown to exported HTML
+### VSCodium/VSCode: markdown to exported HTML
 
 *Edit, Preview, and, if you like, export to an HTML document.*
 
@@ -218,7 +223,7 @@ Of course, exporting to HTML is optional if your goal is a compliant PDF. If tha
 With Joplin, you can use its native editor, or any other editor. If you are Joplin user but also love VSCodium, there is an excellent extension
 `joplin-vscode-plugin` that enables it to plug into the Joplin application. Other editors are simpler to use with Joplin, though. I personally use the [Zed editor](https://zed.dev/).
 
-### Ghostwriter: edited markdown to exported HTML
+### Ghostwriter: markdown to exported HTML
 
 Out of the box, [Ghostwriter](https://ghostwriter.kde.org/) will not render a correct preview of your work. You just need to adjust a couple settings so you can preview correctly and export to HTML correctly.
 
@@ -226,18 +231,18 @@ Out of the box, [Ghostwriter](https://ghostwriter.kde.org/) will not render a co
 - To export to HTML file: `CTRL-E`
 	+ Markdown&nbsp;Converter: `Pandoc CommonMark`
 	+ File&nbsp;Format: `HTML 5`
-	+ Command&nbsp;line&nbsp;options: `--metadata title="storytitle" --no-highlight -f markdown-native_divs+raw_html`   
-	  <small>(optional, and, of course, replace the title with the title of your work)</small>
+	+ Command&nbsp;line&nbsp;options: `--metadata title="storytitle" --no-highlight -f markdown-native_divs+raw_html`  
+	  <small>(optional: the title in this configuration is only saved in the PDF metadata. If you want to change it for each story, feel free)</small>
 
-Of course, exporting to HTML is optional if your goal is a compliant PDF. If that is the case, then use Ghostwriter just for editing and previewing and *Markdown Viewer* + Chrome for creating the PDF.
+Of course, exporting to HTML is optional if your goal is a compliant PDF. If that is the case, then use Ghostwriter just for editing and previewing, and *Markdown Viewer* + Chrome for creating the PDF.
 
 ### Markdown Viewer browser extension: markdown document to PDF document
 
 *Preview, and then when ready, export a PDF.*
 
-This enables you to use any text editor to work with your manuscript.
+This enables you to use any text editor to work with your manuscript, and then this browser extension to do the conversion.
 
-First, in your browser (Chrome, Vivaldi, Edge, Safari on the desktop, etc.), install the [Markdown Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) extension.
+First, in your Chrome-based browser (Chrome, Vivaldi, Edge, Safari on the desktop, etc.), install the [Markdown Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) extension.
 
 Configure the extension:
 - pin it to the top bar of the browser
@@ -245,11 +250,11 @@ Configure the extension:
 - THEME: SIMPLE
 - right click > Manage Extension: make sure *Allow access to file URLs* is turned on.
 
-Then browse to your markdown file using your Chrome-based browser, open it, and it should be rendered nicely as a manuscript-formatted document. Refresh the view as you edit the document with your text editor, and then `CTRL-P` when you are ready to export the document to PDF.
+Then browse to your markdown file using your Chrome-based browser, open it, (or use your file browser to browse to it and then open in Chrome) and it should be rendered nicely as a manuscript-formatted document. Refresh the view as you edit the document with your text editor, and then `CTRL-P` when you are ready to export the document to PDF.
 
 ### Pandoc: markdown document to HTML document
 
-Most people will not use this option, but I present it here …
+**Most people will not use this option,** but I present it here for the geeks …
 
 This requires you use the command line and to have Pandoc installed,
 <https://pandoc.org/>.
@@ -288,7 +293,6 @@ Questions? Comments? Post them in the Discussions section of this repository.
 
 - Markdown-style Tables - I have done no work to make sure they look right in a manuscript. If this is something you would like to see … let me know. Also, give me examples of how it should look.
 - I have also done no styling for images. If you want to add images to your document, you are on your own. For now. I'll probably play with that in the future.
-- Using this process with HTML instead of Markdown. Well, it should just work, I just haven't tried it. I mean, markdown, in the end, is really just HTML with a bit of varnish.
 
 ### Porting your finished draft to LibreOffice and/or Google Docs (or any other word processor)
 
@@ -324,7 +328,7 @@ Check out my Google Docs templates
 
 You can get your document into Google Docs one of two ways: 1. port it to LibreOffice, generate a .odt and then import that into Google Docs (I prefer this method). Or 2. you could create a new clean document from one of those templates and do the cut-and-paste shuffle as described earlier.
 
-### My writer's workflow:
+### My workflow as a writer:
 
 1. **0-draft:** handwritten, with pen-and-ink, in a composition notebook
 2. **work-in-progress:** transcribed to the Joplin desktop application interface (markdown)
