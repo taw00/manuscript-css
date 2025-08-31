@@ -18,9 +18,10 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
 
 <style>
     /*
-    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
+    @import "/full/path/to/the/repository/for/manuscript-css/manuscript.css";
     */
-    @import "../manuscript.css";
+    @import url("../manuscript.css");
     /* this is very specific because, for example, the the Markdown
      * Viewer extension for Chrome will inject its own 
      * text-align: left */

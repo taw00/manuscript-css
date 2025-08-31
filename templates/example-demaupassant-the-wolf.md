@@ -1,9 +1,9 @@
 <style>
     /*
-    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
-    @import "../manuscript.css";
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
+    @import "/full/path/to/the/repository/for/manuscript-css/manuscript.css";
     */
-    @import "../manuscript.css";
+    @import url("../manuscript.css");
     :root {
         --m-font-size-title: 1.25em;
         --m-dinkus: "—";
