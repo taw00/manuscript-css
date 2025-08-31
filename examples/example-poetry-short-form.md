@@ -1,5 +1,17 @@
 <!--
-Template: poem
+Short-form manuscript for poetry:
+- one poem per document
+- m-contact, main title block (title, byline and m-facts), and one m-poem 
+  -- that's it.
+- Alternatively, .m-contact, main title block (title, byline and .m-facts), and
+  then empty-.m-chapter + one .m-poem, then .m-chapter entitled
+  "Acknowledgement", and an .m-scene.foothang with an acknowledge of prior
+  publication.
+- page header removed, because … poetry does not use them
+
+Copyright (c) Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy of
+this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 -->
 
 <style>
@@ -39,6 +51,7 @@ firstname.lastname@example.com
 
 </div></div>
 
+<section class="m-chapter">
 <section class="m-poem">
 
 ```plaintext
@@ -75,6 +88,20 @@ And dances with the daffodils.
 ```
 
 </section> <!-- end poem --> 
+</section> <!-- end chapter --> 
+
+<section class="m-chapter force-break-before">
+<div class="m-header">
+
+# Acknowledgment
+
+</div>
+<section class="m-scene foothang">
+
+Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *Poems, in Two Volumes*. London: Longman, Hurst, Rees, and Orms.
+
+</section> <!-- end "scene" -->
+</section> <!-- end chapter -->
 
 </article> <!-- manuscript -->
 </div> <!-- vpage -->

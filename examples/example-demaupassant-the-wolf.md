@@ -1,3 +1,15 @@
+<!--
+A short story example.
+
+This example:
+- long-form narrative.
+- no parts. Just chapters and scenes. But actuality ...
+- only one scene per chapter, which is rather common.
+
+Copyright (c) Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy of
+this license, visit <http://creativecommons.org/licenses/by/4.0/>.
+-->
 <style>
     /*
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
@@ -5,10 +17,10 @@
     */
     @import url("../manuscript.css");
     :root {
+        --m-pagination-header: "de Maupassant / The Wolf / " counter(page);
         --m-font-size-title: 1.25em;
         --m-dinkus: "—";
         --m-30-: "🙞 ❦ 🙜";
-        --m-pagination-header: "de Maupassant / The Wolf / " counter(page);
     }
 </style>
 

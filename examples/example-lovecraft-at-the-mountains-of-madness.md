@@ -2,18 +2,19 @@
 A real story of some length.
 
 This example:
-- long-form narrative.
-- no parts. Just chapters and scenes. But actuality ...
-- only one scene per chapter, which is rather common.
+- short-form narrative (the default).
+- no parts or chapters, just one scene for the story and another for an
+  acknowledgement section with a bibliography reference.
+- we also customize a few things.
 
 The narrative for our example: HP Lovecraft's classic, _At the Mountains of
 Madness_. This text was adapted a transcription found on the fansite
 hplovecraft.com. It can be found here:
 https://www.hplovecraft.com/writings/texts/fiction/mm.aspx
 
-(c) Copyright 2022 Todd Warner
-This work is licensed under Attribution 4.0 International. To view a copy
-of this license, visit http://creativecommons.org/licenses/by/4.0/
+Copyright (c) Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy of
+this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 -->
 
 <style>

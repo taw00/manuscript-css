@@ -1,12 +1,5 @@
 <!--
-Convert this to PDF (reference README.md on how to do that).
-
-This example:
-- only scenes - typical for short narratives
-
-(c) Copyright 2022 Todd Warner
-This work is licensed under Attribution 4.0 International. To view a copy
-of this license, visit http://creativecommons.org/licenses/by/4.0/
+Template: short story, typical
 -->
 
 <style>
@@ -15,15 +8,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../manuscript.css");
-
-    /* Examples of overloading some CSS variables. Uncomment the font-weight
-       variable to flip the title to bold. Uncomment the other to make a fancy
-       -30- end marker (not a typical decision for a manuscript, of course). */
     :root {
-        /*
-        --m-font-weight-title: bold;
-        --m-30-: "🙞 ❦ 🙜";
-        */
         --m-pagination-header: "Lastname / Short-form Prose / " counter(page);
     }
 </style>
@@ -52,101 +37,48 @@ firstname.lastname@example.com
 
 ### by Author Name
 
-> This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
-> Some stories, parts, chapters, and even scenes will kick off with an epigraph.
->
-> <div class="x-poem">
->
-> ```plaintext
-> A dreamer is one who can only find his way by moonlight, and his
-> punishment is that he sees the dawn before the rest of the world.
->                                                              Oscar Wilde, 1888
-> ```
->
-> </div>
-
 <div class="m-facts">
 
 5000 words
 
 Contemporary Fiction
 
-(_draft rev 20221024_)
+(_draft rev. 20250831_)
 
 </div></div>
 
 <section class="m-scene">
 
-This document is an example of a typical short story. It has no parts or
-chapters, just scenes. Many of my super shorts (the 2000 word range and shorter)
-have only one scene. Also notice the auto-inserted
-[dinkuses](https://en.wikipedia.org/wiki/Dinkus) between the scenes and the
-[-30-](https://en.wikipedia.org/wiki/-30-) marker at `The End`.
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex
+sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
+convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus
+fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada
+lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene. 
-
-</section>
-<section class="m-scene">
-
-Curabitur sagittis dictum ipsum, at congue mauris elementum nec. Aenean nec dui
-sed mi semper lobortis ac sed est. Nam pharetra fermentum lectus nec malesuada.
-Nulla facilisi. Pellentesque volutpat odio vitae sapien convallis hendrerit.
-Nunc eu tincidunt quam. Praesent at urna molestie, tincidunt mi vitae, dapibus
-nulla.
-
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene. 
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex
+sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
+convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus
+fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada
+lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
 </section>
 <section class="m-scene">
 
-Praesent sit amet erat placerat, lacinia sapien non, gravida ipsum. Vivamus
-dictum, elit sed elementum imperdiet, quam magna euismod tellus, viverra
-consectetur quam ipsum cursus nisi. Fusce id erat ut est placerat congue. Fusce
-magna ipsum, pulvinar ac risus semper, blandit iaculis ligula. Proin sed
-euismod sem. Nam feugiat, dui tempus tincidunt commodo, purus ligula tristique
-mauris, in imperdiet ante tortor eu justo. Praesent gravida ornare libero, quis
-convallis sem scelerisque a.
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex
+sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
+convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus
+fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada
+lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene. 
-
-</section>
-<section class="m-scene">
-
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene. 
-
-</section>
-<section class="m-scene">
-
-Phasellus tempus feugiat dui. Suspendisse non nunc tortor. Quisque in iaculis
-lectus, vel finibus nulla. Aliquam quis bibendum mi, eu blandit diam. Cras
-fermentum leo magna, at aliquam neque rhoncus venenatis. Praesent viverra, quam
-ut fringilla condimentum, risus ipsum fermentum augue, in pretium urna augue in
-mi. This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene.
-This is a scene. This is a scene. This is a scene. This is a scene. 
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex
+sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
+convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus
+fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada
+lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
 </section> <!--end last scene -->
 

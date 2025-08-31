@@ -1,12 +1,13 @@
 <!--
-Convert this to PDF (reference README.md on how to do that).
-
 This example:
-- only scenes - typical for short narratives
+- only scenes, not even contact info or facts or a title
+- great for reviewing narrative snippets
+- when writing a novel, I will often initially have it all organized as a
+  different document per scene.
 
-(c) Copyright 2022 Todd Warner
-This work is licensed under Attribution 4.0 International. To view a copy
-of this license, visit http://creativecommons.org/licenses/by/4.0/
+Copyright (c) Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy of
+this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 -->
 
 <style>
@@ -15,82 +16,25 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../manuscript.css");
-
-    /* Examples of overloading some CSS variables. Uncomment the font-weight
-       variable to flip the title to bold. Uncomment the other to make a fancy
-       -30- end marker (not a typical decision for a manuscript, of course). */
     :root {
-        /*
-        --m-font-weight-title: bold;
-        --m-30-: "🙞 ❦ 🙜";
-        */
-        --m-pagination-header: "Lastname / Prose, Short with Chapters / " counter(page);
+        --m-30-: "• • •";
+        --m-pagination-header: "Firstname Lastname / Prose, Scenes Only / " counter(page);
     }
 </style>
 
 <div id="vpage">
 <article id="manuscript">
-
-<div id="m-contact">
-
-Firstname Lastname
-
-123 Elm Street
-
-Example City, NC 12345 USA
-
-firstname.lastname@example.com
-
-+1 555-555-1212
-
-</div>
-
-<div class="m-header">
-
-# Manuscript Formatting via CSS: The Short Story (w/chapters)
-
-## A (_mostly_)Compliant Manuscript for Markdown or HTML (use long form if doing chapters)
-
-### by Author Name
-
-> This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
-> Some stories, parts, chapters, and even scenes will kick off with an epigraph.
->
-> &nbsp;
-> <div class="x-poem">
->
-> ```plaintext
-> A dreamer is one who can only find his way by moonlight, and his
-> punishment is that he sees the dawn before the rest of the world.
->                                                              Oscar Wilde, 1888
-> ```
->
-> </div>
-
-<div class="m-facts">
-
-5000 words
-
-Contemporary Fiction
-
-(_draft rev 20221024_)
-
-</div></div>
-
-<section class="m-chapter">
-<div class="m-header">
-
-# Chapter 1
-
-</div>
-
 <section class="m-scene">
 
-This document is an example of a typical short story. It has no parts or
-chapters, just scenes. Many of my super shorts (the 2000 word range and shorter)
-have only one scene. Also notice the auto-inserted
-[dinkuses](https://en.wikipedia.org/wiki/Dinkus) between the scenes and the
-[-30-](https://en.wikipedia.org/wiki/-30-) marker at `The End`.
+This document is an example of a story snippet. It has no parts or
+chapters, just scenes. AND It doesn't even have the metadata info: no contact
+info, nor facts.
+
+Notice the auto-inserted
+[dinkuses](https://en.wikipedia.org/wiki/Dinkus) between the scenes. But I
+changed the [-30-](https://en.wikipedia.org/wiki/-30-) marker from its default
+of *The End* to *• • •*. I just felt that *The End* was a bit absolute for a
+snippet.
 
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
@@ -133,16 +77,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
-</section> <!--end scene -->
-</section> <!--end chapter -->
-
-<section class="m-chapter">
-<div class="m-header">
-
-# Chapter 1
-
-</div>
-
+</section>
 <section class="m-scene">
 
 This is a scene. This is a scene. This is a scene. This is a scene.
@@ -166,8 +101,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
-</section> <!--end scene -->
-</section> <!--end chapter -->
+</section> <!--end last scene -->
 
 </article>
 </div>

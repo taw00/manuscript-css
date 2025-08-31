@@ -1,15 +1,11 @@
 <!--
-Try to convert this to PDF (reference README.md on how to do that).
-
 This example:
-- only scenes - typical for short narratives
-- uses the 'simple' article class. This signals the document to render without
-  first-page headers, page breaks, or metadata and moves the title to the top of
-  the first page.
+- a short story with chapters and scenes
+  - not typical, but you can do it.
 
-(c) Copyright 2022 Todd Warner
-This work is licensed under Attribution 4.0 International. To view a copy
-of this license, visit http://creativecommons.org/licenses/by/4.0/
+Copyright (c) Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy of
+this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 -->
 
 <style>
@@ -27,12 +23,12 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
         --m-font-weight-title: bold;
         --m-30-: "🙞 ❦ 🙜";
         */
-        --m-pagination-header: "Lastname / Short Prose, Simplified / " counter(page);
+        --m-pagination-header: "Lastname / Prose, Short with Chapters / " counter(page);
     }
 </style>
 
 <div id="vpage">
-<article id="manuscript" class="simple">
+<article id="manuscript">
 
 <div id="m-contact">
 
@@ -47,11 +43,12 @@ firstname.lastname@example.com
 +1 555-555-1212
 
 </div>
+
 <div class="m-header">
 
-# Formatting via CSS: The Short Story (simplified format)
+# Manuscript Formatting via CSS: The Short Story (w/chapters)
 
-## Simplifying a manuscript, stripping out the header (typical for casual presentation)
+## A (_mostly_)Compliant Manuscript for Markdown or HTML (use long form if doing chapters)
 
 ### by Author Name
 
@@ -78,6 +75,13 @@ Contemporary Fiction
 (_draft rev 20221024_)
 
 </div></div>
+
+<section class="m-chapter">
+<div class="m-header">
+
+# Chapter 1
+
+</div>
 
 <section class="m-scene">
 
@@ -128,7 +132,16 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
-</section>
+</section> <!--end scene -->
+</section> <!--end chapter -->
+
+<section class="m-chapter">
+<div class="m-header">
+
+# Chapter 1
+
+</div>
+
 <section class="m-scene">
 
 This is a scene. This is a scene. This is a scene. This is a scene.
@@ -152,7 +165,8 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
-</section> <!--end last scene -->
+</section> <!--end scene -->
+</section> <!--end chapter -->
 
 </article>
 </div>

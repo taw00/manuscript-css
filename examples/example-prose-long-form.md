@@ -1,14 +1,9 @@
 <!--
-Try to convert this to PDF (reference README.md on how to do that).
+This is a typical long-form manuscript: Chapters and scenes.
 
-This is a typical long-form manuscript: Chapters and scenes. BUT here we use the
-article class 'simple' which signals the document to render without first-page
-headers, page breaks, or metadata, and moves the title to the top of the first
-page.
-
-(c) Copyright 2022 Todd Warner
-This work is licensed under Attribution 4.0 International. To view a copy
-of this license, visit http://creativecommons.org/licenses/by/4.0/
+Copyright (c) Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy of
+this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 -->
 
 <style>
@@ -27,12 +22,12 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
         --m-font-weight-title: bold;
         --m-page-break-simulated-long: 0;
         */
-        --m-pagination-header: "Lastname / Long-form Prose (simple) / " counter(page);
+        --m-pagination-header: "Lastname / Long-form Prose / " counter(page);
     }
 </style>
 
 <div id="vpage">
-<article id="manuscript" class="long narrative simple">
+<article id="manuscript" class="long narrative">
 
 <div id="m-contact">
 
@@ -50,9 +45,9 @@ firstname.lastname@example.com
 
 <div class="m-header">
 
-# Manuscript Formatting via CSS: A Long-Form Example
+# Manuscript Formatting via CSS: A Long-Form Example (typical)
 
-## Chapter and Scenes Manuscript (simplified for presentation)
+## A Compliant Manuscript with Chapters and Scenes
 
 ### by Author Name
 

@@ -1,12 +1,11 @@
 <!--
-Convert this to PDF (reference README.md on how to do that).
-
 This example:
-- only ONE scene - very typical for very short narratives
+- only ONE scene - very typical for very short narratives (flash fiction for
+  example)
 
-(c) Copyright 2022 Todd Warner
-This work is licensed under Attribution 4.0 International. To view a copy
-of this license, visit http://creativecommons.org/licenses/by/4.0/
+Copyright (c) Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy of
+this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 -->
 
 <style>

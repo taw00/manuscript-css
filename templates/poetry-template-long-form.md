@@ -1,7 +1,5 @@
 <!--
-Convert this to PDF (reference README.md on how to do that).
-
-NOTE: this is experimental! This will likely change.
+Template: poetry collection (not compliant, but looks nice)
 
 Poetry collections no matter the length are typically formatted similarly to
 a chapter-book, but a little different ...
@@ -10,9 +8,7 @@ a chapter-book, but a little different ...
 - The poems: empty .m-chapter -> m-poem m-poem m-poem ...
 - Acknowledgements chapter: .m-chapter -> m-scene
 
-(c) Copyright 2022 Todd Warner
-This work is licensed under Attribution 4.0 International. To view a copy
-of this license, visit http://creativecommons.org/licenses/by/4.0/
+This poetry collection does not meet industry spec just yet.
 -->
 
 <style>
@@ -21,16 +17,6 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../manuscript.css");
-
-    :root {
-        /*
-        --m-page-break-simulated-long: 0;
-        --m-font-weight-title: bold;
-        --m-font-weight-title-chapter: bold;
-        --m-font-weight-title-poem: bold;
-        --m-pagination-header: "Lastname / Long-form Poetry / " counter(page);
-        */
-    }
 </style>
 
 <div id="vpage" class="no-header">
@@ -58,131 +44,162 @@ firstname.lastname@example.com
 
 <div class="m-facts">
 
-2 poems | 72 lines
+4 poems | NN lines
 
-(_draft rev20221027_)
+(_rev. 20250831_)
 
 </div></div>
 
 <section class="m-chapter toc">
-<div class="m-header">
+<div class="m-header" style="width: 100%">
 
 # Table of Contents
 
 </div>
 <section class="m-scene">
 
-- I Wandered Lonely as a Cloud, William Wordsworth
+##### Chapter Theme 1
 
-- Jabberwocky, Lewis Carroll
+  - Poem 1.1
+  - Poem 1.2
+
+##### Chapter Theme 2
+
+  - Poem 2.1
+  - Poem 2.2
 
 </section></section>
+
+
 <section class="m-chapter">
+<div class="m-header">
+
+# Chapter Theme 1
+
+</div>
 <section class="m-poem">
 <div class="m-header">
 
-# I Wandered Lonely as a Cloud
+# Poem 1.1
 
-### by William Wordsworth
+### by Firstname Lastname
 
 <div class="m-facts">
 
-24 lines
+NN lines
 
 </div></div>
 
 ```plaintext
-I wandered lonely as a cloud
-That floats on high o'er vales and hills,
-When all at once I saw a crowd,
-A host, of golden daffodils;
-Beside the lake, beneath the trees,
-Fluttering and dancing in the breeze.
+Lorem ipsum dolor sit amet consectetur adipiscing elit.
+  Quisque faucibus ex sapien vitae pellentesque sem placerat.
+In id cursus mi pretium tellus duis convallis.
+    Tempus leo eu aenean sed diam urna tempor.
 ```
 ```plaintext
-Continuous as the stars that shine
-And twinkle on the milky way,
-They stretched in never-ending line
-Along the margin of a bay:
-Ten thousand saw I at a glance,
-Tossing their heads in sprightly dance.
+In id cursus mi pretium tellus duis convallis.
+  Tempus leo eu aenean sed diam urna tempor.
+Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
 ```
 ```plaintext
-The waves beside them danced; but they
-Out-did the sparkling waves in glee:
-A poet could not but be gay,
-In such a jocund company:
-I gazed—and gazed—but little thought
-What wealth the show to me had brought:
-```
-```plaintext
-For oft, when on my couch I lie
-In vacant or in pensive mood,
-They flash upon that inward eye
-Which is the bliss of solitude;
-And then my heart with pleasure fills,
-And dances with the daffodils.
+. . .
 ```
 
 </section> <!-- end poem -->
 <section class="m-poem">
 <div class="m-header">
 
-# Jabberwocky
+# Poem 1.2
 
-### Lewis Carroll
+### by Firstname Lastname
 
 <div class="m-facts">
 
-48 lines
+NN lines
 
 </div></div>
 
 ```plaintext
-’Twas brillig, and the slithy toves
-   Did gyre and gimble in the wabe;
-All mimsy were the borogoves,
-   And the mome raths outgrabe.
-```
-```plaintext
-“Beware the Jabberwock, my son
-   The jaws that bite, the claws that catch!
-Beware the Jubjub bird, and shun
-   The frumious Bandersnatch!”
-```
-```plaintext
-He took his vorpal sword in hand;
-   Long time the manxome foe he sought—
-So rested he by the Tumtum tree,
-   And stood awhile in thought.
-```
-```plaintext
-And, as in uffish thought he stood,
-   The Jabberwock, with eyes of flame,
-Came whiffling through the tulgey wood,
-   And burbled as it came!
-```
-```plaintext
-One, two! One, two! And through and through
-   The vorpal blade went snicker-snack!
-He left it dead, and with its head
-   He went galumphing back.
-```
-```plaintext
-“And hast thou slain the Jabberwock?
-   Come to my arms, my beamish boy!
-O frabjous day! Callooh! Callay!”
-   He chortled in his joy.
-```
-```plaintext
-’Twas brillig, and the slithy toves
-   Did gyre and gimble in the wabe;
-All mimsy were the borogoves,
-   And the mome raths outgrabe.
+Lorem ipsum dolor sit amet consectetur adipiscing elit.
+  Quisque faucibus ex sapien vitae pellentesque sem placerat.
+In id cursus mi pretium tellus duis convallis.
+    Tempus leo eu aenean sed diam urna tempor.
+
+In id cursus mi pretium tellus duis convallis.
+  Tempus leo eu aenean sed diam urna tempor.
+Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+
+. . .
 ```
 
 </section> <!-- end poem -->
 </section> <!-- end chapter -->
+
+
+<section class="m-chapter">
+<div class="m-header">
+
+# Chapter Theme 2
+
+</div>
+<section class="m-poem">
+<div class="m-header">
+
+# Poem 2.1
+
+### by Firstname Lastname
+
+<div class="m-facts">
+
+NN lines
+
+</div></div>
+
+```plaintext
+Lorem ipsum dolor sit amet consectetur adipiscing elit.
+  Quisque faucibus ex sapien vitae pellentesque sem placerat.
+In id cursus mi pretium tellus duis convallis.
+    Tempus leo eu aenean sed diam urna tempor.
+```
+```plaintext
+In id cursus mi pretium tellus duis convallis.
+  Tempus leo eu aenean sed diam urna tempor.
+Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+```
+```plaintext
+. . .
+```
+
+</section> <!-- end poem -->
+<section class="m-poem">
+<div class="m-header">
+
+# Poem 2.2
+
+### by Firstname Lastname
+
+<div class="m-facts">
+
+NN lines
+
+</div></div>
+
+```plaintext
+Lorem ipsum dolor sit amet consectetur adipiscing elit.
+  Quisque faucibus ex sapien vitae pellentesque sem placerat.
+In id cursus mi pretium tellus duis convallis.
+    Tempus leo eu aenean sed diam urna tempor.
+
+In id cursus mi pretium tellus duis convallis.
+  Tempus leo eu aenean sed diam urna tempor.
+Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+
+. . .
+```
+
+</section> <!-- end poem -->
+</section> <!-- end chapter -->
+
 
 <section class="m-chapter">
 <div class="m-header">
@@ -190,14 +207,13 @@ All mimsy were the borogoves,
 # Acknowledgments
 
 </div>
-<section class="m-scene foothang">
+<section class="m-scene">
 
-Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *Poems, in Two Volumes*. London: Longman, Hurst, Rees, and Orms.
-
-Carroll, Lewis. "Jabberwocky." 1871. In *Through the Looking-Glass*. London: Macmillan and Co.
+The editors of this poetry collection sould like to acknowledge the good graces
+of many people. In particular …
 
 </section> <!-- end "scene" -->
 </section> <!-- end chapter -->
 
-</article> <!-- manuscript -->
-</div> <!-- vpage -->
+</article> <!-- end manuscript -->
+</div>     <!-- end vpage -->

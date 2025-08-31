@@ -1,11 +1,5 @@
 <!--
-Convert this to PDF (reference README.md on how to do that).
-
-This is a typical long-form manuscript: Chapters and scenes.
-
-(c) Copyright 2022 Todd Warner
-This work is licensed under Attribution 4.0 International. To view a copy
-of this license, visit http://creativecommons.org/licenses/by/4.0/
+Template: long-form story, typical for novel and similar
 -->
 
 <style>
@@ -14,16 +8,7 @@ of this license, visit http://creativecommons.org/licenses/by/4.0/
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../manuscript.css");
-
-    /* Examples of overloading some CSS variables. Uncomment the font-weight
-       variable to flip the title to bold. Uncomment the other to turn off the
-       dotted like page-break simulator when presenting the document on the
-       web. */
     :root {
-        /*
-        --m-font-weight-title: bold;
-        --m-page-break-simulated-long: 0;
-        */
         --m-pagination-header: "Lastname / Long-form Prose / " counter(page);
     }
 </style>
@@ -47,25 +32,11 @@ firstname.lastname@example.com
 
 <div class="m-header">
 
-# Manuscript Formatting via CSS: A Long-Form Example (typical)
+# Manuscript Formatting via CSS: A Long-Form Story (typical)
 
 ## A Compliant Manuscript with Chapters and Scenes
 
 ### by Author Name
-
-> This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
-> Some stories, parts, chapters, and even scenes will kick off with an epigraph.
->
-> &nbsp;
-> <div class="x-poem">
->
-> ```plaintext
-> A dreamer is one who can only find his way by moonlight, and his
-> punishment is that he sees the dawn before the rest of the world.
->                                                              Oscar Wilde, 1888
-> ```
->
-> </div>
 
 <div class="m-facts">
 
@@ -73,7 +44,7 @@ firstname.lastname@example.com
 
 Contemporary Fiction
 
-(_draft rev20221024_)
+(_draft rev. 20250831_)
 
 </div></div>
 
@@ -85,21 +56,19 @@ Contemporary Fiction
 </div>
 <section class="m-scene">
 
-This document templates a long-form narrative that is divided into the more
-typical chapters and scenes (no parts). Most short stories are just a series of
-scenes. Most books-length (long-form) manuscripts are divided into chapters and
-scenes w/o parts. But some books are also divided into books or parts. Of the
-three components, only scenes are required. But here, we demo the long-form
-typical: chapters and scenes.
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex
+sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
+convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus
+fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada
+lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
-Side note: the dotted lines in the HTML view are simulalated page breaks. They
-can be turned off by setting the `--m-page-break-simulated-long` to `0`. If you
-look in the `<style>...</style>` block above, I have that commented out.
-Uncomment it to see the change. HTML doesn't "page break" so we put in an
-indicator as an approximation of the behavior.
-
-The only time I turn off the page break similation is when I am sharing the 
-document as an HTML page. I.e., when the HTML becomes the primary end artifact.
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex
+sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis
+convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus
+fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada
+lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
 </section> <!-- end scene -->
 <section class="m-scene">
@@ -121,20 +90,6 @@ pellentesque porttitor. In ac mollis arcu. Etiam est nulla, faucibus et tellus
 nec, congue sagittis metus.
 
 </section> <!-- end scene -->
-<section class="m-scene">
-
-Nam pharetra fermentum lectus nec malesuada. Nulla facilisi. Pellentesque
-volutpat odio vitae sapien convallis hendrerit. Nunc eu tincidunt quam. Praesent
-at urna molestie, tincidunt mi vitae, dapibus nulla.
-
-Sed suscipit mauris in dolor faucibus, et tempus dui placerat. Nam ultricies,
-quam quis ultrices sollicitudin, neque augue dapibus diam, at sodales justo
-diam eu massa. Duis id ex vitae sem tempus auctor non at est. Aenean
-ullamcorper orci vel massa volutpat hendrerit. Phasellus dui ex, efficitur in
-elementum a, efficitur auctor ipsum. Aenean sit amet nisi eu nibh imperdiet
-efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
-
-</section> <!-- end scene -->
 </section> <!-- end chapter -->
 
 <section class="m-chapter">
@@ -144,8 +99,6 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 
 </div>
 <section class="m-scene">
-
-Only one scene for chapter 2 because I think you get the idea.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a placerat lorem,
 a sagittis risus. Curabitur erat risus, congue in lacinia ac, viverra molestie
@@ -163,27 +116,6 @@ mauris suscipit mattis ac sit amet purus.
 </section> <!-- end scene -->
 </section> <!-- end chapter -->
 
-<section class="m-chapter">
-<div class="m-header">
-
-# Epilogue
-
-</div>
-<section class="m-scene">
-
-You get the idea. I am ending this manuscript with this scene.
-
-Also, did you notice the `#` [dinkuses](https://en.wikipedia.org/wiki/Dinkus)
-between the scenes? And the `The End` at the end? That's a typographical marker
-called a [-30-](https://en.wikipedia.org/wiki/-30-). You can turned them off or
-change them by redefining CSS variabbles `--m-dinkus` and `--m-30-`. For
-example, set `--m-dinkus` to an empty string `""` to turn it off and set
-`--m-30-` to "La Fin" just because you think your critique readers reviewers
-will be impressed with your French.
-
-</section> <!-- scene -->
-</section> <!-- chapter -->
-
-</article> <!-- manuscript -->
-</div> <!-- vpage -->
+</article> <!-- end manuscript -->
+</div>     <!-- end vpage -->
 

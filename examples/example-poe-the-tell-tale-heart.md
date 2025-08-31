@@ -1,5 +1,5 @@
 <!--
-Convert this to PDF (reference README.md on how to do that).
+A short story example.
 
 This example:
 - only one scene (for the story) - very typical for very short narratives
@@ -7,9 +7,9 @@ This example:
 - I overloaded the --m-dinkus with simple em-dash because I didn't want to use
   the default # marker. And then I ended with a flourish because... it's Poe. :)
 
-(c) Copyright 2022 Todd Warner
-This work is licensed under Attribution 4.0 International. To view a copy
-of this license, visit http://creativecommons.org/licenses/by/4.0/
+Copyright (c) Todd Warner
+This work is licensed under Attribution 4.0 International. To view a copy of
+this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 -->
 
 <style>
