@@ -75,6 +75,13 @@
     --m-marker2:        "—";
     --m-marker-em-dash: "—";
     --m-marker-3em-dashes: "— — —";
+    --m-marker-2em-dash: "⸺";
+    --m-marker-horbar: "―";
+    --m-marker-quote-dash: var(--m-marker-horbar);
+    --m-marker-3horbars: "― ― ―";
+    --m-marker-3quote-dashes: var(--m-marker-3horbars);
+    --m-marker-forward-slash: "/";
+    --m-marker-tilde: "~";
 
     /* Manuscript End, common */
     --m-marker10:       "The End";
