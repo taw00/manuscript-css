@@ -359,13 +359,14 @@
     --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
 } /* end :root */
 
+
 body {
     /* the desktop theme beneath the paper */
     --m-desktop-color-theme-default: var(--m-color-gray5, darkgray);
     --m-desktop-color-theme-dim: var(--m-color-gray7, dimgray);
     --m-desktop-color-theme-dimmer: var(--m-color-gray7-5, #505050);
     --m-desktop-color-theme-dark: var(--m-color-avocado, avocado);
-    --m-desktop-color: var(--m-color-theme-default);
+    --m-desktop-color: var(--m-desktop-color-theme-default);
 } /* end <body> scoping */
 
 #vpage {
@@ -374,7 +375,7 @@ body {
     --m-paper-color-theme-dim: var(--m-color-gray4, silver);
     --m-paper-color-theme-dimmer: var(--m-color-gray6, gray);
     --m-paper-color-theme-dark: var(--m-color-gray8, #303030);
-    --m-paper-color: var(--m-color-theme-default);
+    --m-paper-color: var(--m-paper-color-theme-default);
 
     --m-vpage-frame: 0 0 20px var(--m-color-gray9, black);
     --m-vpage-frame-margin: 20px auto;
@@ -398,6 +399,10 @@ body {
     --m-link-hover-color: var(--m-link-hover-color-theme-default);
 
 } /* end <div id="vpage"> scoping */
+
+
+
+
 
 } /* end @layer lm-var-defaults */
 
