@@ -50,7 +50,7 @@
  * </style>
  */
 
-@layer lm-reset-joplin-constants, lm-user-resets, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-user-overrides;
+@layer lm-reset-joplin-constants, lm-user-resets, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
 @import          url("./m-var.css?rev=20250830");
 @import        url("./m-reset.css?rev=20250830");

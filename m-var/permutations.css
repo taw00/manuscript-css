@@ -16,58 +16,6 @@
 
 @layer lm-var-permutations {
 
-/* presentation theme
- * note: PDF export will still be a black text on white */
-body {
-    &:has(#vpage:is(.dim-theme,.dim,.dimtheme)) {
-        --m-desktop-color: var(--m-color-gray7, dimgray);
-    }
-    &:has(#vpage:is(.dimmer-theme,.dimmer,.dimmertheme)) {
-        --m-desktop-color: var(--m-color-gray7-5, #505050);
-    }
-    &:has(#vpage:is(.dark-theme,.dark,.darktheme)) {
-        --m-desktop-color: var(--m-color-avocado);
-    }
-    /*
-    &:has(#vpage.plain) {
-        --m-desktop-color: var(--m-desktop-color-plain);
-    }
-    &:has(#vpage.vplain) {
-        --m-desktop-color: var(--m-desktop-color-vplain);
-    }
-    &:has(#vpage.vvplain) {
-        --m-desktop-color: var(--m-desktop-color-vvplain);
-    }
-    */
-}
-
-#vpage {
-    &.plain {
-        --m-vpage-frame: 0;
-    }
-    &.vplain {
-        --m-vpage-frame: 0;
-        --m-vpage-frame-margin: 0;
-    }
-    &.vvplain {
-        --m-paper-color: transparent;
-        --m-vpage-frame: 0;
-        --m-vpage-frame-margin: 0;
-    }
-    &:is(.dim-theme,.dim,.dimtheme) {
-        --m-paper-color: var(--m-color-gray4, silver);
-    }
-    &:is(.dimmer-theme,.dimmer,.dimmertheme) {
-        --m-paper-color: var(--m-color-gray6, gray);
-    }
-    &:is(.dark-theme,.dark,.darktheme) {
-        --m-paper-color: var(--m-color-gray8, #303030);
-        --m-text-color: var(--m-color-whitesmoke, whitesmoke);
-        --m-link-color: var(--m-color-cobalt-blue, rgb(0 32 194 / 100%));
-    }
-}
-
-
 #vpage {
     &.US, &.us, &.letter {
         --m-page-width:  var(--m-page-widthUS);

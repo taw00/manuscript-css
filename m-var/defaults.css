@@ -360,21 +360,42 @@
 } /* end :root */
 
 body {
-    --m-desktop-color: var(--m-color-gray5, darkgray);
-    --m-desktop-color-plain: var(--m-color-gray7, dimgray);
-    --m-desktop-color-vplain: var(--m-color-gray8, rgb(30 30 30 / 100%));
-    --m-desktop-color-vvplain: var(--m-color-gray0, white);
+    /* the desktop theme beneath the paper */
+    --m-desktop-color-theme-default: var(--m-color-gray5, darkgray);
+    --m-desktop-color-theme-dim: var(--m-color-gray7, dimgray);
+    --m-desktop-color-theme-dimmer: var(--m-color-gray7-5, #505050);
+    --m-desktop-color-theme-dark: var(--m-color-avocado, avocado);
+    --m-desktop-color: var(--m-color-theme-default);
 } /* end <body> scoping */
 
 #vpage {
-    /* the paper on the desktop */
-    --m-paper-color: var(--m-color-gray0, white);
+    /* the paper theme on the desktop */
+    --m-paper-color-theme-default: var(--m-color-gray0, white);
+    --m-paper-color-theme-dim: var(--m-color-gray4, silver);
+    --m-paper-color-theme-dimmer: var(--m-color-gray6, gray);
+    --m-paper-color-theme-dark: var(--m-color-gray8, #303030;
+    --m-paper-color: var(--m-color-theme-default);
+
     --m-vpage-frame: 0 0 20px var(--m-color-gray9, black);
     --m-vpage-frame-margin: 20px auto;
 
-    --m-text-color: var(--m-color-gray9, black);
-    --m-link-color: var(--m-color-professional-blue2, #122b73);
-    --m-link-hover-color: var(--m-color-gray7, dimgray);
+    --m-text-color-theme-default: var(--m-color-gray9, black);
+    --m-text-color-theme-dim: var(--m-text-color-theme-default);
+    --m-text-color-theme-dimmer: var(--m-text-color-theme-default);
+    --m-text-color-theme-dark: var(--m-color-whitesmoke, whitesmoke);
+    --m-text-color: var(--m-text-color-theme-default);
+
+    --m-link-color-theme-default: var(--m-color-professional-blue2, #122b73);
+    --m-link-color-theme-dim: var(--m-link-color-theme-default);
+    --m-link-color-theme-dimmer: var(--m-link-color-theme-default);
+    --m-link-color-theme-dark: var(--m-color-cobalt-blue, rgb(0 32 194 / 100%));
+    --m-link-color: var(--m-link-color-theme-default);
+
+    --m-link-hover-color-theme-default: var(--m-color-gray7, dimgray);
+    --m-link-hover-color-theme-dim: var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dimmer: var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dark: var(--m-link-hover-color-theme-default);
+    --m-link-hover-color: var(--m-link-hover-color-theme-default);
 
 } /* end <div id="vpage"> scoping */
 

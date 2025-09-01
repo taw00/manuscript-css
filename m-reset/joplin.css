@@ -40,10 +40,12 @@ body {
 @media screen {
     /* a darkgray "desk" and a "trans" content box framing the #rendered-md */
     html { background-color: rgb(0 0 0 / 0%); }
+    body {
+        background-color: var(--m-reset-joplin-body-background-color);
+    }
     /* rendered view:  */
     body#joplin-container-body {
         /* a virtual paper look: <body> is the "desk" behind the paper */
-        background-color: var(--m-reset-joplin-body-background-color);
         /* Remove the padding and bg that frames #rendered-md */
         & > #joplin-container-content {
             background-color: transparent;
@@ -52,7 +54,6 @@ body {
     }
     /* rendered view: explicitly exported to HTML version */ 
     body:not(#joplin-container-body) {
-        background-color: var(--m-reset-joplin-body-background-color);
         & > div.exported-note {
             margin: 0;
             padding: 0;
