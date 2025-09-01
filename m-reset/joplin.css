@@ -30,7 +30,7 @@
 
 @layer lm-reset-joplin-constants {
 
-:root {
+body {
     --m-reset-joplin-body-background-color: var(--m-desktop-color);
 }
 
