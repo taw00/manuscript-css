@@ -27,11 +27,11 @@
      * - USh (US Half Letter) is 140m x 216mm or 5.5in x 8.5in
      * - US Letter is 216mm x 279mm or 8.5in x 11in
      */
-    --m-page-widthA6: 105mm; --m-page-heightA6: 148mm; --m-page-marginsA6: .5in;
-    --m-page-widthA5: 148mm; --m-page-heightA5: 210mm; --m-page-marginsA5: .75in;
-    --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginsA4: 1in;
-    --m-page-widthUSh: 5.5in; --m-page-heightUSh: 8.5in; --m-page-marginsUSh: .75in;
-    --m-page-widthUS: 8.5in; --m-page-heightUS: 11in;  --m-page-marginsUS: 1in;
+    --m-page-widthA6: 105mm; --m-page-heightA6: 148mm; --m-page-marginA6: .5in;
+    --m-page-widthA5: 148mm; --m-page-heightA5: 210mm; --m-page-marginA5: .75in;
+    --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginA4: 1in;
+    --m-page-widthUSh: 5.5in; --m-page-heightUSh: 8.5in; --m-page-marginUSh: .75in;
+    --m-page-widthUS: 8.5in; --m-page-heightUS: 11in;  --m-page-marginUS: 1in;
 
     /* default for each is 1/2 the default margin widths */
     --m-indentA6: .25in; --m-indentA5: .375in; --m-indentA4: .5in;
@@ -150,18 +150,49 @@
     --m-text-align-facts-long: center;
 
     /* colors used mainly for desktop, paper, and text / links */
-    --m-color-white: white;
-    --m-color-notwhite: gainsboro;
     --m-color-black: black;
-    --m-color-darkgray: darkgray;                 /* a lighter gray */
-    --m-color-dimgray: dimgray;                   /* a darker gray */
-    --m-color-darkdarkgray: rgb(29 32 36 / 100%); /* a very dark gray */
+    --m-color-gray9: black;
+    --m-color-gray8: rgb(30 30 30 / 100%);
+    --m-color-notblack: var(--m-color-gray8);
+    --m-color-gray7-5: rgb(50 50 50 / 100%);
+    --m-color-dimgray: dimgray;
+    --m-color-gray7: dimgray;
+    --m-color-gray: gray;
+    --m-color-gray6: gray;
+    --m-color-darkgray: darkgray;
+    --m-color-gray5: darkgray; /* oddly, lighter than gray */
+    --m-color-silver: silver;
+    --m-color-gray4: silver;
+    --m-color-lightgray: lightgray;
+    --m-color-gray3: lightgray;
+    --m-color-gainsboro: gainsboro;
+    --m-color-gray2: gainsboro;
+    --m-color-whitesmoke: whitesmoke;
+    --m-color-gray1: whitesmoke;
+    --m-color-notwhite: var(--m-color-whitesmoke);
+    --m-color-white: white;
+    --m-color-gray0: white;
 
-    --m-color-browser-link-blue: rgb(0 0 238);
-    --m-color-cobalt-blue: rgb(0 32 194);
+    /* we like blues for links */
+    --m-color-browser-link-blue: rgb(0 0 238 / 100%);
+    --m-color-cobalt-blue: rgb(0 32 194 / 100%);
     --m-color-union-blue: #0d1e51;
-    --m-color-professional-blue: #02195c;
+    --m-color-professional-blue1: #02195c;
     --m-color-professional-blue2: #122b73;
+
+    /* alternative dark colors with a hint of color */
+    --m-color-avocado: avocado;
+    --m-color-eggplant: eggplant;
+
+    /* box-shadow, for the 3D effect with the paper */
+    --m-paper-frame-black: 0 0 20px black;
+    --m-paper-frame-gray9: 0 0 20px black;
+    --m-paper-frame-dimgray: 0 0 20px dimgray;
+    --m-paper-frame-gray7: 0 0 20px dimgray;
+    --m-paper-frame-darkgray: 0 0 20px darkgray;
+    --m-paper-frame-gray5: 0 0 20px darkgray;
+    --m-paper-frame-gainsboro: 0 0 20px gainsboro;
+    --m-paper-frame-gray2: 0 0 20px gainsboro;
 
     /* for the page 2+ headers */
     --m-pagination-header: "Lastname / Short Title / " counter(page);
@@ -170,8 +201,12 @@
      * Decorative border (screen rendering only) - DISABLED FOR NOW
      * A border wrapping the manuscript content. Set this to 0 in your
      * manuscript to disable. */      /* faded lightgray */
-    /*--m-manuscript-border: 1px solid rgb(211 211 211 / 50%);*/
+    /*
+    --m-manuscript-border: 1px solid rgb(211 211 211 / 50%);
+    --m-vpage-border: 1px solid red;
+    */
     --m-manuscript-border: 0;
+    --m-vpage-border: 0;
 }
 
 } /* end @layer lm-var-constants */

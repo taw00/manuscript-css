@@ -16,11 +16,63 @@
 
 @layer lm-var-permutations {
 
+/* presentation theme
+ * note: PDF export will still be a black text on white */
+body {
+    &:has(#vpage:is(.dim-theme,.dim,.dimtheme)) {
+        --m-desktop-color: var(--m-color-gray7, dimgray);
+    }
+    &:has(#vpage:is(.dimmer-theme,.dimmer,.dimmertheme)) {
+        --m-desktop-color: var(--m-color-gray7-5, #505050);
+    }
+    &:has(#vpage:is(.dark-theme,.dark,.darktheme)) {
+        --m-desktop-color: var(--m-color-avocado);
+    }
+    /*
+    &:has(#vpage.plain) {
+        --m-desktop-color: var(--m-desktop-color-plain);
+    }
+    &:has(#vpage.vplain) {
+        --m-desktop-color: var(--m-desktop-color-vplain);
+    }
+    &:has(#vpage.vvplain) {
+        --m-desktop-color: var(--m-desktop-color-vvplain);
+    }
+    */
+}
+
+#vpage {
+    &.plain {
+        --m-vpage-frame: 0;
+    }
+    &.vplain {
+        --m-vpage-frame: 0;
+        --m-vpage-frame-margin: 0;
+    }
+    &.vvplain {
+        --m-paper-color: transparent;
+        --m-vpage-frame: 0;
+        --m-vpage-frame-margin: 0;
+    }
+    &:is(.dim-theme,.dim,.dimtheme) {
+        --m-paper-color: var(--m-color-gray4, silver);
+    }
+    &:is(.dimmer-theme,.dimmer,.dimmertheme) {
+        --m-paper-color: var(--m-color-gray6, gray);
+    }
+    &:is(.dark-theme,.dark,.darktheme) {
+        --m-paper-color: var(--m-color-gray8, #303030);
+        --m-text-color: var(--m-color-whitesmoke, whitesmoke);
+        --m-link-color: var(--m-color-cobalt-blue, rgb(0 32 194 / 100%));
+    }
+}
+
+
 #vpage {
     &.US, &.us, &.letter {
         --m-page-width:  var(--m-page-widthUS);
         --m-page-height: var(--m-page-heightUS);
-        --m-page-margins: var(--m-page-marginsUS);
+        --m-page-margin: var(--m-page-marginUS);
         --m-indent-narrative: var(--m-indentUS);
         --m-indent-foothang:  var(--m-indentUS);
     }
@@ -28,7 +80,7 @@
     &.USh, &.USH, &.ush, &.hletter { /* US half-letter */
         --m-page-width:  var(--m-page-widthUSh);
         --m-page-height: var(--m-page-heightUSh);
-        --m-page-margins: var(--m-page-marginsUSh);
+        --m-page-margin: var(--m-page-marginUSh);
         --m-indent-narrative: var(--m-indentUSh);
         --m-indent-foothang:  var(--m-indentUSh);
     }
@@ -36,7 +88,7 @@
     &.A4, &.a4 {
         --m-page-width:  var(--m-page-widthA4);
         --m-page-height: var(--m-page-heightA4);
-        --m-page-margins: var(--m-page-marginsA4);
+        --m-page-margin: var(--m-page-marginA4);
         --m-indent-narrative: var(--m-indentA4);
         --m-indent-foothang:  var(--m-indentA4);
     }
@@ -44,14 +96,14 @@
     &.A5, &.a5 {
         --m-page-width:  var(--m-page-widthA5);
         --m-page-height: var(--m-page-heightA5);
-        --m-page-margins: var(--m-page-marginsA5);
+        --m-page-margin: var(--m-page-marginA5);
         --m-indent-narrative: var(--m-indentA5);
         --m-indent-foothang:  var(--m-indentA5);
     }
     &.A6, &.a6 {
         --m-page-width:  var(--m-page-widthA6);
         --m-page-height: var(--m-page-heightA6);
-        --m-page-margins: var(--m-page-marginsA6);
+        --m-page-margin: var(--m-page-marginA6);
         --m-indent-narrative: var(--m-indentA6);
         --m-indent-foothang:  var(--m-indentA6);
     }
@@ -60,21 +112,21 @@
         --m-page-height:  var(--m-page-widthA5);
     }
 
-   /* now, recalculate */
-    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margins) * 2));
-    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margins) * 2));
-    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margins) * 1.5));
-    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margins) * 2));
+    /* now, recalculate */
+    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
+    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
     --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
     --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
     --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
     --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
     --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
-    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margins));
-    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margins));
-    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margins));
-    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margins));
-    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margins));
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
+    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
+    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
+    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
     --m-offset-title-short:        var(--m-content-offset-5-12th);
     --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
     --m-offset-title-long:         var(--m-content-offset-5-12th);
@@ -84,7 +136,7 @@
     --m-margins-blockquote: calc(var(--m-indent-narrative) * 1.5);
 }
 
-#manuscript { /* very pedantic */
+#manuscript {
     &:not(:is(.nonnarrative,.non-narrative)) { /* i.e., narrative */
         /* the default is already set for .narrative, but we are being explicit */
         /* narrative paragraphs first not indented, then indented */
@@ -229,26 +281,19 @@
             --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-long);
         }
     }
-    /* this does not work for whatever reason
-    #vpage {
-        / * if we use class="plain" to simplify the virtual page * /
-        &.plain { --m-desktop-color: var(--m-desktop-color-plain); }
-        / * if we use class="vplain" to super-simplify the virtual page * /
-        &:.vplain { --m-desktop-color: var(--m-desktop-color-vplain); }
-        / * if we use class="vvplain" to super-duper-simplify the virtual page * /
-        &:.vvplain {
-            --m-desktop-color: var(--m-desktop-color-vvplain);
-            --m-paper-color: transparent !important;
-        }
-    }
-    */
 } /* end @media screen */
 
 @media print {
-    :root {
+    body {
         --m-desktop-color: transparent;
-        --m-paper-color: transparent;
+        & #vpage {
+            --m-paper-color: transparent;
+            --m-vpage-frame: 0;
+            --m-vpage-frame-margin: 0;
+            --m-page-margin: 0;
+        }
     }
+
     #manuscript {
         &:not(.long) { /* the default, but let's be explicit */
             /* short-form print behavior: if page break simulation was set for some

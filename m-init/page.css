@@ -19,7 +19,6 @@ html {
     display: block;
     box-sizing: border-box;
     position: relative;
-    overflow: hidden;
     top: 0;
     left: 0;
 }
@@ -81,46 +80,37 @@ html {
     }
     body {
         background-color: var(--m-desktop-color);
-        &:has(#vpage.plain) {
-            background-color: var(--m-desktop-color-plain);
-            /*--m-desktop-color: var(--m-desktop-color-plain);*/
-        }
-        &:has(#vpage.vplain) {
-            background-color: var(--m-desktop-color-vplain);
-            /*--m-desktop-color: var(--m-desktop-color-vplain);*/
-        }
-        &:has(#vpage.vvplain) {
-            background-color: var(--m-desktop-color-vvplain);
-            /*--m-desktop-color: var(--m-desktop-color-vvplain);*/
-            --m-paper-color: transparent;
-        }
     }
     /* the content container */
-    /* a virtual page */
+    /* a virtual page — the paper */
     #vpage {
         width: 100%; max-width: var(--m-page-width);
         background-color: var(--m-paper-color);
-        &:not(:is(.plain,.vplain,.vvplain)) {
-            margin: 20px auto;
-            box-shadow: 0 0 20px black;
+        box-shadow: var(--m-vpage-frame);
+        margin: var(--m-vpage-frame-margin);
+        /* We want the padding (page margin) to shrink on small screens */
+        /*padding: var(--m-page-margin);*/
+        padding: min(var(--m-page-margin),10vw) min(var(--m-page-margin),2vw);
+        /* the manuscript is the words and content, not the paper */
+        & #manuscript {
+            width: 100%; max-width: var(--m-content-width);
+            border: var(--m-manuscript-border);
+            margin: auto;
         }
-        &.plain {
-            margin: 20px auto;
-            /*box-shadow: 0 0 20px black;*/
-            /*border: 1px solid darkgray;*/
+        /* experimenting with flipping the padding/margin settings between the
+         * vpage and the manuscript. If you think like a printer, the page
+         * margins should be controlled by the paper/page and not the content.
+         * That's what we have set now. If you want to flip it, add
+         * 'flip-margin' to the vpage classes and then #manuscript centers the
+         * content and sets its own spacing with the margin settings. */
+        &.flip-margins {
+            padding: 0;
+            & #manuscript {
+                /* the 95% keeps a small margin on small screens */
+                width: 95%; max-width: var(--m-content-width);
+                margin: var(--m-page-margin) auto;
+            }
         }
-        &.vplain, &.vvplain {
-            /*position: relative;*/ 
-            /*margin: 20px auto;*/
-            /*box-shadow: 0 0 20px black;*/
-            /*border: 1px solid darkgray;*/
-        }
-    }
-    #manuscript {
-        /* the 95% keeps a small margin on small screens */
-        width: 95%; max-width: var(--m-content-width);
-        margin: var(--m-page-margins) auto;
-        border: var(--m-manuscript-border);
     }
 } /* end @media screen */
 
@@ -221,6 +211,7 @@ html {
 @media print {
     html, body { width: 100%; max-width: 100%; border: 0; padding: 0; margin: 0; }
     #vpage, #manuscript { width: 100%; max-width: 100%; padding: 0; margin: 0; }
+    html, body, #vpage, #manuscript { background-color: transparent; }
     /* print rendering - do not allow code scrollbars */
     #manuscript pre > code { overflow: hidden; }
 }

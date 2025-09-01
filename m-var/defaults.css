@@ -46,8 +46,8 @@
 
     --m-page-width:  var(--m-page-widthUS);
     --m-page-height: var(--m-page-heightUS);
-    --m-page-margins: var(--m-page-marginsUS);
-    --m-paginated-margin: calc(var(--m-page-margins) * 1.3); /* arbitrary calculation */
+    --m-page-margin: var(--m-page-marginUS);
+    --m-paginated-margin: calc(var(--m-page-margin) * 1.3); /* arbitrary calculation */
 
     --m-fontstack-serif: var(--m-fontstack-times);
     --m-fontstack-sans-serif: var(--m-fontstack-arial);
@@ -72,15 +72,15 @@
     /* -------------------- */
 
     /* constraining the content between the margins now that we have a
-     * --m-page-width, --m-page-height, and --m-page-margins defined */
-    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margins) * 2));
-    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margins) * 2));
+     * --m-page-width, --m-page-height, and --m-page-margin defined */
+    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
+    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
 
-    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margins) * 1.5));
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
 
     /* left and right margins - pre and blockquote */
     --m-margins-preformatted: 0;
-    /*--m-margins-blockquote: calc(var(--m-page-margins) * .75);*/ /* set later in file */
+    /*--m-margins-blockquote: calc(var(--m-page-margin) * .75);*/ /* set later in file */
 
     /* Offset calculations used to offset title-header blocks from top of the
      * page. Manuscripts standards recommend placing the main title-block
@@ -91,11 +91,11 @@
     --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
     --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
     --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
-    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margins));
-    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margins));
-    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margins));
-    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margins));
-    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margins));
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
+    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
+    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
+    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
 
     /* -------------------- */
 
@@ -109,19 +109,6 @@
      * html element (eg: <html lang="en"> or set in the elements managing the
      * text you want to be hyphenated. Most markdown editors don't set this. */
     --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
-
-    /* -------------------- */
-
-    /* the desktop and paper */
-    --m-desktop-color: var(--m-color-darkgray);
-    --m-paper-color: var(--m-color-white);
-    --m-desktop-color-plain: var(--m-color-dimgray);
-    --m-desktop-color-vplain: var(--m-color-darkdarkgray);
-    --m-desktop-color-vvplain: var(--m-color-white);
-
-    --m-text-color: var(--m-color-black);
-    --m-link-color: var(--m-color-professional-blue2);
-    --m-link-hover-color: var(--m-color-dimgray);
 
     /* -------------------- */
 
@@ -340,7 +327,7 @@
     --m-font-weight-epigraph: var(--m-font-weight);
     --m-font-family-epigraph: inherit;
     --m-font-style-epigraph: italic;
-    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margins) * 2));
+    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
 
     /* font settings - the section separators (dinkus and -30-) */
     --m-font-size-dinkus-30-: var(--m-font-size);
@@ -370,8 +357,26 @@
     --m-page-break: var(--m-page-break-short);                     /* unset */
     --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); /* 0 */
     --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
-
 } /* end :root */
+
+body {
+    --m-desktop-color: var(--m-color-gray5, darkgray);
+    --m-desktop-color-plain: var(--m-color-gray7, dimgray);
+    --m-desktop-color-vplain: var(--m-color-gray8, rgb(30 30 30 / 100%));
+    --m-desktop-color-vvplain: var(--m-color-gray0, white);
+} /* end <body> scoping */
+
+#vpage {
+    /* the paper on the desktop */
+    --m-paper-color: var(--m-color-gray0, white);
+    --m-vpage-frame: 0 0 20px var(--m-color-gray9, black);
+    --m-vpage-frame-margin: 20px auto;
+
+    --m-text-color: var(--m-color-gray9, black);
+    --m-link-color: var(--m-color-professional-blue2, #122b73);
+    --m-link-hover-color: var(--m-color-gray7, dimgray);
+
+} /* end <div id="vpage"> scoping */
 
 } /* end @layer lm-var-defaults */
 
