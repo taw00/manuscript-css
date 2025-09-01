@@ -51,7 +51,7 @@
 #manuscript {
     & section.m-scene {
         padding-top: var(--m-offset-scene);
-        &:not(:first-of-type):not(:has( > .m-header)) {
+        &:not(:first-of-type,:has( > .m-header)) {
             padding-top: 0;
         }
         /* prose content:
