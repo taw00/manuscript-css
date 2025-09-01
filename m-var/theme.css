@@ -1,0 +1,70 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * m-init/theme.css sets the color-ways for the desktop and page.
+ *
+ * These are set with these <div id="#vpage" classes=" … ">
+ * - "the default": white page on offwhite background
+ * - dark: dark page on dark background
+ * - dim: something in the middle
+ *
+ * - vplain: no 3D framing
+ * - vplain: no 3D framing, away from center of screen
+ * - vvplain: sorta website-like, but aligned to the left and still same size
+ *            of content
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-var-theme {
+
+/* presentation theme
+ * note: PDF export will still be a black text on white */
+body {
+    &:has(#vpage:is(.dim-theme,.dim,.dimtheme)) {
+        --m-desktop-color: var(--m-desktop-color-theme-dim) !important;
+    }
+    &:has(#vpage:is(.dimmer-theme,.dimmer,.dimmertheme)) {
+        --m-desktop-color: var(--m-desktop-color-theme-dimmer) !important;
+    }
+    &:has(#vpage:is(.dark-theme,.dark,.darktheme)) {
+        --m-desktop-color: var(--m-desktop-color-theme-dark) !important;
+    }
+}
+
+#vpage {
+    &.plain {
+        --m-vpage-frame: 0;
+    }
+    &.vplain {
+        --m-vpage-frame: 0;
+        --m-vpage-frame-margin: 0;
+    }
+    &.vvplain {
+        --m-paper-color: transparent;
+        --m-vpage-frame: 0;
+        --m-vpage-frame-margin: 0;
+    }
+
+    &:is(.dim-theme,.dim,.dimtheme) {
+        --m-paper-color: var(--m-paper-color-theme-dim) !important;
+        --m-text-color: var(--m-text-color-theme-dim) !important;
+        --m-link-color: var(--m-link-color-theme-dim) !important;
+        --m-link-hover-color: var(--m-link-hover-color-theme-dim) !important;
+    }
+    &:is(.dimmer-theme,.dimmer,.dimmertheme) {
+        --m-paper-color: var(--m-paper-color-theme-dimmer) !important;
+        --m-text-color: var(--m-text-color-theme-dimmer) !important;
+        --m-link-color: var(--m-link-color-theme-dimmer) !important;
+        --m-link-hover-color: var(--m-link-hover-color-theme-dimmer) !important;
+    }
+    &:is(.dark-theme,.dark,.darktheme) {
+        --m-paper-color: var(--m-paper-color-theme-dark) !important;
+        --m-text-color: var(--m-text-color-theme-dark) !important;
+        --m-link-color: var(--m-link-color-theme-dark) !important;
+        --m-link-hover-color: var(--m-link-hover-color-theme-dark) !important;
+    }
+}
+
+} /* end @layer lm-var-theme; */
