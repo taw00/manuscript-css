@@ -95,37 +95,6 @@
         --m-font-family: var(--m-font-family-narrative);
         --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
         --m-font-family-code: var(--m-font-family-narrative-code);
-        /* reset font settings - the main title-block header */
-        --m-font-family-header: var(--m-font-family);
-        --m-font-family-headers: var(--m-font-family);
-        /* reset font settings - contact info (and facts if put in the right corner */
-        --m-font-family-contact:  var(--m-font-family);
-        /* reset font settings - the main titles, subtitles, and authors */
-        --m-font-family-title: var(--m-font-family);
-        --m-font-family-byline: var(--m-font-family);
-        /* reset font settings - part titles, subtitles, and authors */
-        --m-font-family-title-part: var(--m-font-family-title);
-        --m-font-family-byline-part: var(--m-font-family-byline);
-        /* reset font settings - chapter titles, subtitles, and authors */
-        --m-font-family-title-chapter:  var(--m-font-family);
-        --m-font-family-byline-chapter: var(--m-font-family);
-        /* reset font settings - scene titles, subtitles, and authors */
-        --m-font-family-title-scene:  var(--m-font-family);
-        --m-font-family-byline-scene: var(--m-font-family);
-        /* reset font settings - the epigraphs */
-        --m-font-family-epigraph: var(--m-font-family);
-        /* reset font settings - the section separators (dinkus and -30-) */
-        --m-font-family-dinkus-30-: var(--m-font-family);
-
-        /* reset font settings short/long - .m-fact */
-        --m-font-family-facts-short:  var(--m-font-family-contact);
-        --m-font-size-facts-short:    var(--m-font-size-contact);
-        --m-font-weight-facts-short:  var(--m-font-weight-contact);
-        --m-line-spacing-facts-short: var(--m-line-spacing-single);
-        --m-font-family-facts-long:  inherit; /* will inherit from m-header */
-        --m-font-size-facts-long:    inherit;
-        --m-font-weight-facts-long:  inherit;
-        --m-line-spacing-facts-long: var(--m-line-spacing-single);
     }
 
     &:is(.nonnarrative,.non-narrative) {
@@ -137,37 +106,39 @@
         --m-font-family: var(--m-font-family-nonnarrative);
         --m-font-family-preformatted: var(--m-font-family-nonnarrative-preformatted);
         --m-font-family-code: var(--m-font-family-nonnarrative-code);
-        /* reset font settings - the main title-block header */
-        --m-font-family-header: var(--m-font-family);
-        --m-font-family-headers: var(--m-font-family);
-        /* reset font settings - contact info (and facts if put in the right corner */
-        --m-font-family-contact:  var(--m-font-family);
-        /* reset font settings - the main titles, subtitles, and authors */
-        --m-font-family-title: var(--m-font-family);
-        --m-font-family-byline: var(--m-font-family);
-        /* reset font settings - part titles, subtitles, and authors */
-        --m-font-family-title-part: var(--m-font-family-title);
-        --m-font-family-byline-part: var(--m-font-family-byline);
-        /* reset font settings - chapter titles, subtitles, and authors */
-        --m-font-family-title-chapter:  var(--m-font-family);
-        --m-font-family-byline-chapter: var(--m-font-family);
-        /* reset font settings - scene titles, subtitles, and authors */
-        --m-font-family-title-scene:  var(--m-font-family);
-        --m-font-family-byline-scene: var(--m-font-family);
-        /* reset font settings - the epigraphs */
-        --m-font-family-epigraph: var(--m-font-family);
-        /* reset font settings - the section separators (dinkus and -30-) */
-        --m-font-family-dinkus-30-: var(--m-font-family);
-        /* reset font settings short/long - .m-facts */
-        --m-font-family-facts-short:  var(--m-font-family-contact);
-        --m-font-size-facts-short:    var(--m-font-size-contact);
-        --m-font-weight-facts-short:  var(--m-font-weight-contact);
-        --m-line-spacing-facts-short: var(--m-line-spacing-single);
-        --m-font-family-facts-long:  inherit; /* will inherit from m-header */
-        --m-font-size-facts-long:    inherit;
-        --m-font-weight-facts-long:  inherit;
-        --m-line-spacing-facts-long: var(--m-line-spacing-single);
     }
+
+    /* reset font settings - the main title-block header */
+    --m-font-family-header: inherit;
+    --m-font-family-headers: inherit;
+    /* reset font settings - contact info (and facts if put in the right corner */
+    --m-font-family-contact: inherit;
+    /* reset font settings - the main titles, subtitles, and authors */
+    --m-font-family-title: inherit;
+    --m-font-family-byline: inherit;
+    /* reset font settings - part titles, subtitles, and authors */
+    --m-font-family-title-part: inherit;
+    --m-font-family-byline-part: inherit;
+    /* reset font settings - chapter titles, subtitles, and authors */
+    --m-font-family-title-chapter: inherit;
+    --m-font-family-byline-chapter: inherit;
+    /* reset font settings - scene titles, subtitles, and authors */
+    --m-font-family-title-scene: inherit;
+    --m-font-family-byline-scene: inherit;
+    /* reset font settings - the epigraphs */
+    --m-font-family-epigraph: inherit;
+    /* reset font settings - the section separators (dinkus and -30-) */
+    --m-font-family-dinkus-30-: inherit;
+
+    /* reset font settings short/long - .m-fact */
+    --m-font-family-facts-short:  var(--m-font-family-contact);
+    --m-font-size-facts-short:    var(--m-font-size-contact);
+    --m-font-weight-facts-short:  var(--m-font-weight-contact);
+    --m-line-spacing-facts-short: var(--m-line-spacing-single);
+    --m-font-family-facts-long:  inherit; /* will inherit from m-header */
+    --m-font-size-facts-long:    inherit;
+    --m-font-weight-facts-long:  inherit;
+    --m-line-spacing-facts-long: var(--m-line-spacing-single);
 
     &:not(.long) { /* short, the default, but let's be explicit */
         --m-offset-title: var(--m-offset-title-short);
@@ -217,9 +188,9 @@
 
 #vpage #manuscript.poetry { /* the #vage added to ensure specificity */
     --m-font-family:  var(--m-font-family-poetry);
-    --m-font-family-title: var(--m-font-family-poetry);
-    --m-font-family-title-poem:  var(--m-font-family-poetry);
-    --m-font-family-byline-poem: var(--m-font-family-poetry);
+    --m-font-family-title: inherit;
+    --m-font-family-title-poem:  inherit;
+    --m-font-family-byline-poem: inherit;
     --m-offset-title: var(--m-offset-title-short-poetry);
     --m-offset-chapter: var(--m-offset-chapter-short-poetry);
     &.long {

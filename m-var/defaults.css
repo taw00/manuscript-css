@@ -172,7 +172,7 @@
     /* font settings short/long - .m-facts */
     --m-font-size-facts-short:    var(--m-font-size-contact);
     --m-font-weight-facts-short:  var(--m-font-weight-contact);
-    --m-font-family-facts-short:  var(--m-font-family-contact);
+    /* --m-font-family-facts-short is set below */
     --m-line-spacing-facts-short: var(--m-line-spacing-single);
 
     --m-font-size-facts-long:    inherit; /* will inherit from m-header */
@@ -264,7 +264,8 @@
     /* font settings - contact info (and facts if put in the right corner */
     --m-font-size-contact:    var(--m-font-size);
     --m-font-weight-contact:  var(--m-font-weight);
-    --m-font-family-contact:  var(--m-font-family);
+    --m-font-family-contact:  inherit;
+    --m-font-family-facts-short:  var(--m-font-family-contact);
     --m-line-spacing-contact: var(--m-line-spacing-single);
 
     /* font settings - the main title-block header */
@@ -272,8 +273,8 @@
     --m-font-size-headers: var(--m-font-size);
     --m-font-weight-header: var(--m-font-weight);
     --m-font-weight-headers: var(--m-font-weight);
-    --m-font-family-header: var(--m-font-family);
-    --m-font-family-headers: var(--m-font-family);
+    --m-font-family-header: inherit;
+    --m-font-family-headers: inherit;
 
     /* font settings - - - the main other headers */
 
@@ -285,8 +286,8 @@
     --m-font-weight-title: var(--m-font-weight);
     --m-font-weight-byline: var(--m-font-weight);
 
-    --m-font-family-title: var(--m-font-family);
-    --m-font-family-byline: var(--m-font-family);
+    --m-font-family-title: inherit;
+    --m-font-family-byline: inherit;
 
     /* font settings - part titles, subtitles, and authors */
     --m-font-size-title-part: var(--m-font-size-title);
@@ -296,8 +297,8 @@
     --m-font-weight-title-part: var(--m-font-weight-title);
     --m-font-weight-byline-part: var(--m-font-weight-byline);
 
-    --m-font-family-title-part: var(--m-font-family-title);
-    --m-font-family-byline-part: var(--m-font-family-byline);
+    --m-font-family-title-part: inherit;
+    --m-font-family-byline-part: inherit;
 
     /* font settings - chapter titles, subtitles, and authors */
     --m-font-size-title-chapter:    var(--m-font-size);
@@ -307,8 +308,8 @@
     --m-font-weight-title-chapter:  var(--m-font-weight);
     --m-font-weight-byline-chapter: var(--m-font-weight);
 
-    --m-font-family-title-chapter:  var(--m-font-family);
-    --m-font-family-byline-chapter: var(--m-font-family);
+    --m-font-family-title-chapter:  inherit;
+    --m-font-family-byline-chapter: inherit;
 
     /* font settings - scene titles, subtitles, and authors */
     --m-font-size-title-scene:    var(--m-font-size);
@@ -318,8 +319,8 @@
     --m-font-weight-title-scene:  var(--m-font-weight);
     --m-font-weight-byline-scene: var(--m-font-weight);
 
-    --m-font-family-title-scene:  var(--m-font-family);
-    --m-font-family-byline-scene: var(--m-font-family);
+    --m-font-family-title-scene:  inherit;
+    --m-font-family-byline-scene: inherit;
 
     /* font settings - poem titles, subtitles, and authors */
     --m-font-size-title-poem:    var(--m-font-size);
@@ -329,22 +330,22 @@
     --m-font-weight-title-poem:  var(--m-font-weight);
     --m-font-weight-byline-poem: var(--m-font-weight);
 
-    --m-font-family-title-poem:  var(--m-font-family-poetry);
-    --m-font-family-byline-poem: var(--m-font-family-poetry);
+    --m-font-family-title-poem:  inherit;
+    --m-font-family-byline-poem: inherit;
 
     /* font settings - the epigraphs */
     /*--m-font-size-epigraph: .8125rem;*/ /* 13px or ~9.75pt (if parent 16px) */
     /*--m-font-size-epigraph: .8333rem;*/ /* ~13.33px or 10pt */
     --m-font-size-epigraph: .9166rem; /* ~14.7px or 11pt */
     --m-font-weight-epigraph: var(--m-font-weight);
-    --m-font-family-epigraph: var(--m-font-family);
+    --m-font-family-epigraph: inherit;
     --m-font-style-epigraph: italic;
     --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margins) * 2));
 
     /* font settings - the section separators (dinkus and -30-) */
     --m-font-size-dinkus-30-: var(--m-font-size);
     --m-font-weight-dinkus-30-: var(--m-font-weight);
-    --m-font-family-dinkus-30-: var(--m-font-family);
+    --m-font-family-dinkus-30-: inherit;
 
     /* positional and font settings - m-facts
      * (.m-facts is an oddball container)
@@ -362,7 +363,7 @@
 
     --m-font-size-facts:    var(--m-font-size-facts-short);
     --m-font-weight-facts:  var(--m-font-weight-facts-short);
-    --m-font-family-facts:  var(--m-font-family-facts-short);
+    --m-font-family-facts:  inherit;
     --m-line-spacing-facts: var(--m-line-spacing-facts-short);
 
     /* page break settings - these get refined settings elsewhere */
