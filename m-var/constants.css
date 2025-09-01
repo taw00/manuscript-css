@@ -181,7 +181,7 @@
     --m-color-professional-blue2: #122b73;
 
     /* alternative dark colors with a hint of color */
-    --m-color-avocado: avocado;
+    --m-color-avocado: rgb(29, 32, 36 / 100%); /* avocado */
     --m-color-eggplant: eggplant;
 
     /* box-shadow, for the 3D effect with the paper */

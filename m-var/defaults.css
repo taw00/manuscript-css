@@ -365,7 +365,7 @@ body {
     --m-desktop-color-theme-default: var(--m-color-gray5, darkgray);
     --m-desktop-color-theme-dim: var(--m-color-gray7, dimgray);
     --m-desktop-color-theme-dimmer: var(--m-color-gray7-5, #505050);
-    --m-desktop-color-theme-dark: var(--m-color-avocado, avocado);
+    --m-desktop-color-theme-dark: var(--m-color-avocado);
     --m-desktop-color: var(--m-desktop-color-theme-default);
 } /* end <body> scoping */
 
