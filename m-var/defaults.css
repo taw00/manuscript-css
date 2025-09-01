@@ -373,7 +373,7 @@ body {
     --m-paper-color-theme-default: var(--m-color-gray0, white);
     --m-paper-color-theme-dim: var(--m-color-gray4, silver);
     --m-paper-color-theme-dimmer: var(--m-color-gray6, gray);
-    --m-paper-color-theme-dark: var(--m-color-gray8, #303030;
+    --m-paper-color-theme-dark: var(--m-color-gray8, #303030);
     --m-paper-color: var(--m-color-theme-default);
 
     --m-vpage-frame: 0 0 20px var(--m-color-gray9, black);
