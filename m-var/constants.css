@@ -152,9 +152,9 @@
     /* colors used mainly for desktop, paper, and text / links */
     --m-color-black: black;
     --m-color-gray9: black;
-    --m-color-gray8: rgb(30 30 30 / 100%);
+    --m-color-gray8: rgb(30 30 30);
     --m-color-notblack: var(--m-color-gray8);
-    --m-color-gray7-5: rgb(50 50 50 / 100%);
+    --m-color-gray7-5: rgb(50 50 50);
     --m-color-dimgray: dimgray;
     --m-color-gray7: dimgray;
     --m-color-gray: gray;
@@ -174,14 +174,14 @@
     --m-color-gray0: white;
 
     /* we like blues for links */
-    --m-color-browser-link-blue: rgb(0 0 238 / 100%);
-    --m-color-cobalt-blue: rgb(0 32 194 / 100%);
+    --m-color-browser-link-blue: rgb(0 0 238);
+    --m-color-cobalt-blue: rgb(0 32 194);
     --m-color-union-blue: #0d1e51;
     --m-color-professional-blue1: #02195c;
     --m-color-professional-blue2: #122b73;
 
     /* alternative dark colors with a hint of color */
-    --m-color-avocado: rgb(29, 32, 36 / 100%); /* avocado */
+    --m-color-avocado: rgb(29, 32, 36); /* avocado */
     --m-color-eggplant: eggplant;
 
     /* box-shadow, for the 3D effect with the paper */
