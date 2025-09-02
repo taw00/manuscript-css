@@ -67,8 +67,6 @@
             --m-link-color: var(--m-link-color-theme-dark);
             --m-link-hover-color: var(--m-link-hover-color-theme-dark);
         }
-        --m-text-color: blue;
-        --m-background-color: green;
     }
 
 } /* end @media screen; */
