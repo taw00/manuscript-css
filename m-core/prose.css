@@ -52,14 +52,13 @@
     & section.m-scene {
         padding-top: var(--m-offset-scene);
         &:not(:first-of-type,:has( > .m-header)) {
-            padding-top: 0;
+            padding-top: var(--m-paragraph-spacing);
         }
-        /* prose content:
-         * small margin between prose content and a scene's title block if it exists */
-        /* changed my mind. I don't like this
+        /* prose content - there may be a small margin (non-narrative) between
+         * prose content and a scene's header block if it exists */
         & > .m-header + * {
-            padding-top: var(--m-elbow-room);
-        }*/
+            padding-top: var(--m-paragraph-spacing);
+        }
 
         & > section.m-subscenes:first-child,
         & section.m-subscenes > section.m-scene:first-child {
