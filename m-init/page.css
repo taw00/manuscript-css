@@ -20,6 +20,7 @@ html {
         font-weight: inherit;
         font-family: inherit;
     }
+    background-color: transparent;
 }
 
 
@@ -67,8 +68,9 @@ html {
     & a:is(:any-link,:link,:active,:visited,:hover) {
         color: var(--m-link-color);
         text-decoration: unset;
+        border: unset;
         &:hover {
-            border-bottom: solid var(--m-link-color) 2px;
+            color: var(--m-link-hover-color);
         }
     }
 } /* end #manuscript */
@@ -83,12 +85,8 @@ html {
  * overflow could still be set to auto, theoretically. */
 @media screen {
     /* rendered view: "desktop" background that the manuscript page sits on */
-    /*html, body { background-color: rgb(204 204 204); }*/ /* off-white */
-    html {
-        background-color: rgb(0 0 0 / 0%);
-    }
     body {
-        background-color: var(--m-desktop-color) !important;
+        background-color: var(--m-desktop-color);
     }
     /* the content container */
     /* a virtual page — the paper */
@@ -220,7 +218,6 @@ html {
 @media print {
     html, body { width: 100%; max-width: 100%; border: 0; padding: 0; margin: 0; }
     #vpage, #manuscript { width: 100%; max-width: 100%; padding: 0; margin: 0; }
-    html, body, #vpage, #manuscript { background-color: transparent; }
     /* print rendering - do not allow code scrollbars */
     #manuscript pre > code { overflow: hidden; }
 }
