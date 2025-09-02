@@ -19,52 +19,70 @@
 
 @layer lm-var-theme {
 
-/* presentation theme
- * note: PDF export will still be a black text on white */
-body {
-    &:has(#vpage:is(.dim-theme,.dim,.dimtheme)) {
-        --m-desktop-color: var(--m-desktop-color-theme-dim);
-    }
-    &:has(#vpage:is(.dimmer-theme,.dimmer,.dimmertheme)) {
-        --m-desktop-color: var(--m-desktop-color-theme-dimmer);
-    }
-    &:has(#vpage:is(.dark-theme,.dark,.darktheme)) {
-        --m-desktop-color: var(--m-desktop-color-theme-dark);
-    }
-}
+@media screen {
 
-#vpage {
-    &.plain {
-        --m-vpage-frame: 0;
+    /* presentation theme
+     * note: PDF export will still be a black text on white */
+    :root {
+        &:has(#vpage:is(.dim-theme,.dim,.dimtheme)) {
+            --m-desktop-color: var(--m-desktop-color-theme-dim);
+        }
+        &:has(#vpage:is(.dimmer-theme,.dimmer,.dimmertheme)) {
+            --m-desktop-color: var(--m-desktop-color-theme-dimmer);
+        }
+        &:has(#vpage:is(.dark-theme,.dark,.darktheme)) {
+            --m-desktop-color: var(--m-desktop-color-theme-dark);
+        }
     }
-    &.vplain {
-        --m-vpage-frame: 0;
-        --m-vpage-frame-margin: 0;
+
+    :root {
+        &:has(#vpage.plain) {
+            --m-vpage-frame: 0;
+        }
+        &:has(#vpage.vplain) {
+            --m-vpage-frame: 0;
+            --m-vpage-frame-margin: 0;
+        }
+        &:has(#vpage.vvplain) {
+            --m-paper-color: transparent;
+            --m-vpage-frame: 0;
+            --m-vpage-frame-margin: 0;
+        }
+
+        &:has(#vpage:is(.dim-theme,.dim,.dimtheme)) {
+            --m-paper-color: var(--m-paper-color-theme-dim);
+            --m-text-color: var(--m-text-color-theme-dim);
+            --m-link-color: var(--m-link-color-theme-dim);
+            --m-link-hover-color: var(--m-link-hover-color-theme-dim);
+        }
+        &:has(#vpage:is(.dimmer-theme,.dimmer,.dimmertheme)) {
+            --m-paper-color: var(--m-paper-color-theme-dimmer);
+            --m-text-color: var(--m-text-color-theme-dimmer);
+            --m-link-color: var(--m-link-color-theme-dimmer);
+            --m-link-hover-color: var(--m-link-hover-color-theme-dimmer);
+        }
+        &:has(#vpage:is(.dark-theme,.dark,.darktheme)) {
+            --m-paper-color: var(--m-paper-color-theme-dark);
+            --m-text-color: var(--m-text-color-theme-dark);
+            --m-link-color: var(--m-link-color-theme-dark);
+            --m-link-hover-color: var(--m-link-hover-color-theme-dark);
+        }
+        --m-text-color: blue;
+        --m-background-color: green;
     }
-    &.vvplain {
+
+} /* end @media screen; */
+
+@media print {
+    :root {
         --m-paper-color: transparent;
         --m-vpage-frame: 0;
         --m-vpage-frame-margin: 0;
+        --m-desktop-color: transparent;
+        --m-text-color: var(--m-text-color-theme-default);
+        --m-link-color: var(--m-link-color-theme-default);
+        --m-link-hover-color: var(--m-link-hover-color-theme-default);
     }
-
-    &:is(.dim-theme,.dim,.dimtheme) {
-        --m-paper-color: var(--m-paper-color-theme-dim);
-        --m-text-color: var(--m-text-color-theme-dim);
-        --m-link-color: var(--m-link-color-theme-dim);
-        --m-link-hover-color: var(--m-link-hover-color-theme-dim);
-    }
-    &:is(.dimmer-theme,.dimmer,.dimmertheme) {
-        --m-paper-color: var(--m-paper-color-theme-dimmer);
-        --m-text-color: var(--m-text-color-theme-dimmer);
-        --m-link-color: var(--m-link-color-theme-dimmer);
-        --m-link-hover-color: var(--m-link-hover-color-theme-dimmer);
-    }
-    &:is(.dark-theme,.dark,.darktheme) {
-        --m-paper-color: var(--m-paper-color-theme-dark);
-        --m-text-color: var(--m-text-color-theme-dark);
-        --m-link-color: var(--m-link-color-theme-dark);
-        --m-link-hover-color: var(--m-link-hover-color-theme-dark);
-    }
-}
+} /* end @media print; */
 
 } /* end @layer lm-var-theme; */

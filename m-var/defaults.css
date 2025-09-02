@@ -52,7 +52,8 @@
     --m-fontstack-serif: var(--m-fontstack-times);
     --m-fontstack-sans-serif: var(--m-fontstack-arial);
     --m-fontstack-sans: var(--m-fontstack-sans-serif);
-    --m-fontstack-mono: var(--m-fontstack-courier);
+    --m-fontstack-monospace: var(--m-fontstack-courier);
+    --m-fontstack-mono: var(--m-fontstack-monospace);
 
     --m-font-size: var(--m-font-size-standard); /* 16px (12pt) */
     --m-font-weight: var(--m-font-weight-standard); /* normal */
@@ -224,6 +225,8 @@
     --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
     --m-font-family-code:         var(--m-font-family-narrative-code);
 
+    --m-font-style: normal;
+
     --m-indent:                 var(--m-indent-narrative);
     --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
     --m-paragraph-spacing:      var(--m-paragraph-spacing-narrative);
@@ -334,6 +337,12 @@
     --m-font-weight-dinkus-30-: var(--m-font-weight);
     --m-font-family-dinkus-30-: inherit;
 
+    /* font settings - the page headers */
+    --m-font-size-page-header:  var(--m-font-size);
+    --m-font-weight-page-header:  var(--m-font-weight);
+    --m-font-style-page-header:  var(--m-font-style);
+    --m-font-family-page-header:  var(--m-font-family);
+
     /* positional and font settings - m-facts
      * (.m-facts is an oddball container)
      */
@@ -357,19 +366,14 @@
     --m-page-break: var(--m-page-break-short);                     /* unset */
     --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); /* 0 */
     --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
-} /* end :root */
 
-
-body {
     /* the desktop theme beneath the paper */
     --m-desktop-color-theme-default: var(--m-color-gray5, darkgray);
     --m-desktop-color-theme-dim: var(--m-color-gray7, dimgray);
     --m-desktop-color-theme-dimmer: var(--m-color-gray7-5, #505050);
     --m-desktop-color-theme-dark: var(--m-color-avocado);
     --m-desktop-color: var(--m-desktop-color-theme-default);
-} /* end <body> scoping */
 
-#vpage {
     /* the paper theme on the desktop */
     --m-paper-color-theme-default: var(--m-color-gray0, white);
     --m-paper-color-theme-dim: var(--m-color-gray4, silver);
@@ -399,10 +403,6 @@ body {
     --m-link-hover-color: var(--m-link-hover-color-theme-default);
 
 } /* end <div id="vpage"> scoping */
-
-
-
-
 
 } /* end @layer lm-var-defaults */
 
