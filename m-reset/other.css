@@ -11,10 +11,18 @@
 
 /*
  * General resets
+ * fighting off any belligerent css wrappers
  */
 
-/* fighting off any belligerent css wrappers */
+@layer lm-reset-other {
+
+/* putting this in a layer because it can be very abusive. */
+/* ACTUALLY ... commenting this out for now. Sometimes it wins for things
+ * like body's background-color and I don't quite grasp why
 html, body { all: initial; }
+ */
+
+}
 
 /*body { width: 100%; max-width: unset; }*/
 h1,h2,h3,h4,h5,h6,
