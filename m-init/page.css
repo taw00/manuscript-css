@@ -167,7 +167,6 @@ html {
         line-height: inherit;
     }
 
-    & div.joplin-editable,
     & div.x-poem {
         display: block;
         box-sizing: border-box;
