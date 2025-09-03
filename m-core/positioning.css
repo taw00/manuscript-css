@@ -92,6 +92,10 @@
 } /* end @media screen */
 
 
+/*
+ * PAGE BREAKS
+ */
+
 @media print {
     #vpage, #manuscript {
         break-before: avoid-page !important;
@@ -149,12 +153,6 @@
     tr { break-inside: avoid-page !important; }
 
 
-    /*
-     * god knows why, but these avoidance rules are not working
-     * (maybe, it has been a long time since we comprehensively tested them)
-     * *********************************************************************
-     */
-    
     /* avoid-page page break inside a poem stanza */
     #manuscript .x-poem pre,
     #manuscript section.m-poem pre {
@@ -185,5 +183,5 @@
     #manuscript h6 {
         break-before: avoid-page !important;
     }
-} /* end @media print -- page breake avoidance rules */
+} /* end @media print */
 

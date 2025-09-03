@@ -47,28 +47,104 @@
  */
 
 
-/* each scene or a set of subscenes: small padding at top */
 #manuscript {
-    & section.m-scene {
-        padding-top: var(--m-offset-scene);
-        &:not(:first-of-type,:has( > .m-header)) {
-            padding-top: var(--m-paragraph-spacing);
+
+    & > :not(p) + p {
+        /* a paragraph after a non-paragraph is not indented */
+        text-indent: var(--m-indent-first-paragraph);
+    }
+    & :is(article, section) :is(h1,h2,h3,h4,h5,h6) + p,
+    & :is(article, section) :is(section) :is(h1,h2,h3,h4,h5,h6) + p {
+        margin-top: 0;
+        margin-block-start: 0;
+    }
+
+    & blockquote {
+        /* H-tags and P-tags - align left/start the prose */
+        & :is(h1,h2,h3,h4,h5,h6,p) {
+            display: block;
+            margin: 0; padding: 0; border: 0;
+            text-align: var(--m-text-align);
+            line-height: var(--m-line-spacing);
+            hyphens: var(--m-hyphens);
         }
-        /* prose content - there may be a small margin (non-narrative) between
-         * prose content and a scene's header block if it exists */
-        & > .m-header + * {
-            padding-top: var(--m-paragraph-spacing);
+        /* H-tags - spacing between H-tags in the blockquotes
+         * Note, the exclusions are pedantic. */
+        & > :is(h1,h2,h3,h4,h5,h6),
+        & :not(ol,ul,dl,menu,table) :is(h1,h2,h3,h4,h5,h6) {
+            margin-top: var(--m-elbow-room);
+            margin-block-start: var(--m-elbow-room);
+        }
+        & > p {
+            text-indent: var(--m-indent);
+            margin-top: var(--m-paragraph-spacing);
+            margin-block-start: var(--m-paragraph-spacing);
+        }
+        & > p:first-of-type {
+            /* first paragraph usually has no indent */
+            text-indent: var(--m-indent-first-paragraph);
         }
 
-        & > section.m-subscenes:first-child,
-        & section.m-subscenes > section.m-scene:first-child {
-            padding-top: 0;
+    } /* end #manuscript blockquote */
+
+
+    /*
+     * Scenes -------------------
+     */
+
+    & section.m-scene {
+        text-indent: var(--m-indent-first-paragraph) !important;
+        /* H-tags and P-tags - align left/start the prose */
+        & :is(h1,h2,h3,h4,h5,h6,p) {
+            display: block;
+            margin: 0; padding: 0; border: 0;
+            text-align: var(--m-text-align);
+            line-height: var(--m-line-spacing);
+            hyphens: var(--m-hyphens);
         }
-        & section.m-subscenes > section.m-scene:last-child {
-            /*padding-bottom: calc(var(--m-offset-scene) * 3);*/
-            margin-bottom: 0;
-            padding-bottom: 0;
+        & > :is(p:first-of-type,
+                h1:first-child, h2:first-child, h3:first-child,
+                h4:first-child, h5:first-child, h6:first-child) {
+            margin-top: 0 !important;
+            margin-block-start: 0 !important;
         }
+
+        /*
+         * Normal Scene (not a foothang scene)
+         */
+
+        &:not(.foothang) {
+            /* paragraphs - spacing between paragraphs in normal scenes
+             *              indents at the start
+             * Note, the exclusions are pedantic. */
+            & > :is(h1,h2,h3,h4,h5,h6),
+            & :not(.m-header, ol,ul,dl,menu, li,dt,dd,
+                   table,thead,tbody,tfoot,th,tr,td,colgroup,col) {
+                & :is(h1,h2,h3,h4,h5,h6) {
+                    margin-top: var(--m-elbow-room);
+                    margin-block-start: var(--m-elbow-room);
+                }
+            }
+            & > p {
+                text-indent: var(--m-indent);
+                margin-top: var(--m-paragraph-spacing);
+                margin-block-start: var(--m-paragraph-spacing);
+            }
+            & > p:first-of-type {
+                /* first paragraph usually has no indent */
+                text-indent: var(--m-indent-first-paragraph);
+            }
+            & :not(p) + p {
+                /* a paragraph after a non-paragraph is not indented */
+                text-indent: var(--m-indent-first-paragraph);
+            }
+        } /* end #manuscript section.m-scene:not(.foothang) */
+
+
+        /*
+         * Scene's Subscenes - experimental. may go away.
+         */
+
         /* ... subscenes: subscenes spacing BEFORE subscenes block */
         & > :not(div,section,article,h1,h2,h3,h4,h5,h6) + section.m-subscenes::before {
             content: var(--m-marker-zws); /* &zerowidthspace */
@@ -79,6 +155,38 @@
             content: var(--m-marker-zws); /* &zerowidthspace */
             margin-bottom: calc(var(--m-offset-scene) * 2);
         }
+
+        & > section.m-subscenes:first-child,
+        & section.m-subscenes {
+            & > section.m-scene:first-child {
+                padding-top: 0;
+            }
+            & > section.m-scene:last-child {
+                /*padding-bottom: calc(var(--m-offset-scene) * 3);*/
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+
+        /*
+         * Scene padding at the top
+         */
+
+        /* each scene or a set of subscenes: small padding at top */
+        padding-top: var(--m-offset-scene);
+        &:not(:first-of-type,:has( > .m-header)) {
+            padding-top: var(--m-paragraph-spacing);
+        }
+        /* prose content - there may be a small margin (non-narrative) between
+         * prose content and a scene's header block if it exists */
+        & > .m-header + * {
+            padding-top: var(--m-paragraph-spacing);
+        }
+
+        /*
+         * Scene's last children are treated special-like
+         */
+
         /* all last elements within a scene: zero-out bottom spacing */
         & > *:last-child {
             margin-bottom: 0; padding-bottom: 0;
@@ -92,127 +200,17 @@
     } /* end #manuscript section.m-scene */
 
 
-    /* Align left/start all the prose */
-    & blockquote :is(h1,h2,h3,h4,h5,h6),
-    & section.m-scene :is(h1,h2,h3,h4,h5,h6),
-    & blockquote p,
-    & section.m-scene p {
-        display: block;
-        margin: 0; padding: 0; border: 0;
-        text-align: var(--m-text-align);
-        line-height: var(--m-line-spacing);
-        hyphens: var(--m-hyphens);
-        /* -- also, check out this future feature (still in a w3c draft)
-        hyphenate-limit-chars: 6 3 2;
-        hyphenate-limit-lines: 2;
-        */
-    }
+    /*
+     * foothangs ------------
+     */ 
 
-    /* paragraph indentation / spacing for all the prose
-     * (which one is enabled is determined by .narrative or .nonnarrative)
-     * Note, the exclusions are pedantic. I am unsure why ol,ul,dl,menu,table
-     * wasn't enough to stop the styling here. Also, headers that are free-floating
-     * need some room, regardless of narrative or nonnarrative.*/
-    & blockquote > :is(h1,h2,h3,h4,h5,h6),
-    & blockquote :not(ol,ul,dl,menu,table) :is(h1,h2,h3,h4,h5,h6),
-    & section.m-scene:not(.foothang) > :is(h1,h2,h3,h4,h5,h6),
-    & section.m-scene:not(.foothang)
-                           :not(.m-header, ol,ul,dl,menu, li,dt,dd,
-                                table,thead,tbody,tfoot,th,tr,td,colgroup,col) :is(h1,h2,h3,h4,h5,h6) {
-        margin-top: var(--m-elbow-room);
-        margin-block-start: var(--m-elbow-room);
-    }
-
-    /* paragraphs */
-    & blockquote > p,
-    & blockquote :not(ol,ul,dl,menu,table) p,
-    & section.m-scene:not(.foothang) > p,
-    & section.m-scene:not(.foothang)
-                           :not(.m-header, ol,ul,dl,menu, li,dt,dd,
-                                table,thead,tbody,tfoot,th,tr,td,colgroup,col) p {
-        margin-top: var(--m-paragraph-spacing);
-        margin-block-start: var(--m-paragraph-spacing);
-    }
-
-    /* poem (or code) not in a foothang scene, and not in a scene .m-header, a list, or a table */
-    & section.m-scene:not(.foothang)
-                           :not(.m-header, ol,ul,dl,menu, li,dt,dd,
-                                table,thead,tbody,tfoot,th,tr,td,colgroup,col) pre {
-        margin-top: var(--m-spacing-stanza);
-        margin-block-start: var(--m-spacing-stanza);
-        margin-bottom: var(--m-spacing-stanza);
-        margin-block-end: var(--m-spacing-stanza);
-    }
-    /* poem (or code) in a blockquote */
-    & blockquote:not(:has(.joplin-editable)) > pre,
-    & blockquote > .joplin-editable,
-    & blockquote:not(:has(.joplin-editable)) :not(ol,ul,dl,menu,table) pre,
-    & blockquote :not(ol,ul,dl,menu,table) .joplin-editable {
-        margin-top: var(--m-spacing-stanza);
-        margin-block-start: var(--m-spacing-stanza);
-        margin-bottom: var(--m-spacing-stanza);
-        margin-block-end: var(--m-spacing-stanza);
-    }
-    /* poem (or code) don't margin the .joplin-editable wrapper */
-    & section.m-scene > .joplin-editable {
-        margin-left: 0;
-        margin-inline-start: 0;
-        margin-right: 0;
-        margin-inline-end: 0;
-    }
-    /* poem (or code) - arbitrary poems in scenes get indented on both sides */
-    & section.m-scene > .x-poem {
-        margin-left: var(--m-margin-poem);
-        margin-inline-start: var(--m-margin-poem);
-        margin-right: var(--m-margin-poem);
-        margin-inline-end: var(--m-margin-poem);
-    }
-    /* poem (or code) - the beginning of a .x-poem block gets some space */
-    & section.m-scene :not(.x-poem) + .x-poem {
-        margin-top: var(--m-spacing-poem);
-        margin-block-start: var(--m-spacing-poem);
-    }
-    /* poem (or code) - the ending of a .x-poem block gets some space */
-    & section.m-scene .x-poem:has(+ :not(.x-poem)) {
-        margin-bottom: var(--m-spacing-poem);
-        margin-block-end: var(--m-spacing-poem);
-    }
-
-    /* paragraphs */
-    & blockquote > p,
-    & blockquote :not(ol,ul,dl,menu,table) p,
-    & section.m-scene:not(.foothang) > p,
-    & section.m-scene:not(.foothang)
-                           :not(.m-header, ol,ul,dl,menu, li,dt,dd,
-                                table,thead,tbody,tfoot,th,tr,td,colgroup,col) p {
-        text-indent: var(--m-indent);
-    }
-    /* ... and treat paragraphs after certain classes/elements different */
-    & > :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
-    & :not(.foothang) :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
-    & :is(blockquote, section.m-scene:not(.foothang)) > p:first-of-type {
-        text-indent: var(--m-indent-first-paragraph) !important;
-    }
-    & section.m-scene :not(p) + p {
-        text-indent: var(--m-indent-first-paragraph) !important;
-    }
-    & :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
-    & :is(article) :is(h1,h2,h3,h4,h5,h6) + p,
-    & :is(article) :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
-    & :is(section.m-scene)
-      > :is(p:first-of-type,
-            h1:first-child, h2:first-child, h3:first-child,
-            h4:first-child, h5:first-child, h6:first-child) {
-        margin-top: 0 !important;
-        margin-block-start: 0 !important;
-    }
-
-    /* paragraphs in a foothang context
-     * Note, this has to follow all of the previous blocks of css */
+    /* .m-scene or any other major block with a class .foothang
+     * will format the paragraphs as foothangs */
     & :is(section,blockquote,div).foothang p {
         padding-left: var(--m-indent-foothang);
         /* hanging indent */
         text-indent: calc(var(--m-indent-foothang) * -1);
     }
+
 } /* end #manuscript */
 

@@ -218,6 +218,7 @@
     --m-font-family-poetry:          var(--m-fontstack-serif);
     --m-font-size-poetry:            inherit;
     --m-font-weight-poetry:          inherit;
+    --m-font-style-poetry:           inherit;
     --m-line-spacing-poetry:         var(--m-line-spacing-single);
     --m-text-transform-title-poetry: none; /*uppercase used to be the standard;*/
 

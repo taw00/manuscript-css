@@ -51,7 +51,11 @@ html {
     & * {
         opacity: 1;
     }
+    /* too blunt of an instrument
     & *:not(hr,ol,ul,dl,menu,li,dt,dd) {
+    }
+    */
+    & :is(h1,h2,h3,h4,h5,h6,p,blockquote) {
         margin: 0; padding: 0; border: 0;
     }
     & :is(p,pre) {

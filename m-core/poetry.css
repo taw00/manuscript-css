@@ -7,6 +7,15 @@
  * manuscript. If you wish a 'long' form manuscript, you would add 'long' to that
  * same entity.
  *
+ * an m-poem class operates very similarly to both an m-scene class but
+ * but also an x-poem class.
+ *
+ * A section.m-poem can only house a poem, but a header and has it's own
+ * spacing rules within a manuscript.
+ *
+ * A div.x-poem is useful for inserting poems in section.m-scene and .m-header
+ * blocks. I.e., arbitrary poems.
+ *
  * A prose manuscript is structured as a series of scenes. Crudely, it looks
  * something like this:
  *
@@ -32,22 +41,105 @@
  */
 
 #manuscript {
+    /* baseline spacing of pre blocks anywhere, except a .m-header, a list, or
+     * a table */
+    & :is(:not(.m-header, ol,ul,dl,menu, li,dt,dd,
+            table,thead,tbody,tfoot,th,tr,td,colgroup,col),
+          .x-poem) pre {
+        margin-top: var(--m-spacing-stanza);
+        margin-block-start: var(--m-spacing-stanza);
+        margin-bottom: var(--m-spacing-stanza);
+        margin-block-end: var(--m-spacing-stanza);
+    }
+    /* this needs to make its way to m-reset/joplin.css */
+    & .joplin-editable {
+        margin: 0; padding: 0; border: 0;
+    }
+
+    & :is(section.m-poem, div.x-poem) {
+        & pre,
+        & pre > code {
+            white-space: pre-wrap; /* we wrap poetry */
+            overflow:    hidden; /* no scroll bars */
+            font-size:   var(--m-font-size-poetry);
+            font-weight: var(--m-font-weight-poetry);
+            font-style:  var(--m-font-style-poetry);
+            font-family: var(--m-font-family-poetry);
+            line-height: var(--m-line-spacing-poetry);
+            .m-header & {
+                font-size: inherit;
+                font-weight: inherit;
+                font-style: inherit;
+            }
+        }
+    }
+
+    /* arbitrary poems
+     * Note, we rely on margin collapsing to do the right thing with nested pre
+     * blocks, etc. */
+    & .x-poem {
+        /* space at the beginging & ending */
+        margin-top: var(--m-spacing-poem);
+        margin-block-start: var(--m-spacing-poem);
+        margin-bottom: var(--m-spacing-poem);
+        margin-block-end: var(--m-spacing-poem);
+        /* margins left & right with exceptions (see below) */
+        margin-left: var(--m-margin-poem);
+        margin-inline-start: var(--m-margin-poem);
+        margin-right: var(--m-margin-poem);
+        margin-inline-end: var(--m-margin-poem);
+        /* if within an epigraph, remove the left & right margining entirely */
+        blockquote &,
+        .m-header blockquote & {
+            margin-left: 0;
+            margin-inline-start: 0;
+            margin-right: 0;
+            margin-inline-end: 0;
+        }
+    }
+    & > .m-header .x-poem,
+    &.m-scene .m-header .x-poem {
+        /* if within an m-header, center the whole block (like the rest of the
+         * prose and epigraph) */
+        width: max-content;
+        max-width: min(max-content, 100%);
+        margin-left: auto;
+        margin-inline-start: auto;
+        margin-right: auto;
+        margin-inline-end: auto;
+    }
+    & .m-scene > .x-poem {
+        margin-left: var(--m-margin-poem);
+        margin-inline-start: var(--m-margin-poem);
+        margin-right: var(--m-margin-poem);
+        margin-inline-end: var(--m-margin-poem);
+
+        margin-top:         calc(var(--m-spacing-poem) * 2);
+        margin-block-start: calc(var(--m-spacing-poem) * 2);
+        margin-bottom:      calc(var(--m-spacing-poem) * 2);
+        margin-block-end:   calc(var(--m-spacing-poem) * 2);
+
+    }
+    & .m-scene > .x-poem:has( + .x-poem) {
+        margin-bottom: 0;
+        margin-block-end: 0;
+    }
+    & .m-scene > .x-poem + .x-poem {
+        margin-top: var(--m-spacing-poem);
+        margin-block-start: var(--m-spacing-poem);
+    }
     & section.m-poem {
-        padding-top: 0;
+        & :is(h1,h2,h3,h4,h5,h6,blockquote,p,.m-header) {
+            line-height: var(--m-line-spacing-poetry);
+        }
         & .m-header > h1 {
             text-transform: var(--m-text-transform-title-poetry);
         }
         & .m-header :is(p, h1, h2, h3, h4, h5, h6) {
-            text-align: start;
+        & .m-header > .x-poem {
+            margin-left: 0;
+            margin-inline-start: 0;
         }
-        & pre:not(:last-of-type) {
-            margin-top: 0;
-            margin-bottom: var(--m-elbow-room);
-        }
-
-        /*
-         * Spacing, poetry
-         */
 
         /* poetry content:
          * small margin between poetry content and a poem's title block if it
@@ -65,29 +157,5 @@
         }
     } /* end section.m-poem */
 
-    & :is(section.m-poem, div.x-poem) {
-        pre,
-        pre > code {
-            white-space: pre-wrap; /* we wrap poetry */
-            overflow:    hidden; /* no scroll bars */
-            font-size:   var(--m-font-size-poetry);
-            font-weight: var(--m-font-weight-poetry);
-            font-family: var(--m-font-family-poetry);
-            line-height: var(--m-line-spacing-poetry);
-        }
-    }
-    & :is(section.m-poem, div.x-poem) pre:last-of-type {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    & .x-poem {
-        margin: 0;
-        padding: 0; border: 0;
-        pre:not(:last-of-type) {
-            margin: 0 0 var(--m-elbow-room);
-            padding: 0; border: 0;
-        }
-    }
 } /* end #manuscript */
 

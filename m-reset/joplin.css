@@ -31,7 +31,7 @@
 @layer lm-reset-joplin-constants {
 
 body {
-    --m-reset-joplin-body-background-color: var(--m-desktop-color);
+    --m-reset-joplin-background-color-body: var(--m-desktop-color);
     --m-reset-joplin-font-weight-code: var(--m-font-weight-code);
 }
 
@@ -42,7 +42,7 @@ body {
     /* a darkgray "desk" and a "trans" content box framing the #rendered-md */
     html { background-color: rgb(0 0 0 / 0%); }
     body {
-        background-color: var(--m-reset-joplin-body-background-color);
+        background-color: var(--m-reset-joplin-background-color-body);
     }
     /* rendered view:  */
     body#joplin-container-body {
@@ -165,6 +165,12 @@ body {
                 /* remove "Last updated" line */
                 & > h1.title,
                 & > p.last-updated { display: none; }
+                & > h1.title::before {
+                    font-size: 3em;
+                    font-weight: bold;
+                    color: green;
+                    content: "Please wait while I process this document …"
+                }
             }
         }
     }

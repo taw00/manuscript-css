@@ -70,10 +70,6 @@
                 font-style:  var(--m-font-style-epigraph);
             }
         }
-        & > :is(pre,.x-poem) {          /* .m-headers pre or .x-poem */
-            font-size: inherit;
-            font-weight: inherit;
-        }
 
         & > :first-child {
             margin-top: 0;
@@ -198,22 +194,37 @@
     }
 
     & section.m-poem {
+        padding-top: 0; /* not sure why this exists */
         & .m-header {
-            margin-left: 0; margin-right: auto;
+            margin-left: 0;
+            margin-inline-start: 0;
+            & > blockquote {
+                margin-left: 0;
+                margin-inline-start: 0;
+                width: max-content;
+                max-width: min(max-content,100%);
+            }
+            & > :is(h1, h2, h3, h4, h5, h6, blockquote,p) {
+                margin-top: 1em;
+            }
         }
         & .m-facts {
             margin: 0;
             & p { text-align: var(--m-text-align); }
         }
+        & > :is(h1, h2, h3, h4, h5, h6, blockquote,p) {
+            display: block;
+            margin: 0; padding: 0; border: 0;
+            text-align: var(--m-text-align);
+        }
     }
 
     & :not(section.m-poem) > .m-header {
         & > :is(h1, h2, h3, h4, h5, h6),
-        & > p,
-        :not(blockquote,.m-facts) p {
+        & > p {
             display: block;
             margin: 0; padding: 0; border: 0;
-            text-align: center !important;
+            text-align: center;
         }
     }
 
