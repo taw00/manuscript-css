@@ -44,10 +44,12 @@
      * DEFAULTS - section 1 - baseline core values
      */
 
+    /* set in m-var/permutations
     --m-page-width:  var(--m-page-widthUS);
     --m-page-height: var(--m-page-heightUS);
     --m-page-margin: var(--m-page-marginUS);
-    --m-paginated-margin: calc(var(--m-page-margin) * 1.333); /* arbitrary calculation */
+    --m-paginated-margin: calc(var(--m-page-margin) * 1.333);
+     */
 
     --m-fontstack-serif: var(--m-fontstack-times);
     --m-fontstack-sans-serif: var(--m-fontstack-arial);
@@ -188,7 +190,8 @@
     --m-font-family-non-narrative-code: var(--m-font-family-nonnarrative-code);
 
     /* first-line indent/inter-paragraph spacing - narrative & nonnarrative */
-    --m-indent-narrative: var(--m-indentUS);
+    /* set in m-var/permutations …
+    --m-indent-narrative: var(--m-indentUS); */
     --m-indent-narrative-first-paragraph: 0;
     --m-paragraph-spacing-narrative: 0;
     --m-margins-blockquote: calc(var(--m-indent-narrative) * 1.5);
@@ -218,14 +221,14 @@
      *                #vpage.US and #manuscript.narrative and #manuscript.short
      */
 
+    --m-font-style: normal;
 
     /* everything is defaulted to -narrative and then that gets reset
      * by manuscript.css to something different if necessary */
+    /* set in m-var/permutations …
     --m-font-family:              var(--m-font-family-narrative);
     --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
     --m-font-family-code:         var(--m-font-family-narrative-code);
-
-    --m-font-style: normal;
 
     --m-indent:                 var(--m-indent-narrative);
     --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
@@ -238,6 +241,7 @@
     --m-offset-chapter-render: var(--m-offset-chapter-render-short);
     --m-offset-scene:          var(--m-offset-scene-short);
     --m-offset-poem:           var(--m-offset-poem-short);
+    */
 
     /* --------------------------------------------------------------------- */
 
@@ -320,8 +324,10 @@
     --m-font-weight-title-poem:  var(--m-font-weight);
     --m-font-weight-byline-poem: var(--m-font-weight);
 
+    /* set in m-var/permutations …
     --m-font-family-title-poem:  inherit;
     --m-font-family-byline-poem: inherit;
+    */
 
     /* font settings - the epigraphs */
     /*--m-font-size-epigraph: .8125rem;*/ /* 13px or ~9.75pt (if parent 16px) */
@@ -348,6 +354,7 @@
      */
 
     /* .m-facts settings */
+    /* set in m-var/permutations …
     --m-position-facts:     var(--m-position-facts-short);
     --m-top-facts:          var(--m-top-facts-short);
     --m-bottom-facts:       var(--m-bottom-facts-short);
@@ -359,48 +366,58 @@
 
     --m-font-size-facts:    var(--m-font-size-facts-short);
     --m-font-weight-facts:  var(--m-font-weight-facts-short);
-    --m-font-family-facts:  inherit;
+    --m-font-family-facts:  var(--m-font-family-facts-short);
     --m-line-spacing-facts: var(--m-line-spacing-facts-short);
+    */
 
     /* page break settings - these get refined settings elsewhere */
-    --m-page-break: var(--m-page-break-short);                     /* unset */
-    --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); /* 0 */
-    --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
+    /* set in m-var/permutations …
+    --m-page-break: var(--m-page-break-short);                     / * unset * /
+    --m-page-break-simulated: var(--m-page-break-simulated-short); / * 0 * /
+    --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); / * 0 * /
+    */
 
     /* the desktop theme beneath the paper */
     --m-desktop-color-theme-default: var(--m-color-gray5, darkgray);
     --m-desktop-color-theme-dim: var(--m-color-gray7, dimgray);
     --m-desktop-color-theme-dimmer: var(--m-color-gray7-5, #505050);
-    --m-desktop-color-theme-dark: var(--m-color-avocado);
-    --m-desktop-color: var(--m-desktop-color-theme-default);
+    --m-desktop-color-theme-dark: var(--m-color-gray-purple-dark);
 
     /* the paper theme on the desktop */
     --m-paper-color-theme-default: var(--m-color-gray0, white);
     --m-paper-color-theme-dim: var(--m-color-gray4, silver);
     --m-paper-color-theme-dimmer: var(--m-color-gray6, gray);
     --m-paper-color-theme-dark: var(--m-color-gray8, #303030);
-    --m-paper-color: var(--m-paper-color-theme-default);
-
-    --m-vpage-frame: 0 0 20px var(--m-color-gray9, black);
-    --m-vpage-frame-margin: 20px auto;
 
     --m-text-color-theme-default: var(--m-color-gray9, black);
     --m-text-color-theme-dim: var(--m-text-color-theme-default);
     --m-text-color-theme-dimmer: var(--m-text-color-theme-default);
     --m-text-color-theme-dark: var(--m-color-whitesmoke, whitesmoke);
-    --m-text-color: var(--m-text-color-theme-default);
 
     --m-link-color-theme-default: var(--m-color-professional-blue2, #122b73);
     --m-link-color-theme-dim: var(--m-link-color-theme-default);
     --m-link-color-theme-dimmer: var(--m-link-color-theme-default);
-    --m-link-color-theme-dark: var(--m-color-cobalt-blue, rgb(0 32 194 / 100%));
-    --m-link-color: var(--m-link-color-theme-default);
+    /*
+    --m-link-color-theme-dark: var(--m-color-professional-blue5, #3399FF);
+    --m-link-color-theme-dark: var(--m-color-professional-blue6, #99FFFF);
+    */
+    --m-link-color-theme-dark: var(--m-color-professional-blue7, rgb(150, 170, 255));
 
     --m-link-hover-color-theme-default: var(--m-color-gray7, dimgray);
     --m-link-hover-color-theme-dim: var(--m-link-hover-color-theme-default);
     --m-link-hover-color-theme-dimmer: var(--m-link-hover-color-theme-default);
     --m-link-hover-color-theme-dark: var(--m-link-hover-color-theme-default);
+
+    --m-vpage-frame: 0 0 20px var(--m-color-gray9, black);
+    --m-vpage-frame-margin: 20px auto;
+
+    /* set in m-var/permutations …
+    --m-desktop-color: var(--m-desktop-color-theme-default);
+    --m-paper-color: var(--m-paper-color-theme-default);
+    --m-text-color: var(--m-text-color-theme-default);
+    --m-link-color: var(--m-link-color-theme-default);
     --m-link-hover-color: var(--m-link-hover-color-theme-default);
+    */
 
 } /* end :root scoping */
 

@@ -1,6 +1,6 @@
 /* CSS for Manuscript Formating v3.0
  *
- * @layer lm-var-permuations
+ * @layer lm-var-permutations
  *
  * This stylesheet will re-configuration variables found in m-var/defaults.css
  * to match switches fliped by the user. Paper-sizes, Narrative/Nonnarrative,
@@ -17,72 +17,79 @@
 @layer lm-var-permutations {
 
 :root {
+    /* page-dimension-sensitive things: widths, margins, indentations */
+    --m-page-width:  var(--m-page-widthUS);
+    --m-page-height: var(--m-page-heightUS);
+    --m-indent-narrative: var(--m-indentUS);
+    --m-indent-foothang:  var(--m-indentUS);
+    --m-page-margin: var(--m-page-marginUS);
+    --m-paginated-margin: calc(var(--m-page-margin) * 1.333); /* looked good to my eye */
     &:has(#vpage:is(.US,.us,.letter)) {
-        --m-page-width:  var(--m-page-widthUS);
-        --m-page-height: var(--m-page-heightUS);
         --m-page-margin: var(--m-page-marginUS);
         --m-indent-narrative: var(--m-indentUS);
         --m-indent-foothang:  var(--m-indentUS);
     }
-
+    &:has(#vpage:is(.US,.us,.letter):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthUS);
+        --m-page-height: var(--m-page-heightUS);
+    }
+    &:has(#vpage:is(.US,.us,.letter):is(.landscape)) {
+        --m-page-width: var(--m-page-heightUS);
+        --m-page-height:  var(--m-page-widthUS);
+    }
     &:has(#vpage:is(.USh,.USH,.ush,.hletter)) { /* US half-letter */
-        --m-page-width:  var(--m-page-widthUSh);
-        --m-page-height: var(--m-page-heightUSh);
         --m-page-margin: var(--m-page-marginUSh);
         --m-indent-narrative: var(--m-indentUSh);
         --m-indent-foothang:  var(--m-indentUSh);
     }
-
+    &:has(#vpage:is(.USh,.USH,.ush,.hletter):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthUSh);
+        --m-page-height: var(--m-page-heightUSh);
+    }
+    &:has(#vpage:is(.USh,.USH,.ush,.hletter):is(.landscape)) {
+        --m-page-width: var(--m-page-heightUSh);
+        --m-page-height:  var(--m-page-widthUSh);
+    }
     &:has(#vpage:is(.A4,.a4)) {
-        --m-page-width:  var(--m-page-widthA4);
-        --m-page-height: var(--m-page-heightA4);
         --m-page-margin: var(--m-page-marginA4);
         --m-indent-narrative: var(--m-indentA4);
         --m-indent-foothang:  var(--m-indentA4);
     }
+    &:has(#vpage:is(.A4,.a4):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthA4);
+        --m-page-height: var(--m-page-heightA4);
+    }
+    &:has(#vpage:is(.A4,.a4):is(.landscape)) {
+        --m-page-width: var(--m-page-heightA4);
+        --m-page-height:  var(--m-page-widthA4);
+    }
 
     &:has(#vpage:is(.A5,.a5)) {
-        --m-page-width:  var(--m-page-widthA5);
-        --m-page-height: var(--m-page-heightA5);
         --m-page-margin: var(--m-page-marginA5);
         --m-indent-narrative: var(--m-indentA5);
         --m-indent-foothang:  var(--m-indentA5);
     }
+    &:has(#vpage:is(.A5,.a5):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthA5);
+        --m-page-height: var(--m-page-heightA5);
+    }
+    &:has(#vpage:is(.A5,.a5):is(.landscape)) {
+        --m-page-width: var(--m-page-heightA5);
+        --m-page-height:  var(--m-page-widthA5);
+    }
     &:has(#vpage:is(.A6,.a6)) {
-        --m-page-width:  var(--m-page-widthA6);
-        --m-page-height: var(--m-page-heightA6);
         --m-page-margin: var(--m-page-marginA6);
         --m-indent-narrative: var(--m-indentA6);
         --m-indent-foothang:  var(--m-indentA6);
     }
-    &:has(#vpage:is(.landscape) {
-        --m-page-width:   var(--m-page-heightA5);
-        --m-page-height:  var(--m-page-widthA5);
+    &:has(#vpage:is(.A6,.a6):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthA6);
+        --m-page-height: var(--m-page-heightA6);
     }
-
-    /* now, recalculate */
-    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
-    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
-    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
-    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
-    --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
-    --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
-    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
-    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
-    --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
-    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
-    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
-    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
-    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
-    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
-    --m-offset-title-short:        var(--m-content-offset-5-12th);
-    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
-    --m-offset-title-long:         var(--m-content-offset-5-12th);
-    --m-offset-title-long-poetry:  var(--m-content-offset-5-12th);
-    --m-offset-part-long:           var(--m-offset-title-long);
-    --m-offset-chapter-long:        var(--m-offset-title-long);
-    --m-margins-blockquote: calc(var(--m-indent-narrative) * 1.5);
-
+    &:has(#vpage:is(.A6,.a6):is(.landscape)) {
+        --m-page-width: var(--m-page-heightA6);
+        --m-page-height:  var(--m-page-widthA6);
+    }
 
     &:has(#manuscript:not(:is(.nonnarrative,.non-narrative))) { /* i.e., narrative */
         /* the default is already set for .narrative, but we are being explicit */
@@ -106,38 +113,6 @@
         --m-font-family-preformatted: var(--m-font-family-nonnarrative-preformatted);
         --m-font-family-code: var(--m-font-family-nonnarrative-code);
     }
-
-    /* reset font settings - the main title-block header */
-    --m-font-family-header: inherit;
-    --m-font-family-headers: inherit;
-    /* reset font settings - contact info (and facts if put in the right corner */
-    --m-font-family-contact: inherit;
-    /* reset font settings - the main titles, subtitles, and authors */
-    --m-font-family-title: inherit;
-    --m-font-family-byline: inherit;
-    /* reset font settings - part titles, subtitles, and authors */
-    --m-font-family-title-part: inherit;
-    --m-font-family-byline-part: inherit;
-    /* reset font settings - chapter titles, subtitles, and authors */
-    --m-font-family-title-chapter: inherit;
-    --m-font-family-byline-chapter: inherit;
-    /* reset font settings - scene titles, subtitles, and authors */
-    --m-font-family-title-scene: inherit;
-    --m-font-family-byline-scene: inherit;
-    /* reset font settings - the epigraphs */
-    --m-font-family-epigraph: inherit;
-    /* reset font settings - the section separators (dinkus and -30-) */
-    --m-font-family-dinkus-30-: inherit;
-
-    /* reset font settings short/long - .m-fact */
-    --m-font-family-facts-short:  var(--m-font-family-contact);
-    --m-font-size-facts-short:    var(--m-font-size-contact);
-    --m-font-weight-facts-short:  var(--m-font-weight-contact);
-    --m-line-spacing-facts-short: var(--m-line-spacing-single);
-    --m-font-family-facts-long:  inherit; /* will inherit from m-header */
-    --m-font-size-facts-long:    inherit;
-    --m-font-weight-facts-long:  inherit;
-    --m-line-spacing-facts-long: var(--m-line-spacing-single);
 
     &:has(#manuscript:not(.long)) { /* short, the default, but let's be explicit */
         --m-offset-title: var(--m-offset-title-short);
@@ -191,6 +166,7 @@
         --m-font-family-byline-poem: inherit;
         --m-offset-title: var(--m-offset-title-short-poetry);
         --m-offset-chapter: var(--m-offset-chapter-short-poetry);
+    }
     &:has(#manuscript:is(.poetry.long)) {
         --m-offset-title: var(--m-offset-title-long-poetry);
         --m-offset-chapter: var(--m-offset-chapter-long-poetry);
@@ -233,10 +209,6 @@
 
 @media print {
     :root {
-        --m-desktop-color: transparent;
-        --m-paper-color: transparent;
-        --m-vpage-frame: 0;
-        --m-vpage-frame-margin: 0;
         --m-page-margin: 0;
         &:has(#manuscript:not(.long)) {
             /* the default, but let's be explicit */

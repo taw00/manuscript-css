@@ -217,10 +217,39 @@ html {
 
 @media print {
     html, body { width: 100%; max-width: 100%; border: 0; padding: 0; margin: 0; }
-    #vpage, #manuscript { width: 100%; max-width: 100%; padding: 0; margin: 0; }
+    #vpage, #manuscript { width: 100%; max-width: 100%; padding: 0; margin: 0; box-shadow: unset; }
+
     /* print rendering - do not allow code scrollbars */
     #manuscript pre > code { overflow: hidden; }
+
+    /* paginated header rules (defined in m-init/pagination.css) */
+    #vpage {
+        page: top-right-header;
+        &.no-header {
+            page: us-portrait-no-header;
+        }
+        &.top-left-header {
+            page: us-portrait-top-left-header;
+        }
+        &.top-center-header {
+            page: us-portrait-top-center-header;
+        }
+        &.top-right-header {
+            page: us-portrait-top-right-header;
+        }
+        &.bottom-left-header {
+            page: us-portrait-bottom-left-header;
+        }
+        &.bottom-center-header {
+            page: us-portrait-bottom-center-header;
+        }
+        &.bottom-right-header {
+            page: us-portrait-bottom-right-header;
+        }
+    }
 }
+
+
 
 
 /* Joplin only.
@@ -244,15 +273,5 @@ html {
     & *:not(div.joplin-editable) + div.joplin-editable pre {
         margin-top: 0;
     }
-}
-
-
-/* In Joplin, a pre is rendered twice, depending on things I don't understand.
- * We need to blip out the extra pre. Note that this is duplicated in
- * m-style-reset-joplin, but I wanted to have it here as well in order to have
- * this well understood and in control.
- */
-#rendered-md pre.joplin-source {
-    display: none;
 }
 

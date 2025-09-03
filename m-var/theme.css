@@ -2,7 +2,7 @@
  *
  * m-init/theme.css sets the color-ways for the desktop and page.
  *
- * These are set with these <div id="#vpage" classes=" … ">
+ * These are set with these <div id="vpage" classes=" … ">
  * - "the default": white page on offwhite background
  * - dark: dark page on dark background
  * - dim: something in the middle
@@ -21,21 +21,34 @@
 
 @media screen {
 
-    /* presentation theme
-     * note: PDF export will still be a black text on white */
     :root {
+        --m-desktop-color: var(--m-desktop-color-theme-default);
+        --m-paper-color: var(--m-paper-color-theme-default);
+        --m-text-color: var(--m-text-color-theme-default);
+        --m-link-color: var(--m-link-color-theme-default);
+        --m-link-hover-color: var(--m-link-hover-color-theme-default);
         &:has(#vpage:is(.dim-theme,.dim,.dimtheme)) {
             --m-desktop-color: var(--m-desktop-color-theme-dim);
+            --m-paper-color: var(--m-paper-color-theme-dim);
+            --m-text-color: var(--m-text-color-theme-dim);
+            --m-link-color: var(--m-link-color-theme-dim);
+            --m-link-hover-color: var(--m-link-hover-color-theme-dim);
         }
         &:has(#vpage:is(.dimmer-theme,.dimmer,.dimmertheme)) {
             --m-desktop-color: var(--m-desktop-color-theme-dimmer);
+            --m-paper-color: var(--m-paper-color-theme-dimmer);
+            --m-text-color: var(--m-text-color-theme-dimmer);
+            --m-link-color: var(--m-link-color-theme-dimmer);
+            --m-link-hover-color: var(--m-link-hover-color-theme-dimmer);
         }
         &:has(#vpage:is(.dark-theme,.dark,.darktheme)) {
             --m-desktop-color: var(--m-desktop-color-theme-dark);
+            --m-paper-color: var(--m-paper-color-theme-dark);
+            --m-text-color: var(--m-text-color-theme-dark);
+            --m-link-color: var(--m-link-color-theme-dark);
+            --m-link-hover-color: var(--m-link-hover-color-theme-dark);
         }
-    }
 
-    :root {
         &:has(#vpage.plain) {
             --m-vpage-frame: 0;
         }
@@ -47,25 +60,6 @@
             --m-paper-color: transparent;
             --m-vpage-frame: 0;
             --m-vpage-frame-margin: 0;
-        }
-
-        &:has(#vpage:is(.dim-theme,.dim,.dimtheme)) {
-            --m-paper-color: var(--m-paper-color-theme-dim);
-            --m-text-color: var(--m-text-color-theme-dim);
-            --m-link-color: var(--m-link-color-theme-dim);
-            --m-link-hover-color: var(--m-link-hover-color-theme-dim);
-        }
-        &:has(#vpage:is(.dimmer-theme,.dimmer,.dimmertheme)) {
-            --m-paper-color: var(--m-paper-color-theme-dimmer);
-            --m-text-color: var(--m-text-color-theme-dimmer);
-            --m-link-color: var(--m-link-color-theme-dimmer);
-            --m-link-hover-color: var(--m-link-hover-color-theme-dimmer);
-        }
-        &:has(#vpage:is(.dark-theme,.dark,.darktheme)) {
-            --m-paper-color: var(--m-paper-color-theme-dark);
-            --m-text-color: var(--m-text-color-theme-dark);
-            --m-link-color: var(--m-link-color-theme-dark);
-            --m-link-hover-color: var(--m-link-hover-color-theme-dark);
         }
     }
 

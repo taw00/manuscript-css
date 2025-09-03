@@ -32,6 +32,7 @@
 
 body {
     --m-reset-joplin-body-background-color: var(--m-desktop-color);
+    --m-reset-joplin-font-weight-code: var(--m-font-weight-code);
 }
 
 } /* end @layer lm-reset-joplin-constants */
@@ -84,6 +85,30 @@ body {
             }
         }
     }
+
+
+    /* Joplin wraps all PREs with div.joplin-editable, so we have to
+     * adjust margination for that. Markdown tools can be . . . meddlesome.
+     * I am not completely confident that I have all the margin-spacing correctly
+     * configured for all permutations of pre.
+     * Note: we have to do all of this hoop-jumping because you can't
+     * :last-of-type a css class.
+     */
+    #manuscript {
+        & div.joplin-editable { margin: 0; }
+        & div.joplin-editable:has(+ div.joplin-editable) pre {
+            margin: var(--m-elbow-room) var(--m-margins-preformatted);
+        }
+        & div.joplin-editable:not(:has + div.joplin-editable) pre {
+            margin: var(--m-elbow-room) var(--m-margins-preformatted) 0;
+        }
+        & * > div.joplin-editable pre,
+        & *:not(div.joplin-editable) + div.joplin-editable pre {
+            margin-top: 0;
+        }
+    }
+
+
 } /* end @media screen */
 
 
@@ -165,17 +190,6 @@ body {
     background-color: transparent;
 }
 
-/* syntax highlighting: turn off the base level tweak for pre/code */
-.hljs {
-    color: inherit;
-    background: inherit;
-}
-/* In Joplin, a pre is rendered twice, depending on things I don't understand.
- * We need to blip out the extra pre */
-#rendered-md pre.joplin-source {
-    display: none;
-}
-
 /* remove Joplin internal link icon and extra styling */
 a {
     & .resource-icon { display: none; }
@@ -194,3 +208,68 @@ code.inline-code {
     font-family: unset; margin: 0; border: 0;
 }
 
+/*
+ * SYNTAX HIGHLIGHT - turn off for .x-poem
+ */
+
+/* In Joplin, a pre is rendered twice, depending on things I don't understand.
+ * We need to blip out the extra pre */
+#rendered-md pre.joplin-source {
+    display: none;
+}
+
+#vpage #manuscript :is(.x-poem,.m-poem,.m-header) {
+    .hljs,
+    .hljs-keyword,
+    .hljs-operator,
+    .hljs-pattern-match,
+    .hljs-pattern-match .hljs-constructor,
+    .hljs-function,
+    .hljs-function .hljs-params,
+    .hljs-function .hljs-params .hljs-typing,
+    .hljs-module-access .hljs-module,
+    .hljs-constructor,
+    .hljs-constructor .hljs-string,
+    .hljs-comment,
+    .hljs-quote,
+    .hljs-doctag,
+    .hljs-formula,
+    .hljs-section,
+    .hljs-name,
+    .hljs-selector-tag,
+    .hljs-deletion,
+    .hljs-subst,
+    .hljs-literal,
+    .hljs-string,
+    .hljs-regexp,
+    .hljs-addition,
+    .hljs-attribute,
+    .hljs-meta .hljs-string,
+    .hljs-built_in,
+    .hljs-title.class_,
+    .hljs-class .hljs-title,
+    .hljs-attr,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-selector-class,
+    .hljs-selector-attr,
+    .hljs-selector-pseudo,
+    .hljs-number,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-link,
+    .hljs-meta,
+    .hljs-selector-id,
+    .hljs-title,
+    .hljs-emphasis,
+    .hljs-strong,
+    .hljs-link {
+        color: inherit;
+        background: inherit;
+        font-style: inherit;
+        font-weight: var(--m-reset-joplin-font-weight-code);
+        text-decoration: unset;
+        padding: unset;
+    }
+} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-header) */

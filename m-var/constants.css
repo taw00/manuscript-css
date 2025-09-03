@@ -179,10 +179,19 @@
     --m-color-union-blue: #0d1e51;
     --m-color-professional-blue1: #02195c;
     --m-color-professional-blue2: #122b73;
+    --m-color-professional-blue3: rgb(27.84%, 56.47%, 65.49%);
+    --m-color-professional-blue4: rgb(83, 183, 215);
+    --m-color-professional-blue5: #3399FF;
+    --m-color-professional-blue6: #99FFFF;
+    --m-color-professional-blue7: rgb(165, 170, 255);
 
     /* alternative dark colors with a hint of color */
-    --m-color-avocado: rgb(29, 32, 36); /* avocado */
-    --m-color-eggplant: eggplant;
+    --m-color-gray-green-dark: rgb(29, 32, 36);
+    --m-color-gray-purple-dark: rgb(35, 38, 45);
+    --m-color-eggplant: #483248;
+    --m-color-eggplant-dark: #2A1D2A;
+    --m-color-eggplant-darker: #0F0A0F;
+
 
     /* box-shadow, for the 3D effect with the paper */
     --m-paper-frame-black: 0 0 20px black;
