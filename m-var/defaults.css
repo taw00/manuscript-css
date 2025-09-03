@@ -106,7 +106,11 @@
      *
      * IMPORTANT: hyphenation only works if the lang attribute is set in the
      * html element (eg: <html lang="en"> or set in the elements managing the
-     * text you want to be hyphenated. Most markdown editors don't set this. */
+     * text you want to be hyphenated. Most markdown editors don't set this.
+     * -- also, check out this future feature (still in a w3c draft)
+     * hyphenate-limit-chars: 6 3 2;
+     * hyphenate-limit-lines: 2;
+     */
     --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
 
     /* -------------------- */

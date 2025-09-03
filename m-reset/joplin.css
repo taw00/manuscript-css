@@ -260,7 +260,6 @@ code.inline-code {
     .hljs-number,
     .hljs-symbol,
     .hljs-bullet,
-    .hljs-link,
     .hljs-meta,
     .hljs-selector-id,
     .hljs-title,
@@ -275,3 +274,4 @@ code.inline-code {
         padding: unset;
     }
 } /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-header) */
+
