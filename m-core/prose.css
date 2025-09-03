@@ -123,6 +123,7 @@
         margin-block-start: var(--m-elbow-room);
     }
 
+    /* paragraphs */
     & blockquote > p,
     & blockquote :not(ol,ul,dl,menu,table) p,
     & section.m-scene:not(.foothang) > p,
@@ -133,51 +134,51 @@
         margin-block-start: var(--m-paragraph-spacing);
     }
 
+    /* poem (or code) not in a foothang scene, and not in a scene .m-header, a list, or a table */
     & section.m-scene:not(.foothang)
                            :not(.m-header, ol,ul,dl,menu, li,dt,dd,
-                                table,thead,tbody,tfoot,th,tr,td,colgroup,col,.joplin-editable) pre,
-    & section.m-scene:not(.foothang)
-                           :not(.m-header, ol,ul,dl,menu, li,dt,dd,
-                                table,thead,tbody,tfoot,th,tr,td,colgroup,col) .joplin-editable {
-        margin-top: var(--m-paragraph-spacing);
-        margin-block-start: var(--m-paragraph-spacing);
+                                table,thead,tbody,tfoot,th,tr,td,colgroup,col) pre {
+        margin-top: var(--m-spacing-stanza);
+        margin-block-start: var(--m-spacing-stanza);
+        margin-bottom: var(--m-spacing-stanza);
+        margin-block-end: var(--m-spacing-stanza);
     }
+    /* poem (or code) in a blockquote */
     & blockquote:not(:has(.joplin-editable)) > pre,
     & blockquote > .joplin-editable,
     & blockquote:not(:has(.joplin-editable)) :not(ol,ul,dl,menu,table) pre,
     & blockquote :not(ol,ul,dl,menu,table) .joplin-editable {
-        margin-top: var(--m-paragraph-spacing);
-        margin-block-start: var(--m-paragraph-spacing);
+        margin-top: var(--m-spacing-stanza);
+        margin-block-start: var(--m-spacing-stanza);
+        margin-bottom: var(--m-spacing-stanza);
+        margin-block-end: var(--m-spacing-stanza);
     }
-
-
+    /* poem (or code) don't margin the .joplin-editable wrapper */
     & section.m-scene > .joplin-editable {
         margin-left: 0;
         margin-inline-start: 0;
         margin-right: 0;
         margin-inline-end: 0;
     }
+    /* poem (or code) - arbitrary poems in scenes get indented on both sides */
     & section.m-scene > .x-poem {
-        margin-left: var(--m-indent);
-        margin-inline-start: var(--m-indent);
-        margin-right: var(--m-indent);
-        margin-inline-end: var(--m-indent);
-        /*
         margin-left: var(--m-margin-poem);
         margin-inline-start: var(--m-margin-poem);
         margin-right: var(--m-margin-poem);
         margin-inline-end: var(--m-margin-poem);
-        */
     }
+    /* poem (or code) - the beginning of a .x-poem block gets some space */
     & section.m-scene :not(.x-poem) + .x-poem {
-        margin-top: var(--m-spacing-poem-block);
-        margin-block-start: var(--m-spacing-poem-block);
+        margin-top: var(--m-spacing-poem);
+        margin-block-start: var(--m-spacing-poem);
     }
+    /* poem (or code) - the ending of a .x-poem block gets some space */
     & section.m-scene .x-poem:has(+ :not(.x-poem)) {
-        margin-bottom: var(--m-spacing-poem-block);
-        margin-block-end: var(--m-spacing-poem-block);
+        margin-bottom: var(--m-spacing-poem);
+        margin-block-end: var(--m-spacing-poem);
     }
 
+    /* paragraphs */
     & blockquote > p,
     & blockquote :not(ol,ul,dl,menu,table) p,
     & section.m-scene:not(.foothang) > p,
@@ -186,14 +187,13 @@
                                 table,thead,tbody,tfoot,th,tr,td,colgroup,col) p {
         text-indent: var(--m-indent);
     }
-
     /* ... and treat paragraphs after certain classes/elements different */
     & > :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
     & :not(.foothang) :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
     & :is(blockquote, section.m-scene:not(.foothang)) > p:first-of-type {
         text-indent: var(--m-indent-first-paragraph) !important;
     }
-    & section.m-scene :not(p,pre) + p {
+    & section.m-scene :not(p) + p {
         text-indent: var(--m-indent-first-paragraph) !important;
     }
     & :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
@@ -207,7 +207,7 @@
         margin-block-start: 0 !important;
     }
 
-    /* Foothang management
+    /* paragraphs in a foothang context
      * Note, this has to follow all of the previous blocks of css */
     & :is(section,blockquote,div).foothang p {
         padding-left: var(--m-indent-foothang);

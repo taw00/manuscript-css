@@ -97,7 +97,8 @@
         --m-indent: var(--m-indent-narrative);
         --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
         --m-paragraph-spacing: var(--m-paragraph-spacing-narrative);
-        --m-spacing-poem-block: var(--m-spacing-poem-block-narrative);
+        --m-spacing-poem: var(--m-spacing-poem-narrative);
+        --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
         /* need to reset font-family for most everything */
         --m-font-family: var(--m-font-family-narrative);
         --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
@@ -109,7 +110,8 @@
         --m-indent: var(--m-indent-nonnarrative);
         --m-indent-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
         --m-paragraph-spacing: var(--m-paragraph-spacing-nonnarrative);
-        --m-spacing-poem-block: var(--m-spacing-poem-block-nonnarrative);
+        --m-spacing-poem: var(--m-spacing-poem-nonnarrative);
+        --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
         /* need to reset font-family for most everything */
         --m-font-family: var(--m-font-family-nonnarrative);
         --m-font-family-preformatted: var(--m-font-family-nonnarrative-preformatted);

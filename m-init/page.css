@@ -167,6 +167,11 @@ html {
         line-height: inherit;
     }
 
+    & div.joplin-editable,
+    & div.x-poem {
+        display: block;
+        box-sizing: border-box;
+    }
     /* blockquote, pre, code
      * These are often specifically styled by markdown editors to something
      * other than the browser default. So we have to be a bit more "explicit"
@@ -193,6 +198,8 @@ html {
         color: inherit; background-color: inherit;
     }
     & pre > code {
+        display: block;
+        box-sizing: border-box;
         white-space: pre; /* we wrap pre but not code */
         overflow-x: auto; /* allow scroll bars */
         font-size:   var(--m-font-size-code);
@@ -205,6 +212,8 @@ html {
 
     /* html rendering - allow code scrollbars */
     & :not(pre) > code {
+        display: block;
+        box-sizing: border-box;
         font-size:   var(--m-font-size-code-inline);
         font-weight: var(--m-font-weight-code-inline);
         font-family: var(--m-font-family-code);

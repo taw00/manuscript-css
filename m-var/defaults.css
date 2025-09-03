@@ -199,9 +199,9 @@
     --m-indent-non-narrative-first-paragraph: var(--m-indent-nonnarrative);
     --m-paragraph-spacing-non-narrative: var(--m-paragraph-spacing-nonnarrative);
 
-    --m-spacing-poem-block-narrative: var(--m-paragraph-spacing-nonnarrative);
-    --m-spacing-poem-block-nonnarrative: calc(var(--m-paragraph-spacing-nonnarrative) * 2);
-    --m-spacing-poem-block-non-narrative: var(--m-spacing-poem-block-nonnarrative);
+    --m-spacing-poem-narrative: var(--m-paragraph-spacing-nonnarrative);
+    --m-spacing-poem-nonnarrative: calc(var(--m-paragraph-spacing-nonnarrative) * 2);
+    --m-spacing-poem-non-narrative: var(--m-spacing-poem-nonnarrative);
 
     /* left and right margins - pre and blockquote */
     --m-margin-poem: var(--m-indent-narrative);
