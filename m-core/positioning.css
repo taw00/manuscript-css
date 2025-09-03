@@ -93,7 +93,7 @@
 
 
 @media print {
-    #vpage {
+    #vpage, #manuscript {
         break-before: avoid-page !important;
     }
     #manuscript > .m-header {
