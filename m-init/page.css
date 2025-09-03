@@ -178,7 +178,7 @@ html {
 
     & blockquote {
         border: 0;
-        margin: var(--m-elbow-room) var(--m-margins-blockquote);
+        margin: var(--m-elbow-room) var(--m-margin-blockquote);
         /* so many markdown tools manipulate these. overriding */
         padding: 0; background-color: inherit;
     }
@@ -188,7 +188,7 @@ html {
         font-weight: var(--m-font-weight-preformatted);
         font-family: var(--m-font-family-preformatted);
         line-height: var(--m-line-spacing-preformatted);
-        margin: var(--m-elbow-room) var(--m-margins-preformatted);
+        /*margin: var(--m-elbow-room) var(--m-margins-preformatted);*/
         /* so many markdown tools manipulate these. overriding */
         color: inherit; background-color: inherit;
     }
@@ -246,32 +246,6 @@ html {
         &.bottom-right-header {
             page: us-portrait-bottom-right-header;
         }
-    }
-}
-
-
-
-
-/* Joplin only.
- *
- * It wraps all PREs with div.joplin-editable, so we have to
- * adjust margination for that. Markdown tools can be . . . meddlesome.
- * I am not completely confident that I have all the margin-spacing correctly
- * configured for all permutations of pre.
- * Note: we have to do all of this hoop-jumping because you can't
- * :last-of-type a css class.
- */
-#manuscript {
-    & div.joplin-editable { margin: 0; }
-    & div.joplin-editable:has(+ div.joplin-editable) pre {
-        margin: var(--m-elbow-room) var(--m-margins-preformatted);
-    }
-    & div.joplin-editable:not(:has + div.joplin-editable) pre {
-        margin: var(--m-elbow-room) var(--m-margins-preformatted) 0;
-    }
-    & * > div.joplin-editable pre,
-    & *:not(div.joplin-editable) + div.joplin-editable pre {
-        margin-top: 0;
     }
 }
 

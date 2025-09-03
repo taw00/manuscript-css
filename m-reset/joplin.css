@@ -95,6 +95,7 @@ body {
      * :last-of-type a css class.
      */
     #manuscript {
+        /* Dealt with in m-core/prose
         & div.joplin-editable { margin: 0; }
         & div.joplin-editable:has(+ div.joplin-editable) pre {
             margin: var(--m-elbow-room) var(--m-margins-preformatted);
@@ -106,6 +107,7 @@ body {
         & *:not(div.joplin-editable) + div.joplin-editable pre {
             margin-top: 0;
         }
+        */
     }
 
 

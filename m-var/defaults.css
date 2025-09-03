@@ -81,10 +81,6 @@
 
     --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
 
-    /* left and right margins - pre and blockquote */
-    --m-margins-preformatted: 0;
-    /*--m-margins-blockquote: calc(var(--m-page-margin) * .75);*/ /* set later in file */
-
     /* Offset calculations used to offset title-header blocks from top of the
      * page. Manuscripts standards recommend placing the main title-block
      * header anywhere from 1/3rd to 1/2 down the page. And if a long-form
@@ -194,7 +190,6 @@
     --m-indent-narrative: var(--m-indentUS); */
     --m-indent-narrative-first-paragraph: 0;
     --m-paragraph-spacing-narrative: 0;
-    --m-margins-blockquote: calc(var(--m-indent-narrative) * 1.5);
 
     --m-indent-nonnarrative: 0;
     --m-indent-nonnarrative-first-paragraph: var(--m-indent-nonnarrative);
@@ -203,6 +198,14 @@
     --m-indent-non-narrative: var(--m-indent-nonnarrative);
     --m-indent-non-narrative-first-paragraph: var(--m-indent-nonnarrative);
     --m-paragraph-spacing-non-narrative: var(--m-paragraph-spacing-nonnarrative);
+
+    --m-spacing-poem-block-narrative: var(--m-paragraph-spacing-nonnarrative);
+    --m-spacing-poem-block-nonnarrative: calc(var(--m-paragraph-spacing-nonnarrative) * 2);
+    --m-spacing-poem-block-non-narrative: var(--m-spacing-poem-block-nonnarrative);
+
+    /* left and right margins - pre and blockquote */
+    --m-margin-poem: var(--m-indent-narrative);
+    --m-margin-blockquote: calc(var(--m-indent-narrative) * 1.5);
 
     /*
      * DEFAULTS - section 4 - baseline #manuscript.poetry specific

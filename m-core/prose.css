@@ -129,15 +129,71 @@
     & section.m-scene:not(.foothang)
                            :not(.m-header, ol,ul,dl,menu, li,dt,dd,
                                 table,thead,tbody,tfoot,th,tr,td,colgroup,col) p {
-        text-indent: var(--m-indent);
         margin-top: var(--m-paragraph-spacing);
         margin-block-start: var(--m-paragraph-spacing);
+    }
+
+    & section.m-scene:not(.foothang)
+                           :not(.m-header, ol,ul,dl,menu, li,dt,dd,
+                                table,thead,tbody,tfoot,th,tr,td,colgroup,col,.joplin-editable) pre,
+    & section.m-scene:not(.foothang)
+                           :not(.m-header, ol,ul,dl,menu, li,dt,dd,
+                                table,thead,tbody,tfoot,th,tr,td,colgroup,col) .joplin-editable {
+        margin-top: var(--m-paragraph-spacing);
+        margin-block-start: var(--m-paragraph-spacing);
+    }
+    & blockquote:not(:has(.joplin-editable)) > pre,
+    & blockquote > .joplin-editable,
+    & blockquote:not(:has(.joplin-editable)) :not(ol,ul,dl,menu,table) pre,
+    & blockquote :not(ol,ul,dl,menu,table) .joplin-editable {
+        margin-top: var(--m-paragraph-spacing);
+        margin-block-start: var(--m-paragraph-spacing);
+    }
+
+
+    & section.m-scene > .joplin-editable {
+        margin-left: 0;
+        margin-inline-start: 0;
+        margin-right: 0;
+        margin-inline-end: 0;
+    }
+    & section.m-scene > .x-poem {
+        margin-left: var(--m-indent);
+        margin-inline-start: var(--m-indent);
+        margin-right: var(--m-indent);
+        margin-inline-end: var(--m-indent);
+        /*
+        margin-left: var(--m-margin-poem);
+        margin-inline-start: var(--m-margin-poem);
+        margin-right: var(--m-margin-poem);
+        margin-inline-end: var(--m-margin-poem);
+        */
+    }
+    & section.m-scene :not(.x-poem) + .x-poem {
+        margin-top: var(--m-spacing-poem-block);
+        margin-block-start: var(--m-spacing-poem-block);
+    }
+    & section.m-scene .x-poem:has(+ :not(.x-poem)) {
+        margin-bottom: var(--m-spacing-poem-block);
+        margin-block-end: var(--m-spacing-poem-block);
+    }
+
+    & blockquote > p,
+    & blockquote :not(ol,ul,dl,menu,table) p,
+    & section.m-scene:not(.foothang) > p,
+    & section.m-scene:not(.foothang)
+                           :not(.m-header, ol,ul,dl,menu, li,dt,dd,
+                                table,thead,tbody,tfoot,th,tr,td,colgroup,col) p {
+        text-indent: var(--m-indent);
     }
 
     /* ... and treat paragraphs after certain classes/elements different */
     & > :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
     & :not(.foothang) :is(blockquote,h1,h2,h3,h4,h5,h6,img,figure,section) + p,
     & :is(blockquote, section.m-scene:not(.foothang)) > p:first-of-type {
+        text-indent: var(--m-indent-first-paragraph) !important;
+    }
+    & section.m-scene :not(p,pre) + p {
         text-indent: var(--m-indent-first-paragraph) !important;
     }
     & :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
