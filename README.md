@@ -1,9 +1,9 @@
-# Manuscript-Formatted Markdown for Creative Writers
+# Write your Manuscript in Markdown or HTML — for Creative Writers
 
 Are you a writer? In particular, a writer of narrative works? Fiction,
-narrative nonfiction, memoir, etc? Do you draft using a text editor? And do you
-wish to share your drafts in a professional manner without having to port your
-work to a word processor?
+narrative nonfiction, memoir, etc? Do prefer the simplicity of drafting you
+work in a text or markdown editor? And do you wish to share your drafts in a
+professional manner without having to port your work to a word processor?
 
 Now, you can stay in your favorite text editor and still have a means to
 present your work in a professional manner for review, critique, or whatever,
