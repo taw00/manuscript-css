@@ -41,15 +41,12 @@ repository. These manuscriptss were rendered from their
 corresponding markdown-formatted draft documents. No fluff and easy to read and
 review. Here are some screenshots of the results . . .
 
-<a href="misc/README-short-story-poe.jpg"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.jpg" alt="short story: The Tell-Tale Heart (Poe)" /></a>
-<a href="misc/README-long-story-lovecraft.jpg"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.jpg" alt="long long: At the Mountains of Madness (Lovecraft)" /></a>
-
-<!-- ![short format: The Tell-Tale Heart](misc/README-short-story-poe.png) -->
-<!-- ![long format: At the Mountains of Madness](misc/README-long-story-lovecraft.pdf) -->
+<a href="examples/example-poe-the-tell-tale-heart.pdf"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.jpg" alt="short story: The Tell-Tale Heart (Poe)" /></a>
+<a href="examples/example-lovecraft-at-the-mountains-of-madness.pdf"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.jpg" alt="long long: At the Mountains of Madness (Lovecraft)" /></a>
 
 <div style="clear: both;"></div>
 
-<a href="misc/README-long-form-prose.jpg"><img src="misc/README-long-form-prose.jpg" width="100%" alt="long form prose (novel) example" /></a>
+<a href="examples/example-prose-long-form.pdf"><img src="misc/README-long-form-prose.jpg" width="100%" alt="long form prose (novel) example" /></a>
 
 <div style="clear: both;"></div>
 
