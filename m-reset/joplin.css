@@ -86,31 +86,6 @@ body {
         }
     }
 
-
-    /* Joplin wraps all PREs with div.joplin-editable, so we have to
-     * adjust margination for that. Markdown tools can be . . . meddlesome.
-     * I am not completely confident that I have all the margin-spacing correctly
-     * configured for all permutations of pre.
-     * Note: we have to do all of this hoop-jumping because you can't
-     * :last-of-type a css class.
-     */
-    #manuscript {
-        /* Dealt with in m-core/prose
-        & div.joplin-editable { margin: 0; }
-        & div.joplin-editable:has(+ div.joplin-editable) pre {
-            margin: var(--m-elbow-room) var(--m-margins-preformatted);
-        }
-        & div.joplin-editable:not(:has + div.joplin-editable) pre {
-            margin: var(--m-elbow-room) var(--m-margins-preformatted) 0;
-        }
-        & * > div.joplin-editable pre,
-        & *:not(div.joplin-editable) + div.joplin-editable pre {
-            margin-top: 0;
-        }
-        */
-    }
-
-
 } /* end @media screen */
 
 
@@ -177,17 +152,16 @@ body {
 
     div#joplin-container-pluginAssetsContainer { display: none !important; }
 
-    /* exported view: remove Joplin-inserted title and excess padding
-    div.exported-note {
-        margin: 0;
-        padding: 0;
-    }
-    div.exported-note > div.exported-note-title {
-        visibility: hidden;
-        display: none !important;
-    }*/
 } /* end @media print */
 
+
+
+/* Joplin wraps all PREs with div.joplin-editable. */
+#manuscript {
+    & .joplin-editable {
+        margin: 0; padding: 0; border: 0;
+    }
+}
 
 
 /* rendered note main box */

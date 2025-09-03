@@ -52,9 +52,6 @@
         margin-block-end: var(--m-spacing-stanza);
     }
     /* this needs to make its way to m-reset/joplin.css */
-    & .joplin-editable {
-        margin: 0; padding: 0; border: 0;
-    }
 
     & :is(section.m-poem, div.x-poem) {
         & pre,
@@ -74,9 +71,12 @@
         }
     }
 
-    /* arbitrary poems
-     * Note, we rely on margin collapsing to do the right thing with nested pre
-     * blocks, etc. */
+    /*
+     * arbitrary poems
+     */
+
+    /* (Note, we rely on margin collapsing to do the right thing with nested
+     * pre blocks, etc.) */
     & .x-poem {
         /* space at the beginging & ending */
         margin-top: var(--m-spacing-poem);
@@ -128,6 +128,11 @@
         margin-top: var(--m-spacing-poem);
         margin-block-start: var(--m-spacing-poem);
     }
+
+    /*
+     * poem sections
+     */
+
     & section.m-poem {
         & :is(h1,h2,h3,h4,h5,h6,blockquote,p,.m-header) {
             line-height: var(--m-line-spacing-poetry);
@@ -135,7 +140,7 @@
         & .m-header > h1 {
             text-transform: var(--m-text-transform-title-poetry);
         }
-        & .m-header :is(p, h1, h2, h3, h4, h5, h6) {
+        & .m-header :is(p, h1, h2, h3, h4, h5, h6),
         & .m-header > .x-poem {
             margin-left: 0;
             margin-inline-start: 0;
@@ -144,7 +149,7 @@
         /* poetry content:
          * small margin between poetry content and a poem's title block if it
          * exists */
-        & > .m-header + * {
+        & > div.m-header + * {
             padding-top: var(--m-room-for-two);
         }
 
