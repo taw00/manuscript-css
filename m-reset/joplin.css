@@ -169,6 +169,8 @@ body {
         }
     }
 
+    div#joplin-container-pluginAssetsContainer { display: none !important; }
+
     /* exported view: remove Joplin-inserted title and excess padding
     div.exported-note {
         margin: 0;
