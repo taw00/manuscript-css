@@ -231,5 +231,57 @@
     }
 } /* end @media print */
 
+
+/*
+ * simple syntax checks
+ */
+#vpage {
+    &:is(.long,.short,.prose,.poetry,.nonnarrative,.non-narrative,.simple,.text-only) {
+        & #manuscript {
+            & > *:first-child::after {
+                display: float;
+                box-sizing: border-box;
+                position: absolute;
+                top: 1in;
+                left: 0;
+                color: red;
+                background-color: black;
+                padding: 10px;
+                font-family: var(--m-fontstack-courier);
+                width: var(--m-content-width);
+                text-align: center;
+                white-space: pre-wrap;
+                border: yellow 3px solid;
+                content: 'ERROR: Class mismatch: at least one class designated in '
+                         '<div id="vpage" class="WRONG-LOCATION"> is meant to be '
+                         'used as a class in <article id="manuscript" '
+                         'class="CORRECT-LOCATION"> instead.';
+            }
+        }
+    }
+    & #manuscript:is(.us,.US,.ush,.USh,.USH,.a4,.A4,.a5,.A5,.a6,.A6,
+                     .dim,.dimmer,.dark,/*,.flip-margins*/) {
+        & > *:first-child::after {
+            display: float;
+            box-sizing: border-box;
+            position: absolute;
+            top: 1in;
+            left: 0;
+            color: orange;
+            background-color: black;
+            padding: 10px;
+            font-family: var(--m-fontstack-courier);
+            width: var(--m-content-width);
+            text-align: center;
+            white-space: pre-wrap;
+            border: yellow 3px solid;
+            content: 'ERROR: Class mismatch: at least one class '
+                     'designated in <article id="manuscript" '
+                     'class="WRONG-LOCATION"> is meant to be used as a class in '
+                     '<div id="vpage" class="CORRECT-LOCATION"> instead.';
+        }
+    }
+}
+
 } /* end @layer lm-var-permutations */
 
