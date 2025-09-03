@@ -213,7 +213,6 @@
 
 @media print {
     :root {
-        --m-page-margin: 0;
         &:has(#manuscript:not(.long)) {
             /* the default, but let's be explicit */
             /* short-form print behavior: if page break simulation was set for some
