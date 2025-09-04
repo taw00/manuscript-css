@@ -27,12 +27,16 @@
         --m-text-color: var(--m-text-color-theme-default);
         --m-link-color: var(--m-link-color-theme-default);
         --m-link-hover-color: var(--m-link-hover-color-theme-default);
+        --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-default);
+        --m-vpage-frame-color: var(--m-vpage-frame-color-theme-default);
         &:has(#vpage:is(.dim-theme,.dim,.dimtheme)) {
             --m-desktop-color: var(--m-desktop-color-theme-dim);
             --m-paper-color: var(--m-paper-color-theme-dim);
             --m-text-color: var(--m-text-color-theme-dim);
             --m-link-color: var(--m-link-color-theme-dim);
             --m-link-hover-color: var(--m-link-hover-color-theme-dim);
+            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-default);
+            --m-vpage-frame-color: var(--m-vpage-frame-color-theme-dim);
         }
         &:has(#vpage:is(.dimmer-theme,.dimmer,.dimmertheme)) {
             --m-desktop-color: var(--m-desktop-color-theme-dimmer);
@@ -40,6 +44,8 @@
             --m-text-color: var(--m-text-color-theme-dimmer);
             --m-link-color: var(--m-link-color-theme-dimmer);
             --m-link-hover-color: var(--m-link-hover-color-theme-dimmer);
+            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-default);
+            --m-vpage-frame-color: var(--m-vpage-frame-color-theme-dimmer);
         }
         &:has(#vpage:is(.dark-theme,.dark,.darktheme)) {
             --m-desktop-color: var(--m-desktop-color-theme-dark);
@@ -47,6 +53,35 @@
             --m-text-color: var(--m-text-color-theme-dark);
             --m-link-color: var(--m-link-color-theme-dark);
             --m-link-hover-color: var(--m-link-hover-color-theme-dark);
+            /*--m-page-break-simulated-color: #96AAFF40;*/
+            --m-page-break-simulated-color: #F5F5F510;
+            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark);
+            --m-vpage-frame-color: var(--m-vpage-frame-color-theme-dark);
+        }
+        &:has(#vpage:is(.amber-theme,.amber,.ambertheme)) {
+            /*
+            --m-desktop-color: #242424ff;
+            --m-desktop-color: #2d2d2dff;
+            --m-desktop-color: #252217ff;
+            --m-desktop-color: #171713ff;
+            --m-desktop-color: #0f0f0fff;
+            --m-paper-color: #303030ff;
+            --m-paper-color: #101010ff;
+            --m-paper-color: #050505ff;
+            --m-text-color: #FFB000;   / * bolder * /
+            --m-link-color: #ffe372ff; / * lighter * /
+            --m-text-color: #ffe372ff; / * lighter * /
+            --m-link-color: #FFB000;   / * bolder * /
+            --m-link-color: #cdc4a4ff; / * desaturated * /
+            --m-link-hover-color: #ffe37280; / * darker * /
+            */
+            --m-desktop-color: var(--m-desktop-color-theme-amber);
+            --m-paper-color: var(--m-paper-color-theme-amber);
+            --m-text-color: var(--m-text-color-theme-amber);
+            --m-link-color: var(--m-link-color-theme-amber);
+            --m-link-hover-color: var(--m-link-hover-color-theme-amber);
+            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-amber);
+            --m-vpage-frame-color: var(--m-vpage-frame-color-theme-amber);
         }
 
         &:has(#vpage.plain) {
@@ -61,7 +96,9 @@
             --m-vpage-frame: 0;
             --m-vpage-frame-margin: 0;
         }
-    }
+        --m-vpage-frame: 0 0 20px var(--m-vpage-frame-color);
+        --m-vpage-frame-margin: 20px auto;
+    } /* end :root */
 
 } /* end @media screen; */
 

@@ -239,7 +239,6 @@
     &:is(.long,.short,.prose,.poetry,.nonnarrative,.non-narrative,.simple,.text-only) {
         & #manuscript {
             & > *:first-child::after {
-                display: float;
                 box-sizing: border-box;
                 position: absolute;
                 top: 1in;
@@ -260,9 +259,8 @@
         }
     }
     & #manuscript:is(.us,.US,.ush,.USh,.USH,.a4,.A4,.a5,.A5,.a6,.A6,
-                     .dim,.dimmer,.dark,/*,.flip-margins*/) {
+                     .dim,.dimmer,.dark,.amber,/*,.flip-margins*/) {
         & > *:first-child::after {
-            display: float;
             box-sizing: border-box;
             position: absolute;
             top: 1in;

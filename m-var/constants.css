@@ -132,7 +132,7 @@
     --m-page-break-simulated-padding-short: 0;
     /* … for the simulated page break for long-form docs, we use a heavy faded
      *   dashed line. For the title page, we add padding before that line. */
-    --m-page-break-simulated-long:  5px dashed rgb(211 211 211 / 50%); /* faded lightgray */
+    --m-page-break-simulated-long:  4px dashed var(--m-page-break-simulated-color);
     --m-page-break-simulated-padding-long: calc(var(--m-offset-title) - 1in);
 
     /* the document facts (.m-facts) - short-form and long-form
@@ -191,17 +191,6 @@
     --m-color-eggplant: #483248;
     --m-color-eggplant-dark: #2A1D2A;
     --m-color-eggplant-darker: #0F0A0F;
-
-
-    /* box-shadow, for the 3D effect with the paper */
-    --m-paper-frame-black: 0 0 20px black;
-    --m-paper-frame-gray9: 0 0 20px black;
-    --m-paper-frame-dimgray: 0 0 20px dimgray;
-    --m-paper-frame-gray7: 0 0 20px dimgray;
-    --m-paper-frame-darkgray: 0 0 20px darkgray;
-    --m-paper-frame-gray5: 0 0 20px darkgray;
-    --m-paper-frame-gainsboro: 0 0 20px gainsboro;
-    --m-paper-frame-gray2: 0 0 20px gainsboro;
 
     /* for the page 2+ headers */
     --m-pagination-header: "Lastname / Short Title / " counter(page);
