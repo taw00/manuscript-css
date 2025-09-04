@@ -259,7 +259,7 @@
         }
     }
     & #manuscript:is(.us,.US,.ush,.USh,.USH,.a4,.A4,.a5,.A5,.a6,.A6,
-                     .dim,.dimmer,.dark,.amber,/*,.flip-margins*/) {
+                     .dim,.dimmer,.dark,.darkamber,.darkgold/*,.flip-margins*/) {
         & > *:first-child::after {
             box-sizing: border-box;
             position: absolute;

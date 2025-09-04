@@ -390,50 +390,57 @@
     --m-desktop-color-theme-dim: var(--m-color-gray7, dimgray);
     --m-desktop-color-theme-dimmer: var(--m-color-gray7-5, #505050);
     --m-desktop-color-theme-dark: var(--m-color-gray-purple-dark);
-    --m-desktop-color-theme-amber: #0f0f0fff;
-    --m-desktop-color-theme-amber: #111111ff;
+    /*--m-desktop-color-theme-darkamber: #0f0f0fff;*/
+    --m-desktop-color-theme-darkamber: #111111ff;
+    --m-desktop-color-theme-darkgold: #111111ff;
 
     /* the paper theme on the desktop */
     --m-paper-color-theme-default: var(--m-color-gray0, white);
     --m-paper-color-theme-dim: var(--m-color-gray4, silver);
     --m-paper-color-theme-dimmer: var(--m-color-gray6, gray);
     --m-paper-color-theme-dark: var(--m-color-gray8, #303030);
-    --m-paper-color-theme-amber: #050505ff;
-    --m-paper-color-theme-amber: #060606ff;
+    /*--m-paper-color-theme-darkamber: #050505ff;*/
+    --m-paper-color-theme-darkamber: #060606ff;
+    --m-paper-color-theme-darkgold: #060606ff;
 
     --m-text-color-theme-default: var(--m-color-gray9, black);
     --m-text-color-theme-dim: var(--m-text-color-theme-default);
     --m-text-color-theme-dimmer: var(--m-text-color-theme-default);
     --m-text-color-theme-dark: var(--m-color-whitesmoke, #F5F5F5ff);
-    --m-text-color-theme-amber: #ffe372ff;
+    --m-text-color-theme-darkamber: #FFB000;
+    --m-text-color-theme-darkgold: #ffe372ff;
 
     --m-link-color-theme-default: var(--m-color-professional-blue2, #122b73);
     --m-link-color-theme-dim: var(--m-link-color-theme-default);
     --m-link-color-theme-dimmer: var(--m-link-color-theme-default);
     --m-link-color-theme-dark: var(--m-color-professional-blue7, #96AAFF);
-    --m-link-color-theme-amber: #cdc4a4ff;
+    --m-link-color-theme-darkamber: #ffe372ff;
+    --m-link-color-theme-darkgold: #cdc4a4ff;
 
     --m-link-hover-color-theme-default: var(--m-color-gray7, dimgray);
     --m-link-hover-color-theme-dim: var(--m-link-hover-color-theme-default);
     --m-link-hover-color-theme-dimmer: var(--m-link-hover-color-theme-default);
     --m-link-hover-color-theme-dark: var(--m-link-hover-color-theme-default);
-    --m-link-hover-color-theme-amber: #ffe37280;
+    --m-link-hover-color-theme-darkamber: #ffe37280;
+    --m-link-hover-color-theme-darkgold: #ffe37280;
 
     --m-page-break-simulated-color-theme-default: #33333320;
     --m-page-break-simulated-color-theme-dim:     var(--m-page-break-simulated-color-theme-default);
     --m-page-break-simulated-color-theme-dimmer:  var(--m-page-break-simulated-color-theme-default);
     --m-page-break-simulated-color-theme-dark:    #F5F5F510;
-    --m-page-break-simulated-color-theme-amber:   #202020ff;
+    --m-page-break-simulated-color-theme-darkamber:   #202020ff;
+    --m-page-break-simulated-color-theme-darkgold:   #202020ff;
 
     --m-vpage-frame-color-theme-default: var(--m-color-gray9, black);
     --m-vpage-frame-color-theme-dim:     var(--m-vpage-frame-color-theme-default);
     --m-vpage-frame-color-theme-dimmer:  var(--m-vpage-frame-color-theme-default);
     --m-vpage-frame-color-theme-dark:    var(--m-vpage-frame-color-theme-default);
     /*
-    --m-vpage-frame-color-theme-amber:   #202015ff;
-    --m-vpage-frame-color-theme-amber:   #101010ff;
+    --m-vpage-frame-color-theme-darkamber:   #202015ff;
+    --m-vpage-frame-color-theme-darkamber:   #101010ff;
     */
-    --m-vpage-frame-color-theme-amber:   #ffffff17;
+    --m-vpage-frame-color-theme-darkamber:   #ffffff17;
+    --m-vpage-frame-color-theme-darkgold:   #ffffff17;
 
     /* set in m-var/permutations …
     --m-desktop-color: var(--m-desktop-color-theme-default);
