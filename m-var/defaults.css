@@ -44,7 +44,7 @@
      * DEFAULTS - section 1 - baseline core values
      */
 
-    /* set in m-var/permutations
+    /* set in m-var/permutations.css
     --m-page-width:  var(--m-page-widthUS);
     --m-page-height: var(--m-page-heightUS);
     --m-page-margin: var(--m-page-marginUS);
@@ -190,7 +190,7 @@
     --m-font-family-non-narrative-code: var(--m-font-family-nonnarrative-code);
 
     /* first-line indent/inter-paragraph spacing - narrative & nonnarrative */
-    /* set in m-var/permutations …
+    /* set in m-var/permutations.css …
     --m-indent-narrative: var(--m-indentUS); */
     --m-indent-narrative-first-paragraph: 0;
     --m-paragraph-spacing-narrative: 0;
@@ -233,7 +233,7 @@
 
     /* everything is defaulted to -narrative and then that gets reset
      * by manuscript.css to something different if necessary */
-    /* set in m-var/permutations …
+    /* set in m-var/permutations.css …
     --m-font-family:              var(--m-font-family-narrative);
     --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
     --m-font-family-code:         var(--m-font-family-narrative-code);
@@ -332,7 +332,7 @@
     --m-font-weight-title-poem:  var(--m-font-weight);
     --m-font-weight-byline-poem: var(--m-font-weight);
 
-    /* set in m-var/permutations …
+    /* set in m-var/permutations.css …
     --m-font-family-title-poem:  inherit;
     --m-font-family-byline-poem: inherit;
     */
@@ -362,7 +362,7 @@
      */
 
     /* .m-facts settings */
-    /* set in m-var/permutations …
+    /* set in m-var/permutations.css …
     --m-position-facts:     var(--m-position-facts-short);
     --m-top-facts:          var(--m-top-facts-short);
     --m-bottom-facts:       var(--m-bottom-facts-short);
@@ -379,7 +379,7 @@
     */
 
     /* page break settings - these get refined settings elsewhere */
-    /* set in m-var/permutations …
+    /* set in m-var/permutations.css …
     --m-page-break: var(--m-page-break-short);                     / * unset * /
     --m-page-break-simulated: var(--m-page-break-simulated-short); / * 0 * /
     --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); / * 0 * /
@@ -390,65 +390,59 @@
     --m-desktop-color-theme-dim:        var(--m-color-gray7, dimgray);
     --m-desktop-color-theme-dimmer:     var(--m-color-gray7pt5, #444444ff);
     --m-desktop-color-theme-dark:       var(--m-color-gray-purple-dark);
-    --m-desktop-color-theme-darkyellow: var(--m-color-gray-yellow-dark);
-    --m-desktop-color-theme-darkamber:  var(--m-color-gray-yellow-dark);
-    --m-desktop-color-theme-darkgreen:  var(--m-color-gray-green-dark);
+    --m-desktop-color-theme-dark-yellow: var(--m-color-gray-yellow-dark);
+    --m-desktop-color-theme-dark-amber:  var(--m-color-gray-yellow-dark);
+    --m-desktop-color-theme-dark-green:  var(--m-color-gray-green-dark);
 
     /* the paper theme on the desktop */
     --m-paper-color-theme-default:    var(--m-color-gray0, white);
     --m-paper-color-theme-dim:        var(--m-color-gray4, silver);
     --m-paper-color-theme-dimmer:     var(--m-color-gray6, gray);
     --m-paper-color-theme-dark:       var(--m-color-gray8, #1e1e1eff);
-    --m-paper-color-theme-darkyellow: var(--m-color-gray8, #1e1e1eff);
-    --m-paper-color-theme-darkamber:  var(--m-color-gray8, #1e1e1eff);
-    --m-paper-color-theme-darkgreen:  var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-yellow: var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-amber:  var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-green:  var(--m-color-gray8, #1e1e1eff);
 
     --m-text-color-theme-default:    var(--m-color-gray9, black);
     --m-text-color-theme-dim:        var(--m-text-color-theme-default);
     --m-text-color-theme-dimmer:     var(--m-text-color-theme-default);
     --m-text-color-theme-dark:       var(--m-color-whitesmoke, #f5f5f5ff);
-    --m-text-color-theme-darkamber:  #ffb000ff;
-    --m-text-color-theme-darkyellow: #ffe372ff;
-    --m-text-color-theme-darkgreen:  #72ff83ff;
+    --m-text-color-theme-dark-amber:  #ffb000ff;
+    --m-text-color-theme-dark-yellow: #ffe372ff;
+    --m-text-color-theme-dark-green:  #72ff83ff;
+
 
     --m-link-color-theme-default:    var(--m-color-professional-blue2, #122b73ff);
     --m-link-color-theme-dim:        var(--m-link-color-theme-default);
     --m-link-color-theme-dimmer:     var(--m-link-color-theme-default);
     --m-link-color-theme-dark:       var(--m-color-professional-blue7, #a5aaffff);
-    --m-link-color-theme-darkamber:  #ffcf66ff;
-    --m-link-color-theme-darkyellow: #fff0b3ff;
-    --m-link-color-theme-darkgreen:  #b3ffbcff;
+    --m-link-color-theme-dark-amber:  #ffcf66ff;
+    --m-link-color-theme-dark-yellow: #fff0b3ff;
+    --m-link-color-theme-dark-green:  #b3ffbcff;
 
     --m-link-hover-color-theme-default:    var(--m-color-gray7, dimgray);
     --m-link-hover-color-theme-dim:        var(--m-link-hover-color-theme-default);
     --m-link-hover-color-theme-dimmer:     var(--m-link-hover-color-theme-default);
     --m-link-hover-color-theme-dark:       var(--m-link-hover-color-theme-default);
-    --m-link-hover-color-theme-darkamber:  #ffcf6680;
-    --m-link-hover-color-theme-darkyellow: #fff0b380;
-    --m-link-hover-color-theme-darkgreen:  #b3ffbc80;
+    --m-link-hover-color-theme-dark-amber:  #ffcf6680;
+    --m-link-hover-color-theme-dark-yellow: #fff0b380;
+    --m-link-hover-color-theme-dark-green:  #b3ffbc80;
 
     --m-page-break-simulated-color-theme-default:    #33333320;
     --m-page-break-simulated-color-theme-dim:        var(--m-page-break-simulated-color-theme-default);
     --m-page-break-simulated-color-theme-dimmer:     var(--m-page-break-simulated-color-theme-default);
     --m-page-break-simulated-color-theme-dark:       #a5aaff10;
-    --m-page-break-simulated-color-theme-darkamber:  #ffcf6610;
-    --m-page-break-simulated-color-theme-darkyellow: #ffe37210;
-    --m-page-break-simulated-color-theme-darkgreen:  #72ff8310;
+    --m-page-break-simulated-color-theme-dark-amber:  #ffcf6610;
+    --m-page-break-simulated-color-theme-dark-yellow: #ffe37210;
+    --m-page-break-simulated-color-theme-dark-green:  #72ff8310;
 
     --m-vpage-frame-color-theme-default:    var(--m-color-gray9, black);
     --m-vpage-frame-color-theme-dim:        var(--m-vpage-frame-color-theme-default);
     --m-vpage-frame-color-theme-dimmer:     var(--m-vpage-frame-color-theme-default);
     --m-vpage-frame-color-theme-dark:       var(--m-vpage-frame-color-theme-default);
-    --m-vpage-frame-color-theme-darkamber:  var(--m-vpage-frame-color-theme-default);
-    --m-vpage-frame-color-theme-darkyellow: var(--m-vpage-frame-color-theme-default);
-    --m-vpage-frame-color-theme-darkgreen:  var(--m-vpage-frame-color-theme-default);
-    /*
-    --m-vpage-frame-color-theme-darkamber:  #202015ff;
-    --m-vpage-frame-color-theme-darkamber:  #101010ff;
-    --m-vpage-frame-color-theme-darkamber:  #ffffff17;
-    --m-vpage-frame-color-theme-darkyellow: #ffffff17;
-    --m-vpage-frame-color-theme-darkgreen:  #ffffff17;
-    */
+    --m-vpage-frame-color-theme-dark-amber:  var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-yellow: var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-green:  var(--m-vpage-frame-color-theme-default);
 
 } /* end :root scoping */
 
