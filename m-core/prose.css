@@ -92,11 +92,10 @@
      */
 
     & section.m-scene {
-        text-indent: var(--m-indent-first-paragraph) !important;
         /* H-tags and P-tags - align left/start the prose */
         & :is(h1,h2,h3,h4,h5,h6,p) {
             display: block;
-            margin: 0; padding: 0; border: 0;
+            padding: 0; border: 0;
             text-align: var(--m-text-align);
             line-height: var(--m-line-spacing);
             hyphens: var(--m-hyphens);
@@ -137,13 +136,15 @@
                 margin-top: var(--m-paragraph-spacing-scene);
                 margin-block-start: var(--m-paragraph-spacing-scene);
             }
-            & > p:first-of-type {
+            & p:first-of-type {
                 /* first paragraph usually has no indent */
                 text-indent: var(--m-indent-first-paragraph-scene);
             }
             & :not(p) + p {
                 /* a paragraph after a non-paragraph is not indented */
                 text-indent: var(--m-indent-first-paragraph-scene);
+                margin-top: var(--m-paragraph-spacing-scene);
+                margin-block-start: var(--m-paragraph-spacing-scene);
             }
         } /* end #manuscript section.m-scene:not(.foothang) */
 
