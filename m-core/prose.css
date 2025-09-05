@@ -48,13 +48,12 @@
 
 
 #manuscript {
-
     & > :not(p) + p {
         /* a paragraph after a non-paragraph is not indented */
-        text-indent: var(--m-indent-first-paragraph);
+        text-indent: var(--m-indent-first-paragraph-scene);
     }
-    & :is(article, section) :is(h1,h2,h3,h4,h5,h6) + p,
-    & :is(article, section) :is(section) :is(h1,h2,h3,h4,h5,h6) + p {
+    & :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
+    & :is(section) :is(section) :is(h1,h2,h3,h4,h5,h6) + p {
         margin-top: 0;
         margin-block-start: 0;
     }
@@ -76,13 +75,13 @@
             margin-block-start: var(--m-elbow-room);
         }
         & > p {
-            text-indent: var(--m-indent);
-            margin-top: var(--m-paragraph-spacing);
-            margin-block-start: var(--m-paragraph-spacing);
+            text-indent: var(--m-indent-scene);
+            margin-top: var(--m-paragraph-spacing-scene);
+            margin-block-start: var(--m-paragraph-spacing-scene);
         }
         & > p:first-of-type {
             /* first paragraph usually has no indent */
-            text-indent: var(--m-indent-first-paragraph);
+            text-indent: var(--m-indent-first-paragraph-scene);
         }
 
     } /* end #manuscript blockquote */
@@ -109,6 +108,15 @@
             margin-block-start: 0 !important;
         }
 
+        font-family: var(--m-font-family-scene);
+        & code {
+            font-family: var(--m-font-family-code-scene);
+        }
+        & pre,
+        & pre > code {
+            font-family: var(--m-font-family-preformatted-scene);
+        }
+
         /*
          * Normal Scene (not a foothang scene)
          */
@@ -118,25 +126,24 @@
              *              indents at the start
              * Note, the exclusions are pedantic. */
             & > :is(h1,h2,h3,h4,h5,h6),
-            & :not(.m-header, ol,ul,dl,menu, li,dt,dd,
-                   table,thead,tbody,tfoot,th,tr,td,colgroup,col) {
+            & :not(.x-poem,.m-header, ol,ul,dl,menu, li,dt,dd, table,thead,tbody,tfoot,th,tr,td,colgroup,col) {
                 & :is(h1,h2,h3,h4,h5,h6) {
                     margin-top: var(--m-elbow-room);
                     margin-block-start: var(--m-elbow-room);
                 }
             }
             & > p {
-                text-indent: var(--m-indent);
-                margin-top: var(--m-paragraph-spacing);
-                margin-block-start: var(--m-paragraph-spacing);
+                text-indent: var(--m-indent-scene);
+                margin-top: var(--m-paragraph-spacing-scene);
+                margin-block-start: var(--m-paragraph-spacing-scene);
             }
             & > p:first-of-type {
                 /* first paragraph usually has no indent */
-                text-indent: var(--m-indent-first-paragraph);
+                text-indent: var(--m-indent-first-paragraph-scene);
             }
             & :not(p) + p {
                 /* a paragraph after a non-paragraph is not indented */
-                text-indent: var(--m-indent-first-paragraph);
+                text-indent: var(--m-indent-first-paragraph-scene);
             }
         } /* end #manuscript section.m-scene:not(.foothang) */
 
@@ -175,12 +182,12 @@
         /* each scene or a set of subscenes: small padding at top */
         padding-top: var(--m-offset-scene);
         &:not(:first-of-type,:has( > .m-header)) {
-            padding-top: var(--m-paragraph-spacing);
+            padding-top: var(--m-paragraph-spacing-scene);
         }
         /* prose content - there may be a small margin (non-narrative) between
          * prose content and a scene's header block if it exists */
         & > .m-header + * {
-            padding-top: var(--m-paragraph-spacing);
+            padding-top: var(--m-paragraph-spacing-scene);
         }
 
         /*

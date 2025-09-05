@@ -16,6 +16,9 @@
 
 @layer lm-var-permutations {
 
+/*
+ * ":root"-LEVEL VARIABLES
+ */
 :root {
     /* page-dimension-sensitive things: widths, margins, indentations */
     --m-page-width:  var(--m-page-widthUS);
@@ -166,8 +169,6 @@
     &:has(#manuscript:is(.poetry)) {
         --m-font-family:  var(--m-font-family-poetry);
         --m-font-family-title: inherit;
-        --m-font-family-title-poem:  inherit;
-        --m-font-family-byline-poem: inherit;
         --m-offset-title: var(--m-offset-title-short-poetry);
         --m-offset-chapter: var(--m-offset-chapter-short-poetry);
     }
@@ -190,7 +191,7 @@
         --m-manuscript-border: 0px !important;
     }
 
-} /* end :root (aka <html>) */
+} /* end ":root"-LEVEL VARIABLES (before @media differientators) */
 
 
 @media screen {
@@ -231,9 +232,112 @@
     }
 } /* end @media print */
 
+/* real end ":root"-LEVEL VARIABLES */
+
+
+
+
+#manuscript {
+/*
+ * "#manuscript > .m-scene"-SCOPED VARIABLES
+ */
+    & section.m-scene {
+        /* all --m-XXXXX-scene variables are scoped to a scene */
+        --m-indent-scene: var(--m-indent);
+        --m-indent-first-paragraph-scene: var(--m-indent-first-paragraph);
+        --m-paragraph-spacing-scene: var(--m-paragraph-spacing);
+
+        --m-font-family-scene: var(--m-font-family);
+        --m-font-family-preformatted-scene: var(--m-font-family-preformatted);
+        --m-font-family-code: var(--m-font-family-code);
+
+        /* set in m-var/defaults.css …
+         * NOTE: --m-font-size-scene doesn't exist anywhere else
+        --m-font-size-scene:          inherit;
+        --m-font-size-title-scene:    var(--m-font-size-scene);
+        --m-font-size-subtitle-scene: var(--m-font-size-scene);
+        --m-font-size-byline-scene:   var(--m-font-size-scene);
+        --m-font-weight-title-scene:  var(--m-font-weight-scene);
+        --m-font-weight-byline-scene: var(--m-font-weight-scene);
+        --m-font-family-title-scene:  inherit;
+        --m-font-family-byline-scene: inherit;
+        */
+
+        &:is(.narrative) {
+            --m-indent-scene: var(--m-indent-narrative);
+            --m-indent-first-paragraph-scene: var(--m-indent-narrative-first-paragraph);
+            --m-paragraph-spacing-scene: var(--m-paragraph-spacing-narrative);
+            --m-font-family-scene: var(--m-font-family-narrative);
+            --m-font-family-preformatted-scene: var(--m-font-family-narrative-preformatted);
+            --m-font-family-code: var(--m-font-family-narrative-code);
+        }
+        &:is(.nonnarrative, .nonnarrative) {
+            --m-indent-scene: var(--m-indent-nonnarrative);
+            --m-indent-first-paragraph-scene: var(--m-indent-nonnarrative-first-paragraph);
+            --m-paragraph-spacing-scene: var(--m-paragraph-spacing-nonnarrative);
+            --m-font-family-scene: var(--m-font-family-nonnarrative);
+            --m-font-family-preformatted-scene: var(--m-font-family-nonnarrative-preformatted);
+            --m-font-family-code-scene: var(--m-font-family-nonnarrative-code);
+        }
+    }
+
+    /* we don't allow narrative and nonnarrative in subscenes yet
+    & section.m-subscenes > section.m-scene {
+        / * all --m-XXXXX-subscene variables are scoped to a scene w/in
+         * subscenes * /
+        --m-indent-subscene: var(--m-indent);
+        --m-indent-first-paragraph-subscene: var(--m-indent-first-paragraph);
+        --m-paragraph-spacing-subscene: var(--m-paragraph-spacing);
+        --m-font-family-subscene: var(--m-font-family);
+        --m-font-family-preformatted-subscene: var(--m-font-family-preformatted);
+        --m-font-family-subcode: var(--m-font-family-code);
+        &:is(.narrative) {
+            --m-indent-subscene: var(--m-indent-narrative);
+            --m-indent-first-paragraph-subscene: var(--m-indent-narrative-first-paragraph);
+            --m-paragraph-spacing-subscene: var(--m-paragraph-spacing-narrative);
+            --m-font-family-subscene: var(--m-font-family-narrative);
+            --m-font-family-preformatted-subscene: var(--m-font-family-narrative-preformatted);
+            --m-font-family-code-subscene: var(--m-font-family-narrative-code);
+        }
+        &:is(.nonnarrative, .nonnarrative) {
+            --m-indent-subscene: var(--m-indent-nonnarrative);
+            --m-indent-first-paragraph-subscene: var(--m-indent-nonnarrative-first-paragraph);
+            --m-paragraph-spacing-subscene: var(--m-paragraph-spacing-nonnarrative);
+            --m-font-family-subscene: var(--m-font-family-nonnarrative);
+            --m-font-family-preformatted-subscene: var(--m-font-family-nonnarrative-preformatted);
+            --m-font-family-code-subscene: var(--m-font-family-nonnarrative-code);
+        }
+    }
+    */
+
+/* end "#manuscript > .m-scene"-SCOPED VARIABLES */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
  * simple syntax checks
+ * --------------------
  */
 #vpage {
     &:is(.long,.short,.prose,.poetry,.nonnarrative,.non-narrative,.simple,.text-only) {

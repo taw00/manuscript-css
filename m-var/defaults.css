@@ -332,10 +332,8 @@
     --m-font-weight-title-poem:  var(--m-font-weight);
     --m-font-weight-byline-poem: var(--m-font-weight);
 
-    /* set in m-var/permutations.css …
     --m-font-family-title-poem:  inherit;
     --m-font-family-byline-poem: inherit;
-    */
 
     /* font settings - the epigraphs */
     /*--m-font-size-epigraph: .8125rem;*/ /* 13px or ~9.75pt (if parent 16px) */

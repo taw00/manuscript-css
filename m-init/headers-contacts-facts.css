@@ -1,6 +1,6 @@
 /* CSS for Manuscript Formating v3.0
  *
- * Base definitions for #m-contact, .m-header, and .m-facts and the content
+ * Baseline definitions for #m-contact, .m-header, and .m-facts and the content
  * managed by them. This and m-core-page-positioning do some of the same
  * things.
  *
@@ -166,21 +166,42 @@
         }
     }
 
-    & section:is(.m-scene,.m-poem) > .m-header {
-        & > h1 {         /* title: scene or poem*/
+    & section:is(.m-poem) > .m-header,
+    & div:is(.x-poem) > .m-header {
+        & > h1 {         /* title: poem*/
             font-size:   var(--m-font-size-title-poem);
             font-weight: var(--m-font-weight-title-poem);
             font-family: var(--m-font-family-title-poem);
+            line-height: var(--m-line-spacing-poetry);
         }
-        & > h2 {         /* subtitle: scene or poem */
+        & > h2 {         /* subtitle: poem */
             font-size:   var(--m-font-size-subtitle-poem);
             font-weight: var(--m-font-weight-subtitle-poem);
             font-family: var(--m-font-family-subtitle-poem);
+            line-height: var(--m-line-spacing-poetry);
         }
-        & > h3 {         /* author byline: scene or poem */
+        & > h3 {         /* author byline: poem */
             font-size:   var(--m-font-size-byline-poem);
             font-weight: var(--m-font-weight-byline-poem);
             font-family: var(--m-font-family-byline-poem);
+            line-height: var(--m-line-spacing-poetry);
+        }
+    }
+    & section:is(.m-scene) > .m-header {
+        & > h1 {         /* title: scene or poem*/
+            font-size:   var(--m-font-size-title-scene);
+            font-weight: var(--m-font-weight-title-scene);
+            font-family: var(--m-font-family-title-scene);
+        }
+        & > h2 {         /* subtitle: scene or poem */
+            font-size:   var(--m-font-size-subtitle-scene);
+            font-weight: var(--m-font-weight-subtitle-scene);
+            font-family: var(--m-font-family-subtitle-scene);
+        }
+        & > h3 {         /* author byline: scene or poem */
+            font-size:   var(--m-font-size-byline-scene);
+            font-weight: var(--m-font-weight-byline-scene);
+            font-family: var(--m-font-family-byline-scene);
         }
     }
     & section.m-scene {
@@ -193,8 +214,9 @@
         }
     }
 
-    & section.m-poem {
-        padding-top: 0; /* not sure why this exists */
+
+    & section.m-poem,
+    & div.x-poem {
         & .m-header {
             margin-left: 0;
             margin-inline-start: 0;
@@ -204,22 +226,22 @@
                 width: max-content;
                 max-width: min(max-content,100%);
             }
-            & > :is(h1, h2, h3, h4, h5, h6, blockquote,p) {
-                margin-top: 1em;
-            }
         }
         & .m-facts {
             margin: 0;
-            & p { text-align: var(--m-text-align); }
+            & p {
+                text-align: var(--m-text-align);
+            }
         }
-        & > :is(h1, h2, h3, h4, h5, h6, blockquote,p) {
+        & > :is(h1, h2, h3, h4, h5, h6, blockquote, p) {
             display: block;
             margin: 0; padding: 0; border: 0;
             text-align: var(--m-text-align);
         }
     }
 
-    & :not(section.m-poem) > .m-header {
+
+    & :not(section.m-poem,div.x-poem) > .m-header {
         & > :is(h1, h2, h3, h4, h5, h6),
         & > p {
             display: block;

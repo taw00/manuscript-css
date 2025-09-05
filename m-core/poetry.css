@@ -51,9 +51,13 @@
         margin-bottom: var(--m-spacing-stanza);
         margin-block-end: var(--m-spacing-stanza);
     }
-    /* this needs to make its way to m-reset/joplin.css */
 
-    & :is(section.m-poem, div.x-poem) {
+
+    /* div.x-poem, but forcing specificity a bit */
+    & :is(section.m-poem, div.x-poem),
+    & :is(section) :is(section.m-poem, div.x-poem),
+    & :is(section) :is(section) :is(section.m-poem, div.x-poem),
+    & :is(section) :is(section) :is(section) :is(section.m-poem, div.x-poem) {
         & pre,
         & pre > code {
             white-space: pre-wrap; /* we wrap poetry */
@@ -63,20 +67,18 @@
             font-style:  var(--m-font-style-poetry);
             font-family: var(--m-font-family-poetry);
             line-height: var(--m-line-spacing-poetry);
-            .m-header & {
-                font-size: inherit;
-                font-weight: inherit;
-                font-style: inherit;
-            }
+        }
+        .m-header {
+            font-family: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+            line-height: var(--m-line-spacing-poetry);
         }
     }
 
     /*
-     * arbitrary poems
+     * div.x-poem — arbitrary poems
      */
-
-    /* (Note, we rely on margin collapsing to do the right thing with nested
-     * pre blocks, etc.) */
     & .x-poem {
         /* space at the beginging & ending */
         margin-top: var(--m-spacing-poem);
@@ -88,15 +90,43 @@
         margin-inline-start: var(--m-margin-poem);
         margin-right: var(--m-margin-poem);
         margin-inline-end: var(--m-margin-poem);
-        /* if within an epigraph, remove the left & right margining entirely */
-        blockquote &,
-        .m-header blockquote & {
-            margin-left: 0;
-            margin-inline-start: 0;
-            margin-right: 0;
-            margin-inline-end: 0;
+        > .m-header {
+            font-family: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+            line-height: var(--m-line-spacing-poetry);
+            /* H-tags and P-tags - align left */
+            & :is(h1,h2,h3,h4,h5,h6,p) {
+                text-align: var(--m-text-align);
+                line-height: var(--m-line-spacing-poetry);
+                hyphens: var(--m-hyphens);
+            }
+            /* H-tags - spacing between H-tags in the blockquotes
+             * Note, the exclusions are pedantic. */
+            & > :is(h1,h2,h3,h4,h5,h6),
+            & :not(ol,ul,dl,menu,table) :is(h1,h2,h3,h4,h5,h6) {
+                /*
+                margin-top: var(--m-spacing-poem);
+                margin-block-start: var(--m-spacing-poem);
+                */
+            }
+            /* for x-poem, we default to narrative style in the headers */
+            & > p {
+                text-indent: var(--m-indent);
+                margin-top: var(--m-paragraph-spacing);
+                margin-block-start: var(--m-paragraph-spacing);
+            }
+            & > p:first-of-type {
+                /* first paragraph usually has no indent */
+                text-indent: var(--m-indent-first-paragraph);
+            }
         }
     }
+
+
+    /*
+     * div.x-poem (arbitrary poem) inside of an .m-header
+     */
     & > .m-header .x-poem,
     &.m-scene .m-header .x-poem {
         /* if within an m-header, center the whole block (like the rest of the
@@ -107,7 +137,7 @@
         margin-inline-start: auto;
         margin-right: auto;
         margin-inline-end: auto;
-    }
+     }
     & .m-scene > .x-poem {
         margin-left: var(--m-margin-poem);
         margin-inline-start: var(--m-margin-poem);
@@ -118,22 +148,24 @@
         margin-block-start: calc(var(--m-spacing-poem) * 2);
         margin-bottom:      calc(var(--m-spacing-poem) * 2);
         margin-block-end:   calc(var(--m-spacing-poem) * 2);
+    }
+    /* w/in a blockquote (usually an epigraph) remove the left/right
+     * margining */
+    blockquote .x-poem,
+    .m-header blockquote .x-poem {
+        margin-left: 0;
+        margin-inline-start: 0;
+        margin-right: 0;
+        margin-inline-end: 0;
+    }
 
-    }
-    & .m-scene > .x-poem:has( + .x-poem) {
-        margin-bottom: 0;
-        margin-block-end: 0;
-    }
-    & .m-scene > .x-poem + .x-poem {
-        margin-top: var(--m-spacing-poem);
-        margin-block-start: var(--m-spacing-poem);
-    }
 
     /*
-     * poem sections
+     * section.m-poem
      */
 
     & section.m-poem {
+        padding-top: 0; /* not sure why this exists */
         & :is(h1,h2,h3,h4,h5,h6,blockquote,p,.m-header) {
             line-height: var(--m-line-spacing-poetry);
         }
