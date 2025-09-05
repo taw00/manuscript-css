@@ -430,10 +430,10 @@
     --m-page-break-simulated-color-theme-default:    #33333320;
     --m-page-break-simulated-color-theme-dim:        var(--m-page-break-simulated-color-theme-default);
     --m-page-break-simulated-color-theme-dimmer:     var(--m-page-break-simulated-color-theme-default);
-    --m-page-break-simulated-color-theme-dark:       #F5F5F510;
-    --m-page-break-simulated-color-theme-darkamber:  #202020ff;
-    --m-page-break-simulated-color-theme-darkyellow: #202020ff;
-    --m-page-break-simulated-color-theme-darkgreen:  #202020ff;
+    --m-page-break-simulated-color-theme-dark:       #a5aaff10;
+    --m-page-break-simulated-color-theme-darkamber:  #ffcf6610;
+    --m-page-break-simulated-color-theme-darkyellow: #ffe37210;
+    --m-page-break-simulated-color-theme-darkgreen:  #72ff8310;
 
     --m-vpage-frame-color-theme-default:    var(--m-color-gray9, black);
     --m-vpage-frame-color-theme-dim:        var(--m-vpage-frame-color-theme-default);

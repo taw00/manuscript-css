@@ -29,7 +29,7 @@
             --m-link-hover-color:                     var(--m-link-hover-color-theme-default);
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-default);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-default);
-        &:has(#vpage:is([theme="dim"])) {
+        &:has(#vpage:is(.dim)) {
             --m-desktop-color:                           var(--m-desktop-color-theme-dim);
             --m-paper-color:                               var(--m-paper-color-theme-dim);
             --m-text-color:                                 var(--m-text-color-theme-dim);
@@ -38,7 +38,7 @@
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dim);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dim);
         }
-        &:has(#vpage:is([theme="dimmer"])) {
+        &:has(#vpage:is(.dimmer)) {
             --m-desktop-color:                           var(--m-desktop-color-theme-dimmer);
             --m-paper-color:                               var(--m-paper-color-theme-dimmer);
             --m-text-color:                                 var(--m-text-color-theme-dimmer);
@@ -47,7 +47,7 @@
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dimmer);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dimmer);
         }
-        &:has(#vpage:is([theme="dark"])) {
+        &:has(#vpage:is(.dark)) {
             --m-desktop-color:                           var(--m-desktop-color-theme-dark);
             --m-paper-color:                               var(--m-paper-color-theme-dark);
             --m-text-color:                                 var(--m-text-color-theme-dark);
@@ -56,7 +56,7 @@
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark);
         }
-        &:has(#vpage:is([theme="darkamber"])) {
+        &:has(#vpage:is(.darkamber)) {
             --m-desktop-color:                           var(--m-desktop-color-theme-darkamber);
             --m-paper-color:                               var(--m-paper-color-theme-darkamber);
             --m-text-color:                                 var(--m-text-color-theme-darkamber);
@@ -65,7 +65,7 @@
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-darkamber);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-darkamber);
         }
-        &:has(#vpage:is([theme="darkyellow"])) {
+        &:has(#vpage:is(.darkyellow)) {
             --m-desktop-color:                           var(--m-desktop-color-theme-darkyellow);
             --m-paper-color:                               var(--m-paper-color-theme-darkyellow);
             --m-text-color:                                 var(--m-text-color-theme-darkyellow);
@@ -74,7 +74,7 @@
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-darkyellow);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-darkyellow);
         }
-        &:has(#vpage:is([theme="darkgreen"])) {
+        &:has(#vpage:is(.darkgreen)) {
             --m-desktop-color:                           var(--m-desktop-color-theme-darkgreen);
             --m-paper-color:                               var(--m-paper-color-theme-darkgreen);
             --m-text-color:                                 var(--m-text-color-theme-darkgreen);
