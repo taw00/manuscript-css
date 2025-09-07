@@ -46,7 +46,6 @@
     & > .m-header {
         margin: var(--m-offset-title) auto 0;
         position: static; /* .m-facts has to be able to float */
-        overflow: visible;
         & > .m-facts {
             position: var(--m-position-facts);
             inset: var(--m-top-facts) var(--m-right-facts) auto auto;
@@ -56,11 +55,6 @@
     &:not(.long) > .m-header > .m-facts > p {
         /* TODO ... do this better via permutations? */
         margin: 0;
-    }
-    & section.m-chapter > .m-header {
-        /* TODO ... do this better via permutations? */
-        margin-bottom: calc(var(--m-room-for-two) * 2);
-        margin-block-end: calc(var(--m-room-for-two) * 2);
     }
 }
 

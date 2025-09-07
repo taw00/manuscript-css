@@ -22,9 +22,20 @@ body,
 #vpage > *,
 #manuscript > *,
 #manuscript .m-part > *,
-#manuscript .m-chapter > * {
+#manuscript .m-chapter > *,
+#manuscript .m-scene > *,
+#manuscript .m-poem > * {
     display: none;
 }
+/*
+#manuscript .m-poem > *,
+#manuscript .m-header > *,
+#manuscript .m-facts > *,
+#manuscript .x-poem > * {
+    text-shadow: #ffcc00 1px 0 10px;
+    text-shadow: red 1px 0 5px;
+}
+*/
 html:has(body),
 body:has(div#vpage),
 div#vpage:has(article#manuscript),
@@ -47,14 +58,35 @@ div#vpage > article#manuscript > section.m-chapter > section.m-scene,
 div#vpage > article#manuscript > section.m-chapter > section.m-poem,
 div#vpage > article#manuscript > section.m-part > section.m-chapter > div.m-header,
 div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-scene,
-div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-poem {
+div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-poem,
+div#vpage > article#manuscript section.m-scene > *,
+div#vpage > article#manuscript section.m-poem > * {
+    display: block;
+}
+/*
+div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-poem > *,
+div#vpage > article#manuscript div.m-header > *,
+div#vpage > article#manuscript div.m-facts > *,
+div#vpage > article#manuscript div.x-poem,
+div#vpage > article#manuscript div.x-poem > * {
     display: block;
     box-sizing: border-box;
+    text-shadow: unset;
+*/
+/*
+div#vpage > article#manuscript section.m-scene > *,
+div#vpage > article#manuscript section.m-poem > * {
+    text-shadow: unset;
 }
+div#vpage > article#manuscript div.m-header > :is(h1,h2,h3,h4,h5,blockquote,p,pre,div.x-poem,div.m-facts) {
+    text-shadow: unset;
+}
+*/
+
+
+
 #manuscript {
-    & > .m-facts,
-    & :not(section) .m-facts,
-    & section:is(.m-chapter,.m-scene) .m-facts,
+    & .m-facts,
     & div.x-poem {
         display: block;
         box-sizing: border-box;

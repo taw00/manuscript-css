@@ -11,8 +11,7 @@
 
 #manuscript {
     & #m-contact {
-        box-sizing: border-box;
-        overflow: visible;
+        /*box-sizing: border-box; XXXCUTXXX*/
         p {
             text-align: var(--m-text-align);
             text-indent: 0;
@@ -26,11 +25,6 @@
             }
         }
 
-    }
-
-    & .m-facts {
-        box-sizing: border-box;
-        overflow: visible;
     }
 
     /*
@@ -49,25 +43,33 @@
             margin: var(--m-elbow-room) auto;
             line-height: var(--m-line-spacing);
 
-            :not(pre,code) {         /* the epigraphs, fonts */
-                /*text-align: justify; hyphens: auto;*/
-                font-size:   var(--m-font-size-epigraph);
-                font-weight: var(--m-font-weight-epigraph);
-                font-family: var(--m-font-family-epigraph);
-                font-style:  var(--m-font-style-epigraph);
-            }
+            /* the epigraphs, fonts */
+            /*text-align: justify; hyphens: auto;*/
+            font-size:   var(--m-font-size-epigraph);
+            font-weight: var(--m-font-weight-epigraph);
+            font-family: var(--m-font-family-epigraph);
+            font-style:  var(--m-font-style-epigraph);
         }
 
-        /* all content starts as centered and with no spacing */
+        /* all header content starts as centered and with no spacing */
         & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
-        & > p,                             /* all paragraphs */
-        :not(blockquote,.m-facts) p {      /* …except blockquotes & .m-facts */
+        & > p {                            /* all paragraphs */
             padding: 0; border: 0;
             text-align: center;
         }
         & p {
             margin-top: var(--m-elbow-room);
-            margin-block-stert: var(--m-elbow-room);
+            margin-block-start: var(--m-elbow-room);
+        }
+        & .m-facts > p {
+            text-indent: unset;
+            text-align: center;
+        }
+
+        /* if a header is followed by a header or a scene or a poem … space! */
+        &:has(+ .m-header, + .m-scene, + .m-poem) {
+            margin-bottom: calc(var(--m-room-for-two) * 2);;
+            margin-block-end: calc(var(--m-room-for-two) * 2);;
         }
 
         /* explicityly no top and bottom margins for first and last */

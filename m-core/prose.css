@@ -186,18 +186,31 @@
          * Scene padding at the top
          */
 
-        /* each scene or a set of subscenes: small padding at top */
-        /*
-        padding-top: var(--m-offset-scene);
-        &:not(:first-of-type,
-        :has( > .m-header)) {
-            padding-top: var(--m-paragraph-spacing-scene);
-        }
-        */
-        /* prose content - there may be a small margin (non-narrative) between
-         * prose content and a scene's header block if it exists */
-        & > .m-header + * {
-            padding-top: var(--m-paragraph-spacing-scene);
+        & > .m-header {
+            /* prose content - there may be a small margin (non-narrative)
+             * between prose content and a scene's header block if it exists */
+            & + * {
+                padding-top: var(--m-paragraph-spacing-scene);
+            }
+            /* all header content starts as centered and with no spacing */
+            & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
+            & > p {                            /* all paragraphs */
+                padding: 0; border: 0;
+                text-align: center;
+            }
+            /* have to reset this because of the top-level .m-scene rules */
+            & .m-facts {
+                & > p {
+                    text-indent: unset;
+                    text-align: center;
+                    margin-top: 0;
+                    margin-block-start: 0;
+                }
+                & > p + p {
+                    margin-top: var(--m-paragraph-spacing-scene);
+                    margin-block-start: var(--m-paragraph-spacing-scene);
+                }
+            }
         }
 
         /*
