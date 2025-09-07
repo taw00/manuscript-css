@@ -48,10 +48,18 @@
 
 
 #manuscript {
-    & > :not(p) + p {
+    & p {
         /* a paragraph after a non-paragraph is not indented */
-        text-indent: var(--m-indent-first-paragraph-scene);
+        text-indent: var(--m-indent-first-paragraph);
+        margin-top: var(--m-paragraph-spacing);
+        margin-block-start: var(--m-paragraph-spacing);
     }
+    & p + p {
+        /* a paragraph after a paragraph is indented (narrative) or not
+         * (nonnarrative) */
+        text-indent: var(--m-indent);
+    }
+
     & :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
     & :is(section) :is(section) :is(h1,h2,h3,h4,h5,h6) + p {
         margin-top: 0;
@@ -61,7 +69,6 @@
     & blockquote {
         /* H-tags and P-tags - align left/start the prose */
         & :is(h1,h2,h3,h4,h5,h6,p) {
-            margin: 0; padding: 0; border: 0;
             text-align: var(--m-text-align);
             line-height: var(--m-line-spacing);
             hyphens: var(--m-hyphens);
@@ -73,18 +80,19 @@
             margin-top: var(--m-elbow-room);
             margin-block-start: var(--m-elbow-room);
         }
-        & > p {
-            text-indent: var(--m-indent-scene);
-            margin-top: var(--m-paragraph-spacing-scene);
-            margin-block-start: var(--m-paragraph-spacing-scene);
-        }
-        & > p:first-of-type {
-            /* first paragraph usually has no indent */
-            text-indent: var(--m-indent-first-paragraph-scene);
-        }
-
     } /* end #manuscript blockquote */
 
+
+    /* an m-header (outside of h-tags and the blockquoted epigraph) act a lot
+     * like general prose */
+    /*
+    & .m-header {
+        font-family: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: var(--m-line-spacing);
+    }
+    */
 
     /*
      * Scenes -------------------
@@ -93,7 +101,6 @@
     & section.m-scene {
         /* H-tags and P-tags - align left/start the prose */
         & :is(h1,h2,h3,h4,h5,h6,p) {
-            padding: 0; border: 0;
             text-align: var(--m-text-align);
             line-height: var(--m-line-spacing);
             hyphens: var(--m-hyphens);
@@ -106,19 +113,31 @@
         }
 
         font-family: var(--m-font-family-scene);
+        & pre {
+            font-family: var(--m-font-family-preformatted-scene);
+        }
         & code {
             font-family: var(--m-font-family-code-scene);
         }
-        & pre,
         & pre > code {
-            font-family: var(--m-font-family-preformatted-scene);
+            font-family: var(--m-font-family-code-scene);
         }
 
         /*
-         * Normal Scene (not a foothang scene)
+         * Normal Scene: #manuscript section.m-scene:not(.foothang)
          */
-
         &:not(.foothang) {
+            & p {
+                /* a paragraph after a non-paragraph is not indented */
+                text-indent: var(--m-indent-first-paragraph-scene);
+                margin-top: var(--m-paragraph-spacing-scene);
+                margin-block-start: var(--m-paragraph-spacing-scene);
+            }
+            & p + p {
+                /* a paragraph after a paragraph is indented (narrative) or not
+                 * (nonnarrative) */
+                text-indent: var(--m-indent-scene);
+            }
             /* paragraphs - spacing between paragraphs in normal scenes
              *              indents at the start
              * Note, the exclusions are pedantic. */
@@ -129,22 +148,7 @@
                     margin-block-start: var(--m-elbow-room);
                 }
             }
-            & > p {
-                text-indent: var(--m-indent-scene);
-                margin-top: var(--m-paragraph-spacing-scene);
-                margin-block-start: var(--m-paragraph-spacing-scene);
-            }
-            & p:first-of-type {
-                /* first paragraph usually has no indent */
-                text-indent: var(--m-indent-first-paragraph-scene);
-            }
-            & :not(p) + p {
-                /* a paragraph after a non-paragraph is not indented */
-                text-indent: var(--m-indent-first-paragraph-scene);
-                margin-top: var(--m-paragraph-spacing-scene);
-                margin-block-start: var(--m-paragraph-spacing-scene);
-            }
-        } /* end #manuscript section.m-scene:not(.foothang) */
+        } /* end Normal Scene: #manuscript section.m-scene:not(.foothang) */
 
 
         /*

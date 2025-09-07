@@ -121,10 +121,11 @@ div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-
     & *:not(hr,ol,ul,dl,menu,li,dt,dd) {
     }
     */
-    & :is(h1,h2,h3,h4,h5,h6,p) {
+    & :is(h1,h2,h3,h4,h5,h6) {
         margin: 0; padding: 0; border: 0;
     }
     & p {
+        padding: 0; border: 0;
         word-break: normal; overflow-wrap: break-word;
     }
     & a,
