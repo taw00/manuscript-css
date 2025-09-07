@@ -101,25 +101,8 @@
                 line-height: var(--m-line-spacing-poetry);
                 hyphens: var(--m-hyphens);
             }
-            /* H-tags - spacing between H-tags in the blockquotes
-             * Note, the exclusions are pedantic. */
-            & > :is(h1,h2,h3,h4,h5,h6),
-            & :not(ol,ul,dl,menu,table) :is(h1,h2,h3,h4,h5,h6) {
-                /*
-                margin-top: var(--m-spacing-poem);
-                margin-block-start: var(--m-spacing-poem);
-                */
-            }
-            /* for x-poem, we default to narrative style in the headers */
-            & > p {
-                text-indent: var(--m-indent);
-                margin-top: var(--m-paragraph-spacing);
-                margin-block-start: var(--m-paragraph-spacing);
-            }
-            & > p:first-of-type {
-                /* first paragraph usually has no indent */
-                text-indent: var(--m-indent-first-paragraph);
-            }
+            /* extra space at end of .m-header before the poem */
+            margin-block-end: var(--m-spacing-poem);
         }
     }
 

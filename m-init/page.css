@@ -114,13 +114,6 @@ div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-
     text-align: var(--m-text-align);
     text-justify: var(--m-text-justify);
     background-color: transparent;
-    /* too blunt …
-    & * {
-        opacity: 1;
-    }
-    & *:not(hr,ol,ul,dl,menu,li,dt,dd) {
-    }
-    */
     & :is(h1,h2,h3,h4,h5,h6) {
         margin: 0; padding: 0; border: 0;
     }
@@ -176,14 +169,6 @@ html {
     font-style: var(--m-font-style);
     font-weight: var(--m-font-weight);
     font-family: var(--m-font-family);
-    /* too barbaric …
-    & * {
-        font-size: inherit;
-        font-style: inherit;
-        font-weight: inherit;
-        font-family: inherit;
-    }
-    */
 }
 #manuscript {
     font-size:   1rem; /* i.e., root-element's font size */
