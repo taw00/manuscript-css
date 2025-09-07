@@ -124,9 +124,9 @@
     &:has(#manuscript:not(.long)) { /* short, the default, but let's be explicit */
         --m-offset-title: var(--m-offset-title-short);
         --m-offset-part: var(--m-offset-part-short);
-        --m-offset-part-render: var(--m-offset-part-render-short);
+        --m-offset-part-simulated: var(--m-offset-part-simulated-short);
         --m-offset-chapter: var(--m-offset-chapter-short);
-        --m-offset-chapter-render: var(--m-offset-chapter-render-short);
+        --m-offset-chapter-simulated: var(--m-offset-chapter-simulated-short);
         --m-offset-scene: var(--m-offset-scene-short);
         --m-offset-poem: var(--m-offset-poem-short);
 
@@ -146,9 +146,9 @@
     &:has(#manuscript:is(.long)) {
         --m-offset-title: var(--m-offset-title-long);
         --m-offset-part: var(--m-offset-part-long);
-        --m-offset-part-render: var(--m-offset-part-render-long);
+        --m-offset-part-simulated: var(--m-offset-part-simulated-long);
         --m-offset-chapter: var(--m-offset-chapter-long);
-        --m-offset-chapter-render: var(--m-offset-chapter-render-long);
+        --m-offset-chapter-simulated: var(--m-offset-chapter-simulated-long);
         --m-offset-scene: var(--m-offset-scene-long);
         --m-offset-poem: var(--m-offset-poem-long);
 
@@ -186,8 +186,8 @@
         --m-page-break-simulated: 0px !important;
         --m-offset-part: var(--m-elbow-room) !important;
         --m-offset-chapter: var(--m-elbow-room) !important;
-        --m-offset-part-render: var(--m-elbow-room) !important;
-        --m-offset-chapter-render: var(--m-elbow-room) !important;
+        --m-offset-part-simulated: var(--m-elbow-room) !important;
+        --m-offset-chapter-simulated: var(--m-elbow-room) !important;
         --m-manuscript-border: 0px !important;
     }
 
@@ -249,7 +249,7 @@
 
         --m-font-family-scene: var(--m-font-family);
         --m-font-family-preformatted-scene: var(--m-font-family-preformatted);
-        --m-font-family-code: var(--m-font-family-code);
+        --m-font-family-code-scene: var(--m-font-family-code);
 
         /* set in m-var/defaults.css …
          * NOTE: --m-font-size-scene doesn't exist anywhere else
@@ -317,24 +317,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
  * simple syntax checks
  * --------------------
@@ -363,7 +345,7 @@
         }
     }
     & #manuscript:is(.us,.US,.ush,.USh,.USH,.a4,.A4,.a5,.A5,.a6,.A6,
-                     .dim,.dimmer,.dark,.darkamber,.darkyellow,.darkgreen/*,.flip-margins*/) {
+                     .dim,.dimmer,.dark,.darkamber,.darkyellow,.darkgreen) {
         & > *:first-child::after {
             box-sizing: border-box;
             position: absolute;

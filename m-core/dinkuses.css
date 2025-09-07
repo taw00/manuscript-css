@@ -68,7 +68,6 @@
     & section.m-subscenes::before,             /* auto-inserted dinkus */
     & section.m-subscenes::after,              /* auto-inserted dinkus */
     & :not(section.m-scene) > h6 {   /* manually ins. between sections */
-        display: block;
         /* white-space … enables functional escaping in the escaping */
         white-space: pre-wrap;
         box-sizing: border-box;
@@ -78,10 +77,6 @@
         font-family: var(--m-font-family-dinkus-30-);
         text-align: center;
         line-height: var(--m-line-spacing);
-    }
-    /* ... remove dinkuses for scenes if they are last in any structure */
-    & section.m-scene:last-of-type::after {
-        display: none;
     }
 }
 

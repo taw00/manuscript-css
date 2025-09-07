@@ -8,65 +8,124 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-/* baseline font stuff (need to take care not to descope these values) */
-html {
-    font-size: var(--m-font-size);
-    font-style: var(--m-font-style);
-    font-weight: var(--m-font-weight);
-    font-family: var(--m-font-family);
-    & * {
-        font-size: inherit;
-        font-style: inherit;
-        font-weight: inherit;
-        font-family: inherit;
-    }
-    background-color: transparent;
+
+/*
+ * Enforcing the structure
+ * - first we remove all things
+ * - then we add back only what is allowed
+ * - then we set expected display values for every all items
+ *   (overly explicit, but …)
+ */
+html,
+body,
+#vpage,
+#vpage > *,
+#manuscript > *,
+#manuscript .m-part > *,
+#manuscript .m-chapter > * {
+    display: none;
 }
-
-
-#vpage {
+html:has(body),
+body:has(div#vpage),
+div#vpage:has(article#manuscript),
+/* a vpage can only contain a #manuscript */
+div#vpage > article#manuscript,
+/* a manuscript can only contain a contact and a header,
+ * and parts, chapters, and/or scenes/poems */
+div#vpage > article#manuscript > div#m-contact,
+div#vpage > article#manuscript > div.m-header,
+div#vpage > article#manuscript > section.m-part,
+div#vpage > article#manuscript > section.m-chapter,
+div#vpage > article#manuscript > section.m-scene,
+div#vpage > article#manuscript > section.m-poem,
+/* a part can only contain a header and chapters */
+div#vpage > article#manuscript > section.m-part > div.m-header,
+div#vpage > article#manuscript > section.m-part > section.m-chapter,
+/* a chapter can only contain a header and scenes/poems */
+div#vpage > article#manuscript > section.m-chapter > div.m-header,
+div#vpage > article#manuscript > section.m-chapter > section.m-scene,
+div#vpage > article#manuscript > section.m-chapter > section.m-poem,
+div#vpage > article#manuscript > section.m-part > section.m-chapter > div.m-header,
+div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-scene,
+div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-poem {
     display: block;
     box-sizing: border-box;
-    position: relative;
-    top: 0;
-    left: 0;
 }
-
 #manuscript {
-    display: block;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    top: 0;
-    left: 0;
+    & > .m-facts,
+    & :not(section) .m-facts,
+    & section:is(.m-chapter,.m-scene) .m-facts,
+    & div.x-poem {
+        display: block;
+        box-sizing: border-box;
+    }
+    /* #manuscript.text-only removes all contact info, .m-headers, & facts
+     * #manuscript.simple removes the top-level contacts and all facts */
+    &.text-only {
+        #m-contact,
+        .m-facts,
+        .m-header {
+            display: none !important;
+        }
+    }
+    &.simple {
+        #m-contact,
+        .m-facts {
+            display: none !important;
+        }
+    }
+    /* All the dinkuses and the -30- */
+    &::before, &::after,
+    & *::before, & *::after {
+        display: block;
+    }
+    /* … remove dinkuses for scenes if they are last in any structure */
+    & section.m-scene:last-of-type::after {
+        display: none;
+    }
+    /* these two configurations are overly pedantic */
+    & :is(h1, h2, h3, h4, h5, h6, blockquote, p) {
+        display: block;
+    }
+    & pre {
+        display: block;
+        white-space: pre-wrap; /* we wrap pre but not pre > code */
+    }
+    & code {
+        display: inline;
+        white-space: inherit;
+    }
+    & pre > code {
+        display: inline;
+        white-space: pre; /* we wrap pre but not pre > code */
+        overflow-x: auto; /* allow scroll bars (turned off for PDF/print) */
+    }
+}
+
+
+
+
+/*
+ * Baseline colors, text alignment and justification,
+ * and smaller-element margins, padding, and things
+ */
+#manuscript {
     color: var(--m-text-color);
     text-align: var(--m-text-align);
     text-justify: var(--m-text-justify);
-    background-color: rgb(0 0 0 / 0%);
-    font-size:   1rem;
-    font-weight: var(--m-font-weight);
-    font-family: var(--m-font-family);
-    font-style: var(--m-font-style);
-    line-height: var(--m-line-spacing);
+    background-color: transparent;
+    /* too blunt …
     & * {
         opacity: 1;
     }
-    /* too blunt of an instrument
     & *:not(hr,ol,ul,dl,menu,li,dt,dd) {
     }
     */
-    & :is(h1,h2,h3,h4,h5,h6,p,blockquote) {
+    & :is(h1,h2,h3,h4,h5,h6,p) {
         margin: 0; padding: 0; border: 0;
     }
-    & :is(p,pre) {
+    & p {
         word-break: normal; overflow-wrap: break-word;
-    }
-    & hr {
-        color: var(--m-text-color);
-        border-color: var(--m-text-color);
-        border-top: 0;  border-bottom-width: 1px;
-        border-left: 0; border-right: 0;
-        width: 80%;
     }
     & a,
     & a:is(:any-link,:link,:active,:visited,:hover) {
@@ -77,23 +136,130 @@ html {
             color: var(--m-link-hover-color);
         }
     }
+    & blockquote {
+        border: 0;
+        margin: var(--m-elbow-room) var(--m-margin-blockquote);
+        /* so many markdown tools manipulate these. overriding */
+        padding: 0; background-color: inherit;
+    }
+    & pre {
+        word-break: normal; overflow-wrap: break-word;
+    }
+    & pre,
+    & code,
+    & pre > code {
+        /* so many markdown tools manipulate these colors. overriding */
+        color: inherit; background-color: inherit;
+    }
+    /* setting a default for <hr> lines */
+    & hr {
+        color: var(--m-text-color);
+        border-color: var(--m-text-color);
+        border-top: 0;  border-bottom-width: 1px;
+        border-left: 0; border-right: 0;
+        width: 80%;
+    }
 } /* end #manuscript */
 
 
-/* rendering to the screen
- * HTML is trans and BODY is off-white.
- * We then add a pretty 3D virtual white page with #vpage and configure the
- * content container to hold the text within.
+
+
+/*
+ * Baseline fonts and line spacing
+ */
+:root {
+    font-size: var(--m-font-size);
+}
+html {
+    font-size:   1rem; /* i.e., root-element's font size */
+    font-style: var(--m-font-style);
+    font-weight: var(--m-font-weight);
+    font-family: var(--m-font-family);
+    /* too barbaric …
+    & * {
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        font-family: inherit;
+    }
+    */
+}
+#manuscript {
+    font-size:   1rem; /* i.e., root-element's font size */
+    font-weight: var(--m-font-weight);
+    font-family: var(--m-font-family);
+    font-style: var(--m-font-style);
+    line-height: var(--m-line-spacing);
+    & #m-contact {
+        font-size:   var(--m-font-size-contact);
+        font-weight: var(--m-font-weight-contact);
+        font-family: var(--m-font-family-contact);
+        line-height: var(--m-line-spacing-contact);
+    }
+    & .m-header {
+        font-size:   var(--m-font-size-header);
+        font-weight: var(--m-font-weight-header);
+        font-family: var(--m-font-family-header);
+        line-height: var(--m-line-spacing);
+    }
+    & section:is(.m-part, .m-chapter) > .m-header {
+        font-size:   var(--m-font-size-headers);
+        font-weight: var(--m-font-weight-headers);
+        font-family: var(--m-font-family-headers);
+    }
+    & > .m-facts,
+    & :not(section) .m-facts {
+        font-size:   var(--m-font-size-facts);
+        font-weight: var(--m-font-weight-facts);
+        font-family: var(--m-font-family-facts);
+        line-height: var(--m-line-spacing-facts);
+    }
+    & section:is(.m-chapter,.m-scene) .m-facts {
+        font-size:   inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        line-height: inherit;
+    }
+    & pre {
+        font-size:   var(--m-font-size-preformatted);
+        font-weight: var(--m-font-weight-preformatted);
+        font-family: var(--m-font-family-preformatted);
+        line-height: var(--m-line-spacing-preformatted);
+    }
+    & code {
+        font-size:   var(--m-font-size-code-inline);
+        font-weight: var(--m-font-weight-code-inline);
+        font-family: var(--m-font-family-code);
+    }
+    & pre > code {
+        font-size:   var(--m-font-size-code);
+        font-weight: var(--m-font-weight-code);
+        font-family: var(--m-font-family-code);
+        line-height: var(--m-line-spacing-code);
+    }
+} /* end #manuscript */
+
+
+
+/* SCREEN: rendering to the screen
+ *
+ * - <html> is trans and <body> is themed
+ * - We then add a pretty 3D virtual page (#vpage)
+ * - configure the content container to hold the text within.
+ *
  * Implemenation note: #vpage and #manuscript use a combination of position
  * box-sizing and overflow that cannot change or the layout gets weird (though
- * overflow could still be set to auto, theoretically. */
+ * overflow could still be set to auto, theoretically.
+ */
 @media screen {
+    html {
+        background-color: transparent;
+    }
     /* rendered view: "desktop" background that the manuscript page sits on */
     body {
         background-color: var(--m-desktop-color);
     }
-    /* the content container */
-    /* a virtual page — the paper */
+    /* the virtual page — the paper */
     #vpage {
         width: 100%; max-width: var(--m-page-width);
         background-color: var(--m-paper-color);
@@ -102,19 +268,25 @@ html {
         /* We want the padding (page margin) to shrink on small screens */
         /*padding: var(--m-page-margin);*/
         padding: min(var(--m-page-margin),10vw) min(var(--m-page-margin),2vw);
-        /* the manuscript is the words and content, not the paper */
+
+        /* the content container - the words and content, not the paper */
         & #manuscript {
             width: 100%; max-width: var(--m-content-width);
             border: var(--m-manuscript-border);
             margin: auto;
         }
-        /* experimenting with flipping the padding/margin settings between the
-         * vpage and the manuscript. If you think like a printer, the page
-         * margins should be controlled by the paper/page and not the content.
-         * That's what we have set now. If you want to flip it, add
-         * 'flip-margin' to the vpage classes and then #manuscript centers the
-         * content and sets its own spacing with the margin settings. */
-        &.flip-margins {
+
+        /* experiment:
+         * Currently, I allow flipping the padding/margin settings that set the
+         * standard 1in margin around the content. The "flip" determins who,
+         * #vpage or #manuscript, governs the page margin. Honestly, if we
+         * think like a printer, the page margins should be controlled by the
+         * paper/page and not the content. That's what we have set now, #vpage
+         * being the virtual-page. If you want to flip it, add 'flip-margin' to
+         * the #vpage classes and then #manuscript with center the content and
+         * set its own spacing with the margin settings.
+         * Eventurally, this will likely go away. */
+        &.flip-margins-experiment {
             padding: 0;
             & #manuscript {
                 /* the 95% keeps a small margin on small screens */
@@ -126,109 +298,13 @@ html {
 } /* end @media screen */
 
 
+
+
 /*
- * fonts and line spacing for all the sections and divs
+ * PRINT: rendering to PDF/paged-export
  */
-#manuscript {
-    & #m-contact {
-        display: block;
-        box-sizing: border-box;
-        font-size:   var(--m-font-size-contact);
-        font-weight: var(--m-font-weight-contact);
-        font-family: var(--m-font-family-contact);
-        line-height: var(--m-line-spacing-contact);
-    }
-    & .m-header {
-        display: block;
-        box-sizing: border-box;
-        font-size:   var(--m-font-size-header);
-        font-weight: var(--m-font-weight-header);
-        font-family: var(--m-font-family-header);
-        line-height: var(--m-line-spacing);
-    }
-    & section:is(.m-part, .m-chapter) > .m-header {
-        display: block;
-        box-sizing: border-box;
-        font-size:   var(--m-font-size-headers);
-        font-weight: var(--m-font-weight-headers);
-        font-family: var(--m-font-family-headers);
-    }
-    & > .m-facts,
-    & :not(section) .m-facts {
-        display: block;
-        box-sizing: border-box;
-        font-size:   var(--m-font-size-facts);
-        font-weight: var(--m-font-weight-facts);
-        font-family: var(--m-font-family-facts);
-        line-height: var(--m-line-spacing-facts);
-    }
-    & section:is(.m-chapter,.m-scene) .m-facts {
-        display: block;
-        box-sizing: border-box;
-        font-size:   inherit;
-        font-weight: inherit;
-        font-family: inherit;
-        line-height: inherit;
-    }
-
-    & div.x-poem {
-        display: block;
-        box-sizing: border-box;
-    }
-    /* blockquote, pre, code
-     * These are often specifically styled by markdown editors to something
-     * other than the browser default. So we have to be a bit more "explicit"
-     * when we style them for our purposes. (See also m-style-reset.css) Note.
-     * <pre> and <code> will be monospaced (by default). Finally, <pre> wraps,
-     * <code> does not, and you will have scrollbars in the HTML view. But not
-     * in the generated PDF (print view).
-     */
-
-    & blockquote {
-        border: 0;
-        margin: var(--m-elbow-room) var(--m-margin-blockquote);
-        /* so many markdown tools manipulate these. overriding */
-        padding: 0; background-color: inherit;
-    }
-    & :is(pre) {
-        white-space: pre-wrap; /* we wrap pre but not code */
-        font-size:   var(--m-font-size-preformatted);
-        font-weight: var(--m-font-weight-preformatted);
-        font-family: var(--m-font-family-preformatted);
-        line-height: var(--m-line-spacing-preformatted);
-        /*margin: var(--m-elbow-room) var(--m-margins-preformatted);*/
-        /* so many markdown tools manipulate these. overriding */
-        color: inherit; background-color: inherit;
-    }
-    & pre > code {
-        display: block;
-        box-sizing: border-box;
-        white-space: pre; /* we wrap pre but not code */
-        overflow-x: auto; /* allow scroll bars */
-        font-size:   var(--m-font-size-code);
-        font-weight: var(--m-font-weight-code);
-        font-family: var(--m-font-family-code);
-        line-height: var(--m-line-spacing-code);
-        /* so many markdown tools manipulate these. overriding */
-        color: inherit; background-color: inherit;
-    }
-
-    /* html rendering - allow code scrollbars */
-    & :not(pre) > code {
-        display: block;
-        box-sizing: border-box;
-        font-size:   var(--m-font-size-code-inline);
-        font-weight: var(--m-font-weight-code-inline);
-        font-family: var(--m-font-family-code);
-        white-space: inherit;
-        /* so many markdown tools manipulate these. overriding */
-        color: inherit; background-color: inherit;
-    }
-} /* end #manuscript */
-
-
 @media print {
-    html, body { width: 100%; max-width: 100%; border: 0; padding: 0; margin: 0; }
+    html, body { width: 100%; max-width: 100%; border: 0; padding: 0; margin: 0; background-color: transparent; }
     #vpage, #manuscript { width: 100%; max-width: 100%; padding: 0; margin: 0; box-shadow: unset; }
 
     /* print rendering - do not allow code scrollbars */

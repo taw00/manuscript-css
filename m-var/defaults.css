@@ -144,17 +144,17 @@
     --m-offset-title-long-poetry:  var(--m-content-offset-5-12th);
 
     --m-offset-part-short:           var(--m-room-for-two);
-    --m-offset-part-render-short:    var(--m-room-for-two);
+    --m-offset-part-simulated-short:    var(--m-room-for-two);
     --m-offset-chapter-short:        var(--m-room-for-two);
-    --m-offset-chapter-render-short: var(--m-room-for-two);
+    --m-offset-chapter-simulated-short: var(--m-room-for-two);
     --m-offset-chapter-short-poetry: var(--m-room-for-two);
     --m-offset-scene-short:          var(--m-elbow-room);
     --m-offset-poem-short:           var(--m-elbow-room);
 
     --m-offset-part-long:           var(--m-offset-title-long);
-    --m-offset-part-render-long:    var(--m-room-for-two);
+    --m-offset-part-simulated-long:    var(--m-room-for-two);
     --m-offset-chapter-long:        var(--m-offset-title-long);
-    --m-offset-chapter-render-long: var(--m-room-for-two);
+    --m-offset-chapter-simulated-long: var(--m-room-for-two);
     --m-offset-chapter-long-poetry: 0;
     --m-offset-scene-long:          var(--m-elbow-room);
     --m-offset-poem-long:           var(--m-elbow-room);
@@ -245,8 +245,8 @@
     --m-offset-title:          var(--m-offset-title-short);
     --m-offset-part:           var(--m-offset-part-short);
     --m-offset-chapter:        var(--m-offset-chapter-short);
-    --m-offset-part-render:    var(--m-offset-part-render-short);
-    --m-offset-chapter-render: var(--m-offset-chapter-render-short);
+    --m-offset-part-simulated:    var(--m-offset-part-simulated-short);
+    --m-offset-chapter-simulated: var(--m-offset-chapter-simulated-short);
     --m-offset-scene:          var(--m-offset-scene-short);
     --m-offset-poem:           var(--m-offset-poem-short);
     */

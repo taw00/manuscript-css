@@ -32,23 +32,9 @@
         overflow: visible;
     }
 
-    /* Inside of an .m-header:
-     * - H1 means title, H2 means subtitle, H3 means byline author
-     * - > (i.e. blockquote) means epigraph
-     * - And finally, if you want you can wrap word count, audience, and genre
-     *   in an .m-facts div.
-     *
-     * Outside of an .m-scene or .m-poem
-     * - H6 represents a dinkus or a -30- marker
-     * - but we don't uses dinkuses between .m-poem sections.
-     *
-     * #manuscript.m-poetry ...
-     * - -30- marker is "" by default
-     *
-     * Inside of a .m-scene where all the prose goes, H1 through H6 means ...
-     * header 1 through header 6 as you would expect. And the > (blockquote) also
-     * works as you would expect there. */
-
+    /*
+     * .m-header, the baseline configuration
+     */
     & .m-header {
         /* this should be, for a 8.5in page, or about 77% */
         width: calc(calc(var(--m-max-width-header)/var(--m-content-width))*100%);
@@ -71,23 +57,22 @@
             }
         }
 
-        & > :first-child {
-            margin-top: 0;
-        }
-        & > :last-child {
-            margin-bottom: 0;
-        }
-    }
+        /* explicityly no top and bottom margins for first and last */
+        & > :first-child { margin-top: 0; }
+        & > :last-child { margin-bottom: 0; }
 
-    & > .m-header {
+        /* all content starts as centered and with no spacing */
         & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
-        & > p,
-        :not(blockquote,.m-facts) p {      /* except blockquotes or .m-facts */
-            display: block;
+        & > p,                             /* all paragraphs */
+        :not(blockquote,.m-facts) p {      /* …except blockquotes & .m-facts */
             margin: 0; padding: 0; border: 0;
             text-align: center !important;
         }
 
+    }
+
+    /* top-level title header: #manuscript > .m-header */
+    & > .m-header {
         & > h1 {                          /* title of the work */
             font-size:   var(--m-font-size-title);
             font-weight: var(--m-font-weight-title);
@@ -118,6 +103,7 @@
         }
     }
 
+    /* section.m-part > .m-header (title header for a Part) */
     & section.m-part {
         & > .m-header {
             & > h1 {              /* title: part */
@@ -142,6 +128,8 @@
         }
     }
 
+    /* section.m-chapter > .m-header (title header for a Chapter)
+                         > .m-facts for a Chapter */
     & section.m-chapter {
         & > .m-header {
             & > h1 {        /* title: chapter */
@@ -166,6 +154,8 @@
         }
     }
 
+    /* section.m-poem > .m-header (title header for a Poem (like a scene)) */
+    /* div.x-poem > .m-header (title header for an abitrarily inserted poem) */
     & section:is(.m-poem) > .m-header,
     & div:is(.x-poem) > .m-header {
         & > h1 {         /* title: poem*/
@@ -187,6 +177,8 @@
             line-height: var(--m-line-spacing-poetry);
         }
     }
+
+    /* section.m-scene > .m-header (title header for a Scene) */
     & section:is(.m-scene) > .m-header {
         & > h1 {         /* title: scene or poem*/
             font-size:   var(--m-font-size-title-scene);
@@ -204,6 +196,7 @@
             font-family: var(--m-font-family-byline-scene);
         }
     }
+
     & section.m-scene {
         & .m-facts {
             margin: 0 auto;
@@ -234,33 +227,10 @@
             }
         }
         & > :is(h1, h2, h3, h4, h5, h6, blockquote, p) {
-            display: block;
             margin: 0; padding: 0; border: 0;
             text-align: var(--m-text-align);
         }
     }
-
-
-    & :not(section.m-poem,div.x-poem) > .m-header {
-        & > :is(h1, h2, h3, h4, h5, h6),
-        & > p {
-            display: block;
-            margin: 0; padding: 0; border: 0;
-            text-align: center;
-        }
-    }
-
-    &.text-only {
-        #m-contact, .m-facts, .m-header {
-            display: none;
-        }
-    }
-    &.simple {
-        #m-contact, .m-facts {
-            display: none;
-        }
-    }
-
 
 } /* end #manuscript */
 

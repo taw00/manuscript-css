@@ -12,12 +12,37 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-/* place the manuscript title block 1/3 to 5/12 down the page and center it */
+
+#vpage {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+
 #manuscript {
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    /* contact info goes in the upper-left corner
+     * Probably need to internationalize this? */
     & #m-contact {
         position: absolute;
         top: 0; left: 0;
     }
+    /* all title headers and m-facts, baseline margining */
+    & .m-header {
+        margin-left: auto;
+        margin-right: auto;
+        & > .m-facts {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    /* top-level title header and m-facts are different
+     * place the manu.title block 1/3 to 5/12 down the page & center it */
     & > .m-header {
         margin: var(--m-offset-title) auto 0;
         position: static; /* .m-facts has to be able to float */
@@ -28,16 +53,8 @@
             margin: var(--m-margin-facts);
         }
     }
-    & .m-header {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    & > :not(.m-header) > .m-facts {
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
+
 
 @media screen {
     #manuscript > .m-header {
@@ -51,16 +68,16 @@
      * no page breake */
     #manuscript section.m-part > .m-header {
         border-top: var(--m-page-break-simulated);
-        margin-top: 1px;
-        padding-top: var(--m-offset-part-render);
-        padding-bottom: var(--m-offset-part-render);
-        margin-bottom: 1px;
+        /*margin-top: 1px;*/
+        padding-top: var(--m-offset-part-simulated);
+        padding-bottom: var(--m-offset-part-simulated);
+        /*margin-bottom: 1px;*/
         border-bottom: var(--m-page-break-simulated);
     }
     #manuscript section.m-chapter > .m-header {
         border-top: var(--m-page-break-simulated);
-        padding-top: var(--m-offset-chapter-render);
-        margin-top: 1px;
+        padding-top: var(--m-offset-chapter-simulated);
+        /*margin-top: 1px;*/
     }
     #manuscript.poetry section.m-poem {
         border-top: var(--m-page-break-simulated);
@@ -68,7 +85,7 @@
     /* a little padding between poems in this simulated scenario */
     #manuscript.long.poetry section.m-poem + section {
         margin-top: var(--m-room-for-two);
-        padding-top: 1px;
+        /*padding-top: 1px;*/
     }
     
     #manuscript section.m-chapter > .m-header ~ section:first-of-type {
