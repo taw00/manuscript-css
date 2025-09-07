@@ -114,12 +114,16 @@
      * - Times New Roman - for narrative works
      * - Arial or Helvetica - for nonnarrative works . . . sometimes
      * - Courier Prime - when a monospaced typeface is needed
-     * Those are all proprietary. But these font stacks below call for some
-     * excellent close-equivalent open options for each category. */
+     * - Noto Sans Mono - for when you need a monospace font that compliments
+     *                    sans-serif.
+     * The first three are all proprietary. But these font stacks below call
+     * for some excellent close-equivalent open options for each category. */
     --m-fontstack-times: "Times New Roman", "Croscore Tinos", tinos, "Nimbus Roman", "Liberation Serif", "TeX Gyre Termes", thorndale, serif;
     --m-fontstack-arial: arial, "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", albany, sans-serif;
     --m-fontstack-helvetica: helvetica, "TeX Gyre Heros", "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", sans-serif;
     --m-fontstack-courier: "Courier Prime", "Croscore Cousine", cousine, "TeX Gyre Cursor", "Liberation Mono", cumberland, "Courier Prime Code", "Courier New", courier, monospace;
+    --m-fontstack-roboto-mono: "Roboto Mono", "Adwaita Mono", "Lucida Sans Typewriter", "Liberation Mono", monospace;
+    --m-fontstack-noto-sans-mono: "Noto Sans Mono", "Lucida Sans Typewriter", "Liberation Mono", monospace;
 
     /* page breaks & simulated page breaks - short-form and long-form
      * Short form docs don't have any page breaks by default.

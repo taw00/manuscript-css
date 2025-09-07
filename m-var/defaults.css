@@ -55,7 +55,10 @@
     --m-fontstack-sans-serif: var(--m-fontstack-arial);
     --m-fontstack-sans: var(--m-fontstack-sans-serif);
     --m-fontstack-monospace: var(--m-fontstack-courier);
+    --m-fontstack-sans-monospace: var(--m-fontstack-roboto-mono);
+
     --m-fontstack-mono: var(--m-fontstack-monospace);
+    --m-fontstack-sans-mono: var(--m-fontstack-sans-monospace);
 
     --m-font-size: var(--m-font-size-standard); /* 16px (12pt) */
     --m-font-weight: var(--m-font-weight-standard); /* normal */
@@ -182,11 +185,11 @@
     --m-font-family-non-narrative: var(--m-font-family-nonnarrative);
 
     --m-font-family-narrative-preformatted: var(--m-fontstack-mono);
-    --m-font-family-nonnarrative-preformatted: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-preformatted: var(--m-fontstack-sans-mono);
     --m-font-family-non-narrative-preformatted: var(--m-font-family-nonnarrative-preformatted);
 
     --m-font-family-narrative-code: var(--m-fontstack-mono);
-    --m-font-family-nonnarrative-code: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-code: var(--m-fontstack-sans-mono);
     --m-font-family-non-narrative-code: var(--m-font-family-nonnarrative-code);
 
     /* first-line indent/inter-paragraph spacing - narrative & nonnarrative */
