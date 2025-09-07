@@ -53,6 +53,10 @@
             margin: var(--m-margin-facts);
         }
     }
+    &:not(.long) > .m-header > .m-facts > p {
+        /* TODO ... do this better via permutations? */
+        margin: 0;
+    }
 }
 
 

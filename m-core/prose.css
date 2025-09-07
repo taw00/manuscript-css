@@ -51,19 +51,23 @@
     & p {
         /* a paragraph after a non-paragraph is not indented */
         text-indent: var(--m-indent-first-paragraph);
-        margin-top: var(--m-paragraph-spacing);
-        margin-block-start: var(--m-paragraph-spacing);
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-block: 0;
     }
     & p + p {
         /* a paragraph after a paragraph is indented (narrative) or not
          * (nonnarrative) */
         text-indent: var(--m-indent);
+        margin-top: var(--m-paragraph-spacing);
+        margin-bottom: 0;
+        margin-block: var(--m-paragraph-spacing) 0;
     }
-
     & :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
     & :is(section) :is(section) :is(h1,h2,h3,h4,h5,h6) + p {
         margin-top: 0;
-        margin-block-start: 0;
+        margin-bottom: 0;
+        margin-block: 0;
     }
 
     & blockquote {
@@ -130,13 +134,13 @@
             & p {
                 /* a paragraph after a non-paragraph is not indented */
                 text-indent: var(--m-indent-first-paragraph-scene);
-                margin-top: var(--m-paragraph-spacing-scene);
-                margin-block-start: var(--m-paragraph-spacing-scene);
             }
             & p + p {
                 /* a paragraph after a paragraph is indented (narrative) or not
                  * (nonnarrative) */
                 text-indent: var(--m-indent-scene);
+                margin-top: var(--m-paragraph-spacing-scene);
+                margin-block: var(--m-paragraph-spacing-scene) 0;
             }
             /* paragraphs - spacing between paragraphs in normal scenes
              *              indents at the start

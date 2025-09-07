@@ -15,6 +15,7 @@
         overflow: visible;
         p {
             text-align: var(--m-text-align);
+            text-indent: 0;
         }
         a {
             color: var(--m-text-color);
@@ -57,18 +58,21 @@
             }
         }
 
-        /* explicityly no top and bottom margins for first and last */
-        & > :first-child { margin-top: 0; }
-        & > :last-child { margin-bottom: 0; }
-
         /* all content starts as centered and with no spacing */
         & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
         & > p,                             /* all paragraphs */
         :not(blockquote,.m-facts) p {      /* …except blockquotes & .m-facts */
-            margin: 0; padding: 0; border: 0;
-            text-align: center !important;
+            padding: 0; border: 0;
+            text-align: center;
+        }
+        & p {
+            margin-top: var(--m-elbow-room);
+            margin-block-stert: var(--m-elbow-room);
         }
 
+        /* explicityly no top and bottom margins for first and last */
+        & > :first-child { margin-top: 0; margin-block-start: 0; }
+        & > :last-child { margin-bottom: 0;  margin-block-end: 0; }
     }
 
     /* top-level title header: #manuscript > .m-header */
@@ -99,6 +103,7 @@
             }
             & p {
                 text-align: var(--m-text-align-facts);
+                text-indent: unset;
             }
         }
     }
