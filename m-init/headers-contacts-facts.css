@@ -58,8 +58,10 @@
             text-align: center;
         }
         & p {
+            /*
             margin-top: var(--m-elbow-room);
             margin-block-start: var(--m-elbow-room);
+            */
         }
         & .m-facts > p {
             text-indent: unset;
