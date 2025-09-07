@@ -187,10 +187,13 @@
          */
 
         /* each scene or a set of subscenes: small padding at top */
+        /*
         padding-top: var(--m-offset-scene);
-        &:not(:first-of-type,:has( > .m-header)) {
+        &:not(:first-of-type,
+        :has( > .m-header)) {
             padding-top: var(--m-paragraph-spacing-scene);
         }
+        */
         /* prose content - there may be a small margin (non-narrative) between
          * prose content and a scene's header block if it exists */
         & > .m-header + * {

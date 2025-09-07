@@ -57,6 +57,11 @@
         /* TODO ... do this better via permutations? */
         margin: 0;
     }
+    & section.m-chapter > .m-header {
+        /* TODO ... do this better via permutations? */
+        margin-bottom: calc(var(--m-room-for-two) * 2);
+        margin-block-end: calc(var(--m-room-for-two) * 2);
+    }
 }
 
 
