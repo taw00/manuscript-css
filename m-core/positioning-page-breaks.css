@@ -12,53 +12,31 @@
  * SIMULATED PAGE BREAKS
  */
 @media screen {
-    #manuscript > .m-header {
-        border-bottom: var(--m-page-break-simulated);
-        /* the title page needs padding before the similuated page break */
+    #manuscript > .m-header:has( ~ section),
+    #manuscript section.m-book > .m-header:has( ~ :is(section.m-book,section.m-part)) {
+        /* the title page or book needs padding before a sim. page break */
         padding-block-end: var(--m-page-break-simulated-padding);
     }
-    /* part and chapter top margins (may be large (long) or small (short)) But
-     * only if they have a title block, otherwise, it's assumed no margin and
-     * no page breake */
-    #manuscript section.m-part > .m-header {
+    /* we always page break after the title page */
+    #manuscript > .m-header ~ section,
+    /* we always page break as we go into a book */
+    #manuscript section.m-book:has( > .m-header),
+    /* we always page break as we go into a page */
+    #manuscript section.m-part:has( > .m-header),
+    /* we page break into poems that come one after another */
+    #manuscript.poetry section.m-poem,
+    #manuscript section.m-poem ~ section {
         border-top: var(--m-page-break-simulated);
-        padding-block: var(--m-offset-part-simulated);
-        border-bottom: var(--m-page-break-simulated);
     }
-    #manuscript section.m-chapter > .m-header {
-        border-top: var(--m-page-break-simulated);
-        padding-block-start: var(--m-offset-chapter-simulated);
+
+    #manuscript section.m-book:has( > .m-header),
+    #manuscript section.m-part:has( > .m-header) {
+        padding-block-start: var(--m-offset-part-simulated);
     }
     #manuscript.poetry section.m-poem {
-        border-top: var(--m-page-break-simulated);
-    }
-    #manuscript.poetry section.m-poem + section.m-scene {
-        /* we page-break between poems and scenes */
-        border-top: var(--m-page-break-simulated);
-    }
-    /* a little space between poems + poems/scenes in this simulated scenario */
-    #manuscript.long.poetry section.m-poem + section {
-        margin-block-start: var(--m-room-for-two);
+        padding-block-bottom: var(--m-room-for-two);
     }
     
-    #manuscript section.m-chapter > .m-header ~ section:first-of-type {
-        border-top: unset;
-    }
-    /* We page-broke after the main title-block and after a part title-block
-     * (but only if either existed). Now we need to reel-back some things so
-     * that we don't double up page breaks. */
-    #manuscript > .m-header ~ section:first-of-type {
-        border-top: unset;
-        & > .m-header {
-            border-top: unset;
-        }
-    }
-    #manuscript section.m-part > .m-header ~ section:first-of-type {
-        border-top: unset;
-        & > .m-header {
-            border-top: unset;
-        }
-    }
 } /* end @media screen */
 
 
@@ -69,35 +47,38 @@
     #vpage, #manuscript {
         break-before: avoid-page !important;
     }
+    /*
     #manuscript > .m-header {
         break-after: var(--m-page-break);
     }
-    /* part and chapter top margins (may be large (long) or small (short)) But
+    */
+    /* we always page break after the title page */
+    #manuscript > .m-header ~ section {
+        break-before: var(--m-page-break);
+    }
+    /* book and part top margins (may be large (long) or small (short)) But
      * only if they have a title block, otherwise, it's assumed no margin */
-    #manuscript section.m-part > .m-header {
+    #manuscript section.m-book:has( > .m-header) {
         break-before: var(--m-page-break);
         margin-block-start: var(--m-offset-part);
         padding-block-start: 1px;
-        break-after: var(--m-page-break);
     }
-    #manuscript section.m-chapter > .m-header {
+    #manuscript section.m-part:has( > .m-header) {
         break-before: var(--m-page-break);
-        margin-block-start: var(--m-offset-chapter);
+        margin-block-start: var(--m-offset-part);
         padding-block-start: 1px;
     }
     #manuscript.poetry section.m-poem {
         break-before: var(--m-page-break);
     }
-    #manuscript.poetry section.m-poem + section.m-scene {
+    #manuscript.poetry section.m-poem ~ section.m-scene {
         break-before: var(--m-page-break);
-    }
-    #manuscript section.m-chapter > .m-header ~ section:first-of-type {
-        break-before: avoid-page;
     }
     
     /* We page-broke after the main title-block and after a part title-block
      * (but only if either existed). Now we need to reel-back some things so
      * that we don't double up page breaks. */
+    /*
     #manuscript > .m-header ~ section:first-of-type {
         break-before: avoid-page;
         & > .m-header {
@@ -110,6 +91,8 @@
             break-before: avoid-page;
         }
     }
+    */
+
     a { break-inside: avoid-page !important; }
 
     h1, h2, h3, h4, h5, h6 {
@@ -132,28 +115,43 @@
     }
     
     /* don't page break inside a title-block header */
+    /*
     #manuscript :is(section.m-part,section.m-chapter,
                     section.m-scene,section.m-poem) > .m-header {
         break-inside: avoid-page !important;
     }
+    */
+    #manuscript .m-header {
+        break-inside: avoid-page !important;
+    }
+    #manuscript .m-facts {
+        break-inside: avoid-page !important;
+    }
     /* don't page break after a chapter or scene header */
+    /*
     #manuscript :is(section.m-chapter,section.m-scene) > .m-header {
         break-after: avoid-page !important;
     }
+    */
     /* don't page break before scene */
+    /*
     #manuscript section.m-scene,
     #manuscript section.m-scene > .m-header {
         break-before: avoid-page !important;
     }
+    */
     /* don't page break before a chapter or scene header's first child */
+    /*
     #manuscript :is(section.m-chapter, section.m-scene) > .m-header + * {
         break-before: avoid-page !important;
     }
+    */
     /* don't page break before a dinkus or -30- marker */
     #manuscript section.m-scene::after,
     #manuscript::after,
     #manuscript h6 {
         break-before: avoid-page !important;
+        break-inside: avoid-page !important;
     }
 } /* end @media print */
 
