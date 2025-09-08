@@ -1,0 +1,152 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * page break and simulated page break positioning
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+
+/*
+ * SIMULATED PAGE BREAKS
+ */
+@media screen {
+    #manuscript > .m-header {
+        border-bottom: var(--m-page-break-simulated);
+        /* the title page needs padding before the similuated page break */
+        padding-block-end: var(--m-page-break-simulated-padding);
+    }
+    /* part and chapter top margins (may be large (long) or small (short)) But
+     * only if they have a title block, otherwise, it's assumed no margin and
+     * no page breake */
+    #manuscript section.m-part > .m-header {
+        border-top: var(--m-page-break-simulated);
+        padding-block: var(--m-offset-part-simulated);
+        border-bottom: var(--m-page-break-simulated);
+    }
+    #manuscript section.m-chapter > .m-header {
+        border-top: var(--m-page-break-simulated);
+        padding-block-start: var(--m-offset-chapter-simulated);
+    }
+    #manuscript.poetry section.m-poem {
+        border-top: var(--m-page-break-simulated);
+    }
+    /* a little space between poems in this simulated scenario */
+    #manuscript.long.poetry section.m-poem + section {
+        margin-block-start: var(--m-room-for-two);
+    }
+    
+    #manuscript section.m-chapter > .m-header ~ section:first-of-type {
+        border-top: unset;
+    }
+    /* We page-broke after the main title-block and after a part title-block
+     * (but only if either existed). Now we need to reel-back some things so
+     * that we don't double up page breaks. */
+    #manuscript > .m-header ~ section:first-of-type {
+        border-top: unset;
+        & > .m-header {
+            border-top: unset;
+        }
+    }
+    #manuscript section.m-part > .m-header ~ section:first-of-type {
+        border-top: unset;
+        & > .m-header {
+            border-top: unset;
+        }
+    }
+} /* end @media screen */
+
+
+/*
+ * PAGE BREAKS
+ */
+@media print {
+    #vpage, #manuscript {
+        break-before: avoid-page !important;
+    }
+    #manuscript > .m-header {
+        break-after: var(--m-page-break);
+    }
+    /* part and chapter top margins (may be large (long) or small (short)) But
+     * only if they have a title block, otherwise, it's assumed no margin */
+    #manuscript section.m-part > .m-header {
+        break-before: var(--m-page-break);
+        margin-block-start: var(--m-offset-part);
+        padding-block-start: 1px;
+        break-after: var(--m-page-break);
+    }
+    #manuscript section.m-chapter > .m-header {
+        break-before: var(--m-page-break);
+        margin-block-start: var(--m-offset-chapter);
+        padding-block-start: 1px;
+    }
+    #manuscript.poetry section.m-poem {
+        break-before: var(--m-page-break);
+    }
+    #manuscript section.m-chapter > .m-header ~ section:first-of-type {
+        break-before: avoid-page;
+    }
+    
+    /* We page-broke after the main title-block and after a part title-block
+     * (but only if either existed). Now we need to reel-back some things so
+     * that we don't double up page breaks. */
+    #manuscript > .m-header ~ section:first-of-type {
+        break-before: avoid-page;
+        & > .m-header {
+            break-before: avoid-page;
+        }
+    }
+    #manuscript section.m-part > .m-header ~ section:first-of-type {
+        break-before: avoid-page;
+        & > .m-header {
+            break-before: avoid-page;
+        }
+    }
+    a { break-inside: avoid-page !important; }
+
+    h1, h2, h3, h4, h5, h6 {
+        break-inside: avoid-page !important;
+        break-after: avoid-page !important;
+    }
+
+    img, figure {
+        break-inside: avoid-page !important;
+        break-after: avoid-page !important;
+    }
+
+    tr { break-inside: avoid-page !important; }
+
+
+    /* avoid-page page break inside a poem stanza */
+    #manuscript .x-poem pre,
+    #manuscript section.m-poem pre {
+        break-inside: avoid-page !important;
+    }
+    
+    /* don't page break inside a title-block header */
+    #manuscript :is(section.m-part,section.m-chapter,
+                    section.m-scene,section.m-poem) > .m-header {
+        break-inside: avoid-page !important;
+    }
+    /* don't page break after a chapter or scene header */
+    #manuscript :is(section.m-chapter,section.m-scene) > .m-header {
+        break-after: avoid-page !important;
+    }
+    /* don't page break before scene */
+    #manuscript section.m-scene,
+    #manuscript section.m-scene > .m-header {
+        break-before: avoid-page !important;
+    }
+    /* don't page break before a chapter or scene header's first child */
+    #manuscript :is(section.m-chapter, section.m-scene) > .m-header + * {
+        break-before: avoid-page !important;
+    }
+    /* don't page break before a dinkus or -30- marker */
+    #manuscript section.m-scene::after,
+    #manuscript::after,
+    #manuscript h6 {
+        break-before: avoid-page !important;
+    }
+} /* end @media print */
+

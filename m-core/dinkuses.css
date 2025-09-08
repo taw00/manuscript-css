@@ -1,22 +1,16 @@
 /* CSS for Manuscript Formating v3.0
  *
- * Stylings for the # dinkuses and -30-s
+ * Dinkus and -30- content
  *
- * By default, dinkuses are placed between scenes and a -30 is placed at the
- * end of the document.
- *
- * If article#manuscript.m-poetry … no dinkuses or -30- (unless there is a set
- * of scenes in the poetry manuscript; in that case, there will be dinkuses
- * between the scenes.
- *
- * Notice the singular and plural: no-dinkus and no-dinkuses
+ * We include some switches …
  * - If article#manuscript.text-only — no dinkuses or -30- (and other things)
  * - If article#manuscript.no-dinkuses — no dinkuses or -30-
  * - If article#manuscript section.m-scene.no-dinkus — no dinkus for that scene
  * - If article#manuscript section.m-scene section.m-subscenes.no-dinkuses -
- *   no dinkuses for that whole subscene
- * - If article#manuscript.poetry - no -30-
- * - If section.m-poem - no dinkuses
+ *      no dinkuses for that whole subscene
+ * - If article#manuscript.poetry - no -30- since poetry collections don't use
+ *      -30- markers for whatever reason.
+ * - If section.m-poem - will not have a dinkus
  *
  * Copyright (c) Todd Warner
  * This work is licensed under Attribution 4.0 International. To view a copy
@@ -58,35 +52,11 @@
     }
 }
 
-/* dinkus and -30- markers are formatted as such
- * NOTE: poetry manuscripts do not use dinkus or -30- markers */
-#manuscript {
-    &::after,
-    & > h6,                        /* manually inserted top-level -30- */
-    /*& > section:last-of-type::after,*/             /* auto-inserted -30- */
-    & section.m-scene::after,                  /* auto-inserted dinkus */
-    & section.m-subscenes::before,             /* auto-inserted dinkus */
-    & section.m-subscenes::after,              /* auto-inserted dinkus */
-    & :not(section.m-scene) > h6 {   /* manually ins. between sections */
-        /* white-space … enables functional escaping in the escaping */
-        white-space: pre-wrap;
-        box-sizing: border-box;
-        position: relative;
-        font-size:   var(--m-font-size-dinkus-30-);
-        font-weight: var(--m-font-weight-dinkus-30-);
-        font-family: var(--m-font-family-dinkus-30-);
-        text-align: center;
-        line-height: var(--m-line-spacing);
-    }
-}
-
 /* -30-
  *
  * automated content for the -30- marker at the end
  * NOTE: poetry manuscripts do not use dinkus or -30- markers */
 #manuscript:not(.poetry,.text-only)::after {
     content: var(--m-30-);
-    padding-bottom: .5rem; /* prevents (I think) the half-height characters
-                            * at bottoms of pages here and there. */
 }
 

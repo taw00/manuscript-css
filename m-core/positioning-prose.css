@@ -1,20 +1,9 @@
 /* CSS for Manuscript Formating v3.0
  *
- * prose stylings
+ * .m-scene positioning
+ * (div#vpage article#manuscript section.m-scene) 
  *
- * Note, 'prose' is the default. There is no configuration if you are writing
- * prose to differentiate it from poetry.
- *
- * Note, 'narrative' is the default. If you wish to format things to a
- * 'nonnarrative' standard, add the 'nonnarrative' class value to the
- * article#manuscript element in your document. See examples.
- *
- * Note, short form formatting is the default. If you want to format things
- * to a a more 'long' form standard, add the 'long' class value to the
- * article#manuscript element in your document. See examples.
- *
- * A prose manuscript is structured as a series of scenes. Crudely, it looks
- * something like this:
+ * Scenes populate a prose manuscript. Crudely, it looks something like this:
  *
  * <div id="vpage"><article id="manuscript">
  * <section class="m-scene"> …your words… </section>
@@ -49,15 +38,6 @@
 
 #manuscript {
     & section.m-scene {
-        /*
-        & > :is(p:first-of-type,
-                h1:first-child, h2:first-child, h3:first-child,
-                h4:first-child, h5:first-child, h6:first-child) {
-            margin-top: 0 !important;
-            margin-block-start: 0 !important;
-        }
-        */
-
         /*
          * Normal Scene: #manuscript section.m-scene:not(.foothang)
          */
@@ -159,6 +139,15 @@
             margin-bottom: 0; padding-bottom: 0;
         }
     } /* end #manuscript section.m-scene */
+
+    /* scene title header spacing control
+     * - gap between a scene header and its scene content */
+    & section.m-scene > .m-header {
+        margin-block-end: calc(var(--m-elbow-room) * 1);
+    }
+    & section.m-scene + section.m-scene:has( > .m-header) {
+        margin-block-start: calc(var(--m-elbow-room) * 1);
+    }
 
 
     /*

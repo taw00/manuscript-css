@@ -8,7 +8,8 @@
  */
 
 @import url("./m-core/positioning.css");
-@import url("./m-core/poetry.css");
-@import url("./m-core/prose.css");
+@import url("./m-core/positioning-prose.css");
+@import url("./m-core/positioning-poetry.css");
+@import url("./m-core/positioning-page-breaks.css");
 @import url("./m-core/dinkuses.css");
 

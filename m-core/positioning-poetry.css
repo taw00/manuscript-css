@@ -1,0 +1,142 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * .m-poem positioning
+ * (div#vpage article#manuscript.poetry section.m-poem) 
+ *
+ * Poems populated a poetry manuscript.
+ * Poems are styled by adding the 'poetry' class value to the
+ * 'article#manuscript' entity. By default, it is configured as a short form
+ * manuscript. If you wish a 'long' form manuscript, you would add 'long' to
+ * that same entity.
+ *
+ * A section.m-poem can only house a header and a poem.
+ *
+ * Note, we also define a div.x-poem class. It is useful for inserting poems in
+ * section.m-scene and .m-header blocks. I.e., arbitrary poems.
+ *
+ * Crudely, a poetry manuscript looks something like this:
+ *
+ * <div id="vpage"><article id="manuscript" class="poetry">
+ * <section class="m-poem">
+ * ```plaintext
+ * …a poem…
+ * ```
+ * </section>
+ * <section class="m-poem">
+ * ```plaintext
+ * …a poem…
+ * ```
+ * </section>
+ * </article>
+ * </div>
+ *
+ * Please reference the provided examples.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+#manuscript {
+
+    /*
+     * POETRY
+     * - section.m-poem is to #manuscipt.poetry
+     *   as section.m-scene is to #manuscipt.prose
+     * - div.x-poem is an arbitrary poem inserted anywhere
+     */
+    & section.m-poem {
+        /* .m-poem has no special positioning rules. It does have line-height
+         * and font rules (see fonts.css) and may have some stanza spacing
+         * settings (see pre rules below). Otherwise, it is treated like a
+         * scene */
+        /* XXX TODO: fix all the header and titling and pagebreaking oddities
+         * of poetry to better match manuscript formatting. */
+    }
+    & :is(section.m-poem, div.x-poem) pre {
+        margin-block: var(--m-spacing-stanza);
+    }
+    & :is(section.m-poem, div.x-poem) {
+        & pre,
+        & pre > code {
+            white-space: pre-wrap; /* we wrap poetry */
+            overflow: hidden; /* no scroll bars */
+        }
+    }
+
+    /*
+     * div.x-poem — arbitrary poems
+     */
+    & div.x-poem {
+        /* space at the begining & ending */
+        margin-block: var(--m-spacing-poem);
+        /* margins left & right with exceptions (see below) */
+        margin-inline: var(--m-margin-poem);
+        & > .m-header {
+            margin-inline: 0;
+            & > blockquote {
+                margin-inline: 0;
+                /*
+                width: max-content;
+                max-width: min(max-content,100%);
+                */
+            }
+            /* H-tags and P-tags - align left */
+            & :is(h1,h2,h3,h4,h5,h6,p) {
+                margin-inline: 0;
+                text-align: var(--m-text-align);
+            }
+            /* extra space at end of .m-header before the poem
+            margin-block-end: var(--m-spacing-poem); */
+        }
+        & > :is(h1, h2, h3, h4, h5, h6),   /* all header H-tags */
+        & > p {                            /* all header paragraphs */
+            margin-inline: 0;
+        }
+        & .m-facts {
+            margin-inline: 0;
+            & p {
+                text-align: var(--m-text-align);
+            }
+        }
+    }
+    /* arbitrary poem inside of the top-level m-header */
+    & > .m-header .x-poem,
+    /* arbitrary poem inside of a scene's m-header */
+    &.m-scene .m-header .x-poem {
+        /* if within an m-header, center the whole block (like the rest of the
+         * prose and epigraph) */
+        width: max-content;
+        max-width: min(max-content, 100%);
+        margin-inline: auto;
+     }
+    /* arbitrary poem inside of a scene's content */
+    & .m-scene > .x-poem {
+        margin-inline: var(--m-margin-poem);
+        margin-block: calc(var(--m-spacing-poem) * 2);
+    }
+    &.m-poem .m-header .x-poem {
+        margin-inline: 0;
+        /* XXX TODO: future rules */
+    }
+    & section.m-poem {
+        /* ALERT! ALERT! ALERT! ERROR IN FORMATING
+         * make stuff in a poem section that isn't poem stuff red and wrong */
+        & > :not(.m-header,pre,code,.joplin-editable) {
+            color: red !important;
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+    }
+
+    /* poem title header spacing control
+     * - gap between a poem header and its poem content */
+    & section.m-poem > .m-header {
+        margin-block-end: calc(var(--m-spacing-poem) * 1.5);
+    }
+    & div.x-poem > .m-header {
+        margin-block-end: calc(var(--m-spacing-poem) * 1.5);
+    }
+
+} /* end #manuscript */
+

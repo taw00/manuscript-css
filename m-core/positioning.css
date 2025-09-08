@@ -4,6 +4,9 @@
  * positioning on the page of nearly everything; page-breaks and simulated
  * page-breaks.
  *
+ * Also included are white-space and overflow setting. I debate whether these
+ * should go in the fonts.css stylesheet.
+ *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
@@ -39,11 +42,21 @@
         width: 80%;
     }
 
+
+    /*
+     * H-TAG BASELINE RULES (h1 … h6)
+     * - note, this gets refined later depending on where the tag lands
+     */
     & :is(h1, h2, h3, h4, h5, h6) {
         margin: 0; padding: 0; border: 0;
         text-align: var(--m-text-align);
     }
 
+
+    /*
+     * PARAGRAPH BASELINE RULES (p)
+     * - note, this gets refined later depending on where the p lands
+     */
     & p {
         padding: 0; border: 0;
         word-break: normal; overflow-wrap: break-word;
@@ -59,14 +72,20 @@
         margin-block: var(--m-paragraph-spacing) 0;
     }
 
-    /* baseline spacing of pre blocks anywhere, except a .m-header, a list, or
-     * a table */
+
+    /*
+     * PREFORMATTED RULES (pre and code)
+     */
     & pre {
         margin-block: var(--m-paragraph-spacing);
-        line-height: var(--m-line-spacing-preformatted);
+        word-break: normal; overflow-wrap: break-word;
+        white-space: pre-wrap; /* wrap */
     }
-    & .x-poem pre {
-        margin-block: var(--m-spacing-stanza);
+    & pre > code {
+        /*white-space: inherit;
+        overflow-x: inherit;*/
+        white-space: pre; /* no wrap */
+        overflow-x: auto; /* allow scroll bars (turned off for PDF/print in page.css) */
     }
     & :is(ol,ul,dl,menu, li,dt,dd, table,thead,tbody,tfoot,th,tr,td,colgroup,col)
       pre + pre {
@@ -77,8 +96,10 @@
     }
 
 
-    /* contact info goes in the upper-left corner
-     * Probably need to internationalize this? */
+    /*
+     * CONTACT INFO
+     * - contact info goes in the upper-left corner
+     *   (probably need to internationalize this?) */
     & #m-contact {
         position: absolute;
         top: 0; left: 0;
@@ -88,13 +109,23 @@
         }
     }
 
-    /* all title headers and m-facts, a baseline */
+
+    /*
+     * ALL TITLE HEADERS (.m-header)
+     * - all title headers and m-facts, a baseline
+     */
     & .m-header {
         /* this should be, for a 8.5in page, or about 77% */
         width: calc(calc(var(--m-max-width-header)/var(--m-content-width))*100%);
         max-width: var(--m-max-width-header);
+
         margin-block: 0;
         margin-inline: auto;
+
+        /* if a header is followed by section … space! */
+        &:has(+ section) {
+            margin-block-end: var(--m-room-for-two);
+        }
 
         /* all header content starts as centered and with no spacing */
         & > :is(h1, h2, h3, h4, h5, h6),   /* all header H-tags */
@@ -114,7 +145,10 @@
             position: relative;
             margin-block: var(--m-nudge) 0;
             margin-inline: auto;
-            & p { text-align: center; text-indent: unset; }
+            & p {
+                text-align: center;
+                text-indent: unset;
+            }
         }
 
         /* the epigraphs */
@@ -127,31 +161,16 @@
             margin-inline: auto;
         }
 
-        /* if a header is followed by a header or a scene or a poem … space! */
-        &:has(+ .m-header, + .m-scene, + .m-poem) {
-            margin-block-end: calc(var(--m-room-for-two) * 2);
-        }
-
         /* explicityly no top and bottom margins for first and last */
         & > :first-child { margin-block-start: 0; }
         & > :last-child { margin-block-end: 0; }
     }
 
-    & section.m-poem > .m-header {
-        margin-block-end: calc(var(--m-room-for-two) * 1.5);
-    }
-    & section.m-scene > .m-header {
-        margin-block-end: calc(var(--m-elbow-room) * 1);
-    }
-    & section.m-scene + section.m-scene:has( > .m-header) {
-        margin-block-start: calc(var(--m-elbow-room) * 1);
-    }
-
 
     /*
-     * #manuscript > .m-header the very top-level title header
-     * Note: this title header and facts are different depending on short
-     * and long.
+     * TOP-LEVEL TITLE HEADER (#manuscript > .m-header)
+     * - Note: this title header's facts are different depending on which
+     *   class is set in #manuscript: .short or .long.
      */
     & > .m-header {
         /* place the manu.title block 1/3 to 5/12 down the page & center it */
@@ -176,31 +195,26 @@
 
 
     /*
-     * #manuscript section.m-poem > div.m-header
-     * anything div.x-poem > div.m-header … these are text-aligned start
+     * DINKUSES and -30-
+     * - dinkuses are placed between scenes
+     * - -30- is placed at the end of the document
      */
-    & section.m-poem,
-    & div.x-poem {
-        & > .m-header {
-            margin-inline: 0;
-            & > blockquote {
-                margin-inline: 0;
-                /*
-                width: max-content;
-                max-width: min(max-content,100%);
-                */
-            }
-        }
-        & > :is(h1, h2, h3, h4, h5, h6),   /* all header H-tags */
-        & > p {                            /* all header paragraphs */
-            margin-inline: 0;
-        }
-        & .m-facts {
-            margin-inline: 0;
-            & p {
-                text-align: var(--m-text-align);
-            }
-        }
+    &::after,
+    & > h6,                              /* manually inserted top-level -30- */
+    /*& > section:last-of-type::after,*/               /* auto-inserted -30- */
+    & section.m-scene::after,                        /* auto-inserted dinkus */
+    & section.m-subscenes::before,                   /* auto-inserted dinkus */
+    & section.m-subscenes::after,                    /* auto-inserted dinkus */
+    & :not(section.m-scene) > h6 {         /* manually ins. between sections */
+        position: relative;
+        text-align: center;
+    }
+    /* -30- - a hack in an attempt to deal with a rendering oddity.
+     * NOTE: poetry manuscripts do not use dinkus or -30- markers */
+    &:not(.poetry,.text-only)::after {
+        /* prevents (I think) the half-height characters
+         * at bottoms of pages here and there. */
+        padding-bottom: .5rem;
     }
 
     /* #manuscript.text-only: removes all contact info, .m-headers, & facts
@@ -219,153 +233,4 @@
         }
     }
 } /* end #manuscript */
-
-
-
-
-/* ------------------------------------------------------------------------- */
-/*                             PAGE BREAK STUFF                              */
-/* ------------------------------------------------------------------------- */
-
-/*
- * SIMULATED PAGE BREAKS
- */
-@media screen {
-    #manuscript > .m-header {
-        border-bottom: var(--m-page-break-simulated);
-        /* the title page needs padding before the similuated page break */
-        padding-block-end: var(--m-page-break-simulated-padding);
-    }
-    /* part and chapter top margins (may be large (long) or small (short)) But
-     * only if they have a title block, otherwise, it's assumed no margin and
-     * no page breake */
-    #manuscript section.m-part > .m-header {
-        border-top: var(--m-page-break-simulated);
-        padding-block: var(--m-offset-part-simulated);
-        border-bottom: var(--m-page-break-simulated);
-    }
-    #manuscript section.m-chapter > .m-header {
-        border-top: var(--m-page-break-simulated);
-        padding-block-start: var(--m-offset-chapter-simulated);
-    }
-    #manuscript.poetry section.m-poem {
-        border-top: var(--m-page-break-simulated);
-    }
-    /* a little space between poems in this simulated scenario */
-    #manuscript.long.poetry section.m-poem + section {
-        margin-block-start: var(--m-room-for-two);
-    }
-    
-    #manuscript section.m-chapter > .m-header ~ section:first-of-type {
-        border-top: unset;
-    }
-    /* We page-broke after the main title-block and after a part title-block
-     * (but only if either existed). Now we need to reel-back some things so
-     * that we don't double up page breaks. */
-    #manuscript > .m-header ~ section:first-of-type {
-        border-top: unset;
-        & > .m-header {
-            border-top: unset;
-        }
-    }
-    #manuscript section.m-part > .m-header ~ section:first-of-type {
-        border-top: unset;
-        & > .m-header {
-            border-top: unset;
-        }
-    }
-} /* end @media screen */
-
-
-/*
- * PAGE BREAKS
- */
-@media print {
-    #vpage, #manuscript {
-        break-before: avoid-page !important;
-    }
-    #manuscript > .m-header {
-        break-after: var(--m-page-break);
-    }
-    /* part and chapter top margins (may be large (long) or small (short)) But
-     * only if they have a title block, otherwise, it's assumed no margin */
-    #manuscript section.m-part > .m-header {
-        break-before: var(--m-page-break);
-        margin-block-start: var(--m-offset-part);
-        padding-block-start: 1px;
-        break-after: var(--m-page-break);
-    }
-    #manuscript section.m-chapter > .m-header {
-        break-before: var(--m-page-break);
-        margin-block-start: var(--m-offset-chapter);
-        padding-block-start: 1px;
-    }
-    #manuscript.poetry section.m-poem {
-        break-before: var(--m-page-break);
-    }
-    #manuscript section.m-chapter > .m-header ~ section:first-of-type {
-        break-before: avoid-page;
-    }
-    
-    /* We page-broke after the main title-block and after a part title-block
-     * (but only if either existed). Now we need to reel-back some things so
-     * that we don't double up page breaks. */
-    #manuscript > .m-header ~ section:first-of-type {
-        break-before: avoid-page;
-        & > .m-header {
-            break-before: avoid-page;
-        }
-    }
-    #manuscript section.m-part > .m-header ~ section:first-of-type {
-        break-before: avoid-page;
-        & > .m-header {
-            break-before: avoid-page;
-        }
-    }
-    a { break-inside: avoid-page !important; }
-
-    h1, h2, h3, h4, h5, h6 {
-        break-inside: avoid-page !important;
-        break-after: avoid-page !important;
-    }
-
-    img, figure {
-        break-inside: avoid-page !important;
-        break-after: avoid-page !important;
-    }
-
-    tr { break-inside: avoid-page !important; }
-
-
-    /* avoid-page page break inside a poem stanza */
-    #manuscript .x-poem pre,
-    #manuscript section.m-poem pre {
-        break-inside: avoid-page !important;
-    }
-    
-    /* don't page break inside a title-block header */
-    #manuscript :is(section.m-part,section.m-chapter,
-                    section.m-scene,section.m-poem) > .m-header {
-        break-inside: avoid-page !important;
-    }
-    /* don't page break after a chapter or scene header */
-    #manuscript :is(section.m-chapter,section.m-scene) > .m-header {
-        break-after: avoid-page !important;
-    }
-    /* don't page break before scene */
-    #manuscript section.m-scene,
-    #manuscript section.m-scene > .m-header {
-        break-before: avoid-page !important;
-    }
-    /* don't page break before a chapter or scene header's first child */
-    #manuscript :is(section.m-chapter, section.m-scene) > .m-header + * {
-        break-before: avoid-page !important;
-    }
-    /* don't page break before a dinkus or -30- marker */
-    #manuscript section.m-scene::after,
-    #manuscript::after,
-    #manuscript h6 {
-        break-before: avoid-page !important;
-    }
-} /* end @media print */
 

@@ -1,6 +1,6 @@
 /* CSS for Manuscript Formating v3.0
  *
- * Baseline font and line-height configurations
+ * Baseline font and line-height and color configurations
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
@@ -204,8 +204,6 @@ html {
     & :is(section.m-poem, div.x-poem) {
         & pre,
         & pre > code {
-            white-space: pre-wrap; /* we wrap poetry */
-            overflow:    hidden; /* no scroll bars */
             font-size:   var(--m-font-size-poetry);
             font-weight: var(--m-font-weight-poetry);
             font-style:  var(--m-font-style-poetry);
@@ -218,6 +216,66 @@ html {
             font-weight: inherit;
             line-height: var(--m-line-spacing-poetry);
         }
+    }
+
+/*
+ * #manuscript > *: baseline colors
+ * (html, body, and #vpage colors are managed in m-init/page.css)
+ */
+
+    color: var(--m-text-color);
+    background-color: transparent;
+
+    & a,
+    & a:is(:any-link,:link,:active,:visited,:hover) {
+        color: var(--m-link-color);
+        text-decoration: unset;
+        border: unset;
+        &:hover {
+            color: var(--m-link-hover-color);
+        }
+    }
+
+    /* link colors for #m-contact and for .m-facts are different */
+    & #m-contact,
+    &:not(.long) > .m-header > .m-facts {
+        a {
+            color: var(--m-text-color);
+            &:hover {
+                color: var(--m-link-color);
+            }
+        }
+    }
+
+    & blockquote {
+        color: inherit; background-color: inherit;
+    }
+    & pre,
+    & code,
+    & pre > code {
+        /* so many markdown tools manipulate these colors. overriding */
+        color: inherit; background-color: inherit;
+    }
+    /* <hr> lines */
+    & hr {
+        color: var(--m-text-color);
+        border-color: var(--m-text-color);
+    }
+
+    /*
+     * dinkus and -30-
+     */
+    &::after,
+    & > h6,                              /* manually inserted top-level -30- */
+    /*& > section:last-of-type::after,*/               /* auto-inserted -30- */
+    & section.m-scene::after,                        /* auto-inserted dinkus */
+    & section.m-subscenes::before,                   /* auto-inserted dinkus */
+    & section.m-subscenes::after,                    /* auto-inserted dinkus */
+    & :not(section.m-scene) > h6 {         /* manually ins. between sections */
+        font-size:   var(--m-font-size-dinkus-30-);
+        font-weight: var(--m-font-weight-dinkus-30-);
+        font-family: var(--m-font-family-dinkus-30-);
+        line-height: var(--m-line-spacing);
     }
 
 } /* end #manuscript */

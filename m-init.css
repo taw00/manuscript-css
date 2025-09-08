@@ -7,7 +7,8 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./m-init/pagination.css");
-@import url("./m-init/page.css");
+@import url("./m-init/structure.css");
 @import url("./m-init/fonts.css");
+@import url("./m-init/page.css");
+@import url("./m-init/pagination.css");
 
