@@ -46,12 +46,7 @@
      * - div.x-poem is an arbitrary poem inserted anywhere
      */
     & section.m-poem {
-        /* .m-poem has no special positioning rules. It does have line-height
-         * and font rules (see fonts.css) and may have some stanza spacing
-         * settings (see pre rules below). Otherwise, it is treated like a
-         * scene */
-        /* XXX TODO: fix all the header and titling and pagebreaking oddities
-         * of poetry to better match manuscript formatting. */
+        /* no-op placeholder */
     }
     & :is(section.m-poem, div.x-poem) pre {
         margin-block: var(--m-spacing-stanza);
@@ -117,12 +112,11 @@
     }
     &.m-poem .m-header .x-poem {
         margin-inline: 0;
-        /* XXX TODO: future rules */
     }
     & section.m-poem {
-        /* ALERT! ALERT! ALERT! ERROR IN FORMATING
+        /* EXPERIMENTAL ALERT! ALERT! ALERT! ERROR IN FORMATING
          * make stuff in a poem section that isn't poem stuff red and wrong */
-        & > :not(.m-header,pre,code,.joplin-editable) {
+        & > :DISABLEDnot(.m-header0,.m-header,pre,code,.joplin-editable) {
             color: red !important;
             font-weight: bold;
             text-decoration: line-through;
@@ -131,11 +125,40 @@
 
     /* poem title header spacing control
      * - gap between a poem header and its poem content */
+    & section.m-poem > .m-header0 {
+        padding-block-end: var(--m-page-margin);
+    }
     & section.m-poem > .m-header {
         margin-block-end: calc(var(--m-spacing-poem) * 1.5);
     }
     & div.x-poem > .m-header {
         margin-block-end: calc(var(--m-spacing-poem) * 1.5);
+    }
+
+
+    /* THIS IS IN BETA -- build the poetry per-poem header */
+    .m-header0 {
+        display: block;
+        margin-block: 0;
+        margin-inline: auto;
+        padding-block: 0 0 var(--m-page-margin);
+        text-align: center;
+        & > .m-contact {
+            float: left;
+            & p {
+                text-indent: 0;
+                text-align: start;
+                line-height: var(--m-line-spacing-single);
+            }
+        }
+        & > .m-facts {
+            float: right;
+            & p {
+                text-indent: 0;
+                text-align: end;
+                line-height: var(--m-line-spacing-single);
+            }
+        }
     }
 
 } /* end #manuscript */

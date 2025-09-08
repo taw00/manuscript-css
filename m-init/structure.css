@@ -87,11 +87,18 @@ div#vpage > article#manuscript div.m-header > :is(h1,h2,h3,h4,h5,blockquote,p,pr
 
 
 #manuscript {
+    & section,
+    & section > .m-header0,
+    & section > .m-header {
+        clear: both;
+    }
+
     & .m-facts,
     & div.x-poem {
         display: block;
         box-sizing: border-box;
     }
+
     /* All the dinkuses and the -30- */
     &::before, &::after,
     & *::before, & *::after {
@@ -102,6 +109,7 @@ div#vpage > article#manuscript div.m-header > :is(h1,h2,h3,h4,h5,blockquote,p,pr
     & section.m-scene:last-of-type::after {
         display: none;
     }
+
     /* these two configurations are overly pedantic */
     & :is(h1, h2, h3, h4, h5, h6, blockquote, p) {
         display: block;

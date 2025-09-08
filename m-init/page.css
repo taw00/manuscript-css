@@ -82,25 +82,28 @@
     #vpage {
         page: top-right-header;
         &.no-header {
-            page: us-portrait-no-header;
+            page: no-header;
         }
         &.top-left-header {
-            page: us-portrait-top-left-header;
+            page: top-left-header;
         }
         &.top-center-header {
-            page: us-portrait-top-center-header;
+            page: top-center-header;
         }
         &.top-right-header {
-            page: us-portrait-top-right-header;
+            page: top-right-header;
         }
         &.bottom-left-header {
-            page: us-portrait-bottom-left-header;
+            page: bottom-left-header;
         }
         &.bottom-center-header {
-            page: us-portrait-bottom-center-header;
+            page: bottom-center-header;
         }
         &.bottom-right-header {
-            page: us-portrait-bottom-right-header;
+            page: bottom-right-header;
+        }
+        &:has(article#manuscript.poetry) {
+            page: no-header;
         }
     }
 }
