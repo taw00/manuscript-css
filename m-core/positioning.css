@@ -1,11 +1,8 @@
 /* CSS for Manuscript Formating v3.0
  *
- * positioning on the page, page-breaks, simulated page-breaks
- * `padding` and `margin` juggling to avoid any margin-collapsing issues. And
- * ensuring the simulated page breaks look more sensible.
- *
- * This defines how chapters, scenes, and poems are generally presented on the
- * page. This and m-init-headers-contacts-facts do some of the same things.
+ * top-level contact and fact location management; verticle and horizontal
+ * positioning on the page of nearly everything; page-breaks and simulated
+ * page-breaks.
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
@@ -25,70 +22,238 @@
     overflow: hidden;
     top: 0;
     left: 0;
+
+    text-align: var(--m-text-align);
+    text-justify: var(--m-text-justify);
+
+    & blockquote {
+        border: 0; padding: 0;
+        margin-block: var(--m-elbow-room);
+        margin-inline: var(--m-margin-blockquote);
+    }
+
+    /* <hr> lines */
+    & hr {
+        border-top: 0;  border-bottom-width: 1px;
+        border-left: 0; border-right: 0;
+        width: 80%;
+    }
+
+    & :is(h1, h2, h3, h4, h5, h6) {
+        margin: 0; padding: 0; border: 0;
+        text-align: var(--m-text-align);
+    }
+
+    & p {
+        padding: 0; border: 0;
+        word-break: normal; overflow-wrap: break-word;
+        /* a paragraph after a non-paragraph is not indented */
+        text-indent: var(--m-indent-first-paragraph);
+        text-align: var(--m-text-align);
+        margin-block: 0;
+    }
+    & p + p {
+        /* a paragraph after a paragraph is either indented (narrative)
+         * or not indented (nonnarrative) */
+        text-indent: var(--m-indent);
+        margin-block: var(--m-paragraph-spacing) 0;
+    }
+
+    /* baseline spacing of pre blocks anywhere, except a .m-header, a list, or
+     * a table */
+    & pre {
+        margin-block: var(--m-paragraph-spacing);
+        line-height: var(--m-line-spacing-preformatted);
+    }
+    & .x-poem pre {
+        margin-block: var(--m-spacing-stanza);
+    }
+    & :is(ol,ul,dl,menu, li,dt,dd, table,thead,tbody,tfoot,th,tr,td,colgroup,col)
+      pre + pre {
+        margin-block-start: 0;
+    }
+    & .m-header pre {
+        margin-block: var(--m-nudge);
+    }
+
+
     /* contact info goes in the upper-left corner
      * Probably need to internationalize this? */
     & #m-contact {
         position: absolute;
         top: 0; left: 0;
+        p {
+            text-align: var(--m-text-align);
+            text-indent: unset;
+        }
     }
-    /* all title headers and m-facts, baseline margining */
+
+    /* all title headers and m-facts, a baseline */
     & .m-header {
-        margin-left: auto;
-        margin-right: auto;
+        /* this should be, for a 8.5in page, or about 77% */
+        width: calc(calc(var(--m-max-width-header)/var(--m-content-width))*100%);
+        max-width: var(--m-max-width-header);
+        margin-block: 0;
+        margin-inline: auto;
+
+        /* all header content starts as centered and with no spacing */
+        & > :is(h1, h2, h3, h4, h5, h6),   /* all header H-tags */
+        & > p {                            /* all header paragraphs */
+            padding: 0; border: 0;
+            margin-block: 0;
+            margin-inline: auto;
+            text-align: center;
+            text-indent: unset;
+        }
+        & > p:first-of-type,
+        & > pre:first-of-type {
+            margin-block-start: var(--m-nudge);
+        }
+        /* word count, etc */
         & > .m-facts {
             position: relative;
-            margin-left: auto;
-            margin-right: auto;
+            margin-block: var(--m-nudge) 0;
+            margin-inline: auto;
+            & p { text-align: center; text-indent: unset; }
         }
+
+        /* the epigraphs */
+        & > blockquote {
+            /* I would have preferred, width: min(max-content, 100%);, but it does
+             * not work for some reason. Instead we use a min on the max-width */
+            width: max-content;
+            max-width: min(var(--m-max-width-epigraph),100%);
+            margin-block: var(--m-nudge) 0;
+            margin-inline: auto;
+        }
+
+        /* if a header is followed by a header or a scene or a poem … space! */
+        &:has(+ .m-header, + .m-scene, + .m-poem) {
+            margin-block-end: calc(var(--m-room-for-two) * 2);
+        }
+
+        /* explicityly no top and bottom margins for first and last */
+        & > :first-child { margin-block-start: 0; }
+        & > :last-child { margin-block-end: 0; }
     }
-    /* top-level title header and m-facts are different
-     * place the manu.title block 1/3 to 5/12 down the page & center it */
+
+    & section.m-poem > .m-header {
+        margin-block-end: calc(var(--m-room-for-two) * 1.5);
+    }
+    & section.m-scene > .m-header {
+        margin-block-end: calc(var(--m-elbow-room) * 1);
+    }
+    & section.m-scene + section.m-scene:has( > .m-header) {
+        margin-block-start: calc(var(--m-elbow-room) * 1);
+    }
+
+
+    /*
+     * #manuscript > .m-header the very top-level title header
+     * Note: this title header and facts are different depending on short
+     * and long.
+     */
     & > .m-header {
-        margin: var(--m-offset-title) auto 0;
+        /* place the manu.title block 1/3 to 5/12 down the page & center it */
+        margin-block: var(--m-offset-title) 0;
+        margin-inline: auto;
         position: static; /* .m-facts has to be able to float */
         & > .m-facts {
+            /* if #manuscript.long: static; unset unset auto auto; 0, auto.
+             * if #manuscript.short: absolute; 0 0 auto auto; unset */
             position: var(--m-position-facts);
             inset: var(--m-top-facts) var(--m-right-facts) auto auto;
-            margin: var(--m-margin-facts);
+            margin-block: var(--m-margin-facts-verticle);
+            margin-inline: var(--m-margin-facts-horizontal);
+            & p {
+                /* if #manuscript.long: center
+                 * if #manuscript.short: end */
+                text-align: var(--m-text-align-facts);
+                text-indent: unset;
+            }
         }
     }
-    &:not(.long) > .m-header > .m-facts > p {
-        /* TODO ... do this better via permutations? */
-        margin: 0;
+
+
+    /*
+     * #manuscript section.m-poem > div.m-header
+     * anything div.x-poem > div.m-header … these are text-aligned start
+     */
+    & section.m-poem,
+    & div.x-poem {
+        & > .m-header {
+            margin-inline: 0;
+            & > blockquote {
+                margin-inline: 0;
+                /*
+                width: max-content;
+                max-width: min(max-content,100%);
+                */
+            }
+        }
+        & > :is(h1, h2, h3, h4, h5, h6),   /* all header H-tags */
+        & > p {                            /* all header paragraphs */
+            margin-inline: 0;
+        }
+        & .m-facts {
+            margin-inline: 0;
+            & p {
+                text-align: var(--m-text-align);
+            }
+        }
     }
-}
+
+    /* #manuscript.text-only: removes all contact info, .m-headers, & facts
+     * #manuscript.simple: removes the top-level contacts and all facts */
+    &.text-only {
+        #m-contact,
+        .m-facts,
+        .m-header {
+            display: none !important;
+        }
+    }
+    &.simple {
+        #m-contact,
+        .m-facts {
+            display: none !important;
+        }
+    }
+} /* end #manuscript */
 
 
+
+
+/* ------------------------------------------------------------------------- */
+/*                             PAGE BREAK STUFF                              */
+/* ------------------------------------------------------------------------- */
+
+/*
+ * SIMULATED PAGE BREAKS
+ */
 @media screen {
     #manuscript > .m-header {
-        /*padding-bottom: var(--m-room-for-two);*/
         border-bottom: var(--m-page-break-simulated);
         /* the title page needs padding before the similuated page break */
-        padding-bottom: var(--m-page-break-simulated-padding);
+        padding-block-end: var(--m-page-break-simulated-padding);
     }
     /* part and chapter top margins (may be large (long) or small (short)) But
      * only if they have a title block, otherwise, it's assumed no margin and
      * no page breake */
     #manuscript section.m-part > .m-header {
         border-top: var(--m-page-break-simulated);
-        /*margin-top: 1px;*/
-        padding-top: var(--m-offset-part-simulated);
-        padding-bottom: var(--m-offset-part-simulated);
-        /*margin-bottom: 1px;*/
+        padding-block: var(--m-offset-part-simulated);
         border-bottom: var(--m-page-break-simulated);
     }
     #manuscript section.m-chapter > .m-header {
         border-top: var(--m-page-break-simulated);
-        padding-top: var(--m-offset-chapter-simulated);
-        /*margin-top: 1px;*/
+        padding-block-start: var(--m-offset-chapter-simulated);
     }
     #manuscript.poetry section.m-poem {
         border-top: var(--m-page-break-simulated);
     }
-    /* a little padding between poems in this simulated scenario */
+    /* a little space between poems in this simulated scenario */
     #manuscript.long.poetry section.m-poem + section {
-        margin-top: var(--m-room-for-two);
-        /*padding-top: 1px;*/
+        margin-block-start: var(--m-room-for-two);
     }
     
     #manuscript section.m-chapter > .m-header ~ section:first-of-type {
@@ -115,7 +280,6 @@
 /*
  * PAGE BREAKS
  */
-
 @media print {
     #vpage, #manuscript {
         break-before: avoid-page !important;
@@ -127,14 +291,14 @@
      * only if they have a title block, otherwise, it's assumed no margin */
     #manuscript section.m-part > .m-header {
         break-before: var(--m-page-break);
-        margin-top: var(--m-offset-part);
-        padding-top: 1px;
+        margin-block-start: var(--m-offset-part);
+        padding-block-start: 1px;
         break-after: var(--m-page-break);
     }
     #manuscript section.m-chapter > .m-header {
         break-before: var(--m-page-break);
-        margin-top: var(--m-offset-chapter);
-        padding-top: 1px;
+        margin-block-start: var(--m-offset-chapter);
+        padding-block-start: 1px;
     }
     #manuscript.poetry section.m-poem {
         break-before: var(--m-page-break);

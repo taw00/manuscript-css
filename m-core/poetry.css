@@ -41,65 +41,19 @@
  */
 
 #manuscript {
-    /* baseline spacing of pre blocks anywhere, except a .m-header, a list, or
-     * a table */
-    & :is(:not(.m-header, ol,ul,dl,menu, li,dt,dd,
-            table,thead,tbody,tfoot,th,tr,td,colgroup,col),
-          .x-poem) pre {
-        margin-top: var(--m-spacing-stanza);
-        margin-block-start: var(--m-spacing-stanza);
-        margin-bottom: var(--m-spacing-stanza);
-        margin-block-end: var(--m-spacing-stanza);
-    }
-
-
-    /* div.x-poem, but forcing specificity a bit */
-    & :is(section.m-poem, div.x-poem),
-    & :is(section) :is(section.m-poem, div.x-poem),
-    & :is(section) :is(section) :is(section.m-poem, div.x-poem),
-    & :is(section) :is(section) :is(section) :is(section.m-poem, div.x-poem) {
-        & pre,
-        & pre > code {
-            white-space: pre-wrap; /* we wrap poetry */
-            overflow:    hidden; /* no scroll bars */
-            font-size:   var(--m-font-size-poetry);
-            font-weight: var(--m-font-weight-poetry);
-            font-style:  var(--m-font-style-poetry);
-            font-family: var(--m-font-family-poetry);
-            line-height: var(--m-line-spacing-poetry);
-        }
-        .m-header {
-            font-family: inherit;
-            font-style: inherit;
-            font-weight: inherit;
-            line-height: var(--m-line-spacing-poetry);
-        }
-    }
 
     /*
      * div.x-poem — arbitrary poems
      */
     & .x-poem {
-        /* space at the beginging & ending */
-        margin-top: var(--m-spacing-poem);
-        margin-block-start: var(--m-spacing-poem);
-        margin-bottom: var(--m-spacing-poem);
-        margin-block-end: var(--m-spacing-poem);
+        /* space at the begining & ending */
+        margin-block: var(--m-spacing-poem);
         /* margins left & right with exceptions (see below) */
-        margin-left: var(--m-margin-poem);
-        margin-inline-start: var(--m-margin-poem);
-        margin-right: var(--m-margin-poem);
-        margin-inline-end: var(--m-margin-poem);
+        margin-inline: var(--m-margin-poem);
         > .m-header {
-            font-family: inherit;
-            font-style: inherit;
-            font-weight: inherit;
-            line-height: var(--m-line-spacing-poetry);
             /* H-tags and P-tags - align left */
             & :is(h1,h2,h3,h4,h5,h6,p) {
                 text-align: var(--m-text-align);
-                line-height: var(--m-line-spacing-poetry);
-                hyphens: var(--m-hyphens);
             }
             /* extra space at end of .m-header before the poem */
             margin-block-end: var(--m-spacing-poem);
@@ -116,48 +70,20 @@
          * prose and epigraph) */
         width: max-content;
         max-width: min(max-content, 100%);
-        margin-left: auto;
-        margin-inline-start: auto;
-        margin-right: auto;
-        margin-inline-end: auto;
+        margin-inline: auto;
      }
     & .m-scene > .x-poem {
-        margin-left: var(--m-margin-poem);
-        margin-inline-start: var(--m-margin-poem);
-        margin-right: var(--m-margin-poem);
-        margin-inline-end: var(--m-margin-poem);
-
-        margin-top:         calc(var(--m-spacing-poem) * 2);
-        margin-block-start: calc(var(--m-spacing-poem) * 2);
-        margin-bottom:      calc(var(--m-spacing-poem) * 2);
-        margin-block-end:   calc(var(--m-spacing-poem) * 2);
+        margin-inline: var(--m-margin-poem);
+        margin-block: calc(var(--m-spacing-poem) * 2);
     }
-    /* w/in a blockquote (usually an epigraph) remove the left/right
-     * margining */
-    blockquote .x-poem,
-    .m-header blockquote .x-poem {
-        margin-left: 0;
-        margin-inline-start: 0;
-        margin-right: 0;
-        margin-inline-end: 0;
-    }
-
 
     /*
      * section.m-poem
      */
 
     & section.m-poem {
-        padding-top: 0; /* not sure why this exists */
-        & :is(h1,h2,h3,h4,h5,h6,blockquote,p,.m-header) {
-            line-height: var(--m-line-spacing-poetry);
-        }
-        & .m-header > h1 {
-            text-transform: var(--m-text-transform-title-poetry);
-        }
         & .m-header :is(p, h1, h2, h3, h4, h5, h6),
         & .m-header > .x-poem {
-            margin-left: 0;
             margin-inline-start: 0;
         }
 

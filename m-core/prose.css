@@ -48,84 +48,15 @@
 
 
 #manuscript {
-    & p {
-        /* a paragraph after a non-paragraph is not indented */
-        text-indent: var(--m-indent-first-paragraph);
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-block: 0;
-    }
-    & p + p {
-        /* a paragraph after a paragraph is indented (narrative) or not
-         * (nonnarrative) */
-        text-indent: var(--m-indent);
-        margin-top: var(--m-paragraph-spacing);
-        margin-bottom: 0;
-        margin-block: var(--m-paragraph-spacing) 0;
-    }
-    & :is(section) :is(h1,h2,h3,h4,h5,h6) + p,
-    & :is(section) :is(section) :is(h1,h2,h3,h4,h5,h6) + p {
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-block: 0;
-    }
-
-    & blockquote {
-        /* H-tags and P-tags - align left/start the prose */
-        & :is(h1,h2,h3,h4,h5,h6,p) {
-            text-align: var(--m-text-align);
-            line-height: var(--m-line-spacing);
-            hyphens: var(--m-hyphens);
-        }
-        /* H-tags - spacing between H-tags in the blockquotes
-         * Note, the exclusions are pedantic. */
-        & > :is(h1,h2,h3,h4,h5,h6),
-        & :not(ol,ul,dl,menu,table) :is(h1,h2,h3,h4,h5,h6) {
-            margin-top: var(--m-elbow-room);
-            margin-block-start: var(--m-elbow-room);
-        }
-    } /* end #manuscript blockquote */
-
-
-    /* an m-header (outside of h-tags and the blockquoted epigraph) act a lot
-     * like general prose */
-    /*
-    & .m-header {
-        font-family: inherit;
-        font-style: inherit;
-        font-weight: inherit;
-        line-height: var(--m-line-spacing);
-    }
-    */
-
-    /*
-     * Scenes -------------------
-     */
-
     & section.m-scene {
-        /* H-tags and P-tags - align left/start the prose */
-        & :is(h1,h2,h3,h4,h5,h6,p) {
-            text-align: var(--m-text-align);
-            line-height: var(--m-line-spacing);
-            hyphens: var(--m-hyphens);
-        }
+        /*
         & > :is(p:first-of-type,
                 h1:first-child, h2:first-child, h3:first-child,
                 h4:first-child, h5:first-child, h6:first-child) {
             margin-top: 0 !important;
             margin-block-start: 0 !important;
         }
-
-        font-family: var(--m-font-family-scene);
-        & pre {
-            font-family: var(--m-font-family-preformatted-scene);
-        }
-        & code {
-            font-family: var(--m-font-family-code-scene);
-        }
-        & pre > code {
-            font-family: var(--m-font-family-code-scene);
-        }
+        */
 
         /*
          * Normal Scene: #manuscript section.m-scene:not(.foothang)

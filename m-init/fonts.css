@@ -1,86 +1,71 @@
 /* CSS for Manuscript Formating v3.0
  *
- * Baseline definitions for #m-contact, .m-header, and .m-facts and the content
- * managed by them. This and m-core-page-positioning do some of the same
- * things.
+ * Baseline font and line-height configurations
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-#manuscript {
-    & #m-contact {
-        /*box-sizing: border-box; XXXCUTXXX*/
-        p {
-            text-align: var(--m-text-align);
-            text-indent: 0;
-        }
-        a {
-            color: var(--m-text-color);
-            text-decoration: unset;
-            border: unset;
-            &:hover {
-                color: var(--m-link-color);
-            }
-        }
+/*
+ * Baseline fonts and line spacing
+ * some of this gets refined in m-core/prose.css and m-core/poetry.css
+ */
+:root {
+    font-size: var(--m-font-size);
+}
 
+html {
+    font-size:   1rem; /* i.e., root-element's font size */
+    font-style:  var(--m-font-style);
+    font-weight: var(--m-font-weight);
+    font-family: var(--m-font-family);
+}
+
+#manuscript {
+    font-size:   1rem; /* i.e., root-element's font size */
+    font-weight: var(--m-font-weight);
+    font-family: var(--m-font-family);
+    font-style:  var(--m-font-style);
+    line-height: var(--m-line-spacing);
+
+    & pre {
+        font-size:   var(--m-font-size-preformatted);
+        font-weight: var(--m-font-weight-preformatted);
+        font-family: var(--m-font-family-preformatted);
+        line-height: var(--m-line-spacing-preformatted);
+    }
+    & code {
+        font-size:   var(--m-font-size-code-inline);
+        font-weight: var(--m-font-weight-code-inline);
+        font-family: var(--m-font-family-code);
+    }
+    & pre > code {
+        font-size:   var(--m-font-size-code);
+        font-weight: var(--m-font-weight-code);
+        font-family: var(--m-font-family-code);
+        line-height: var(--m-line-spacing-code);
     }
 
-    /*
-     * .m-header, the baseline configuration
-     */
+    & #m-contact {
+        font-size:   var(--m-font-size-contact);
+        font-weight: var(--m-font-weight-contact);
+        font-family: var(--m-font-family-contact);
+        line-height: var(--m-line-spacing-contact);
+    }
+
     & .m-header {
-        /* this should be, for a 8.5in page, or about 77% */
-        width: calc(calc(var(--m-max-width-header)/var(--m-content-width))*100%);
-        max-width: var(--m-max-width-header);
-
-        & > blockquote {             /* the epigraphs, layout */
-            /* I would have preferred, width: min(max-content, 100%);, but it does
-             * not work for some reason. Instead we use a min on the max-width */
-            width: max-content;
-            max-width: min(var(--m-max-width-epigraph),100%);
-            margin: var(--m-elbow-room) auto;
-            line-height: var(--m-line-spacing);
-
-            /* the epigraphs, fonts */
-            /*text-align: justify; hyphens: auto;*/
+        font-size:   var(--m-font-size-header);
+        font-weight: var(--m-font-weight-header);
+        font-family: var(--m-font-family-header);
+        line-height: var(--m-line-spacing);
+        /* the epigraphs */
+        & > blockquote {
             font-size:   var(--m-font-size-epigraph);
             font-weight: var(--m-font-weight-epigraph);
             font-family: var(--m-font-family-epigraph);
             font-style:  var(--m-font-style-epigraph);
         }
-
-        /* all header content starts as centered and with no spacing */
-        & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
-        & > p {                            /* all paragraphs */
-            padding: 0; border: 0;
-            text-align: center;
-        }
-        & p {
-            /*
-            margin-top: var(--m-elbow-room);
-            margin-block-start: var(--m-elbow-room);
-            */
-        }
-        & .m-facts > p {
-            text-indent: unset;
-            text-align: center;
-        }
-
-        /* if a header is followed by a header or a scene or a poem … space! */
-        &:has(+ .m-header, + .m-scene, + .m-poem) {
-            margin-bottom: calc(var(--m-room-for-two) * 2);;
-            margin-block-end: calc(var(--m-room-for-two) * 2);;
-        }
-
-        /* explicityly no top and bottom margins for first and last */
-        & > :first-child { margin-top: 0; margin-block-start: 0; }
-        & > :last-child { margin-bottom: 0;  margin-block-end: 0; }
-    }
-
-    /* top-level title header: #manuscript > .m-header */
-    & > .m-header {
         & > h1 {                          /* title of the work */
             font-size:   var(--m-font-size-title);
             font-weight: var(--m-font-weight-title);
@@ -96,23 +81,27 @@
             font-weight: var(--m-font-weight-byline);
             font-family: var(--m-font-family-byline);
         }
-        & > .m-facts {
-            a {
-                color: var(--m-text-color);
-                text-decoration: unset;
-                border: unset;
-                &:hover {
-                    color: var(--m-link-color);
-                }
-            }
-            & p {
-                text-align: var(--m-text-align-facts);
-                text-indent: unset;
-            }
-        }
+    }
+    & section:is(.m-part, .m-chapter, .m-scene) > .m-header {
+        font-size:   var(--m-font-size-headers);
+        font-weight: var(--m-font-weight-headers);
+        font-family: var(--m-font-family-headers);
     }
 
-    /* section.m-part > .m-header (title header for a Part) */
+    & > .m-facts,
+    & :not(section) .m-facts {
+        font-size:   var(--m-font-size-facts);
+        font-weight: var(--m-font-weight-facts);
+        font-family: var(--m-font-family-facts);
+        line-height: var(--m-line-spacing-facts);
+    }
+    & section:is(.m-chapter,.m-scene) .m-facts {
+        font-size:   inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        line-height: inherit;
+    }
+
     & section.m-part {
         & > .m-header {
             & > h1 {              /* title: part */
@@ -131,14 +120,8 @@
                 font-family: var(--m-font-family-byline-part);
             }
         }
-        & .m-facts {
-            margin: var(--m-room-for-two) auto 0;
-            & p { text-align: center; }
-        }
     }
 
-    /* section.m-chapter > .m-header (title header for a Chapter)
-                         > .m-facts for a Chapter */
     & section.m-chapter {
         & > .m-header {
             & > h1 {        /* title: chapter */
@@ -157,21 +140,20 @@
                 font-family: var(--m-font-family-byline-chapter);
             }
         }
-        & .m-facts {
-            margin: 0 auto;
-            & p { text-align: center; }
-        }
     }
 
-    /* section.m-poem > .m-header (title header for a Poem (like a scene)) */
-    /* div.x-poem > .m-header (title header for an abitrarily inserted poem) */
-    & section:is(.m-poem) > .m-header,
-    & div:is(.x-poem) > .m-header {
+    & section:is(.m-poem) > .m-header, /* poem section */
+    & div:is(.x-poem) > .m-header {    /* arbitrary poem */
+        line-height: var(--m-line-spacing-poetry);
+        & blockquote, & p {
+            line-height: var(--m-line-spacing-poetry);
+        }
         & > h1 {         /* title: poem*/
             font-size:   var(--m-font-size-title-poem);
             font-weight: var(--m-font-weight-title-poem);
             font-family: var(--m-font-family-title-poem);
             line-height: var(--m-line-spacing-poetry);
+            text-transform: var(--m-text-transform-title-poetry);
         }
         & > h2 {         /* subtitle: poem */
             font-size:   var(--m-font-size-subtitle-poem);
@@ -206,38 +188,35 @@
         }
     }
 
-    & section.m-scene {
-        & .m-facts {
-            margin: 0 auto;
-            & p { text-align: center; }
+    & section:is(.m-scene) {
+        font-family: var(--m-font-family-scene);
+        & pre {
+            font-family: var(--m-font-family-preformatted-scene);
         }
-        & .m-header > blockquote {
-            margin: 0 auto; /* different than top-level, part, and chapter */
+        & code {
+            font-family: var(--m-font-family-code-scene);
+        }
+        & pre > code {
+            font-family: var(--m-font-family-code-scene);
         }
     }
 
-
-    & section.m-poem,
-    & div.x-poem {
-        & .m-header {
-            margin-left: 0;
-            margin-inline-start: 0;
-            & > blockquote {
-                margin-left: 0;
-                margin-inline-start: 0;
-                width: max-content;
-                max-width: min(max-content,100%);
-            }
+    & :is(section.m-poem, div.x-poem) {
+        & pre,
+        & pre > code {
+            white-space: pre-wrap; /* we wrap poetry */
+            overflow:    hidden; /* no scroll bars */
+            font-size:   var(--m-font-size-poetry);
+            font-weight: var(--m-font-weight-poetry);
+            font-style:  var(--m-font-style-poetry);
+            font-family: var(--m-font-family-poetry);
+            line-height: var(--m-line-spacing-poetry);
         }
-        & .m-facts {
-            margin: 0;
-            & p {
-                text-align: var(--m-text-align);
-            }
-        }
-        & > :is(h1, h2, h3, h4, h5, h6, blockquote, p) {
-            padding: 0; border: 0;
-            text-align: var(--m-text-align);
+        .m-header {
+            font-family: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+            line-height: var(--m-line-spacing-poetry);
         }
     }
 

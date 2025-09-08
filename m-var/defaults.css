@@ -72,7 +72,7 @@
     --m-font-weight-code:          inherit;
     --m-font-weight-code-inline:   inherit;
 
-    --m-line-spacing-preformatted: inherit;
+    --m-line-spacing-preformatted: var(--m-line-spacing-single);
     --m-line-spacing-code:         inherit;
 
     /* -------------------- */
@@ -171,7 +171,7 @@
     --m-font-size-facts-long:    inherit; /* will inherit from m-header */
     --m-font-weight-facts-long:  inherit;
     --m-font-family-facts-long:  inherit;
-    --m-line-spacing-facts-long: var(--m-line-spacing-single);
+    --m-line-spacing-facts-long: inherit;
 
 
     /*
@@ -370,7 +370,8 @@
     --m-left-facts:         var(--m-left-facts-short);
     --m-right-facts:        var(--m-right-facts-short);
 
-    --m-margin-facts:       var(--m-margin-facts-short);
+    --m-margin-facts-horizontal: var(--m-margin-facts-short-horizontal);
+    --m-margin-facts-verticle:   var(--m-margin-facts-short-verticle);
     --m-text-align-facts:   var(--m-text-align-facts-short);
 
     --m-font-size-facts:    var(--m-font-size-facts-short);

@@ -135,7 +135,8 @@
         --m-bottom-facts:       var(--m-bottom-facts-short);
         --m-left-facts:         var(--m-left-facts-short);
         --m-right-facts:        var(--m-right-facts-short);
-        --m-margin-facts:       var(--m-margin-facts-short);
+        --m-margin-facts-horizontal: var(--m-margin-facts-short-horizontal);
+        --m-margin-facts-verticle:   var(--m-margin-facts-short-verticle);
         --m-text-align-facts:   var(--m-text-align-facts-short);
         --m-line-spacing-facts: var(--m-line-spacing-facts-short);
 
@@ -157,7 +158,8 @@
         --m-bottom-facts:       var(--m-bottom-facts-long);
         --m-left-facts:         var(--m-left-facts-long);
         --m-right-facts:        var(--m-right-facts-long);
-        --m-margin-facts:       var(--m-margin-facts-long);
+        --m-margin-facts-horizontal: var(--m-margin-facts-long-horizontal);
+        --m-margin-facts-verticle:   var(--m-margin-facts-long-verticle);
         --m-text-align-facts:   var(--m-text-align-facts-long);
         --m-line-spacing-facts: var(--m-line-spacing-facts-long);
 
