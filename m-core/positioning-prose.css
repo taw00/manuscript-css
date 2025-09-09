@@ -46,7 +46,7 @@
                 /* a paragraph after a non-paragraph is not indented */
                 text-indent: var(--m-indent-first-paragraph-scene);
             }
-            & p + p {
+            & p ~ p {
                 /* a paragraph after a paragraph is indented (narrative) or not
                  * (nonnarrative) */
                 text-indent: var(--m-indent-scene);
@@ -71,7 +71,7 @@
          */
 
         /* ... subscenes: subscenes spacing BEFORE subscenes block */
-        & > :not(div,section,article,h1,h2,h3,h4,h5,h6) + section.m-subscenes::before {
+        & > :not(div,section,article,h1,h2,h3,h4,h5,h6) ~ section.m-subscenes::before {
             content: var(--m-marker-zws); /* &zerowidthspace */
             margin-top: calc(var(--m-offset-scene) * 2);
         }
@@ -100,7 +100,7 @@
         & > .m-header {
             /* prose content - there may be a small margin (non-narrative)
              * between prose content and a scene's header block if it exists */
-            & + * {
+            & ~ * {
                 padding-top: var(--m-paragraph-spacing-scene);
             }
             /* all header content starts as centered and with no spacing */
@@ -117,7 +117,7 @@
                     margin-top: 0;
                     margin-block-start: 0;
                 }
-                & > p + p {
+                & > p ~ p {
                     margin-top: var(--m-paragraph-spacing-scene);
                     margin-block-start: var(--m-paragraph-spacing-scene);
                 }
@@ -145,7 +145,7 @@
     & section.m-scene > .m-header {
         margin-block-end: calc(var(--m-elbow-room) * 1);
     }
-    & section.m-scene + section.m-scene:has( > .m-header) {
+    & section.m-scene ~ section.m-scene:has( > .m-header) {
         margin-block-start: calc(var(--m-elbow-room) * 1);
     }
 
