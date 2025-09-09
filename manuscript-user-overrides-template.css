@@ -1,9 +1,14 @@
 /* CSS for Manuscript Formating v3.0
  *
- * user-overrides.css - user-defined CSS overrides.
+ * manuscript-user-overrides.css - user-defined CSS overrides.
+ *
+ * Insert user-defined customizations below if you wish them to be
+ * persistent. Maybe your favorite editor forces stylings that you can't deal
+ * with, or maybe you want to make your own theme. Or maybe … you hate
+ * Times New Roman. Etc etc.
  *
  * To use:
- * 1. Copy this file to user-overrides.css.
+ * 1. Copy this file to manuscript-user-overrides.css.
  * 2. Edit.
  * 3. Enjoy with a tasty beverage.
  *
@@ -13,7 +18,6 @@
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
-/* Insert semi-permanent, user-defined customizations here. */
 
 
 @layer lm-user-overrides {
