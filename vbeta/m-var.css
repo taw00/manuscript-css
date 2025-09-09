@@ -1,6 +1,4 @@
-/* CSS for Manuscript Formating v3.0
- *
- * m-var/constants: baseline variable constants
+/* m-var/constants: baseline variable constants
  * m-var/defaults:  everything variable set to their defaults
  * m-var/permutations: the defaults adjusted based on classes the user sets for
  *                     each: narrative/nonnarrative, short/long, etc.

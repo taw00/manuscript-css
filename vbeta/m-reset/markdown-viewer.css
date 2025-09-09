@@ -1,7 +1,5 @@
-/* CSS for Manuscript Formating v3.0
- *
- * m-reset/markdown-viewer.css - adjust the Markdown Viewer browser extension
- * so that it doesn't interfere (overly much) with our HTML and PDF renderings.
+/* Adjust the Markdown Viewer browser extension so that it doesn't interfere
+ * (overly much) with our HTML and PDF renderings.
  * <https://github.com/simov/markdown-viewer>
  *
  * Markdown toolchains manipulate stylings. It's a constant battle to make them

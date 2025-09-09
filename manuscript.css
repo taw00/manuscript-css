@@ -59,6 +59,10 @@
 @import     url("./vcurrent/m-pagination.css?rev=2025090902");
 @import url("./manuscript-user-overrides.css?rev=2025090902");
 
+:root {
+    --m-version: 3.0;
+}
+
 
 /*
  * useful misc classes

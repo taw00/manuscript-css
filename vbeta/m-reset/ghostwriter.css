@@ -1,8 +1,5 @@
-/* CSS for Manuscript Formating v3.0
- *
- * m-reset/ghostwriter.css - adjust the Ghostwriter app's base styles to more
- * friendly defaults so that it doesn't interfere (overly much) with our HTML
- * and PDF renderings.
+/* Adjust the Ghostwriter app's base styles to more friendly defaults so that
+ * it doesn't interfere (overly much) with our HTML and PDF renderings.
  * <https://ghostwriter.kde.org>
  *
  * Markdown toolchains manipulate stylings. It's a constant battle to make them

@@ -1,8 +1,6 @@
-/* CSS for Manuscript Formating v3.0
- *
- * m-reset/vscode.css - reset the VSCodium/VSCode (Visual Studio Code) app's
- * base styles to more friendly defaults for manuscript.css when attempting to
- * render from the application.
+/* Reset the VSCodium/VSCode (Visual Studio Code) app's base styles to more
+ * friendly defaults for manuscript.css when attempting to render from the
+ * application.
  * <https://code.visualstudio.com/>
  *
  * Markdown toolchains manipulate stylings. This attempts to reset those to

@@ -1,8 +1,5 @@
-/* CSS for Manuscript Formating v3.0
- *
- * m-reset/joplin.css - reset the Joplin app's base styles to more
- * friendly defaults for manuscript.css when attempting to render from the
- * application.
+/* Reset the Joplin app's base styles to more friendly defaults for
+ * manuscript.css when attempting to render from the application.
  * <https://joplinapp.org>
  *
  * Markdown toolchains manipulate stylings. This attempts to reset those to
