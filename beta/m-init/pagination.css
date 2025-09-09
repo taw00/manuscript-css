@@ -1,0 +1,148 @@
+/* Pagination Logic and Per-page Headers
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@page no-header {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-page-margin);
+}
+
+/*
+ * top (not :first) rules
+ */
+
+@page top-left-header {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-paginated-margin) var(--m-page-margin) var(--m-page-margin);
+    @top-left {
+        vertical-align: top;
+        margin: var(--m-page-margin) 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page top-center-header {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-paginated-margin) var(--m-page-margin) var(--m-page-margin);
+    @top-center {
+        vertical-align: top;
+        margin: var(--m-page-margin) 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+@page top-right-header {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-paginated-margin) var(--m-page-margin) var(--m-page-margin);
+    @top-right {
+        vertical-align: top;
+        margin: var(--m-page-margin) 0 0;
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * bottom (not :first) rules
+ */
+
+@page bottom-left-header {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-page-margin) var(--m-page-margin) var(--m-paginated-margin);
+    @bottom-left {
+        vertical-align: bottom;
+        margin: 0 0 var(--m-page-margin);
+        content: var(--m-pagination-header);
+    }
+}
+@page bottom-center-header {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-page-margin) var(--m-page-margin) var(--m-paginated-margin);
+    @bottom-center {
+        vertical-align: bottom;
+        margin: 0 0 var(--m-page-margin);
+        content: var(--m-pagination-header);
+    }
+}
+@page bottom-right-header {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-page-margin) var(--m-page-margin) var(--m-paginated-margin);
+    @bottom-right {
+        vertical-align: bottom;
+        margin: 0 0 var(--m-page-margin);
+        content: var(--m-pagination-header);
+    }
+}
+
+
+/*
+ * ******** first rules ********
+ */
+
+@page top-left-header:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page top-center-header:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page top-right-header:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
+@page top-right-header:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
+@page bottom-left-header:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page bottom-center-header:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page bottom-right-header:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+

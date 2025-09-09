@@ -1,0 +1,62 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * Dinkus and -30- content
+ *
+ * We include some switches …
+ * - If article#manuscript.text-only — no dinkuses or -30- (and other things)
+ * - If article#manuscript.no-dinkuses — no dinkuses or -30-
+ * - If article#manuscript section.m-scene.no-dinkus — no dinkus for that scene
+ * - If article#manuscript section.m-scene section.m-subscenes.no-dinkuses -
+ *      no dinkuses for that whole subscene
+ * - If article#manuscript.poetry - no -30- since poetry collections don't use
+ *      -30- markers for whatever reason.
+ * - If section.m-poem - will not have a dinkus
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit <http://creativecommons.org/licenses/by/4.0/>
+ */
+
+/*
+ * this needs a cleanup!!!
+ */
+
+
+#manuscript:not(.text-only) {
+    /* right now #manuscript-level classes no-dinkuses and hide-dinkuses do the
+     * same thing */
+    &:is(.hide-dinkuses,.no-dinkuses) section.m-scene::after {
+        content: var(--m-marker-zws); /* &zerowidthspace */
+    }
+
+    &:not(.hide-dinkuses,.no-dinkuses) {
+        /* per scene dinkuses - automated content for between scenes */
+        & section.m-scene:is(.hide-dinkus,.no-dinkus)::after {
+            content: var(--m-marker-zws); /* &zerowidthspace */
+        }
+        & section.m-scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
+            content: var(--m-dinkus);
+        }
+        /* per subscene dinkuses */
+        & section.m-subscenes:is(.hide-dinkuses,.no-dinkuses) section.m-scene::after {
+            content: var(--m-marker-zws); /* &zerowidthspace */
+        }
+        & section.m-subscenes:not(.hide-dinkuses,.no-dinkuses) {
+            & section.m-scene:is(.hide-dinkus,.no-dinkus)::after {
+                content: var(--m-marker-zws); /* &zerowidthspace */
+            }
+            & section.m-scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
+                content: var(--m-dinkus-subscene);
+            }
+        }
+    }
+}
+
+/* -30-
+ *
+ * automated content for the -30- marker at the end
+ * NOTE: poetry manuscripts do not use dinkus or -30- markers */
+#manuscript:not(.poetry,.text-only)::after {
+    content: var(--m-30-);
+}
+

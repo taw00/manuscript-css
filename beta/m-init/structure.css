@@ -1,0 +1,138 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * Verifies the basic structure of the document and sets out the initial
+ * display and block-sizing rules.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+/*
+ * Enforcing the structure
+ * - first we remove all things
+ * - then we add back only what is allowed
+ *
+ * Note, experimenting with a version that changes text appearance so that
+ * divergent user-choices are highlighted instead of merely vanished.
+ */
+html,
+body,
+#vpage,
+#vpage > *,
+#manuscript > *,
+#manuscript .m-book > *,
+#manuscript .m-part > *,
+#manuscript .m-chapter > *,
+#manuscript .m-scene > *,
+#manuscript .m-poem > * {
+    display: none;
+}
+/*
+#manuscript .m-poem > *,
+#manuscript .m-header > *,
+#manuscript .m-facts > *,
+#manuscript .x-poem > * {
+    text-shadow: #ffcc00 1px 0 10px;
+    text-shadow: red 1px 0 5px;
+}
+*/
+html:has(body),
+body:has(div#vpage),
+div#vpage:has(article#manuscript),
+/* a vpage can only contain a #manuscript */
+div#vpage > article#manuscript,
+/* a manuscript can only contain a contact and a header,
+ * and parts, chapters, and/or scenes/poems */
+div#vpage > article#manuscript > div#m-contact,
+div#vpage > article#manuscript > div.m-header,
+div#vpage > article#manuscript > section.m-book,
+div#vpage > article#manuscript > section.m-part,
+div#vpage > article#manuscript > section.m-chapter,
+div#vpage > article#manuscript > section.m-scene,
+div#vpage > article#manuscript > section.m-poem,
+/* for right now, a book can only contain a header and parts, chapters, or scenes/poems */
+div#vpage > article#manuscript section.m-book > div.m-header,
+div#vpage > article#manuscript section.m-book > section.m-part,
+div#vpage > article#manuscript section.m-book > section.m-chapter,
+div#vpage > article#manuscript section.m-book > section.m-scene,
+div#vpage > article#manuscript section.m-book > section.m-poem,
+/* a part can only contain a header and chapters or scenes/poems */
+div#vpage > article#manuscript section.m-part > div.m-header,
+div#vpage > article#manuscript section.m-part > section.m-chapter,
+div#vpage > article#manuscript section.m-part > section.m-scene,
+div#vpage > article#manuscript section.m-part > section.m-poem,
+/* a chapter can only contain a header and scenes/poems */
+div#vpage > article#manuscript section.m-chapter > div.m-header,
+div#vpage > article#manuscript section.m-chapter > section.m-scene,
+div#vpage > article#manuscript section.m-chapter > section.m-poem,
+div#vpage > article#manuscript section.m-scene > *,
+div#vpage > article#manuscript section.m-poem > * {
+    display: block;
+    box-sizing: border-box;
+}
+/*
+div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-poem > *,
+div#vpage > article#manuscript div.m-header > *,
+div#vpage > article#manuscript div.m-facts > *,
+div#vpage > article#manuscript div.x-poem,
+div#vpage > article#manuscript div.x-poem > * {
+    display: block;
+    box-sizing: border-box;
+    text-shadow: unset;
+*/
+/*
+div#vpage > article#manuscript section.m-scene > *,
+div#vpage > article#manuscript section.m-poem > * {
+    text-shadow: unset;
+}
+div#vpage > article#manuscript div.m-header > :is(h1,h2,h3,h4,h5,blockquote,p,pre,div.x-poem,div.m-facts) {
+    text-shadow: unset;
+}
+*/
+
+
+
+#manuscript {
+    & section,
+    & section > .m-header0,
+    & section > .m-header {
+        clear: both;
+    }
+
+    & .m-facts,
+    & div.x-poem {
+        display: block;
+        box-sizing: border-box;
+    }
+
+    /* All the dinkuses and the -30- */
+    &::before, &::after,
+    & *::before, & *::after {
+        display: block;
+        box-sizing: border-box;
+    }
+    /* … remove dinkuses for scenes if they are last in any structure */
+    & section.m-scene:last-of-type::after {
+        display: none;
+    }
+
+    /* these two configurations are overly pedantic */
+    & :is(h1, h2, h3, h4, h5, h6, blockquote, p) {
+        display: block;
+        box-sizing: border-box;
+    }
+    & pre {
+        display: block;
+        box-sizing: border-box;
+    }
+    & code {
+        display: inline;
+        box-sizing: border-box;
+    }
+    & pre > code {
+        display: inline;
+        box-sizing: border-box;
+    }
+} /* end #manuscript */
+

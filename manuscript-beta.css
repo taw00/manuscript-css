@@ -1,0 +1,78 @@
+/* CSS for Manuscript Formating v3.0
+ *
+ * Use this CSS to format your markdown-drafted short story or novel into an
+ * approximates of industry standard manuscript formatting.
+ * This is useful for:
+ * - sharing with others in a format they are familiar with
+ * - submitting to critique groups in a professional way
+ * - post the manuscript-formated doc on the web for review
+ * … all without having to port your draft to a word processing document
+ *
+ * Supported: Manuscripts formated as …
+ * - short and long form documents
+ * - narrative and nonnarrative prose
+ * - prose and poetry
+ * - chapters and scenes/poems
+ * - US Letter, A4, etc. or print and digital presentation.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ *
+ * The div #vpage class "switches":
+ * - default: class="US portrait top-right-header"
+ *   If there is no classes are set, those are still the default.  
+ *   Others available:
+ *   - 'plain', 'vplain', 'vvplain' - these simplify the rendering by removing
+ *     fancy things.
+ *   - 'US', 'USh', 'A4', 'A5', or 'A6' paper sizes
+ *   - 'top-left-header', 'top-right-header', 'top-center-header',  
+ *     'bottom-left-header', 'bottom-center-header', 'bottom-right-header',  
+ *     'no-header' (if you don't want any header)
+ *     and when you set a --m-pagination-header variable in your <style> block
+ *     it will appear in one of those. You can only use one of those switches.
+ *
+ * The article #manuscript class "switches":
+ * - default: class="short narrative prose"  
+ *   If there is no classes are set, those are still the default.  
+ *   Others avaiable:
+ *   - 'poetry' - if your work is … poetry
+ *   - 'long' - if your work is long form
+ *   - 'nonnarrative' - for prose, if your work is not a narrative work
+ *   - 'simple' or 'text-only' - used to present a simplified version (no
+ *     first-page metadata and simulated page breaks and such)
+ *
+ * <style
+ *   @import url("url-or-path/to/the/manuscript.css");
+ *   :root {
+ *     --m-pagination-header: "MyLastname / My Short Title" counter(page);
+ *   }
+ * </style>
+ */
+
+@layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
+
+@import                url("./beta/m-var.css?rev=2025090901");
+@import              url("./beta/m-reset.css?rev=2025090901");
+@import               url("./beta/m-init.css?rev=2025090901");
+@import               url("./beta/m-core.css?rev=2025090901");
+@import         url("./beta/m-pagination.css?rev=2025090901");
+@import url("./manuscript-user-overrides.css?rev=2025090901");
+
+
+/*
+ * useful misc classes
+ */
+.center-max-content,
+.table-of-contents,
+.toc {
+    width: max-content !important;
+    margin-left: auto !important; margin-right: auto !important;
+}
+.force-break-before {
+    break-before: page !important;
+}
+.force-break-after {
+    break-after: page !important;
+}
+
