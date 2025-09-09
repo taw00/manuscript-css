@@ -45,19 +45,19 @@
  * <style
  *   @import url("url-or-path/to/the/manuscript.css");
  *   :root {
- *     --m-pagination-header: "MyLastname / My Short Title" counter(page);
+ *     --m-pagination-header: "MyLastname / My Short Title / " counter(page);
  *   }
  * </style>
  */
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                     url("./m-var.css?rev=2025090901");
-@import                   url("./m-reset.css?rev=2025090901");
-@import                    url("./m-init.css?rev=2025090901");
-@import                    url("./m-core.css?rev=2025090901");
-@import              url("./m-pagination.css?rev=2025090901");
-@import url("./manuscript-user-overrides.css?rev=2025090901");
+@import            url("./vcurrent/m-var.css?rev=2025090902");
+@import          url("./vcurrent/m-reset.css?rev=2025090902");
+@import           url("./vcurrent/m-init.css?rev=2025090902");
+@import           url("./vcurrent/m-core.css?rev=2025090902");
+@import     url("./vcurrent/m-pagination.css?rev=2025090902");
+@import url("./manuscript-user-overrides.css?rev=2025090902");
 
 
 /*
