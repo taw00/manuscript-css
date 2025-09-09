@@ -94,6 +94,13 @@
         --m-page-height:  var(--m-page-widthA6);
     }
 
+    &:has(#manuscript:is(.first-paragraph-indent-off)) {
+        /* the indent for that first line of the first paragraph. I like it off
+         * but that is not the standard for manuscript formatting.
+         * (this distinction only apples to narrative works and the headers) */
+        --m-indent-narrative-first-paragraph: 0;
+    }
+
     &:has(#manuscript:not(:is(.nonnarrative,.non-narrative))) { /* i.e., narrative */
         /* the default is already set for .narrative, but we are being explicit */
         /* narrative paragraphs first not indented, then indented */
