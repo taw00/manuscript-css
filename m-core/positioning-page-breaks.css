@@ -75,23 +75,7 @@
         break-before: var(--m-page-break);
     }
     
-    /* We page-broke after the main title-block and after a part title-block
-     * (but only if either existed). Now we need to reel-back some things so
-     * that we don't double up page breaks. */
-    /*
-    #manuscript > .m-header ~ section:first-of-type {
-        break-before: avoid-page;
-        & > .m-header {
-            break-before: avoid-page;
-        }
-    }
-    #manuscript section.m-part > .m-header ~ section:first-of-type {
-        break-before: avoid-page;
-        & > .m-header {
-            break-before: avoid-page;
-        }
-    }
-    */
+    /* AVOIDANCE */
 
     a { break-inside: avoid-page !important; }
 
@@ -127,25 +111,6 @@
     #manuscript .m-facts {
         break-inside: avoid-page !important;
     }
-    /* don't page break after a chapter or scene header */
-    /*
-    #manuscript :is(section.m-chapter,section.m-scene) > .m-header {
-        break-after: avoid-page !important;
-    }
-    */
-    /* don't page break before scene */
-    /*
-    #manuscript section.m-scene,
-    #manuscript section.m-scene > .m-header {
-        break-before: avoid-page !important;
-    }
-    */
-    /* don't page break before a chapter or scene header's first child */
-    /*
-    #manuscript :is(section.m-chapter, section.m-scene) > .m-header + * {
-        break-before: avoid-page !important;
-    }
-    */
     /* don't page break before a dinkus or -30- marker */
     #manuscript section.m-scene::after,
     #manuscript::after,
