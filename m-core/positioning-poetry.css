@@ -71,18 +71,18 @@
             margin-inline: 0;
             & > blockquote {
                 margin-inline: 0;
-                /*
-                width: max-content;
-                max-width: min(max-content,100%);
-                */
+                /* in these arbitrary poems, don't indent that 1st p */
+                & > p { text-indent: 0; }
+                & > p ~ p { text-indent: var(--m-indent); }
             }
             /* H-tags and P-tags - align left */
             & :is(h1,h2,h3,h4,h5,h6,p) {
                 margin-inline: 0;
                 text-align: var(--m-text-align);
             }
-            /* extra space at end of .m-header before the poem
-            margin-block-end: var(--m-spacing-poem); */
+            /* in these arbitrary poems, don't indent that 1st p */
+            & > p { text-indent: 0; }
+            & > p ~ p { text-indent: var(--m-indent); }
         }
         & > :is(h1, h2, h3, h4, h5, h6),   /* all header H-tags */
         & > p {                            /* all header paragraphs */
@@ -123,33 +123,25 @@
         }
     }
 
-    /* poem title header spacing control
-     * - gap between a poem header and its poem content */
-    & section.m-poem > .m-header0 {
-        padding-block-end: var(--m-page-margin);
-    }
+    /* poem title header spacing control */
+    & div.x-poem > .m-header,
     & section.m-poem > .m-header {
-        margin-block-end: calc(var(--m-spacing-poem) * 1.5);
+        /* gap between a poem header and its poem content */
+        margin-block-end: calc(var(--m-spacing-poem) * 2);
     }
-    & div.x-poem > .m-header {
-        margin-block-end: calc(var(--m-spacing-poem) * 1.5);
+    & section.m-poem:has( > .m-header0) > .m-header {
+        /* top margin for title (2-inches), if existence of a contact header */
+        margin-block-start: calc(var(--m-page-margin) * 2);
     }
-
 
     /* THIS IS IN BETA -- build the poetry per-poem header */
     .m-header0 {
         display: block;
-        margin-block: 0;
-        margin-inline: auto;
-        padding-block: 0 0 var(--m-page-margin);
-        text-align: center;
+        /* stops .m-header top margin collapse (only probably when print) */
+        padding-block-end: 0.02px; /* 0.02px is the smallest we can go */
         & > .m-contact {
             float: left;
-            & p {
-                text-indent: 0;
-                text-align: start;
-                line-height: var(--m-line-spacing-single);
-            }
+            margin-block: 0;
         }
         & > .m-facts {
             float: right;
@@ -157,6 +149,7 @@
                 text-indent: 0;
                 text-align: end;
                 line-height: var(--m-line-spacing-single);
+                margin-block: 0;
             }
         }
     }

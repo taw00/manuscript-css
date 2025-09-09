@@ -47,6 +47,7 @@ html {
         line-height: var(--m-line-spacing-code);
     }
 
+    & .m-contact,
     & #m-contact {
         font-size:   var(--m-font-size-contact);
         font-weight: var(--m-font-weight-contact);
@@ -237,6 +238,7 @@ html {
     }
 
     /* link colors for #m-contact and for .m-facts are different */
+    & .m-contact,
     & #m-contact,
     &:not(.long) > .m-header > .m-facts {
         a {
