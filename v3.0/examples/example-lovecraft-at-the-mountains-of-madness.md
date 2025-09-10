@@ -1,10 +1,9 @@
 <!--
-A real story of some length.
-
 This example:
-- short-form narrative (the default).
-- no parts or chapters, just one scene for the story and another for an
-  acknowledgement section with a bibliography reference.
+- long-form narrative
+- chapters and scenes - even an embedded arbitrary poem
+  Note, we only have one scene per chapter in this, and therefore you could
+  easily have done the same formatting with just scenes.
 - we also customize a few things.
 
 The narrative for our example: HP Lovecraft's classic, _At the Mountains of
