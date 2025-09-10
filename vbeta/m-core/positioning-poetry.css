@@ -44,7 +44,7 @@
      * - div.x-poem is an arbitrary poem inserted anywhere
      */
     & section.m-poem {
-        /* no-op placeholder */
+        position: relative;
     }
     & :is(section.m-poem, div.x-poem) pre {
         margin-block: var(--m-spacing-stanza);
@@ -61,6 +61,7 @@
      * div.x-poem — arbitrary poems
      */
     & div.x-poem {
+        position: relative;
         /* space at the begining & ending */
         margin-block: var(--m-spacing-poem);
         /* margins left & right with exceptions (see below) */
@@ -132,7 +133,9 @@
         margin-block-start: calc(var(--m-page-margin) * 2);
     }
 
-    /* THIS IS IN BETA -- build the poetry per-poem header */
+    /*
+     * PAGE HEADERS FOR POEMS (contact left and facts right)
+     */
     & section.m-poem > .m-page-header {
         display: block;
         /* stops .m-title-header top margin collapse (only probably when print) */

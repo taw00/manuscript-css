@@ -63,7 +63,14 @@
         text-align: var(--m-text-align);
         margin-block: 0;
     }
-    & p ~ p {
+    & ul > li > p,
+    & ol > li > p,
+    & dt > dd > p,
+    & dt > dd {
+        text-indent: 0;
+    }
+    & p ~ p,
+    & dd ~ dd {
         /* a paragraph after a paragraph is either indented (narrative)
          * or not indented (nonnarrative) */
         text-indent: var(--m-indent);
@@ -98,16 +105,14 @@
      * CONTACT INFO both first page m-contact and other pages m-contacts
      * - contact info goes in the upper-left corner
      *   (probably need to internationalize this?) */
-    & > .m-contact {
-        position: absolute;
-        top: 0; left: 0;
+    & > .m-page-header > .m-contact {
+            position: absolute;
+            top: 0; left: 0;
     }
-    & section .m-contact {
-        p {
+    & .m-contact > p {
             text-align: start;
             text-indent: unset;
             margin-block: 0;
-        }
     }
 
 

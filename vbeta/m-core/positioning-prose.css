@@ -36,6 +36,7 @@
 
 #manuscript {
     & section.m-scene {
+        position: relative;
         /*
          * Normal Scene: #manuscript section.m-scene:not(.foothang)
          */
@@ -44,7 +45,15 @@
                 /* a paragraph after a non-paragraph is not indented */
                 text-indent: var(--m-indent-first-paragraph-scene);
             }
-            & p ~ p {
+            /* specificity forces this re-declaration */
+            & ul > li > p,
+            & ol > li > p,
+            & dt > dd > p,
+            & dt > dd {
+                text-indent: 0;
+            }
+            & p ~ p,
+            & dd ~ dd {
                 /* a paragraph after a paragraph is indented (narrative) or not
                  * (nonnarrative) */
                 text-indent: var(--m-indent-scene);

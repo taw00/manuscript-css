@@ -22,9 +22,14 @@ body,
 #manuscript .m-book > *,
 #manuscript .m-part > *,
 #manuscript .m-chapter > *,
-#manuscript .m-scene,
-#manuscript .m-poem,
-#manuscript .x-poem {
+#manuscript .m-scene > *,
+#manuscript .m-subscenes > *, /* this is still experimental */
+#manuscript .m-poem > *,
+#manuscript .x-poem > *,
+#manuscript .m-page-header > *,
+#manuscript .m-title-header > *,
+#manuscript .m-contact > *,
+#manuscript .m-facts > * {
     display: none;
 }
 
@@ -36,7 +41,7 @@ div#vpage:has(article#manuscript),
 div#vpage > article#manuscript,
 /* a manuscript can only contain a page header and a title header,
  * and then books, parts, chapters, and/or scenes/poems */
-div#vpage > article#manuscript > div.m-contact, /* LEGACY v3 stuff */
+/*div#vpage > article#manuscript > div.m-contact,*/ /* LEGACY v3 stuff */
 div#vpage > article#manuscript > div.m-page-header,
 div#vpage > article#manuscript > div.m-title-header,
 div#vpage > article#manuscript > section.m-book,
@@ -60,20 +65,45 @@ div#vpage > article#manuscript section.m-part > section.m-poem,
 div#vpage > article#manuscript section.m-chapter > div.m-title-header,
 div#vpage > article#manuscript section.m-chapter > section.m-scene,
 div#vpage > article#manuscript section.m-chapter > section.m-poem,
-/* a scene can contain a title header and x-poems and lots of things */
+/* a scene can only contain a title header, subscenes, img, hr, ul, ol, dl, pre, p,
+ * blockquote, x-poem, h-tag, div, table */
 div#vpage > article#manuscript section.m-scene > div.m-title-header,
+div#vpage > article#manuscript section.m-scene > div.m-subscenes,
 div#vpage > article#manuscript section.m-scene > div.x-poem,
-div#vpage > article#manuscript section.m-scene > *, 
+div#vpage > article#manuscript section.m-scene > :is(img, hr, ul, ol, dl, pre, table),
+div#vpage > article#manuscript section.m-scene > :is(h1, h2, h3, h4, h5, blockquote, p),
+div#vpage > article#manuscript section.m-scene > :is(h6), /* a manual dinkus */
+div#vpage > article#manuscript section.m-scene > :is(div), /* we have to allow for custom styling */
+/* a subscenes can only contain scenes */
+div#vpage > article#manuscript section.m-subscenes > div.m-scene,
 /* a poem can contain a page header and a title header,
  * and then ONLY preformatted blocks (poem stanzas)
  * (<div> specifically called out because editing tools like to wrap <pre> */
 div#vpage > article#manuscript section.m-poem > div.m-page-header,
 div#vpage > article#manuscript section.m-poem > div.m-title-header,
 div#vpage > article#manuscript section.m-poem > pre,
-div#vpage > article#manuscript section.m-poem > div {
-    display: block !important;
+/* an arbitrary poem can contain a title header and pre */
+div#vpage > article#manuscript div.x-poem > div.m-title-header,
+div#vpage > article#manuscript div.x-poem > pre,
+/* a page header can only contain a contact or facts */
+div#vpage > article#manuscript div.m-page-header > div.m-contact,
+div#vpage > article#manuscript div.m-page-header > div.m-facts,
+/* a title header can only contain a p, blockquote, x-poem, facts, or h-tag */
+div#vpage > article#manuscript div.m-title-header > div.m-facts,
+div#vpage > article#manuscript div.m-title-header > div.x-poem,
+div#vpage > article#manuscript div.m-title-header > :is(h1, h2, h3, h4, h5, blockquote, p),
+/* a facts and contacts can only contain paragraphs */
+div#vpage > article#manuscript div.m-facts > p,
+div#vpage > article#manuscript div.m-contact > p,
+/* We have some special cases because … meddling by markdown ediors … */
+div#vpage > article#manuscript section.m-scene > div.joplin-editable, /* special case */
+div#vpage > article#manuscript section.m-poem > div.joplin-editable,  /* special case */
+div#vpage > article#manuscript div.x-poem > div.joplin-editable {      /* special case */
+    display: block;
     box-sizing: border-box;
 }
+
+
 
 
 #manuscript {
