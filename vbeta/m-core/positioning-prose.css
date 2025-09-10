@@ -55,7 +55,7 @@
              *              indents at the start
              * Note, the exclusions are pedantic. */
             & > :is(h1,h2,h3,h4,h5,h6),
-            & :not(.x-poem,.m-header, ol,ul,dl,menu, li,dt,dd, table,thead,tbody,tfoot,th,tr,td,colgroup,col) {
+            & :not(.x-poem,.m-title-header, ol,ul,dl,menu, li,dt,dd, table,thead,tbody,tfoot,th,tr,td,colgroup,col) {
                 & :is(h1,h2,h3,h4,h5,h6) {
                     margin-top: var(--m-elbow-room);
                     margin-block-start: var(--m-elbow-room);
@@ -95,7 +95,7 @@
          * Scene padding at the top
          */
 
-        & > .m-header {
+        & > .m-title-header {
             /* prose content - there may be a small margin (non-narrative)
              * between prose content and a scene's header block if it exists */
             & ~ * {
@@ -140,10 +140,10 @@
 
     /* scene title header spacing control
      * - gap between a scene header and its scene content */
-    & section.m-scene > .m-header {
+    & section.m-scene > .m-title-header {
         margin-block-end: calc(var(--m-elbow-room) * 1);
     }
-    & section.m-scene ~ section.m-scene:has( > .m-header) {
+    & section.m-scene ~ section.m-scene:has( > .m-title-header) {
         margin-block-start: calc(var(--m-elbow-room) * 1);
     }
 

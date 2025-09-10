@@ -76,32 +76,30 @@
     /* print rendering - do not allow code scrollbars */
     #manuscript pre > code { overflow: hidden; }
 
-    /* paginated header rules (defined in m-init/pagination.css) */
+    /* marginalia rules (defined in m-init/marginalia.css) */
     #vpage {
-        page: top-right-header;
-        &.no-header {
-            page: no-header;
-        }
-        &.top-left-header {
-            page: top-left-header;
-        }
-        &.top-center-header {
-            page: top-center-header;
-        }
-        &.top-right-header {
-            page: top-right-header;
-        }
-        &.bottom-left-header {
-            page: bottom-left-header;
-        }
-        &.bottom-center-header {
-            page: bottom-center-header;
-        }
-        &.bottom-right-header {
-            page: bottom-right-header;
-        }
+        page: top-right-marginalia;
+        &.no-marginalia,
         &:has(article#manuscript.poetry) {
-            page: no-header;
+            page: no-marginalia;
+        }
+        &.top-left-marginalia {
+            page: top-left-marginalia;
+        }
+        &.top-center-marginalia {
+            page: top-center-marginalia;
+        }
+        &.top-right-marginalia {
+            page: top-right-marginalia;
+        }
+        &.bottom-left-marginalia {
+            page: bottom-left-marginalia;
+        }
+        &.bottom-center-marginalia {
+            page: bottom-center-marginalia;
+        }
+        &.bottom-right-marginalia {
+            page: bottom-right-marginalia;
         }
     }
 }

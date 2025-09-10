@@ -10,25 +10,25 @@
  * SIMULATED PAGE BREAKS
  */
 @media screen {
-    #manuscript > .m-header:has( ~ section),
-    #manuscript section.m-book > .m-header:has( ~ :is(section.m-book,section.m-part)) {
+    #manuscript > .m-title-header:has( ~ section),
+    #manuscript section.m-book > .m-title-header:has( ~ :is(section.m-book,section.m-part)) {
         /* the title page or book needs padding before a sim. page break */
         padding-block-end: var(--m-page-break-simulated-padding);
     }
     /* we always page break after the title page */
-    #manuscript > .m-header ~ section,
+    #manuscript > .m-title-header ~ section,
     /* we always page break as we go into a book */
-    #manuscript section.m-book:has( > .m-header),
+    #manuscript section.m-book:has( > .m-title-header),
     /* we always page break as we go into a page */
-    #manuscript section.m-part:has( > .m-header),
+    #manuscript section.m-part:has( > .m-title-header),
     /* we page break into poems that come one after another */
     #manuscript.poetry section.m-poem,
     #manuscript section.m-poem ~ section {
         border-top: var(--m-page-break-simulated);
     }
 
-    #manuscript section.m-book:has( > .m-header),
-    #manuscript section.m-part:has( > .m-header) {
+    #manuscript section.m-book:has( > .m-title-header),
+    #manuscript section.m-part:has( > .m-title-header) {
         padding-block-start: var(--m-offset-part-simulated);
     }
     #manuscript.poetry section.m-poem {
@@ -46,22 +46,22 @@
         break-before: avoid-page !important;
     }
     /*
-    #manuscript > .m-header {
+    #manuscript > .m-title-header {
         break-after: var(--m-page-break);
     }
     */
     /* we always page break after the title page */
-    #manuscript > .m-header ~ section {
+    #manuscript > .m-title-header ~ section {
         break-before: var(--m-page-break);
     }
     /* book and part top margins (may be large (long) or small (short)) But
      * only if they have a title block, otherwise, it's assumed no margin */
-    #manuscript section.m-book:has( > .m-header) {
+    #manuscript section.m-book:has( > .m-title-header) {
         break-before: var(--m-page-break);
         margin-block-start: var(--m-offset-part);
         padding-block-start: 1px;
     }
-    #manuscript section.m-part:has( > .m-header) {
+    #manuscript section.m-part:has( > .m-title-header) {
         break-before: var(--m-page-break);
         margin-block-start: var(--m-offset-part);
         padding-block-start: 1px;
@@ -99,11 +99,11 @@
     /* don't page break inside a title-block header */
     /*
     #manuscript :is(section.m-part,section.m-chapter,
-                    section.m-scene,section.m-poem) > .m-header {
+                    section.m-scene,section.m-poem) > .m-title-header {
         break-inside: avoid-page !important;
     }
     */
-    #manuscript .m-header {
+    #manuscript .m-title-header {
         break-inside: avoid-page !important;
     }
     #manuscript .m-facts {

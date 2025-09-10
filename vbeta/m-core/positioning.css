@@ -89,7 +89,7 @@
       pre ~ pre {
         margin-block-start: 0;
     }
-    & .m-header pre {
+    & .m-title-header pre {
         margin-block: var(--m-nudge);
     }
 
@@ -98,12 +98,11 @@
      * CONTACT INFO both first page m-contact and other pages m-contacts
      * - contact info goes in the upper-left corner
      *   (probably need to internationalize this?) */
-    & #m-contact {
+    & > .m-contact {
         position: absolute;
         top: 0; left: 0;
     }
-    & .m-contact,
-    & #m-contact {
+    & section .m-contact {
         p {
             text-align: start;
             text-indent: unset;
@@ -113,10 +112,10 @@
 
 
     /*
-     * ALL TITLE HEADERS (.m-header)
+     * ALL TITLE HEADERS (.m-title-header)
      * - all title headers and m-facts, a baseline
      */
-    & .m-header {
+    & .m-title-header {
         /* this should be, for a 8.5in page, or about 77% */
         width: calc(calc(var(--m-max-width-header)/var(--m-content-width))*100%);
         max-width: var(--m-max-width-header);
@@ -171,11 +170,11 @@
 
 
     /*
-     * TOP-LEVEL TITLE HEADER (#manuscript > .m-header)
+     * TOP-LEVEL TITLE HEADER (#manuscript > .m-title-header)
      * - Note: this title header's facts are different depending on which
      *   class is set in #manuscript: .short or .long.
      */
-    & > .m-header {
+    & > .m-title-header {
         /* place the manu.title block 1/3 to 5/12 down the page & center it */
         margin-block: var(--m-offset-title) 0;
         margin-inline: auto;
@@ -220,18 +219,20 @@
         padding-bottom: .5rem;
     }
 
-    /* #manuscript.text-only: removes all contact info, .m-headers, & facts
+    /* #manuscript.text-only: removes all contact info, .m-title-headers, & facts
      * #manuscript.simple: removes the top-level contacts and all facts */
     &.text-only {
-        #m-contact,
         .m-facts,
-        .m-header {
+        .m-contact,
+        .m-page-header,
+        .m-title-header {
             display: none !important;
         }
     }
     &.simple {
-        #m-contact,
-        .m-facts {
+        .m-facts,
+        .m-contact,
+        .m-page-header {
             display: none !important;
         }
     }

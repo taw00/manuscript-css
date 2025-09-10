@@ -45,15 +45,14 @@ html {
         line-height: var(--m-line-spacing-code);
     }
 
-    & .m-contact,
-    & #m-contact {
+    & .m-contact {
         font-size:   var(--m-font-size-contact);
         font-weight: var(--m-font-weight-contact);
         font-family: var(--m-font-family-contact);
         line-height: var(--m-line-spacing-contact);
     }
 
-    & .m-header {
+    & .m-title-header {
         font-size:   var(--m-font-size-header);
         font-weight: var(--m-font-weight-header);
         font-family: var(--m-font-family-header);
@@ -81,7 +80,7 @@ html {
             font-family: var(--m-font-family-byline);
         }
     }
-    & section:is(.m-part, .m-chapter, .m-scene) > .m-header {
+    & section:is(.m-part, .m-chapter, .m-scene) > .m-title-header {
         font-size:   var(--m-font-size-headers);
         font-weight: var(--m-font-weight-headers);
         font-family: var(--m-font-family-headers);
@@ -102,7 +101,7 @@ html {
     }
 
     & section.m-part {
-        & > .m-header {
+        & > .m-title-header {
             & > h1 {              /* title: part */
                 font-size:   var(--m-font-size-title-part);
                 font-weight: var(--m-font-weight-title-part);
@@ -122,7 +121,7 @@ html {
     }
 
     & section.m-chapter {
-        & > .m-header {
+        & > .m-title-header {
             & > h1 {        /* title: chapter */
                 font-size:   var(--m-font-size-title-chapter);
                 font-weight: var(--m-font-weight-title-chapter);
@@ -141,8 +140,8 @@ html {
         }
     }
 
-    & section:is(.m-poem) > .m-header, /* poem section */
-    & div:is(.x-poem) > .m-header {    /* arbitrary poem */
+    & section:is(.m-poem) > .m-title-header, /* poem section */
+    & div:is(.x-poem) > .m-title-header {    /* arbitrary poem */
         line-height: var(--m-line-spacing-poetry);
         & blockquote, & p {
             line-height: var(--m-line-spacing-poetry);
@@ -168,8 +167,8 @@ html {
         }
     }
 
-    /* section.m-scene > .m-header (title header for a Scene) */
-    & section:is(.m-scene) > .m-header {
+    /* section.m-scene > .m-title-header (title header for a Scene) */
+    & section:is(.m-scene) > .m-title-header {
         & > h1 {         /* title: scene or poem*/
             font-size:   var(--m-font-size-title-scene);
             font-weight: var(--m-font-weight-title-scene);
@@ -209,7 +208,7 @@ html {
             font-family: var(--m-font-family-poetry);
             line-height: var(--m-line-spacing-poetry);
         }
-        .m-header {
+        .m-title-header {
             font-family: inherit;
             font-style: inherit;
             font-weight: inherit;
@@ -235,10 +234,9 @@ html {
         }
     }
 
-    /* link colors for #m-contact and for .m-facts are different */
+    /* link colors for .m-contact and for .m-facts are different */
     & .m-contact,
-    & #m-contact,
-    &:not(.long) > .m-header > .m-facts {
+    &:not(.long) > .m-title-header > .m-facts {
         a {
             color: var(--m-text-color);
             &:hover {

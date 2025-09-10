@@ -22,79 +22,64 @@ body,
 #manuscript .m-book > *,
 #manuscript .m-part > *,
 #manuscript .m-chapter > *,
-#manuscript .m-scene > *,
-#manuscript .m-poem > * {
+#manuscript .m-scene,
+#manuscript .m-poem,
+#manuscript .x-poem {
     display: none;
 }
-/*
-#manuscript .m-poem > *,
-#manuscript .m-header > *,
-#manuscript .m-facts > *,
-#manuscript .x-poem > * {
-    text-shadow: #ffcc00 1px 0 10px;
-    text-shadow: red 1px 0 5px;
-}
-*/
+
+
 html:has(body),
 body:has(div#vpage),
 div#vpage:has(article#manuscript),
 /* a vpage can only contain a #manuscript */
 div#vpage > article#manuscript,
-/* a manuscript can only contain a contact and a header,
- * and parts, chapters, and/or scenes/poems */
-div#vpage > article#manuscript > div#m-contact,
-div#vpage > article#manuscript > div.m-header,
+/* a manuscript can only contain a page header and a title header,
+ * and then books, parts, chapters, and/or scenes/poems */
+div#vpage > article#manuscript > div.m-contact, /* LEGACY v3 stuff */
+div#vpage > article#manuscript > div.m-page-header,
+div#vpage > article#manuscript > div.m-title-header,
 div#vpage > article#manuscript > section.m-book,
 div#vpage > article#manuscript > section.m-part,
 div#vpage > article#manuscript > section.m-chapter,
 div#vpage > article#manuscript > section.m-scene,
 div#vpage > article#manuscript > section.m-poem,
-/* for right now, a book can only contain a header and parts, chapters, or scenes/poems */
-div#vpage > article#manuscript section.m-book > div.m-header,
+/* for right now, a book can only contain a title header,
+ * and then parts, chapters, and/or scenes/poems */
+div#vpage > article#manuscript section.m-book > div.m-title-header,
 div#vpage > article#manuscript section.m-book > section.m-part,
 div#vpage > article#manuscript section.m-book > section.m-chapter,
 div#vpage > article#manuscript section.m-book > section.m-scene,
 div#vpage > article#manuscript section.m-book > section.m-poem,
-/* a part can only contain a header and chapters or scenes/poems */
-div#vpage > article#manuscript section.m-part > div.m-header,
+/* a part can only contain a title header, and then chapters and/or scenes/poems */
+div#vpage > article#manuscript section.m-part > div.m-title-header,
 div#vpage > article#manuscript section.m-part > section.m-chapter,
 div#vpage > article#manuscript section.m-part > section.m-scene,
 div#vpage > article#manuscript section.m-part > section.m-poem,
-/* a chapter can only contain a header and scenes/poems */
-div#vpage > article#manuscript section.m-chapter > div.m-header,
+/* a chapter can only contain a title header and/or scenes/poems */
+div#vpage > article#manuscript section.m-chapter > div.m-title-header,
 div#vpage > article#manuscript section.m-chapter > section.m-scene,
 div#vpage > article#manuscript section.m-chapter > section.m-poem,
-div#vpage > article#manuscript section.m-scene > *,
-div#vpage > article#manuscript section.m-poem > * {
-    display: block;
+/* a scene can contain a title header and x-poems and lots of things */
+div#vpage > article#manuscript section.m-scene > div.m-title-header,
+div#vpage > article#manuscript section.m-scene > div.x-poem,
+div#vpage > article#manuscript section.m-scene > *, 
+/* a poem can contain a page header and a title header,
+ * and then ONLY preformatted blocks (poem stanzas)
+ * (<div> specifically called out because editing tools like to wrap <pre> */
+div#vpage > article#manuscript section.m-poem > div.m-page-header,
+div#vpage > article#manuscript section.m-poem > div.m-title-header,
+div#vpage > article#manuscript section.m-poem > pre,
+div#vpage > article#manuscript section.m-poem > div {
+    display: block !important;
     box-sizing: border-box;
 }
-/*
-div#vpage > article#manuscript > section.m-part > section.m-chapter > section.m-poem > *,
-div#vpage > article#manuscript div.m-header > *,
-div#vpage > article#manuscript div.m-facts > *,
-div#vpage > article#manuscript div.x-poem,
-div#vpage > article#manuscript div.x-poem > * {
-    display: block;
-    box-sizing: border-box;
-    text-shadow: unset;
-*/
-/*
-div#vpage > article#manuscript section.m-scene > *,
-div#vpage > article#manuscript section.m-poem > * {
-    text-shadow: unset;
-}
-div#vpage > article#manuscript div.m-header > :is(h1,h2,h3,h4,h5,blockquote,p,pre,div.x-poem,div.m-facts) {
-    text-shadow: unset;
-}
-*/
-
 
 
 #manuscript {
     & section,
-    & section > .m-header0,
-    & section > .m-header {
+    & section > .m-page-header,
+    & section > .m-title-header {
         clear: both;
     }
 

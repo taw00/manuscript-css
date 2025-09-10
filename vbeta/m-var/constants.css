@@ -209,7 +209,7 @@
     --m-color-eggplant-darker:  #0f0a0fff;
 
     /* for the page 2+ headers */
-    --m-pagination-header: "Lastname / Short Title / " counter(page);
+    --m-marginalia: "Lastname / Short Title / " counter(page);
 
     /* FOR DEBUGGING:
      * Decorative border (screen rendering only) - DISABLED FOR NOW

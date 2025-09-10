@@ -199,7 +199,7 @@ code.inline-code {
     display: none;
 }
 
-#vpage #manuscript :is(.x-poem,.m-poem,.m-header) {
+#vpage #manuscript :is(.x-poem,.m-poem,.m-title-header) {
     .hljs,
     .hljs-keyword,
     .hljs-operator,
@@ -252,5 +252,5 @@ code.inline-code {
         text-decoration: unset;
         padding: unset;
     }
-} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-header) */
+} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-title-header) */
 
