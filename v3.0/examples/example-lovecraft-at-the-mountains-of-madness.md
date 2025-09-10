@@ -2,8 +2,9 @@
 This example:
 - long-form narrative
 - chapters and scenes - even an embedded arbitrary poem
-  Note, we only have one scene per chapter in this, and therefore you could
-  easily have done the same formatting with just scenes.
+  Note, we only have one scene per chapter in this. We did this because we
+  wanted the manuscript to be in chapter form (page-break before each chapter)
+  versus a series of scenes (no page breaks between scenes.
 - we also customize a few things.
 
 The narrative for our example: HP Lovecraft's classic, _At the Mountains of
