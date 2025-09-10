@@ -108,16 +108,6 @@
     @bottom-center { content: none; }
 }
 
-@page top-right-header:first {
-    margin: var(--m-page-margin);
-    @top-left { content: none; }
-    @top-right { content: none; }
-    @top-center { content: none; }
-    @bottom-left { content: none; }
-    @bottom-right { content: none; }
-    @bottom-center { content: none; }
-}
-
 @page bottom-left-header:first {
     margin: var(--m-page-margin);
     @top-left { content: none; }
