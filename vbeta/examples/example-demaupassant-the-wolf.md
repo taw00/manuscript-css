@@ -2,9 +2,15 @@
 A short story example.
 
 This example:
-- long-form narrative.
-- no parts. Just chapters and scenes. But actuality ...
-- only one scene per chapter, which is rather common.
+- long-form narrative (changes layout of title (1st) page)
+- For this one, no books or parts. Just two scenes: one is the story and the
+  second one is added as an acknowledgement area with footnotes about the
+  original publication
+- A dinkus because a # between the scenes would be odd before the
+  acknowledgement. Other ways to handle it is to add 'no-dinkus' to the first
+  scene (only one story scene), or to wrap the second scene in a
+  <div class="m-chapter>
+- Gave it a fancy -30- (the story-end mark)
 
 Copyright (c) Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy of
@@ -15,7 +21,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
-    @import url("../manuscript.css");
+    @import url("../../manuscript-beta.css");
     :root {
         --m-pagination-header: "de Maupassant / The Wolf / " counter(page);
         --m-font-size-title: 1.25em;
@@ -27,22 +33,35 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 <div id="vpage">
 <article id="manuscript">
 
-<div id="m-contact">
+
+<!-- --------------------------- TITLE PAGE ------------------------------- -->
+
+
+<div class="m-page-header">
+<div class="m-contact">
+
 
 Guy de Maupassant
 
 Paris, France
 
-</div>
 
-<div class="m-header">
+</div></div> <!-- /m-contact, /m-page-header -->
+
+
+
+
+<div class="m-title-header">
 
 # The Wolf
-<!-- originally, Le Loup -->
+
+##  (née Le Loup)
 
 ### by Guy de Maupassant (translated by Albert M.C. McMaster)
 
+
 <div class="m-facts">
+
 
 1900 words
 
@@ -50,7 +69,12 @@ gothic horror
 
 November 14, 1882 
 
-</div></div>
+
+</div></div> <!-- (/title strings), /m-facts, /m-title-header -->
+
+
+<!-- ------------------------------ SCENES -------------------------------- -->
+
 
 <section class="m-scene">
 
@@ -167,10 +191,13 @@ Then a lady declared, in a little, soft voice
 
 "All the same, it is fine to have passions like that." 
 
-</section>
+</section> <!-- /m-scene -->
+
+
+
 
 <section class="m-scene foothang">
-<div class="m-header">
+<div class="m-title-header">
 
 # Acknowledgement
 
@@ -178,5 +205,9 @@ Then a lady declared, in a little, soft voice
 
 de Maupassant, Guy. 1882. In *The Gauls*. November 14, 1882. France.
 
-</section>
-</article></div>
+</section> <!-- /m-scene styled with foothangs -->
+
+
+
+
+</article></div> <!-- ----------------------------- end of manuscript ---- -->
