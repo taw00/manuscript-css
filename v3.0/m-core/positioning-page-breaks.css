@@ -34,7 +34,7 @@
         padding-block-start: var(--m-offset-part-simulated);
     }
     #manuscript.poetry section.m-poem {
-        padding-block-bottom: var(--m-room-for-two);
+        padding-block-end: var(--m-room-for-two);
     }
     
 } /* end @media screen */
