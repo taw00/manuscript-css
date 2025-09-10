@@ -65,7 +65,14 @@
         text-align: var(--m-text-align);
         margin-block: 0;
     }
-    & p ~ p {
+    & ul > li > p,
+    & ol > li > p,
+    & dt > dd > p,
+    & dt > dd {
+        text-indent: 0;
+    }
+    & p ~ p,
+    & dd ~ dd {
         /* a paragraph after a paragraph is either indented (narrative)
          * or not indented (nonnarrative) */
         text-indent: var(--m-indent);
