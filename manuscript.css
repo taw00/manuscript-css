@@ -52,12 +52,12 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import            url("./vcurrent/m-var.css?rev=2025090903");
-@import          url("./vcurrent/m-reset.css?rev=2025090903");
-@import           url("./vcurrent/m-init.css?rev=2025090903");
-@import           url("./vcurrent/m-core.css?rev=2025090903");
-@import     url("./vcurrent/m-pagination.css?rev=2025090903");
-@import url("./manuscript-user-overrides.css?rev=2025090903");
+@import            url("./vcurrent/m-var.css?rev=2025091001");
+@import          url("./vcurrent/m-reset.css?rev=2025091001");
+@import           url("./vcurrent/m-init.css?rev=2025091001");
+@import           url("./vcurrent/m-core.css?rev=2025091001");
+@import     url("./vcurrent/m-pagination.css?rev=2025091001");
+@import url("./manuscript-user-overrides.css?rev=2025091001");
 
 :root {
     --m-version: 3.0;
