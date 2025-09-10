@@ -70,6 +70,7 @@
 .table-of-contents,
 .toc {
     width: max-content !important;
+    max-width: 100% !important;
     margin-left: auto !important; margin-right: auto !important;
 }
 .force-break-before {
