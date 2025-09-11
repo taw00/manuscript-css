@@ -11,6 +11,10 @@
  */
 @media screen {
     #manuscript {
+        /*
+         * page-breaks dependent on 'short' vs. 'long'
+         */
+
         /* BOOK: we page break going into a book,
          *       but only if the book has a title header */
         & section.m-book:has( > .m-header),
@@ -23,18 +27,36 @@
         & > .m-header ~ section.m-chapter,
         & section:not(.m-part) ~ section.m-chapter,
 
-        /* POEM: we page break going into a poem */
+        /* POEM: we page break going into a poem … always
+         * see below */
+
+        /* SCENES: page break going into a scene,
+         *         but only if it follows a title page, book,
+         *         or (see below) poem */
+        & > div.m-header ~ section.m-scene,
+        & section.m-book:has( > .m-header) ~ section.m-scene {
+            border-block-start: var(--m-page-break-simulated);
+        }
+
+
+        /*
+         * page-breaks that ALWAYS happen
+         */
+
+        /* POEM: we page break going into a poem … always */
         & > .m-header ~ section.m-poem,
         & section ~ section.m-poem,
 
         /* SCENES: page break going into a scene,
-         *         but only if it follows a title page, book, or poem */
-        & > .m-header ~ section.m-scene,
-        & section.m-book:has( > .m-header) ~ section.m-scene,
+         *         but only if it follows a poem */
         & section.m-poem ~ section.m-scene {
-            border-top: var(--m-page-break-simulated);
+            border-block-start: var(--m-page-break-simulated-long);
         }
-    
+
+
+        /*
+         * Book & Page title blocks start a good distance down the page
+         */
 
         /* TITLE PAGE and BOOK
          * add padding at the end of an element that always has a simulated
@@ -67,6 +89,10 @@
     }
 
     #manuscript {
+        /*
+         * page-breaks dependent on 'short' vs. 'long'
+         */
+
         /* BOOK: we page break going into a book,
          *       but only if the book has a title header */
         & section.m-book:has( > .m-header),
@@ -76,20 +102,39 @@
 
         /* CHAPTER: we page break going into a chapter,
         *           unless it follows a part */
-        & > .m-header ~ section.m-chapter,
+         & > .m-header ~ section.m-chapter,
         & section:not(.m-part) ~ section.m-chapter,
 
-        /* POEM: we page break going into a poem */
+        /* POEM: we page break going into a poem … always
+         * see below */
+
+        /* SCENES: page break going into a scene,
+         *         but only if it follows a title page, book,
+         *         or (see below) poem */
+        & > div.m-header ~ section.m-scene,
+        & section.m-book:has( > .m-header) ~ section.m-scene {
+            break-before: var(--m-page-break);
+        }
+
+
+        /*
+         * page-breaks that ALWAYS happen
+         */
+
+        /* POEM: we page break going into a poem … always */
         & > .m-header ~ section.m-poem,
         & section ~ section.m-poem,
 
         /* SCENES: page break going into a scene,
-         *         but only if it follows a title page, book, or poem */
-        & > .m-header ~ section.m-scene,
-        & section.m-book:has( > .m-header) ~ section.m-scene,
+         *         but only if it follows a poem */
         & section.m-poem ~ section.m-scene {
-            break-before: var(--m-page-break);
+            break-before: page;
         }
+
+
+        /*
+         * Book & Page title blocks start a good distance down the page
+         */
 
         /* book & part top margins (may be large (long) or small (short)), but
          * only if they have a title block, otherwise it's assumed no margin */
