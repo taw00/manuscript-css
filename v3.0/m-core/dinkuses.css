@@ -1,13 +1,11 @@
-/* CSS for Manuscript Formating v3.0
- *
- * Dinkus and -30- content
+/* Dinkus and -30- content and permutations and positioning
  *
  * We include some switches …
  * - If article#manuscript.text-only — no dinkuses or -30- (and other things)
  * - If article#manuscript.no-dinkuses — no dinkuses or -30-
  * - If article#manuscript section.m-scene.no-dinkus — no dinkus for that scene
  * - If article#manuscript section.m-scene section.m-subscenes.no-dinkuses -
- *      no dinkuses for that whole subscene
+ * - If article#manuscript section.m-scene ~ section:not(.m-scene) - no dinkus
  * - If article#manuscript.poetry - no -30- since poetry collections don't use
  *      -30- markers for whatever reason.
  * - If section.m-poem - will not have a dinkus
@@ -23,6 +21,11 @@
 
 
 #manuscript:not(.text-only) {
+
+    /*
+     * DINKUSES & -30- CONTENT
+     */
+
     /* right now #manuscript-level classes no-dinkuses and hide-dinkuses do the
      * same thing */
     &:is(.hide-dinkuses,.no-dinkuses) section.m-scene::after {
@@ -30,14 +33,20 @@
     }
 
     &:not(.hide-dinkuses,.no-dinkuses) {
-        /* per scene dinkuses - automated content for between scenes */
-        & section.m-scene:is(.hide-dinkus,.no-dinkus)::after {
-            content: var(--m-marker-zws); /* &zerowidthspace */
-        }
-        & section.m-scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
+        & section.m-scene:not(.hide-dinkus,.no-dinkus)::after {
             content: var(--m-dinkus);
         }
-        /* per subscene dinkuses */
+
+        /* per scene dinkuses - automated content for between scenes */
+        & section.m-scene:is(.hide-dinkus,.no-dinkus)::after,
+        /* if the next section after a scene … is not a scene, remove the dinkus
+         * (should this be display: none?) */
+        & section.m-scene:has( ~ section:not(.m-scene))::after {
+            content: var(--m-marker-zws); /* &zerowidthspace */
+        }
+
+        /* SUBSCENES */
+
         & section.m-subscenes:is(.hide-dinkuses,.no-dinkuses) section.m-scene::after {
             content: var(--m-marker-zws); /* &zerowidthspace */
         }
@@ -50,13 +59,53 @@
             }
         }
     }
-}
 
-/* -30-
- *
- * automated content for the -30- marker at the end
- * NOTE: poetry manuscripts do not use dinkus or -30- markers */
-#manuscript:not(.poetry,.text-only)::after {
-    content: var(--m-30-);
-}
+    /* -30- content
+     * Note: poetry manuscripts do not use dinkus or -30- markers */
+    &:not(.poetry)::after {
+        content: var(--m-30-);
+    }
+
+
+    /*
+     * DINKUSES & -30- POSITIONING
+     * - dinkuses are placed between scenes
+     * - -30- is placed at the end of the document
+     */
+    &::after,
+    & > h6,                              /* manually inserted top-level -30- */
+    /*& > section:last-of-type::after,*/               /* auto-inserted -30- */
+    & section.m-scene::after,                        /* auto-inserted dinkus */
+    & section.m-subscenes::before,                   /* auto-inserted dinkus */
+    & section.m-subscenes::after,                    /* auto-inserted dinkus */
+    & :not(section.m-scene) > h6 {         /* manually ins. between sections */
+        position: relative;
+        text-align: center;
+    }
+    /* -30- - a hack in an attempt to deal with a rendering oddity.
+     * NOTE: poetry manuscripts do not use dinkus or -30- markers */
+    &:not(.poetry,.text-only)::after {
+        /* prevents (I think) the half-height characters
+         * at bottoms of pages here and there. */
+        padding-bottom: .5rem;
+    }
+
+    /* #manuscript.text-only: removes all contact info, .m-headers, & facts
+     * #manuscript.simple: removes the top-level contacts and all facts */
+    &.text-only {
+        .m-facts,
+        #m-contact,
+        .m-header {
+            display: none !important;
+        }
+    }
+    &.simple {
+        .m-facts,
+        .m-contact,
+        .m-page-header {
+            display: none !important;
+        }
+    }
+
+} /* end #manuscript:not(.text-only) */
 

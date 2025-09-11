@@ -200,46 +200,5 @@
         }
     }
 
-
-    /*
-     * DINKUSES and -30-
-     * - dinkuses are placed between scenes
-     * - -30- is placed at the end of the document
-     */
-    &::after,
-    & > h6,                              /* manually inserted top-level -30- */
-    /*& > section:last-of-type::after,*/               /* auto-inserted -30- */
-    & section.m-scene::after,                        /* auto-inserted dinkus */
-    & section.m-subscenes::before,                   /* auto-inserted dinkus */
-    & section.m-subscenes::after,                    /* auto-inserted dinkus */
-    & :not(section.m-scene) > h6 {         /* manually ins. between sections */
-        position: relative;
-        text-align: center;
-    }
-    /* -30- - a hack in an attempt to deal with a rendering oddity.
-     * NOTE: poetry manuscripts do not use dinkus or -30- markers */
-    &:not(.poetry,.text-only)::after {
-        /* prevents (I think) the half-height characters
-         * at bottoms of pages here and there. */
-        padding-bottom: .5rem;
-    }
-
-    /* #manuscript.text-only: removes all contact info, .m-title-headers, & facts
-     * #manuscript.simple: removes the top-level contacts and all facts */
-    &.text-only {
-        .m-facts,
-        .m-contact,
-        .m-page-header,
-        .m-title-header {
-            display: none !important;
-        }
-    }
-    &.simple {
-        .m-facts,
-        .m-contact,
-        .m-page-header {
-            display: none !important;
-        }
-    }
 } /* end #manuscript */
 
