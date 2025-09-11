@@ -108,7 +108,7 @@ div#vpage > article#manuscript div.m-header > :is(h1,h2,h3,h4,h5,blockquote,p,pr
 
     /* All the dinkuses and the -30- */
     &::before, &::after,
-    & *::before, & *::after {
+    & section::before, & section::after {
         display: block;
         box-sizing: border-box;
     }

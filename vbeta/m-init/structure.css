@@ -121,7 +121,7 @@ div#vpage > article#manuscript div.x-poem > div.joplin-editable {      /* specia
 
     /* All the dinkuses and the -30- */
     &::before, &::after,
-    & *::before, & *::after {
+    & section::before, & section::after {
         display: block;
         box-sizing: border-box;
     }
