@@ -66,9 +66,11 @@
             padding-block-end: var(--m-page-break-simulated-padding);
         }
 
-        /* BOOK and PART - offset from top of page simulation */
+        /* BOOK and PART and CHAPTER - offset from top of page simulation */
         & section.m-book:has( > .m-header),
-        & section.m-part:has( > .m-header) {
+        & section.m-part:has( > .m-header),
+        & > .m-header ~ section.m-chapter,
+        & section:not(.m-part) ~ section.m-chapter {
             padding-block-start: var(--m-offset-part-simulated);
         }
 
@@ -132,17 +134,11 @@
         }
 
 
-        /*
-         * Book & Page title blocks start a good distance down the page
-         */
-
-        /* book & part top margins (may be large (long) or small (short)), but
-         * only if they have a title block, otherwise it's assumed no margin */
-        & section.m-book:has( > .m-header) {
-            margin-block-start: var(--m-offset-part);
-            padding-block-start: 1px;
-        }
-        & section.m-part:has( > .m-header) {
+        /* BOOK and PART and CHAPTER - offset from top of page */
+        & section.m-book:has( > .m-header),
+        & section.m-part:has( > .m-header),
+        & > .m-header ~ section.m-chapter,
+        & section:not(.m-part) ~ section.m-chapter {
             margin-block-start: var(--m-offset-part);
             padding-block-start: 1px;
         }
