@@ -1,15 +1,21 @@
 <!--
 A short story example.
 
-This example:
-- long-form narrative.
-- no parts. Just chapters and scenes. But actuality ...
-- only one scene per chapter, which is rather common.
+- short-form narrative (different layout behavior)
+- For this one, no books or parts. Just two scenes: one is the story and the
+  second one is added as an acknowledgement area with footnotes about the
+  original publication
+- A dinkus because a # between the scenes would be odd before the
+  acknowledgement. Other ways to handle it is to add 'no-dinkus' to the first
+  scene (only one story scene), or to wrap the second scene in a
+  <div class="m-chapter>
+- Gave it a fancy -30- (the story-end mark)
 
 Copyright (c) Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy of
 this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 -->
+
 <style>
     /*
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");

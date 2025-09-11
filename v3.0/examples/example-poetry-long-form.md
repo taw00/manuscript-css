@@ -89,7 +89,7 @@ firstname.lastname@example.com
 
 </div></div>
 
-```plaintext
+```
 I wandered lonely as a cloud
 That floats on high o'er vales and hills,
 When all at once I saw a crowd,
@@ -97,7 +97,7 @@ A host, of golden daffodils;
 Beside the lake, beneath the trees,
 Fluttering and dancing in the breeze.
 ```
-```plaintext
+```
 Continuous as the stars that shine
 And twinkle on the milky way,
 They stretched in never-ending line
@@ -105,7 +105,7 @@ Along the margin of a bay:
 Ten thousand saw I at a glance,
 Tossing their heads in sprightly dance.
 ```
-```plaintext
+```
 The waves beside them danced; but they
 Out-did the sparkling waves in glee:
 A poet could not but be gay,
@@ -113,7 +113,7 @@ In such a jocund company:
 I gazed—and gazed—but little thought
 What wealth the show to me had brought:
 ```
-```plaintext
+```
 For oft, when on my couch I lie
 In vacant or in pensive mood,
 They flash upon that inward eye
@@ -136,43 +136,43 @@ And dances with the daffodils.
 
 </div></div>
 
-```plaintext
+```
 ’Twas brillig, and the slithy toves
    Did gyre and gimble in the wabe;
 All mimsy were the borogoves,
    And the mome raths outgrabe.
 ```
-```plaintext
+```
 “Beware the Jabberwock, my son
    The jaws that bite, the claws that catch!
 Beware the Jubjub bird, and shun
    The frumious Bandersnatch!”
 ```
-```plaintext
+```
 He took his vorpal sword in hand;
    Long time the manxome foe he sought—
 So rested he by the Tumtum tree,
    And stood awhile in thought.
 ```
-```plaintext
+```
 And, as in uffish thought he stood,
    The Jabberwock, with eyes of flame,
 Came whiffling through the tulgey wood,
    And burbled as it came!
 ```
-```plaintext
+```
 One, two! One, two! And through and through
    The vorpal blade went snicker-snack!
 He left it dead, and with its head
    He went galumphing back.
 ```
-```plaintext
+```
 “And hast thou slain the Jabberwock?
    Come to my arms, my beamish boy!
 O frabjous day! Callooh! Callay!”
    He chortled in his joy.
 ```
-```plaintext
+```
 ’Twas brillig, and the slithy toves
    Did gyre and gimble in the wabe;
 All mimsy were the borogoves,

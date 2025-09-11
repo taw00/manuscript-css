@@ -1,5 +1,6 @@
 <!--
-This example:
+A long story example
+
 - long-form narrative
 - chapters and scenes - even an embedded arbitrary poem
   Note, we only have one scene per chapter in this. We did this because we
@@ -23,9 +24,6 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../manuscript.css");
-    /* this is very specific because, for example, the the Markdown
-     * Viewer extension for Chrome will inject its own 
-     * text-align: left */
     .centered-poem pre { text-align: center; }
     :root {
         --m-pagination-header: "Lovecraft / Mountains of Madness / " counter(page);
@@ -104,7 +102,7 @@ On the seventh of November, sight of the westward range having been temporarily 
  
 <div class="x-poem centered-poem">
 
-```plaintext
+```
 “—the lavas that restlessly roll
 Their sulphurous currents down Yaanek
 In the ultimate climes of the pole—
