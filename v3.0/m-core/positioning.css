@@ -125,7 +125,7 @@
      */
     & .m-header {
         /* this should be, for a 8.5in page, or about 77% */
-        width: calc(calc(var(--m-max-width-header)/var(--m-content-width))*100%);
+        width: calc((var(--m-max-width-header) / var(--m-content-width)) * 100%);
         max-width: var(--m-max-width-header);
 
         margin-block: 0;

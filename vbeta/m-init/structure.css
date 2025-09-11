@@ -104,6 +104,20 @@ div#vpage > article#manuscript div.x-poem > div.joplin-editable {      /* specia
 }
 
 
+/* A title page MUST exist if …
+ * The manuscript then leads with a book, part, or chapter.
+ *
+ * A title page NEED NOT exist if …
+ * The manuscript leads with a poem or scene. We allow no title pages if
+ * compiling just a manuscript of scenes or poems. In fact, no title page for a
+ * poetry submission packet is "the norm." */
+div#page > #article#manuscript > section.m-book,
+div#page > #article#manuscript > section.m-part,
+div#page > #article#manuscript > section.m-chapter {
+    display: none;
+}
+
+
 
 
 #manuscript {

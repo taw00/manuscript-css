@@ -139,6 +139,7 @@
      *   dashed line. For the title page, we add padding before that line. */
     --m-page-break-simulated-long: 4px dashed var(--m-page-break-simulated-color);
     --m-page-break-simulated-padding-long: calc(var(--m-offset-title) - 1in);
+    --m-page-break-simulated-padding-poem: 2rem;
 
     /* the document facts (.m-facts) - short-form and long-form
      * (document, not part, chapter, or scene facts */
