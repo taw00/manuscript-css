@@ -55,6 +55,14 @@
             white-space: pre-wrap; /* we wrap poetry */
             overflow: hidden; /* no scroll bars */
         }
+
+        /* EXPERIMENTAL ALERT! ALERT! ALERT! ERROR IN FORMATING
+         * make stuff in a poem section that isn't poem stuff red and wrong */
+        & > :not(.m-page-header,.m-title-header,pre,code,.joplin-editable) {
+            color: red !important;
+            font-weight: bold;
+            text-decoration: line-through;
+        }
     }
 
     /*
@@ -111,15 +119,6 @@
     }
     &.m-poem .m-title-header .x-poem {
         margin-inline: 0;
-    }
-    & section.m-poem {
-        /* EXPERIMENTAL ALERT! ALERT! ALERT! ERROR IN FORMATING
-         * make stuff in a poem section that isn't poem stuff red and wrong */
-        & > :DISABLEDnot(.m-page-header,.m-title-header,pre,code,.joplin-editable) {
-            color: red !important;
-            font-weight: bold;
-            text-decoration: line-through;
-        }
     }
 
     /* poem title header spacing control */
