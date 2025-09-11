@@ -6,6 +6,7 @@ This example:
 - but we also incuded an additional scene for an Acknowledgement.
 - I overloaded the --m-dinkus with simple em-dash because I didn't want to use
   the default # marker. And then I ended with a flourish because... it's Poe. :)
+- citation scene, for show
 
 Copyright (c) Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy of
@@ -17,7 +18,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
-    @import url("../manuscript.css");
+    @import url("../../manuscript-beta.css");
 
     :root {
         --m-font-size-title: 1.25em;
@@ -30,7 +31,17 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 <div id="vpage">
 <article id="manuscript">
 
-<div id="m-contact">
+
+
+
+[comment]: / "-------------------------- TITLE PAGE --------------------------"
+
+
+
+
+<div class="m-page-header">
+<div class="m-contact">
+
 
 Edgar Allan Poe
 
@@ -40,21 +51,38 @@ Philadelphia, PA 19079 USA
 
 telleroftales@example.com
 
-</div>
 
-<div class="m-header">
+</div></div> <!-- /.m-contact, /.m-page-header -->
+
+
+
+
+<div class="m-title-header">
+
 
 # The Tell-Tale Heart
 
 ### by Edgar Allan Poe
 
+
 <div class="m-facts">
+
 
 2200 words
 
 Gothic Horror
 
-</div></div>
+
+</div> <!-- /.m-facts -->
+</div> <!-- (/title strings), /.m-facts, /.m-title-header -->
+
+
+
+
+[comment]: / "--------------------------- SCENES -----------------------------"
+
+
+
 
 <section class="m-scene">
 
@@ -94,16 +122,33 @@ No doubt I now grew *very* pale;—but I talked more fluently, and with a height
 
 “Villains!” I shrieked, “dissemble no more! I admit the deed!—tear up the planks! here, here!—It is the beating of his hideous heart!”
 
-</section>
+</section> <!-- /.m-scene -->
+
+
+
+
+[comment]: / "----------- CITATION SCENE (used only for example) -------------"
+
+
+
 
 <section class="m-scene foothang">
-<div class="m-header">
+<div class="m-title-header">
+
 
 # Acknowledgement
 
-</div>
+
+</div> <!-- /.m-title-header -->
+
 
 Poe, Edgar Allen. 1843. In *The Pioneer*. Vol. I, No. I, January, 1843. Philadelphia: Drew and Scammell.
 
-</section>
-</article></div>
+
+</section> <!-- /.m-scene.foothang -->
+
+
+
+
+</article></div> <!-- ------------------------------ end of manuscript ---- -->
+

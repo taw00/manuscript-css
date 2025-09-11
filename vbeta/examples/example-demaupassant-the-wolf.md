@@ -1,8 +1,7 @@
 <!--
 A short story example.
 
-This example:
-- long-form narrative (changes layout of title (1st) page)
+- short-form narrative (different layout behavior)
 - For this one, no books or parts. Just two scenes: one is the story and the
   second one is added as an acknowledgement area with footnotes about the
   original publication
@@ -11,11 +10,13 @@ This example:
   scene (only one story scene), or to wrap the second scene in a
   <div class="m-chapter>
 - Gave it a fancy -30- (the story-end mark)
+- citation scene, for show
 
 Copyright (c) Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy of
 this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 -->
+
 <style>
     /*
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
@@ -34,7 +35,11 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 <article id="manuscript">
 
 
+
+
 <!-- --------------------------- TITLE PAGE ------------------------------- -->
+
+
 
 
 <div class="m-page-header">
@@ -46,12 +51,13 @@ Guy de Maupassant
 Paris, France
 
 
-</div></div> <!-- /m-contact, /m-page-header -->
+</div></div> <!-- /.m-contact, /.m-page-header -->
 
 
 
 
 <div class="m-title-header">
+
 
 # The Wolf
 
@@ -70,10 +76,15 @@ gothic horror
 November 14, 1882 
 
 
-</div></div> <!-- (/title strings), /m-facts, /m-title-header -->
+</div> <!-- /.m-facts -->
+</div> <!-- (/title strings), /.m-facts, /.m-title-header -->
+
+
 
 
 <!-- ------------------------------ SCENES -------------------------------- -->
+
+
 
 
 <section class="m-scene">
@@ -191,7 +202,12 @@ Then a lady declared, in a little, soft voice
 
 "All the same, it is fine to have passions like that." 
 
-</section> <!-- /m-scene -->
+</section> <!-- /.m-scene -->
+
+
+
+
+[comment]: / "----------- CITATION SCENE (used only for example) -------------"
 
 
 
@@ -199,13 +215,17 @@ Then a lady declared, in a little, soft voice
 <section class="m-scene foothang">
 <div class="m-title-header">
 
+
 # Acknowledgement
 
-</div>
+
+</div> <!-- /.m-title-header -->
+
 
 de Maupassant, Guy. 1882. In *The Gauls*. November 14, 1882. France.
 
-</section> <!-- /m-scene styled with foothangs -->
+
+</section> <!-- /.m-scene styled with foothangs -->
 
 
 

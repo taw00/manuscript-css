@@ -24,9 +24,6 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../../manuscript-beta.css");
-    /* this is very specific because, for example, the the Markdown
-     * Viewer extension for Chrome will inject its own 
-     * text-align: left */
     .centered-poem pre { text-align: center; }
     :root {
         --m-pagination-header: "Lovecraft / Mountains of Madness / " counter(page);
@@ -38,11 +35,16 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 <article id="manuscript" class="long narrative">
 
 
+
+
 [comment]: / "-------------------------- TITLE PAGE --------------------------"
+
+
 
 
 <div class="m-page-header">
 <div class="m-contact">
+
 
 Howard Phillips Lovecraft
 
@@ -54,12 +56,14 @@ Providence, RI 02906
 
 crawlingchaos@example.com
 
-</div></div> <!-- /m-contact, /m-page-header -->
+
+</div></div> <!-- /.m-contact, /.m-page-header -->
 
 
 
 
 <div class="m-title-header">
+
 
 # At the Mountains of Madness
 
@@ -81,7 +85,8 @@ crawlingchaos@example.com
 *(draft rev193102)*
 
 
-</div></div> <!-- (/title strings), /m-facts, /m-title-header -->
+</div> <!-- /.m-facts -->
+</div> <!-- (/title strings), /.m-facts, /.m-title-header -->
 
 
 
@@ -124,6 +129,7 @@ On the seventh of November, sight of the westward range having been temporarily 
 
 <div class="x-poem centered-poem">
 
+
 ```
 “—the lavas that restlessly roll
 Their sulphurous currents down Yaanek
@@ -131,6 +137,7 @@ In the ultimate climes of the pole—
 That groan as they roll down Mount Yaanek
 In the realms of the boreal pole.”
 ```
+
 
 </div>
 
@@ -153,8 +160,8 @@ At length we resolved to carry out our original plan of flying 500 miles eastwar
  
 The outside world knew, of course, of our programme, and was told also of Lake’s strange and dogged insistence on a westward—or rather, northwestward—prospecting trip before our radical shift to the new base. It seems he had pondered a great deal, and with alarmingly radical daring, over that triangular striated marking in the slate; reading into it certain contradictions in Nature and geological period which whetted his curiosity to the utmost, and made him avid to sink more borings and blastings in the west-stretching formation to which the exhumed fragments evidently belonged. He was strangely convinced that the marking was the print of some bulky, unknown, and radically unclassifiable organism of considerably advanced evolution, notwithstanding that the rock which bore it was of so vastly ancient a date—Cambrian if not actually pre-Cambrian—as to preclude the probable existence not only of all highly evolved life, but of any life at all above the unicellular or at most the trilobite stage. These fragments, with their odd marking, must have been 500 million to a thousand million years old.
 
-</section> <!-- /m-scene -->
-</section> <!-- /m-chapter -->
+</section> <!-- /.m-scene -->
+</section> <!-- /.m-chapter -->
 
 
 
