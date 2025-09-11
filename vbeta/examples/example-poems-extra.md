@@ -1,11 +1,15 @@
 <!--
-Poetry submission packet example.
+Poetry submission packet example, but with extra stuff.
+(may/may not be acceptable for submission; as always, check the requirements)
 
 Poetry manuscripts, no matter the length, are typically formatted as a series
 of poems without a title page or table of contents. Each page has a page
 header and facts, as well as a title, and then the poem.
 
-- no title-page stuff: the opening .m-page-header and .m-title-header
+This one has a title page.
+
+- title-page stuff: the opening .m-page-header and .m-title-header
+  Note: this required me adding 'long' to the #manuscript classes.
 - the poems (each with their own page-header and line-count)
 - citation scene, for show
 
@@ -16,8 +20,8 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css");
+    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-beta.css");
     */
     @import url("../../manuscript-beta.css");
 
@@ -33,7 +37,78 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 </style>
 
 <div id="vpage" class="no-header">
-<article id="manuscript" class="long poetry">
+<article id="manuscript" class="poetry">
+
+
+
+
+[comment]: / "-------------------------- TITLE PAGE --------------------------"
+[comment]: / "----------------- (often not used with poetry) -----------------"
+
+
+
+
+<div class="m-page-header">
+<div class="m-contact">
+
+
+Editor Name
+
+123 Elm Street
+
+Example City, NC 12345 USA
+
+editor@example.com
+
++1 555-555-1212
+
+
+</div></div> <!-- /.m-contact, /.m-page-header -->
+
+
+
+
+<div class="m-title-header">
+
+
+# A Poetry Collection
+
+### by Editor Name, ed.
+
+<div class="m-facts">
+
+2 poems | 72 lines
+
+(_draft rev20250910_)
+
+
+</div></div>
+
+
+
+
+[comment]: / "-------------------------- TOC SCENE ---------------------------"
+[comment]: / "----------------- (often not used with poetry) -----------------"
+
+
+
+
+<section class="m-scene toc">
+<div class="m-title-header">
+
+
+# Table of Contents
+
+
+</div>
+
+
+- I Wandered Lonely as a Cloud, by William Wordsworth (24 lines)
+
+- Jabberwocky, by Lewis Carroll (48 lines)
+
+
+</section>
 
 
 
@@ -77,8 +152,6 @@ will.i.am@example.com
 </div> <!-- /.m-title-header -->
 
 
-
-
 ```
 I wandered lonely as a cloud
 That floats on high o'er vales and hills,
@@ -112,14 +185,13 @@ And then my heart with pleasure fills,
 And dances with the daffodils.
 ```
 
-</section> <!-- end poem -->
+
+</section> <!-- /.m-poem -->
 
 
 
 
 <section class="m-poem">
-
-
 <div class="m-page-header">
 <div class="m-contact">
 
@@ -133,15 +205,15 @@ Guildford, England
 United Kingdom
 
 
-</div>
-<div class="m-facts">
+</div><div class="m-facts">
 
 
 48 lines
 
 
-</div>
-</div> <!-- end .m-page-header -->
+</div></div>
+
+
 <div class="m-title-header">
 
 
@@ -151,8 +223,6 @@ United Kingdom
 
 
 </div>
-
-
 
 
 ```
@@ -198,17 +268,18 @@ All mimsy were the borogoves,
    And the mome raths outgrabe.
 ```
 
-</section> <!-- end poem -->
+
+</section> <!-- /.m-poem -->
 
 
 
 
-[comment]: / "----------- CITATION SCENE (used only for example) -------------"
+[comment]: / "------ CITATION CHAPTER + SCENE (used only for example) --------"
 
 
 
 
-<section class="m-scene foothang">
+<section class="m-chapter">
 <div class="m-title-header">
 
 
@@ -218,12 +289,15 @@ All mimsy were the borogoves,
 </div>
 
 
+<section class="m-scene foothang">
+
+
 Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *Poems, in Two Volumes*. London: Longman, Hurst, Rees, and Orms.
 
 Carroll, Lewis. "Jabberwocky." 1871. In *Through the Looking-Glass*. London: Macmillan and Co.
 
 
-</section> <!-- end specialized scene -->
+</section></section> <!-- end chapter + specialized scene -->
 
 
 </article></div> <!-- ------------------------------ end of manuscript ---- -->

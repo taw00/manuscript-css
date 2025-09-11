@@ -1,6 +1,9 @@
 <!--
-This example:
-- only scenes - typical for short narratives
+Typical short story example w/ 'simple' flag set.
+(less formal and more presentable to friends and family)
+
+- title page stuff (but they get hidden)
+- scenes
 - uses the 'simple' article class. This signals the document to render without
   first-page headers, page breaks, or metadata and moves the title to the top of
   the first page.
@@ -12,19 +15,12 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css");
+    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-beta.css");
     */
-    @import url("../manuscript.css");
+    @import url("../../manuscript-beta.css");
 
-    /* Examples of overloading some CSS variables. Uncomment the font-weight
-       variable to flip the title to bold. Uncomment the other to make a fancy
-       -30- end marker (not a typical decision for a manuscript, of course). */
     :root {
-        /*
-        --m-font-weight-title: bold;
-        --m-30-: "🙞 ❦ 🙜";
-        */
         --m-pagination-header: "Lastname / Short Prose, Simplified / " counter(page);
     }
 </style>
@@ -32,7 +28,17 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 <div id="vpage">
 <article id="manuscript" class="simple">
 
-<div id="m-contact">
+
+
+
+<!-- --------------------------- TITLE PAGE ------------------------------- -->
+
+
+
+
+<div class="m-page-header">
+<div class="m-contact">
+
 
 Firstname Lastname
 
@@ -44,22 +50,26 @@ firstname.lastname@example.com
 
 +1 555-555-1212
 
-</div>
-<div class="m-header">
+
+</div></div> <!-- /.m-contact, /.m-page-header -->
+
+
+
+<div class="m-title-header">
+
 
 # Formatting via CSS: The Short Story (simplified format)
 
-## Simplifying a manuscript, stripping out the header (typical for casual presentation)
+## Simplifying a manuscript is typical for informal casual presentation
 
 ### by Author Name
 
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
 > Some stories, parts, chapters, and even scenes will kick off with an epigraph.
 >
-> &nbsp;
 > <div class="x-poem">
 >
-> ```plaintext
+> ```
 > A dreamer is one who can only find his way by moonlight, and his
 > punishment is that he sees the dawn before the rest of the world.
 >                                                              Oscar Wilde, 1888
@@ -67,7 +77,9 @@ firstname.lastname@example.com
 >
 > </div>
 
+
 <div class="m-facts">
+
 
 5000 words
 
@@ -75,15 +87,27 @@ Contemporary Fiction
 
 (_draft rev 20221024_)
 
-</div></div>
+
+</div> <!-- /.m-facts -->
+</div> <!-- (/title strings), /.m-facts, /.m-title-header -->
+
+
+
+
+<!-- ------------------------------ SCENES -------------------------------- -->
+
+
+
 
 <section class="m-scene">
 
+
 This document is an example of a typical short story. It has no parts or
-chapters, just scenes. Many of my super shorts (the 2000 word range and shorter)
-have only one scene. Also notice the auto-inserted
-[dinkuses](https://en.wikipedia.org/wiki/Dinkus) between the scenes and the
-[-30-](https://en.wikipedia.org/wiki/-30-) marker at `The End`.
+chapters, just scenes and the title page exists, but is rendered invisible by
+the 'simple flag. I will create a formal version of my manuscript, then add the
+'simple' flag in the classes for #manuscript, generate a PDF or HTML version
+and share that with folks to review. When I am ready, I remove the simple flag
+and create the manuscript.
 
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
@@ -92,8 +116,10 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
+
 </section>
 <section class="m-scene">
+
 
 Curabitur sagittis dictum ipsum, at congue mauris elementum nec. Aenean nec dui
 sed mi semper lobortis ac sed est. Nam pharetra fermentum lectus nec malesuada.
@@ -108,8 +134,10 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
+
 </section>
 <section class="m-scene">
+
 
 Praesent sit amet erat placerat, lacinia sapien non, gravida ipsum. Vivamus
 dictum, elit sed elementum imperdiet, quam magna euismod tellus, viverra
@@ -136,8 +164,10 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
+
 </section>
 <section class="m-scene">
+
 
 Phasellus tempus feugiat dui. Suspendisse non nunc tortor. Quisque in iaculis
 lectus, vel finibus nulla. Aliquam quis bibendum mi, eu blandit diam. Cras
@@ -150,7 +180,8 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
+
 </section> <!--end last scene -->
 
-</article>
-</div>
+</article></div> <!-- ----------------------------- end of manuscript ---- -->
+

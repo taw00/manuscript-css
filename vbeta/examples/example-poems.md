@@ -1,14 +1,13 @@
 <!--
-Short-form manuscript for poetry.
+Poetry submission packet of multiple poems example.
 
 Poetry manuscripts, no matter the length, are typically formatted as a series
 of poems without a title page or table of contents. Each page has a page
 header and facts, as well as a title, and then the poem.
 
 - no title-page stuff: the opening .m-page-header and .m-title-header
-- the poem with its own page-header and line-count
+- the poems (each with their own page-header and line-count)
 - citation scene, for show
-
 
 Copyright (c) Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy of
@@ -17,19 +16,29 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css");
+    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-beta.css");
     */
     @import url("../../manuscript-beta.css");
+
+    :root {
+        /*
+        --m-page-break-simulated-long: 0;
+        --m-font-weight-title: bold;
+        --m-font-weight-title-chapter: bold;
+        --m-font-weight-title-poem: bold;
+        --m-pagination-header: "Lastname / Long-form Poetry / " counter(page);
+        */
+    }
 </style>
 
-<div id="vpage">
+<div id="vpage" class="no-header">
 <article id="manuscript" class="poetry">
 
 
 
 
-[comment]: / "---------------------------- POEM ------------------------------"
+[comment]: / "---------------------------- POEMS -----------------------------"
 
 
 
@@ -69,6 +78,7 @@ will.i.am@example.com
 
 
 
+
 ```
 I wandered lonely as a cloud
 That floats on high o'er vales and hills,
@@ -102,8 +112,93 @@ And then my heart with pleasure fills,
 And dances with the daffodils.
 ```
 
+</section> <!-- end poem -->
 
-</section> <!-- /.m-poem -->
+
+
+
+<section class="m-poem">
+
+
+<div class="m-page-header">
+<div class="m-contact">
+
+
+Charles Lutwidge Dodgson
+
+The Mount Cemetery
+
+Guildford, England
+
+United Kingdom
+
+
+</div>
+<div class="m-facts">
+
+
+48 lines
+
+
+</div>
+</div> <!-- end .m-page-header -->
+<div class="m-title-header">
+
+
+# Jabberwocky
+
+### by Lewis Carroll
+
+
+</div>
+
+
+
+
+```
+’Twas brillig, and the slithy toves
+   Did gyre and gimble in the wabe;
+All mimsy were the borogoves,
+   And the mome raths outgrabe.
+```
+```
+“Beware the Jabberwock, my son
+   The jaws that bite, the claws that catch!
+Beware the Jubjub bird, and shun
+   The frumious Bandersnatch!”
+```
+```
+He took his vorpal sword in hand;
+   Long time the manxome foe he sought—
+So rested he by the Tumtum tree,
+   And stood awhile in thought.
+```
+```
+And, as in uffish thought he stood,
+   The Jabberwock, with eyes of flame,
+Came whiffling through the tulgey wood,
+   And burbled as it came!
+```
+```
+One, two! One, two! And through and through
+   The vorpal blade went snicker-snack!
+He left it dead, and with its head
+   He went galumphing back.
+```
+```
+“And hast thou slain the Jabberwock?
+   Come to my arms, my beamish boy!
+O frabjous day! Callooh! Callay!”
+   He chortled in his joy.
+```
+```
+’Twas brillig, and the slithy toves
+   Did gyre and gimble in the wabe;
+All mimsy were the borogoves,
+   And the mome raths outgrabe.
+```
+
+</section> <!-- end poem -->
 
 
 
@@ -117,13 +212,15 @@ And dances with the daffodils.
 <div class="m-title-header">
 
 
-# Acknowledgment
+# Acknowledgments
 
 
 </div>
 
 
 Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *Poems, in Two Volumes*. London: Longman, Hurst, Rees, and Orms.
+
+Carroll, Lewis. "Jabberwocky." 1871. In *Through the Looking-Glass*. London: Macmillan and Co.
 
 
 </section> <!-- end specialized scene -->

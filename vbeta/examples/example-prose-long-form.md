@@ -1,5 +1,5 @@
 <!--
-This is a typical long-form manuscript: Chapters and scenes.
+Long-form prose example with chapters and scenes.
 
 Copyright (c) Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy of
@@ -8,10 +8,10 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css");
+    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-beta.css");
     */
-    @import url("../manuscript.css");
+    @import url("../../manuscript-beta.css");
 
     /* Examples of overloading some CSS variables. Uncomment the font-weight
        variable to flip the title to bold. Uncomment the other to turn off the
@@ -29,7 +29,16 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 <div id="vpage">
 <article id="manuscript" class="long narrative">
 
-<div id="m-contact">
+
+
+
+<!-- --------------------------- TITLE PAGE ------------------------------- -->
+
+
+
+
+<div class="m-page-header">
+<div class="m-contact">
 
 Firstname Lastname
 
@@ -41,9 +50,14 @@ firstname.lastname@example.com
 
 +1 555-555-1212
 
-</div>
 
-<div class="m-header">
+</div></div> <!-- /.m-contact, /.m-page-header -->
+
+
+
+
+<div class="m-title-header">
+
 
 # Manuscript Formatting via CSS: A Long-Form Example (typical)
 
@@ -54,10 +68,9 @@ firstname.lastname@example.com
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
 > Some stories, parts, chapters, and even scenes will kick off with an epigraph.
 >
-> &nbsp;
 > <div class="x-poem">
 >
-> ```plaintext
+> ```
 > A dreamer is one who can only find his way by moonlight, and his
 > punishment is that he sees the dawn before the rest of the world.
 >                                                              Oscar Wilde, 1888
@@ -65,7 +78,9 @@ firstname.lastname@example.com
 >
 > </div>
 
+
 <div class="m-facts">
+
 
 95,000 words
 
@@ -73,14 +88,30 @@ Contemporary Fiction
 
 (_draft rev20221024_)
 
-</div></div>
+
+</div> <!-- /.m-facts -->
+</div> <!-- (/title strings), /.m-facts, /.m-title-header -->
+
+
+
+
+[comment]: / "---------------------- CHAPTER & SCENES ------------------------"
+
+
+
 
 <section class="m-chapter">
-<div class="m-header">
+<div class="m-title-header">
+
 
 # Chapter 1
 
+
 </div>
+
+
+
+
 <section class="m-scene">
 
 This document templates a long-form narrative that is divided into the more
@@ -135,12 +166,26 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 </section> <!-- end scene -->
 </section> <!-- end chapter -->
 
+
+
+
+[comment]: / "---------------------- CHAPTER & SCENES ------------------------"
+
+
+
+
 <section class="m-chapter">
-<div class="m-header">
+<div class="m-title-header">
+
 
 # Chapter 2
 
+
 </div>
+
+
+
+
 <section class="m-scene">
 
 Only one scene for chapter 2 because I think you get the idea.
@@ -158,15 +203,30 @@ tristique ligula sed neque dapibus, quis fermentum dui faucibus. In consectetur
 sapien non rhoncus fermentum. Etiam sit amet leo dolor. Donec eget velit cursus
 mauris suscipit mattis ac sit amet purus.
 
+
 </section> <!-- end scene -->
 </section> <!-- end chapter -->
 
+
+
+
+[comment]: / "---------------------- CHAPTER & SCENES ------------------------"
+
+
+
+
 <section class="m-chapter">
-<div class="m-header">
+<div class="m-title-header">
+
 
 # Epilogue
 
+
 </div>
+
+
+
+
 <section class="m-scene">
 
 You get the idea. I am ending this manuscript with this scene.
@@ -179,9 +239,10 @@ example, set `--m-dinkus` to an empty string `""` to turn it off and set
 `--m-30-` to "La Fin" just because you think your critique readers reviewers
 will be impressed with your French.
 
-</section> <!-- scene -->
-</section> <!-- chapter -->
 
-</article> <!-- manuscript -->
-</div> <!-- vpage -->
+</section> <!-- end scene -->
+</section> <!-- end chapter -->
+
+
+</article></div> <!-- ----------------------------- end of manuscript ---- -->
 
