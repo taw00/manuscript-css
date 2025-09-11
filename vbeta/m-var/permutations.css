@@ -126,15 +126,7 @@
         --m-font-family-code: var(--m-font-family-nonnarrative-code);
     }
 
-    &:has(#manuscript:not(.long)) { /* short, the default, but let's be explicit */
-        --m-offset-title: var(--m-offset-title-short);
-        --m-offset-part: var(--m-offset-part-short);
-        --m-offset-part-simulated: var(--m-offset-part-simulated-short);
-        --m-offset-chapter: var(--m-offset-chapter-short);
-        --m-offset-chapter-simulated: var(--m-offset-chapter-simulated-short);
-        --m-offset-scene: var(--m-offset-scene-short);
-        --m-offset-poem: var(--m-offset-poem-short);
-
+    &:has(#manuscript:not(.long,.poetry)) { /* short, the default, but let's be explicit */
         --m-position-facts:     var(--m-position-facts-short);
         --m-top-facts:          var(--m-top-facts-short);
         --m-bottom-facts:       var(--m-bottom-facts-short);
@@ -149,15 +141,7 @@
         --m-font-size-facts:    var(--m-font-size-facts-short);
         --m-font-weight-facts:  var(--m-font-weight-facts-short);
     }
-    &:has(#manuscript:is(.long)) {
-        --m-offset-title: var(--m-offset-title-long);
-        --m-offset-part: var(--m-offset-part-long);
-        --m-offset-part-simulated: var(--m-offset-part-simulated-long);
-        --m-offset-chapter: var(--m-offset-chapter-long);
-        --m-offset-chapter-simulated: var(--m-offset-chapter-simulated-long);
-        --m-offset-scene: var(--m-offset-scene-long);
-        --m-offset-poem: var(--m-offset-poem-long);
-
+    &:has(#manuscript:is(.long,.poetry)) {
         --m-position-facts:     var(--m-position-facts-long);
         --m-top-facts:          var(--m-top-facts-long);
         --m-bottom-facts:       var(--m-bottom-facts-long);
@@ -173,17 +157,6 @@
         --m-font-weight-facts:  var(--m-font-weight-facts-long);
     }
 
-    &:has(#manuscript:is(.poetry)) {
-        --m-font-family:  var(--m-font-family-poetry);
-        --m-font-family-title: inherit;
-        --m-offset-title: var(--m-offset-title-short-poetry);
-        --m-offset-chapter: var(--m-offset-chapter-short-poetry);
-    }
-    &:has(#manuscript:is(.poetry.long)) {
-        --m-offset-title: var(--m-offset-title-long-poetry);
-        --m-offset-chapter: var(--m-offset-chapter-long-poetry);
-    }
-
 
     &:has(#manuscript:is(.text-only,.simple)) {
         --m-offset-title: 0;
@@ -191,10 +164,6 @@
     &:has(#manuscript:is(.text-only)) {
         --m-page-break: unset !important;
         --m-page-break-simulated: 0px !important;
-        --m-offset-part: var(--m-elbow-room) !important;
-        --m-offset-chapter: var(--m-elbow-room) !important;
-        --m-offset-part-simulated: var(--m-elbow-room) !important;
-        --m-offset-chapter-simulated: var(--m-elbow-room) !important;
         --m-manuscript-border: 0px !important;
     }
 
@@ -203,37 +172,37 @@
 
 @media screen {
     :root {
-        &:has(#manuscript:not(.long)) {
+        &:has(#manuscript:not(.long,.poetry)) {
             /* the default, but let's be explicit */
             /* note, these are, more or less, no-op settings by default. For short
              * stories, we don't want to do forced page breaks anywhere. */
             --m-page-break: var(--m-page-break-short); /* unset */
             --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
-            --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); /* 0 */
+            --m-page-break-simulated-padding-block-end: var(--m-page-break-simulated-padding-block-end-short); /* 0 */
         }
-        &:has(#manuscript:is(.long)) {
+        &:has(#manuscript:is(.long,.poetry)) {
             --m-page-break: var(--m-page-break-long);
             --m-page-break-simulated: var(--m-page-break-simulated-long);
-            --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-long);
+            --m-page-break-simulated-padding-block-end: var(--m-page-break-simulated-padding-block-end-long);
         }
     }
 } /* end @media screen */
 
 @media print {
     :root {
-        &:has(#manuscript:not(.long)) {
+        &:has(#manuscript:not(.long,.poetry)) {
             /* the default, but let's be explicit */
             /* short-form print behavior: if page break simulation was set for some
              * reason, we unset it. */
             --m-page-break-simulated: 0;
-            --m-page-break-simulated-padding: 0;
+            --m-page-break-simulated-padding-block-end: 0;
             --m-page-break: var(--m-page-break-short);
         }
-        &:has(#manuscript:is(.long)) {
+        &:has(#manuscript:is(.long,.poetry)) {
             /* long-form print behavior: no longer simulated, there will be a page
              * after the title page header */
             --m-page-break-simulated: 0;
-            --m-page-break-simulated-padding: 0;
+            --m-page-break-simulated-padding-block-end: 0;
             --m-page-break: var(--m-page-break-long);
         }
     }

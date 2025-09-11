@@ -135,30 +135,8 @@
      * DEFAULTS - section 2 - baseline #manuscript.long (and short) specific
      */
 
-    /* Title-block headers offset settings - for short-form and long-form
-     * I'm being a bit more than pedantic here. And note: parts & chapters have
-     * different settings depending if you are rendering to the screen or if
-     * rendering to print. (We "simulate" for the screen.) */
-    --m-offset-title-short:        var(--m-content-offset-5-12th);
-    --m-offset-title-short-poetry: var(--m-content-offset-1-5th);
-    --m-offset-title-long:         var(--m-content-offset-5-12th);
-    --m-offset-title-long-poetry:  var(--m-content-offset-5-12th);
-
-    --m-offset-part-short:           var(--m-room-for-two);
-    --m-offset-part-simulated-short:    var(--m-room-for-two);
-    --m-offset-chapter-short:        var(--m-room-for-two);
-    --m-offset-chapter-simulated-short: var(--m-room-for-two);
-    --m-offset-chapter-short-poetry: var(--m-room-for-two);
-    --m-offset-scene-short:          var(--m-elbow-room);
-    --m-offset-poem-short:           var(--m-elbow-room);
-
-    --m-offset-part-long:           var(--m-offset-title-long);
-    --m-offset-part-simulated-long:    var(--m-room-for-two);
-    --m-offset-chapter-long:        var(--m-offset-title-long);
-    --m-offset-chapter-simulated-long: var(--m-room-for-two);
-    --m-offset-chapter-long-poetry: 0;
-    --m-offset-scene-long:          var(--m-elbow-room);
-    --m-offset-poem-long:           var(--m-elbow-room);
+    /* Title-block headers offset */
+    --m-offset-title: var(--m-content-offset-5-12th);
 
     /* font settings short/long - .m-facts */
     --m-font-size-facts-short:    var(--m-font-size-contact);
@@ -242,14 +220,6 @@
     --m-indent:                 var(--m-indent-narrative);
     --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
     --m-paragraph-spacing:      var(--m-paragraph-spacing-narrative);
-
-    --m-offset-title:          var(--m-offset-title-short);
-    --m-offset-part:           var(--m-offset-part-short);
-    --m-offset-chapter:        var(--m-offset-chapter-short);
-    --m-offset-part-simulated:    var(--m-offset-part-simulated-short);
-    --m-offset-chapter-simulated: var(--m-offset-chapter-simulated-short);
-    --m-offset-scene:          var(--m-offset-scene-short);
-    --m-offset-poem:           var(--m-offset-poem-short);
     */
 
     /* --------------------------------------------------------------------- */
@@ -382,7 +352,7 @@
     /* set in m-var/permutations.css …
     --m-page-break: var(--m-page-break-short);                     / * unset * /
     --m-page-break-simulated: var(--m-page-break-simulated-short); / * 0 * /
-    --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); / * 0 * /
+    --m-page-break-simulated-padding-block-end: var(--m-page-break-simulated-padding-block-end-short); / * 0 * /
     */
 
     /* the desktop theme beneath the paper */
