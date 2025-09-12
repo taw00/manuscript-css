@@ -2,12 +2,15 @@
  *
  * These are set with these <div id="vpage" classes=" … ">
  * - "the default": white page on offwhite background
- * - dim: something in the middle
+ * - dim: something dim
  * - dimmer: something dimmer
- * - dark: darker page on darker background, sort of purple-ish-themed
- * - dark amber: darker page on darker background, amber-themed
- * - dark yellow: darker page on darker background, yellow-themed
- * - dark green: darker page on darker background, green-themed
+ * - dark: darker page on darker background, muted text
+ * - dark amber: the same, but amber-themed
+ * - dark yellow: … yellow-themed
+ * - dark green: … green-themed
+ * - dark blue: … blue-themed
+ * - dark pink: … pink-themed
+ * - dark purple: … purple-themed
  *
  * - vplain: no 3D framing
  * - vplain: no 3D framing, away from center of screen
@@ -83,6 +86,33 @@
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-green);
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-green);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-green);
+            }
+            &:has(#vpage:is(.blue)) {
+                --m-desktop-color:                           var(--m-desktop-color-theme-dark-blue);
+                --m-paper-color:                               var(--m-paper-color-theme-dark-blue);
+                --m-text-color:                                 var(--m-text-color-theme-dark-blue);
+                --m-link-color:                                 var(--m-link-color-theme-dark-blue);
+                --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-blue);
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-blue);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-blue);
+            }
+            &:has(#vpage:is(.pink)) {
+                --m-desktop-color:                           var(--m-desktop-color-theme-dark-pink);
+                --m-paper-color:                               var(--m-paper-color-theme-dark-pink);
+                --m-text-color:                                 var(--m-text-color-theme-dark-pink);
+                --m-link-color:                                 var(--m-link-color-theme-dark-pink);
+                --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-pink);
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-pink);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-pink);
+            }
+            &:has(#vpage:is(.purple)) {
+                --m-desktop-color:                           var(--m-desktop-color-theme-dark-purple);
+                --m-paper-color:                               var(--m-paper-color-theme-dark-purple);
+                --m-text-color:                                 var(--m-text-color-theme-dark-purple);
+                --m-link-color:                                 var(--m-link-color-theme-dark-purple);
+                --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-purple);
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-purple);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-purple);
             }
         } /* end &:has(#vpage:is(.dark)) */
 

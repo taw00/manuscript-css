@@ -22,15 +22,15 @@
 
         /* BOOK: we page break going into a book,
          *       but only if the book has a title header */
-        & section.m-book:has( > .m-title-header),
+        & section.m-book:has( > .m-title-header):not(.no-break),
 
         /* PART: we page break going into a part */
-        & section.m-part,
+        & section.m-part:not(.no-break),
 
         /* CHAPTER: we page break going into a chapter,
         *           unless it follows a part */
-        & > .m-title-header ~ section.m-chapter,
-        & section:not(.m-part) ~ section.m-chapter,
+        & > .m-title-header ~ section.m-chapter:not(.no-break),
+        & section:not(.m-part) ~ section.m-chapter:not(.no-break),
 
         /* POEM: we page break going into a poem … always
          * see below */
@@ -38,8 +38,8 @@
         /* SCENES: page break going into a scene,
          *         but only if it follows a title page, book,
          *         or (see below) poem */
-        & > div.m-title-header ~ section.m-scene,
-        & section.m-book:has( > .m-title-header) ~ section.m-scene {
+        & > div.m-title-header ~ section.m-scene:not(.no-break),
+        & section.m-book:has( > .m-title-header) ~ section.m-scene:not(.no-break) {
             border-block-start: var(--m-page-break-simulated);
         }
 
@@ -49,12 +49,12 @@
          */
 
         /* POEM: we page break going into a poem … always */
-        & .m-title-header ~ section.m-poem,
-        & section ~ section.m-poem,
+        & .m-title-header ~ section.m-poem:not(.no-break),
+        & section ~ section.m-poem:not(.no-break),
 
         /* SCENES: page break going into a scene,
          *         but only if it follows a poem */
-        & section.m-poem ~ section.m-scene {
+        & section.m-poem ~ section.m-scene:not(.no-break) {
             border-block-start: var(--m-page-break-simulated-long);
         }
 
@@ -67,23 +67,23 @@
         /* TITLE PAGE and BOOK
          * add padding at the end of an element that always has a simulated
          * page break coming after */
-        & > .m-title-header:has( ~ section),
-        & section.m-book > .m-title-header:has( ~ section) {
+        & > .m-title-header:has( ~ section):not(.no-break),
+        & section.m-book > .m-title-header:has( ~ section):not(.no-break) {
             padding-block-end: var(--m-page-break-simulated-padding-block-end);
         }
 
         /* BOOK and PART and CHAPTER - offset from top of page simulation */
-        & section.m-book:has( > .m-title-header),
-        & section.m-part:has( > .m-title-header),
-        & > .m-header ~ section.m-chapter:has( > .m-title-header),
-        & > .m-header ~ section.m-chapter:has( > section.m-scene),
-        & section:not(.m-part) ~ section.m-chapter:has( > .m-title-header),
-        & section:not(.m-part) ~ section.m-chapter:has( > section.m-scene) {
+        & section.m-book:has( > .m-title-header):not(.no-break),
+        & section.m-part:has( > .m-title-header):not(.no-break),
+        & > .m-header ~ section.m-chapter:has( > .m-title-header):not(.no-break),
+        & > .m-header ~ section.m-chapter:has( > section.m-scene):not(.no-break),
+        & section:not(.m-part) ~ section.m-chapter:has( > .m-title-header):not(.no-break),
+        & section:not(.m-part) ~ section.m-chapter:has( > section.m-scene):not(.no-break) {
             padding-block-start: var(--m-offset-title);
         }
 
         /* POEM - aesthetic spacing at end before the simulated marker */
-        & section.m-poem {
+        & section.m-poem:not(.no-break) {
             padding-block-end: var(--m-room-for-two);
         }
     } /* end #manuscript */
@@ -105,15 +105,15 @@
 
         /* BOOK: we page break going into a book,
          *       but only if the book has a title header */
-        & section.m-book:has( > .m-title-header),
+        & section.m-book:has( > .m-title-header):not(.no-break),
 
         /* PART: we page break going into a part */
-        & section.m-part,
+        & section.m-part:not(.no-break),
 
         /* CHAPTER: we page break going into a chapter,
         *           unless it follows a part */
-         & > .m-title-header ~ section.m-chapter,
-        & section:not(.m-part,.m-poem) ~ section.m-chapter,
+         & > .m-title-header ~ section.m-chapter:not(.no-break),
+        & section:not(.m-part,.m-poem) ~ section.m-chapter:not(.no-break),
 
         /* POEM: we page break going into a poem … always
          * see below */
@@ -121,8 +121,8 @@
         /* SCENES: page break going into a scene,
          *         but only if it follows a title page, book,
          *         or (see below) poem */
-        & > div.m-title-header ~ section.m-scene,
-        & section.m-book:has( > .m-title-header) ~ section.m-scene {
+        & > div.m-title-header ~ section.m-scene:not(.no-break),
+        & section.m-book:has( > .m-title-header) ~ section.m-scene:not(.no-break) {
             break-before: var(--m-page-break);
         }
 
@@ -132,12 +132,12 @@
          */
 
         /* POEM: we page break going into a poem … always */
-        & .m-title-header ~ section.m-poem,
-        & section ~ section.m-poem,
+        & .m-title-header ~ section.m-poem:not(.no-break),
+        & section ~ section.m-poem:not(.no-break),
 
         /* SCENES: page break going into a scene,
          *         but only if it follows a poem */
-        & section.m-poem ~ section.m-scene {
+        & section.m-poem ~ section.m-scene:not(.no-break) {
             break-before: page;
         }
 
@@ -148,12 +148,12 @@
          */
 
         /* BOOK and PART and CHAPTER - offset from top of page */
-        & section.m-book:has( > .m-title-header),
-        & section.m-part:has( > .m-title-header),
-        & > .m-header ~ section.m-chapter:has( > .m-title-header),
-        & > .m-header ~ section.m-chapter:has( > section.m-scene),
-        & section:not(.m-part) ~ section.m-chapter:has( > .m-title-header),
-        & section:not(.m-part) ~ section.m-chapter:has( > section.m-scene) {
+        & section.m-book:has( > .m-title-header):not(.no-break),
+        & section.m-part:has( > .m-title-header):not(.no-break),
+        & > .m-header ~ section.m-chapter:has( > .m-title-header):not(.no-break),
+        & > .m-header ~ section.m-chapter:has( > section.m-scene):not(.no-break),
+        & section:not(.m-part) ~ section.m-chapter:has( > .m-title-header):not(.no-break),
+        & section:not(.m-part) ~ section.m-chapter:has( > section.m-scene):not(.no-break) {
             margin-block-start: var(--m-offset-title);
             padding-block-start: 1px;
         }
