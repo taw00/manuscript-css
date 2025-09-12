@@ -27,7 +27,6 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
         --m-font-weight-title: bold;
         --m-font-weight-title-chapter: bold;
         --m-font-weight-title-poem: bold;
-        --m-pagination-header: "Lastname / Long-form Poetry / " counter(page);
         */
     }
 </style>

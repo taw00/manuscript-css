@@ -17,7 +17,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("../../manuscript-beta.css");
 
     :root {
-        --m-pagination-header: "Lastname / Short-form Prose / " counter(page);
+        --m-marginalia: "Lastname / Short-form Prose / " counter(page);
     }
 </style>
 

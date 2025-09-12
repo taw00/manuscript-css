@@ -26,7 +26,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("../../manuscript-beta.css");
     .centered-poem pre { text-align: center; }
     :root {
-        --m-pagination-header: "Lovecraft / Mountains of Madness / " counter(page);
+        --m-marginalia: "Lovecraft / Mountains of Madness / " counter(page);
     }
 </style>
 
