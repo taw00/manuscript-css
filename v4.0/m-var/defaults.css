@@ -1,0 +1,420 @@
+/* @layer lm-var-defaults
+ *
+ * Configuration of baseline default :root variables leveraging the constants
+ * established in m-var/constants.css.
+ *
+ * There are values in here that can be overridden, but others that really
+ * should not be (they are calculated or usually inherit).
+ *
+ * FOR EXAMPLE:
+ * Check the example manuscripts in this repo, but, essentially, this is how
+ * you override these settings. In your markdown, just add a :root {} section
+ * in your <style> block ... and redeclare variables. Here's an example:
+ *
+ * <style>
+ * @import url("/path/to/manuscript.css");
+ * 
+ * :root {
+ *     --m-font-family: "TeX Gyre Pagella", Palladio, Palantino, serif;
+ *     --m-font-family-title: "Comic Neue", "Comic Sans", cursive;
+ *     --m-font-family-subtitle: "Comic Neue", "Comic Sans", cursive;
+ *     --m-font-family-byline: "Comic Neue", "Comic Sans", cursive;
+ *     --m-font-size: 19px;
+ *     --m-font-size-title: 1.5rem;
+ *     --m-font-weight-title: bold;
+ *     --m-font-weight-subtitle: medium;
+ *     --m-line-spacing: 2.5;
+ *     --m-indent: .35in;
+ *     --m-dinkus: "~"
+ *     --m-30-: "~ ~ ~;
+ * }
+ * </style> 
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-var-defaults {
+
+:root {
+    /*
+     * DEFAULTS - section 1 - baseline core values
+     */
+
+    /* set in m-var/permutations.css
+    --m-page-width:  var(--m-page-widthUS);
+    --m-page-height: var(--m-page-heightUS);
+    --m-page-margin: var(--m-page-marginUS);
+    --m-paginated-margin: calc(var(--m-page-margin) * 1.333);
+     */
+
+    --m-fontstack-serif: var(--m-fontstack-times);
+    --m-fontstack-sans-serif: var(--m-fontstack-arial);
+    --m-fontstack-sans: var(--m-fontstack-sans-serif);
+    --m-fontstack-monospace: var(--m-fontstack-courier);
+    --m-fontstack-sans-monospace: var(--m-fontstack-roboto-mono);
+
+    --m-fontstack-mono: var(--m-fontstack-monospace);
+    --m-fontstack-sans-mono: var(--m-fontstack-sans-monospace);
+
+    --m-font-size: var(--m-font-size-standard); /* 16px (12pt) */
+    --m-font-weight: var(--m-font-weight-standard); /* normal */
+    --m-line-spacing: var(--m-line-spacing-standard); /* 2 (double) */
+
+    --m-font-size-preformatted:    inherit;
+    --m-font-size-code:            inherit;
+    --m-font-size-code-inline:     inherit;
+
+    --m-font-weight-preformatted:  inherit;
+    --m-font-weight-code:          inherit;
+    --m-font-weight-code-inline:   inherit;
+
+    --m-line-spacing-preformatted: var(--m-line-spacing-single);
+    --m-line-spacing-code:         inherit;
+
+    /* -------------------- */
+
+    /* constraining the content between the margins now that we have a
+     * --m-page-width, --m-page-height, and --m-page-margin defined */
+    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
+    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+
+    /* Offset calculations used to offset title-header blocks from top of the
+     * page. Manuscripts standards recommend placing the main title-block
+     * header anywhere from 1/3rd to 1/2 down the page. And if a long-form
+     * manuscript the same holds true for part headers and chapter headers. */
+    --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
+    --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
+    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
+    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
+    --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
+    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
+    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
+    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
+
+    /* -------------------- */
+
+    /* hyphenation
+     *
+     * Manuscript standards almost universally state never fully justified and
+     * never hyphenated. But here's the variable switch if you want to play
+     * around: manual or auto.
+     *
+     * IMPORTANT: hyphenation only works if the lang attribute is set in the
+     * html element (eg: <html lang="en"> or set in the elements managing the
+     * text you want to be hyphenated. Most markdown editors don't set this.
+     * -- also, check out this future feature (still in a w3c draft)
+     * hyphenate-limit-chars: 6 3 2;
+     * hyphenate-limit-lines: 2;
+     */
+    --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
+
+    /* -------------------- */
+
+    --m-dinkus: var(--m-marker-hash);
+    --m-dinkus-subscene: var(--m-marker-tilde);
+    /*--m-dinkus-subscene: var(--m-marker-forward-slash);
+    --m-dinkus-subscene: var(--m-marker-quote-dash);
+    --m-dinkus-subscene: var(--m-marker-2em-dash);
+    --m-dinkus-subscene: var(--m-marker-hyphen);
+    --m-dinkus-subscenes: var(--m-marker-3hyphens);*/
+    --m-dinkus-subscenes: var(--m-marker-zws);
+    --m-30-: var(--m-marker-the-end);
+
+    /* -------------------- */
+
+    --m-indent-foothang: var(--m-indentUS);
+
+
+    /*
+     * DEFAULTS - section 2 - baseline #manuscript.long (and short) specific
+     */
+
+    /* Title-block headers offset */
+    --m-offset-title: var(--m-content-offset-5-12th);
+
+    /* font settings short/long - .m-facts */
+    --m-font-size-facts-short:    var(--m-font-size-contact);
+    --m-font-weight-facts-short:  var(--m-font-weight-contact);
+    /* --m-font-family-facts-short is set below */
+    --m-line-spacing-facts-short: var(--m-line-spacing-single);
+
+    --m-font-size-facts-long:    inherit; /* will inherit from m-header */
+    --m-font-weight-facts-long:  inherit;
+    --m-font-family-facts-long:  inherit;
+    --m-line-spacing-facts-long: inherit;
+
+
+    /*
+     * DEFAULTS - section 3 - baseline #manuscript.narrative and
+     *                        #manuscript.nonnarrative specific
+     */
+
+    /* font-family - narrative and nonnarrative */
+    --m-font-family-narrative: var(--m-fontstack-serif);
+    --m-font-family-nonnarrative: var(--m-fontstack-sans);
+    --m-font-family-non-narrative: var(--m-font-family-nonnarrative);
+
+    --m-font-family-narrative-preformatted: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-preformatted: var(--m-fontstack-sans-mono);
+    --m-font-family-non-narrative-preformatted: var(--m-font-family-nonnarrative-preformatted);
+
+    --m-font-family-narrative-code: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-code: var(--m-fontstack-sans-mono);
+    --m-font-family-non-narrative-code: var(--m-font-family-nonnarrative-code);
+
+    /* first-line indent/inter-paragraph spacing - narrative & nonnarrative */
+    /* set in m-var/permutations.css …
+    --m-indent-narrative: var(--m-indentUS); */
+    --m-indent-narrative-first-paragraph: var(--m-indent-narrative);
+    --m-paragraph-spacing-narrative: 0;
+
+    --m-indent-nonnarrative: 0;
+    --m-indent-nonnarrative-first-paragraph: var(--m-indent-nonnarrative);
+    --m-paragraph-spacing-nonnarrative: 1rem;
+
+    --m-indent-non-narrative: var(--m-indent-nonnarrative);
+    --m-indent-non-narrative-first-paragraph: var(--m-indent-nonnarrative);
+    --m-paragraph-spacing-non-narrative: var(--m-paragraph-spacing-nonnarrative);
+
+    --m-spacing-poem-narrative: var(--m-paragraph-spacing-nonnarrative);
+    --m-spacing-poem-nonnarrative: calc(var(--m-paragraph-spacing-nonnarrative) * 2);
+    --m-spacing-poem-non-narrative: var(--m-spacing-poem-nonnarrative);
+
+    /* left and right margins - pre and blockquote */
+    --m-margin-poem: var(--m-indent-narrative);
+    --m-margin-blockquote: calc(var(--m-indent-narrative) * 1.5);
+
+    /*
+     * DEFAULTS - section 4 - baseline #manuscript.poetry specific
+     */
+
+    --m-font-family-poetry:          var(--m-fontstack-serif);
+    --m-font-size-poetry:            inherit;
+    --m-font-weight-poetry:          inherit;
+    --m-font-style-poetry:           inherit;
+    --m-line-spacing-poetry:         var(--m-line-spacing-single);
+    --m-text-transform-title-poetry: none; /*uppercase used to be the standard;*/
+
+    /* --------------------------------------------------------------------- */
+
+    /*
+     * DEFAULTS - section 5 - setting the default for everything to
+     *                #vpage.US and #manuscript.narrative and #manuscript.short
+     */
+
+    --m-font-style: normal;
+
+    /* everything is defaulted to -narrative and then that gets reset
+     * by manuscript.css to something different if necessary */
+    /* set in m-var/permutations.css …
+    --m-font-family:              var(--m-font-family-narrative);
+    --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
+    --m-font-family-code:         var(--m-font-family-narrative-code);
+
+    --m-indent:                 var(--m-indent-narrative);
+    --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
+    --m-paragraph-spacing:      var(--m-paragraph-spacing-narrative);
+    */
+
+    /* --------------------------------------------------------------------- */
+
+    /*
+     * DEFAULTS - section 6 - per-component font-size, font-weight,
+     *                        font-family, line-spacing, …
+     *    Initially all are set to what was set above.
+     *     - contact, header(s), facts, title/subtitle, byline
+     *     - part, chapter, scene, poem
+     *     - epigraph, dingus, -30-
+     *     This is insanely pedantic.
+     */
+
+    /* font settings - contact info (and facts if put in the right corner */
+    --m-font-size-contact:    var(--m-font-size);
+    --m-font-weight-contact:  var(--m-font-weight);
+    --m-font-family-contact:  inherit;
+    --m-font-family-facts-short:  var(--m-font-family-contact);
+    --m-line-spacing-contact: var(--m-line-spacing-single);
+
+    /* font settings - the main title-block header */
+    --m-font-size-header: var(--m-font-size);
+    --m-font-size-headers: var(--m-font-size);
+    --m-font-weight-header: var(--m-font-weight);
+    --m-font-weight-headers: var(--m-font-weight);
+    --m-font-family-header: inherit;
+    --m-font-family-headers: inherit;
+
+    /* font settings - - - the main other headers */
+
+    /* font settings - the main titles, subtitles, and authors */
+    --m-font-size-title: var(--m-font-size);
+    --m-font-size-subtitle: var(--m-font-size);
+    --m-font-size-byline: var(--m-font-size);
+
+    --m-font-weight-title: var(--m-font-weight);
+    --m-font-weight-byline: var(--m-font-weight);
+
+    --m-font-family-title: inherit;
+    --m-font-family-byline: inherit;
+
+    /* font settings - part titles, subtitles, and authors */
+    --m-font-size-title-part: var(--m-font-size-title);
+    --m-font-size-subtitle-part: var(--m-font-size-subtitle);
+    --m-font-size-byline-part: var(--m-font-size-byline);
+
+    --m-font-weight-title-part: var(--m-font-weight-title);
+    --m-font-weight-byline-part: var(--m-font-weight-byline);
+
+    --m-font-family-title-part: inherit;
+    --m-font-family-byline-part: inherit;
+
+    /* font settings - chapter titles, subtitles, and authors */
+    --m-font-size-title-chapter:    var(--m-font-size);
+    --m-font-size-subtitle-chapter: var(--m-font-size);
+    --m-font-size-byline-chapter:   var(--m-font-size);
+
+    --m-font-weight-title-chapter:  var(--m-font-weight);
+    --m-font-weight-byline-chapter: var(--m-font-weight);
+
+    --m-font-family-title-chapter:  inherit;
+    --m-font-family-byline-chapter: inherit;
+
+    /* font settings - scene titles, subtitles, and authors */
+    --m-font-size-title-scene:    var(--m-font-size);
+    --m-font-size-subtitle-scene: var(--m-font-size);
+    --m-font-size-byline-scene:   var(--m-font-size);
+
+    --m-font-weight-title-scene:  var(--m-font-weight);
+    --m-font-weight-byline-scene: var(--m-font-weight);
+
+    --m-font-family-title-scene:  inherit;
+    --m-font-family-byline-scene: inherit;
+
+    /* font settings - poem titles, subtitles, and authors */
+    --m-font-size-title-poem:    var(--m-font-size);
+    --m-font-size-subtitle-poem: var(--m-font-size);
+    --m-font-size-byline-poem:   var(--m-font-size);
+
+    --m-font-weight-title-poem:  var(--m-font-weight);
+    --m-font-weight-byline-poem: var(--m-font-weight);
+
+    --m-font-family-title-poem:  inherit;
+    --m-font-family-byline-poem: inherit;
+
+    /* font settings - the epigraphs */
+    /*--m-font-size-epigraph: .8125rem;*/ /* 13px or ~9.75pt (if parent 16px) */
+    /*--m-font-size-epigraph: .8333rem;*/ /* ~13.33px or 10pt */
+    --m-font-size-epigraph: .9166rem; /* ~14.7px or 11pt */
+    --m-font-weight-epigraph: var(--m-font-weight);
+    --m-font-family-epigraph: inherit;
+    --m-font-style-epigraph: italic;
+    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
+
+    /* font settings - the section separators (dinkus and -30-) */
+    --m-font-size-dinkus-30-: var(--m-font-size);
+    --m-font-weight-dinkus-30-: var(--m-font-weight);
+    --m-font-family-dinkus-30-: inherit;
+
+    /* font settings - the page headers */
+    --m-font-size-page-header:  var(--m-font-size);
+    --m-font-weight-page-header:  var(--m-font-weight);
+    --m-font-style-page-header:  var(--m-font-style);
+    --m-font-family-page-header:  var(--m-font-family);
+
+    /* positional and font settings - m-facts
+     * (.m-facts is an oddball container)
+     */
+
+    /* .m-facts settings */
+    /* set in m-var/permutations.css …
+    --m-position-facts:     var(--m-position-facts-short);
+    --m-top-facts:          var(--m-top-facts-short);
+    --m-bottom-facts:       var(--m-bottom-facts-short);
+    --m-left-facts:         var(--m-left-facts-short);
+    --m-right-facts:        var(--m-right-facts-short);
+
+    --m-margin-facts-horizontal: var(--m-margin-facts-short-horizontal);
+    --m-margin-facts-verticle:   var(--m-margin-facts-short-verticle);
+    --m-text-align-facts:   var(--m-text-align-facts-short);
+
+    --m-font-size-facts:    var(--m-font-size-facts-short);
+    --m-font-weight-facts:  var(--m-font-weight-facts-short);
+    --m-font-family-facts:  var(--m-font-family-facts-short);
+    --m-line-spacing-facts: var(--m-line-spacing-facts-short);
+    */
+
+    /* page break settings - these get refined settings elsewhere */
+    /* set in m-var/permutations.css …
+    --m-page-break: var(--m-page-break-short);                     / * unset * /
+    --m-page-break-simulated: var(--m-page-break-simulated-short); / * 0 * /
+    --m-page-break-simulated-padding-block-end: var(--m-page-break-simulated-padding-block-end-short); / * 0 * /
+    */
+
+    /* the desktop theme beneath the paper */
+    --m-desktop-color-theme-default:    var(--m-color-gray5, darkgray);
+    --m-desktop-color-theme-dim:        var(--m-color-gray7, dimgray);
+    --m-desktop-color-theme-dimmer:     var(--m-color-gray7pt5, #444444ff);
+    --m-desktop-color-theme-dark:       var(--m-color-gray-purple-dark);
+    --m-desktop-color-theme-dark-yellow: var(--m-color-gray-yellow-dark);
+    --m-desktop-color-theme-dark-amber:  var(--m-color-gray-yellow-dark);
+    --m-desktop-color-theme-dark-green:  var(--m-color-gray-green-dark);
+
+    /* the paper theme on the desktop */
+    --m-paper-color-theme-default:    var(--m-color-gray0, white);
+    --m-paper-color-theme-dim:        var(--m-color-gray4, silver);
+    --m-paper-color-theme-dimmer:     var(--m-color-gray6, gray);
+    --m-paper-color-theme-dark:       var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-yellow: var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-amber:  var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-green:  var(--m-color-gray8, #1e1e1eff);
+
+    --m-text-color-theme-default:    var(--m-color-gray9, black);
+    --m-text-color-theme-dim:        var(--m-text-color-theme-default);
+    --m-text-color-theme-dimmer:     var(--m-text-color-theme-default);
+    --m-text-color-theme-dark:       var(--m-color-whitesmoke, #f5f5f5ff);
+    --m-text-color-theme-dark-amber:  #ffb000ff;
+    --m-text-color-theme-dark-yellow: #ffe372ff;
+    --m-text-color-theme-dark-green:  #72ff83ff;
+
+
+    --m-link-color-theme-default:    var(--m-color-professional-blue2, #122b73ff);
+    --m-link-color-theme-dim:        var(--m-link-color-theme-default);
+    --m-link-color-theme-dimmer:     var(--m-link-color-theme-default);
+    --m-link-color-theme-dark:       var(--m-color-professional-blue7, #a5aaffff);
+    --m-link-color-theme-dark-amber:  #ffcf66ff;
+    --m-link-color-theme-dark-yellow: #fff0b3ff;
+    --m-link-color-theme-dark-green:  #b3ffbcff;
+
+    --m-link-hover-color-theme-default:    var(--m-color-gray7, dimgray);
+    --m-link-hover-color-theme-dim:        var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dimmer:     var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dark:       var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dark-amber:  #ffcf6680;
+    --m-link-hover-color-theme-dark-yellow: #fff0b380;
+    --m-link-hover-color-theme-dark-green:  #b3ffbc80;
+
+    --m-page-break-simulated-color-theme-default:    #33333320;
+    --m-page-break-simulated-color-theme-dim:        var(--m-page-break-simulated-color-theme-default);
+    --m-page-break-simulated-color-theme-dimmer:     var(--m-page-break-simulated-color-theme-default);
+    --m-page-break-simulated-color-theme-dark:       #a5aaff10;
+    --m-page-break-simulated-color-theme-dark-amber:  #ffcf6610;
+    --m-page-break-simulated-color-theme-dark-yellow: #ffe37210;
+    --m-page-break-simulated-color-theme-dark-green:  #72ff8310;
+
+    --m-vpage-frame-color-theme-default:    var(--m-color-gray9, black);
+    --m-vpage-frame-color-theme-dim:        var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dimmer:     var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark:       var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-amber:  var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-yellow: var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-green:  var(--m-vpage-frame-color-theme-default);
+
+} /* end :root scoping */
+
+} /* end @layer lm-var-defaults */
+

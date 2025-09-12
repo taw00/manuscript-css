@@ -1,0 +1,13 @@
+/* the core styles - this corrals all of the baseline logic.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@import url("./m-core/positioning.css");
+@import url("./m-core/positioning-prose.css");
+@import url("./m-core/positioning-poetry.css");
+@import url("./m-core/positioning-page-breaks.css");
+@import url("./m-core/dinkuses.css");
+

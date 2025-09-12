@@ -1,0 +1,10 @@
+/* Pandoc does mostly the right things but there is a pesky setting that
+ * interferes with proper rendering: I.e., a title-block. We make it go away.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+header#title-block-header { display: none; }
+

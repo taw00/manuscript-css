@@ -1,0 +1,46 @@
+/* "Normalized" stylings for this toolchain before we layer ours on top.
+ *
+ * Included are some normalization in the context of markdown applications that
+ * can produce a finished rendered view from within their respective
+ * interfaces. Noted here are Joplin and VSCode because they allow you to
+ * import CSS and manipulate the rendered result. Conversely, many markdown
+ * editors that give you the ability to generate a rendered view (GhostWriter
+ * for example) but will disallow CSS overrides or will disallow anything more
+ * than remedial CSS changes. For those you will have to do the true rendering
+ * outside of those toolchains.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@import url("./m-reset/joplin.css");
+@import url("./m-reset/vscode.css");
+@import url("./m-reset/pandoc.css");
+@import url("./m-reset/ghostwriter.css");
+@import url("./m-reset/markdown-viewer.css");
+@import url("./m-reset/other.css");
+
+/*
+ * configuration of some raw html elements that seem to be reasonable defaults
+ * for a manuscript and that simply need to override the rest.
+ */
+
+/* 2 deep (or more) ordered lists use lower-latin (a, b, c, ...) */
+:is(ol, ul, menu) ol {
+  /*list-style-type: circle;*/
+  list-style-type: lower-latin;
+}
+/* 2 deep unordered lists use an endash */
+:is(ol, ul, menu) ul,
+:is(ol, ul, menu) menu {
+  /*list-style-type: circle;*/
+  list-style-type: "- ";
+}
+/* 3+ deep unordered lists use an endash - here to override defaults */
+:is(ol, ul, menu) :is(ol, ul, menu) ul,
+:is(ol, ul, menu) :is(ol, ul, menu) menu {
+  /*list-style-type: square;*/
+  list-style-type: "- ";
+}
+

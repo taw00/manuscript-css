@@ -1,0 +1,346 @@
+/* @layer lm-var-permutations
+ *
+ * This stylesheet will re-configuration variables found in m-var/defaults.css
+ * to match switches fliped by the user. Paper-sizes, Narrative/Nonnarrative,
+ * Short and Long forms, Prose versus Poetry, Simple renderings vs. not, etc.
+ *
+ * There are values in here that can be overridden, but others that really
+ * should not be. Tread carefully.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-var-permutations {
+
+/*
+ * ":root"-LEVEL VARIABLES
+ */
+:root {
+    /* page-dimension-sensitive things: widths, margins, indentations */
+    --m-page-width:  var(--m-page-widthUS);
+    --m-page-height: var(--m-page-heightUS);
+    --m-indent-narrative: var(--m-indentUS);
+    --m-indent-foothang:  var(--m-indentUS);
+    --m-page-margin: var(--m-page-marginUS);
+    --m-marginalia-margin: calc(var(--m-page-margin) * 1.333); /* looked good to my eye */
+    &:has(#vpage:is(.US,.us,.letter)) {
+        --m-page-margin: var(--m-page-marginUS);
+        --m-indent-narrative: var(--m-indentUS);
+        --m-indent-foothang:  var(--m-indentUS);
+    }
+    &:has(#vpage:is(.US,.us,.letter):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthUS);
+        --m-page-height: var(--m-page-heightUS);
+    }
+    &:has(#vpage:is(.US,.us,.letter):is(.landscape)) {
+        --m-page-width: var(--m-page-heightUS);
+        --m-page-height:  var(--m-page-widthUS);
+    }
+    &:has(#vpage:is(.USh,.USH,.ush,.hletter)) { /* US half-letter */
+        --m-page-margin: var(--m-page-marginUSh);
+        --m-indent-narrative: var(--m-indentUSh);
+        --m-indent-foothang:  var(--m-indentUSh);
+    }
+    &:has(#vpage:is(.USh,.USH,.ush,.hletter):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthUSh);
+        --m-page-height: var(--m-page-heightUSh);
+    }
+    &:has(#vpage:is(.USh,.USH,.ush,.hletter):is(.landscape)) {
+        --m-page-width: var(--m-page-heightUSh);
+        --m-page-height:  var(--m-page-widthUSh);
+    }
+    &:has(#vpage:is(.A4,.a4)) {
+        --m-page-margin: var(--m-page-marginA4);
+        --m-indent-narrative: var(--m-indentA4);
+        --m-indent-foothang:  var(--m-indentA4);
+    }
+    &:has(#vpage:is(.A4,.a4):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthA4);
+        --m-page-height: var(--m-page-heightA4);
+    }
+    &:has(#vpage:is(.A4,.a4):is(.landscape)) {
+        --m-page-width: var(--m-page-heightA4);
+        --m-page-height:  var(--m-page-widthA4);
+    }
+
+    &:has(#vpage:is(.A5,.a5)) {
+        --m-page-margin: var(--m-page-marginA5);
+        --m-indent-narrative: var(--m-indentA5);
+        --m-indent-foothang:  var(--m-indentA5);
+    }
+    &:has(#vpage:is(.A5,.a5):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthA5);
+        --m-page-height: var(--m-page-heightA5);
+    }
+    &:has(#vpage:is(.A5,.a5):is(.landscape)) {
+        --m-page-width: var(--m-page-heightA5);
+        --m-page-height:  var(--m-page-widthA5);
+    }
+    &:has(#vpage:is(.A6,.a6)) {
+        --m-page-margin: var(--m-page-marginA6);
+        --m-indent-narrative: var(--m-indentA6);
+        --m-indent-foothang:  var(--m-indentA6);
+    }
+    &:has(#vpage:is(.A6,.a6):not(.landscape)) {
+        --m-page-width:  var(--m-page-widthA6);
+        --m-page-height: var(--m-page-heightA6);
+    }
+    &:has(#vpage:is(.A6,.a6):is(.landscape)) {
+        --m-page-width: var(--m-page-heightA6);
+        --m-page-height:  var(--m-page-widthA6);
+    }
+
+    &:has(#manuscript:is(.first-paragraph-indent-off)) {
+        /* the indent for that first line of the first paragraph. I like it off
+         * but that is not the standard for manuscript formatting.
+         * (this distinction only apples to narrative works and the headers) */
+        --m-indent-narrative-first-paragraph: 0;
+    }
+
+    &:has(#manuscript:not(:is(.nonnarrative,.non-narrative))) { /* i.e., narrative */
+        /* the default is already set for .narrative, but we are being explicit */
+        /* narrative paragraphs first not indented, then indented */
+        --m-indent: var(--m-indent-narrative);
+        --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
+        --m-paragraph-spacing: var(--m-paragraph-spacing-narrative);
+        --m-spacing-poem: var(--m-spacing-poem-narrative);
+        --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
+        /* need to reset font-family for most everything */
+        --m-font-family: var(--m-font-family-narrative);
+        --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
+        --m-font-family-code: var(--m-font-family-narrative-code);
+    }
+
+    &:has(#manuscript:is(.nonnarrative,.non-narrative)) {
+        /* nonnarrative paragraphs are space-seperated and not indented */
+        --m-indent: var(--m-indent-nonnarrative);
+        --m-indent-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
+        --m-paragraph-spacing: var(--m-paragraph-spacing-nonnarrative);
+        --m-spacing-poem: var(--m-spacing-poem-nonnarrative);
+        --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
+        /* need to reset font-family for most everything */
+        --m-font-family: var(--m-font-family-nonnarrative);
+        --m-font-family-preformatted: var(--m-font-family-nonnarrative-preformatted);
+        --m-font-family-code: var(--m-font-family-nonnarrative-code);
+    }
+
+    &:has(#manuscript:not(.long,.poetry)) { /* short, the default, but let's be explicit */
+        --m-position-facts:     var(--m-position-facts-short);
+        --m-top-facts:          var(--m-top-facts-short);
+        --m-bottom-facts:       var(--m-bottom-facts-short);
+        --m-left-facts:         var(--m-left-facts-short);
+        --m-right-facts:        var(--m-right-facts-short);
+        --m-margin-facts-horizontal: var(--m-margin-facts-short-horizontal);
+        --m-margin-facts-verticle:   var(--m-margin-facts-short-verticle);
+        --m-text-align-facts:   var(--m-text-align-facts-short);
+        --m-line-spacing-facts: var(--m-line-spacing-facts-short);
+
+        --m-font-family-facts:  var(--m-font-family-facts-short);
+        --m-font-size-facts:    var(--m-font-size-facts-short);
+        --m-font-weight-facts:  var(--m-font-weight-facts-short);
+    }
+    &:has(#manuscript:is(.long,.poetry)) {
+        --m-position-facts:     var(--m-position-facts-long);
+        --m-top-facts:          var(--m-top-facts-long);
+        --m-bottom-facts:       var(--m-bottom-facts-long);
+        --m-left-facts:         var(--m-left-facts-long);
+        --m-right-facts:        var(--m-right-facts-long);
+        --m-margin-facts-horizontal: var(--m-margin-facts-long-horizontal);
+        --m-margin-facts-verticle:   var(--m-margin-facts-long-verticle);
+        --m-text-align-facts:   var(--m-text-align-facts-long);
+        --m-line-spacing-facts: var(--m-line-spacing-facts-long);
+
+        --m-font-family-facts:  var(--m-font-family-facts-long);
+        --m-font-size-facts:    var(--m-font-size-facts-long);
+        --m-font-weight-facts:  var(--m-font-weight-facts-long);
+    }
+
+
+    &:has(#manuscript:is(.text-only,.simple)) {
+        --m-offset-title: 0;
+    }
+    &:has(#manuscript:is(.text-only)) {
+        --m-page-break: unset !important;
+        --m-page-break-simulated: 0px !important;
+        --m-manuscript-border: 0px !important;
+    }
+
+} /* end ":root"-LEVEL VARIABLES (before @media differientators) */
+
+
+@media screen {
+    :root {
+        &:has(#manuscript:not(.long,.poetry)) {
+            /* the default, but let's be explicit */
+            /* note, these are, more or less, no-op settings by default. For short
+             * stories, we don't want to do forced page breaks anywhere. */
+            --m-page-break: var(--m-page-break-short); /* unset */
+            --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
+            --m-page-break-simulated-padding-block-end: var(--m-page-break-simulated-padding-block-end-short); /* 0 */
+        }
+        &:has(#manuscript:is(.long,.poetry)) {
+            --m-page-break: var(--m-page-break-long);
+            --m-page-break-simulated: var(--m-page-break-simulated-long);
+            --m-page-break-simulated-padding-block-end: var(--m-page-break-simulated-padding-block-end-long);
+        }
+    }
+} /* end @media screen */
+
+@media print {
+    :root {
+        &:has(#manuscript:not(.long,.poetry)) {
+            /* the default, but let's be explicit */
+            /* short-form print behavior: if page break simulation was set for some
+             * reason, we unset it. */
+            --m-page-break-simulated: 0;
+            --m-page-break-simulated-padding-block-end: 0;
+            --m-page-break: var(--m-page-break-short);
+        }
+        &:has(#manuscript:is(.long,.poetry)) {
+            /* long-form print behavior: no longer simulated, there will be a page
+             * after the title page header */
+            --m-page-break-simulated: 0;
+            --m-page-break-simulated-padding-block-end: 0;
+            --m-page-break: var(--m-page-break-long);
+        }
+    }
+} /* end @media print */
+
+/* real end ":root"-LEVEL VARIABLES */
+
+
+
+
+#manuscript {
+/*
+ * "#manuscript > .m-scene"-SCOPED VARIABLES
+ */
+    & section.m-scene {
+        /* all -scene variables are scoped to .m-scene */
+        --m-indent-scene: var(--m-indent);
+        --m-indent-first-paragraph-scene: var(--m-indent-first-paragraph);
+        --m-paragraph-spacing-scene: var(--m-paragraph-spacing);
+
+        --m-font-family-scene: var(--m-font-family);
+        --m-font-family-preformatted-scene: var(--m-font-family-preformatted);
+        --m-font-family-code-scene: var(--m-font-family-code);
+
+        /* set in m-var/defaults.css …
+         * NOTE: --m-font-size-scene doesn't exist anywhere else
+        --m-font-size-scene:          inherit;
+        --m-font-size-title-scene:    var(--m-font-size-scene);
+        --m-font-size-subtitle-scene: var(--m-font-size-scene);
+        --m-font-size-byline-scene:   var(--m-font-size-scene);
+        --m-font-weight-title-scene:  var(--m-font-weight-scene);
+        --m-font-weight-byline-scene: var(--m-font-weight-scene);
+        --m-font-family-title-scene:  inherit;
+        --m-font-family-byline-scene: inherit;
+        */
+
+        &:is(.narrative) {
+            --m-indent-scene: var(--m-indent-narrative);
+            --m-indent-first-paragraph-scene: var(--m-indent-narrative-first-paragraph);
+            --m-paragraph-spacing-scene: var(--m-paragraph-spacing-narrative);
+            --m-font-family-scene: var(--m-font-family-narrative);
+            --m-font-family-preformatted-scene: var(--m-font-family-narrative-preformatted);
+            --m-font-family-code: var(--m-font-family-narrative-code);
+        }
+        &:is(.nonnarrative, .nonnarrative) {
+            --m-indent-scene: var(--m-indent-nonnarrative);
+            --m-indent-first-paragraph-scene: var(--m-indent-nonnarrative-first-paragraph);
+            --m-paragraph-spacing-scene: var(--m-paragraph-spacing-nonnarrative);
+            --m-font-family-scene: var(--m-font-family-nonnarrative);
+            --m-font-family-preformatted-scene: var(--m-font-family-nonnarrative-preformatted);
+            --m-font-family-code-scene: var(--m-font-family-nonnarrative-code);
+        }
+    }
+
+    /* we don't allow narrative and nonnarrative in subscenes yet
+    & section.m-subscenes > section.m-scene {
+        /* all -subscene variables are scoped to .m-scene w/in .m-subscenes * /
+        --m-indent-subscene: var(--m-indent);
+        --m-indent-first-paragraph-subscene: var(--m-indent-first-paragraph);
+        --m-paragraph-spacing-subscene: var(--m-paragraph-spacing);
+        --m-font-family-subscene: var(--m-font-family);
+        --m-font-family-preformatted-subscene: var(--m-font-family-preformatted);
+        --m-font-family-subcode: var(--m-font-family-code);
+        &:is(.narrative) {
+            --m-indent-subscene: var(--m-indent-narrative);
+            --m-indent-first-paragraph-subscene: var(--m-indent-narrative-first-paragraph);
+            --m-paragraph-spacing-subscene: var(--m-paragraph-spacing-narrative);
+            --m-font-family-subscene: var(--m-font-family-narrative);
+            --m-font-family-preformatted-subscene: var(--m-font-family-narrative-preformatted);
+            --m-font-family-code-subscene: var(--m-font-family-narrative-code);
+        }
+        &:is(.nonnarrative, .nonnarrative) {
+            --m-indent-subscene: var(--m-indent-nonnarrative);
+            --m-indent-first-paragraph-subscene: var(--m-indent-nonnarrative-first-paragraph);
+            --m-paragraph-spacing-subscene: var(--m-paragraph-spacing-nonnarrative);
+            --m-font-family-subscene: var(--m-font-family-nonnarrative);
+            --m-font-family-preformatted-subscene: var(--m-font-family-nonnarrative-preformatted);
+            --m-font-family-code-subscene: var(--m-font-family-nonnarrative-code);
+        }
+    }
+    */
+
+/* end "#manuscript > .m-scene"-SCOPED VARIABLES */
+}
+
+
+
+
+
+/*
+ * simple syntax checks
+ * --------------------
+ */
+#vpage {
+    &:is(.long,.short,.prose,.poetry,.nonnarrative,.non-narrative,.simple,.text-only) {
+        & #manuscript {
+            & > *:first-child::after {
+                box-sizing: border-box;
+                position: absolute;
+                top: 1in;
+                left: 0;
+                color: red;
+                background-color: black;
+                padding: 10px;
+                font-family: var(--m-fontstack-courier);
+                width: var(--m-content-width);
+                text-align: center;
+                white-space: pre-wrap;
+                border: yellow 3px solid;
+                content: 'ERROR: Class mismatch: at least one class designated in '
+                         '<div id="vpage" class="WRONG-LOCATION"> is meant to be '
+                         'used as a class in <article id="manuscript" '
+                         'class="CORRECT-LOCATION"> instead.';
+            }
+        }
+    }
+    & #manuscript:is(.us,.US,.ush,.USh,.USH,.a4,.A4,.a5,.A5,.a6,.A6,
+                     .dim,.dimmer,.dark,.darkamber,.darkyellow,.darkgreen) {
+        & > *:first-child::after {
+            box-sizing: border-box;
+            position: absolute;
+            top: 1in;
+            left: 0;
+            color: orange;
+            background-color: black;
+            padding: 10px;
+            font-family: var(--m-fontstack-courier);
+            width: var(--m-content-width);
+            text-align: center;
+            white-space: pre-wrap;
+            border: yellow 3px solid;
+            content: 'ERROR: Class mismatch: at least one class '
+                     'designated in <article id="manuscript" '
+                     'class="WRONG-LOCATION"> is meant to be used as a class in '
+                     '<div id="vpage" class="CORRECT-LOCATION"> instead.';
+        }
+    }
+}
+
+} /* end @layer lm-var-permutations */
+

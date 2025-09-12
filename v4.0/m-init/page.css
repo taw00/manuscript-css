@@ -1,0 +1,106 @@
+/* The virtual page and then the page set to print/PDF.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+
+
+/* SCREEN: rendering to the screen
+ *
+ * - <html> is trans and <body> is themed
+ * - We then add a pretty 3D virtual page (#vpage)
+ * - configure the content container to hold the text within.
+ *
+ * Implemenation note: #vpage and #manuscript use a combination of position
+ * box-sizing and overflow that cannot change or the layout gets weird (though
+ * overflow could still be set to auto, theoretically.
+ */
+@media screen {
+    html {
+        background-color: transparent;
+    }
+    /* rendered view: "desktop" background that the manuscript page sits on */
+    body {
+        background-color: var(--m-desktop-color);
+    }
+    /* the virtual page — the paper */
+    #vpage {
+        width: 100%; max-width: var(--m-page-width);
+        background-color: var(--m-paper-color);
+        box-shadow: var(--m-vpage-frame);
+        margin: var(--m-vpage-frame-margin);
+        /* We want the padding (page margin) to shrink on small screens */
+        /*padding: var(--m-page-margin);*/
+        padding: min(var(--m-page-margin),10vw) min(var(--m-page-margin),2vw);
+
+        /* the content container - the words and content, not the paper */
+        & #manuscript {
+            width: 100%; max-width: var(--m-content-width);
+            border: var(--m-manuscript-border);
+            margin: auto;
+        }
+
+        /* experiment:
+         * Currently, I allow flipping the padding/margin settings that set the
+         * standard 1in margin around the content. The "flip" determins who,
+         * #vpage or #manuscript, governs the page margin. Honestly, if we
+         * think like a printer, the page margins should be controlled by the
+         * paper/page and not the content. That's what we have set now, #vpage
+         * being the virtual-page. If you want to flip it, add 'flip-margin' to
+         * the #vpage classes and then #manuscript with center the content and
+         * set its own spacing with the margin settings.
+         * Eventurally, this will likely go away. */
+        &.flip-margins-experiment {
+            padding: 0;
+            & #manuscript {
+                /* the 95% keeps a small margin on small screens */
+                width: 95%; max-width: var(--m-content-width);
+                margin: var(--m-page-margin) auto;
+            }
+        }
+    }
+} /* end @media screen */
+
+
+
+
+/*
+ * PRINT: rendering to PDF/paged-export
+ */
+@media print {
+    html, body { width: 100%; max-width: 100%; border: 0; padding: 0; margin: 0; background-color: transparent; }
+    #vpage, #manuscript { width: 100%; max-width: 100%; padding: 0; margin: 0; box-shadow: unset; }
+
+    /* print rendering - do not allow code scrollbars */
+    #manuscript pre > code { overflow: hidden; }
+
+    /* marginalia rules (defined in m-init/marginalia.css) */
+    #vpage {
+        page: top-right-marginalia;
+        &.no-marginalia,
+        &:has(article#manuscript.poetry) {
+            page: no-marginalia;
+        }
+        &.top-left-marginalia {
+            page: top-left-marginalia;
+        }
+        &.top-center-marginalia {
+            page: top-center-marginalia;
+        }
+        &.top-right-marginalia {
+            page: top-right-marginalia;
+        }
+        &.bottom-left-marginalia {
+            page: bottom-left-marginalia;
+        }
+        &.bottom-center-marginalia {
+            page: bottom-center-marginalia;
+        }
+        &.bottom-right-marginalia {
+            page: bottom-right-marginalia;
+        }
+    }
+}
+

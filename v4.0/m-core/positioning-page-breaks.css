@@ -1,0 +1,192 @@
+/* Page break and simulated page break positioning
+ *
+ * Note, if you start mixing up odd things sometimes page breaking can get odd
+ * as well. So, be mindful if you see a blank page or stacks of simulated page
+ * break lines or parts and chapters with no scene afterward, that maybe you
+ * shouldn't have done whatever you have done.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+
+/*
+ * PAGE BREAKS, SIMULATED
+ */
+@media screen {
+    #manuscript {
+        /*
+         * page-breaks dependent on 'short' vs. 'long'
+         */
+
+        /* BOOK: we page break going into a book,
+         *       but only if the book has a title header */
+        & section.m-book:has( > .m-title-header),
+
+        /* PART: we page break going into a part */
+        & section.m-part,
+
+        /* CHAPTER: we page break going into a chapter,
+        *           unless it follows a part */
+        & > .m-title-header ~ section.m-chapter,
+        & section:not(.m-part) ~ section.m-chapter,
+
+        /* POEM: we page break going into a poem … always
+         * see below */
+
+        /* SCENES: page break going into a scene,
+         *         but only if it follows a title page, book,
+         *         or (see below) poem */
+        & > div.m-title-header ~ section.m-scene,
+        & section.m-book:has( > .m-title-header) ~ section.m-scene {
+            border-block-start: var(--m-page-break-simulated);
+        }
+
+
+        /*
+         * page-breaks that ALWAYS happen
+         */
+
+        /* POEM: we page break going into a poem … always */
+        & > .m-title-header ~ section.m-poem,
+        & section ~ section.m-poem,
+
+        /* SCENES: page break going into a scene,
+         *         but only if it follows a poem */
+        & section.m-poem ~ section.m-scene {
+            border-block-start: var(--m-page-break-simulated-long);
+        }
+
+
+        /*
+         * Title Block, Book, Page, & Chapter title blocks start a good
+         * distance down the page
+         */
+
+        /* TITLE PAGE and BOOK
+         * add padding at the end of an element that always has a simulated
+         * page break coming after */
+        & > .m-title-header:has( ~ section),
+        & section.m-book > .m-title-header:has( ~ section) {
+            padding-block-end: var(--m-page-break-simulated-padding-block-end);
+        }
+
+        /* BOOK and PART and CHAPTER - offset from top of page simulation */
+        & section.m-book:has( > .m-title-header),
+        & section.m-part:has( > .m-title-header),
+        & > .m-title-header ~ section.m-chapter,
+        & section:not(.m-part) ~ section.m-chapter {
+            padding-block-start: var(--m-offset-title);
+        }
+
+        /* POEM - aesthetic spacing at end before the simulated marker */
+        & section.m-poem {
+            padding-block-end: var(--m-room-for-two);
+        }
+    } /* end #manuscript */
+} /* end @media screen */
+
+
+/*
+ * PAGE BREAKS
+ */
+@media print {
+    #vpage, #manuscript {
+        break-before: avoid-page !important;
+    }
+
+    #manuscript {
+        /*
+         * page-breaks dependent on 'short' vs. 'long'
+         */
+
+        /* BOOK: we page break going into a book,
+         *       but only if the book has a title header */
+        & section.m-book:has( > .m-title-header),
+
+        /* PART: we page break going into a part */
+        & section.m-part,
+
+        /* CHAPTER: we page break going into a chapter,
+        *           unless it follows a part */
+         & > .m-title-header ~ section.m-chapter,
+        & section:not(.m-part,.m-poem) ~ section.m-chapter,
+
+        /* POEM: we page break going into a poem … always
+         * see below */
+
+        /* SCENES: page break going into a scene,
+         *         but only if it follows a title page, book,
+         *         or (see below) poem */
+        & > div.m-title-header ~ section.m-scene,
+        & section.m-book:has( > .m-title-header) ~ section.m-scene {
+            break-before: var(--m-page-break);
+        }
+
+
+        /*
+         * page-breaks that ALWAYS happen
+         */
+
+        /* POEM: we page break going into a poem … always */
+        & > .m-title-header ~ section.m-poem,
+        & section ~ section.m-poem,
+
+        /* SCENES: page break going into a scene,
+         *         but only if it follows a poem */
+        & section.m-poem ~ section.m-scene {
+            break-before: page;
+        }
+
+
+        /*
+         * Title Block, Book, Page, & Chapter title blocks start a good
+         * distance down the page
+         */
+
+        /* BOOK and PART and CHAPTER - offset from top of page */
+        & section.m-book:has( > .m-title-header),
+        & section.m-part:has( > .m-title-header),
+        & > .m-title-header ~ section.m-chapter,
+        & section:not(.m-part) ~ section.m-chapter {
+            margin-block-start: var(--m-offset-title);
+            padding-block-start: 1px;
+        }
+
+    
+        /* AVOIDANCE */
+
+        & a,
+        & tr {
+            break-inside: avoid-page !important;
+        }
+
+        & :is(h1, h2, h3, h4, h5, h6),
+        & :is(img, figure) {
+            break-inside: avoid-page !important;
+            break-after: avoid-page !important;
+        }
+
+
+        /* avoid page break inside a poem stanza */
+        & .x-poem pre,
+        & section.m-poem pre,
+        /* avoid page break inside a header block */
+        & .m-facts,
+        & .m-contact,
+        & .m-page-header,
+        & .m-title-header {
+            break-inside: avoid-page !important;
+        }
+
+        /* avoid page break before a dinkus or -30- marker */
+        & section.m-scene::after,
+        &::after,
+        & h6 {
+            break-before: avoid-page !important;
+            break-inside: avoid-page !important;
+        }
+    } /* end #manuscript */
+} /* end @media print */
+

@@ -1,0 +1,526 @@
+/* General normalizations. First some unsets and then normalization based on
+ * Firefox's default user-agent settings.
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+
+/*
+ * General resets
+ * fighting off any belligerent css wrappers
+ */
+
+@layer lm-reset-other {
+
+/* putting this in a layer because it can be very abusive. */
+/* ACTUALLY ... commenting this out for now. Sometimes it wins for things
+ * like body's background-color and I don't quite grasp why
+html, body { all: initial; }
+ */
+
+}
+
+/*body { width: 100%; max-width: unset; }*/
+h1,h2,h3,h4,h5,h6,
+ol,ul,dl,menu,li,dt,dd,
+hr,
+blockquote, blockquote p,
+pre, code, p, q,
+mark,
+table, thead, tbody, tfoot, th, tr, td, colgroup, col {
+    font-size: unset; font-weight: unset; font-style: unset;
+    line-height: unset;
+    text-align: unset;
+    color: unset;
+    /*background-color: unset;*/
+    background: unset;
+    margin: unset; padding: unset;
+    border: unset;
+    opacity: unset;
+    filter: unset;
+}
+
+/* I don't think we have to reset these
+strong, b, em, i, u, s, img */
+
+@media print {
+    pre {
+        white-space: pre;
+        overflow-x: hidden;
+    }
+}
+
+
+
+
+/*
+ *
+ * Normalization to Browser Defaults: adapted from Firefox's ua.css
+ *
+ */
+a,
+ a:any-link,
+ a:link,
+ a:active,
+ a:visited { color: rgb(0 0 238); }
+
+
+/*
+ * Pulled from Firefox' html.css
+ * Note, I scrubbed a bunch of -moz-* values and things
+ */
+p, dl, multicol {
+  display: block;
+  margin-block: 1em;
+}
+
+dd {
+  display: block;
+  margin-inline-start: 40px;
+}
+
+blockquote, figure {
+  display: block;
+  margin-block: 1em;
+  margin-inline: 40px;
+}
+
+/* my addition for reference purposes
+ * notice that the browser standard is actually em and not rem, contrary to
+ * what I expected.
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1em; }
+h5 { font-size: .83em; }
+h6 { font-size: .67em; }
+*/
+
+h1 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin-block: .67em;
+}
+
+h2
+/*,                        I comment out all the H1 shrinking default behavior.
+:is(article, aside, nav, section)
+h1*/
+{
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-block: .83em;
+}
+
+h3
+/*,
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+h1*/
+{
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+  margin-block: 1em;
+}
+
+h4
+/*,
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+h1*/
+{
+  display: block;
+  font-size: 1.00em;
+  font-weight: bold;
+  margin-block: 1.33em;
+}
+
+h5
+/*,
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+h1*/
+{
+  display: block;
+  font-size: 0.83em;
+  font-weight: bold;
+  margin-block: 1.67em;
+}
+
+h6
+/*,
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+:is(article, aside, nav, section)
+h1*/
+{
+  display: block;
+  font-size: 0.67em;
+  font-weight: bold;
+  margin-block: 2.33em;
+}
+
+listing {
+  display: block;
+  /*font-family: -moz-fixed;*/
+  font-family: monospace;                                         /* my edit */
+  font-size: medium;
+  white-space: pre;
+  margin-block: 1em;
+}
+
+xmp, pre, plaintext {
+  display: block;
+  /*font-family: -moz-fixed;*/
+  font-family: monospace;                                         /* my edit */
+  white-space: pre;
+  /*margin-block: 1em;*                                           /* my edit */
+}
+
+
+/* tables */
+
+table {
+  display: table;
+  border-spacing: 2px;
+  border-collapse: separate;
+  /* XXXldb do we want this if we're border-collapse:collapse ? */
+  box-sizing: border-box;
+  text-indent: 0;
+}
+
+table[align="left"] {
+  float: left;
+}
+
+table[align="right"] {
+  float: right;
+  text-align: start;
+}
+
+
+/* border collapse rules
+ *
+ * Set hidden if we have 'frame' or 'rules' attribute.
+ * Set it on all sides when we do so there's more consistency
+ * in what authors should expect
+ * (putting this first so that later 'border' & 'frame' rules can override.) */
+table[rules] {
+  border-width: thin;
+  border-style: hidden;
+}
+
+table[frame] {
+  border: thin hidden;
+}
+
+/* specificity must beat table:-moz-table-border-nonzero rule above */
+table[frame="void"]   { border-style: hidden; }
+table[frame="above"]  { border-style: outset hidden hidden; }
+table[frame="below"]  { border-style: hidden hidden outset; }
+table[frame="lhs"]    { border-style: hidden hidden hidden outset; }
+table[frame="rhs"]    { border-style: hidden outset hidden hidden; }
+table[frame="hsides"] { border-style: outset hidden; }
+table[frame="vsides"] { border-style: hidden outset; }
+table[frame="box"],
+table[frame="border"] { border-style: outset; }
+
+
+/* Internal Table Borders */
+
+/* collapse only if rules are really specified */
+table[rules]:not([rules="none"], [rules=""]) {
+  border-collapse: collapse;
+}
+
+/* only specified rules override 'border' settings
+  (increased specificity to achieve this) */
+table[rules]:not([rules=""])> tr > td,
+table[rules]:not([rules=""])> * > tr > td,
+table[rules]:not([rules=""])> tr > th,
+table[rules]:not([rules=""])> * > tr > th,
+table[rules]:not([rules=""])> td,
+table[rules]:not([rules=""])> th
+{
+  border-width: thin;
+  border-style: none;
+}
+
+
+table[rules][rules="none"]  > tr > td,
+table[rules][rules="none"] > * > tr > td,
+table[rules][rules="none"] > tr > th,
+table[rules][rules="none"] > * > tr > th,
+table[rules][rules="none"] > td,
+table[rules][rules="none"] > th
+{
+  border-width: thin;
+  border-style: none;
+}
+
+table[rules][rules="all"] > tr > td,
+table[rules][rules="all"] > * > tr > td,
+table[rules][rules="all"] > tr > th,
+table[rules][rules="all"] > * > tr > th,
+table[rules][rules="all"] > td,
+table[rules][rules="all"] > th
+{
+  border-width: thin;
+  border-style: solid;
+}
+
+table[rules][rules="rows"] > tr,
+table[rules][rules="rows"] > * > tr {
+  border-block-start-width: thin;
+  border-block-end-width: thin;
+  border-block-start-style: solid;
+  border-block-end-style: solid;
+}
+
+table[rules][rules="cols"] > tr > td,
+table[rules][rules="cols"] > * > tr > td,
+table[rules][rules="cols"] > tr > th,
+table[rules][rules="cols"] > * > tr > th {
+  border-inline-start-width: thin;
+  border-inline-end-width: thin;
+  border-inline-start-style: solid;
+  border-inline-end-style: solid;
+}
+
+table[rules][rules="groups"] > colgroup {
+  border-inline-start-width: thin;
+  border-inline-end-width: thin;
+  border-inline-start-style: solid;
+  border-inline-end-style: solid;
+}
+table[rules][rules="groups"] > tfoot,
+table[rules][rules="groups"] > thead,
+table[rules][rules="groups"] > tbody {
+  border-block-start-width: thin;
+  border-block-end-width: thin;
+  border-block-start-style: solid;
+}
+
+
+/* caption inherits from table not table-outer */
+caption {
+  display: table-caption;
+  text-align: center;
+}
+
+table[align="center"] > caption {
+  margin-inline: auto;
+}
+
+table[align="center"] > caption[align="left"]:dir(ltr) {
+  margin-inline-end: 0;
+}
+table[align="center"] > caption[align="left"]:dir(rtl) {
+  margin-inline-start: 0;
+}
+
+table[align="center"] > caption[align="right"]:dir(ltr) {
+  margin-inline-start: 0;
+}
+table[align="center"] > caption[align="right"]:dir(rtl) {
+  margin-inline-end: 0;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+}
+
+col {
+  display: table-column;
+}
+
+colgroup {
+  display: table-column-group;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+}
+
+tfoot {
+  display: table-footer-group;
+  vertical-align: middle;
+}
+
+/* for XHTML tables without tbody */
+table > tr {
+  vertical-align: middle;
+}
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: unset;
+  padding: 1px;
+}
+
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  padding: 1px;
+  /*text-align: -moz-center-or-inherit;*/
+  text-align: inherit;                  /* my edit that differs from firefox */
+}
+
+table[bordercolor] > tbody,
+table[bordercolor] > thead,
+table[bordercolor] > tfoot,
+table[bordercolor] > col,
+table[bordercolor] > colgroup,
+table[bordercolor] > tr,
+table[bordercolor] > * > tr,
+table[bordercolor]  > tr > td,
+table[bordercolor] > * > tr > td,
+table[bordercolor]  > tr > th,
+table[bordercolor] > * > tr > th {
+  border-color: inherit;
+}
+
+/* inlines */
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+i, cite, em, var, dfn {
+  font-style: italic;
+}
+
+tt, code, kbd, samp {
+  /*font-family: -moz-fixed;*/
+  font-family: monospace;               /* my edit that differs from firefox */
+}
+
+u, ins {
+  text-decoration: underline;
+}
+
+s, strike, del {
+  text-decoration: line-through;
+}
+
+big {
+  font-size: larger;
+}
+
+small {
+  font-size: smaller;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+nobr {
+  white-space: nowrap;
+}
+
+mark {
+  background: yellow;
+  color: black;
+}
+
+/* titles */
+abbr[title], acronym[title] {
+  text-decoration: dotted underline;
+}
+
+
+/* lists */
+
+ul, menu, dir {
+  display: block;
+  list-style-type: disc;
+  margin-block: 1em;
+  padding-inline-start: 40px;
+}
+
+ul, ol, menu {
+  counter-reset: list-item;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block: 1em;
+  padding-inline-start: 40px;
+}
+
+li {
+  display: list-item;
+  /*text-align: match-parent;*/
+  text-align: inherit;                  /* my edit that differs from firefox */
+}
+
+/* nested lists have no top/bottom margins */
+:is(ul, ol, dir, menu, dl) ul,
+:is(ul, ol, dir, menu, dl) ol,
+:is(ul, ol, dir, menu, dl) dir,
+:is(ul, ol, dir, menu, dl) menu,
+:is(ul, ol, dir, menu, dl) dl {
+  margin-block: 0;
+}
+
+/* 2 deep unordered lists use a circle */
+:is(ol, ul, menu, dir) ul,
+:is(ol, ul, menu, dir) menu,
+:is(ol, ul, menu, dir) dir {
+  list-style-type: circle;
+}
+
+/* 3 deep (or more) unordered lists use a square */
+:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) ul,
+:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) menu,
+:is(ol, ul, menu, dir) :is(ol, ul, menu, dir) dir {
+  list-style-type: square;
+}
+
+
+/* leafs */
+
+hr {
+  color: gray;
+  border-width: 1px;
+  border-style: inset;
+  margin-block: 0.5em;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
