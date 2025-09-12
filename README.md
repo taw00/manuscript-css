@@ -21,15 +21,19 @@ from working draft to finalized manuscript.
    [short story](https://format.ms/story),
    [novel](https://format.ms/novel), or [poetry](https://format.ms/poetry)
    manuscript format.
-5. Submit your work to publishers who accept manuscripts in PDF format.
+5. Submit your work to publishers who accept manuscripts in PDF format.  
+   <small>Note: Some publishers (and nearly all traditional book publishers) insist on your work being submitted in `.docx` format. For that, use this process until you are absolutely ready to submit to such a publisher and then port the project to `.docx` using LibreOffice, Google Docs, or MS Word. More information on some of the techniques to do that are listed later in this document.</small>
 
-#### <small>Of note:</small>
+<div style="border: 1px solid yellow; padding-inline: 10px 10px; font-size: 75%; background-color: #23262dff; box-shadow: yellow; margin: 20px auto;">
 
-- Some publishers (and nearly all traditional book publishers) insist on your
-  work being submitted in `.docx` format. For that, use this process until you
-  are absolutely ready to submit to such a publisher and then port the project
-  to `.docx` using LibreOffice, Google Docs, or MS Word. More information on
- some of the techniques to do that are listed later in this document.</small>
+**NEWS - 2025-09-12 - Manuscript version 4.0 was released**
+
+- Automatically updated under the covers.
+- But … **breaking changes**.  
+  To use the older version, configure your markdown or html documents to use `manuscript-3.0.css` instead of `manuscript.css`.
+- What's new: (1) a major refactor and improvement across the board (much of which backported to 3.0), (2) **poetry manuscripts finally achieve compliance with the shunn.net manuscript spec**.
+
+</div>
 
 # Manuscript formatting?
 
