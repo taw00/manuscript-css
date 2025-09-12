@@ -13,7 +13,7 @@ Template: short story
     */
     @import url("../../manuscript-beta.css");
     :root {
-        --m-pagination-header: "Clemens / Huck Finn / " counter(page);
+        --m-marginalia: "Clemens / Huck Finn / " counter(page);
     }
 </style>
 
