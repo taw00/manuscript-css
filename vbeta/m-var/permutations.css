@@ -160,6 +160,7 @@
 
     &:has(#manuscript:is(.text-only,.simple)) {
         --m-offset-title: 0;
+        --m-offset-title-poem: 0;
     }
     &:has(#manuscript:is(.text-only)) {
         --m-page-break: unset !important;

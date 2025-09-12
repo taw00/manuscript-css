@@ -137,6 +137,7 @@
 
     /* Title-block headers offset */
     --m-offset-title: var(--m-content-offset-5-12th);
+    --m-offset-title-poem: calc(var(--m-page-margin) * 2);
 
     /* font settings short/long - .m-facts */
     --m-font-size-facts-short:    var(--m-font-size-contact);
