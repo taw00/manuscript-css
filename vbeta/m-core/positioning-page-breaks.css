@@ -19,6 +19,7 @@
         /*
          * page-breaks dependent on 'short' vs. 'long'
          */
+
         /* BOOK: we page break going into a book,
          *       but only if the book has a title header */
         & section.m-book:has( > .m-title-header),
@@ -46,6 +47,7 @@
         /*
          * page-breaks that ALWAYS happen
          */
+
         /* POEM: we page break going into a poem … always */
         & > .m-title-header ~ section.m-poem,
         & section ~ section.m-poem,
