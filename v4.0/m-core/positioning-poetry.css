@@ -127,7 +127,7 @@
         /* gap between a poem header and its poem content */
         margin-block-end: calc(var(--m-spacing-poem) * 2);
     }
-    & section.m-poem:has( > .m-page-header) > .m-title-header {
+    &:not(.simple,.text-only) section.m-poem:has( > .m-page-header) > .m-title-header {
         /* top margin for title (2-inches), if existence of a contact header */
         margin-block-start: calc(var(--m-page-margin) * 2);
     }
