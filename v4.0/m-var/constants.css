@@ -163,12 +163,12 @@
     --m-color-gray8pt6:   #090909ff;
     --m-color-gray8pt5:   #0c0c0cff;
     --m-color-gray8pt4:   #0e0e0eff;
-    --m-color-gray8pt3:   #111111ff;
+    --m-color-gray8pt3:   #111f;
     --m-color-gray8pt2:   #181818ff;
     --m-color-gray8pt1:   #1b1b1bff;
     --m-color-gray8:      #1e1e1eff;
     --m-color-notblack:   var(--m-color-gray8pt5);
-    --m-color-gray7pt5:   #444444ff;
+    --m-color-gray7pt5:   #444f;
     --m-color-dimgray:    dimgray; /* #696969ff */
     --m-color-gray7:      dimgray;
     --m-color-gray:       gray; /* #808080ff */
@@ -188,15 +188,15 @@
     --m-color-gray0:      white;
 
     /* we like blues for links */
-    --m-color-browser-link-blue:  #0000eeff;
+    --m-color-browser-link-blue:  #00ef;
     --m-color-cobalt-blue:        #0020c2ff;
     --m-color-union-blue:         #0d1e51ff;
     --m-color-professional-blue1: #02195cff;
     --m-color-professional-blue2: #122b73ff;
     --m-color-professional-blue3: #4790A7ff;
     --m-color-professional-blue4: #53b7d7ff;
-    --m-color-professional-blue5: #3399ffff;
-    --m-color-professional-blue6: #99ffffff;
+    --m-color-professional-blue5: #39ff;
+    --m-color-professional-blue6: #9fff;
     --m-color-professional-blue7: #a5aaffff;
 
     /* alternative dark colors with a hint of color */
@@ -204,7 +204,7 @@
     --m-color-gray-green-dark:  #272b27ff;
     --m-color-gray-blue-dark:   #27272bff;
     --m-color-gray-pink-dark:   #2b272bff;
-    --m-color-gray-purple-dark: #23262dff;
+    --m-color-gray-purpleblue-dark: #23262dff;
     --m-color-gray-yellow-dark: #2b2b27ff;
     --m-color-gray-gold-dark:   #2d2a23ff;
     --m-color-eggplant:         #483248ff;

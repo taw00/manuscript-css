@@ -356,63 +356,84 @@
     */
 
     /* the desktop theme beneath the paper */
-    --m-desktop-color-theme-default:    var(--m-color-gray5, darkgray);
-    --m-desktop-color-theme-dim:        var(--m-color-gray7, dimgray);
-    --m-desktop-color-theme-dimmer:     var(--m-color-gray7pt5, #444444ff);
-    --m-desktop-color-theme-dark:       var(--m-color-gray-purple-dark);
+    --m-desktop-color-theme-default:     var(--m-color-gray5, darkgray);
+    --m-desktop-color-theme-dim:         var(--m-color-gray7, dimgray);
+    --m-desktop-color-theme-dimmer:      var(--m-color-gray7pt5, #444f);
+    --m-desktop-color-theme-dark:        var(--m-color-gray-purpleblue-dark);
     --m-desktop-color-theme-dark-yellow: var(--m-color-gray-yellow-dark);
     --m-desktop-color-theme-dark-amber:  var(--m-color-gray-yellow-dark);
     --m-desktop-color-theme-dark-green:  var(--m-color-gray-green-dark);
+    --m-desktop-color-theme-dark-blue:   var(--m-color-gray-blue-dark);
+    --m-desktop-color-theme-dark-pink:   var(--m-color-gray-pink-dark);
+    --m-desktop-color-theme-dark-purple: var(--m-color-gray-purple-dark);
 
     /* the paper theme on the desktop */
-    --m-paper-color-theme-default:    var(--m-color-gray0, white);
-    --m-paper-color-theme-dim:        var(--m-color-gray4, silver);
-    --m-paper-color-theme-dimmer:     var(--m-color-gray6, gray);
-    --m-paper-color-theme-dark:       var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-default:     var(--m-color-gray0, white);
+    --m-paper-color-theme-dim:         var(--m-color-gray4, silver);
+    --m-paper-color-theme-dimmer:      var(--m-color-gray6, gray);
+    --m-paper-color-theme-dark:        var(--m-color-gray8, #1e1e1eff);
     --m-paper-color-theme-dark-yellow: var(--m-color-gray8, #1e1e1eff);
     --m-paper-color-theme-dark-amber:  var(--m-color-gray8, #1e1e1eff);
     --m-paper-color-theme-dark-green:  var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-blue:   var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-pink:   var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-purple: var(--m-color-gray8, #1e1e1eff);
 
-    --m-text-color-theme-default:    var(--m-color-gray9, black);
-    --m-text-color-theme-dim:        var(--m-text-color-theme-default);
-    --m-text-color-theme-dimmer:     var(--m-text-color-theme-default);
-    --m-text-color-theme-dark:       var(--m-color-whitesmoke, #f5f5f5ff);
+    --m-text-color-theme-default:     var(--m-color-gray9, black);
+    --m-text-color-theme-dim:         var(--m-text-color-theme-default);
+    --m-text-color-theme-dimmer:      var(--m-text-color-theme-default);
+    --m-text-color-theme-dark:        var(--m-color-whitesmoke, #f5f5f5ff);
     --m-text-color-theme-dark-amber:  #ffb000ff;
     --m-text-color-theme-dark-yellow: #ffe372ff;
     --m-text-color-theme-dark-green:  #72ff83ff;
+    --m-text-color-theme-dark-blue:   #7372ffff;
+    --m-text-color-theme-dark-pink:   #ff72ffff;
+    --m-text-color-theme-dark-purple: #b872ffff;
 
 
-    --m-link-color-theme-default:    var(--m-color-professional-blue2, #122b73ff);
-    --m-link-color-theme-dim:        var(--m-link-color-theme-default);
-    --m-link-color-theme-dimmer:     var(--m-link-color-theme-default);
-    --m-link-color-theme-dark:       var(--m-color-professional-blue7, #a5aaffff);
+    --m-link-color-theme-default:     var(--m-color-professional-blue2, #122b73ff);
+    --m-link-color-theme-dim:         var(--m-link-color-theme-default);
+    --m-link-color-theme-dimmer:      var(--m-link-color-theme-default);
+    --m-link-color-theme-dark:        var(--m-color-professional-blue7, #a5aaffff);
     --m-link-color-theme-dark-amber:  #ffcf66ff;
     --m-link-color-theme-dark-yellow: #fff0b3ff;
     --m-link-color-theme-dark-green:  #b3ffbcff;
+    --m-link-color-theme-dark-blue:   #b3b3ffff;
+    --m-link-color-theme-dark-pink:   #ffb3ffff;
+    --m-link-color-theme-dark-purple: #d9b3ffff;
 
-    --m-link-hover-color-theme-default:    var(--m-color-gray7, dimgray);
-    --m-link-hover-color-theme-dim:        var(--m-link-hover-color-theme-default);
-    --m-link-hover-color-theme-dimmer:     var(--m-link-hover-color-theme-default);
-    --m-link-hover-color-theme-dark:       var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-default:     var(--m-color-gray7, dimgray);
+    --m-link-hover-color-theme-dim:         var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dimmer:      var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dark:        var(--m-link-hover-color-theme-default);
     --m-link-hover-color-theme-dark-amber:  #ffcf6680;
     --m-link-hover-color-theme-dark-yellow: #fff0b380;
     --m-link-hover-color-theme-dark-green:  #b3ffbc80;
+    --m-link-hover-color-theme-dark-blue:   #b3b3ff80;
+    --m-link-hover-color-theme-dark-pink:   #ffb3ff80;
+    --m-link-hover-color-theme-dark-purple: #d9b3ff80;
 
-    --m-page-break-simulated-color-theme-default:    #33333320;
-    --m-page-break-simulated-color-theme-dim:        var(--m-page-break-simulated-color-theme-default);
-    --m-page-break-simulated-color-theme-dimmer:     var(--m-page-break-simulated-color-theme-default);
-    --m-page-break-simulated-color-theme-dark:       #a5aaff10;
+    --m-page-break-simulated-color-theme-default:     #33333320;
+    --m-page-break-simulated-color-theme-dim:         var(--m-page-break-simulated-color-theme-default);
+    --m-page-break-simulated-color-theme-dimmer:      var(--m-page-break-simulated-color-theme-default);
+    --m-page-break-simulated-color-theme-dark:        #a5aaff10;
     --m-page-break-simulated-color-theme-dark-amber:  #ffcf6610;
     --m-page-break-simulated-color-theme-dark-yellow: #ffe37210;
     --m-page-break-simulated-color-theme-dark-green:  #72ff8310;
+    --m-page-break-simulated-color-theme-dark-blue:   #7272ff10;
+    --m-page-break-simulated-color-theme-dark-pink:   #ff72ff10;
+    --m-page-break-simulated-color-theme-dark-purple: #b972ff10;
 
-    --m-vpage-frame-color-theme-default:    var(--m-color-gray9, black);
-    --m-vpage-frame-color-theme-dim:        var(--m-vpage-frame-color-theme-default);
-    --m-vpage-frame-color-theme-dimmer:     var(--m-vpage-frame-color-theme-default);
-    --m-vpage-frame-color-theme-dark:       var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-default:     var(--m-color-gray9, black);
+    --m-vpage-frame-color-theme-dim:         var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dimmer:      var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark:        var(--m-vpage-frame-color-theme-default);
     --m-vpage-frame-color-theme-dark-amber:  var(--m-vpage-frame-color-theme-default);
     --m-vpage-frame-color-theme-dark-yellow: var(--m-vpage-frame-color-theme-default);
     --m-vpage-frame-color-theme-dark-green:  var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-blue:   var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-pink:   var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-purple: var(--m-vpage-frame-color-theme-default);
 
 } /* end :root scoping */
 

@@ -358,8 +358,8 @@
     /* the desktop theme beneath the paper */
     --m-desktop-color-theme-default:     var(--m-color-gray5, darkgray);
     --m-desktop-color-theme-dim:         var(--m-color-gray7, dimgray);
-    --m-desktop-color-theme-dimmer:      var(--m-color-gray7pt5, #444444ff);
-    --m-desktop-color-theme-dark:        var(--m-color-gray-purple-dark);
+    --m-desktop-color-theme-dimmer:      var(--m-color-gray7pt5, #444f);
+    --m-desktop-color-theme-dark:        var(--m-color-gray-purpleblue-dark);
     --m-desktop-color-theme-dark-yellow: var(--m-color-gray-yellow-dark);
     --m-desktop-color-theme-dark-amber:  var(--m-color-gray-yellow-dark);
     --m-desktop-color-theme-dark-green:  var(--m-color-gray-green-dark);
