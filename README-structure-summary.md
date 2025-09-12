@@ -41,20 +41,41 @@ The containers, in summary:
 
 ```html
 <div id="vpage">                                            <!-- 1 required -->
-    <article id="manuscript">                               <!-- 1 required --> 
-        <div id="m-contact"></div>                   <!-- 0 or 1 is allowed -->
-        <div class="m-header">                       <!-- 0 or 1 is allowed -->
-            <div class="m-facts"></div></div>        <!-- 0 or 1 is allowed -->
-        <section class="m-part">              <!-- 0 to many allowed --------->
-            <div class="m-header"></div>             <!-- 0 or 1 is allowed -->
-            <section class="m-chapter">       <!-- 0 to many allowed --------->
-                <div class="m-header"></div>         <!-- 0 or 1 is allowed -->
-                <section class="m-scene">     <!-- 1 required; many allowed -->
-                    <div class="m-header"></div>     <!-- 0 or 1 is allowed -->
-                </section
-            </section>
+  <article id="manuscript">                                 <!-- 1 required --> 
+    <div id="m-page-header">                                    <!-- 0 or 1 -->
+        <div class="m-contact"></div>                           <!-- 0 or 1 -->
+    </div>
+    <div class="m-title-header">                                <!-- 0 or 1 -->
+        <div class="m-facts"></div>                             <!-- 0 or 1 -->
+    </div>
+    <section class="m-book">                          <!-- 0 to many --------->
+      <div class="m-title-header"></div>                        <!-- 0 or 1 -->
+          <div class="m-facts"></div>                           <!-- 0 or 1 -->
+      </div>
+      <section class="m-part">                        <!-- 0 to many --------->
+        <div class="m-title-header"></div>                      <!-- 0 or 1 -->
+            <div class="m-facts"></div>                         <!-- 0 or 1 -->
+        </div>
+        <section class="m-chapter">           <!-- 0 to many allowed --------->
+          <div class="m-title-header"></div>                    <!-- 0 or 1 -->
+              <div class="m-facts"></div>                       <!-- 0 or 1 -->
+          </div>
+          <section class="m-scene">          <!-- prose: 1 required to many -->
+              div class="m-title-header"></div>                 <!-- 0 or 1 -->
+                  <div class="m-facts"></div>                   <!-- 0 or 1 -->
+              </div>
+          </section
+          <section class="m-poem">          <!-- poetry: 1 required to many -->
+              div class="m-page-header"></div>                  <!-- 0 or 1 -->
+              div class="m-title-header"></div>                 <!-- 0 or 1 -->
+                  <div class="m-contact"></div>                 <!-- 0 or 1 -->
+                  <div class="m-facts"></div>                   <!-- 0 or 1 -->
+              </div>
+          </section>
         </section>
-    </article>
+      </section>
+    </section>
+  </article>
 </div>
 ```
 
@@ -72,12 +93,13 @@ within one chapter, and that chapter within one part. But you can have many part
     @import url("./manuscript.css");
 </style>
 
+
 <div id="vpage">
 <article id="manuscript">
 
-<!-- contact name, address, email, phone --
-  -- (note: m-contact is optional)       -->
-<div id="m-contact">
+
+<div class="m-page-header">
+<div class="m-contact">
 
 Edgar Allan Poe
 
@@ -86,10 +108,10 @@ Coates Street, Philadelphia, PA 19079 USA
 telleroftales@example.com
 
 </div>
+</div>
 
-<!-- title, subtitle, author byline, and epigraph --
-  -- then wordcount and genre facts               -->
-<div class="m-header">
+
+<div class="m-title-header">
 
 # The Tell-Tale Heart
 
@@ -99,9 +121,7 @@ telleroftales@example.com
 
 > They heard!—they suspected!—they knew!
 
-<!-- notice that .m-facts in contained within .m-header -->
-
-<div id="m-facts">
+<div class="m-facts">
 
 2200 words
 
@@ -110,32 +130,34 @@ Gothic Horror
 </div>
 </div>
 
+
 <!-- "section.part"s contain "section.chapter"s -->
 <section class="part">
 
 <!-- the part's title (and could have, subtitle, author byline, & epigraph) -->
-<div class="m-header">
+<div class="m-title-header">
 
 # Part 1
 
 </div>
 
+
 <!-- "section.chapter"s contain section.scene"s (or "section.poem"s) -->
 <section class="chapter">
 
 <!-- the chapter's  title, subtitle, author byline, epigraph -->
-<div class="m-header">
+<div class="m-title-header">
 
 # Chapter 1
 
 </div>
 
+
 <!-- "section.scene"s contain your prose - an example of three scenes -->
 <section class="scene">
 
-<!-- scene title, subtitle, author byline, epigraph
-     (I rarely use m-headers in scenes) -->
-<div class="m-header">
+<!-- (I rarely use m-title-headers in scenes) -->
+<div class="m-title-header">
 
 # My Scene Title
 
@@ -155,7 +177,6 @@ was none. I loved the old man. He had never wronged me. He had never given me
 insult. For his gold I had no desire. I think it was his eye! [ … ]
 
 </section>
-
 <section class="scene">
 
 Upon the eighth night I was more than usually cautious in opening the door. A
@@ -166,7 +187,6 @@ little by little, and he not even to dream of my secret deeds or thoughts. I
 fairly chuckled at the idea; and perhaps he heard me; for [ … ]
 
 </section>
-
 <section class="scene">
 
 It was open—wide, wide open—and I grew furious as I gazed upon it. I saw it
@@ -181,11 +201,12 @@ of the sense?—now, I say, there came to my ears [ … ]
 </section>
 
 </section></section>
-</article>
-</div>
+</article></div>
 ```
 
-# Poetry!
+
+
+# Poetry in prose!
 
 To insert a poem in a document arbitrarily, it will be structured like this:
 
@@ -205,15 +226,16 @@ To insert a poem in a document arbitrarily, it will be structured like this:
 </div>
 ~~~
 
-- If your document is a manuscript for a single poem, `#manuscript` will be of
-  `class="short poetry"` and a `.m-poem` instead of a `.m-scene`, you will have
-  a solitary `.m-poem` filled with ```plaintext stanzas similar to `.x-poem`
-  above.
 
-- If your document is a manuscript of many poems, `#manuscript` will be of
-  `class="long poetry"` and then many `.m-poem`s filled with ````plaintext`
-  stanzas similar to `.x-poem` above. For long-form poetry, you probably want to
-  add the `no-header` class to the `div#vpage` element: `<div id="vpage" class="no-header">`
+# Poetry Manuscripts
+
+
+- `#manuscript` will be of `class="poetry"` and we use `.m-poem` instead of a `.m-scenea`
+- Each `.m-poem` will contain a `.m-page-header`, a `.m-title-header` and then
+  stanzas of poetry wrapped in <pre>```</pre> preformatting marks, similar to
+  `.x-poem` above.
+- Check out the example and templated poetry manuscripts.
+
 
 ## Good luck!
 
