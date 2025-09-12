@@ -63,6 +63,7 @@
     /* -30- content
      * Note: poetry manuscripts do not use dinkus or -30- markers */
     &:not(.poetry)::after {
+        padding-block-start: var(--m-room-for-two);
         content: var(--m-30-);
     }
 
