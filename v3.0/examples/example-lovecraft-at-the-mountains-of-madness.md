@@ -20,10 +20,10 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-3.0.css");
+    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-3.0.css");
     */
-    @import url("../manuscript.css");
+    @import url("../../manuscript-3.0.css");
     .centered-poem pre { text-align: center; }
     :root {
         --m-pagination-header: "Lovecraft / Mountains of Madness / " counter(page);
