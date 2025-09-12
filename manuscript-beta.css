@@ -71,12 +71,17 @@
 .toc {
     width: max-content !important;
     max-width: 100% !important;
-    margin-left: auto !important; margin-right: auto !important;
+    margin-inline: auto !important;;
 }
-.force-break-before {
+.no-break {
+    /* solved through logic */
+    /*break-before: auto;
+    break-after: auto;*/
+}
+.break-before {
     break-before: page !important;
 }
-.force-break-after {
+.break-after {
     break-after: page !important;
 }
 
