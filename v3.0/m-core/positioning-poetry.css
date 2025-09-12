@@ -116,7 +116,7 @@
     & section.m-poem {
         /* EXPERIMENTAL ALERT! ALERT! ALERT! ERROR IN FORMATING
          * make stuff in a poem section that isn't poem stuff red and wrong */
-        & > :DISABLEDnot(.m-header0,.m-header,pre,code,.joplin-editable) {
+        & > DISABLED:not(.m-header0,.m-header,pre,code,.joplin-editable) {
             color: red !important;
             font-weight: bold;
             text-decoration: line-through;
