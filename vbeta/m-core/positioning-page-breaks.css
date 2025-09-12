@@ -49,7 +49,7 @@
          */
 
         /* POEM: we page break going into a poem … always */
-        & > .m-title-header ~ section.m-poem,
+        & .m-title-header ~ section.m-poem,
         & section ~ section.m-poem,
 
         /* SCENES: page break going into a scene,
@@ -75,8 +75,10 @@
         /* BOOK and PART and CHAPTER - offset from top of page simulation */
         & section.m-book:has( > .m-title-header),
         & section.m-part:has( > .m-title-header),
-        & > .m-title-header ~ section.m-chapter,
-        & section:not(.m-part) ~ section.m-chapter {
+        & > .m-header ~ section.m-chapter:has( > .m-title-header),
+        & > .m-header ~ section.m-chapter:has( > section.m-scene),
+        & section:not(.m-part) ~ section.m-chapter:has( > .m-title-header),
+        & section:not(.m-part) ~ section.m-chapter:has( > section.m-scene) {
             padding-block-start: var(--m-offset-title);
         }
 
@@ -130,7 +132,7 @@
          */
 
         /* POEM: we page break going into a poem … always */
-        & > .m-title-header ~ section.m-poem,
+        & .m-title-header ~ section.m-poem,
         & section ~ section.m-poem,
 
         /* SCENES: page break going into a scene,
@@ -148,8 +150,10 @@
         /* BOOK and PART and CHAPTER - offset from top of page */
         & section.m-book:has( > .m-title-header),
         & section.m-part:has( > .m-title-header),
-        & > .m-title-header ~ section.m-chapter,
-        & section:not(.m-part) ~ section.m-chapter {
+        & > .m-header ~ section.m-chapter:has( > .m-title-header),
+        & > .m-header ~ section.m-chapter:has( > section.m-scene),
+        & section:not(.m-part) ~ section.m-chapter:has( > .m-title-header),
+        & section:not(.m-part) ~ section.m-chapter:has( > section.m-scene) {
             margin-block-start: var(--m-offset-title);
             padding-block-start: 1px;
         }
