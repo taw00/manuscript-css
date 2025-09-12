@@ -24,14 +24,14 @@ from working draft to finalized manuscript.
 5. Submit your work to publishers who accept manuscripts in PDF format.  
    <small>Note: Some publishers (and nearly all traditional book publishers) insist on your work being submitted in `.docx` format. For that, use this process until you are absolutely ready to submit to such a publisher and then port the project to `.docx` using LibreOffice, Google Docs, or MS Word. More information on some of the techniques to do that are listed later in this document.</small>
 
-<div style="border: 1px solid yellow; padding-inline: 10px 10px; font-size: 75%; background-color: #23262dff; box-shadow: yellow; margin: 20px auto;">
+<div class="newsbox">
 
-**NEWS - 2025-09-12 - Manuscript version 4.0 was released**
-
-- Automatically updated under the covers.
-- But … **breaking changes**.  
-  To use the older version, configure your markdown or html documents to use `manuscript-3.0.css` instead of `manuscript.css`.
-- What's new: (1) a major refactor and improvement across the board (much of which backported to 3.0), (2) **poetry manuscripts finally achieve compliance with the shunn.net manuscript spec**.
+>### NEWS - 2025-09-12 - Manuscript version 4.0 released
+>
+>- Automatically updated under the covers.
+>- But … **breaking changes**.  
+>  To use the older version, configure your markdown or html documents to use `manuscript-3.0.css` instead of `manuscript.css`.
+>- What's new: (1) a major refactor and improvement across the board (much of which backported to 3.0), (2) **poetry manuscripts finally achieve compliance with the shunn.net manuscript spec**.
 
 </div>
 
@@ -53,7 +53,7 @@ review. Here are some screenshots of the results . . .
 
 # What is NOT supported
 
-1. This process is not for book production
+### 1. This process is not for book production
 
 A manuscript is not a formatted book. It's an industry standard format used to
 share your work with other humans for review and comment, and to submit to
@@ -63,11 +63,9 @@ To create a book for self-publishing, look into tools like
 [Reedsy](https://reedsy.com/write-a-book), [Scribus](https://www.scribus.net/),
 Vellum, InDesign, and Atticus.
 
-2. This process does not easily produce a `.docx` document which most
-publishers require.  Some publishers and agents will accept a `.pdf`, but most
-in the industry require `.docx`. There are ways to automate generating `.docx`
-files, but it's not a piece of cake. Read more about that in
-[README-structure-summary.md](README-structure-summary.md).
+### 2. This process does not easily produce a `.docx` document.
+
+Many/most publishers require your manuscript to formatted as a Microsoft Word `.docx` file. (Word 2007 seems to be the most portable.)  Some publishers and agents, especially the better ones, will accept a `.pdf`, but most require `.docx`. There are ways to automate generating `.docx` files, but it's not a piece of cake and never does a good job. Read more about that in [README-structure-summary.md](README-structure-summary.md).
 
 Also check out the myriad of authoring platforms out there: Scrivener, Novlr,
 LivingWriter, Dabble, Ulysses, Storyist (Apple-only, blech!), Final Draft (for
@@ -118,14 +116,14 @@ Manuscript formatting similar to what many call Shunn Formatting:
 	+ Edit: has focus and Hemingway modes!
 	+ Preview: renders an accurate preview of the manuscript
 	+ HTML: export to compliant HTML file
+    + Caveat: terrible syntax highlighting
 - [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)) - Linux
-  only - Note, the interface can be quirky at times. But it has things like … a
-  Hemingway Mode and a Focus Mode, which are nice for writing.
+  only
 	+ Edit: has focus and Hemingway modes!
 	+ Preview: renders an accurate preview of the manuscript
-    * Caveat: sometimes Apostrophe can be flaky.
+    * Caveat: the interface is quiry
 
-** … not editors:**
+### … tools:
 
 - Chrome browser + [Markdown Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) extension
     * Preview: render a preview of the manuscript, whether in markdown format
@@ -139,7 +137,7 @@ Manuscript formatting similar to what many call Shunn Formatting:
     * I only include this here for the folks who like to experiment.
 
 
-### Editors to Specifically Avoid
+### Editors and Tools to Specifically Avoid
 
 Note, I have only tested maybe a dozen editors. These ones are particularly
 painful to use, IMHO.
@@ -151,6 +149,7 @@ painful to use, IMHO.
   unmaintained. VSCodium/VSCode replaces this editor's look and feel.
 - [Marktext](https://github.com/marktext/marktext) - DEAD PROJECT. Once, a
   great, minimalistic writer's editor. Now unmaintained.
+- [Firefox(https://www.firefox.com/en-US/) and derivatives, like [Zen](https://zen-browser.app/) and [LibreWolf](https://librewolf.net/) - Zen is actually my go-to browser, but the Firefox engine cannot render an accurate PDF for prose. (It works fine for poetry since the poetry manuscript rendering doesn't use @page margin headers.)
 
 
 # TL;DR Just show me how to do it!
