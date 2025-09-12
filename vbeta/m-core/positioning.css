@@ -105,9 +105,34 @@
      * CONTACT INFO both first page m-contact and other pages m-contacts
      * - contact info goes in the upper-left corner
      *   (probably need to internationalize this?) */
-    & > .m-page-header > .m-contact {
+    & > .m-page-header {
+        & > .m-contact {
             position: absolute;
             top: 0; left: 0;
+        }
+        & > .m-facts {
+            /* ALERT ALERT ALERT - .m-facts don't go here */
+            display: block;
+            position: absolute;
+            top: 0in; left: 1.5in;
+            color: red;
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+        & > .m-facts::after {
+            display: block;
+            position: absolute;
+            top: 1in; left: .5in;
+            position: absolute;
+            text-align: left;
+            color: yellow;
+            font-weight: normal;
+            border: 1px solid red;
+            background-color: black;
+            padding: 1px 3px;
+            width: 300px !important;
+            content: "The 'm-facts' <div> block for the title page is different. Move it into 'm-title-header' below the title and byline.";
+        }
     }
     & .m-contact > p {
             text-align: start;
