@@ -52,12 +52,12 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                url("./v3.0/m-var.css?rev=2025091201");
-@import              url("./v3.0/m-reset.css?rev=2025091201");
-@import               url("./v3.0/m-init.css?rev=2025091201");
-@import               url("./v3.0/m-core.css?rev=2025091201");
-@import         url("./v3.0/m-pagination.css?rev=2025091201");
-@import url("./manuscript-user-overrides.css?rev=2025091201");
+@import                url("./v3.0/m-var.css?rev=2025091202");
+@import              url("./v3.0/m-reset.css?rev=2025091202");
+@import               url("./v3.0/m-init.css?rev=2025091202");
+@import               url("./v3.0/m-core.css?rev=2025091202");
+@import         url("./v3.0/m-pagination.css?rev=2025091202");
+@import url("./manuscript-user-overrides.css?rev=2025091202");
 
 :root {
     --m-version: 3.0;
@@ -74,10 +74,15 @@
     max-width: 100% !important;
     margin-left: auto !important; margin-right: auto !important;
 }
-.force-break-before {
+.no-break {
+    /* solved through logic */
+    /*break-before: auto;
+    break-after: auto;*/
+}
+.break-before {
     break-before: page !important;
 }
-.force-break-after {
+.break-after {
     break-after: page !important;
 }
 
