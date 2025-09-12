@@ -10,7 +10,7 @@ present your work in a professional manner for review, critique, or whatever,
 from working draft to finalized manuscript.
 
 1. Copy one of the templates from the [templates](./templates) folder that best
-   matches your project—novel, short story, poetry collection, or poem—to a new
+   matches your project—novel, short story, or poems—to a new
    [markdown](https://www.markdownguide.org/) file. For example to
    "`mylastname-mystory.md`"
 2. Draft your novel, story, or poetry in your favorite text editor.
@@ -25,9 +25,6 @@ from working draft to finalized manuscript.
 
 #### <small>Of note:</small>
 
-- <small>The manuscript formatting provided here does not meet the spec
-  just yet for long-form poetry. It's sufficient for presentation though. I'm
-  working on improving it.
 - Some publishers (and nearly all traditional book publishers) insist on your
   work being submitted in `.docx` format. For that, use this process until you
   are absolutely ready to submit to such a publisher and then port the project
@@ -37,16 +34,16 @@ from working draft to finalized manuscript.
 # Manuscript formatting?
 
 Take a look at the PDFs in the [examples folder](./examples/) in this
-repository. These manuscriptss were rendered from their
+repository. These manuscripts were rendered from their
 corresponding markdown-formatted draft documents. No fluff and easy to read and
 review. Here are some screenshots of the results . . .
 
 <a href="examples/example-poe-the-tell-tale-heart.pdf"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.jpg" alt="short story: The Tell-Tale Heart (Poe)" /></a>
-<a href="examples/example-lovecraft-at-the-mountains-of-madness.pdf"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.jpg" alt="long long: At the Mountains of Madness (Lovecraft)" /></a>
+<a href="examples/example-lovecraft-at-the-mountains-of-madness.pdf"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.jpg" alt="long story: At the Mountains of Madness (Lovecraft)" /></a>
 
 <div style="clear: both;"></div>
 
-<a href="examples/example-prose-long-form.pdf"><img src="misc/README-long-form-prose.jpg" width="100%" alt="long form prose (novel) example" /></a>
+<a href="examples/example-prose-long.pdf"><img src="misc/README-long-prose.jpg" width="100%" alt="long story (novel) example" /></a>
 
 <div style="clear: both;"></div>
 
@@ -68,13 +65,6 @@ in the industry require `.docx`. There are ways to automate generating `.docx`
 files, but it's not a piece of cake. Read more about that in
 [README-structure-summary.md](README-structure-summary.md).
 
-3. Missing: (Poetry) No 2nd page+ of poem continuation blocks.  
-   It's on my to-do list to fix the poetry manuscript stuff. Right now,
-   manuscript.css can produce reasonable manuscript for a solitary poem, but
-   for a multi-poem document, it cannot produce a manuscript that meets
-   industry spec.
-
-
 Also check out the myriad of authoring platforms out there: Scrivener, Novlr,
 LivingWriter, Dabble, Ulysses, Storyist (Apple-only, blech!), Final Draft (for
 screenwriters), Quoll Writer (Windows-only and not sure if Quoll Writer can
@@ -89,9 +79,7 @@ Manuscript formatting similar to what many call Shunn Formatting:
   https://www.shunn.net/format/ (the "modern" formats)
 - Prose manuscripts: short (scenes), long (chapters, scenes), narrative,
   nonnarrative
-- Poetry manuscripts: single or multiple poems, many poems (chapters, poems)
-  *Note, the manuscript for multi-poem manuscripts does not meet industry
-  standards yet.*
+- Poetry manuscripts: single or many poem manuscripts
 - US Letter, A4, and, though you shouldn't, A5, A6, US Half-letter
 - If you are CSS savvy, easy-to-alter settings for nearly everything (fonts,
   margins, spacing, even the dinkuses and the -30- indicator).
