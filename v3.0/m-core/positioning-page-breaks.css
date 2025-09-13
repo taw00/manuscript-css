@@ -17,15 +17,15 @@
 
         /* BOOK: we page break going into a book,
          *       but only if the book has a title header */
-        & section.m-book:has( > .m-header):not(.no-break),
+        & section.m-book:has( > .m-header),
 
         /* PART: we page break going into a part */
-        & section.m-part:not(.no-break),
+        & section.m-part,
 
         /* CHAPTER: we page break going into a chapter,
         *           unless it follows a part */
-        & > .m-header ~ section.m-chapter:not(.no-break),
-        & section:not(.m-part) ~ section.m-chapter:not(.no-break),
+        & > .m-header ~ .m-chapter,
+        & section:not(.m-part) ~ .m-chapter,
 
         /* POEM: we page break going into a poem … always
          * see below */
@@ -33,8 +33,8 @@
         /* SCENES: page break going into a scene,
          *         but only if it follows a title page, book,
          *         or (see below) poem */
-        & > div.m-header ~ section.m-scene:not(.no-break),
-        & section.m-book:has( > .m-header) ~ section.m-scene:not(.no-break) {
+        & > div.m-header ~ .m-scene,
+        & section.m-book:has( > .m-header) ~ .m-scene {
             border-block-start: var(--m-page-break-simulated);
         }
 
@@ -44,12 +44,12 @@
          */
 
         /* POEM: we page break going into a poem … always */
-        & .m-header ~ section.m-poem:not(.no-break),
-        & section ~ section.m-poem:not(.no-break),
+        & .m-header ~ .m-poem,
+        & section ~ .m-poem,
 
         /* SCENES: page break going into a scene,
          *         but only if it follows a poem */
-        & section.m-poem ~ section.m-scene:not(.no-break) {
+        & section.m-poem ~ .m-scene {
             border-block-start: var(--m-page-break-simulated-long);
         }
 
@@ -61,23 +61,50 @@
         /* TITLE PAGE and BOOK
          * add padding at the end of an element that always has a simulated
          * page break coming after */
-        & > .m-header:has( ~ section):not(.no-break),
-        & section.m-book > .m-header:has( ~ section):not(.no-break) {
+        & > .m-header:has( ~ section),
+        & section.m-book > .m-header:has( ~ section) {
             padding-block-end: var(--m-page-break-simulated-padding);
         }
 
         /* BOOK and PART and CHAPTER - offset from top of page simulation */
-        & section.m-book:has( > .m-header):not(.no-break),
-        & section.m-part:has( > .m-header):not(.no-break),
-        & > .m-header ~ section.m-chapter:has( > .m-header):not(.no-break),
-        & > .m-header ~ section.m-chapter:has( > section.m-scene):not(.no-break),
-        & section:not(.m-part) ~ section.m-chapter:has( > .m-header):not(.no-break),
-        & section:not(.m-part) ~ section.m-chapter:has( > section.m-scene):not(.no-break) {
+        & section.m-book:has( > .m-header),
+        & section.m-part:has( > .m-header),
+        & > .m-header ~ .m-chapter:has( > .m-header),
+        & > .m-header ~ .m-chapter:has( > section.m-scene),
+        & section:not(.m-part) ~ .m-chapter:has( > .m-header),
+        & section:not(.m-part) ~ .m-chapter:has( > section.m-scene) {
             padding-block-start: var(--m-offset-part-simulated);
         }
 
+        /*
+         * Explicitly undoing things because CSS can be messy
+         */
+
+        /* being explicit because sometimes ~ used above can be too casual */
+        & section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene,
+        & section section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene,
+        & section section section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene,
+        & section section section section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene {
+            border-block-start: unset;
+        }
+
+
+        /*
+         * .no-break ---------------
+         */
+        /* unset the break if called to do so */
+        & section:is(.no-break),
+        & section section:is(.no-break),
+        & section section section:is(.no-break),
+        & section section section section:is(.no-break) {
+
+            border-block-start: revert;
+            padding-block-start: revert;
+        }
+
+
         /* POEM - aesthetic spacing at end before the simulated marker */
-        & section.m-poem:not(.no-break) {
+        & section.m-poem {
             padding-block-end: var(--m-page-break-simulated-padding-poem);
         }
     } /* end #manuscript */
@@ -99,15 +126,15 @@
 
         /* BOOK: we page break going into a book,
          *       but only if the book has a title header */
-        & section.m-book:has( > .m-header):not(.no-break),
+        & section.m-book:has( > .m-header),
 
         /* PART: we page break going into a part */
-        & section.m-part:not(.no-break),
+        & section.m-part,
 
         /* CHAPTER: we page break going into a chapter,
         *           unless it follows a part */
-         & > .m-header ~ section.m-chapter:not(.no-break),
-        & section:not(.m-part) ~ section.m-chapter:not(.no-break),
+         & > .m-header ~ .m-chapter,
+        & section:not(.m-part) ~ .m-chapter,
 
         /* POEM: we page break going into a poem … always
          * see below */
@@ -115,8 +142,8 @@
         /* SCENES: page break going into a scene,
          *         but only if it follows a title page, book,
          *         or (see below) poem */
-        & > div.m-header ~ section.m-scene:not(.no-break),
-        & section.m-book:has( > .m-header) ~ section.m-scene:not(.no-break) {
+        & > div.m-header ~ .m-scene,
+        & section.m-book:has( > .m-header) ~ .m-scene {
             break-before: var(--m-page-break);
         }
 
@@ -126,28 +153,54 @@
          */
 
         /* POEM: we page break going into a poem … always */
-        & .m-header ~ section.m-poem:not(.no-break),
-        & section ~ section.m-poem:not(.no-break),
+        & .m-header ~ .m-poem,
+        & section ~ .m-poem,
 
         /* SCENES: page break going into a scene,
          *         but only if it follows a poem */
-        & section.m-poem ~ section.m-scene:not(.no-break) {
+        & section.m-poem ~ .m-scene {
             break-before: page;
         }
 
 
         /* BOOK and PART and CHAPTER - offset from top of page */
-        & section.m-book:has( > .m-header):not(.no-break),
-        & section.m-part:has( > .m-header):not(.no-break),
-        & > .m-header ~ section.m-chapter:has( > .m-header):not(.no-break),
-        & > .m-header ~ section.m-chapter:has( > section.m-scene):not(.no-break),
-        & section:not(.m-part) ~ section.m-chapter:has( > .m-header):not(.no-break),
-        & section:not(.m-part) ~ section.m-chapter:has( > section.m-scene):not(.no-break) {
+        & section.m-book:has( > .m-header),
+        & section.m-part:has( > .m-header),
+        & > .m-header ~ .m-chapter:has( > .m-header),
+        & > .m-header ~ .m-chapter:has( > section.m-scene),
+        & section:not(.m-part) ~ .m-chapter:has( > .m-header),
+        & section:not(.m-part) ~ .m-chapter:has( > section.m-scene) {
             margin-block-start: var(--m-offset-part);
             padding-block-start: 1px;
         }
 
     
+        /*
+         * Explicitly undoing things because CSS can be messy
+         */
+        /* being explicit because sometimes ~ used above can be too casual */
+        & section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene,
+        & section section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene,
+        & section section section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene,
+        & section section section section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene {
+            break-before: revert;
+        }
+
+
+        /*
+         * .no-break ---------------
+         */
+        /* unset the break if called to do so */
+        & section:is(.no-break) {
+        & section section:is(.no-break) {
+        & section section section:is(.no-break) {
+        & section section section section:is(.no-break) {
+            break-before: revert;
+            margin-block-start: revert;
+            padding-block-start: revert;
+        }
+
+
         /* AVOIDANCE */
 
         & a,

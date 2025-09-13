@@ -155,18 +155,5 @@
         margin-block-start: calc(var(--m-elbow-room) * 1);
     }
 
-
-    /*
-     * foothangs ------------
-     */ 
-
-    /* .m-scene or any other major block with a class .foothang
-     * will format the paragraphs as foothangs */
-    & :is(section,blockquote,div).foothang p {
-        padding-left: var(--m-indent-foothang);
-        /* hanging indent */
-        text-indent: calc(var(--m-indent-foothang) * -1);
-    }
-
 } /* end #manuscript */
 

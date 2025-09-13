@@ -52,21 +52,22 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                url("./v3.0/m-var.css?rev=2025091202v3");
-@import              url("./v3.0/m-reset.css?rev=2025091202v3");
-@import               url("./v3.0/m-init.css?rev=2025091202v3");
-@import               url("./v3.0/m-core.css?rev=2025091202v3");
-@import         url("./v3.0/m-pagination.css?rev=2025091202v3");
-@import url("./manuscript-user-overrides.css?rev=2025091202v3");
+@import                url("./v3.0/m-var.css?rev=2025091203v3");
+@import              url("./v3.0/m-reset.css?rev=2025091203v3");
+@import               url("./v3.0/m-init.css?rev=2025091203v3");
+@import               url("./v3.0/m-core.css?rev=2025091203v3");
+@import         url("./v3.0/m-pagination.css?rev=2025091203v3");
+@import url("./manuscript-user-overrides.css?rev=2025091203v3");
 
 :root {
     --m-version: 3.0;
 }
 
 
-/*
- * useful misc classes
+*
+ * Some override classes
  */
+
 .center-max-content,
 .table-of-contents,
 .toc {
@@ -74,15 +75,32 @@
     max-width: 100% !important;
     margin-left: auto !important; margin-right: auto !important;
 }
-.no-break {
-    /* solved through logic */
-    /*break-before: auto;
-    break-after: auto;*/
-}
-.break-before {
+
+
+/* page-break overrides ------------ */
+.force-break-before {
     break-before: page !important;
 }
-.break-after {
+.force-break-after {
     break-after: page !important;
+}
+
+/* no-indent ----------------------- */
+:is(article,section,div):not(.foothang).no-indent {
+    & p,
+    & dd,
+    & li > p,
+    & dd > p,
+    & blockquote p {
+        text-indent: unset !important;
+    }
+}
+
+/* foothangs ----------------------- */ 
+/* .m-scene or any other major block with a class .foothang
+ * will format the paragraphs as a hanging indent */
+#manuscript :is(section,div).foothang p {
+    padding-left: var(--m-indent-foothang);
+    text-indent: calc(var(--m-indent-foothang) * -1);
 }
 
