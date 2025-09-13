@@ -52,12 +52,12 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                url("./v4.0/m-var.css?rev=2025091206v4");
-@import              url("./v4.0/m-reset.css?rev=2025091206v4");
-@import               url("./v4.0/m-init.css?rev=2025091206v4");
-@import               url("./v4.0/m-core.css?rev=2025091206v4");
-@import         url("./v4.0/m-pagination.css?rev=2025091206v4");
-@import url("./manuscript-user-overrides.css?rev=2025091206v4");
+@import                url("./v4.0/m-var.css?rev=2025091207v4");
+@import              url("./v4.0/m-reset.css?rev=2025091207v4");
+@import               url("./v4.0/m-init.css?rev=2025091207v4");
+@import               url("./v4.0/m-core.css?rev=2025091207v4");
+@import         url("./v4.0/m-pagination.css?rev=2025091207v4");
+@import url("./manuscript-user-overrides.css?rev=2025091207v4");
 
 :root {
     --m-version: 4.0;
@@ -66,6 +66,7 @@
 
 /*
  * Some overriding classes …
+ *
  * center-max-content,
  * table-of-contents, .toc - these center based on max-content
  * force-break-before - page-break before the element
@@ -99,8 +100,8 @@
 @media screen {
 /* unset the break if called to do so */
 #manuscript section:is(.no-break) {
-    border-block-start: revert;
-    padding-block-start: revert;
+    border-block-start: unset !important;
+    padding-block-start: unset !important;
 }
 }
 @media print {
