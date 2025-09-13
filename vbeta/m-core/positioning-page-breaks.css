@@ -91,20 +91,6 @@
             border-block-start: unset;
         }
 
-        /*
-         * .no-break ---------------
-         */
-        /* unset the break if called to do so */
-        & section:is(.no-break),
-        & section section:is(.no-break),
-        & section section section:is(.no-break),
-        & section section section section:is(.no-break) {
-
-            border-block-start: revert;
-            padding-block-start: revert;
-        }
-
-
         /* POEM - aesthetic spacing at end before the simulated marker */
         & section.m-poem {
             padding-block-end: var(--m-room-for-two);
@@ -190,20 +176,6 @@
         & section section section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene,
         & section section section section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene {
             break-before: revert;
-        }
-
-
-        /*
-         * .no-break ---------------
-         */
-        /* unset the break if called to do so */
-        & section:is(.no-break) {
-        & section section:is(.no-break) {
-        & section section section:is(.no-break) {
-        & section section section section:is(.no-break) {
-            break-before: revert;
-            margin-block-start: revert;
-            padding-block-start: revert;
         }
 
 
