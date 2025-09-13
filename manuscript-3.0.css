@@ -52,88 +52,15 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                url("./v3.0/m-var.css?rev=2025091205v3");
-@import              url("./v3.0/m-reset.css?rev=2025091205v3");
-@import               url("./v3.0/m-init.css?rev=2025091205v3");
-@import               url("./v3.0/m-core.css?rev=2025091205v3");
-@import         url("./v3.0/m-pagination.css?rev=2025091205v3");
-@import url("./manuscript-user-overrides.css?rev=2025091205v3");
+@import                        url("./v3.0/m-var.css?rev=2025091301v3");
+@import                      url("./v3.0/m-reset.css?rev=2025091301v3");
+@import                       url("./v3.0/m-init.css?rev=2025091301v3");
+@import                       url("./v3.0/m-core.css?rev=2025091301v3");
+@import                 url("./v3.0/m-pagination.css?rev=2025091301v3");
+@import url("./v3.0/m-overrides-and-conveniences.css?rev=2025091301v3");
+@import    url("./manuscript-user-customizations.css?rev=2025091301v3");
 
 :root {
     --m-version: 3.0;
-}
-
-
-/*
- * Some overriding classes …
- *
- * center-max-content,
- * table-of-contents, .toc - these center based on max-content
- * force-break-before - page-break before the element
- * force-break-after - page-break after the element
- * no-break - do not break before this element
- * no-indent - text-indent unset
- * foothang - this section will be full of hanging indented paragraphs
- */
-
-/* .center-max-content ------------ */
-/* .table-of-contents ------------- */
-/* .toc --------------------------- */
-.center-max-content,
-.table-of-contents,
-.toc {
-    width: max-content !important;
-    max-width: 100% !important;
-    margin-left: auto !important; margin-right: auto !important;
-}
-
-
-/* .force-break-before ------------ */
-.force-break-before {
-    break-before: page !important;
-}
-/* .force-break-after ------------- */
-.force-break-after {
-    break-after: page !important;
-}
-/* .no-break ---------------------- */
-@media screen {
-/* unset the break if called to do so */
-#manuscript section:is(.no-break) {
-    border-block-start: unset !important;
-    padding-block-start: unset !important;
-}
-#manuscript section.m-scene:is(.no-break),
-#manuscript section.m-book > m-header:has( ~ section) {
-    padding-block-end: unset !important;
-}
-}
-@media print {
-/* unset the break if called to do so */
-#manuscript section:is(.no-break) {
-    break-before: unset !important;
-    break-after: unset !important;
-    margin-block-start: revert !important;
-    padding-block-start: revert !important;
-}
-}
-
-/* no-indent ---------------------- */
-:is(article,section,div):not(.foothang).no-indent {
-    & p,
-    & dd,
-    & li > p,
-    & dd > p,
-    & blockquote p {
-        text-indent: unset !important;
-    }
-}
-
-/* foothangs ---------------------- */
-/* .m-scene or any other major block with a class .foothang
- * will format the paragraphs as a hanging indent */
-#manuscript :is(section,div).foothang p {
-    padding-left: var(--m-indent-foothang);
-    text-indent: calc(var(--m-indent-foothang) * -1); 
 }
 

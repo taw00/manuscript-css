@@ -1,0 +1,88 @@
+/*
+ * Some overriding classes
+ *
+ * These are used to force certain stylings on elements in your document. Most
+ * commonly <section class="m-scene">. For example,
+ * <section class="m-scene no-indent"> should turn off the text indenting for
+ * that scene.
+ *
+ *
+ * center-max-content,
+ * table-of-contents, .toc - these center based on max-content
+ * force-break-before - page-break before the element
+ * force-break-after - page-break after the element
+ * no-break - do not break before this element
+ * no-indent - section will have text-indent unset
+ * foothang - section will be full of hanging indented paragraphs
+ *
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+/* .center-max-content ------------ */
+/* .table-of-contents ------------- */
+/* .toc --------------------------- */
+.center-max-content,
+.table-of-contents,
+.toc {
+    width: max-content !important;
+    max-width: 100% !important;
+    margin-left: auto !important; margin-right: auto !important;
+}
+
+
+/* .force-break-before ------------ */
+.force-break-before {
+    break-before: page !important;
+}
+/* .force-break-after ------------- */
+.force-break-after {
+    break-after: page !important;
+}
+
+/* .no-break ---------------------- */
+@media screen {
+/* unset the break if called to do so */
+#manuscript section.no-break {
+    border-block-start: unset !important;
+    padding-block-start: unset !important;
+    padding-block-end: unset !important;
+}
+/* poems add a aesthetic space at the end right before a simulated page-break
+ * line from the next section. Let's remove that if that next section has a
+ * 'no-break'. */
+#manuscript section.m-poem:has( + section.no-break) {
+    padding-block-end: unset !important;
+}
+}
+@media print {
+/* unset the break if called to do so */
+#manuscript section.no-break {
+    break-before: unset !important;
+    break-after: unset !important;
+    margin-block-start: revert !important;
+    padding-block-start: revert !important;
+}
+}
+
+/* no-indent ---------------------- */
+:is(article,section,div):not(.foothang).no-indent {
+    & p,
+    & dd,
+    & li > p,
+    & dd > p,
+    & blockquote p {
+        text-indent: unset !important;
+    }
+}
+
+/* foothangs ---------------------- */
+/* .m-scene or any other major block with a class .foothang
+ * will format the paragraphs as a hanging indent */
+#manuscript :is(section,div).foothang p {
+    padding-left: var(--m-indent-foothang);
+    text-indent: calc(var(--m-indent-foothang) * -1); 
+}
+
