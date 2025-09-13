@@ -1,0 +1,22 @@
+/* CSS for Manuscript Format - but friendly to Joplin during a local import
+ *
+ * Joplin has a bug. If importing locally, the @import urls can't contain
+ * ?rev= strings in them. So we have to have this version for now until this
+ * issue is addressed.
+ */
+
+@layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
+
+@import                        url("./vcurrent/m-var.css");
+@import                      url("./vcurrent/m-reset.css");
+@import                       url("./vcurrent/m-init.css");
+@import                       url("./vcurrent/m-core.css");
+@import                 url("./vcurrent/m-pagination.css");
+@import url("./vcurrent/m-overrides-and-conveniences.css");
+
+@import        url("./manuscript-user-customizations.css");
+
+:root {
+    --m-version: 4.0;
+}
+

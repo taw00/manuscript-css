@@ -1,4 +1,6 @@
-# Write your Manuscript in Markdown or HTML — for Creative Writers
+# Write in a Text Editor; Export to Manuscript Format—for Creative Writers
+
+## *Pure CSS stylesheets enabling industry standard manuscript formatting for Markdown or HTML*
 
 Are you a writer? In particular, a writer of narrative works? Fiction,
 narrative nonfiction, memoir, etc? Do prefer the simplicity of drafting you
