@@ -103,6 +103,10 @@
     border-block-start: unset !important;
     padding-block-start: unset !important;
 }
+#manuscript section.m-scene:is(.no-break),
+#manuscript section.m-book > m-title-header:has( ~ section) {
+    padding-block-end: unset !important;
+}
 }
 @media print {
 /* unset the break if called to do so */

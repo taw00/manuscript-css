@@ -88,7 +88,6 @@
             border-block-start: unset;
         }
 
-
         /* POEM - aesthetic spacing at end before the simulated marker */
         & section.m-poem {
             padding-block-end: var(--m-page-break-simulated-padding-poem);
