@@ -5,9 +5,9 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./m-core/positioning.css");
-@import url("./m-core/positioning-prose.css");
-@import url("./m-core/positioning-poetry.css");
-@import url("./m-core/positioning-page-breaks.css");
-@import url("./m-core/dinkuses.css");
+@import             url("./m-core/positioning.css?rev=20250914.01");
+@import       url("./m-core/positioning-prose.css?rev=20250914.01");
+@import      url("./m-core/positioning-poetry.css?rev=20250914.01");
+@import url("./m-core/positioning-page-breaks.css?rev=20250914.01");
+@import                url("./m-core/dinkuses.css?rev=20250914.01");
 

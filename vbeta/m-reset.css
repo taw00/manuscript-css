@@ -14,12 +14,12 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./m-reset/joplin.css");
-@import url("./m-reset/vscode.css");
-@import url("./m-reset/pandoc.css");
-@import url("./m-reset/ghostwriter.css");
-@import url("./m-reset/markdown-viewer.css");
-@import url("./m-reset/other.css");
+@import          url("./m-reset/joplin.css?rev=20250914.01");
+@import          url("./m-reset/vscode.css?rev=20250914.01");
+@import          url("./m-reset/pandoc.css?rev=20250914.01");
+@import     url("./m-reset/ghostwriter.css?rev=20250914.01");
+@import url("./m-reset/markdown-viewer.css?rev=20250914.01");
+@import           url("./m-reset/other.css?rev=20250914.01");
 
 /*
  * configuration of some raw html elements that seem to be reasonable defaults

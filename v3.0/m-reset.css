@@ -1,6 +1,4 @@
-/* CSS for Manuscript Formating v3.0
- *
- * "Normalized" stylings for this toolchain before we layer ours on top.
+/* "Normalized" stylings for this toolchain before we layer ours on top.
  *
  * Included are some normalization in the context of markdown applications that
  * can produce a finished rendered view from within their respective
@@ -16,12 +14,12 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./m-reset/joplin.css");
-@import url("./m-reset/vscode.css");
-@import url("./m-reset/pandoc.css");
-@import url("./m-reset/ghostwriter.css");
-@import url("./m-reset/markdown-viewer.css");
-@import url("./m-reset/other.css");
+@import          url("./m-reset/joplin.css?rev=20250914.01");
+@import          url("./m-reset/vscode.css?rev=20250914.01");
+@import          url("./m-reset/pandoc.css?rev=20250914.01");
+@import     url("./m-reset/ghostwriter.css?rev=20250914.01");
+@import url("./m-reset/markdown-viewer.css?rev=20250914.01");
+@import           url("./m-reset/other.css?rev=20250914.01");
 
 /*
  * configuration of some raw html elements that seem to be reasonable defaults

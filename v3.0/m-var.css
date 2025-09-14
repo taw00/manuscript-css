@@ -1,6 +1,4 @@
-/* CSS for Manuscript Formating v3.0
- *
- * m-var/constants: baseline variable constants
+/* m-var/constants: baseline variable constants
  * m-var/defaults:  everything variable set to their defaults
  * m-var/permutations: the defaults adjusted based on classes the user sets for
  *                     each: narrative/nonnarrative, short/long, etc.
@@ -13,8 +11,8 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import url("./m-var/constants.css");
-@import url("./m-var/defaults.css");
-@import url("./m-var/permutations.css");
-@import url("./m-var/theme.css");
+@import    url("./m-var/constants.css?rev=20250914.01");
+@import     url("./m-var/defaults.css?rev=20250914.01");
+@import url("./m-var/permutations.css?rev=20250914.01");
+@import        url("./m-var/theme.css?rev=20250914.01");
 
