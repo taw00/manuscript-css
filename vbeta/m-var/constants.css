@@ -182,7 +182,7 @@
     --m-color-gainsboro:  gainsboro;
     --m-color-gray2:      gainsboro; /* #dcdcdcff */
     --m-color-whitesmoke: whitesmoke;
-    --m-color-gray1:      whitesmoke; /* #f5f5f5ff */
+    --m-color-gray1:      whitesmoke; /* hsl(0deg 0% 96%) */
     --m-color-notwhite:   whitesmoke;
     --m-color-white:      white; /* #ffffffff */
     --m-color-gray0:      white;
@@ -197,7 +197,7 @@
     --m-color-professional-blue4: #53b7d7ff;
     --m-color-professional-blue5: #39ff;
     --m-color-professional-blue6: #9fff;
-    --m-color-professional-blue7: #a5aaffff;
+    --m-color-professional-blue7: hsl(240deg 100% 80%);
 
     /* alternative dark colors with a hint of color */
     --m-color-gray-purple-dark: #29272bff;

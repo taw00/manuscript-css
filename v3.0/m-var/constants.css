@@ -200,11 +200,14 @@
     --m-color-professional-blue4: #53b7d7ff;
     --m-color-professional-blue5: #39ff;
     --m-color-professional-blue6: #9fff;
-    --m-color-professional-blue7: #a5aaffff;
+    --m-color-professional-blue7: hsl(240deg 100% 80%);
 
     /* alternative dark colors with a hint of color */
+    --m-color-gray-purple-dark: #29272bff;
     --m-color-gray-green-dark:  #272b27ff;
-    --m-color-gray-purple-dark: #23262dff;
+    --m-color-gray-blue-dark:   #27272bff;
+    --m-color-gray-pink-dark:   #2b272bff;
+    --m-color-gray-purpleblue-dark: #23262dff;
     --m-color-gray-yellow-dark: #2b2b27ff;
     --m-color-gray-gold-dark:   #2d2a23ff;
     --m-color-eggplant:         #483248ff;
