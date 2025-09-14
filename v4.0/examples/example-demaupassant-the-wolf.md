@@ -22,7 +22,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-4.0.css");
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-4.0.css");
     */
-    @import url("../../manuscript-4.0.css");
+    @import url("../../manuscript-local-4.0.css");
     :root {
         --m-marginalia: "de Maupassant / The Wolf / " counter(page);
         --m-font-size-title: 1.25em;

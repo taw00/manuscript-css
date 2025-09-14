@@ -14,9 +14,8 @@ header and facts, as well as a title, and then the poem.
 <style>
     /*
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-4.0.css");
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-4.0.css");
     */
-    @import url("../../manuscript-4.0.css");
+    @import url("../../manuscript-local-4.0.css");
 </style>
 
 <div id="vpage" class="no-header">

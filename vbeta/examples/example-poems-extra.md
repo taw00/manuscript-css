@@ -23,7 +23,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css");
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-beta.css");
     */
-    @import url("../../manuscript-beta.css");
+    @import url("../../manuscript-local-beta.css");
 
     :root {
         /*

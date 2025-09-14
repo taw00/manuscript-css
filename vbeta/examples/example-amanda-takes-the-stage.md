@@ -22,7 +22,7 @@ The customizations:
     /*
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css");
     */
-    @import url("../../manuscript-beta.css");
+    @import url("../../manuscript-local-beta.css");
     :root {	--m-line-spacing: normal; }
 </style>
 
