@@ -1,0 +1,46 @@
+/* CSS for Manuscript Format - for local importing by Joplin
+ *
+ * Joplin has a bug. If importing locally, the @import urls can't contain
+ * ?rev= strings in them. So we have to have this version for now until this
+ * issue is addressed.
+ *
+ * https://github.com/taw00/manuscript-css/issues/11
+ *
+ * Copyright (c) Todd Warner <t0dd@protonmail.com>
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
+
+@import                url("./vcurrent/m-var/constants.css");
+@import                 url("./vcurrent/m-var/defaults.css");
+@import             url("./vcurrent/m-var/permutations.css");
+@import                    url("./vcurrent/m-var/theme.css");
+
+@import                 url("./vcurrent/m-reset/joplin.css");
+@import                 url("./vcurrent/m-reset/vscode.css");
+@import                 url("./vcurrent/m-reset/pandoc.css");
+@import            url("./vcurrent/m-reset/ghostwriter.css");
+@import        url("./vcurrent/m-reset/markdown-viewer.css");
+@import                  url("./vcurrent/m-reset/other.css");
+
+@import               url("./vcurrent/m-init/structure.css");
+@import                   url("./vcurrent/m-init/fonts.css");
+@import                    url("./vcurrent/m-init/page.css");
+@import              url("./vcurrent/m-init/marginalia.css");
+
+@import             url("./vcurrent/m-core/positioning.css");
+@import       url("./vcurrent/m-core/positioning-prose.css");
+@import      url("./vcurrent/m-core/positioning-poetry.css");
+@import url("./vcurrent/m-core/positioning-page-breaks.css");
+@import                url("./vcurrent/m-core/dinkuses.css");
+
+@import   url("./vcurrent/m-overrides-and-conveniences.css");
+
+@import          url("./manuscript-user-customizations.css");
+
+:root {
+    --m-version: 4.0;
+}
+
