@@ -41,6 +41,6 @@
 @import          url("./manuscript-user-customizations.css");
 
 :root {
-    --m-version: 4.0;
+    --m-version: "current";
 }
 
