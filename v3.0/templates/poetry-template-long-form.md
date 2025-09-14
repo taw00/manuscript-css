@@ -14,7 +14,6 @@ This poetry collection does not meet industry spec just yet.
 <style>
     /*
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-3.0.css");
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-3.0.css");
     */
     @import url("../../manuscript-3.0.css");
 </style>
