@@ -155,6 +155,10 @@ Switches usable by all of these elements. For example:
     <dd>Adds a page break after the element if it didn't exist previously.</dd>
 </dl>
 
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
+
 ## `.m-scene` switches - switches associated to prose content
 
 Switches available to a scene beyond what has been mentioned previously.
