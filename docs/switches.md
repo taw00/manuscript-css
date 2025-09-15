@@ -15,7 +15,7 @@ To turn these on, you add them to the class attribute of the vpage div:
 <div id="vpage" class="add-switch-here and-here-is-another-one">
 ```
 
-#### Themed preview
+### Themed Preview Switches
 
 <dl>
     <dt>dark</dt>
@@ -38,7 +38,7 @@ To turn these on, you add them to the class attribute of the vpage div:
     <dd>Dark mode! But amber themed.</dd>
 </dl>
 
-#### Papersizes and Orientation
+### Papersizes and Orientation Switches
 
 <dl>
     <dt>US</dt>
@@ -68,7 +68,7 @@ article:
 ```
 
 
-#### Prose Switeches
+### Prose Switches
 
 <dl>
     <dt>short</dt>
@@ -86,7 +86,7 @@ article:
     without indent.</dd>
 </dl>
 
-#### Poetry Switches
+### Poetry Switches
 
 <dl>
     <dt>poetry</dt>
@@ -96,7 +96,7 @@ article:
     within. You will have to experiment.</dd>
 </dl>
 
-#### Simplification Switches
+### Simplification Switches
 
 <dl>
     <dt>simple</dt>
@@ -116,7 +116,7 @@ article:
 
 ---
 
-## `.m-book`, `.m-chapter`, `.m-scene`, `.m-poem` switches
+## `.m-book`, `.m-chapter`, `.m-scene`, `.m-poem` switches - switches shared between these structural elements
 
 Switches usable by all of these elements. For example:
 
@@ -139,7 +139,7 @@ Switches usable by all of these elements. For example:
     <dd>Adds a page break after the element if it didn't exist previously.</dd>
 </dl>
 
-## `.m-scene` switches
+## `.m-scene` switches - switches associated to prose content
 
 Switches available to a scene beyond what has been mentioned previously.
 
@@ -175,7 +175,7 @@ Switches available to a scene beyond what has been mentioned previously.
 </dl>
 
 
-## `.m-poem` switches
+## `.m-poem` switches - switches associated to poem content
 
 Switches available to a poem beyond what has been mentioned previously. Note
 that poems have a title header that can have a prose element where the above
