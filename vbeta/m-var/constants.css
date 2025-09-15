@@ -19,21 +19,24 @@
     /*
      * BASELINE CONSTANTS
      * Note,
-     * - A6 is 106mm x 148mm or 4.1in x 5.8in
-     * - A5 is 148mm x 210mm or 5.8in x 8.3in (roughly half of US letter)
-     * - A4 is 210mm x 297mm or 8.3in x 11.7in
-     * - USh (US Half Letter) is 140m x 216mm or 5.5in x 8.5in
-     * - US Letter is 216mm x 279mm or 8.5in x 11in
+     * - US:  8.5in x 11in (216mm x 279mm) - US Letter
+     * - USh: 5.5in x 8.5in (140m x 216mm) - US Half Letter
+     * - A4:  210mm x 297mm (8.3in x 11.7in)
+     * - A5:  148mm x 210mm (5.8in x 8.3in)
+     * - A6:  106mm x 148mm (4.1in x 5.8in)
      */
-    --m-page-widthA6: 105mm; --m-page-heightA6: 148mm; --m-page-marginA6: .5in;
-    --m-page-widthA5: 148mm; --m-page-heightA5: 210mm; --m-page-marginA5: .75in;
-    --m-page-widthA4: 210mm; --m-page-heightA4: 297mm; --m-page-marginA4: 1in;
-    --m-page-widthUSh: 5.5in; --m-page-heightUSh: 8.5in; --m-page-marginUSh: .75in;
-    --m-page-widthUS: 8.5in; --m-page-heightUS: 11in;  --m-page-marginUS: 1in;
+    --m-page-widthA6:  105mm;  --m-page-heightA6:  148mm;  --m-page-marginA6:  .25in;
+    --m-page-widthA5:  148mm;  --m-page-heightA5:  210mm;  --m-page-marginA5:  .5in;
+    --m-page-widthA4:  210mm;  --m-page-heightA4:  297mm;  --m-page-marginA4:  1in;
+    --m-page-widthUSh: 5.5in;  --m-page-heightUSh: 8.5in; --m-page-marginUSh: .5in;
+    --m-page-widthUS:  8.5in;  --m-page-heightUS:  11in;   --m-page-marginUS:  1in;
 
     /* default for each is 1/2 the default margin widths */
-    --m-indentA6: .25in; --m-indentA5: .375in; --m-indentA4: .5in;
-    --m-indentUSh: .375in; --m-indentUS: .5in;
+    --m-indentUS:  calc(var(--m-page-marginUS)  * .5);
+    --m-indentUSh: calc(var(--m-page-marginUSh) * .5);
+    --m-indentA4:  calc(var(--m-page-marginA4)  * .5);
+    --m-indentA5:  calc(var(--m-page-marginA5)  * .5);
+    --m-indentA6:  calc(var(--m-page-marginA6)  * .5);
 
     /* line-height (line spacing) - singlespace and doublespace */
     --m-line-spacing-single: 1.25;
