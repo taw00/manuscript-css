@@ -63,7 +63,7 @@
 
     /* -30- content
      * Note: poetry manuscripts do not use dinkus or -30- markers */
-    &:not(.poetry,.no-30-)::after {
+    &:not(.poetry,.no-30-,.no-30)::after {
         content: var(--m-30-);
     }
 
