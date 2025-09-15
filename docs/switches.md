@@ -20,6 +20,10 @@ To turn these on, you add them to the class attribute of the vpage div:
 ### Themed Preview Switches
 
 <dl>
+    <dt>dim</dt>
+    <dd>Easier on the eyes, but not dark mode.</dd>
+    <dt>dimmer</dt>
+    <dd>Even easier on the eyes, but not yet dark mode.</dd>
     <dt>dark</dt>
     <dd>Dark mode! A very light gray on dark background.</dd>
     <dt>dark yellow</dt>
