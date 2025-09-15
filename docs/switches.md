@@ -15,6 +15,8 @@ To turn these on, you add them to the class attribute of the vpage div:
 <div id="vpage" class="add-switch-here and-here-is-another-one">
 ```
 
+&ZeroWidthSpace;
+
 ### Themed Preview Switches
 
 <dl>
@@ -38,6 +40,8 @@ To turn these on, you add them to the class attribute of the vpage div:
     <dd>Dark mode! But amber themed.</dd>
 </dl>
 
+&ZeroWidthSpace;
+
 ### Papersizes and Orientation Switches
 
 <dl>
@@ -57,6 +61,9 @@ To turn these on, you add them to the class attribute of the vpage div:
     <dd>The reverse: width is longer than height.</dd>
 </dl>
 
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
 
 ## `#manuscript` switches - switches more associated to the document as a whole
 
@@ -67,6 +74,7 @@ article:
 <article id="manuscript" class="add-switch-here and-here-is-another-one">
 ```
 
+&ZeroWidthSpace;
 
 ### Prose Switches
 
@@ -86,6 +94,8 @@ article:
     without indent.</dd>
 </dl>
 
+&ZeroWidthSpace;
+
 ### Poetry Switches
 
 <dl>
@@ -95,6 +105,8 @@ article:
     (1st page title and such) you can choose 'long' instead then add your poems
     within. You will have to experiment.</dd>
 </dl>
+
+&ZeroWidthSpace;
 
 ### Simplification Switches
 
@@ -115,6 +127,10 @@ article:
 </dl>
 
 ---
+
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
 
 ## `.m-book`, `.m-chapter`, `.m-scene`, `.m-poem` switches - switches shared between these structural elements
 
@@ -174,6 +190,10 @@ Switches available to a scene beyond what has been mentioned previously.
     placed there.</dd>
 </dl>
 
+
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
 
 ## `.m-poem` switches - switches associated to poem content
 
