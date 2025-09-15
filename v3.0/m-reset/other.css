@@ -526,3 +526,29 @@ hr {
   overflow: hidden;
 }
 
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+/*
+ * configuration of some raw html elements that seem to be reasonable defaults
+ * for a manuscript and that simply need to override the rest.
+ */
+
+/* 2 deep (or more) ordered lists use lower-latin (a, b, c, ...) */
+:is(ol, ul, menu) ol {
+  /*list-style-type: circle;*/
+  list-style-type: lower-latin;
+}
+/* 2 deep unordered lists use an endash */
+:is(ol, ul, menu) ul,
+:is(ol, ul, menu) menu {
+  /*list-style-type: circle;*/
+  list-style-type: "- ";
+}
+/* 3+ deep unordered lists use an endash - here to override defaults */
+:is(ol, ul, menu) :is(ol, ul, menu) ul,
+:is(ol, ul, menu) :is(ol, ul, menu) menu {
+  /*list-style-type: square;*/
+  list-style-type: "- ";
+}
+
