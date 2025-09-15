@@ -224,5 +224,27 @@
         }
     }
 
+    /* TEXT-ONLY and SIMPLE
+     *
+     * #manuscript.text-only:
+     *    removes all contact info, page & title headers, & facts
+     * #manuscript.simple:
+     *    removes the all page headers, contacts, & facts */
+    &.text-only {
+        .m-facts,
+        .m-contact,
+        .m-page-header,
+        .m-title-header {
+            display: none !important;
+        }
+    }
+    &.simple {
+        .m-facts,
+        .m-contact,
+        .m-page-header {
+            display: none !important;
+        }
+    }
+
 } /* end #manuscript */
 

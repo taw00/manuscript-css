@@ -93,23 +93,5 @@
         padding-bottom: .5rem;
     }
 
-    /* #manuscript.text-only: removes all contact info, .m-title-headers, & facts
-     * #manuscript.simple: removes the top-level contacts and all facts */
-    &.text-only {
-        .m-facts,
-        .m-contact,
-        .m-page-header,
-        .m-title-header {
-            display: none !important;
-        }
-    }
-    &.simple {
-        .m-facts,
-        .m-contact,
-        .m-page-header {
-            display: none !important;
-        }
-    }
-
 } /* end #manuscript:not(.text-only) */
 
