@@ -2,7 +2,8 @@
  *
  * We include some switches …
  * - If article#manuscript.text-only — no dinkuses or -30- (and other things)
- * - If article#manuscript.no-dinkuses — no dinkuses or -30-
+ * - If article#manuscript.no-dinkuses — no dinkuses
+ * - If article#manuscript.no-30- — no -30- at The End
  * - If article#manuscript section.m-scene.no-dinkus — no dinkus for that scene
  * - If article#manuscript section.m-scene section.m-subscenes.no-dinkuses -
  * - If article#manuscript section.m-scene ~ section:not(.m-scene) - no dinkus
@@ -62,7 +63,7 @@
 
     /* -30- content
      * Note: poetry manuscripts do not use dinkus or -30- markers */
-    &:not(.poetry)::after {
+    &:not(.poetry,.no-30-)::after {
         content: var(--m-30-);
     }
 
