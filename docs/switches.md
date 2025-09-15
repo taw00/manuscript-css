@@ -38,7 +38,7 @@ To turn these on, you add them to the class attribute of the vpage div:
     <dd>Dark mode! But amber themed.</dd>
 </dl>
 
-#### Papersizes
+#### Papersizes and Orientation
 
 <dl>
     <dt>US</dt>
@@ -51,6 +51,10 @@ To turn these on, you add them to the class attribute of the vpage div:
     <dd>A5 sized: 148mm x 210mm (5.8in x 8.3in) with 12.7mm (1/2in) margins</dd>
     <dt>A6</dt>
     <dd>A6 sized: 106mm x 148mm (4.1in x 5.8in) with 6.35mm (1/4in) margins</dd>
+    <dt>portrait</dt>
+    <dd>(The default) Height is longer than width.</dd>
+    <dt>landscape</dt>
+    <dd>The reverse: width is longer than height.</dd>
 </dl>
 
 
