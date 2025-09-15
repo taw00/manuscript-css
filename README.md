@@ -67,7 +67,7 @@ Vellum, InDesign, and Atticus.
 
 ### 2. This process does not easily produce a `.docx` document.
 
-Many/most publishers require your manuscript to formatted as a Microsoft Word `.docx` file. (Word 2007 seems to be the most portable.)  Some publishers and agents, especially the better ones, will accept a `.pdf`, but most require `.docx`. There are ways to automate generating `.docx` files, but it's not a piece of cake and never does a good job. Read more about that in [README-structure-summary.md](README-structure-summary.md).
+Many/most publishers require your manuscript to formatted as a Microsoft Word `.docx` file. (Word 2007 seems to be the most portable.)  Some publishers and agents, especially the better ones, will accept a `.pdf`, but most require `.docx`. There are ways to automate generating `.docx` files, but it's not a piece of cake and never does a good job. Read more about that in [structure-summary.md](docs/structure-summary.md).
 
 Also check out the myriad of authoring platforms out there: Scrivener, Novlr,
 LivingWriter, Dabble, Ulysses, Storyist (Apple-only, blech!), Final Draft (for
