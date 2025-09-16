@@ -1,29 +1,40 @@
 <!--
-Drafted 2021-01-21
-Submitted 2023-06-14
-Published 2023-11-18 — County Lines, a Literary Journal, volume 11, 2024
+Amanda Takes the Stage, a poem
 
 Written as reaction to poet Amanda Gorman's inaugural (Joe Biden, 2021-01-20)
 recitation of "The Hill We Climb."
 
+Copyright © 2021 Todd Warner
+
 I customized this with a prose "scene" at the end that serves as a epilogue-ish
 epigraph. Usually, I would put something like that in the title header of the
-poem, but I wanted the context of the poem to be delated for the reader.
+poem, but I wanted the context of the poem to be delayed for the reader.
 
-The customizations:
-1. squashed the like spacing so that the ending epigraph is single spaced
-   'normal'.
-2. Turned off indenting 'no-indent' and page-breaking 'no-break' for the scene.
-3. Added space between the poem and the epigraph &ZeroWidthSpace; just to give
-   it some air.
+Customizations:
+- squashed the line spacing so that the ending epigraph is single spaced
+  'normal'. Since there is no paragraph spacing, we had to add a couple
+  &ZeroWidthSpace; lines in there to space things out manually. Maybe someday
+  I will have a switch set up to do this more automatically.
+- Turned off indenting 'no-indent' and page-breaking 'no-break' for the scene.
+- Added space between the poem and the epigraph with a .5in margin just to give
+  it some air.
+
+Drafted 2021-01-21
+Published 2023-11-18 — County Lines, a Literary Journal, volume 11, 2024
 -->
 
 <style>
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-4.0.css");
+    @import url("../../manuscript-local.css");
+    @import url("../../manuscript-local-beta.css");
     */
-    @import url("../../manuscript-local-4.0.css");
     :root {	--m-line-spacing: normal; }
+    .m-scene {
+        font-size: 85%;
+        margin-block-start: .5in;
+        line-height: normal; /* redundant (see :root) but left as an example */
+    }
 </style>
 
 <div id="vpage">
@@ -105,9 +116,7 @@ With these words,
 
 
 </section>
-<section class="m-scene no-indent no-break" style="font-size: 85%;">
-
-&ZeroWidthSpace;
+<section class="m-scene no-indent no-break">
 
 —
 
