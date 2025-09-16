@@ -382,9 +382,9 @@
 
     /* page break settings - these get refined settings elsewhere */
     /* set in m-var/permutations.css …
-    --m-page-break: var(--m-page-break-short);                     / * unset * /
-    --m-page-break-simulated: var(--m-page-break-simulated-short); / * 0 * /
-    --m-page-break-simulated-padding: var(--m-page-break-simulated-padding-short); / * 0 * /
+    --m-page-break:
+    --m-page-break-simulated:
+    --m-page-break-simulated-end-spacing:
     */
 
     /* the desktop theme beneath the paper */

@@ -46,15 +46,14 @@
 @media screen {
 /* unset the break if called to do so */
 #manuscript section.no-break {
-    border-block-start: unset !important;
-    padding-block-start: unset !important;
-    padding-block-end: unset !important;
+    border-block-start: unset !important;  /* simulated "break-before" */
+    border-block-end: unset !important;    /* simulated page-break aesthetic spacing */
 }
 /* poems add a aesthetic space at the end right before a simulated page-break
  * line from the next section. Let's remove that if that next section has a
  * 'no-break'. */
 #manuscript section.m-poem:has( + section.no-break) {
-    padding-block-end: unset !important;
+    border-block-end: unset !important; /* simulated page-break aesthetic spacing */
 }
 }
 @media print {
@@ -62,8 +61,6 @@
 #manuscript section.no-break {
     break-before: unset !important;
     break-after: unset !important;
-    margin-block-start: revert !important;
-    padding-block-start: revert !important;
 }
 }
 

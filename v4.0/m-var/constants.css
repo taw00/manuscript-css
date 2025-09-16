@@ -135,11 +135,12 @@
     --m-page-break-short: unset;
     --m-page-break-long:  page;
     --m-page-break-simulated-short: 0;
-    --m-page-break-simulated-padding-block-end-short: var(--m-room-for-two);
+    --m-page-break-simulated-end-spacing-short: var(--m-room-for-two) transparent solid;
     /* … for the simulated page break for long-form docs, we use a heavy faded
      *   dashed line. For the title page, we add padding before that line. */
     --m-page-break-simulated-long: 4px dashed var(--m-page-break-simulated-color);
-    --m-page-break-simulated-padding-block-end-long: calc(var(--m-offset-title) - 1in);
+    --m-page-break-simulated-end-spacing-long: calc(var(--m-offset-title) - 1in) transparent solid;
+    --m-page-break-simulated-end-spacing-poem: var(--m-room-for-two) transparent solid;
 
     /* the document facts (.m-facts) - short-form and long-form
      * (document, not part, chapter, or scene facts */

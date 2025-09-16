@@ -58,30 +58,19 @@
             border-block-start: var(--m-page-break-simulated-long);
         }
 
-
-        /*
-         * Title Block, Book, Page, & Chapter title blocks start a good
-         * distance down the page
-         */
-
-        /* TITLE PAGE and BOOK
-         * add padding at the end of an element that always has a simulated
-         * page break coming after */
-        & > .m-title-header:has( ~ section),
-        & section.m-book > .m-title-header:has( ~ section) {
-            padding-block-end: var(--m-page-break-simulated-padding-block-end);
-        }
-
-        /* BOOK and PART and CHAPTER - offset from top of page simulation */
+        /* BOOK, PART, and CHAPTER title blocks start a distance down the page
+         * using an offset from the top of the page-break simulation */
         & section.m-book:has( > .m-title-header),
         & section.m-part:has( > .m-title-header),
-        & > .m-header ~ .m-chapter:has( > .m-title-header),
-        & > .m-header ~ .m-chapter:has( > section.m-scene),
+        & > .m-title-header ~ .m-chapter:has( > .m-title-header),
+        & > .m-title-header ~ .m-chapter:has( > section.m-scene),
         & section:not(.m-part) ~ .m-chapter:has( > .m-title-header),
         & section:not(.m-part) ~ .m-chapter:has( > section.m-scene) {
+            /* Here we used padding in order to show the simulated page break
+             * realistically. In the "print" section, use use margin
+             * instead. */
             padding-block-start: var(--m-offset-title);
         }
-
 
         /* being explicit because sometimes ~ used above can be too casual */
         & section:is(.m-scene,.m-book,.m-part,.m-chapter) ~ .m-scene,
@@ -91,9 +80,18 @@
             border-block-start: unset;
         }
 
-        /* POEM - aesthetic spacing at end before the simulated marker */
+        /* TITLE PAGE and BOOK and POEM - aesthetic end spacing -----------
+         * Add aesthetic spacing at the end of an element that always has a
+         * simulated page break coming after, and make the spacing similar to
+         * the spacing before.  For poems, we just at a little to give the page
+         * break after a poem a bit of elbow room.  We do it with a transparent
+         * border so that we don't override and padding and margin styles */
+        & > .m-title-header:has( ~ section),
+        & section.m-book > .m-title-header:has( ~ section) {
+            border-block-end: var(--m-page-break-simulated-end-spacing);
+        }
         & section.m-poem {
-            padding-block-end: var(--m-room-for-two);
+            border-block-end: var(--m-page-break-simulated-end-spacing-poem);
         }
     } /* end #manuscript */
 } /* end @media screen */
@@ -150,20 +148,23 @@
             break-before: page;
         }
 
-        /*
-         * Title Block, Book, Page, & Chapter title blocks start a good
-         * distance down the page
-         */
-
-        /* BOOK and PART and CHAPTER - offset from top of page */
+        /* BOOK, PART, and CHAPTER title blocks start a distance down the page
+         * using an offset from the top of the page */
         & section.m-book:has( > .m-title-header),
         & section.m-part:has( > .m-title-header),
-        & > .m-header ~ .m-chapter:has( > .m-title-header),
-        & > .m-header ~ .m-chapter:has( > .m-scene),
+        & > .m-title-header ~ .m-chapter:has( > .m-title-header),
+        & > .m-title-header ~ .m-chapter:has( > .m-scene),
         & section:not(.m-part) ~ .m-chapter:has( > .m-title-header),
         & section:not(.m-part) ~ .m-chapter:has( > section.m-scene) {
+            /* Here we use margin to offset the titles in case margins need to
+             * collapse (I am not 100% sure that we could not just use padding.
+             * In the "screen" section we use padding in order to show the
+             * simulated page break realistically. */
+            /*
             margin-block-start: var(--m-offset-title);
             padding-block-start: 1px;
+            */
+            padding-block-start: var(--m-offset-title);
         }
 
 
@@ -179,7 +180,7 @@
         }
 
 
-        /* AVOIDANCE */
+        /* AVOIDANCE ----- */
 
         & a,
         & tr {
