@@ -30,6 +30,7 @@
     /* the virtual page — the paper */
     #vpage {
         width: 100%; max-width: var(--m-page-width);
+        min-height: var(--m-page-height);
         background-color: var(--m-paper-color);
         box-shadow: var(--m-vpage-frame);
         margin: var(--m-vpage-frame-margin);
