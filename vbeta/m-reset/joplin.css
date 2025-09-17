@@ -37,20 +37,20 @@ body {
 
 @media screen {
     /* a darkgray "desk" and a "trans" content box framing the #rendered-md */
-    html { background-color: rgb(0 0 0 / 0%); }
+    html { background-color: transparent; }
     body {
         background-color: var(--m-reset-joplin-background-color-body);
     }
-    /* rendered view:  */
+
     body#joplin-container-body {
-        /* a virtual paper look: <body> is the "desk" behind the paper */
         /* Remove the padding and bg that frames #rendered-md */
         & > #joplin-container-content {
             background-color: transparent;
             padding: 0;
         }
     }
-    /* rendered view: explicitly exported to HTML version */ 
+
+    /* rendered to HTML view */
     body:not(#joplin-container-body) {
         & > div.exported-note {
             margin: 0;
@@ -60,7 +60,8 @@ body {
             }
         }
     }
-    /* rendered view: Joplin Cloud's version */
+
+    /* Joplin Cloud stuff */
     body.page-note {
         /* footer with copright and T&Cs - fade to watermark */
         & > div.footer { opacity: .5; }
@@ -88,8 +89,8 @@ body {
 
 
 @media print { /* PDF */
-    /* exported view: both from the Joplin viewer and from Joplin's HTML export
-       the body color needs to be irrelevant (trans) */
+    /* exported to PDF: both from the Joplin viewer and from Joplin's HTML
+     * export the body color needs to be irrelevant (trans) */
     body#joplin-container-body,
     body:has(.exported-note) {
         /* Exported print: the body should be colorless for print */
@@ -100,7 +101,7 @@ body {
             padding: 0;
         }
     }
-    /* exported view: remove Joplin-inserted title and excess padding */
+    /* exported HTNL view to PDF: remove Joplin-inserted title & padding */
     body:not(#joplin-container-body) > div.exported-note {
         margin: 0;
         padding: 0;
@@ -137,12 +138,6 @@ body {
                 /* remove "Last updated" line */
                 & > h1.title,
                 & > p.last-updated { display: none; }
-                & > h1.title::before {
-                    font-size: 3em;
-                    font-weight: bold;
-                    color: green;
-                    content: "Please wait while I process this document …"
-                }
             }
         }
     }
@@ -199,7 +194,7 @@ code.inline-code {
     display: none;
 }
 
-#vpage #manuscript :is(.x-poem,.m-poem,.m-title-header) {
+#vpage #manuscript :is(.x-poem,.m-poem,.m-header,.m-title-header) {
     .hljs,
     .hljs-keyword,
     .hljs-operator,
@@ -252,5 +247,5 @@ code.inline-code {
         text-decoration: unset;
         padding: unset;
     }
-} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-title-header) */
+} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-header,.m-title-header) */
 

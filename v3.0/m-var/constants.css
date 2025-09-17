@@ -1,6 +1,4 @@
-/* CSS for Manuscript Formating v3.0
- *
- * @layer lm-var-constants
+/* @layer lm-var-constants
  * :root { --m-XXXXXX } variable constants.
  *
  * This contains most of the constants and some baseline defaults that are then
@@ -27,11 +25,11 @@
      * - A5:  148mm x 210mm (5.8in x 8.3in)
      * - A6:  106mm x 148mm (4.1in x 5.8in)
      */
-    --m-page-widthA6:  105mm;  --m-page-heightA6:  148mm;  --m-page-marginA6:  .25in;
+    --m-page-widthUS:  8.5in;  --m-page-heightUS:   11in;  --m-page-marginUS:   1in;
+    --m-page-widthUSh: 5.5in;  --m-page-heightUSh: 8.5in;  --m-page-marginUSh: .5in;
+    --m-page-widthA4:  210mm;  --m-page-heightA4:  297mm;  --m-page-marginA4:   1in;
     --m-page-widthA5:  148mm;  --m-page-heightA5:  210mm;  --m-page-marginA5:  .5in;
-    --m-page-widthA4:  210mm;  --m-page-heightA4:  297mm;  --m-page-marginA4:  1in;
-    --m-page-widthUSh: 5.5in;  --m-page-heightUSh: 8.5in; --m-page-marginUSh: .5in;
-    --m-page-widthUS:  8.5in;  --m-page-heightUS:  11in;   --m-page-marginUS:  1in;
+    --m-page-widthA6:  105mm;  --m-page-heightA6:  148mm;  --m-page-marginA6: .25in;
 
     /* default for each is 1/2 the default margin widths */
     --m-indentUS:  calc(var(--m-page-marginUS)  * .5);
@@ -161,8 +159,8 @@
     --m-text-align-facts-long: center;
 
     /* colors used mainly for desktop, paper, and text / links */
-    --m-color-black:      black; /* #000000ff */
-    --m-color-gray9:      black;
+    --m-color-black:      hsl(0deg 0% 0%); /* black */
+    --m-color-gray9:      hsl(0deg 0% 0%); /* black */
     --m-color-gray8pt9:   #020202ff;
     --m-color-gray8pt8:   #050505ff;
     --m-color-gray8pt7:   #070707ff;
@@ -172,23 +170,23 @@
     --m-color-gray8pt3:   #111f;
     --m-color-gray8pt2:   #181818ff;
     --m-color-gray8pt1:   #1b1b1bff;
-    --m-color-gray8:      #1e1e1eff;
+    --m-color-gray8:      hsl(0deg 0% 12%);;
     --m-color-notblack:   var(--m-color-gray8pt5);
-    --m-color-gray7pt5:   #444f;
-    --m-color-dimgray:    dimgray; /* #696969ff */
-    --m-color-gray7:      dimgray;
-    --m-color-gray:       gray; /* #808080ff */
-    --m-color-gray6:      gray;
-    --m-color-darkgray:   darkgray; /* #a9a9a9ff */
-    --m-color-gray5:      darkgray; /* oddly, lighter than gray */
-    --m-color-silver:     silver;
-    --m-color-gray4:      silver; /* #c0c0c0ff */
+    --m-color-gray7pt5:   hsl(0deg 0% 27%);
+    --m-color-dimgray:    hsl(0deg 0% 41%); /* dimgray */
+    --m-color-gray7:      hsl(0deg 0% 41%); /* dimgray */
+    --m-color-gray:       hsl(0deg 0% 50%); /* gray */
+    --m-color-gray6:      hsl(0deg 0% 50%); /* gray */
+    --m-color-darkgray:   hsl(0deg 0% 66%); /* darkgray; oddly, lighter than gray */
+    --m-color-gray5:      hsl(0deg 0% 66%); /* darkgray; oddly, lighter than gray */
+    --m-color-silver:     hsl(0deg 0% 75%); /* silver */
+    --m-color-gray4:      hsl(0deg 0% 75%); /* silver */
     --m-color-lightgray:  lightgray;
     --m-color-gray3:      lightgray;
     --m-color-gainsboro:  gainsboro;
     --m-color-gray2:      gainsboro; /* #dcdcdcff */
     --m-color-whitesmoke: whitesmoke;
-    --m-color-gray1:      whitesmoke; /* #f5f5f5ff */
+    --m-color-gray1:      whitesmoke; /* hsl(0deg 0% 96%) */
     --m-color-notwhite:   whitesmoke;
     --m-color-white:      white; /* #ffffffff */
     --m-color-gray0:      white;
@@ -210,7 +208,7 @@
     --m-color-gray-green-dark:  #272b27ff;
     --m-color-gray-blue-dark:   #27272bff;
     --m-color-gray-pink-dark:   #2b272bff;
-    --m-color-gray-purpleblue-dark: #23262dff;
+    --m-color-gray-purpleblue-dark: hsl(222deg 12% 16%);;
     --m-color-gray-yellow-dark: #2b2b27ff;
     --m-color-gray-gold-dark:   #2d2a23ff;
     --m-color-eggplant:         #483248ff;
