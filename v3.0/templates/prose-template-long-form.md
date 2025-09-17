@@ -8,7 +8,7 @@ Template: long-form story, typical for novel and similar
     */
     @import url("../../manuscript-3.0.css");
     :root {
-        --m-pagination-header: "Lastname / Long-form Prose / " counter(page);
+        --m-marginalia: "Lastname / Long-form Prose / " counter(page);
     }
 </style>
 

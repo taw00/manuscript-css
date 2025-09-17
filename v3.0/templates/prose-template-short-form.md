@@ -8,7 +8,7 @@ Template: short story, typical
     */
     @import url("../../manuscript-3.0.css");
     :root {
-        --m-pagination-header: "Lastname / Short-form Prose / " counter(page);
+        --m-marginalia: "Lastname / Short-form Prose / " counter(page);
     }
 </style>
 

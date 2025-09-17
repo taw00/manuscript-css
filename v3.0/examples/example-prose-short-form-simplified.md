@@ -25,7 +25,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
         --m-font-weight-title: bold;
         --m-30-: "🙞 ❦ 🙜";
         */
-        --m-pagination-header: "Lastname / Short Prose, Simplified / " counter(page);
+        --m-marginalia: "Lastname / Short Prose, Simplified / " counter(page);
     }
 </style>
 

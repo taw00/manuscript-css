@@ -9,7 +9,7 @@ Template: poem
     @import url("../../manuscript-3.0.css");
 </style>
 
-<div id="vpage" class="no-header">
+<div id="vpage">
 <article id="manuscript" class="short poetry">
 
 <div id="m-contact">

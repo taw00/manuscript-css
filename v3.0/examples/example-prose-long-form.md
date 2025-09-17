@@ -22,7 +22,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
         --m-font-weight-title: bold;
         --m-page-break-simulated-long: 0;
         */
-        --m-pagination-header: "Lastname / Long-form Prose / " counter(page);
+        --m-marginalia: "Lastname / Long-form Prose / " counter(page);
     }
 </style>
 

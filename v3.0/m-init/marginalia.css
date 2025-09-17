@@ -1,11 +1,11 @@
-/* Pagination Logic and Per-page Headers
+/* marginalia logic
  *
  * Copyright (c) Todd Warner <t0dd@protonmail.com>
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@page no-header {
+@page no-marginalia {
     size: var(--m-page-width) var(--m-page-height);
     margin: var(--m-page-margin);
 }
@@ -14,31 +14,31 @@
  * top (not :first) rules
  */
 
-@page top-left-header {
+@page top-left-marginalia {
     size: var(--m-page-width) var(--m-page-height);
-    margin: var(--m-paginated-margin) var(--m-page-margin) var(--m-page-margin);
+    margin: var(--m-marginalia-margin) var(--m-page-margin) var(--m-page-margin);
     @top-left {
         vertical-align: top;
         margin: var(--m-page-margin) 0 0;
-        content: var(--m-pagination-header);
+        content: var(--m-marginalia);
     }
 }
-@page top-center-header {
+@page top-center-marginalia {
     size: var(--m-page-width) var(--m-page-height);
-    margin: var(--m-paginated-margin) var(--m-page-margin) var(--m-page-margin);
+    margin: var(--m-marginalia-margin) var(--m-page-margin) var(--m-page-margin);
     @top-center {
         vertical-align: top;
         margin: var(--m-page-margin) 0 0;
-        content: var(--m-pagination-header);
+        content: var(--m-marginalia);
     }
 }
-@page top-right-header {
+@page top-right-marginalia {
     size: var(--m-page-width) var(--m-page-height);
-    margin: var(--m-paginated-margin) var(--m-page-margin) var(--m-page-margin);
+    margin: var(--m-marginalia-margin) var(--m-page-margin) var(--m-page-margin);
     @top-right {
         vertical-align: top;
         margin: var(--m-page-margin) 0 0;
-        content: var(--m-pagination-header);
+        content: var(--m-marginalia);
     }
 }
 
@@ -47,31 +47,31 @@
  * bottom (not :first) rules
  */
 
-@page bottom-left-header {
+@page bottom-left-marginalia {
     size: var(--m-page-width) var(--m-page-height);
-    margin: var(--m-page-margin) var(--m-page-margin) var(--m-paginated-margin);
+    margin: var(--m-page-margin) var(--m-page-margin) var(--m-marginalia-margin);
     @bottom-left {
         vertical-align: bottom;
         margin: 0 0 var(--m-page-margin);
-        content: var(--m-pagination-header);
+        content: var(--m-marginalia);
     }
 }
-@page bottom-center-header {
+@page bottom-center-marginalia {
     size: var(--m-page-width) var(--m-page-height);
-    margin: var(--m-page-margin) var(--m-page-margin) var(--m-paginated-margin);
+    margin: var(--m-page-margin) var(--m-page-margin) var(--m-marginalia-margin);
     @bottom-center {
         vertical-align: bottom;
         margin: 0 0 var(--m-page-margin);
-        content: var(--m-pagination-header);
+        content: var(--m-marginalia);
     }
 }
-@page bottom-right-header {
+@page bottom-right-marginalia {
     size: var(--m-page-width) var(--m-page-height);
-    margin: var(--m-page-margin) var(--m-page-margin) var(--m-paginated-margin);
+    margin: var(--m-page-margin) var(--m-page-margin) var(--m-marginalia-margin);
     @bottom-right {
         vertical-align: bottom;
         margin: 0 0 var(--m-page-margin);
-        content: var(--m-pagination-header);
+        content: var(--m-marginalia);
     }
 }
 
@@ -80,7 +80,7 @@
  * ******** first rules ********
  */
 
-@page top-left-header:first {
+@page top-left-marginalia:first {
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -89,7 +89,7 @@
     @bottom-right { content: none; }
     @bottom-center { content: none; }
 }
-@page top-center-header:first {
+@page top-center-marginalia:first {
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -98,7 +98,7 @@
     @bottom-right { content: none; }
     @bottom-center { content: none; }
 }
-@page top-right-header:first {
+@page top-right-marginalia:first {
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -108,7 +108,7 @@
     @bottom-center { content: none; }
 }
 
-@page bottom-left-header:first {
+@page bottom-left-marginalia:first {
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -117,7 +117,7 @@
     @bottom-right { content: none; }
     @bottom-center { content: none; }
 }
-@page bottom-center-header:first {
+@page bottom-center-marginalia:first {
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -126,7 +126,7 @@
     @bottom-right { content: none; }
     @bottom-center { content: none; }
 }
-@page bottom-right-header:first {
+@page bottom-right-marginalia:first {
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }

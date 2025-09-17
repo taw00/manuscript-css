@@ -48,7 +48,7 @@
     --m-page-width:  var(--m-page-widthUS);
     --m-page-height: var(--m-page-heightUS);
     --m-page-margin: var(--m-page-marginUS);
-    --m-paginated-margin: calc(var(--m-page-margin) * 1.333);
+    --m-marginalia-margin: calc(var(--m-page-margin) * 1.333);
      */
 
     --m-fontstack-serif: var(--m-fontstack-times);

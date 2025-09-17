@@ -7,7 +7,6 @@ Short-form manuscript for poetry:
   then empty-.m-chapter + one .m-poem, then .m-chapter entitled
   "Acknowledgement", and an .m-scene.foothang with an acknowledge of prior
   publication.
-- page header removed, because … poetry does not use them
 
 Copyright (c) Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy of
@@ -22,7 +21,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("../../manuscript-3.0.css");
 </style>
 
-<div id="vpage" class="no-header">
+<div id="vpage">
 <article id="manuscript" class="short poetry">
 
 <div id="m-contact">

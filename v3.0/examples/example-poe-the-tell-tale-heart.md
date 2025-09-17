@@ -23,7 +23,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
         --m-font-size-title: 1.25em;
         --m-dinkus: "—";
         --m-30-: "🙞 ❦ 🙜";
-        --m-pagination-header: "Poe / Telltale Heart / " counter(page);
+        --m-marginalia: "Poe / Telltale Heart / " counter(page);
     }
 </style>
 

@@ -18,7 +18,7 @@ This poetry collection does not meet industry spec just yet.
     @import url("../../manuscript-3.0.css");
 </style>
 
-<div id="vpage" class="no-header">
+<div id="vpage">
 <article id="manuscript" class="long poetry">
 
 <div id="m-contact">

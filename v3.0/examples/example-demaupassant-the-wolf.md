@@ -23,7 +23,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     */
     @import url("../../manuscript-3.0.css");
     :root {
-        --m-pagination-header: "de Maupassant / The Wolf / " counter(page);
+        --m-marginalia: "de Maupassant / The Wolf / " counter(page);
         --m-font-size-title: 1.25em;
         --m-dinkus: "—";
         --m-30-: "🙞 ❦ 🙜";

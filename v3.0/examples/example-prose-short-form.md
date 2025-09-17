@@ -22,7 +22,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
         --m-font-weight-title: bold;
         --m-30-: "🙞 ❦ 🙜";
         */
-        --m-pagination-header: "Lastname / Short-form Prose / " counter(page);
+        --m-marginalia: "Lastname / Short-form Prose / " counter(page);
     }
 </style>
 
