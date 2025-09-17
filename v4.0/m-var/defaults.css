@@ -145,7 +145,7 @@
     /* --m-font-family-facts-short is set below */
     --m-line-spacing-facts-short: var(--m-line-spacing-single);
 
-    --m-font-size-facts-long:    inherit; /* will inherit from m-header */
+    --m-font-size-facts-long:    inherit; /* will inherit from m-title-header */
     --m-font-weight-facts-long:  inherit;
     --m-font-family-facts-long:  inherit;
     --m-line-spacing-facts-long: inherit;
