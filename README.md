@@ -91,7 +91,7 @@ Manuscript formatting similar to what many call Shunn Formatting:
 ### Recommended Editors and Tools
 
 - Any text editor
-    * Edit - any editor can be used to edit your manuscript
+    * Edit - any editor can be used to edit your manuscript.
 - [Joplin](https://joplinapp.com) - the (mostly) seamless experience
     * Edit
 	+ Preview: renders an accurate preview of the manuscript
@@ -119,11 +119,6 @@ Manuscript formatting similar to what many call Shunn Formatting:
 	+ Preview: renders an accurate preview of the manuscript
 	+ HTML: export to compliant HTML file
     + Caveat: terrible syntax highlighting
-- [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)) - Linux
-  only
-	+ Edit: has focus and Hemingway modes!
-	+ Preview: renders an accurate preview of the manuscript
-    * Caveat: the interface is quiry
 
 ### … tools:
 
@@ -151,6 +146,9 @@ painful to use, IMHO.
   unmaintained. VSCodium/VSCode replaces this editor's look and feel.
 - [Marktext](https://github.com/marktext/marktext) - DEAD PROJECT. Once, a
   great, minimalistic writer's editor. Now unmaintained.
+- [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)) - Linux
+  only. Love the focus and Hemingway modes and accurate rendering, but it
+  crashes and freezes far too often.
 - [Firefox(https://www.firefox.com/en-US/) and derivatives, like [Zen](https://zen-browser.app/) and [LibreWolf](https://librewolf.net/) - Zen is actually my go-to browser, but the Firefox engine cannot render an accurate PDF for prose. (It works fine for poetry since the poetry manuscript rendering doesn't use @page margin headers.)
 
 
@@ -199,11 +197,10 @@ filename for a manuscript.
 
 ### Step 2 - Edit the markdown document
 
-Use any editor: [Joplin](https://joplinapp.org),
+Use any editor: [Joplin](https://joplinapp.org) (best experience),
 [VSCodium](https://vscodium.com/), [Ghostwriter](https://ghostwriter.kde.org/),
-[Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)), [Zed
-editor](https://zed.dev/), Xed, Vim, [Gnome Text
-Editor](https://gitlab.gnome.org/GNOME/gnome-text-editor), even Notepad if you
+[Zed editor](https://zed.dev/), [Vim](https://www.vim.org/) (experts only),
+[Gnome Text Editor](https://apps.gnome.org/TextEditor/), even Notepad if you
 like.
 
 - Open that markdown document (`lastname-storytitle.md` in our example) in your
@@ -213,8 +210,7 @@ like.
 
 ### Step 3 - Preview the manuscript
 
-- Method 1 - in-app: This can done natively with Joplin, VSCodium/VSCode, or
-  Apostrophe
+- Method 1 - in-app: This can done natively with Joplin, Ghostwriter, or VSCodium/VSCode
 - Method 2 - in-browser: This is done using a Chrome-based browser and the
   *Markdown Viewer* extension. Or by viewing an exported HTML document with the
   browser.
