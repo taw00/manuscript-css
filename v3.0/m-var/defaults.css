@@ -410,8 +410,8 @@
     --m-text-color-theme-dim:         var(--m-text-color-theme-default);
     --m-text-color-theme-dimmer:      var(--m-text-color-theme-default);
     --m-text-color-theme-dark:        var(--m-color-whitesmoke);
-    --m-text-color-theme-dark-amber:  hsl(45deg 100% 70%);
-    --m-text-color-theme-dark-yellow: hsl(60deg 100% 80%);
+    --m-text-color-theme-dark-amber:  hsl( 45deg 100% 70%);
+    --m-text-color-theme-dark-yellow: hsl( 60deg 100% 80%);
     --m-text-color-theme-dark-green:  hsl(120deg 100% 80%);
 
     /* the link color */
@@ -419,8 +419,8 @@
     --m-link-color-theme-dim:         var(--m-link-color-theme-default);
     --m-link-color-theme-dimmer:      var(--m-link-color-theme-default);
     --m-link-color-theme-dark:        hsl(180deg 100% 90%);
-    --m-link-color-theme-dark-amber:  hsl(45deg 100% 70%);
-    --m-link-color-theme-dark-yellow: hsl(60deg 100% 90%);
+    --m-link-color-theme-dark-amber:  hsl( 45deg 100% 70%);
+    --m-link-color-theme-dark-yellow: hsl( 60deg 100% 90%);
     --m-link-color-theme-dark-green:  hsl(120deg 100% 90%);
 
     /* the link:hover color */
@@ -428,17 +428,17 @@
     --m-link-hover-color-theme-dim:         var(--m-link-hover-color-theme-default);
     --m-link-hover-color-theme-dimmer:      var(--m-link-hover-color-theme-default);
     --m-link-hover-color-theme-dark:        var(--m-link-hover-color-theme-default);
-    --m-link-hover-color-theme-dark-amber:  hsl(45deg 100% 70%  / 80%);
-    --m-link-hover-color-theme-dark-yellow: hsl(60deg 100% 90%  / 80%);
+    --m-link-hover-color-theme-dark-amber:  hsl( 45deg 100% 70% / 80%);
+    --m-link-hover-color-theme-dark-yellow: hsl( 60deg 100% 90% / 80%);
     --m-link-hover-color-theme-dark-green:  hsl(120deg 100% 90% / 80%);
 
     /* the simulated page-break line color */
     --m-page-break-simulated-color-theme-default:     #33333320;
     --m-page-break-simulated-color-theme-dim:         var(--m-page-break-simulated-color-theme-default);
     --m-page-break-simulated-color-theme-dimmer:      var(--m-page-break-simulated-color-theme-default);
-    --m-page-break-simulated-color-theme-dark:        hsl(180deg 100% 90%);
-    --m-page-break-simulated-color-theme-dark-amber:  hsl(45deg 100% 70%  / 10%);
-    --m-page-break-simulated-color-theme-dark-yellow: hsl(60deg 100% 90%  / 10%);
+    --m-page-break-simulated-color-theme-dark:        hsl(180deg 100% 90% / 10%);
+    --m-page-break-simulated-color-theme-dark-amber:  hsl( 45deg 100% 70% / 10%);
+    --m-page-break-simulated-color-theme-dark-yellow: hsl( 60deg 100% 90% / 10%);
     --m-page-break-simulated-color-theme-dark-green:  hsl(120deg 100% 90% / 10%);
 
     /* the fuzzy virtual page from offset frame color */
