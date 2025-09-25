@@ -1,11 +1,12 @@
-# Write in a Text Editor; Export to Manuscript Format<br>—for Creative Writers<br>
+# Write in a Text Editor, Export to Manuscript Format<br>—for Creative Writers<br>
 
-> ### *Pure CSS stylesheets enabling industry standard manuscript formatting for Markdown or HTML*
+> ### *Pure CSS to render your Markdown or HTML documents into industry standard manuscript format.*
 
-Are you a writer? In particular, a writer of narrative works? Fiction,
-narrative nonfiction, memoir, etc? Do prefer the simplicity of drafting you
-work in a text or markdown editor? And do you wish to share your drafts in a
-professional manner without having to port your work to a word processor?
+Are you a writer? In particular, a writer of narrative works of fiction,
+narrative nonfiction, memoir, etc? Or a writer of poetry? Do prefer the
+simplicity of drafting you work in a text or markdown editor? And do you wish
+to share your drafts in a professional manner without having to port your work
+to a word processor?
 
 Now, you can stay in your favorite text editor and still have a means to
 present your work in a professional manner for review, critique, or whatever,
@@ -15,14 +16,16 @@ from working draft to finalized manuscript.
 
 ## HOWTO
 
-1. Download this repository
+*More detail can be found [here](#howto-in-more-detail)*
+
+1. Download this repository.
 2. Copy one of the templates from the [templates](./templates) folder that best
    matches your project—novel, short story, or poems—to a new
    [markdown](https://www.markdownguide.org/) file.  
    For example to "`mylastname-mystory.md`".
-3. Open that copied template in your favorite text editor and draft your novel, story, or poetry
-4. Export your work to HTML or PDF/Print: "`mylastname-mystory.html`"
-   or "`mylastname-mystory.pdf`".  
+3. Open that copied template in your favorite text editor and draft your novel,
+   story, or poetry.
+4. Export your work to PDF: "`mylastname-mystory.pdf`".  
    Note that the work is now in industry standard
    [short story](https://format.ms/story), [novel](https://format.ms/novel), or
    [poetry](https://format.ms/poetry) manuscript format.
@@ -34,7 +37,6 @@ from working draft to finalized manuscript.
    then port the project to `.docx` using LibreOffice, Google Docs, or MS Word.
    More information on some of the techniques to do that are listed later in
    this document.</small>
-- More detail can be found [here](#howto-in-more-detail)
 
 ---
 
