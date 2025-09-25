@@ -31,9 +31,14 @@ from working draft to finalized manuscript.
 >### NEWS - 2025-09-12 - Manuscript version 4.0 released
 >
 >- Automatically updated under the covers.
->- But … **breaking changes**.  
->  To use the older version, configure your markdown or html documents to use `manuscript-3.0.css` instead of `manuscript.css`.
->- What's new: (1) a major refactor and improvement across the board (much of which backported to 3.0), (2) **poetry manuscripts finally achieve compliance with the shunn.net manuscript spec**.
+>- But **there are breaking changes!**  
+>  To use the older version, configure your markdown or html documents to use
+>  `manuscript-3.0.css` instead of `manuscript.css`.
+>- What's new:
+>  1. **poetry manuscripts finally achieve compliance with the shunn.net
+>     manuscript spec**
+>  2. a major refactor and improvement across the board, much of which has been
+>     backported to 3.0
 
 </div>
 
