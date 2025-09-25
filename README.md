@@ -1,4 +1,4 @@
-# Write in a Text Editor, Export to Manuscript Format<br>—for Creative Writers<br>
+# Write in a Text Editor. Export to Manuscript Format.<br>—for Creative Writers<br>
 
 > ### *Pure CSS to render your Markdown or HTML documents into industry standard manuscript format.*
 
@@ -16,7 +16,7 @@ from working draft to finalized manuscript.
 
 ## HOWTO
 
-*More detail can be found [here](#howto-in-more-detail)*
+*More detail can be found [here](#howto---in-more-detail)*
 
 1. Download this repository.
 2. Copy one of the templates from the [templates](./templates) folder that best
