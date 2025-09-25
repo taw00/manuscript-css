@@ -13,7 +13,7 @@ from working draft to finalized manuscript.
 
 ---
 
-## HOWTO - a summary
+## HOWTO
 
 1. Download this repository
 2. Copy one of the templates from the [templates](./templates) folder that best
@@ -34,6 +34,7 @@ from working draft to finalized manuscript.
    then port the project to `.docx` using LibreOffice, Google Docs, or MS Word.
    More information on some of the techniques to do that are listed later in
    this document.</small>
+- More detail can be found [here](#howto-in-more-detail)
 
 ---
 
@@ -173,7 +174,8 @@ painful to use, IMHO.
   headers.)
 
 
-# TL;DR Just show me how to do it!
+
+# HOWTO - in more detail
 
 ## First, download this repository
 
