@@ -35,9 +35,9 @@ from working draft to finalized manuscript.
 >  To use the older version, configure your markdown or html documents to use
 >  `manuscript-3.0.css` instead of `manuscript.css`.
 >- What's new:
->  1. **poetry manuscripts finally achieve compliance with the shunn.net
+>   - **poetry manuscripts finally achieve compliance with the shunn.net
 >     manuscript spec**
->  2. a major refactor and improvement across the board, much of which has been
+>   - a major refactor and improvement across the board, much of which has been
 >     backported to 3.0
 
 </div>
