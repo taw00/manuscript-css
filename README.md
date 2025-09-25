@@ -149,7 +149,7 @@ painful to use, IMHO.
 - [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)) - Linux
   only. Love the focus and Hemingway modes and accurate rendering, but it
   crashes and freezes far too often.
-- [Firefox(https://www.firefox.com/en-US/) and derivatives, like [Zen](https://zen-browser.app/) and [LibreWolf](https://librewolf.net/) - Zen is actually my go-to browser, but the Firefox engine cannot render an accurate PDF for prose. (It works fine for poetry since the poetry manuscript rendering doesn't use @page margin headers.)
+- [Firefox](https://www.firefox.com/en-US/) and derivatives, like [Zen](https://zen-browser.app/) and [LibreWolf](https://librewolf.net/) - Zen is actually my go-to browser, but the Firefox engine cannot render an accurate PDF for prose. (It works fine for poetry since the poetry manuscript rendering doesn't use @page margin headers.)
 
 
 # TL;DR Just show me how to do it!
