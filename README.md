@@ -11,20 +11,31 @@ Now, you can stay in your favorite text editor and still have a means to
 present your work in a professional manner for review, critique, or whatever,
 from working draft to finalized manuscript.
 
-1. Copy one of the templates from the [templates](./templates) folder that best
+---
+
+## HOWTO - a summary
+
+1. Download this repository
+2. Copy one of the templates from the [templates](./templates) folder that best
    matches your project—novel, short story, or poems—to a new
-   [markdown](https://www.markdownguide.org/) file. For example to
-   "`mylastname-mystory.md`"
-2. Draft your novel, story, or poetry in your favorite text editor.
-3. Export your work to HTML or PDF/Print: "`mylastname-mystory.html`"
-   or "`mylastname-mystory.pdf`"
-4. Submit your work for review by friends, family, and your critique group with
-   a work in industry standard
-   [short story](https://format.ms/story),
-   [novel](https://format.ms/novel), or [poetry](https://format.ms/poetry)
-   manuscript format.
-5. Submit your work to publishers who accept manuscripts in PDF format.  
-   <small>Note: Some publishers (and nearly all traditional book publishers) insist on your work being submitted in `.docx` format. For that, use this process until you are absolutely ready to submit to such a publisher and then port the project to `.docx` using LibreOffice, Google Docs, or MS Word. More information on some of the techniques to do that are listed later in this document.</small>
+   [markdown](https://www.markdownguide.org/) file.  
+   For example to "`mylastname-mystory.md`".
+3. Open that copied template in your favorite text editor and draft your novel, story, or poetry
+4. Export your work to HTML or PDF/Print: "`mylastname-mystory.html`"
+   or "`mylastname-mystory.pdf`".  
+   Note that the work is now in industry standard
+   [short story](https://format.ms/story), [novel](https://format.ms/novel), or
+   [poetry](https://format.ms/poetry) manuscript format.
+5. Submit your work for review by friends, family, and your critique group.
+6. Submit your work to publishers who accept manuscripts in PDF format.  
+   <small>Note: Some publishers (and nearly all traditional book publishers)
+   insist on your work being submitted in `.docx` format. For that, use this
+   process until you are absolutely ready to submit to such a publisher and
+   then port the project to `.docx` using LibreOffice, Google Docs, or MS Word.
+   More information on some of the techniques to do that are listed later in
+   this document.</small>
+
+---
 
 <div class="newsbox">
 
