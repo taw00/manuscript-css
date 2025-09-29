@@ -11,10 +11,10 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css");
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-beta.css");
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
+    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
-    @import url("../../manuscript-local-beta.css");
+    @import url("../../manuscript-beta.css");
 
     :root {
         --m-marginalia: "Lastname / Short-form Prose / " counter(page);
