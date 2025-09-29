@@ -397,9 +397,9 @@
     --m-text-color-theme-dark-cyan:   hsl(180deg 100% 80%);
 
     /* the link color */
-    --m-link-color-theme-default:     var(--m-color-professional-blue2, #122b73ff);
-    --m-link-color-theme-dim:         var(--m-link-color-theme-default);
-    --m-link-color-theme-dimmer:      var(--m-link-color-theme-default);
+    --m-link-color-theme-default:     var(--m-color-professional-blue2);
+    --m-link-color-theme-dim:         hsl(225deg  50% 26%); /* above, but desaturated */
+    --m-link-color-theme-dimmer:      hsl(225deg  20% 26%); /* above, but desaturated */
     --m-link-color-theme-dark:        hsl(180deg 100% 90%);
     --m-link-color-theme-dark-amber:  hsl( 45deg 100% 70%);
     --m-link-color-theme-dark-yellow: hsl( 60deg 100% 90%);

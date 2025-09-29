@@ -196,7 +196,7 @@
     --m-color-cobalt-blue:        #0020c2ff;
     --m-color-union-blue:         #0d1e51ff;
     --m-color-professional-blue1: #02195cff;
-    --m-color-professional-blue2: #122b73ff;
+    --m-color-professional-blue2: hsl(225deg  73% 26%);;
     --m-color-professional-blue3: #4790A7ff;
     --m-color-professional-blue4: #53b7d7ff;
     --m-color-professional-blue5: #39ff;
