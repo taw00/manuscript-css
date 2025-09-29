@@ -19,18 +19,19 @@ from working draft to finalized manuscript.
 *More detail can be found [here](#howto---in-more-detail)*
 
 1. Download this repository.
-2. Copy one of the templates from the [templates](./templates) folder that best
-   matches your project—novel, short story, or poems—to a new
+2. Copy one of the [templates](./templates) that best matches your
+   project—novel, short story, or poems—to a new
    [markdown](https://www.markdownguide.org/) file.  
-   For example to "`mylastname-mystory.md`".
+   For example, perhaps `template-prose-short.md` to `mylastname-mystory.md`.
 3. Open that copied template in your favorite text editor and draft your novel,
-   story, or poetry.
-4. Export your work to PDF: "`mylastname-mystory.pdf`".  
+   story, or poetry. A short story in this example.
+4. Export your work to PDF. For example, `mylastname-mystory.pdf`.  
    Note that the work is now in industry standard
    [short story](https://format.ms/story), [novel](https://format.ms/novel), or
    [poetry](https://format.ms/poetry) manuscript format.
 5. Submit your work for review by friends, family, and your critique group.
-6. Submit your work to publishers who accept manuscripts in PDF format.  
+6. Revise revise revise …
+7. Submit your work to publishers who accept manuscripts in PDF format.  
    <small>Note: Some publishers (and nearly all traditional book publishers)
    insist on your work being submitted in `.docx` format. For that, use this
    process until you are absolutely ready to submit to such a publisher and
