@@ -54,7 +54,7 @@
          * classes and then #manuscript with center the content and set its own
          * spacing with the margin settings. This will very likely go away. */
         &.flip-margins-experiment {
-            padding: 0;
+            padding: 0.02px; /* otherwise margins collapse */
             & #manuscript {
                 width: 100%; max-width: var(--m-content-width);
                 margin-block: var(--m-page-margin);
