@@ -24,6 +24,7 @@
     --m-indent-narrative: var(--m-indentUS);
     --m-indent-foothang:  var(--m-indentUS);
     --m-page-margin: var(--m-page-marginUS);
+    --m-page-margin-min: 13vw; /* 13% of the viewport */
     --m-marginalia-margin: calc(var(--m-page-margin) * 1.333); /* looked good to my eye */
     &:has(#vpage:is(.US,.us,.letter)) {
         --m-page-margin: var(--m-page-marginUS);

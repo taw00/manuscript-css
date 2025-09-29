@@ -27,38 +27,38 @@
     }
     /* the virtual page — the paper */
     #vpage {
-        width: 100%; max-width: var(--m-page-width);
+        width: 96%; max-width: var(--m-page-width);
         min-height: var(--m-page-height);
         background-color: var(--m-paper-color);
         box-shadow: var(--m-vpage-frame);
         margin: var(--m-vpage-frame-margin);
-        /* We want the padding (page margin) to shrink on small screens */
-        /*padding: var(--m-page-margin);*/
-        padding: min(var(--m-page-margin),10vw) min(var(--m-page-margin),2vw);
 
+        /* We want the padding (page margin) to shrink on small screens */
+        padding: min(var(--m-page-margin),var(--m-page-margin-min)) min(var(--m-page-margin),var(--m-page-margin-min));
         /* the content container - the words and content, not the paper */
         & #manuscript {
             width: 100%; max-width: var(--m-content-width);
             border: var(--m-manuscript-border);
-            margin: auto;
+            margin-block: auto;
+            margin-inline: auto;
         }
 
-        /* experiment:
-         * Currently, I allow flipping the padding/margin settings that set the
-         * standard 1in margin around the content. The "flip" determins who,
-         * #vpage or #manuscript, governs the page margin. Honestly, if we
-         * think like a printer, the page margins should be controlled by the
-         * paper/page and not the content. That's what we have set now, #vpage
-         * being the virtual-page. If you want to flip it, add 'flip-margin' to
-         * the #vpage classes and then #manuscript with center the content and
-         * set its own spacing with the margin settings.
-         * Eventurally, this will likely go away. */
+        /* experiment: flipping the padding/margin settings that set the
+         * standard 1in margin around the content.
+         *
+         * The "flip" determines who, #vpage or #manuscript, governs the page
+         * margin. If we think like a printer, the page margins should be
+         * controlled by the paper/page and not the content. That's how it is
+         * set by default: #vpage being the virtual-page. If you want to flip
+         * this relationship, add 'flip-margins-experiment' to the #vpage
+         * classes and then #manuscript with center the content and set its own
+         * spacing with the margin settings. This will very likely go away. */
         &.flip-margins-experiment {
             padding: 0;
             & #manuscript {
-                /* the 95% keeps a small margin on small screens */
-                width: 95%; max-width: var(--m-content-width);
-                margin: var(--m-page-margin) auto;
+                width: 100%; max-width: var(--m-content-width);
+                margin-block: var(--m-page-margin);
+                margin-inline: auto;
             }
         }
     }
