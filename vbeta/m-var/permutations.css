@@ -160,13 +160,13 @@
 
 
     &:has(#manuscript:is(.text-only,.simple)) {
-        --m-offset-title: 0;
-        --m-offset-title-poem: 0;
+        --m-offset-title: 0 !important;
+        --m-offset-title-poem: 0 !important;
     }
     &:has(#manuscript:is(.text-only)) {
         --m-page-break: unset !important;
-        --m-page-break-simulated: 0px !important;
-        --m-manuscript-border: 0px !important;
+        --m-page-break-simulated: 0 !important;
+        --m-manuscript-border: 0 !important;
     }
 
 } /* end ":root"-LEVEL VARIABLES (before @media differientators) */
