@@ -190,15 +190,15 @@ painful to use, IMHO.
   ```
 
 - Via a browser:
-  1. browse to <https://github.com/taw00/manuscript-css/>
-  2. Click `Code` (big blue button) > `Download zip`
-  4. Unzip the `manuscript-css-main.zip` file.
-  5. Change that name to `manuscript-css` if you like.
-  6. `cd manuscript-css`
-  7. Recommend:  
-     If you own a webserver somewhere, stick this repo in your `/pub/`
-     directory so you can import it over the web. (Not a needed step if using
-     Joplin as your editor.)
+  - browse to <https://github.com/taw00/manuscript-css/>
+  - Click `Code` (big blue button) > `Download zip`
+  - Unzip the `manuscript-css-main.zip` file.
+  - Change that name to `manuscript-css` if you like.
+  - `cd manuscript-css`
+  - Recommend:  
+    If you own a webserver somewhere, stick this repo in your `/pub/`
+    directory so you can import it over the web. (Not a needed step if using
+    Joplin as your editor.)
 
 Check out the example manuscripts in this repository in their original markdown
 and then as PDFs. Use one of the [templates](./templates/) as a template for
