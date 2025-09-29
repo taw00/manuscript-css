@@ -62,7 +62,7 @@ spot.
     }
     .m-poem > .m-title-header {
         font-family: overpass, sans-serif !important;
-        max-width: 100% !important;
+        margin-inline: 0 !important;
     }
     .m-scene {
         margin-block-start: .5in !important;

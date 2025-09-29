@@ -53,8 +53,8 @@ spot.
     @import url("https://toddwarner.io/pub/css/tw-font-serif-crimson.css");
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     /*
-    @import url("../../manuscript-local.css");
-    @import url("../../manuscript-local-beta.css");
+    @import url("../../manuscript.css");
+    @import url("../../manuscript-beta.css");
     */
     h1 {
         font-size: 125% !important;
@@ -62,7 +62,7 @@ spot.
     }
     .m-poem > .m-title-header {
         font-family: overpass, sans-serif !important;
-        max-width: 100% !important;
+        margin-inline: 0 !important;
     }
     .m-scene {
         margin-block-start: .5in !important;
