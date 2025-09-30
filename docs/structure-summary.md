@@ -244,6 +244,6 @@ works with `manuscript.css` becomes obvious.
 
 Good luck. Now, quit fooling around on the internet and write something.
 
-Copyright (c) Todd Warner <t0dd@protonmail.com>
+Copyright (c) Todd Warner  
 This work is licensed under Attribution 4.0 International. To view a copy
 of this license, visit http://creativecommons.org/licenses/by/4.0/
