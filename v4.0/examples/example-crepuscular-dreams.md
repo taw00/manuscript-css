@@ -6,8 +6,8 @@ I wrote this in 2019. It's my favorite poem of mine. Hope you like it as
 well.
 
 In this, I used the manuscript CSS as a baseline to then modify the document
-for presentation, not submission. It's an example of a few things you can do
-if you are CSS-savvy.
+for presentation, not submission (I printed this out and framed it). It's an
+example of a few things you can do if you are CSS-savvy.
 
 Customizations:
 - The page
@@ -22,10 +22,9 @@ Customizations:
   - Enabled the 'simple' flag to get rid of the contact information, poem
     facts, and to move the title to the top of the page.
 - Title:
-  - increased the size and left-aligned it
+  - increased the size and left-aligned it (instead of centered)
   - changed font to Overpass (a sans-serif font often used for display
-    text). Notice, that I had to force the title header to be 100% of the
-    width (usually it is set narrower and centered).
+    text).
 - Footnotes!
   The first content block is an 'm-poem' class <section>. The second content
   block is an 'm-scene' class <section>. But I wanted the content to be
@@ -39,12 +38,27 @@ Customizations:
     work.
 
 A note about footnotes and lines that begin with a number and a period. For
-example our footnote begins with (2019) 2022. If that began with 2022, which in
-the original version of this, it did, you would have to escape that period
-using a backslash. I.e., it would be 2022\. instead. Why? Because markdown
-thinks a number. means you want an enumerated (ordered) list there and not a
-paragraph. Markdown is great, but sometimes it can catch you in an awkward
-spot.
+example our footnote begins with (2019) 2022. If that began with 2022 alone,
+which in the original version of this, it did, you would have to escape that
+period using a backslash. I.e., it would be 2022\. instead. Why? Because
+markdown thinks a number. means you want an enumerated (ordered) list there and
+not a paragraph. Markdown is great, but sometimes it can catch you in an
+awkward spot. An alternative solution is to replace 2022. with
+&ZeroWidthSpace;2022.
+
+A note about the nested styles in this example. I only did that because I
+really try to avoid adding !important after values in CSS. Being specific will
+generally override the specificity of the imported CSS. You can remove all of
+that expliciteness if you like and just add !important. I am very confortable
+with CSS, of course, and therefore, I like the more explicit, if busier,
+method. Here's an example of using !important and getting right of the nesting
+for h1:
+
+h1 {
+    font-size: 125% !important;
+    text-align: left !important;
+}
+
 -->
 
 
@@ -56,21 +70,23 @@ spot.
     @import url("../../manuscript.css");
     @import url("../../manuscript-beta.css");
     */
-    h1 {
-        font-size: 125% !important;
-        text-align: left !important;
-    }
-    .m-poem > .m-title-header {
-        font-family: overpass, sans-serif !important;
-        margin-inline: 0 !important;
-    }
-    .m-scene {
-        margin-block-start: .5in !important;
-        font-size: 60%;
+    #vpage > #manuscript {
+        & > .m-poem > .m-title-header {
+            font-family: overpass, sans-serif;
+            margin-inline: 0;
+            & > h1 {
+                font-size: 125%;
+                text-align: left;
+            }
+        }
+        & > .m-scene {
+            margin-block-start: .5in;
+            font-size: 60%;
+        }
     }
     :root {
       --m-fontstack-serif: "Crimson Text", serif;
-      --m-font-size: 14.5pt !important;
+      --m-font-size: 14.5pt;
       --m-content-width: calc(var(--m-page-width) * .73);
     }
 </style>
@@ -124,7 +140,7 @@ Dreamers wake and face the dawn.
 ```
 
 </section>
-<section class="m-scene foothang no-break" style="font-size: 60%; margin-block-start: .5in;">
+<section class="m-scene foothang no-break">
 
 Copyright © 2019 Todd Warner
 
