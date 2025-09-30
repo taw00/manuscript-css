@@ -546,6 +546,17 @@ how everything works with `manuscript.css` becomes obvious.
 
 Good luck. Now, quit fooling around on the internet and write something.
 
-Copyright (c) Todd Warner <t0dd@protonmail.com>  
+Copyright (c) Todd Warner <t0dd [at] protonmail [dot] com>  
 This work is licensed under Attribution 4.0 International. To view a copy of
 this license, visit <http://creativecommons.org/licenses/by/4.0/>.
+
+---
+
+#### Thanking me?
+
+Several people have asked how they could thank me for work that I have done
+that they found valueable. Well, one easy way to thank me is to "buy me a cup
+of coffee": <https://buymeacoff.ee/toddwarner> Or just send me an email (see
+above) and express your appreciation. Or star this on Github. Or whatever.
+
+Cheers!
