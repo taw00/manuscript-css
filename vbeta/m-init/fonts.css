@@ -276,28 +276,29 @@ html {
         line-height: var(--m-line-spacing);
     }
 
+    /* no-links
+     * If you want to disable links in your document */
+    &:is(.no-links,.disable-links) {
+        a,
+        a:is(:any-link,:link,:active,:visited,:hover) {
+            pointer-events: none;
+            cursor: default;
+            color: inherit;
+            text-decoration: unset;
+            border: unset;
+        }
+    }
+
 } /* end #manuscript */
 
 
-/* no-links */
-/* If you want to disable links in your document */
-#vpage:is(.no-links,.disable-links) #manuscript {
-    a,
-    a:is(:any-link,:link,:active,:visited,:hover) {
-        pointer-events: none;
-        cursor: default;
-        color: inherit;
-        text-decoration: unset;
-        border: unset;
-    }
-}
 
-/* no-links, no-links-pdf */
-/* If you want to disable links in your document: one option that
- * disables all links, and another option that only disables links in
- * an exported PDF */
 @media print {
-    #vpage:is(.no-links-pdf,.disable-links-pdf) #manuscript {
+    /* no-links, no-links-pdf
+     * If you want to disable links in your document: one option that
+     * disables all links, and another option that only disables links in
+     * an exported PDF */
+    #manuscript:is(.no-links-pdf,.disable-links-pdf) {
         a,
         a:is(:any-link,:link,:active,:visited,:hover) {
             pointer-events: none;
