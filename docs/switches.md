@@ -17,7 +17,7 @@ To turn these on, you add them to the class attribute of the vpage div:
 
 &ZeroWidthSpace;
 
-### Themed Preview Switches
+### Themed Preview `#vpage` Switches
 
 <dl>
     <dt>dim</dt>
@@ -46,7 +46,7 @@ To turn these on, you add them to the class attribute of the vpage div:
 
 &ZeroWidthSpace;
 
-### Papersizes and Orientation Switches
+### Papersizes and Orientation `#vpage` Switches
 
 <dl>
     <dt>US</dt>
@@ -63,6 +63,17 @@ To turn these on, you add them to the class attribute of the vpage div:
     <dd>(The default) Height is longer than width.</dd>
     <dt>landscape</dt>
     <dd>The reverse: width is longer than height.</dd>
+</dl>
+
+&ZeroWidthSpace;
+
+### Other `#vpage` Switches
+
+<dl>
+    <dt>no-links</dt>
+    <dd>Disable all links in the document. Both for the rendered version and print/PDF export.</dd>
+    <dt>no-links-pdf</dt>
+    <dd>Disable all links in the document, but only for the print/PDF export.</dd>
 </dl>
 
 &ZeroWidthSpace;
