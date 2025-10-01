@@ -67,17 +67,6 @@ To turn these on, you add them to the class attribute of the vpage div:
 
 &ZeroWidthSpace;
 
-### Other `#vpage` Switches
-
-<dl>
-    <dt>no-links</dt>
-    <dd>Disable all links in the document. Both for the rendered version and print/PDF export.</dd>
-    <dt>no-links-pdf</dt>
-    <dd>Disable all links in the document, but only for the print/PDF export.</dd>
-</dl>
-
-&ZeroWidthSpace;
-
 &ZeroWidthSpace;
 
 ## `#manuscript` switches - switches more associated to the document as a whole
@@ -91,7 +80,7 @@ article:
 
 &ZeroWidthSpace;
 
-### Prose Switches
+### Prose `#manuscript` Switches
 
 <dl>
     <dt>short</dt>
@@ -111,7 +100,7 @@ article:
 
 &ZeroWidthSpace;
 
-### Poetry Switches
+### Poetry `#manuscript` Switches
 
 <dl>
     <dt>poetry</dt>
@@ -123,7 +112,7 @@ article:
 
 &ZeroWidthSpace;
 
-### Simplification Switches
+### Simplification `#manuscript` Switches
 
 <dl>
     <dt>simple</dt>
@@ -139,6 +128,17 @@ article:
     <dt>no-30-</dt>
     <dd>(prose only) Strips out the ending -30- marker. (The End or ###
     etc.)</dd>
+</dl>
+
+&ZeroWidthSpace;
+
+### Other `#manuscript` Switches
+
+<dl>
+    <dt>no-links</dt>
+    <dd>Disable all links in the document. Both for the rendered version and print/PDF export.</dd>
+    <dt>no-links-pdf</dt>
+    <dd>Disable all links in the document, but only for the print/PDF export.</dd>
 </dl>
 
 &ZeroWidthSpace;
