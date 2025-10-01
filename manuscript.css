@@ -54,10 +54,10 @@
 
 @import                        url("./vcurrent/m-var.css?rev=2025092902");
 @import                      url("./vcurrent/m-reset.css?rev=2025091601");
-@import                       url("./vcurrent/m-init.css?rev=2025092801");
+@import                       url("./vcurrent/m-init.css?rev=2025093001");
 @import                       url("./vcurrent/m-core.css?rev=2025091601");
 
-@import url("./vcurrent/m-overrides-and-conveniences.css?rev=2025091601");
+@import url("./vcurrent/m-overrides-and-conveniences.css?rev=2025093001");
 @import        url("./manuscript-user-customizations.css?rev=2025091501");
 
 :root {
