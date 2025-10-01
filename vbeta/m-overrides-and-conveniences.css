@@ -15,7 +15,6 @@
  * no-indent - section will have text-indent unset
  * foothang - section will be full of hanging indented paragraphs
  *
- *
  * Copyright (c) Todd Warner
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
@@ -44,25 +43,26 @@
 
 /* .no-break ---------------------- */
 @media screen {
-/* unset the break if called to do so */
-#manuscript section.no-break {
-    border-block-start: unset !important;  /* simulated "break-before" */
-    border-block-end: unset !important;    /* simulated page-break aesthetic spacing */
-}
-/* poems add a aesthetic space at the end right before a simulated page-break
- * line from the next section. Let's remove that if that next section has a
- * 'no-break'. */
-#manuscript section.m-poem:has( + section.no-break) {
-    border-block-end: unset !important; /* simulated page-break aesthetic spacing */
-}
-}
+    /* unset the break if called to do so */
+    #manuscript section.no-break {
+        border-block-start: unset !important;  /* simulated "break-before" */
+        border-block-end: unset !important;    /* simulated page-break aesthetic spacing */
+    }
+    /* poems add a aesthetic space at the end right before a simulated page-break
+     * line from the next section. Let's remove that if that next section has a
+     * 'no-break'. */
+    #manuscript section.m-poem:has( + section.no-break) {
+        border-block-end: unset !important; /* simulated page-break aesthetic spacing */
+    }
+} /* end @media screen */
+
 @media print {
-/* unset the break if called to do so */
-#manuscript section.no-break {
-    break-before: unset !important;
-    break-after: unset !important;
-}
-}
+    /* unset the break if called to do so */
+    #manuscript section.no-break {
+        break-before: unset !important;
+        break-after: unset !important;
+    }
+} /* end @media print */
 
 /* no-indent ---------------------- */
 :is(article,section,div):not(.foothang).no-indent {
