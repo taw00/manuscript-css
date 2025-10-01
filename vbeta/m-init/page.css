@@ -34,7 +34,8 @@
         margin: var(--m-vpage-frame-margin);
 
         /* We want the padding (page margin) to shrink on small screens */
-        padding: min(var(--m-page-margin),var(--m-page-margin-min)) min(var(--m-page-margin),var(--m-page-margin-min));
+        padding: min(var(--m-page-margin),var(--m-page-margin-min))
+                 min(var(--m-page-margin),var(--m-page-margin-min));
         /* the content container - the words and content, not the paper */
         & #manuscript {
             width: 100%; max-width: var(--m-content-width);
@@ -61,7 +62,7 @@
                 margin-inline: auto;
             }
         }
-    }
+    } /* end #vpage */
 } /* end @media screen */
 
 
@@ -102,6 +103,6 @@
         &.bottom-right-marginalia {
             page: bottom-right-marginalia;
         }
-    }
-}
+    } /* end #vpage */
+} /* end @media print */
 
