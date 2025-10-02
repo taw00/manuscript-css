@@ -29,8 +29,8 @@
 
         /* CHAPTER: we page break going into a chapter,
         *           unless it follows a part */
-        & > .m-title-header ~ .m-chapter,
-        & section:not(.m-part) ~ .m-chapter,
+        & > .m-title-header + .m-chapter,
+        & section:not(.m-part) + .m-chapter,
 
         /* POEM: we page break going into a poem … always
          * see below */
@@ -38,8 +38,8 @@
         /* SCENES: page break going into a scene,
          *         but only if it follows a title page, book,
          *         or (see below) poem */
-        & > div.m-title-header ~ .m-scene,
-        & section.m-book:has( > .m-title-header) ~ .m-scene {
+        & > div.m-title-header + .m-scene,
+        & section.m-book:has( > .m-title-header) + .m-scene {
             border-block-start: var(--m-page-break-simulated);
         }
 
@@ -49,12 +49,12 @@
          */
 
         /* POEM: we page break going into a poem … always */
-        & .m-title-header ~ .m-poem,
-        & section ~ .m-poem,
+        & .m-title-header + .m-poem,
+        & section + .m-poem,
 
         /* SCENES: page break going into a scene,
          *         but only if it follows a poem */
-        & section.m-poem ~ .m-scene {
+        & section.m-poem + .m-scene {
             border-block-start: var(--m-page-break-simulated-long);
         }
 
@@ -62,10 +62,10 @@
          * using an offset from the top of the page-break simulation */
         & section.m-book:has( > .m-title-header),
         & section.m-part:has( > .m-title-header),
-        & > .m-title-header ~ .m-chapter:has( > .m-title-header),
-        & > .m-title-header ~ .m-chapter:has( > section.m-scene),
-        & section:not(.m-part) ~ .m-chapter:has( > .m-title-header),
-        & section:not(.m-part) ~ .m-chapter:has( > section.m-scene) {
+        & > .m-title-header + .m-chapter:has( > .m-title-header),
+        & > .m-title-header + .m-chapter:has( > section.m-scene),
+        & section:not(.m-part) + .m-chapter:has( > .m-title-header),
+        & section:not(.m-part) + .m-chapter:has( > section.m-scene) {
             /* Here we used padding in order to show the simulated page break
              * realistically. In the "print" section, use use margin
              * instead. */
@@ -89,6 +89,9 @@
         & > .m-title-header:has( ~ section),
         & section.m-book > .m-title-header:has( ~ section) {
             border-block-end: var(--m-page-break-simulated-end-spacing);
+        }
+        &:not(.long,.poetry) > .m-title-header:has( ~ section) {
+            border-block-end: 0;
         }
         & section.m-poem {
             border-block-end: var(--m-page-break-simulated-end-spacing-poem);
@@ -118,9 +121,9 @@
         & section.m-part,
 
         /* CHAPTER: we page break going into a chapter,
-        *           unless it follows a part */
-         & > .m-title-header ~ .m-chapter,
-        & section:not(.m-part,.m-poem) ~ .m-chapter,
+         *          unless it follows a part */
+        & > .m-title-header + .m-chapter,
+        & section:not(.m-part,.m-poem) + .m-chapter,
 
         /* POEM: we page break going into a poem … always
          * see below */
@@ -128,8 +131,8 @@
         /* SCENES: page break going into a scene,
          *         but only if it follows a title page, book,
          *         or (see below) poem */
-        & > div.m-title-header ~ .m-scene,
-        & section.m-book:has( > .m-title-header) ~ .m-scene {
+        & > div.m-title-header + .m-scene,
+        & section.m-book:has( > .m-title-header) + .m-scene {
             break-before: var(--m-page-break);
         }
 
@@ -139,12 +142,12 @@
          */
 
         /* POEM: we page break going into a poem … always */
-        & .m-title-header ~ .m-poem,
-        & section ~ .m-poem,
+        & .m-title-header + .m-poem,
+        & section + .m-poem,
 
         /* SCENES: page break going into a scene,
          *         but only if it follows a poem */
-        & section.m-poem ~ .m-scene {
+        & section.m-poem + .m-scene {
             break-before: page;
         }
 
