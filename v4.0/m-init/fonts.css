@@ -279,7 +279,8 @@ html {
     /* no-links, no-links-export
      * If you want to disable links in your document: one option disables all
      * links (no-links), and another only disables links in an exported PDF
-     * (no-links-export or no-links-pdf) */
+     * (no-links-export)
+     * Note, no-links-export rules defined in @media print section */
     &:is(.no-links,.disable-links) {
         a,
         a:is(:any-link,:link,:active,:visited,:hover) {
@@ -298,8 +299,8 @@ html {
 @media print {
     /* no-links, no-links-export
      * If you want to disable links in your document: one option disables all
-     * links (no-links), and another only disables links in an exported PDF
-     * (no-links-export or no-links-pdf) */
+     * (no-links-export)
+     * Note, no-links rules defined outside of @media print section above */
     #manuscript:is(.no-links-pdf,.disable-links-pdf,.no-links-export,.disable-links-export) {
         a,
         a:is(:any-link,:link,:active,:visited,:hover) {
