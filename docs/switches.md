@@ -96,6 +96,11 @@ article:
     <dt>nonnarrative</dt>
     <dd>Sans serif font (Aria, by default). Paragraphs are space separated and
     without indent.</dd>
+    <dt>unindent-first</dt>
+    <dd>Industry standard manuscript format says to indent the first paragraphs
+    of narrative work (after titles, scene breaks, etc). Published works tend
+    to drop this superlative indent. If you prefer your first paragraphs to be
+    un-indented, add this switch to the list.</dd>
 </dl>
 
 &ZeroWidthSpace;
@@ -198,7 +203,7 @@ Switches available to a scene beyond what has been mentioned previously.
     </dd>See above description.</dd>
     <dt>force-break-after</dt>
     </dd>See above description.</dd>
-    <dt>no-indent</dt>
+    <dt>unindent</dt>
     <dd>Remove paragraph indenting. This does not add between-paragraph spacing
     and it does not change the font to sans-serif. A 'nonnarrative' override
     does not exist yet. If you are need that functionality, just let me

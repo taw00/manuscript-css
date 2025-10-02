@@ -93,7 +93,7 @@
         --m-page-height:  var(--m-page-widthA6);
     }
 
-    &:has(#manuscript:is(.first-paragraph-indent-off)) {
+    &:has(#manuscript:is(.unindent-first)) {
         /* the indent for that first line of the first paragraph. I like it off
          * but that is not the standard for manuscript formatting.
          * (this distinction only apples to narrative works and the headers) */

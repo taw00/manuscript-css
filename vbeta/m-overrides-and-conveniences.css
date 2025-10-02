@@ -12,7 +12,7 @@
  * force-break-before - page-break before the element
  * force-break-after - page-break after the element
  * no-break - do not break before this element
- * no-indent - section will have text-indent unset
+ * unindent - section will have text-indent unset (no-indent can also be used)
  * foothang - section will be full of hanging indented paragraphs
  *
  * Copyright (c) Todd Warner
@@ -65,7 +65,7 @@
 } /* end @media print */
 
 /* no-indent ---------------------- */
-:is(article,section,div):not(.foothang).no-indent {
+:is(article,section,div):not(.foothang):is(.unindent,.no-indent) {
     & p,
     & dd,
     & li > p,
