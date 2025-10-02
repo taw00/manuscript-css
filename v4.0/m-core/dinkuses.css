@@ -6,7 +6,7 @@
  * - If article#manuscript.no-30- — no -30- at The End
  * - If article#manuscript section.m-scene.no-dinkus — no dinkus for that scene
  * - If article#manuscript section.m-scene section.m-subscenes.no-dinkuses -
- * - If article#manuscript section.m-scene ~ section:not(.m-scene) - no dinkus
+ * - If article#manuscript section.m-scene + section:not(.m-scene) - no dinkus
  * - If article#manuscript.poetry - no -30- since poetry collections don't use
  *      -30- markers for whatever reason.
  * - If section.m-poem - will not have a dinkus
@@ -42,7 +42,7 @@
         & section.m-scene:is(.hide-dinkus,.no-dinkus)::after,
         /* if the next section after a scene … is not a scene, remove the dinkus
          * (should this be display: none?) */
-        & section.m-scene:has( ~ section:not(.m-scene))::after {
+        & section.m-scene:has(+ section:not(.m-scene))::after {
             content: var(--m-marker-zws); /* &zerowidthspace */
         }
 
@@ -78,7 +78,7 @@
     &::after,
     & > h6,                              /* manually inserted top-level -30- */
     /*& > section:last-of-type::after,*/               /* auto-inserted -30- */
-    & section.m-scene:has(~ section.m-scene)::after, /* auto-inserted dinkus */
+    & section.m-scene:has(+ section.m-scene)::after, /* auto-inserted dinkus */
     & section.m-subscenes::before,                   /* auto-inserted dinkus */
     & section.m-subscenes::after,                    /* auto-inserted dinkus */
     & :not(section.m-scene) > h6 {         /* manually ins. between sections */
