@@ -303,6 +303,8 @@ html {
     #manuscript:is(.no-links-pdf,.disable-links-pdf,.no-links-export,.disable-links-export) {
         a,
         a:is(:any-link,:link,:active,:visited,:hover) {
+            /* bug! Chrome export to PDF honors neight pointer-events nor
+             * cursor */
             pointer-events: none;
             cursor: default;
             color: inherit;

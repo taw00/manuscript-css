@@ -143,7 +143,10 @@ article:
     <dt>no-links</dt>
     <dd>Disable all links in the document. Both for the rendered version and print/PDF export.</dd>
     <dt>no-links-export</dt>
-    <dd>Disable all links in the document, but only for the print/PDF export.</dd>
+    <dd>Disable all links in the document, but only for the print/PDF export.
+    (Bug alert! Chrome's export to PDF not honor our overrides to
+    `pointer-events` or `cursor` (CSS). And so, the link still functions within
+    the PDF. But at least it doesn't *look* like a link.)</dd>
 </dl>
 
 &ZeroWidthSpace;
