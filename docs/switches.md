@@ -137,7 +137,7 @@ article:
 <dl>
     <dt>no-links</dt>
     <dd>Disable all links in the document. Both for the rendered version and print/PDF export.</dd>
-    <dt>no-links-pdf</dt>
+    <dt>no-links-export</dt>
     <dd>Disable all links in the document, but only for the print/PDF export.</dd>
 </dl>
 
