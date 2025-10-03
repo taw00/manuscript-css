@@ -139,8 +139,17 @@ div#page > #article#manuscript > section.m-chapter {
         display: block;
         box-sizing: border-box;
     }
-    /* … remove dinkuses for scenes if they are last in any structure */
-    & section.m-scene:last-of-type::after {
+    /* … remove dinkuses for any section (:last of type only works on elements
+     *   and not classes or ids) if they are last in any structure
+    & section:last-of-type::after {
+        display: none;
+    }
+    Note, if we want to find :last-of-type of a class we could do something
+    like this: section.m-scene:not(:has(~ section.m-scene)) {
+    */
+    /* … remove dinkuses for the last visible section (.hide is declared in
+     *   m-overrides-and-conveniences.css */
+    section:not(.hide):not(:has(~ section:not(.hide)))::after {
         display: none;
     }
 
