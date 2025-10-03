@@ -36,6 +36,11 @@
 .hide {
     display: none !important;
 }
+/* … remove ::before and ::after for hidden things (dinkuses, spaces, etc.) */
+& section.hide::before,
+& section.hide::after {
+    display: none !important;
+}
 
 
 /* .break-before, .break-after, .no-break ----------------------
