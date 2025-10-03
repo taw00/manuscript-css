@@ -1,0 +1,15 @@
+/* .m-note positioning
+ * (div#vpage article#manuscript section:is(.m-scene,.m-poem,.x-poem) div.m-note) 
+ *
+ * Notes can exist in the body of a scene or poem and serve to stand out for
+ * editorial purposes. They are sans-serif, bordered, and their color is a bit
+ * different.
+ */
+
+div.m-note {
+    border: 2px yellow dashed;
+    background-color: black;
+    color: yellow;
+    padding: 8px;
+}
+

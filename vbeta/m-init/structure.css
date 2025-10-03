@@ -26,6 +26,7 @@ body,
 #manuscript .m-subscenes > *, /* this is still experimental */
 #manuscript .m-poem > *,
 #manuscript .x-poem > *,
+#manuscript .m-note > *,
 #manuscript .m-page-header > *,
 #manuscript .m-title-header > *,
 #manuscript .m-contact > *,
@@ -74,6 +75,7 @@ div#vpage > article#manuscript section.m-scene > :is(img, hr, ul, ol, dl, pre, t
 div#vpage > article#manuscript section.m-scene > :is(h1, h2, h3, h4, h5, blockquote, p),
 div#vpage > article#manuscript section.m-scene > :is(h6), /* a manual dinkus */
 div#vpage > article#manuscript section.m-scene > :is(div), /* we have to allow for custom styling */
+div#vpage > article#manuscript section.m-scene > :is(div.m-note),
 /* a subscenes can only contain scenes */
 div#vpage > article#manuscript section.m-subscenes > div.m-scene,
 /* a poem can contain a page header and a title header,
@@ -82,9 +84,11 @@ div#vpage > article#manuscript section.m-subscenes > div.m-scene,
 div#vpage > article#manuscript section.m-poem > div.m-page-header,
 div#vpage > article#manuscript section.m-poem > div.m-title-header,
 div#vpage > article#manuscript section.m-poem > pre,
+div#vpage > article#manuscript section.m-poem > div.m-note,
 /* an arbitrary poem can contain a title header and pre */
 div#vpage > article#manuscript div.x-poem > div.m-title-header,
 div#vpage > article#manuscript div.x-poem > pre,
+div#vpage > article#manuscript div.x-poem > div.m-note,
 /* a page header can only contain a contact or facts */
 div#vpage > article#manuscript div.m-page-header > div.m-contact,
 div#vpage > article#manuscript div.m-page-header > div.m-facts,
@@ -98,7 +102,7 @@ div#vpage > article#manuscript div.m-contact > p,
 /* We have some special cases because … meddling by markdown ediors … */
 div#vpage > article#manuscript section.m-scene > div.joplin-editable, /* special case */
 div#vpage > article#manuscript section.m-poem > div.joplin-editable,  /* special case */
-div#vpage > article#manuscript div.x-poem > div.joplin-editable {      /* special case */
+div#vpage > article#manuscript div.x-poem > div.joplin-editable {     /* special case */
     display: block;
     box-sizing: border-box;
 }
