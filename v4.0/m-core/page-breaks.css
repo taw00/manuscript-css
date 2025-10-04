@@ -104,10 +104,6 @@
  * PAGE BREAKS
  */
 @media print {
-    #vpage, #manuscript {
-        break-before: avoid-page !important;
-    }
-
     #manuscript {
         /*
          * page-breaks dependent on 'short' vs. 'long'
@@ -197,6 +193,8 @@
         }
 
 
+        /* avoid page break inside a note */
+        & .m-note,
         /* avoid page break inside a poem stanza */
         & .x-poem pre,
         & section.m-poem pre,
@@ -216,5 +214,10 @@
             break-inside: avoid-page !important;
         }
     } /* end #manuscript */
+
+    #vpage, #manuscript {
+        break-before: avoid-page !important;
+    }
+
 } /* end @media print */
 
