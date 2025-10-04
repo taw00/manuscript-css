@@ -29,26 +29,26 @@
 @media screen {
 
     :root {
+            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-default);
+            --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-default);
             --m-desktop-color:                           var(--m-desktop-color-theme-default);
             --m-paper-color:                               var(--m-paper-color-theme-default);
             --m-text-color:                                 var(--m-text-color-theme-default);
             --m-link-color:                                 var(--m-link-color-theme-default);
             --m-link-hover-color:                     var(--m-link-hover-color-theme-default);
-            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-default);
-            --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-default);
             --m-note-color:                                       var(--m-note-color-default);
             --m-note-text-color:                             var(--m-note-text-color-default);
             --m-note-frame-color:                           var(--m-note-frame-color-default);
             --m-note-link-color:                             var(--m-note-link-color-default);
             --m-note-link-hover-color:                 var(--m-note-link-hover-color-default);
         &:has(#vpage:is(.dim)) {
+            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dim);
+            --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dim);
             --m-desktop-color:                           var(--m-desktop-color-theme-dim);
             --m-paper-color:                               var(--m-paper-color-theme-dim);
             --m-text-color:                                 var(--m-text-color-theme-dim);
             --m-link-color:                                 var(--m-link-color-theme-dim);
             --m-link-hover-color:                     var(--m-link-hover-color-theme-dim);
-            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dim);
-            --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dim);
             --m-note-color:                                       var(--m-note-color-dim);
             --m-note-text-color:                             var(--m-note-text-color-dim);
             --m-note-frame-color:                           var(--m-note-frame-color-dim);
@@ -56,13 +56,13 @@
             --m-note-link-hover-color:                 var(--m-note-link-hover-color-dim);
         }
         &:has(#vpage:is(.dimmer)) {
+            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dimmer);
+            --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dimmer);
             --m-desktop-color:                           var(--m-desktop-color-theme-dimmer);
             --m-paper-color:                               var(--m-paper-color-theme-dimmer);
             --m-text-color:                                 var(--m-text-color-theme-dimmer);
             --m-link-color:                                 var(--m-link-color-theme-dimmer);
             --m-link-hover-color:                     var(--m-link-hover-color-theme-dimmer);
-            --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dimmer);
-            --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dimmer);
             --m-note-color:                                       var(--m-note-color-dimmer);
             --m-note-text-color:                             var(--m-note-text-color-dimmer);
             --m-note-frame-color:                           var(--m-note-frame-color-dimmer);
@@ -70,26 +70,26 @@
             --m-note-link-hover-color:                 var(--m-note-link-hover-color-dimmer);
         }
         &:has(#vpage:is(.dark)) {
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark);
                 --m-paper-color:                               var(--m-paper-color-theme-dark);
                 --m-text-color:                                 var(--m-text-color-theme-dark);
                 --m-link-color:                                 var(--m-link-color-theme-dark);
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark);
-                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark);
-                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark);
                 --m-note-color:                                       var(--m-note-color-dark);
                 --m-note-text-color:                             var(--m-note-text-color-dark);
                 --m-note-frame-color:                           var(--m-note-frame-color-dark);
                 --m-note-link-color:                             var(--m-note-link-color-dark);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark);
             &:has(#vpage:is(.amber)) {
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-amber);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-amber);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-amber);
                 --m-paper-color:                               var(--m-paper-color-theme-dark-amber);
                 --m-text-color:                                 var(--m-text-color-theme-dark-amber);
                 --m-link-color:                                 var(--m-link-color-theme-dark-amber);
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-amber);
-                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-amber);
-                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-amber);
                 --m-note-color:                                       var(--m-note-color-dark-amber);
                 --m-note-text-color:                             var(--m-note-text-color-dark-amber);
                 --m-note-frame-color:                           var(--m-note-frame-color-dark-amber);
@@ -97,13 +97,13 @@
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-amber);
             }
             &:has(#vpage:is(.yellow)) {
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-yellow);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-yellow);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-yellow);
                 --m-paper-color:                               var(--m-paper-color-theme-dark-yellow);
                 --m-text-color:                                 var(--m-text-color-theme-dark-yellow);
                 --m-link-color:                                 var(--m-link-color-theme-dark-yellow);
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-yellow);
-                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-yellow);
-                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-yellow);
                 --m-note-color:                                       var(--m-note-color-dark-yellow);
                 --m-note-text-color:                             var(--m-note-text-color-dark-yellow);
                 --m-note-frame-color:                           var(--m-note-frame-color-dark-yellow);
@@ -111,13 +111,13 @@
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-yellow);
             }
             &:has(#vpage:is(.green)) {
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-green);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-green);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-green);
                 --m-paper-color:                               var(--m-paper-color-theme-dark-green);
                 --m-text-color:                                 var(--m-text-color-theme-dark-green);
                 --m-link-color:                                 var(--m-link-color-theme-dark-green);
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-green);
-                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-green);
-                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-green);
                 --m-note-color:                                       var(--m-note-color-dark-green);
                 --m-note-text-color:                             var(--m-note-text-color-dark-green);
                 --m-note-frame-color:                           var(--m-note-frame-color-dark-green);
@@ -125,13 +125,13 @@
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-green);
             }
             &:has(#vpage:is(.blue)) {
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-blue);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-blue);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-blue);
                 --m-paper-color:                               var(--m-paper-color-theme-dark-blue);
                 --m-text-color:                                 var(--m-text-color-theme-dark-blue);
                 --m-link-color:                                 var(--m-link-color-theme-dark-blue);
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-blue);
-                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-blue);
-                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-blue);
                 --m-note-color:                                       var(--m-note-color-dark-blue);
                 --m-note-text-color:                             var(--m-note-text-color-dark-blue);
                 --m-note-frame-color:                           var(--m-note-frame-color-dark-blue);
@@ -139,13 +139,13 @@
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-blue);
             }
             &:has(#vpage:is(.pink)) {
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-pink);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-pink);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-pink);
                 --m-paper-color:                               var(--m-paper-color-theme-dark-pink);
                 --m-text-color:                                 var(--m-text-color-theme-dark-pink);
                 --m-link-color:                                 var(--m-link-color-theme-dark-pink);
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-pink);
-                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-pink);
-                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-pink);
                 --m-note-color:                                       var(--m-note-color-dark-pink);
                 --m-note-text-color:                             var(--m-note-text-color-dark-pink);
                 --m-note-frame-color:                           var(--m-note-frame-color-dark-pink);
@@ -153,13 +153,13 @@
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-pink);
             }
             &:has(#vpage:is(.purple)) {
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-purple);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-purple);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-purple);
                 --m-paper-color:                               var(--m-paper-color-theme-dark-purple);
                 --m-text-color:                                 var(--m-text-color-theme-dark-purple);
                 --m-link-color:                                 var(--m-link-color-theme-dark-purple);
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-purple);
-                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-purple);
-                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-purple);
                 --m-note-color:                                       var(--m-note-color-dark-purple);
                 --m-note-text-color:                             var(--m-note-text-color-dark-purple);
                 --m-note-frame-color:                           var(--m-note-frame-color-dark-purple);
@@ -167,13 +167,13 @@
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-purple);
             }
             &:has(#vpage:is(.red)) {
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-red);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-red);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-red);
                 --m-paper-color:                               var(--m-paper-color-theme-dark-red);
                 --m-text-color:                                 var(--m-text-color-theme-dark-red);
                 --m-link-color:                                 var(--m-link-color-theme-dark-red);
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-red);
-                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-red);
-                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-red);
                 --m-note-color:                                       var(--m-note-color-dark-red);
                 --m-note-text-color:                             var(--m-note-text-color-dark-red);
                 --m-note-frame-color:                           var(--m-note-frame-color-dark-red);
@@ -181,13 +181,13 @@
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-red);
             }
             &:has(#vpage:is(.cyan)) {
+                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-cyan);
+                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-cyan);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-cyan);
                 --m-paper-color:                               var(--m-paper-color-theme-dark-cyan);
                 --m-text-color:                                 var(--m-text-color-theme-dark-cyan);
                 --m-link-color:                                 var(--m-link-color-theme-dark-cyan);
                 --m-link-hover-color:                     var(--m-link-hover-color-theme-dark-cyan);
-                --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-cyan);
-                --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-cyan);
                 --m-note-color:                                       var(--m-note-color-dark-cyan);
                 --m-note-text-color:                             var(--m-note-text-color-dark-cyan);
                 --m-note-frame-color:                           var(--m-note-frame-color-dark-cyan);
@@ -217,13 +217,18 @@
 
 @media print {
     :root {
-        --m-paper-color: transparent;
-        --m-vpage-frame: 0;
+        --m-vpage-frame:        0;
         --m-vpage-frame-margin: 0;
-        --m-desktop-color: transparent;
-        --m-text-color: var(--m-text-color-theme-default);
-        --m-link-color: var(--m-link-color-theme-default);
-        --m-link-hover-color: var(--m-link-hover-color-theme-default);
+        --m-desktop-color:                                    transparent;
+        --m-paper-color:                                      transparent;
+        --m-text-color:                 var(--m-text-color-theme-default);
+        --m-link-color:                 var(--m-link-color-theme-default);
+        --m-link-hover-color:     var(--m-link-hover-color-theme-default);
+        --m-note-color:                       var(--m-note-color-default);
+        --m-note-text-color:             var(--m-note-text-color-default);
+        --m-note-frame-color:           var(--m-note-frame-color-default);
+        --m-note-link-color:             var(--m-note-link-color-default);
+        --m-note-link-hover-color: var(--m-note-link-hover-color-default);
     }
 } /* end @media print */
 
