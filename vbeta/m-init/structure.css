@@ -26,7 +26,6 @@ body,
 #manuscript .m-subscenes > *, /* this is still experimental */
 #manuscript .m-poem > *,
 #manuscript .x-poem > *,
-#manuscript .m-note > *,
 #manuscript .m-page-header > *,
 #manuscript .m-title-header > *,
 #manuscript .m-contact > *,
@@ -152,8 +151,11 @@ div#page > #article#manuscript > section.m-chapter {
     like this: section.m-scene:not(:has(~ section.m-scene)) {
     */
     /* … remove dinkuses for the last visible section (.hide is declared in
-     *   m-overrides-and-conveniences.css */
-    section:not(.hide):not(:has(~ section:not(.hide)))::after {
+     *   m-overrides-and-conveniences.css
+     *   Can also be written:
+     *      section:not(.hide):not(:has …)
+     *   but stylelint gripes */
+    section:not(.hide, :has(~ :is(section,div):not(.hide)))::after {
         display: none;
     }
 

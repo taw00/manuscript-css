@@ -1,9 +1,7 @@
-/* top-level contact and fact location management; verticle and horizontal
- * positioning on the page of nearly everything; page-breaks and simulated
- * page-breaks.
+/* top-level contact and fact management, mostly positioning and spacing
  *
- * Also included are white-space and overflow setting. I debate whether these
- * should go in the fonts.css stylesheet.
+ * Also included are some of the white-space and overflow settings. I debate
+ * whether these should go in the fonts.css stylesheet.
  *
  * Copyright (c) Todd Warner
  * This work is licensed under Attribution 4.0 International. To view a copy

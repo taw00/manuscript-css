@@ -1,4 +1,4 @@
-/* .m-scene positioning
+/* .m-scene (i.e., prose) - mostly positioning and spacing configuration
  * (div#vpage article#manuscript section.m-scene) 
  *
  * Scenes populate a prose manuscript. Crudely, it looks something like this:
@@ -57,7 +57,6 @@
                 /* a paragraph after a paragraph is indented (narrative) or not
                  * (nonnarrative) */
                 text-indent: var(--m-indent-scene);
-                margin-top: var(--m-paragraph-spacing-scene);
                 margin-block: var(--m-paragraph-spacing-scene) 0;
             }
             /* paragraphs - spacing between paragraphs in normal scenes
@@ -66,7 +65,6 @@
             & > :is(h1,h2,h3,h4,h5,h6),
             & :not(.x-poem,.m-title-header, ol,ul,dl,menu, li,dt,dd, table,thead,tbody,tfoot,th,tr,td,colgroup,col) {
                 & :is(h1,h2,h3,h4,h5,h6) {
-                    margin-top: var(--m-elbow-room);
                     margin-block-start: var(--m-elbow-room);
                 }
             }
@@ -134,12 +132,12 @@
          * Scene's last children are treated special-like
          */
 
-        /* all last elements within a scene: zero-out bottom spacing */
-        & > *:last-child {
+        /* last element within a scene: zero-out bottom spacing */
+        & > :last-child {
             margin-bottom: 0; padding-bottom: 0;
         }
-        /* all last elements within a scene: zero-out ::after content and spacing  */
-        & > *:last-child::after {
+        /* last element::after within a scene: zero-out content and spacing  */
+        & > :last-child::after {
             content: "";
             margin-top: 0; padding-top: 0;
             margin-bottom: 0; padding-bottom: 0;

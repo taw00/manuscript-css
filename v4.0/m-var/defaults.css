@@ -202,10 +202,22 @@
     --m-line-spacing-poetry:         var(--m-line-spacing-single);
     --m-text-transform-title-poetry: none; /*uppercase used to be the standard;*/
 
+    /*
+     * DEFAULTS - section 5 - baseline .m-note specific
+     */
+
+    --m-font-family-notes:           var(--m-fontstack-system);
+    --m-font-size-notes:             85%;
+    --m-line-spacing-notes:          var(--m-line-spacing-single);
+
+    --m-notes-display-default:        block; /* are notes displayed at all? */
+    --m-notes-export-display-default: block; /* are notes displayed in exports? */
+    --m-notes-jcloud-display-default: none;  /* are notes displayed in Joplin Cloud? */
+
     /* --------------------------------------------------------------------- */
 
     /*
-     * DEFAULTS - section 5 - setting the default for everything to
+     * DEFAULTS - section 6 - setting the default for everything to
      *                #vpage.US and #manuscript.narrative and #manuscript.short
      */
 
@@ -226,7 +238,7 @@
     /* --------------------------------------------------------------------- */
 
     /*
-     * DEFAULTS - section 6 - per-component font-size, font-weight,
+     * DEFAULTS - section 7 - per-component font-size, font-weight,
      *                        font-family, line-spacing, …
      *    Initially all are set to what was set above.
      *     - contact, header(s), facts, title/subtitle, byline
@@ -401,8 +413,8 @@
     --m-link-color-theme-dim:         hsl(225deg  50% 26%); /* above, but desaturated */
     --m-link-color-theme-dimmer:      hsl(225deg  20% 26%); /* above, but desaturated */
     --m-link-color-theme-dark:        hsl(180deg 100% 90%);
-    --m-link-color-theme-dark-amber:  hsl( 45deg 100% 70%);
-    --m-link-color-theme-dark-yellow: hsl( 60deg 100% 90%);
+    --m-link-color-theme-dark-amber:  hsl( 45deg 100% 90%);
+    --m-link-color-theme-dark-yellow: hsl( 60deg 100% 95%);
     --m-link-color-theme-dark-green:  hsl(120deg 100% 90%);
     --m-link-color-theme-dark-blue:   hsl(240deg 100% 90%);
     --m-link-color-theme-dark-pink:   hsl(300deg 100% 90%);
@@ -451,6 +463,70 @@
     --m-vpage-frame-color-theme-dark-purple: var(--m-vpage-frame-color-theme-default);
     --m-vpage-frame-color-theme-dark-red:    var(--m-vpage-frame-color-theme-default);
     --m-vpage-frame-color-theme-dark-cyan:   var(--m-vpage-frame-color-theme-default);
+
+    /* note colors */
+               --m-note-color-default:                         hsl(0deg 0 0 / 7%);
+          --m-note-text-color-default:                 var(--m-color-gray7pt5);
+         --m-note-frame-color-default:                     var(--m-link-color);
+          --m-note-link-color-default:                     var(--m-text-color);
+          --m-note-link-color-default:       var(--m-link-color-theme-default);
+    --m-note-link-hover-color-default: var(--m-link-hover-color-theme-default);
+               --m-note-color-dim:                      hsl(0deg 0 0 / 7%);
+          --m-note-text-color-dim:             var(--m-color-gray7pt5);
+         --m-note-frame-color-dim:        var(--m-note-text-color-dim);
+          --m-note-link-color-dim:       var(--m-link-color-theme-dim);
+    --m-note-link-hover-color-dim: var(--m-link-hover-color-theme-dim);
+               --m-note-color-dimmer:                        hsl(0deg 0 0 / 7%);
+          --m-note-text-color-dimmer:       var(--m-link-color-theme-dimmer);
+          --m-note-text-color-dimmer:                   var(--m-color-gray8);
+         --m-note-frame-color-dimmer:        var(--m-note-text-color-dimmer);
+          --m-note-link-color-dimmer:       var(--m-link-color-theme-dimmer);
+    --m-note-link-hover-color-dimmer: var(--m-link-hover-color-theme-dimmer);
+               --m-note-color-dark:                      hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark:       var(--m-link-color-theme-dark);
+         --m-note-frame-color-dark:        var(--m-note-text-color-dark);
+          --m-note-link-color-dark:       var(--m-text-color-theme-dark);
+    --m-note-link-hover-color-dark: var(--m-link-hover-color-theme-dark);
+               --m-note-color-dark-yellow:                             hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-yellow:       var(--m-link-color-theme-dark-yellow);
+         --m-note-frame-color-dark-yellow:        var(--m-note-text-color-dark-yellow);
+          --m-note-link-color-dark-yellow:       var(--m-text-color-theme-dark-yellow);
+    --m-note-link-hover-color-dark-yellow: var(--m-link-hover-color-theme-dark-yellow);
+               --m-note-color-dark-amber:                            hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-amber:       var(--m-link-color-theme-dark-amber);
+         --m-note-frame-color-dark-amber:        var(--m-note-text-color-dark-amber);
+          --m-note-link-color-dark-amber:       var(--m-text-color-theme-dark-amber);
+    --m-note-link-hover-color-dark-amber: var(--m-link-hover-color-theme-dark-amber);
+               --m-note-color-dark-green:                            hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-green:       var(--m-link-color-theme-dark-green);
+         --m-note-frame-color-dark-green:        var(--m-note-text-color-dark-green);
+          --m-note-link-color-dark-green:       var(--m-text-color-theme-dark-green);
+    --m-note-link-hover-color-dark-green: var(--m-link-hover-color-theme-dark-green);
+               --m-note-color-dark-purple:                             hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-purple:       var(--m-link-color-theme-dark-purple);
+         --m-note-frame-color-dark-purple:        var(--m-note-text-color-dark-purple); 
+          --m-note-link-color-dark-purple:       var(--m-text-color-theme-dark-purple);
+    --m-note-link-hover-color-dark-purple: var(--m-link-hover-color-theme-dark-purple);
+               --m-note-color-dark-blue:                           hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-blue:       var(--m-link-color-theme-dark-blue);
+         --m-note-frame-color-dark-blue:        var(--m-note-text-color-dark-blue); 
+          --m-note-link-color-dark-blue:       var(--m-text-color-theme-dark-blue);
+    --m-note-link-hover-color-dark-blue: var(--m-link-hover-color-theme-dark-blue);
+               --m-note-color-dark-pink:                           hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-pink:       var(--m-link-color-theme-dark-pink);
+         --m-note-frame-color-dark-pink:        var(--m-note-text-color-dark-pink); 
+          --m-note-link-color-dark-pink:       var(--m-text-color-theme-dark-pink);
+    --m-note-link-hover-color-dark-pink: var(--m-link-hover-color-theme-dark-pink);
+               --m-note-color-dark-red:                          hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-red:       var(--m-link-color-theme-dark-red);
+         --m-note-frame-color-dark-red:        var(--m-note-text-color-dark-red); 
+          --m-note-link-color-dark-red:       var(--m-text-color-theme-dark-red);
+    --m-note-link-hover-color-dark-red: var(--m-link-hover-color-theme-dark-red);
+               --m-note-color-dark-cyan:                           hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-cyan:       var(--m-link-color-theme-dark-cyan);
+         --m-note-frame-color-dark-cyan:        var(--m-note-text-color-dark-cyan); 
+          --m-note-link-color-dark-cyan:       var(--m-text-color-theme-dark-cyan);
+    --m-note-link-hover-color-dark-cyan: var(--m-link-hover-color-theme-dark-cyan);
 
 } /* end :root scoping */
 

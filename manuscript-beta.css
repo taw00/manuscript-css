@@ -2,6 +2,7 @@
  *
  * Use this CSS to format your markdown-drafted short story or novel into an
  * approximates of industry standard manuscript formatting.
+ *
  * This is useful for:
  * - sharing with others in a format they are familiar with
  * - submitting to critique groups in a professional way
@@ -13,34 +14,10 @@
  * - narrative and nonnarrative prose
  * - prose and poetry
  * - books, parts, chapters, and scenes/poems
- * - US Letter, A4, eta. for print and digital presentation.
+ * - US Letter, A4, etc. for print and digital presentation.
  *
- * Copyright (c) Todd Warner
- * This work is licensed under Attribution 4.0 International. To view a copy
- * of this license, visit http://creativecommons.org/licenses/by/4.0/
- *
- * The div #vpage class "switches":
- * - default: class="US portrait top-right-marginalia"
- *   If there is no classes are set, those are still the default.  
- *   Others available:
- *   - 'plain', 'vplain', 'vvplain' - these simplify the rendering by removing
- *     fancy things.
- *   - 'US', 'USh', 'A4', 'A5', or 'A6' paper sizes
- *   - 'top-left-marginalia', 'top-right-marginalia', 'top-center-marginalia',  
- *     'bottom-left-marginalia', 'bottom-center-marginalia', 'bottom-right-marginalia',  
- *     'no-marginalia' (if you don't want any header)
- *     and when you set a --m-marginalia variable in your <style> block
- *     it will appear in one of those. You can only use one of those switches.
- *
- * The article #manuscript class "switches":
- * - default: class="short narrative prose"  
- *   If there is no classes are set, those are still the default.  
- *   Others avaiable:
- *   - 'poetry' - if your work is … poetry
- *   - 'long' - if your work is long form prose
- *   - 'nonnarrative' - prose, but if your work is not a narrative work
- *   - 'simple' or 'text-only' - used to present a simplified version (no
- *     first-page metadata and simulated page breaks and such)
+ * At the minimum the opening of your markdown (text) document would import
+ * this manuscript.css stylesheet like this:
  *
  * <style
  *   @import url("url-or-path/to/the/manuscript.css");
@@ -49,6 +26,8 @@
  *   }
  * </style>
  *
+ * Please see the accompanying documentation and templates for further detail.
+ *
  * Copyright (c) Todd Warner
  * This work is licensed under Attribution 4.0 International. To view a copy
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
@@ -56,10 +35,10 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                        url("./vbeta/m-var.css?rev=2025100101");
+@import                        url("./vbeta/m-var.css?rev=2025100401");
 @import                      url("./vbeta/m-reset.css?rev=2025091601");
-@import                       url("./vbeta/m-init.css?rev=2025100301");
-@import                       url("./vbeta/m-core.css?rev=2025100101");
+@import                       url("./vbeta/m-init.css?rev=2025100401");
+@import                       url("./vbeta/m-core.css?rev=2025100401");
 
 @import url("./vbeta/m-overrides-and-conveniences.css?rev=2025100304");
 @import     url("./manuscript-user-customizations.css?rev=2025091501");

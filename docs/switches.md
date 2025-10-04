@@ -143,10 +143,26 @@ article:
     <dt>no-links</dt>
     <dd>Disable all links in the document. Both for the rendered version and print/PDF export.</dd>
     <dt>no-links-export</dt>
-    <dd>Disable all links in the document, but only for the print/PDF export.
+    <dd>Disable all links when exporting (print/PDF) the document.
     (Bug alert! Chrome's export to PDF not honor our overrides to
     `pointer-events` or `cursor` (CSS). And so, the link still functions within
     the PDF. But at least it doesn't *look* like a link.)</dd>
+    <dt>no-notes</dt>
+    <dd>All notes will be hidden (for all presentations of the document). (By
+    default, document notes are visible in preview and upon export, but not in
+    Joplin Cloud.)</dd>
+    <dt>show-notes</dt>
+    <dd>Force all notes to be visible.</dd>
+    <dt>no-notes-export</dt>
+    <dd>Notes will not be included with the exported (print/PDF) document.</dd>
+    <dt>show-notes-export (the default)</dt>
+    <dd>Notes will be included with the exported (print/PDF) document.</dd>
+    <dt>no-notes-jcloud (the default)</dt>
+    <dd>Notes will not be included when viewing the document via Joplin
+    Cloud</dd>
+    <dt>show-notes-jcloud</dt>
+    <dd>Notes will be included when viewing the document via Joplin
+    Cloud</dd>
 </dl>
 
 &ZeroWidthSpace;

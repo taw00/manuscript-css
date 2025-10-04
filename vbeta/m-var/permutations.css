@@ -21,11 +21,18 @@
     /* page-dimension-sensitive things: widths, margins, indentations */
     --m-page-width:  var(--m-page-widthUS);
     --m-page-height: var(--m-page-heightUS);
+
     --m-indent-narrative: var(--m-indentUS);
     --m-indent-foothang:  var(--m-indentUS);
+
     --m-page-margin: var(--m-page-marginUS);
     --m-page-margin-min: 13vw; /* 13% of the viewport */
     --m-marginalia-margin: calc(var(--m-page-margin) * 1.333); /* looked good to my eye */
+
+    --m-notes-display: var(--m-notes-display-default);
+    --m-notes-export-display: var(--m-notes-export-display-default);
+    --m-notes-jcloud-display: var(--m-notes-jcloud-display-default);
+
     &:has(#vpage:is(.US,.us,.letter)) {
         --m-page-margin: var(--m-page-marginUS);
         --m-indent-narrative: var(--m-indentUS);
@@ -158,7 +165,7 @@
         --m-font-weight-facts:  var(--m-font-weight-facts-long);
     }
 
-
+    /* simple and text-only */
     &:has(#manuscript:is(.text-only,.simple)) {
         --m-offset-title: 0 !important;
         --m-offset-title-poem: 0 !important;
@@ -167,6 +174,30 @@
         --m-page-break: unset !important;
         --m-page-break-simulated: 0 !important;
         --m-manuscript-border: 0 !important;
+    }
+
+    /* note visibility */
+    &:has(#manuscript:is(.show-notes)) {
+        --m-notes-display: block;
+        --m-notes-export-display: block;
+        --m-notes-jcloud-display: block;
+    }
+    &:has(#manuscript:is(.no-notes)) {
+        --m-notes-display: none;
+        --m-notes-export-display: none;
+        --m-notes-jcloud-display: none;
+    }
+    &:has(#manuscript:is(.show-notes-export)) {
+        --m-notes-export-display: block;
+    }
+    &:has(#manuscript:is(.no-notes-export)) {
+        --m-notes-export-display: none;
+    }
+    &:has(#manuscript:is(.show-notes-jcloud)) {
+        --m-notes-jcloud-display: block;
+    }
+    &:has(#manuscript:is(.no-notes-jcloud)) {
+        --m-notes-jcloud-display: none;
     }
 
 } /* end ":root"-LEVEL VARIABLES (before @media differientators) */
@@ -301,7 +332,7 @@
 #vpage {
     &:is(.long,.short,.prose,.poetry,.nonnarrative,.non-narrative,.simple,.text-only) {
         & #manuscript {
-            & > *:first-child::after {
+            & > :first-child::after {
                 box-sizing: border-box;
                 position: absolute;
                 top: 1in;
@@ -323,7 +354,7 @@
     }
     & #manuscript:is(.us,.US,.ush,.USh,.USH,.a4,.A4,.a5,.A5,.a6,.A6,
                      .dim,.dimmer,.dark,.darkamber,.darkyellow,.darkgreen) {
-        & > *:first-child::after {
+        & > :first-child::after {
             box-sizing: border-box;
             position: absolute;
             top: 1in;

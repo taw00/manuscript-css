@@ -34,8 +34,7 @@
         margin: var(--m-vpage-frame-margin);
 
         /* We want the padding (page margin) to shrink on small screens */
-        padding: min(var(--m-page-margin),var(--m-page-margin-min))
-                 min(var(--m-page-margin),var(--m-page-margin-min));
+        padding: min(var(--m-page-margin),var(--m-page-margin-min));
         /* the content container - the words and content, not the paper */
         & #manuscript {
             width: 100%; max-width: var(--m-content-width);
@@ -72,8 +71,21 @@
  * PRINT: rendering to PDF/paged-export
  */
 @media print {
-    html, body { width: 100%; max-width: 100%; border: 0; padding: 0; margin: 0; background-color: transparent; }
-    #vpage, #manuscript { width: 100%; max-width: 100%; padding: 0; margin: 0; box-shadow: unset; }
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+    }
+    #vpage, #manuscript {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        box-shadow: unset;
+    }
 
     /* print rendering - do not allow code scrollbars */
     #manuscript pre > code { overflow: hidden; }

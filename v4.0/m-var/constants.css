@@ -126,6 +126,7 @@
     --m-fontstack-courier: "Courier Prime", "Croscore Cousine", cousine, "TeX Gyre Cursor", "Liberation Mono", cumberland, "Courier Prime Code", "Courier New", courier, monospace;
     --m-fontstack-roboto-mono: "Roboto Mono", "Adwaita Mono", "Lucida Sans Typewriter", "Liberation Mono", monospace;
     --m-fontstack-noto-sans-mono: "Noto Sans Mono", "Lucida Sans Typewriter", "Liberation Mono", monospace;
+    --m-fontstack-system: "Public Sans", "Nunito Sans", "Open Sans", system-ui, "Adwaita Sans", inter, "Segoe UI", roboto, sans-serif;
 
     /* page breaks & simulated page breaks - short-form and long-form
      * Short form docs don't have any page breaks by default.
@@ -196,7 +197,7 @@
     --m-color-cobalt-blue:        #0020c2ff;
     --m-color-union-blue:         #0d1e51ff;
     --m-color-professional-blue1: #02195cff;
-    --m-color-professional-blue2: #122b73ff;
+    --m-color-professional-blue2: hsl(225deg  73% 26%);;
     --m-color-professional-blue3: #4790A7ff;
     --m-color-professional-blue4: #53b7d7ff;
     --m-color-professional-blue5: #39ff;

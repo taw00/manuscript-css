@@ -215,6 +215,11 @@ html {
             line-height: var(--m-line-spacing-poetry);
         }
     }
+    & :is(section,div) div.m-note {
+        font-family: var(--m-font-family-notes);
+        font-size:   var(--m-font-size-notes);
+        line-height: var(--m-line-spacing-notes);
+    }
 
 /*
  * #manuscript > *: baseline colors
