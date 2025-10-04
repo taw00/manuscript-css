@@ -230,7 +230,7 @@ html {
     background-color: transparent;
 
     & a,
-    & a:is(:any-link,:link,:active,:visited,:hover) {
+    & a:is(:any-link,:link,:active,:visited) {
         color: var(--m-link-color);
         text-decoration: unset;
         border: unset;
