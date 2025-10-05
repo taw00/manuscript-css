@@ -96,11 +96,26 @@ article:
     <dt>nonnarrative</dt>
     <dd>Sans serif font (Aria, by default). Paragraphs are space separated and
     without indent.</dd>
+    <dt>indent-first</dt>
+    <dd>Force the first paragraph of prose to be indented. (This is the default
+    behavior for narrative prose in manuscript-css.)</dd>
     <dt>unindent-first</dt>
-    <dd>Industry standard manuscript format says to indent the first paragraphs
-    of narrative work (after titles, scene breaks, etc). Published works tend
-    to drop this superlative indent. If you prefer your first paragraphs to be
-    un-indented, add this switch to the list.</dd>
+    <dd>Force the first paragraph of prose to be unindented. (Industry standard
+    manuscript format says to indent the first paragraphs of narrative
+    prose.)</dd>
+    <dt>indent-first-epigraph</dt>
+    <dd>Force the first paragraph on an epigraph to be indented.</dd>
+    <dt>unindent-first-epigraph</dt>
+    <dd>Force the first paragraph on an epigraph to be unindented. (This is the
+    default for narrative works in manuscript-css.)</dd>
+    <dt>space-paragraphs</dt>
+    <dd>Force nonnarrative-style paragraph spacing.</dd>
+    <dt>unspace-paragraphs</dt>
+    <dd>Force narrative-style paragraph spacing.</dd>
+    <dt>narrative-spacing</dt>
+    <dd>Force narrative-style indenting and paragraph spacing.</dd>
+    <dt>nonnarrative-spacing</dt>
+    <dd>Force nonnarrative-style indenting and paragraph spacing.</dd>
 </dl>
 
 &ZeroWidthSpace;

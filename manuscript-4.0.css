@@ -35,10 +35,10 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                        url("./v4.0/m-var.css?rev=2025100403");
+@import                        url("./v4.0/m-var.css?rev=2025100501");
 @import                      url("./v4.0/m-reset.css?rev=2025091601");
 @import                       url("./v4.0/m-init.css?rev=2025100402");
-@import                       url("./v4.0/m-core.css?rev=2025100403");
+@import                       url("./v4.0/m-core.css?rev=2025100501");
 
 @import url("./v4.0/m-overrides-and-conveniences.css?rev=2025100304");
 @import    url("./manuscript-user-customizations.css?rev=2025091501");

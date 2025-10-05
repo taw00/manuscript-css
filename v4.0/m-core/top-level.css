@@ -48,6 +48,10 @@
         text-align: var(--m-text-align);
     }
 
+    & :is(dd) {
+        margin-inline-start: var(--m-indent);
+    }
+
 
     /*
      * PARAGRAPH BASELINE RULES (p)
@@ -188,6 +192,15 @@
             max-width: min(var(--m-max-width-epigraph),100%);
             margin-block: var(--m-nudge) 0;
             margin-inline: auto;
+            & p {
+                text-indent: var(--m-indent-first-paragraph-epigraph);
+            }
+            & p ~ p {
+                /* a paragraph after a paragraph is either indented (narrative)
+                 * or not indented (nonnarrative) */
+                text-indent: var(--m-indent);
+                margin-block: var(--m-paragraph-spacing) 0;
+            }
         }
 
         /* explicityly no top and bottom margins for first and last */

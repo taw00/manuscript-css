@@ -100,38 +100,83 @@
         --m-page-height:  var(--m-page-widthA6);
     }
 
-    &:has(#manuscript:is(.unindent-first)) {
-        /* the indent for that first line of the first paragraph. I like it off
-         * but that is not the standard for manuscript formatting.
-         * (this distinction only apples to narrative works and the headers) */
-        --m-indent-narrative-first-paragraph: 0;
+    &:has(#vpage #manuscript:is(.space-paragraphs)) {
+        /* set paragraph spacing like a non-narrative work */
+        --m-paragraph-spacing: var(--m-paragraph-spacing-nonnarrative);
+        --m-spacing-poem: var(--m-spacing-poem-narrative);
+        --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
     }
-
-    &:has(#manuscript:not(:is(.nonnarrative,.non-narrative))) { /* i.e., narrative */
-        /* the default is already set for .narrative, but we are being explicit */
-        /* narrative paragraphs first not indented, then indented */
-        --m-indent: var(--m-indent-narrative);
-        --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
+    &:has(#vpage #manuscript:is(.unspace-paragraphs)) {
+        /* set paragraph spacing like a narrative work (no spacing) */
         --m-paragraph-spacing: var(--m-paragraph-spacing-narrative);
         --m-spacing-poem: var(--m-spacing-poem-narrative);
         --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
-        /* need to reset font-family for most everything */
+    }
+    &:has(#vpage #manuscript:is(.unindent-first)) {
+        /* remove indent for that first line of the first paragraph. Not the
+         * standard for narrative manuscript formatting. */
+        --m-indent-narrative-first-paragraph: 0;
+        --m-indent-nonnarrative-first-paragraph: 0;
+        --m-indent-first-paragraph: 0;
+    }
+    &:has(div#vpage #manuscript:is(.unindent-first-epigraph)) {
+        /* remove indent for that first line of the first paragraph of an
+         * epigraph. Not the standard for narrative manuscript formatting, but
+         * it is what we prefer and is the default behavior. */
+        /* div added to git specificity nudge */
+        --m-indent-narrative-first-paragraph-epigraph: 0;
+        --m-indent-nonnarrative-first-paragraph-epigraph: 0;
+    }
+
+    &:has(#vpage #manuscript.indent-first) {
+        /* enforce indent for that first line of the first paragraph which is
+         * the standard narrative manuscript formatting. */
+        --m-indent-narrative-first-paragraph: var(--m-indent-narrative);
+        --m-indent-first-paragraph: var(--m-indent-narrative);
+    }
+    &:has(div#vpage #manuscript.indent-first-epigraph) {
+        /* enforce indent for that first line of the first paragraph of an
+         * epigraph which is the standard narrative manuscript formatting, but
+         * not what we prefer and not the default or manuscript-css. */
+        /* div added to git specificity nudge */
+        --m-indent-narrative-first-paragraph-epigraph: var(--m-indent-narrative);
+        --m-indent-first-paragraph-epigraph: var(--m-indent-narrative);
+    }
+
+    &:has(#manuscript:not(:is(.nonnarrative,.non-narrative))) { /* i.e., narrative */
+        /* narrative fonts */
         --m-font-family: var(--m-font-family-narrative);
         --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
         --m-font-family-code: var(--m-font-family-narrative-code);
     }
+    &:has(#vpage #manuscript.narrative-spacing),
+    &:has(#manuscript:not(:is(.nonnarrative,.non-narrative))) { /* i.e., narrative */
+        /* narrative indenting & spacing */
+        /* narrative paragraphs are indented */
+        /* the default is already set for .narrative, but we are being explicit */
+        --m-indent: var(--m-indent-narrative);
+        --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
+        --m-indent-first-paragraph-epigraph: var(--m-indent-narrative-first-paragraph-epigraph);
+        --m-paragraph-spacing: var(--m-paragraph-spacing-narrative);
+        --m-spacing-poem: var(--m-spacing-poem-narrative);
+        --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
+    }
 
     &:has(#manuscript:is(.nonnarrative,.non-narrative)) {
-        /* nonnarrative paragraphs are space-seperated and not indented */
-        --m-indent: var(--m-indent-nonnarrative);
-        --m-indent-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
-        --m-paragraph-spacing: var(--m-paragraph-spacing-nonnarrative);
-        --m-spacing-poem: var(--m-spacing-poem-nonnarrative);
-        --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
-        /* need to reset font-family for most everything */
+        /* nonnarrative fonts */
         --m-font-family: var(--m-font-family-nonnarrative);
         --m-font-family-preformatted: var(--m-font-family-nonnarrative-preformatted);
         --m-font-family-code: var(--m-font-family-nonnarrative-code);
+    }
+    &:has(#manuscript:is(.nonnarrative,.non-narrative,.nonnarrative-spacing)) {
+        /* nonnarrative indenting & spacing */
+        /* nonnarrative paragraphs are space-seperated and not indented */
+        --m-indent: var(--m-indent-nonnarrative);
+        --m-indent-first-paragraph: var(--m-indent-nonnarrative-first-paragraph);
+        --m-indent-first-paragraph-epigraph: var(--m-indent-nonnarrative-first-paragraph-epigraph);
+        --m-paragraph-spacing: var(--m-paragraph-spacing-nonnarrative);
+        --m-spacing-poem: var(--m-spacing-poem-nonnarrative);
+        --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
     }
 
     &:has(#manuscript:not(.long,.poetry)) { /* short, the default, but let's be explicit */
