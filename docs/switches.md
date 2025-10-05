@@ -233,9 +233,9 @@ Switches available to a scene beyond what has been mentioned previously.
 <dl>
     <dt>no-break</dt>
     </dd>See above description.</dd>
-    <dt>force-break-before</dt>
+    <dt>break-before</dt>
     </dd>See above description.</dd>
-    <dt>force-break-after</dt>
+    <dt>break-after</dt>
     </dd>See above description.</dd>
     <dt>unindent</dt>
     <dd>Remove paragraph indenting. This does not add between-paragraph spacing
@@ -275,9 +275,9 @@ prose-oriented switches can have an effect.
 <dl>
     <dt>no-break</dt>
     </dd>See above description.</dd>
-    <dt>force-break-before</dt>
+    <dt>break-before</dt>
     </dd>See above description.</dd>
-    <dt>force-break-after</dt>
+    <dt>break-after</dt>
     </dd>See above description.</dd>
 </dl>
 

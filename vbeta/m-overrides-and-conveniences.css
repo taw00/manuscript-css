@@ -9,8 +9,8 @@
  *
  * center-max-content,
  * table-of-contents, .toc - these center based on max-content
- * force-break-before - page-break before the element
- * force-break-after - page-break after the element
+ * break-before - page-break before the element
+ * break-after - page-break after the element
  * no-break - do not break before this element
  * unindent - section will have text-indent unset (no-indent can also be used)
  * foothang - section will be full of hanging indented paragraphs
