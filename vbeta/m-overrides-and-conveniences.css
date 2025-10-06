@@ -43,11 +43,11 @@
 @media screen {
     /* .break-before ------------ */
     .break-before, .force-break-before {
-        border-block-start: var(--m-page-break-simulated) !important;
+        border-block-start: var(--m-page-break-simulated-long) !important;
     }
     /* .break-after ------------- */
     .break-after, .force-break-after {
-        border-block-end: var(--m-page-break-simulated-end-spacing) !important;
+        border-block-end: var(--m-page-break-simulated-end-spacing-long) !important;
     }
     #manuscript section.m-poem:is(.break-after, .force-break-after) {
         border-block-end: var(--m-page-break-simulated-end-spacing-poem) !important;
