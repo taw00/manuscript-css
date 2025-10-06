@@ -18,6 +18,9 @@ html {
     font-style:  var(--m-font-style);
     font-weight: var(--m-font-weight);
     font-family: var(--m-font-family);
+    & :is(p,h1,h2,h3,h4,h5,h6,dt,dd,li) sup {
+        font-size: 55%;
+    }
 }
 
 #manuscript {
