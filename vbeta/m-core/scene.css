@@ -52,13 +52,17 @@
             & dt > dd {
                 text-indent: 0;
             }
-            & p ~ p,
-            & dd ~ dd {
+            & p + p,
+            & dd + dd {
                 /* a paragraph after a paragraph is indented (narrative) or not
                  * (nonnarrative) */
                 text-indent: var(--m-indent-scene);
+            }
+            & :is(p,h1,h2,h3,h4,h5,h6) + :is(p,h1,h2,h3,h4,h5,h6),
+            & dd + dd {
                 margin-block: var(--m-paragraph-spacing-scene) 0;
             }
+
             /* paragraphs - spacing between paragraphs in normal scenes
              *              indents at the start
              * Note, the exclusions are pedantic. */
@@ -78,22 +82,22 @@
         /* ... subscenes: subscenes spacing BEFORE subscenes block */
         & > :not(div,section,article,h1,h2,h3,h4,h5,h6) ~ section.m-subscenes::before {
             content: var(--m-marker-zws); /* &zerowidthspace */
-            margin-top: 2rem;
+            margin-block-start: 2rem;
         }
         /* ... subscenes: subscenes spacing AFTER subscenes block */
         & section.m-subscenes::after {
             content: var(--m-marker-zws); /* &zerowidthspace */
-            margin-bottom: 2rem;
+            margin-block-end: 2rem;
         }
 
         & > section.m-subscenes:first-child,
         & section.m-subscenes {
             & > section.m-scene:first-child {
-                padding-top: 0;
+                padding-block-start: 0;
             }
             & > section.m-scene:last-child {
-                margin-bottom: 0;
-                padding-bottom: 0;
+                margin-block-end: 0;
+                padding-block-end: 0;
             }
         }
 
@@ -104,8 +108,8 @@
         & > .m-title-header {
             /* prose content - there may be a small margin (non-narrative)
              * between prose content and a scene's header block if it exists */
-            & ~ * {
-                padding-top: var(--m-paragraph-spacing-scene);
+            & + * {
+                padding-block-start: var(--m-paragraph-spacing-scene);
             }
             /* all header content starts as centered and with no spacing */
             & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
@@ -118,11 +122,9 @@
                 & > p {
                     text-indent: unset;
                     text-align: center;
-                    margin-top: 0;
                     margin-block-start: 0;
                 }
-                & > p ~ p {
-                    margin-top: var(--m-paragraph-spacing-scene);
+                & > p + p {
                     margin-block-start: var(--m-paragraph-spacing-scene);
                 }
             }
@@ -134,13 +136,12 @@
 
         /* last element within a scene: zero-out bottom spacing */
         & > :last-child {
-            margin-bottom: 0; padding-bottom: 0;
+            margin-block-end: 0; padding-block-end: 0;
         }
         /* last element::after within a scene: zero-out content and spacing  */
         & > :last-child::after {
             content: "";
-            margin-top: 0; padding-top: 0;
-            margin-bottom: 0; padding-bottom: 0;
+            margin-block: 0; padding-block: 0;
         }
     } /* end #manuscript section.m-scene */
 
