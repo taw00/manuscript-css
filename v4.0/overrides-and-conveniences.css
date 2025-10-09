@@ -38,6 +38,41 @@
 }
 
 
+#vpage #manuscript {
+    table {
+        border-color: var(m-text-color);
+        border-collapse: collapse;
+        margin-inline: auto;
+        margin-block: 1rem;
+        width: 100%;
+        opacity: unset;
+        filter: unset;
+        background: unset;
+        background-color: transparent;
+        thead, tbody, tfoot, th, tr, td, colgroup, col {
+            font-size: inherit;
+            font-weight: inherit;
+            font-style: inherit;
+            line-height: 1.25;
+            text-align: start;
+            text-indent: 0;
+            color: inherit;
+            background: unset;
+            background-color: transparent;
+            margin: unset;
+            padding: unset;
+            border-color: var(m-text-color);
+        }
+        th, td {
+            padding: 5px;
+        }
+        th {
+            Xfont-weight: bolder;
+        }
+    }
+}
+
+
 /* .break-before, .break-after, .no-break ----------------------
  * .no-break should win if both are used  ---------------------- */
 @media screen {
