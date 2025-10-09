@@ -40,7 +40,7 @@
 
 #vpage #manuscript {
     table {
-        border-color: var(m-text-color);
+        border-color: var(--m-text-color);
         border-collapse: collapse;
         margin-inline: auto;
         margin-block: 1rem;
@@ -61,7 +61,7 @@
             background-color: transparent;
             margin: unset;
             padding: unset;
-            border-color: var(m-text-color);
+            border-color: var(--m-text-color);
         }
         th, td {
             padding: 5px;
