@@ -63,7 +63,38 @@ To turn these on, you add them to the class attribute of the vpage div:
     <dd>(The default) Height is longer than width.</dd>
     <dt>landscape</dt>
     <dd>The reverse: width is longer than height.</dd>
+    <dt>—marginalia (lastname / story title / page-number) switches—</dt>
+    <dt>no-marginalia</dt>
+    <dd>Turns off marginalia. (The default if the `poetry` class is set for `#manuscript` (see below).)</dd>
+    <dt>no-marginalia</dt>
+    <dd>Turns off page marginalia.</dd>
+    <dt>top-right-marginalia</dt>
+    <dd>Margin header will be set to appear at the top right corner of the page. This is the default for prose.</dd>
+    <dt>top-left-marginalia</dt>
+    <dd>Margin header will be set to appear at the top left corner of the page.</dd>
+    <dt>top-center-marginalia</dt>
+    <dd>Margin header will be set to appear at the top center of the page.</dd>
+    <dt>bottom-right-marginalia</dt>
+    <dd>Margin header will be set to appear at the bottom right corner of the page.</dd>
+    <dt>bottom-left-marginalia</dt>
+    <dd>Margin header will be set to appear at the bottom left corner of the page.</dd>
+    <dt>bottom-center-marginalia</dt>
+    <dd>Margin header will be set to appear at the bottom center of the page.</dd>
 </dl>
+
+### Configuring the content of the margin header
+
+If your document is a prose work (not poetry), and you have switched of
+marginalia via adding the `no-marginalia` class to the `#vpage` block
+declaration, then this needs to be added within the `<style> … </style>` block
+at the top of your document. Replace Lastname with your last name, of course,
+and Story Title with the title of your story. If the title of your story is
+long, the Story Title in this template is expecte to be truncated or shortened
+in some manner.
+
+```css
+    --m-marginalia: "Lastname / Story Title / " counter(page);
+```
 
 &ZeroWidthSpace;
 
@@ -73,8 +104,9 @@ To turn these on, you add them to the class attribute of the vpage div:
 
 To turn these on, you add them to the class attribute of the manuscript
 article:
+
 ```html
-<div id="vpage" class="US dark">
+<div id="vpage">
 <article id="manuscript" class="add-switch-here and-here-is-another-one">
 ```
 
