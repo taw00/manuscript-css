@@ -35,10 +35,10 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                        url("./vcurrent/var.css?rev=2025100501");
+@import                        url("./vcurrent/var.css?rev=2025101201");
 @import                      url("./vcurrent/reset.css?rev=2025091601");
 @import                       url("./vcurrent/init.css?rev=2025100602");
-@import                       url("./vcurrent/core.css?rev=2025100601");
+@import                       url("./vcurrent/core.css?rev=2025101201");
 
 @import url("./vcurrent/overrides-and-conveniences.css?rev=2025100902");
 @import        url("./manuscript-user-customizations.css?rev=2025091501");

@@ -224,7 +224,7 @@
              * if #manuscript.short: absolute; 0 0 auto auto; unset */
             position: var(--m-position-facts);
             inset: var(--m-top-facts) var(--m-right-facts) auto auto;
-            margin-block: var(--m-margin-facts-verticle);
+            margin-block: var(--m-margin-facts-vertical);
             margin-inline: var(--m-margin-facts-horizontal);
             & p {
                 /* if #manuscript.long: center
