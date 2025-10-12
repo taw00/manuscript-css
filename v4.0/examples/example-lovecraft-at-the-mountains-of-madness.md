@@ -23,7 +23,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
-    @import url("../../manuscript.css");
+    @import url("../manuscript.css");
     .centered-poem pre { text-align: center; }
     :root {
         --m-marginalia: "Lovecraft / Mountains of Madness / " counter(page);
