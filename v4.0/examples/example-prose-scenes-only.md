@@ -14,14 +14,14 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
-    @import url("../../manuscript.css");
+    @import url("../manuscript.css");
     :root {
         --m-30-: "• • •";
-        --m-marginalia: "Firstname Lastname / Prose, Scenes Only / " counter(page);
+        --m-marginalia: "Penlastname / Prose, Scenes Only / " counter(page);
     }
 </style>
 
-<div id="vpage">
+<div id="vpage" class="no-marginalia">
 <article id="manuscript">
 
 

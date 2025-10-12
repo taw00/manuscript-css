@@ -18,10 +18,10 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
-    @import url("../../manuscript.css");
+    @import url("../manuscript.css");
 
     :root {
-        --m-marginalia: "Lastname / Short Prose, Simplified / " counter(page);
+        --m-marginalia: "Penlastname / Short Prose, Simplified / " counter(page);
     }
 </style>
 
@@ -62,7 +62,7 @@ firstname.lastname@example.com
 
 ## Simplifying a manuscript is typical for informal casual presentation
 
-### by Author Name
+### by Penfirstname Penlastname
 
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
 > Some stories, parts, chapters, and even scenes will kick off with an epigraph.

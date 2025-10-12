@@ -11,7 +11,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
-    @import url("../../manuscript.css");
+    @import url("../manuscript.css");
 
     /* Examples of overloading some CSS variables. Uncomment the font-weight
        variable to flip the title to bold. Uncomment the other to turn off the
@@ -22,7 +22,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
         --m-font-weight-title: bold;
         --m-page-break-simulated-long: 0;
         */
-        --m-marginalia: "Lastname / Long-form Prose / " counter(page);
+        --m-marginalia: "Penlastname / Long-form Prose / " counter(page);
     }
 </style>
 
@@ -63,7 +63,7 @@ firstname.lastname@example.com
 
 ## A Compliant Manuscript with Chapters and Scenes
 
-### by Author Name
+### by Penfirstname Penlastname
 
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
 > Some stories, parts, chapters, and even scenes will kick off with an epigraph.

@@ -217,7 +217,7 @@
     --m-color-eggplant-darker:  #0f0a0fff;
 
     /* for the page 2+ headers */
-    --m-marginalia: "Lastname / Story Title / " counter(page);
+    --m-marginalia: "Penlastname / Story Title / " counter(page);
 
     /* FOR DEBUGGING:
      * Decorative border (screen rendering only) - DISABLED FOR NOW

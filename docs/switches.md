@@ -87,13 +87,18 @@ To turn these on, you add them to the class attribute of the vpage div:
 If your document is a prose work (not poetry), and you have switched of
 marginalia via adding the `no-marginalia` class to the `#vpage` block
 declaration, then this needs to be added within the `<style> … </style>` block
-at the top of your document. Replace Lastname with your last name, of course,
-and Story Title with the title of your story. If the title of your story is
-long, the Story Title in this template is expecte to be truncated or shortened
-in some manner.
+at the top of your document. Replace Penlastname with your author last name, of
+course, and Story Title with the title of your story. If the title of your
+story is long, the Story Title in this template is expecte to be truncated or
+shortened in some manner.
+
+_(Note, there is debate about whether to use your legal last name in the page
+headers or to use your pen name. We are defaulting to the assumption that it
+should be your pen name's last name. Discuss this requirement with your
+agent.)_
 
 ```css
-    --m-marginalia: "Lastname / Story Title / " counter(page);
+    --m-marginalia: "Penlastname / Story Title / " counter(page);
 ```
 
 &ZeroWidthSpace;

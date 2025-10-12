@@ -10,9 +10,9 @@ Template: short story
     /*
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     */
-    @import url("../../manuscript.css");
+    @import url("../manuscript.css");
     :root {
-        --m-marginalia: "Clemens / Huck Finn / " counter(page);
+        --m-marginalia: "Twain / Huck Finn / " counter(page);
     }
 </style>
 
