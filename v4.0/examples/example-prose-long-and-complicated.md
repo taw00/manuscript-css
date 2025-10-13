@@ -1,5 +1,5 @@
 <!--
-Long-form prose example with chapters and scenes.
+Long-form prose example with books, parts, chapters, and scenes.
 
 Copyright (c) Todd Warner
 This work is licensed under Attribution 4.0 International. To view a copy of
@@ -12,7 +12,6 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../manuscript.css");
-
     :root {
         --m-marginalia: "Penlastname / Long-form Prose / " counter(page);
     }
@@ -51,14 +50,15 @@ firstname.lastname@example.com
 <div class="m-title-header">
 
 
-# Manuscript Formatting via CSS: A Long-Form Example (typical)
+# Manuscript Formatting via CSS: A Long-Form Complicated Example
 
-## A Compliant Manuscript with Chapters and Scenes
+## A Compliant Manuscript with Books (just one), Parts, Chapters, and Scenes
 
 ### by Penfirstname Penlastname
 
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
-> Some stories, parts, chapters, and even scenes will kick off with an epigraph.
+> Some stories, books, parts, chapters, and even scenes will kick off with an
+> epigraph.
 >
 > <div class="x-poem">
 >
@@ -87,8 +87,29 @@ Contemporary Fiction
 
 
 
-[comment]::"----------------------- CHAPTER & SCENES --------------------------"
+[comment]::"-------------- A BOOK, PARTS, CHAPTER & SCENES --------------------"
 
+
+
+<section class="m-book">
+<div class="m-title-header">
+
+
+# Book 1
+
+
+</div>
+
+
+
+<section class="m-part">
+<div class="m-title-header">
+
+
+# Part 1
+
+
+</div>
 
 
 
@@ -195,16 +216,128 @@ tristique ligula sed neque dapibus, quis fermentum dui faucibus. In consectetur
 sapien non rhoncus fermentum. Etiam sit amet leo dolor. Donec eget velit cursus
 mauris suscipit mattis ac sit amet purus.
 
+</section> <!-- end scene -->
+<section class="m-scene">
+
+Nam pharetra fermentum lectus nec malesuada. Nulla facilisi. Pellentesque
+volutpat odio vitae sapien convallis hendrerit. Nunc eu tincidunt quam. Praesent
+at urna molestie, tincidunt mi vitae, dapibus nulla.
+
+Sed suscipit mauris in dolor faucibus, et tempus dui placerat. Nam ultricies,
+quam quis ultrices sollicitudin, neque augue dapibus diam, at sodales justo
+diam eu massa. Duis id ex vitae sem tempus auctor non at est. Aenean
+ullamcorper orci vel massa volutpat hendrerit. Phasellus dui ex, efficitur in
+elementum a, efficitur auctor ipsum. Aenean sit amet nisi eu nibh imperdiet
+efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
+
+</section> <!-- end scene -->
+</section> <!-- end chapter -->
+</section> <!-- end part -->
+
+
+
+
+[comment]::"------------------ PART, CHAPTER, & SCENES ------------------------"
+
+
+
+
+<section class="m-part">
+<div class="m-title-header">
+
+
+# Part 2
+
+
+</div>
+
+
+
+
+<section class="m-chapter">
+<div class="m-title-header">
+
+
+# Chapter 3
+
+
+</div>
+
+
+
+
+<section class="m-scene">
+
+Only one scene for chapter 2 because I think you get the idea.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a placerat lorem,
+a sagittis risus. Curabitur erat risus, congue in lacinia ac, viverra molestie
+tellus. Morbi convallis velit non sem venenatis consectetur. Nam congue posuere
+magna nec vulputate. Donec sodales nisl id mi fringilla elementum. Donec in
+feugiat mauris, quis laoreet lorem. Suspendisse non mi velit.
+
+Nunc sed massa lacinia, accumsan est at, laoreet neque. Integer vestibulum eget
+eros eu molestie. Quisque facilisis molestie elit at suscipit. Cras et felis
+tortor. Morbi mi libero, luctus ut scelerisque at, cursus ac ex. Proin
+tristique ligula sed neque dapibus, quis fermentum dui faucibus. In consectetur
+sapien non rhoncus fermentum. Etiam sit amet leo dolor. Donec eget velit cursus
+mauris suscipit mattis ac sit amet purus.
 
 </section> <!-- end scene -->
 </section> <!-- end chapter -->
 
 
-
-
 [comment]::"----------------------- CHAPTER & SCENES --------------------------"
 
 
+<section class="m-chapter">
+<div class="m-title-header">
+
+
+# Chapter 4
+
+
+</div>
+
+
+
+
+<section class="m-scene">
+
+Only one scene for chapter 2 because I think you get the idea.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a placerat lorem,
+a sagittis risus. Curabitur erat risus, congue in lacinia ac, viverra molestie
+tellus. Morbi convallis velit non sem venenatis consectetur. Nam congue posuere
+magna nec vulputate. Donec sodales nisl id mi fringilla elementum. Donec in
+feugiat mauris, quis laoreet lorem. Suspendisse non mi velit.
+
+Nunc sed massa lacinia, accumsan est at, laoreet neque. Integer vestibulum eget
+eros eu molestie. Quisque facilisis molestie elit at suscipit. Cras et felis
+tortor. Morbi mi libero, luctus ut scelerisque at, cursus ac ex. Proin
+tristique ligula sed neque dapibus, quis fermentum dui faucibus. In consectetur
+sapien non rhoncus fermentum. Etiam sit amet leo dolor. Donec eget velit cursus
+mauris suscipit mattis ac sit amet purus.
+
+</section> <!-- end scene -->
+<section class="m-scene">
+
+Nam pharetra fermentum lectus nec malesuada. Nulla facilisi. Pellentesque
+volutpat odio vitae sapien convallis hendrerit. Nunc eu tincidunt quam. Praesent
+at urna molestie, tincidunt mi vitae, dapibus nulla.
+
+Sed suscipit mauris in dolor faucibus, et tempus dui placerat. Nam ultricies,
+quam quis ultrices sollicitudin, neque augue dapibus diam, at sodales justo
+diam eu massa. Duis id ex vitae sem tempus auctor non at est. Aenean
+ullamcorper orci vel massa volutpat hendrerit. Phasellus dui ex, efficitur in
+elementum a, efficitur auctor ipsum. Aenean sit amet nisi eu nibh imperdiet
+efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
+
+</section> <!-- end scene -->
+</section> <!-- end chapter -->
+
+
+[comment]::"----------------------- CHAPTER & END SCENE -----------------------"
 
 
 <section class="m-chapter">
@@ -234,6 +367,8 @@ will be impressed with your French.
 
 </section> <!-- end scene -->
 </section> <!-- end chapter -->
+</section> <!-- end part -->
+</section> <!-- end book -->
 
 
 </article></div> <!-- ----------------------------- end of manuscript ---- -->

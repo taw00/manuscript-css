@@ -51,7 +51,7 @@ firstname.lastname@example.com
 +1 555-555-1212
 
 
-</div></div> <!-- /.m-contact, /.m-page-header -->
+</div></div> <!-- end contact and page header -->
 
 
 
@@ -88,8 +88,8 @@ Contemporary Fiction
 (_draft rev 20221024_)
 
 
-</div> <!-- /.m-facts -->
-</div> <!-- (/title strings), /.m-facts, /.m-title-header -->
+</div> <!-- end facts -->
+</div> <!-- end title header -->
 
 
 
@@ -184,4 +184,3 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 </section> <!--end last scene -->
 
 </article></div> <!-- ----------------------------- end of manuscript ---- -->
-
