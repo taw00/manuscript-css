@@ -24,14 +24,8 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../manuscript.css");
-
+    @import url("../../manuscript.css");
     :root {
-        /*
-        --m-page-break-simulated-long: 0;
-        --m-font-weight-title: bold;
-        --m-font-weight-title-chapter: bold;
-        --m-font-weight-title-poem: bold;
-        */
         --m-marginalia: "Lastname / Long-form Poetry / " counter(page);
     }
 </style>

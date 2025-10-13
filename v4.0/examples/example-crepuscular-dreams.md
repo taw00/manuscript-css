@@ -68,7 +68,7 @@ h1 {
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
     /*
     @import url("../manuscript.css");
-    @import url("../manuscript-beta.css");
+    @import url("../../manuscript.css");
     */
     #vpage > #manuscript {
         & > .m-poem > .m-title-header {
