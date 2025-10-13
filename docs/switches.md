@@ -84,18 +84,21 @@ To turn these on, you add them to the class attribute of the vpage div:
 
 ### Configuring the content of the margin header
 
-If your document is a prose work (not poetry), and you have switched of
-marginalia via adding the `no-marginalia` class to the `#vpage` block
-declaration, then this needs to be added within the `<style> … </style>` block
-at the top of your document. Replace Penlastname with your author last name, of
-course, and Story Title with the title of your story. If the title of your
-story is long, the Story Title in this template is expecte to be truncated or
-shortened in some manner.
+If your document is a work of prose, page headers will be added to page 2 and
+onward. If your document is a work of poetry, the header will not appear. It
+will also not appear if you have added `no-marginalia` to the `#vpage` block
+declaration: `<div id="vpage" class="no-marginalia">`.
+
+If configure the header appropriately, you need to reset the value of the CSS
+variable `--m-marginalia`. To do that, you add to the `<style> … </style>`
+block at the top of your document. Replace `Penlastname` with your author last
+name, of course, and `Story Title` with the title of your story. If the title
+of your story is lengthy, use a truncated or shortened version of that title.
 
 _(Note, there is debate about whether to use your legal last name in the page
-headers or to use your pen name. We are defaulting to the assumption that it
-should be your pen name's last name. Discuss this requirement with your
-agent.)_
+headers or to use the last name of your pen name (author name). We are
+defaulting to the assumption that it should be your pen name's last name.
+Discuss this requirement with your agent.)_
 
 ```css
     --m-marginalia: "Penlastname / Story Title / " counter(page);
