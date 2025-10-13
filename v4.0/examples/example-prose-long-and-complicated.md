@@ -86,8 +86,7 @@ Contemporary Fiction
 
 
 
-
-[comment]::"-------------- A BOOK, PARTS, CHAPTER & SCENES --------------------"
+[comment]:: "-------------- A BOOK, PARTS, CHAPTER & SCENES ------------------"
 
 
 
@@ -182,7 +181,7 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 
 
 
-[comment]::"----------------------- CHAPTER & SCENES --------------------------"
+[comment]:: "----------------------- CHAPTER & SCENES -------------------------"
 
 
 
@@ -237,7 +236,7 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 
 
 
-[comment]::"------------------ PART, CHAPTER, & SCENES ------------------------"
+[comment]:: "------------------ PART, CHAPTER, & SCENES -----------------------"
 
 
 
@@ -287,7 +286,7 @@ mauris suscipit mattis ac sit amet purus.
 </section> <!-- end chapter -->
 
 
-[comment]::"----------------------- CHAPTER & SCENES --------------------------"
+[comment]:: "----------------------- CHAPTER & SCENES -------------------------"
 
 
 <section class="m-chapter">
@@ -337,7 +336,7 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 </section> <!-- end chapter -->
 
 
-[comment]::"----------------------- CHAPTER & END SCENE -----------------------"
+[comment]:: "----------------------- CHAPTER & END SCENE ----------------------"
 
 
 <section class="m-chapter">

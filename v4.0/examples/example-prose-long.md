@@ -12,7 +12,6 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../manuscript.css");
-
     :root {
         --m-marginalia: "Penlastname / Long-form Prose / " counter(page);
     }
@@ -87,7 +86,7 @@ Contemporary Fiction
 
 
 
-[comment]::"----------------------- CHAPTER & SCENES --------------------------"
+[comment]:: "----------------------- CHAPTER & SCENES -------------------------"
 
 
 
@@ -161,7 +160,7 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 
 
 
-[comment]::"----------------------- CHAPTER & SCENES --------------------------"
+[comment]:: "----------------------- CHAPTER & SCENES -------------------------"
 
 
 
@@ -202,7 +201,7 @@ mauris suscipit mattis ac sit amet purus.
 
 
 
-[comment]::"----------------------- CHAPTER & SCENES --------------------------"
+[comment]:: "----------------------- CHAPTER & SCENES -------------------------"
 
 
 
