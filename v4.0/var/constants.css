@@ -140,7 +140,7 @@
     /* … for the simulated page break for long-form docs, we use a heavy faded
      *   dashed line. For the title page, we add padding before that line. */
     --m-page-break-simulated-long: 4px dashed var(--m-page-break-simulated-color);
-    --m-page-break-simulated-end-spacing-long: calc(var(--m-offset-title) +0.5in) transparent solid;
+    --m-page-break-simulated-end-spacing-long: calc(var(--m-offset-title) + 0.5in) transparent solid;
     --m-page-break-simulated-end-spacing-poem: var(--m-room-for-two) transparent solid;
 
     /* the document facts (.m-facts) - short-form and long-form

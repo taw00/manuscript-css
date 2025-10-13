@@ -136,11 +136,10 @@
         }
     }
     & .m-contact > p {
-            text-align: start;
-            text-indent: unset;
-            margin-block: 0;
+        text-align: start;
+        text-indent: unset;
+        margin-block: 0;
     }
-
 
     /*
      * ALL TITLE HEADERS (.m-title-header)
@@ -223,7 +222,7 @@
             /* if #manuscript.long: static; unset unset auto auto; 0, auto.
              * if #manuscript.short: absolute; 0 0 auto auto; unset */
             position: var(--m-position-facts);
-            inset: var(--m-top-facts) var(--m-right-facts) auto auto;
+            inset: var(--m-top-facts) var(--m-right-facts) var(--m-bottom-facts) var(--m-left-facts);
             margin-block: var(--m-margin-facts-vertical);
             margin-inline: var(--m-margin-facts-horizontal);
             & p {
