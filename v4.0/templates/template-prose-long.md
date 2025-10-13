@@ -18,7 +18,7 @@ Template: long-form story - novellette, novella, novel, etc.
 
 
 
-[comment]: / "-------------------------- TITLE PAGE --------------------------"
+[comment]:: "-------------------------- TITLE PAGE ---------------------------"
 
 
 
@@ -65,7 +65,7 @@ Fiction, Satire
 
 
 
-[comment]: / "---------------------- CHAPTER & SCENES ------------------------"
+[comment]:: "----------------------- CHAPTER & SCENES ------------------------"
 
 
 
@@ -125,7 +125,7 @@ nec, congue sagittis metus.
 
 
 
-[comment]: / "---------------------- CHAPTER & SCENES ------------------------"
+[comment]:: "----------------------- CHAPTER & SCENES ------------------------"
 
 
 
