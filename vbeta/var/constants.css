@@ -140,24 +140,8 @@
     /* … for the simulated page break for long-form docs, we use a heavy faded
      *   dashed line. For the title page, we add padding before that line. */
     --m-page-break-simulated-long: 4px dashed var(--m-page-break-simulated-color);
-    --m-page-break-simulated-end-spacing-long: calc(var(--m-offset-title) - 1in) transparent solid;
+    --m-page-break-simulated-end-spacing-long: calc(var(--m-offset-title) + 0.5in) transparent solid;
     --m-page-break-simulated-end-spacing-poem: var(--m-room-for-two) transparent solid;
-
-    /* the document facts (.m-facts) - short-form and long-form
-     * (document, not part, chapter, or scene facts */
-    --m-position-facts-short: absolute;
-    --m-top-facts-short:  0;     --m-bottom-facts-short: unset;
-    --m-left-facts-short: unset; --m-right-facts-short:  0;
-    --m-margin-facts-short-horizontal: unset;
-    --m-margin-facts-short-verticle: unset;
-    --m-text-align-facts-short: end;
-
-    --m-position-facts-long: static;
-    --m-top-facts-long:  unset; --m-bottom-facts-long: unset;
-    --m-left-facts-long: unset; --m-right-facts-long:  unset;
-    --m-margin-facts-long-horizonal: 0;
-    --m-margin-facts-long-verticle: auto;
-    --m-text-align-facts-long: center;
 
     /* colors used mainly for desktop, paper, and text / links */
     --m-color-black:      hsl(0deg 0% 0%); /* black */

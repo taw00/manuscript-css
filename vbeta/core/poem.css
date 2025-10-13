@@ -10,7 +10,7 @@
  * A section.m-poem can only house a header and a poem.
  *
  * Note, we also define a div.x-poem class. It is useful for inserting poems in
- * section.m-scene and .m-title-header blocks. I.e., arbitrary poems.
+ * section.m-scene and .m-title blocks. I.e., arbitrary poems.
  *
  * Crudely, a poetry manuscript looks something like this:
  *
@@ -58,7 +58,7 @@
 
         /* EXPERIMENTAL ALERT! ALERT! ALERT! ERROR IN FORMATING
          * make stuff in a poem section that isn't poem stuff red and wrong */
-        & > :not(.m-page-header,.m-title-header,pre,code,.joplin-editable) {
+        & > :not(.m-title,.m-contact,.m-count,pre,code,.joplin-editable) {
             color: red !important;
             font-weight: bold;
             text-decoration: line-through;
@@ -74,7 +74,7 @@
         margin-block: var(--m-spacing-poem);
         /* margins left & right with exceptions (see below) */
         margin-inline: var(--m-margin-poem);
-        & > .m-title-header {
+        & > .m-title {
             margin-inline: 0;
             & > blockquote {
                 margin-inline: 0;
@@ -102,11 +102,11 @@
             }
         }
     }
-    /* arbitrary poem inside of the top-level.m-title-header */
-    & > .m-title-header .x-poem,
-    /* arbitrary poem inside of a scene's.m-title-header */
-    &.m-scene .m-title-header .x-poem {
-        /* if within an.m-title-header, center the whole block (like the rest of the
+    /* arbitrary poem inside of the top-level.m-title */
+    & > .m-title .x-poem,
+    /* arbitrary poem inside of a scene's.m-title */
+    &.m-scene .m-title .x-poem {
+        /* if within an .m-title, center the whole block (like the rest of the
          * prose and epigraph) */
         width: max-content;
         max-width: min(max-content, 100%);
@@ -117,38 +117,38 @@
         margin-inline: var(--m-margin-poem);
         margin-block: calc(var(--m-spacing-poem) * 2);
     }
-    &.m-poem .m-title-header .x-poem {
+    &.m-poem .m-title .x-poem {
         margin-inline: 0;
     }
 
     /* poem title header spacing control */
-    & div.x-poem > .m-title-header,
-    & section.m-poem > .m-title-header {
+    & div.x-poem > .m-title,
+    & section.m-poem > .m-title {
         /* gap between a poem header and its poem content */
         margin-block-end: calc(var(--m-spacing-poem) * 2);
     }
-    & section.m-poem:has( > .m-page-header) > .m-title-header {
-        /* top margin for title (2-inches), if existence of a contact header */
+    & section.m-poem:has( > .m-contact, > .m-count) > .m-title {
+        /* top margin for title (2 page margin heights), if existence of a
+         * contact header or count header */
         margin-block-start: var(--m-offset-title-poem);
     }
 
     /*
-     * PAGE HEADERS FOR POEMS (contact left and facts right)
+     * PAGE HEADERS FOR POEMS (contact left and line-count right)
      */
-    & section.m-poem > .m-page-header {
-        display: block;
-        /* stops .m-title-header top margin collapse (only probably when print) */
-        padding-block-end: 0.02px; /* 0.02px is the smallest we can go */
-        & > .m-contact {
-            float: left;
-            margin-block: 0;
-        }
-        & > .m-facts {
+    & section.m-poem {
+        /* stops .m-title top margin collapse (only happens when printing) */
+        padding: 0.02px; /* 0.02px is the smallest we can go */
+        /* Line Count */
+        & > .m-count {
             float: right;
+            position: relative;
+            inset: unset;
+            margin-block: unset;
+            margin-inline: unset;
             & p {
-                text-indent: 0;
                 text-align: end;
-                line-height: var(--m-line-spacing-single);
+                text-indent: 0;
                 margin-block: 0;
             }
         }

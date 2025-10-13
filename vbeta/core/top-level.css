@@ -98,7 +98,7 @@
       pre ~ pre {
         margin-block-start: 0;
     }
-    & .m-title-header pre {
+    & .m-title pre {
         margin-block: var(--m-nudge);
     }
 
@@ -107,46 +107,40 @@
      * CONTACT INFO both first page m-contact and other pages m-contacts
      * - contact info goes in the upper-left corner
      *   (probably need to internationalize this?) */
-    & > .m-page-header {
-        & > .m-contact {
-            position: absolute;
-            top: 0; left: 0;
-        }
-        & > .m-facts {
-            /* ALERT ALERT ALERT - .m-facts don't go here */
-            display: block;
-            position: absolute;
-            top: 0; left: 1.5in;
-            color: red;
-            font-weight: bold;
-            text-decoration: line-through;
-        }
-        & > .m-facts::after {
-            display: block;
-            position: absolute;
-            top: 1in; left: .5in;
-            text-align: left;
-            color: yellow;
-            font-weight: normal;
-            border: 1px solid red;
-            background-color: black;
-            padding: 1px 3px;
-            width: 300px !important;
-            content: "The 'm-facts' <div> block for the title page is different. Move it into 'm-title-header' below the title and byline.";
-        }
-    }
-    & .m-contact > p {
+    & .m-contact {
+        /*position: absolute;
+        top: 0; left: 0;*/
+        float: left;
+        margin-block: 0;
+        & p {
             text-align: start;
             text-indent: unset;
+            line-height: var(--m-line-spacing-single);
             margin-block: 0;
+        }
     }
+
+    /* document word and line Count */
+    & > .m-count {
+        float: var(--m-float-count);
+        position: var(--m-position-count);
+        inset: var(--m-top-count) var(--m-right-count) var(--m-bottom-count) var(--m-left-count);
+        margin-block: unset;
+        margin-inline: var(--m-margin-inline-count);
+        & p {
+            text-align: var(--m-text-align-count);
+            text-indent: 0;
+            margin-block: 0;
+        }
+    }
+
 
 
     /*
-     * ALL TITLE HEADERS (.m-title-header)
+     * ALL TITLE BLOCKS (.m-title)
      * - all title headers and m-facts, a baseline
      */
-    & .m-title-header {
+    & .m-title {
         /* this should be, for a 8.5in page, or about 77% */
         width: calc((var(--m-max-width-header) / var(--m-content-width)) * 100%);
         max-width: var(--m-max-width-header);
@@ -172,7 +166,7 @@
         & > pre:first-of-type {
             margin-block-start: var(--m-nudge);
         }
-        /* word count, etc */
+        /* genre and extra info */
         & > .m-facts {
             position: relative;
             margin-block: var(--m-nudge) 0;
@@ -210,26 +204,20 @@
 
 
     /*
-     * TOP-LEVEL TITLE HEADER (#manuscript > .m-title-header)
-     * - Note: this title header's facts are different depending on which
-     *   class is set in #manuscript: .short or .long.
+     * TOP-LEVEL TITLE BLOCK (#manuscript > .m-title)
      */
-    & > .m-title-header {
+    & > .m-title {
         /* place the manu.title block 1/3 to 5/12 down the page & center it */
         margin-block: var(--m-offset-title) 0;
         margin-inline: auto;
         position: static; /* to enable positioning .m-facts outside of */
+        /* genre and extra info */
         & > .m-facts {
-            /* if #manuscript.long: static; unset unset auto auto; 0, auto.
-             * if #manuscript.short: absolute; 0 0 auto auto; unset */
-            position: var(--m-position-facts);
-            inset: var(--m-top-facts) var(--m-right-facts) auto auto;
-            margin-block: var(--m-margin-facts-vertical);
-            margin-inline: var(--m-margin-facts-horizontal);
+            position: relative;
+            margin-block: var(--m-room-for-two) auto;
+            margin-inline: auto;
             & p {
-                /* if #manuscript.long: center
-                 * if #manuscript.short: end */
-                text-align: var(--m-text-align-facts);
+                text-align: center;
                 text-indent: unset;
             }
         }
@@ -242,20 +230,20 @@
      * #manuscript.simple:
      *    removes the all page headers, contacts, & facts */
     &.text-only {
+        .m-title,
         .m-facts,
         .m-contact,
-        .m-page-header,
-        .m-title-header {
+        .m-count {
             display: none !important;
         }
     }
     &.simple {
         .m-facts,
         .m-contact,
-        .m-page-header {
+        .m-count {
             display: none !important;
         }
     }
 
 } /* end #manuscript */
-
+5

@@ -179,35 +179,31 @@
         --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
     }
 
-    &:has(#manuscript:not(.long,.poetry)) { /* short, the default, but let's be explicit */
-        --m-position-facts:     var(--m-position-facts-short);
-        --m-top-facts:          var(--m-top-facts-short);
-        --m-bottom-facts:       var(--m-bottom-facts-short);
-        --m-left-facts:         var(--m-left-facts-short);
-        --m-right-facts:        var(--m-right-facts-short);
-        --m-margin-facts-horizontal: var(--m-margin-facts-short-horizontal);
-        --m-margin-facts-vertical:   var(--m-margin-facts-short-vertical);
-        --m-text-align-facts:   var(--m-text-align-facts-short);
-        --m-line-spacing-facts: var(--m-line-spacing-facts-short);
-
-        --m-font-family-facts:  var(--m-font-family-facts-short);
-        --m-font-size-facts:    var(--m-font-size-facts-short);
-        --m-font-weight-facts:  var(--m-font-weight-facts-short);
+    /* m-count block for title page of short, the default, but being explicit
+     * for short stories, the count block goes in the top right hand corner */
+    &:has(#manuscript:not(.long,.poetry)) {
+        --m-float-count:         right;
+        --m-position-count:      relative;
+        --m-top-count:           unset;
+        --m-right-count:         unset;
+        --m-bottom-count:        unset;
+        --m-left-count:          unset;
+        --m-margin-block-count:  unset;
+        --m-margin-inline-count: unset;
+        --m-text-align-count:    end;
     }
+    /* m-count block for title page of long or poetry
+     * for long stories and poetry, the count block --> the bottom center */
     &:has(#manuscript:is(.long,.poetry)) {
-        --m-position-facts:     var(--m-position-facts-long);
-        --m-top-facts:          var(--m-top-facts-long);
-        --m-bottom-facts:       var(--m-bottom-facts-long);
-        --m-left-facts:         var(--m-left-facts-long);
-        --m-right-facts:        var(--m-right-facts-long);
-        --m-margin-facts-horizontal: var(--m-margin-facts-long-horizontal);
-        --m-margin-facts-vertical:   var(--m-margin-facts-long-vertical);
-        --m-text-align-facts:   var(--m-text-align-facts-long);
-        --m-line-spacing-facts: var(--m-line-spacing-facts-long);
-
-        --m-font-family-facts:  var(--m-font-family-facts-long);
-        --m-font-size-facts:    var(--m-font-size-facts-long);
-        --m-font-weight-facts:  var(--m-font-weight-facts-long);
+        --m-float-count:         unset;
+        --m-position-count:      absolute;
+        --m-top-count:           calc(var(--m-content-height) - .4in);
+        --m-right-count:         0;
+        --m-bottom-count:        auto;
+        --m-left-count:          0;
+        --m-margin-block-count:  unset;
+        --m-margin-inline-count: auto;
+        --m-text-align-count:    center;
     }
 
     /* simple and text-only */

@@ -64,7 +64,7 @@
     } /* end #vpage */
 
     /* Joplin Footnote styling - this is specific to Joplin */
-    &:has(#vpage + hr.footnotes-sep) #vpage {
+    html:has(#vpage + hr.footnotes-sep) #vpage {
         /*padding-block-end: 0;*/ /* removes the page-margin */
         margin-block-end: 0; /* removes the framing gap */
         box-shadow: 0 -15px 20px -5px var(--m-vpage-frame-color);
@@ -157,7 +157,7 @@
 
     /* Joplin Footnote styling - this is specific to Joplin */
     /* The page break avoidance measures do not work for some reason */
-    &:has(#vpage + hr.footnotes-sep) #vpage {
+    html:has(#vpage + hr.footnotes-sep) #vpage {
         break-after: avoid-page !important;
     }
     #vpage + hr.footnotes-sep {

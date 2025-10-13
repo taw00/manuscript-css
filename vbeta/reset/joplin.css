@@ -194,7 +194,7 @@ code.inline-code {
     display: none;
 }
 
-#vpage #manuscript :is(.x-poem,.m-poem,.m-header,.m-title-header) {
+#vpage #manuscript :is(.x-poem,.m-poem,.m-title) {
     .hljs,
     .hljs-keyword,
     .hljs-operator,
@@ -247,5 +247,5 @@ code.inline-code {
         text-decoration: unset;
         padding: unset;
     }
-} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-header,.m-title-header) */
+} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-title) */
 

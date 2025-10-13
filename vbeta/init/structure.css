@@ -26,10 +26,10 @@ body,
 #manuscript .m-subscenes > *, /* this is still experimental */
 #manuscript .m-poem > *,
 #manuscript .x-poem > *,
-#manuscript .m-page-header > *,
-#manuscript .m-title-header > *,
+#manuscript .m-title > *,
 #manuscript .m-contact > *,
-#manuscript .m-facts > * {
+#manuscript .m-count > *,
+#manuscript .m-facts > * {       /* deprecated? */
     display: none;
 }
 
@@ -39,35 +39,34 @@ body:has(div#vpage),
 div#vpage:has(article#manuscript),
 /* a vpage can only contain a #manuscript */
 div#vpage > article#manuscript,
-/* a manuscript can only contain a page header and a title header,
- * and then books, parts, chapters, and/or scenes/poems */
-/*div#vpage > article#manuscript > div.m-contact,*/ /* LEGACY v3 stuff */
-div#vpage > article#manuscript > div.m-page-header,
-div#vpage > article#manuscript > div.m-title-header,
+/* a manuscript can only contain a contact block, count block, title block, and
+ * then books, parts, chapters, and/or scenes/poems */
+div#vpage > article#manuscript > div.m-title,
+div#vpage > article#manuscript > div.m-contact,
+div#vpage > article#manuscript > div.m-count,
 div#vpage > article#manuscript > section.m-book,
 div#vpage > article#manuscript > section.m-part,
 div#vpage > article#manuscript > section.m-chapter,
 div#vpage > article#manuscript > section.m-scene,
 div#vpage > article#manuscript > section.m-poem,
-/* for right now, a book can only contain a title header,
- * and then parts, chapters, and/or scenes/poems */
-div#vpage > article#manuscript section.m-book > div.m-title-header,
+/* a book can only contain a title block, and then parts, chapters, and/or scenes/poems */
+div#vpage > article#manuscript section.m-book > div.m-title,
 div#vpage > article#manuscript section.m-book > section.m-part,
 div#vpage > article#manuscript section.m-book > section.m-chapter,
 div#vpage > article#manuscript section.m-book > section.m-scene,
 div#vpage > article#manuscript section.m-book > section.m-poem,
-/* a part can only contain a title header, and then chapters and/or scenes/poems */
-div#vpage > article#manuscript section.m-part > div.m-title-header,
+/* a part can only contain a title block, and then chapters and/or scenes/poems */
+div#vpage > article#manuscript section.m-part > div.m-title,
 div#vpage > article#manuscript section.m-part > section.m-chapter,
 div#vpage > article#manuscript section.m-part > section.m-scene,
 div#vpage > article#manuscript section.m-part > section.m-poem,
-/* a chapter can only contain a title header and/or scenes/poems */
-div#vpage > article#manuscript section.m-chapter > div.m-title-header,
+/* a chapter can only contain a title block and/or scenes/poems */
+div#vpage > article#manuscript section.m-chapter > div.m-title,
 div#vpage > article#manuscript section.m-chapter > section.m-scene,
 div#vpage > article#manuscript section.m-chapter > section.m-poem,
-/* a scene can only contain a title header, subscenes, img, hr, ul, ol, dl, pre, p,
+/* a scene can only contain a title block, subscenes, img, hr, ul, ol, dl, pre, p,
  * blockquote, x-poem, h-tag, div, table */
-div#vpage > article#manuscript section.m-scene > div.m-title-header,
+div#vpage > article#manuscript section.m-scene > div.m-title,
 div#vpage > article#manuscript section.m-scene > div.m-subscenes,
 div#vpage > article#manuscript section.m-scene > div.x-poem,
 div#vpage > article#manuscript section.m-scene > :is(img, hr, ul, ol, dl, pre, table),
@@ -77,27 +76,26 @@ div#vpage > article#manuscript section.m-scene > :is(div), /* we have to allow f
 div#vpage > article#manuscript section.m-scene > :is(div.m-note),
 /* a subscenes can only contain scenes */
 div#vpage > article#manuscript section.m-subscenes > div.m-scene,
-/* a poem can contain a page header and a title header,
+/* a poem can contain a page header (deprecated, contact, count, and a title header,
  * and then ONLY preformatted blocks (poem stanzas)
  * (<div> specifically called out because editing tools like to wrap <pre> */
-div#vpage > article#manuscript section.m-poem > div.m-page-header,
-div#vpage > article#manuscript section.m-poem > div.m-title-header,
+div#vpage > article#manuscript section.m-poem > div.m-title,
+div#vpage > article#manuscript section.m-poem > div.m-contact,
+div#vpage > article#manuscript section.m-poem > div.m-count,
 div#vpage > article#manuscript section.m-poem > pre,
 div#vpage > article#manuscript section.m-poem > div.m-note,
 /* an arbitrary poem can contain a title header and pre */
-div#vpage > article#manuscript div.x-poem > div.m-title-header,
+div#vpage > article#manuscript div.x-poem > div.m-title,
 div#vpage > article#manuscript div.x-poem > pre,
 div#vpage > article#manuscript div.x-poem > div.m-note,
-/* a page header can only contain a contact or facts */
-div#vpage > article#manuscript div.m-page-header > div.m-contact,
-div#vpage > article#manuscript div.m-page-header > div.m-facts,
-/* a title header can only contain a p, blockquote, x-poem, facts, or h-tag */
-div#vpage > article#manuscript div.m-title-header > div.m-facts,
-div#vpage > article#manuscript div.m-title-header > div.x-poem,
-div#vpage > article#manuscript div.m-title-header > :is(h1, h2, h3, h4, h5, blockquote, p),
-/* a facts and contacts can only contain paragraphs */
+/* a title block can only contain a p, blockquote, x-poem, facts, or h-tag */
+div#vpage > article#manuscript div.m-title > div.m-facts,
+div#vpage > article#manuscript div.m-title > div.x-poem,
+div#vpage > article#manuscript div.m-title > :is(h1, h2, h3, h4, h5, blockquote, p),
+/* counts, facts, and contacts can only contain paragraphs */
 div#vpage > article#manuscript div.m-facts > p,
 div#vpage > article#manuscript div.m-contact > p,
+div#vpage > article#manuscript div.m-count > p,
 /* We have some special cases because … meddling by markdown ediors … */
 div#vpage > article#manuscript section.m-scene > div.joplin-editable, /* special case */
 div#vpage > article#manuscript section.m-poem > div.joplin-editable,  /* special case */
@@ -125,8 +123,7 @@ div#page > #article#manuscript > section.m-chapter {
 
 #manuscript {
     & section,
-    & section > .m-page-header,
-    & section > .m-title-header {
+    & section > .m-title {
         clear: both;
     }
 
