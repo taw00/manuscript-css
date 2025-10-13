@@ -146,17 +146,17 @@
     /* the document facts (.m-facts) - short-form and long-form
      * (document facts, not part, chapter, or scene facts */
     --m-position-facts-short: absolute;
-    --m-top-facts-short:  0;     --m-bottom-facts-short: unset;
-    --m-left-facts-short: unset; --m-right-facts-short:  0;
+    --m-top-facts-short:    0;    --m-right-facts-short:  0;
+    --m-bottom-facts-short: auto; --m-left-facts-short:   auto;
     --m-margin-facts-short-horizontal: unset;
     --m-margin-facts-short-vertical: unset;
     --m-text-align-facts-short: end;
 
     --m-position-facts-long: static;
-    --m-top-facts-long:  unset; --m-bottom-facts-long: unset;
-    --m-left-facts-long: unset; --m-right-facts-long:  unset;
-    --m-margin-facts-long-horizonal: 0;
-    --m-margin-facts-long-vertical: auto;
+    --m-top-facts-long:    unset; --m-right-facts-long:  unset;
+    --m-bottom-facts-long: auto;  --m-left-facts-long:   auto;
+    --m-margin-facts-long-vertical: var(--m-room-for-two) auto; /* margin-block  */
+    --m-margin-facts-long-horizonal: 0;                         /* margin-inline */
     --m-text-align-facts-long: center;
 
     /* colors used mainly for desktop, paper, and text / links */
