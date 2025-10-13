@@ -1,4 +1,5 @@
 /* CSS for Manuscript Format vBeta
+ * This version may diverge significantly from the latest numbered version
  *
  * Use this CSS to format your markdown-drafted short story or novel into an
  * approximates of industry standard manuscript formatting.
@@ -22,7 +23,7 @@
  * <style
  *   @import url("url-or-path/to/the/manuscript.css");
  *   :root {
- *     --m-marginalia: "MyLastname / My Short Title / " counter(page);
+ *     --m-marginalia: "Penlastname / Story Title / " counter(page);
  *   }
  * </style>
  *
