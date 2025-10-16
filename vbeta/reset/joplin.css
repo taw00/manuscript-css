@@ -128,7 +128,7 @@
         }
         &:has(#vpage:is(.dimmer)) {
             --m-reset-joplin-footer-color: var(--m-paper-color);
-            --m-reset-joplin-footer-color-link: lightblue;
+            --m-reset-joplin-footer-color-link: lightgray;
         }
         &:has(#vpage:is(.dark)) {
             --m-reset-joplin-footer-color: dimgray;
