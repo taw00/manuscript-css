@@ -94,24 +94,23 @@ body {
          * - hide-jcloud-footer - hide the Joplin Cloud footer
          * - hide-jcloud - hide all of the Joplin Cloud bits
          */
-        &:has(#vpage:is(.hide-jcloud) {
+        &:has(#vpage:is(.hide-jcloud)) {
             body.page-note {
                 & > div.footer { display: none; }
                 & > nav.navbar { display: none; }
             }
         }
-        &:has(#vpage:is(.hide-jcloud-navbar) {
+        &:has(#vpage:is(.hide-jcloud-navbar)) {
             body.page-note {
                 & > nav.navbar { display: none; }
             }
         }
-        &:has(#vpage:is(.hide-jcloud-footer) {
+        &:has(#vpage:is(.hide-jcloud-footer)) {
             body.page-note {
                 & > div.footer { display: none; }
             }
         }
     }
-
 } /* end @media screen */
 
 
