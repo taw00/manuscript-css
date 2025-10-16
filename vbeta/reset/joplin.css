@@ -28,7 +28,7 @@
 @layer lm-reset-joplin-constants {
 
 :root {
-    --m-reset-joplin-navbar-opacity: 0.15;
+    --m-reset-joplin-navbar-opacity: 0.2;
     --m-reset-joplin-footer-color: hsl(from rgb(50 55 63) h s l / 50%);
     --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
     /*--m-reset-joplin-footer-color-link: rgb(0 0 238);*/ /* default */
@@ -120,6 +120,8 @@
             & > nav.navbar {
                 opacity: var(--m-reset-joplin-navbar-opacity);
                 background-color: inherit;
+                box-shadow: unset;
+                border: unset;
             }
             & > div.note-main {
                 /* viewport to 100% */
