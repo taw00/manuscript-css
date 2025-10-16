@@ -27,7 +27,9 @@
 
 @layer lm-reset-joplin-constants {
 
-body {
+:root {
+    --m-reset-joplin-footer-color: rgb(50, 55, 63);
+    --m-reset-joplin-footer-color-link: rgb(0, 0, 238);
     --m-reset-joplin-background-color-body: var(--m-desktop-color);
     --m-reset-joplin-font-weight-code: var(--m-font-weight-code);
 }
@@ -64,7 +66,13 @@ body {
     /* Joplin Cloud stuff */
     body.page-note {
         /* footer with copright and T&Cs - fade to watermark */
-        & > div.footer { opacity: .5; }
+        & > div.footer {
+            opacity: .5;
+            color: var(--m-reset-joplin-footer-color);
+            & a {
+                color: var(--m-reset-joplin-footer-color-link);
+            }
+        }
         & > main.main > div.container.main-container {
             /* branded navbar - fade to watermark */
             & > nav.navbar {
@@ -109,6 +117,10 @@ body {
                 & > main.main > div.container.main-container > nav.navbar { display: none; }
                 & > div.footer { display: none; }
             }
+        }
+        &:has(#vpage:is(.dark)) {
+            --m-reset-joplin-footer-color: aliceblue;
+            --m-reset-joplin-footer-color-link: cyan;
         }
     }
 } /* end @media screen */
