@@ -28,8 +28,11 @@
 @layer lm-reset-joplin-constants {
 
 :root {
+    --m-reset-joplin-navbar-opacity: 0.15;
+    --m-reset-joplin-footer-opacity: 0.5;
     --m-reset-joplin-footer-color: rgb(50, 55, 63);
-    --m-reset-joplin-footer-color-link: rgb(0, 0, 238);
+    /*--m-reset-joplin-footer-color-link: rgb(0, 0, 238);*/ /* default */
+    --m-reset-joplin-footer-color-link: hsl(225deg 73% 26%); /* dark bluejeans */
     --m-reset-joplin-background-color-body: var(--m-desktop-color);
     --m-reset-joplin-font-weight-code: var(--m-font-weight-code);
 }
@@ -66,17 +69,18 @@
     /* Joplin Cloud stuff */
     body.page-note {
         /* footer with copright and T&Cs - fade to watermark */
-        & > div.footer {
-            opacity: .5;
+        & > div.footer div.content {
+            opacity: var(--m-reset-joplin-footer-opacity);
             color: var(--m-reset-joplin-footer-color);
             & a {
+                opacity: inherit;
                 color: var(--m-reset-joplin-footer-color-link);
             }
         }
         & > main.main > div.container.main-container {
             /* branded navbar - fade to watermark */
             & > nav.navbar {
-                opacity: .15;
+                opacity: var(--m-reset-joplin-navbar-opacity);
                 background-color: inherit;
             }
             & > div.note-main {
@@ -118,9 +122,18 @@
                 & > div.footer { display: none; }
             }
         }
+
+        &:has(#vpage:is(.dim)) {
+            --m-reset-joplin-footer-color: var(--m-paper-color);
+            --m-reset-joplin-footer-color-link: white;
+        }
+        &:has(#vpage:is(.dimmer)) {
+            --m-reset-joplin-footer-color: var(--m-paper-color);
+            --m-reset-joplin-footer-color-link: lightblue;
+        }
         &:has(#vpage:is(.dark)) {
-            --m-reset-joplin-footer-color: aliceblue;
-            --m-reset-joplin-footer-color-link: cyan;
+            --m-reset-joplin-footer-color: dimgray;
+            --m-reset-joplin-footer-color-link: darkgray;
         }
     }
 } /* end @media screen */
