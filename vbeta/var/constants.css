@@ -159,7 +159,7 @@
     --m-color-gray8pt3:   #111f;
     --m-color-gray8pt2:   #181818ff;
     --m-color-gray8pt1:   #1b1b1bff;
-    --m-color-gray8:      hsl(0deg 0% 12%);;
+    --m-color-gray8:      hsl(0deg 0% 12%);
     --m-color-notblack:   var(--m-color-gray8pt5);
     --m-color-gray7pt5:   hsl(0deg 0% 27%);
     --m-color-dimgray:    hsl(0deg 0% 41%); /* dimgray */
@@ -185,7 +185,7 @@
     --m-color-cobalt-blue:        #0020c2ff;
     --m-color-union-blue:         #0d1e51ff;
     --m-color-professional-blue1: #02195cff;
-    --m-color-professional-blue2: hsl(225deg  73% 26%);;
+    --m-color-professional-blue2: hsl(225deg  73% 26%);
     --m-color-professional-blue3: #4790A7ff;
     --m-color-professional-blue4: #53b7d7ff;
     --m-color-professional-blue5: #39ff;
@@ -197,7 +197,7 @@
     --m-color-gray-green-dark:  #272b27ff;
     --m-color-gray-blue-dark:   #27272bff;
     --m-color-gray-pink-dark:   #2b272bff;
-    --m-color-gray-purpleblue-dark: hsl(222deg 12% 16%);;
+    --m-color-gray-purpleblue-dark: hsl(222deg 12% 16%);
     --m-color-gray-yellow-dark: #2b2b27ff;
     --m-color-gray-gold-dark:   #2d2a23ff;
     --m-color-eggplant:         #483248ff;
