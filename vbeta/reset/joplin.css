@@ -30,8 +30,8 @@
 :root {
     --m-reset-joplin-navbar-opacity: 0.15;
     --m-reset-joplin-footer-opacity: 0.5;
-    --m-reset-joplin-footer-color: rgb(50, 55, 63);
-    /*--m-reset-joplin-footer-color-link: rgb(0, 0, 238);*/ /* default */
+    --m-reset-joplin-footer-color: rgb(50 55 63);
+    /*--m-reset-joplin-footer-color-link: rgb(0 0 238);*/ /* default */
     --m-reset-joplin-footer-color-link: hsl(225deg 73% 26%); /* dark bluejeans */
     --m-reset-joplin-background-color-body: var(--m-desktop-color);
     --m-reset-joplin-font-weight-code: var(--m-font-weight-code);
