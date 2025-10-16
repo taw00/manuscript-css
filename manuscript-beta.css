@@ -37,7 +37,7 @@
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
 @import                        url("./vbeta/var.css?rev=2025101501");
-@import                      url("./vbeta/reset.css?rev=2025101609");
+@import                      url("./vbeta/reset.css?rev=2025101610");
 @import                       url("./vbeta/init.css?rev=2025101501");
 @import                       url("./vbeta/core.css?rev=2025101601");
 

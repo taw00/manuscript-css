@@ -69,6 +69,7 @@
     body.page-note {
         /* footer with copright and T&Cs - fade to watermark */
         & > div.footer div.content {
+            opacity: initial;
             color: var(--m-reset-joplin-footer-color);
             & a {
                 color: var(--m-reset-joplin-footer-color-link);
