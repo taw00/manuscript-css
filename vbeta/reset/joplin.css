@@ -73,7 +73,6 @@
             opacity: var(--m-reset-joplin-footer-opacity);
             color: var(--m-reset-joplin-footer-color);
             & a {
-                opacity: inherit;
                 color: var(--m-reset-joplin-footer-color-link);
             }
         }
