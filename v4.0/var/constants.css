@@ -38,12 +38,16 @@
     --m-indentA5:  calc(var(--m-page-marginA5)  * .5);
     --m-indentA6:  calc(var(--m-page-marginA6)  * .5);
 
-    /* line-height (line spacing) - singlespace and doublespace */
-    --m-line-spacing-single: 1.25;
-    --m-line-spacing-single-plus: 1.5;
-    --m-line-spacing-double: 2;
-    --m-line-spacing-double-plus: 2.5;
-    --m-line-spacing-triple: 3;
+    /* line-height (line spacing) - singlespace and doublespace
+     * web single-space is usually 1.2 or 1.25,
+     * but libreoffice and word are 1.15
+     * web doublespace, is usually 2. libreoffice and word are 1.15 * 2 = 2.3
+     */
+    --m-line-spacing-single: 1.15;
+    --m-line-spacing-single-plus: 1.725; /* +0.575 */
+    --m-line-spacing-double: 2.3;        /* 2 x 1.15 */
+    --m-line-spacing-double-plus: 2.875; /* +0.575 */
+    --m-line-spacing-triple: 3.45;       /* 3 x 1.15 */
 
     /* additional margin/spacing nudges used here and there */
     --m-nudge: .5rem;
