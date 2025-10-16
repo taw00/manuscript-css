@@ -42,6 +42,11 @@ To turn these on, you add them to the class attribute of the vpage div:
     <dd>Dark mode! But red themed.</dd>
     <dt>dark amber</dt>
     <dd>Dark mode! But amber themed.</dd>
+    <dt>hide-jcloud-navbar</dt>
+    <dd>Joplin (Joplin Cloud) specific. If you absolutely must hide the navbar
+    when you publish to Joplin Cloud, this switch will enable that. It leaves
+    the footer in place so that the Joplin Cloud service is appropriately
+    acknowledged.</dd>
 </dl>
 
 &ZeroWidthSpace;

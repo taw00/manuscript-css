@@ -84,6 +84,34 @@ body {
         }
     }
 
+    :root {
+        /* More Joplin Cloud switches (use with the #vpage container)
+         * - hide-jcloud-navbar - hide that Joplin Cloud navigate stuff
+         * Don't use these next two because the service should be acknowledged.
+         * But I provide them for your convenience in case there is some odd
+         * case where you need to strip out everything from view but the
+         * manuscript
+         * - hide-jcloud-footer - hide the Joplin Cloud footer
+         * - hide-jcloud - hide all of the Joplin Cloud bits
+         */
+        &:has(#vpage:is(.hide-jcloud) {
+            body.page-note {
+                & > div.footer { display: none; }
+                & > nav.navbar { display: none; }
+            }
+        }
+        &:has(#vpage:is(.hide-jcloud-navbar) {
+            body.page-note {
+                & > nav.navbar { display: none; }
+            }
+        }
+        &:has(#vpage:is(.hide-jcloud-footer) {
+            body.page-note {
+                & > div.footer { display: none; }
+            }
+        }
+    }
+
 } /* end @media screen */
 
 
