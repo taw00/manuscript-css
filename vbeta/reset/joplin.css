@@ -66,34 +66,6 @@
     }
 
     /* Joplin Cloud stuff */
-    body.page-note {
-        /* footer with copright and T&Cs - fade to watermark */
-        & > div.footer div.content {
-            opacity: initial;
-            color: var(--m-reset-joplin-footer-color);
-            & a {
-                color: var(--m-reset-joplin-footer-color-link);
-            }
-        }
-        & > main.main > div.container.main-container {
-            /* branded navbar - fade to watermark */
-            & > nav.navbar {
-                opacity: var(--m-reset-joplin-navbar-opacity);
-                background-color: inherit;
-            }
-            & > div.note-main {
-                /* viewport to 100% */
-                margin: 0 auto;
-                padding: 0;
-                max-width: 100%;
-                /* remove note title */
-                /* remove "Last updated" line */
-                & > h1.title,
-                & > p.last-updated { display: none; }
-            }
-        }
-    }
-
     :root {
         /* More Joplin Cloud switches (use with the #vpage container)
          * - hide-jcloud-navbar - hide that Joplin Cloud navigate stuff
@@ -123,17 +95,45 @@
 
         &:has(#vpage:is(.dim)) {
             --m-reset-joplin-footer-color: hsl(from var(--m-paper-color) h s l / 50%);
-            --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
         }
         &:has(#vpage:is(.dimmer)) {
             --m-reset-joplin-footer-color: hsl(from var(--m-paper-color) h s l / 50%);
-            --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
         }
         &:has(#vpage:is(.dark)) {
             --m-reset-joplin-footer-color: hsl(from dimgray h s l / 50%);
-            --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
+        }
+        --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
+    }
+
+    /* Joplin Cloud stuff */
+    body.page-note {
+        /* footer with copright and T&Cs - fade to watermark */
+        & > div.footer div.content {
+            opacity: initial;
+            color: var(--m-reset-joplin-footer-color);
+            & a {
+                color: var(--m-reset-joplin-footer-color-link);
+            }
+        }
+        & > main.main > div.container.main-container {
+            /* branded navbar - fade to watermark */
+            & > nav.navbar {
+                opacity: var(--m-reset-joplin-navbar-opacity);
+                background-color: inherit;
+            }
+            & > div.note-main {
+                /* viewport to 100% */
+                margin: 0 auto;
+                padding: 0;
+                max-width: 100%;
+                /* remove note title */
+                /* remove "Last updated" line */
+                & > h1.title,
+                & > p.last-updated { display: none; }
+            }
         }
     }
+
 } /* end @media screen */
 
 
