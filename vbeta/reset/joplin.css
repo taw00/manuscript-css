@@ -93,16 +93,14 @@
             }
         }
 
-        &:has(#vpage:is(.dim)) {
+        &:has(#vpage:is(.dim,.dimmer)) {
             --m-reset-joplin-footer-color: hsl(from var(--m-paper-color) h s l / 50%);
-        }
-        &:has(#vpage:is(.dimmer)) {
-            --m-reset-joplin-footer-color: hsl(from var(--m-paper-color) h s l / 50%);
+            --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
         }
         &:has(#vpage:is(.dark)) {
-            --m-reset-joplin-footer-color: hsl(from dimgray h s l / 50%);
+            --m-reset-joplin-footer-color: hsl(from black h s l / 30%);
+            --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 50%);
         }
-        --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
     }
 
     /* Joplin Cloud stuff */
