@@ -98,7 +98,7 @@
             --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
         }
         &:has(#vpage:is(.dark)) {
-            --m-reset-joplin-footer-color: hsl(from black h s l / 30%);
+            --m-reset-joplin-footer-color: hsl(from black h s l / 35%);
             --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 50%);
         }
     }
