@@ -320,8 +320,8 @@ html {
     /* no-links, no-links-export, no-links-cloud
      * Switches to disable links in your document:
      * - no-links - no links in all views of the document (defined here)
-     * - no-links-export - no links in the exported PDF
-     * - no-links cloud - no links in the cloud view AND the PDF */
+     * - no-links cloud - no links in the cloud view only
+     * - no-links-export - no links in the exported PDF only */
     &:is(.no-links,.disable-links) {
         a,
         a:is(:any-link,:link,:active,:visited,:hover) {
@@ -338,21 +338,23 @@ html {
 
 
 
-/* Joplin Cloud specific
- * Switches to disable links in your document:
- * - no-links - no links in all views of the document
- * - no-links-export - no links in the exported PDF
- * - no-links cloud - no links in the cloud view AND the PDF (defined here) */
-body.page-note {
-    #vpage #manuscript {
-        &:is(.no-links-jcloud,.disable-links-jcloud,.no-links-cloud,.disable-links-cloud) {
-            a,
-            a:is(:any-link,:link,:active,:visited,:hover) {
-                pointer-events: none;
-                cursor: default;
-                color: inherit;
-                text-decoration: unset;
-                border: unset;
+@media screen {
+    /* Joplin Cloud specific
+     * Switches to disable links in your document:
+     * - no-links - no links in all views of the document
+     * - no-links cloud - no links in the cloud view only (defined here)
+     * - no-links-export - no links in the exported PDF only */
+    body.page-note {
+        #vpage #manuscript {
+            &:is(.no-links-jcloud,.disable-links-jcloud,.no-links-cloud,.disable-links-cloud) {
+                a,
+                a:is(:any-link,:link,:active,:visited,:hover) {
+                    pointer-events: none;
+                    cursor: default;
+                    color: inherit;
+                    text-decoration: unset;
+                    border: unset;
+                }
             }
         }
     }
@@ -364,8 +366,8 @@ body.page-note {
 @media print {
     /* Switches to disable links in your document:
      * - no-links - no links in all views of the document
-     * - no-links-export - no links in the exported PDF (defined here)
-     * - no-links cloud - no links in the cloud view AND the PDF */
+     * - no-links cloud - no links in the cloud view only
+     * - no-links-export - no links in the exported PDF only (defined here) */
     #manuscript:is(.no-links-pdf,.disable-links-pdf,.no-links-export,.disable-links-export) {
         a,
         a:is(:any-link,:link,:active,:visited,:hover) {
