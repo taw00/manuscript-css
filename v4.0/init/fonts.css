@@ -292,11 +292,11 @@ html {
         line-height: var(--m-line-spacing);
     }
 
-    /* no-links, no-links-export
-     * If you want to disable links in your document: one option disables all
-     * links (no-links), and another only disables links in an exported PDF
-     * (no-links-export)
-     * Note, no-links-export rules defined in @media print section */
+    /* no-links, no-links-export, no-links-cloud
+     * Switches to disable links in your document:
+     * - no-links - disables links in all views of the document (defined here)
+     * - no-links-export - disables links in the exported PDF
+     * - no-links cloud - disables links in the cloud view AND the PDF */
     &:is(.no-links,.disable-links) {
         a,
         a:is(:any-link,:link,:active,:visited,:hover) {
@@ -312,11 +312,35 @@ html {
 
 
 
+
+/* Joplin Cloud specific
+ * Switches to disable links in your document:
+ * - no-links - no links in all views of the document
+ * - no-links-export - no links in the exported PDF
+ * - no-links cloud - no links in the cloud view AND the PDF (defined here) */
+body.page-note {
+    #vpage #manuscript {
+        &:is(.no-links-jcloud,.disable-links-jcloud,.no-links-cloud,.disable-links-cloud) {
+            a,
+            a:is(:any-link,:link,:active,:visited,:hover) {
+                pointer-events: none;
+                cursor: default;
+                color: inherit;
+                text-decoration: unset;
+                border: unset;
+            }
+        }
+    }
+}
+
+
+
+
 @media print {
-    /* no-links, no-links-export
-     * If you want to disable links in your document: one option disables all
-     * (no-links-export)
-     * Note, no-links rules defined outside of @media print section above */
+    /* Switches to disable links in your document:
+     * - no-links - no links in all views of the document
+     * - no-links-export - no links in the exported PDF (defined here)
+     * - no-links cloud - no links in the cloud view AND the PDF */
     #manuscript:is(.no-links-pdf,.disable-links-pdf,.no-links-export,.disable-links-export) {
         a,
         a:is(:any-link,:link,:active,:visited,:hover) {

@@ -66,9 +66,11 @@
         th, td {
             padding: 5px;
         }
+        /*
         th {
-            Xfont-weight: bolder;
+            font-weight: bolder;
         }
+        */
     }
 }
 
