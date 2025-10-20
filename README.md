@@ -19,7 +19,7 @@ from working draft to finalized manuscript.
 *More detail can be found [here](#howto---in-more-detail)*
 
 1. Download this repository.
-2. Copy one of the [templates](./templates) that best matches your
+2. Copy one of the [templates](./v4.0/templates) that best matches your
    project—novel, short story, or poems—to a new
    [markdown](https://www.markdownguide.org/) file.  
    For example, perhaps `template-prose-short.md` to `mylastname-mystory.md`.
