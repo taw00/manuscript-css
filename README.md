@@ -59,17 +59,17 @@ from working draft to finalized manuscript.
 
 # Manuscript formatting?
 
-Take a look at the PDFs in the [examples folder](./examples/) in this
+Take a look at the PDFs in the [examples folder](./v4.0/examples/) in this
 repository. These manuscripts were rendered from their
 corresponding markdown-formatted draft documents. No fluff and easy to read and
 review. Here are some screenshots of the results . . .
 
-<a href="examples/example-poe-the-tell-tale-heart.pdf"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.jpg" alt="short story: The Tell-Tale Heart (Poe)" /></a>
-<a href="examples/example-lovecraft-at-the-mountains-of-madness.pdf"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.jpg" alt="long story: At the Mountains of Madness (Lovecraft)" /></a>
+<a href="v4.0/examples/example-poe-the-tell-tale-heart.pdf"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.jpg" alt="short story: The Tell-Tale Heart (Poe)" /></a>
+<a href="v4.0/examples/example-lovecraft-at-the-mountains-of-madness.pdf"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.jpg" alt="long story: At the Mountains of Madness (Lovecraft)" /></a>
 
 <div style="clear: both;"></div>
 
-<a href="examples/example-prose-long.pdf"><img src="misc/README-long-prose.jpg" width="100%" alt="long story (novel) example" /></a>
+<a href="v4.0/examples/example-prose-long.pdf"><img src="misc/README-long-prose.jpg" width="100%" alt="long story (novel) example" /></a>
 
 <div style="clear: both;"></div>
 
@@ -201,7 +201,7 @@ painful to use, IMHO.
     Joplin as your editor.)
 
 Check out the example manuscripts in this repository in their original markdown
-and then as PDFs. Use one of the [templates](./templates/) as a template for
+and then as PDFs. Use one of the [templates](./v4.0/templates/) as a template for
 your own work. And if you are already familiar with converting markdown to HTML
 and then HTML to PDF then that should be enough to get you going.
 
@@ -216,7 +216,7 @@ unfortunately).
 
 ### Step 1 - Copying from a template
 
-Choose a template to from the `manuscript-css/templates/` folder. For your
+Choose a template to from the `manuscript-css/v4.0/templates/` folder. For your
 first time, I recommend `prose-template-short-form.md`. Rename it to whatever
 makes sense to you like `lastname-storytitle.md` which is a pretty standard
 filename for a manuscript.
@@ -541,8 +541,9 @@ It's not complicated.
 
 # Good luck!
 
-Check out the [example manuscripts](templates/) in this repository and I think
-how everything works with `manuscript.css` becomes obvious.
+Check out the manuscript [templates](./v4.0/templates/) and
+[examples](./v4.0/examples/) in this repository and I think how everything
+works with `manuscript.css` becomes obvious.
 
 Good luck. Now, quit fooling around on the internet and write something.
 
