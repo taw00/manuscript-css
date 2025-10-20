@@ -16,9 +16,14 @@
  */
 @media screen {
     #manuscript {
-        /*
-         * page-breaks dependent on 'short' vs. 'long'
+        /* We paint the faux page-break ABOVE the thing forcing a break */
+
+        /* TITLE PAGE: .long or .poetry Title Page initiated page break where
+         * there is a a word or line count at the bottom.
          */
+        &:is(.long,.poetry) > div.m-count {
+            border-block-end: var(--m-page-break-simulated-long);
+        }
 
         /* BOOK: we page break going into a book,
          *       but only if the book has a title header */
@@ -29,7 +34,8 @@
 
         /* CHAPTER: we page break going into a chapter,
         *           unless it follows a part */
-        & > .m-title + .m-chapter,
+        &:not(.long,.poetry) > .m-title + .m-chapter,
+        &:is(.long,.poetry):not(:has( > div.m-count)) > .m-title + .m-chapter,
         & section:not(.m-part) + .m-chapter,
 
         /* POEM: we page break going into a poem … always
