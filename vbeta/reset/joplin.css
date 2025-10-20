@@ -244,7 +244,8 @@ code.inline-code {
     display: none;
 }
 
-#vpage #manuscript :is(.x-poem,.m-poem,.m-title) {
+#vpage #manuscript :is(.x-poem,.m-poem,.m-title,.m-title-header,.m-header) {
+    /* note that m-title-header and m-header are deprecated classes */
     .hljs,
     .hljs-keyword,
     .hljs-operator,
@@ -297,5 +298,5 @@ code.inline-code {
         text-decoration: unset;
         padding: unset;
     }
-} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-title) */
+} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-title,.m-title-header,.m-header) */
 

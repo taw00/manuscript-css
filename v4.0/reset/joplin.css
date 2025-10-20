@@ -27,7 +27,11 @@
 
 @layer lm-reset-joplin-constants {
 
-body {
+:root {
+    --m-reset-joplin-navbar-opacity: 0.2;
+    --m-reset-joplin-footer-color: hsl(from rgb(50 55 63) h s l / 50%);
+    --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
+    /*--m-reset-joplin-footer-color-link: rgb(0 0 238);*/ /* default */
     --m-reset-joplin-background-color-body: var(--m-desktop-color);
     --m-reset-joplin-font-weight-code: var(--m-font-weight-code);
 }
@@ -62,14 +66,60 @@ body {
     }
 
     /* Joplin Cloud stuff */
+    :root {
+        /* More Joplin Cloud switches (use with the #vpage container)
+         * - hide-jcloud-navbar - hide that Joplin Cloud navigate stuff
+         * Don't use these next two because the service should be acknowledged.
+         * But I provide them for your convenience in case there is some odd
+         * case where you need to strip out everything from view but the
+         * manuscript
+         * - hide-jcloud-footer - hide the Joplin Cloud footer
+         * - hide-jcloud - hide all of the Joplin Cloud bits
+         */
+        &:has(#vpage:is(.hide-jcloud-navbar)) {
+            body.page-note {
+                & > main.main > div.container.main-container > nav.navbar { display: none; }
+            }
+        }
+        &:has(#vpage:is(.hide-jcloud-footer)) {
+            body.page-note {
+                & > div.footer { display: none; }
+            }
+        }
+        &:has(#vpage:is(.hide-jcloud)) {
+            body.page-note {
+                & > main.main > div.container.main-container > nav.navbar { display: none; }
+                & > div.footer { display: none; }
+            }
+        }
+
+        &:has(#vpage:is(.dim,.dimmer)) {
+            --m-reset-joplin-footer-color: hsl(from var(--m-paper-color) h s l / 50%);
+            --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 90%);
+        }
+        &:has(#vpage:is(.dark)) {
+            --m-reset-joplin-footer-color: hsl(from black h s l / 35%);
+            --m-reset-joplin-footer-color-link: hsl(from var(--m-reset-joplin-footer-color) h s l / 50%);
+        }
+    }
+
+    /* Joplin Cloud stuff */
     body.page-note {
         /* footer with copright and T&Cs - fade to watermark */
-        & > div.footer { opacity: .5; }
+        & > div.footer div.content {
+            opacity: initial;
+            color: var(--m-reset-joplin-footer-color);
+            & a {
+                color: var(--m-reset-joplin-footer-color-link);
+            }
+        }
         & > main.main > div.container.main-container {
             /* branded navbar - fade to watermark */
             & > nav.navbar {
-                opacity: .15;
+                opacity: var(--m-reset-joplin-navbar-opacity);
                 background-color: inherit;
+                box-shadow: unset;
+                border: unset;
             }
             & > div.note-main {
                 /* viewport to 100% */
@@ -194,7 +244,8 @@ code.inline-code {
     display: none;
 }
 
-#vpage #manuscript :is(.x-poem,.m-poem,.m-header,.m-title-header) {
+#vpage #manuscript :is(.x-poem,.m-poem,.m-title,.m-title-header,.m-header) {
+    /* note that m-title-header and m-header are deprecated classes */
     .hljs,
     .hljs-keyword,
     .hljs-operator,
@@ -247,5 +298,5 @@ code.inline-code {
         text-decoration: unset;
         padding: unset;
     }
-} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-header,.m-title-header) */
+} /* end #vpage #manuscript :is(.x-poem,.m-poem,.m-title,.m-title-header,.m-header) */
 
