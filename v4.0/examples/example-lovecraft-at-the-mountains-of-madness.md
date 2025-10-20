@@ -20,7 +20,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-4.0.css");
     @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
     */
     @import url("../manuscript.css");
@@ -38,7 +38,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-[comment]: / "-------------------------- TITLE PAGE --------------------------"
+[comment]:: "-------------------------- TITLE PAGE ---------------------------"
 
 
 
@@ -414,7 +414,7 @@ A few more feet of altitude and we would behold that realm. Danforth and I, unab
 
 
 
-<div class="m-title-header">
+<section class="m-chapter">
 <div class="m-title-header">
 
 # V.
