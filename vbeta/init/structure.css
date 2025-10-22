@@ -176,5 +176,9 @@ div#page > #article#manuscript > section.m-chapter {
         display: inline;
         box-sizing: border-box;
     }
+    & img {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 } /* end #manuscript */
 

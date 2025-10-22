@@ -50,13 +50,17 @@
             border-block-start: var(--m-page-break-simulated);
         }
 
+        /* interior m-title-page spacing changes if it has a count or contact */
+        &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page:has(.m-contact,.m-count) {
+            padding-block-start: unset;
+        }
 
         /*
          * Poems
-         * .m-poem = page break
+         * .m-poem = page break (unless it is the very first thing)
          * .m-poem + anything = page break
          */
-        &:is(.long,.poetry) section.m-poem,
+        &:is(.long,.poetry) :is(div.m-title-page,section) + section.m-poem,
         &:is(.long,.poetry) section.m-poem + section {
             border-block-start: var(--m-page-break-simulated-long);
         }
@@ -87,6 +91,8 @@
         & section.m-scene + .m-chapter:has( > .m-title ) {
             padding-block-start: var(--m-room-for-two);
         }
+
+        &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page,
         &:is(.long,.poetry) > div.m-title-page + section,
         &:is(.long,.poetry) section.m-book:has( > .m-title),
         &:is(.long,.poetry) section.m-book:has( > .m-title) + section,
@@ -97,12 +103,17 @@
             break-before: var(--m-page-break);
         }
 
+        /* interior m-title-page spacing changes if it has a count or contact */
+        &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page:has(.m-contact,.m-count) {
+            padding-block-start: unset;
+        }
+
         /*
          * Poems
-         * .m-poem = page break
+         * .m-poem = page break (unless it is the very first thing)
          * .m-poem + anything = page break
          */
-        &:is(.long,.poetry) section.m-poem,
+        &:is(.long,.poetry) :is(div.m-title-page,section) + section.m-poem,
         &:is(.long,.poetry) section.m-poem + section {
             break-before: page;
         }

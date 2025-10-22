@@ -79,6 +79,7 @@
      * --m-page-width, --m-page-height, and --m-page-margin defined */
     --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
     --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+    --m-content-height-interior: var(--m-content-height); /* this will change */
 
     --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
 
@@ -456,7 +457,7 @@
                --m-note-color-default:                         hsl(0deg 0 0 / 7%);
           --m-note-text-color-default:                 var(--m-color-gray7pt5);
          --m-note-frame-color-default:                     var(--m-link-color);
-          --m-note-link-color-default:                     var(--m-text-color);
+          /*--m-note-link-color-default:                     var(--m-text-color);*/
           --m-note-link-color-default:       var(--m-link-color-theme-default);
     --m-note-link-hover-color-default: var(--m-link-hover-color-theme-default);
                --m-note-color-dim:                      hsl(0deg 0 0 / 7%);
@@ -465,7 +466,7 @@
           --m-note-link-color-dim:       var(--m-link-color-theme-dim);
     --m-note-link-hover-color-dim: var(--m-link-hover-color-theme-dim);
                --m-note-color-dimmer:                        hsl(0deg 0 0 / 7%);
-          --m-note-text-color-dimmer:       var(--m-link-color-theme-dimmer);
+          /*--m-note-text-color-dimmer:       var(--m-link-color-theme-dimmer);*/
           --m-note-text-color-dimmer:                   var(--m-color-gray8);
          --m-note-frame-color-dimmer:        var(--m-note-text-color-dimmer);
           --m-note-link-color-dimmer:       var(--m-link-color-theme-dimmer);
