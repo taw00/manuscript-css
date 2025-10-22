@@ -88,12 +88,12 @@ div#vpage > article#manuscript section.m-poem > div.m-note,
 div#vpage > article#manuscript div.x-poem > div.m-title,
 div#vpage > article#manuscript div.x-poem > pre,
 div#vpage > article#manuscript div.x-poem > div.m-note,
-/* a title block can only contain a p, blockquote, x-poem, facts, or h-tag */
-div#vpage > article#manuscript div.m-title > div.m-facts,
+/* a title block can only contain a p, blockquote, x-poem, or h-tag */
+div#vpage > article#manuscript div.m-title > div.m-facts, /* deprecated */
 div#vpage > article#manuscript div.m-title > div.x-poem,
 div#vpage > article#manuscript div.m-title > :is(h1, h2, h3, h4, h5, blockquote, p),
-/* counts, facts, and contacts can only contain paragraphs */
-div#vpage > article#manuscript div.m-facts > p,
+/* counts and contacts can only contain paragraphs */
+div#vpage > article#manuscript div.m-facts > p, /* deprecated */
 div#vpage > article#manuscript div.m-contact > p,
 div#vpage > article#manuscript div.m-count > p,
 /* We have some special cases because … meddling by markdown ediors … */
@@ -127,7 +127,8 @@ div#page > #article#manuscript > section.m-chapter {
         clear: both;
     }
 
-    & .m-facts,
+    & .m-count,
+    & .m-facts, /* deprecated */
     & div.x-poem {
         display: block;
         box-sizing: border-box;
