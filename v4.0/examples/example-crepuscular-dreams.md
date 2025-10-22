@@ -16,7 +16,7 @@ Customizations:
     or printed form of this document.)
 - The document
   - Crimson Text as the baseline font (prettier)
-  - font-size 14.5pt instead of 12pt
+  - font-size 20px instead of 12pt (16px).
   - Shrank the content size to 73% of the page's width so that the poem
     looks more centered on the content.
   - Enabled the 'simple' flag to get rid of the contact information, poem
@@ -51,7 +51,7 @@ really try to avoid adding !important after values in CSS. Being specific will
 generally override the specificity of the imported CSS. You can remove all of
 that expliciteness if you like and just add !important. I am very confortable
 with CSS, of course, and therefore, I like the more explicit, if busier,
-method. Here's an example of using !important and getting right of the nesting
+method. Here's an example of using !important and getting out of the nesting
 for h1:
 
 h1 {
@@ -74,6 +74,7 @@ h1 {
         & > .m-poem > .m-title-header {
             font-family: overpass, sans-serif;
             margin-inline: 0;
+            margin-block-start: .15in;
             & > h1 {
                 font-size: 125%;
                 text-align: left;
@@ -82,11 +83,12 @@ h1 {
         & > .m-scene {
             margin-block-start: .5in;
             font-size: 60%;
+            line-height: 1.15;
         }
     }
     :root {
       --m-fontstack-serif: "Crimson Text", serif;
-      --m-font-size: 14.5pt;
+      --m-font-size: 20px;
       --m-content-width: calc(var(--m-page-width) * .73);
     }
 </style>
@@ -127,16 +129,14 @@ Quiet but for the whispered secrets of invertebrates.
 ```
 
 ```
-Just then, an emergent glow.
+
+        Just then, an emergent glow.
 ```
 
 ```
+
 As night surrenders to birdsong,
 Dreamers wake and face the dawn.
-```
-
-```
-     —Todd Warner
 ```
 
 </section>
@@ -145,7 +145,7 @@ Dreamers wake and face the dawn.
 Copyright © 2019 Todd Warner
 
 (2019) 2022\. In *County Lines*, Vol. 7 2020.
-December 4, 2019. Louisburg, NC: Writers Guild, Franklin County Arts Council. Revised November 12, 2022.
+December 4, 2019. Louisburg, NC: Writers Guild, Franklin County Arts Council. Revised October 21, 2025.
 
 </section>
 </article>
