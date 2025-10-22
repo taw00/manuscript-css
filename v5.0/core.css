@@ -1,0 +1,14 @@
+/* the core styles - this corrals all of the baseline logic.
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@import   url("./core/top-level.css?rev=2025101601");
+@import       url("./core/scene.css?rev=2025101301");
+@import        url("./core/poem.css?rev=2025101301");
+@import url("./core/page-breaks.css?rev=2025102101");
+@import    url("./core/dinkuses.css?rev=2025100101");
+@import       url("./core/notes.css?rev=2025100403");
+

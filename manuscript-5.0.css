@@ -1,0 +1,49 @@
+/* CSS for Manuscript Format v5.0
+ * This version may diverge significantly from the latest numbered version
+ *
+ * Use this CSS to format your markdown-drafted short story or novel into an
+ * approximates of industry standard manuscript formatting.
+ *
+ * This is useful for:
+ * - sharing with others in a format they are familiar with
+ * - submitting to critique groups in a professional way
+ * - post the manuscript-formated doc on the web for review
+ * … all without having to port your draft to a word processing document
+ *
+ * Supported: Manuscripts formated as …
+ * - short and long form documents
+ * - narrative and nonnarrative prose
+ * - prose and poetry
+ * - books, parts, chapters, and scenes/poems
+ * - US Letter, A4, etc. for print and digital presentation.
+ *
+ * At the minimum the opening of your markdown (text) document would import
+ * this manuscript.css stylesheet like this:
+ *
+ * <style
+ *   @import url("url-or-path/to/the/manuscript.css");
+ *   :root {
+ *     --m-marginalia: "Penlastname / Story Title / " counter(page);
+ *   }
+ * </style>
+ *
+ * Please see the accompanying documentation and templates for further detail.
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
+
+@import                        url("./v5.0/var.css?rev=2025101501");
+@import                      url("./v5.0/reset.css?rev=2025101901");
+@import                       url("./v5.0/init.css?rev=2025101902");
+@import                       url("./v5.0/core.css?rev=2025102101");
+@import url("./v5.0/overrides-and-conveniences.css?rev=2025100902");
+@import  url("./manuscript-user-customizations.css?rev=2025091501");
+
+:root {
+    --m-version: "5.0";
+}
+

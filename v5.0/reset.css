@@ -1,0 +1,23 @@
+/* "Normalized" stylings for this toolchain before we layer ours on top.
+ *
+ * Included are some normalization in the context of markdown applications that
+ * can produce a finished rendered view from within their respective
+ * interfaces. Noted here are Joplin and VSCode because they allow you to
+ * import CSS and manipulate the rendered result. Conversely, many markdown
+ * editors that give you the ability to generate a rendered view (GhostWriter
+ * for example) but will disallow CSS overrides or will disallow anything more
+ * than remedial CSS changes. For those you will have to do the true rendering
+ * outside of those toolchains.
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@import          url("./reset/joplin.css?rev=2025101901");
+@import          url("./reset/vscode.css?rev=2025091401");
+@import          url("./reset/pandoc.css?rev=2025091401");
+@import     url("./reset/ghostwriter.css?rev=2025091401");
+@import url("./reset/markdown-viewer.css?rev=2025091401");
+@import           url("./reset/other.css?rev=2025091402");
+

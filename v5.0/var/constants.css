@@ -1,0 +1,223 @@
+/* @layer lm-var-constants
+ * :root { --m-XXXXXX } variable constants.
+ *
+ * This contains most of the constants and some baseline defaults that are then
+ * leveraged by m-var.css and all the rest of the stack.
+ *
+ * Warning: if you override any of these, please be aware that they are subject
+ * to change. Especially the more esoteric ones. Right now there are far too
+ * many and I aim to simpify them in the future.
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-var-constants {
+
+:root {
+    /*
+     * BASELINE CONSTANTS
+     * Note,
+     * - US:  8.5in x 11in (216mm x 279mm) - US Letter
+     * - USh: 5.5in x 8.5in (140m x 216mm) - US Half Letter
+     * - A4:  210mm x 297mm (8.3in x 11.7in)
+     * - A5:  148mm x 210mm (5.8in x 8.3in)
+     * - A6:  106mm x 148mm (4.1in x 5.8in)
+     */
+    --m-page-widthUS:  8.5in;  --m-page-heightUS:   11in;  --m-page-marginUS:   1in;
+    --m-page-widthUSh: 5.5in;  --m-page-heightUSh: 8.5in;  --m-page-marginUSh: .5in;
+    --m-page-widthA4:  210mm;  --m-page-heightA4:  297mm;  --m-page-marginA4:   1in;
+    --m-page-widthA5:  148mm;  --m-page-heightA5:  210mm;  --m-page-marginA5:  .5in;
+    --m-page-widthA6:  105mm;  --m-page-heightA6:  148mm;  --m-page-marginA6: .25in;
+
+    /* default for each is 1/2 the default margin widths */
+    --m-indentUS:  calc(var(--m-page-marginUS)  * .5);
+    --m-indentUSh: calc(var(--m-page-marginUSh) * .5);
+    --m-indentA4:  calc(var(--m-page-marginA4)  * .5);
+    --m-indentA5:  calc(var(--m-page-marginA5)  * .5);
+    --m-indentA6:  calc(var(--m-page-marginA6)  * .5);
+
+    /* line-height (line spacing) - singlespace and doublespace
+     * web single-space is usually 1.2 or 1.25,
+     * but libreoffice and word are 1.15
+     * web doublespace, is usually 2. libreoffice and word are 1.15 * 2 = 2.3
+     */
+    --m-line-spacing-single: 1.15;
+    --m-line-spacing-single-plus: 1.725; /* +0.575 */
+    --m-line-spacing-double: 2.3;        /* 2 x 1.15 */
+    --m-line-spacing-double-plus: 2.875; /* +0.575 */
+    --m-line-spacing-triple: 3.45;       /* 3 x 1.15 */
+
+    /* additional margin/spacing nudges used here and there */
+    --m-nudge: .5rem;
+    --m-elbow-room: 1rem;
+    --m-room-for-two: 2rem;
+
+    --m-text-align: start;
+    --m-text-justify: inter-word;
+
+    --m-font-size-standard:   16px; /* 16px=12pt; 19px=14pt; 14px=10pt */
+    --m-font-weight-standard: normal;
+    --m-line-spacing-standard: var(--m-line-spacing-double);
+
+    /* -30- and dinkus markers
+     * Note1: for manuscript, the solitary # sign is the most typical/standard
+     *        scene-break marker. --m-dinkus is automatically inserted between
+     *        scenes. --m-30- is automatically inserted at the end.
+     * Note2: marker30+ are examples of how you could add copyright © and
+     *        licensing info after the -30- marker.  Also, (a) you need to use
+     *        CSS escapes and (b) they eat one space following. \a is a
+     *        newline. \a9 is the copyright symbol For reference:
+     *          https://www.w3.org/International/questions/qa-escapes */
+    --m-marker0:     "#";
+    --m-marker-hash: "#";          /* THE DEFAULT (scene dinkuses) */
+    --m-marker1:    "*";
+    --m-marker-ast: "*";
+
+   /* for subscenes and subscene blocks, perhaps */
+    --m-marker-hyphen: "-";
+    --m-marker-3hyphens: "- - -";
+    --m-marker2:        "—";
+    --m-marker-em-dash: "—";
+    --m-marker-3em-dashes: "— — —";
+    --m-marker-2em-dash: "⸺";
+    --m-marker-horbar: "―";
+    --m-marker-quote-dash: var(--m-marker-horbar);
+    --m-marker-3horbars: "― ― ―";
+    --m-marker-3quote-dashes: var(--m-marker-3horbars);
+    --m-marker-forward-slash: "/";
+    --m-marker-tilde: "~";
+
+    /* Manuscript End, common */
+    --m-marker10:       "The End";
+    --m-marker-the-end: "The End"; /* THE DEFAULT (manuscript end (30)) */
+    --m-marker11:     "# # #";
+    --m-marker-3hash: "# # #";
+    --m-marker12:    "* * *";
+    --m-marker-3ast: "* * *";
+    --m-marker13: "⁂";
+    --m-marker14: "❦";
+    --m-marker15: "🙞 ❦ 🙜";
+    --m-marker16: "🙞  🙜";
+    --m-marker17:   "- 30 -";
+    --m-marker-30-: "- 30 -";
+
+    /* The End + copyright */
+    --m-marker30: "The End \00000a \00000a  (c) ";
+    --m-marker31: "The End \00000a \00000a \0000a9  ";
+    --m-marker32: "The End \00000a \00000a Copyright (c) ";
+    --m-marker33: "The End \00000a \00000a Copyright \0000a9  ";
+
+    /* White Space Markers */
+    --m-marker90:    "\200B"; /* &zerowidthspace */
+    --m-marker-zws:  "\200B"; /* &zerowidthspace */
+    --m-marker91:    "\00A0"; /* &nbps; */
+    --m-marker-nbsp: "\00A0"; /* &nbps; */
+
+    /* typefaces (fontstacks)
+     * Manuscript standards, these or close equivalents:
+     * - Times New Roman - for narrative works
+     * - Arial or Helvetica - for nonnarrative works . . . sometimes
+     * - Courier Prime - when a monospaced typeface is needed
+     * - Noto Sans Mono - for when you need a monospace font that compliments
+     *                    sans-serif.
+     * The first three are all proprietary. But these font stacks below call
+     * for some excellent close-equivalent open options for each category. */
+    --m-fontstack-times: "Times New Roman", "Croscore Tinos", tinos, "Nimbus Roman", "Liberation Serif", "TeX Gyre Termes", thorndale, serif;
+    --m-fontstack-arial: arial, "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", albany, sans-serif;
+    --m-fontstack-helvetica: helvetica, "TeX Gyre Heros", "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", sans-serif;
+    --m-fontstack-courier: "Courier Prime", "Croscore Cousine", cousine, "TeX Gyre Cursor", "Liberation Mono", cumberland, "Courier Prime Code", "Courier New", courier, monospace;
+    --m-fontstack-roboto-mono: "Roboto Mono", "Adwaita Mono", "Lucida Sans Typewriter", "Liberation Mono", monospace;
+    --m-fontstack-noto-sans-mono: "Noto Sans Mono", "Lucida Sans Typewriter", "Liberation Mono", monospace;
+    --m-fontstack-system: "Public Sans", "Nunito Sans", "Open Sans", system-ui, "Adwaita Sans", inter, "Segoe UI", roboto, sans-serif;
+
+    /* page breaks & simulated page breaks - short-form and long-form
+     * Short form docs don't have any page breaks by default.
+     * Long form docs have page breaks after the title page and then before
+     * each chapter.
+     */
+    --m-page-break-short: unset;
+    --m-page-break-long:  page;
+    --m-page-break-simulated-short: 0;
+    --m-page-break-simulated-end-spacing-short: var(--m-room-for-two) transparent solid;
+    /* … for the simulated page break for long-form docs, we use a heavy faded
+     *   dashed line. For the title page, we add padding before that line. */
+    --m-page-break-simulated-long: 4px dashed var(--m-page-break-simulated-color);
+    --m-page-break-simulated-end-spacing-long: calc(var(--m-offset-title) + 0.5in) transparent solid;
+    --m-page-break-simulated-end-spacing-poem: var(--m-room-for-two) transparent solid;
+
+    /* colors used mainly for desktop, paper, and text / links */
+    --m-color-black:      hsl(0deg 0% 0%); /* black */
+    --m-color-gray9:      hsl(0deg 0% 0%); /* black */
+    --m-color-gray8pt9:   #020202ff;
+    --m-color-gray8pt8:   #050505ff;
+    --m-color-gray8pt7:   #070707ff;
+    --m-color-gray8pt6:   #090909ff;
+    --m-color-gray8pt5:   #0c0c0cff;
+    --m-color-gray8pt4:   #0e0e0eff;
+    --m-color-gray8pt3:   #111f;
+    --m-color-gray8pt2:   #181818ff;
+    --m-color-gray8pt1:   #1b1b1bff;
+    --m-color-gray8:      hsl(0deg 0% 12%);
+    --m-color-notblack:   var(--m-color-gray8pt5);
+    --m-color-gray7pt5:   hsl(0deg 0% 27%);
+    --m-color-dimgray:    hsl(0deg 0% 41%); /* dimgray */
+    --m-color-gray7:      hsl(0deg 0% 41%); /* dimgray */
+    --m-color-gray:       hsl(0deg 0% 50%); /* gray */
+    --m-color-gray6:      hsl(0deg 0% 50%); /* gray */
+    --m-color-darkgray:   hsl(0deg 0% 66%); /* darkgray; oddly, lighter than gray */
+    --m-color-gray5:      hsl(0deg 0% 66%); /* darkgray; oddly, lighter than gray */
+    --m-color-silver:     hsl(0deg 0% 75%); /* silver */
+    --m-color-gray4:      hsl(0deg 0% 75%); /* silver */
+    --m-color-lightgray:  lightgray;
+    --m-color-gray3:      lightgray;
+    --m-color-gainsboro:  gainsboro;
+    --m-color-gray2:      gainsboro; /* #dcdcdcff */
+    --m-color-whitesmoke: whitesmoke;
+    --m-color-gray1:      whitesmoke; /* hsl(0deg 0% 96%) */
+    --m-color-notwhite:   whitesmoke;
+    --m-color-white:      white; /* #ffffffff */
+    --m-color-gray0:      white;
+
+    /* we like blues for links */
+    --m-color-browser-link-blue:  #00ef;
+    --m-color-cobalt-blue:        #0020c2ff;
+    --m-color-union-blue:         #0d1e51ff;
+    --m-color-professional-blue1: #02195cff;
+    --m-color-professional-blue2: hsl(225deg  73% 26%);
+    --m-color-professional-blue3: #4790A7ff;
+    --m-color-professional-blue4: #53b7d7ff;
+    --m-color-professional-blue5: #39ff;
+    --m-color-professional-blue6: #9fff;
+    --m-color-professional-blue7: hsl(240deg 100% 80%);
+
+    /* alternative dark colors with a hint of color */
+    --m-color-gray-purple-dark: #29272bff;
+    --m-color-gray-green-dark:  #272b27ff;
+    --m-color-gray-blue-dark:   #27272bff;
+    --m-color-gray-pink-dark:   #2b272bff;
+    --m-color-gray-purpleblue-dark: hsl(222deg 12% 16%);
+    --m-color-gray-yellow-dark: #2b2b27ff;
+    --m-color-gray-gold-dark:   #2d2a23ff;
+    --m-color-eggplant:         #483248ff;
+    --m-color-eggplant-dark:    #2a1d2aff;
+    --m-color-eggplant-darker:  #0f0a0fff;
+
+    /* for the page 2+ headers */
+    --m-marginalia: "Penlastname / Story Title / " counter(page);
+
+    /* FOR DEBUGGING:
+     * Decorative border (screen rendering only) - DISABLED FOR NOW
+     * A border wrapping the manuscript content. Set this to 0 in your
+     * manuscript to disable. */      /* faded lightgray */
+    /*
+    --m-manuscript-border: 1px solid rgb(211 211 211 / 50%);
+    --m-vpage-border: 1px solid red;
+    */
+    --m-manuscript-border: 0;
+    --m-vpage-border: 0;
+}
+
+} /* end @layer lm-var-constants */
+

@@ -1,0 +1,27 @@
+/* Adjust the Markdown Viewer browser extension so that it doesn't interfere
+ * (overly much) with our HTML and PDF renderings.
+ * <https://github.com/simov/markdown-viewer>
+ *
+ * Markdown toolchains manipulate stylings. It's a constant battle to make them
+ * play nice with manuscript-css.
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+
+/* We need to neuter this #id.class. The important bits are the widths and
+   padding and margin settings. */
+#_html.markdown-theme {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+

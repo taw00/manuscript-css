@@ -1,0 +1,19 @@
+/* var/constants: baseline variable constants
+ * var/defaults:  everything variable set to their defaults
+ * var/permutations: the defaults adjusted based on classes the user sets for
+ *                   each: narrative/nonnarrative, short/long, etc.
+ * var/theme: color variations
+ *
+ * There are values in here that can be overridden, but others that really
+ * should not be. Tread carefully.
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@import    url("./var/constants.css?rev=2025101501");
+@import     url("./var/defaults.css?rev=2025101301");
+@import url("./var/permutations.css?rev=2025101301");
+@import        url("./var/theme.css?rev=2025100405");
+

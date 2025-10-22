@@ -1,0 +1,158 @@
+/* .m-scene (i.e., prose) - mostly positioning and spacing configuration
+ * (div#vpage article#manuscript section.m-scene) 
+ *
+ * Scenes populate a prose manuscript. Crudely, it looks something like this:
+ *
+ * <div id="vpage"><article id="manuscript">
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * </article>
+ * </div>
+ *
+ * … or, for example, two chapters …
+ *
+ * <div id="vpage"><article id="manuscript" class="long">
+ * <section class="m-chapter">
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * </section>
+ * <section class="m-chapter">
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * <section class="m-scene"> …your words… </section>
+ * </section>
+ * </article>
+ * </div>
+ *
+ * Please reference the provided examples.
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+
+#manuscript {
+    & section.m-scene {
+        position: relative;
+        /*
+         * Normal Scene: #manuscript section.m-scene:not(.foothang)
+         */
+        &:not(.foothang) {
+            & p {
+                /* a paragraph after a non-paragraph is not indented */
+                text-indent: var(--m-indent-first-paragraph-scene);
+            }
+            /* specificity forces this re-declaration */
+            & ul > li > p,
+            & ol > li > p,
+            & dt > dd > p,
+            & dt > dd {
+                text-indent: 0;
+            }
+            & p + p,
+            & dd + dd {
+                /* a paragraph after a paragraph is indented (narrative) or not
+                 * (nonnarrative) */
+                text-indent: var(--m-indent-scene);
+            }
+            & :is(p,h1,h2,h3,h4,h5,h6) + :is(p,h1,h2,h3,h4,h5,h6),
+            & dd + dd {
+                margin-block: var(--m-paragraph-spacing-scene) 0;
+            }
+
+            /* paragraphs - spacing between paragraphs in normal scenes
+             *              indents at the start
+             * Note, the exclusions are pedantic. */
+            & > :is(h1,h2,h3,h4,h5,h6),
+            & :not(.x-poem,.m-title, ol,ul,dl,menu, li,dt,dd, table,thead,tbody,tfoot,th,tr,td,colgroup,col) {
+                & :is(h1,h2,h3,h4,h5,h6) {
+                    margin-block-start: var(--m-elbow-room);
+                }
+            }
+        } /* end Normal Scene: #manuscript section.m-scene:not(.foothang) */
+
+
+        /*
+         * Scene's Subscenes - experimental. may go away.
+         */
+
+        /* ... subscenes: subscenes spacing BEFORE subscenes block */
+        & > :not(div,section,article,h1,h2,h3,h4,h5,h6) ~ section.m-subscenes::before {
+            content: var(--m-marker-zws); /* &zerowidthspace */
+            margin-block-start: 2rem;
+        }
+        /* ... subscenes: subscenes spacing AFTER subscenes block */
+        & section.m-subscenes::after {
+            content: var(--m-marker-zws); /* &zerowidthspace */
+            margin-block-end: 2rem;
+        }
+
+        & > section.m-subscenes:first-child,
+        & section.m-subscenes {
+            & > section.m-scene:first-child {
+                padding-block-start: 0;
+            }
+            & > section.m-scene:last-child {
+                margin-block-end: 0;
+                padding-block-end: 0;
+            }
+        }
+
+        /*
+         * Scene padding at the top
+         */
+
+        & > .m-title {
+            /* prose content - there may be a small margin (non-narrative)
+             * between prose content and a scene's header block if it exists */
+            & + * {
+                padding-block-start: var(--m-paragraph-spacing-scene);
+            }
+            /* all header content starts as centered and with no spacing */
+            & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
+            & > p {                            /* all paragraphs */
+                padding: 0; border: 0;
+                text-align: center;
+            }
+            /* have to reset this because of the top-level .m-scene rules */
+            & .m-facts {
+                & > p {
+                    text-indent: unset;
+                    text-align: center;
+                    margin-block-start: 0;
+                }
+                & > p + p {
+                    margin-block-start: var(--m-paragraph-spacing-scene);
+                }
+            }
+        }
+
+        /*
+         * Scene's last children are treated special-like
+         */
+
+        /* last element within a scene: zero-out bottom spacing */
+        & > :last-child {
+            margin-block-end: 0; padding-block-end: 0;
+        }
+        /* last element::after within a scene: zero-out content and spacing  */
+        & > :last-child::after {
+            content: "";
+            margin-block: 0; padding-block: 0;
+        }
+    } /* end #manuscript section.m-scene */
+
+    /* scene title header spacing control
+     * - gap between a scene header and its scene content */
+    & section.m-scene > .m-title {
+        margin-block-end: calc(var(--m-elbow-room) * 1);
+    }
+    & section.m-scene ~ section.m-scene:has( > .m-title) {
+        margin-block-start: calc(var(--m-elbow-room) * 1);
+    }
+
+} /* end #manuscript */
+

@@ -1,0 +1,143 @@
+/*
+ * Some overriding classes
+ *
+ * These are used to force certain stylings on elements in your document. Most
+ * commonly <section class="m-scene">. For example,
+ * <section class="m-scene no-indent"> should turn off the text indenting for
+ * that scene.
+ *
+ *
+ * center-max-content,
+ * table-of-contents, .toc - these center based on max-content
+ * break-before - page-break before the element
+ * break-after - page-break after the element
+ * no-break - do not break before this element
+ * unindent - section will have text-indent unset (no-indent can also be used)
+ * foothang - section will be full of hanging indented paragraphs
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+/* .center-max, .center-max-content */
+/* .table-of-contents ------------- */
+/* .toc --------------------------- */
+.center-max,
+.center-max-content,
+.table-of-contents,
+.toc {
+    width: max-content !important;
+    max-width: 100% !important;
+    margin-left: auto !important; margin-right: auto !important;
+}
+
+/* .hide -------------------------- */
+.hide {
+    display: none !important;
+}
+
+
+#vpage #manuscript {
+    table {
+        border-color: var(--m-text-color);
+        border-collapse: collapse;
+        margin-inline: auto;
+        margin-block: 1rem;
+        width: 100%;
+        opacity: unset;
+        filter: unset;
+        background: unset;
+        background-color: transparent;
+        thead, tbody, tfoot, th, tr, td, colgroup, col {
+            font-size: inherit;
+            font-weight: inherit;
+            font-style: inherit;
+            line-height: 1.25;
+            text-align: start;
+            text-indent: 0;
+            color: inherit;
+            background: unset;
+            background-color: transparent;
+            margin: unset;
+            padding: unset;
+            border-color: var(--m-text-color);
+        }
+        th, td {
+            padding: 5px;
+        }
+        /*
+        th {
+            font-weight: bolder;
+        }
+        */
+    }
+}
+
+
+/* .break-before, .break-after, .no-break ----------------------
+ * .no-break should win if both are used  ---------------------- */
+@media screen {
+    /* .break-before ------------ */
+    .break-before, .force-break-before {
+        border-block-start: var(--m-page-break-simulated-long) !important;
+    }
+    /* .break-after ------------- */
+    .break-after, .force-break-after {
+        border-block-end: var(--m-page-break-simulated-end-spacing-long) !important;
+    }
+    #manuscript section.m-poem:is(.break-after, .force-break-after) {
+        border-block-end: var(--m-page-break-simulated-end-spacing-poem) !important;
+    }
+    /* unset the break if called to do so */
+    #manuscript section.no-break {
+        border-block-start: unset !important;  /* simulated "break-before" */
+        border-block-end: unset !important;    /* simulated page-break aesthetic spacing */
+    }
+    /* poems add a aesthetic space at the end right before a simulated page-break
+     * line from the next section. Let's remove that if that next section has a
+     * 'no-break'. */
+    #manuscript section.m-poem:has( + section.no-break) {
+        border-block-end: unset !important; /* simulated page-break aesthetic spacing */
+    }
+} /* end @media screen */
+
+@media print {
+    /* .break-before ------------ */
+    .break-before, .force-break-before {
+        break-before: page !important;
+    }
+    /* .break-after ------------- */
+    .break-after, .force-break-after {
+        break-after: page !important;
+    }
+    #manuscript section.m-poem:is(.break-after, .force-break-after) {
+        break-after: page !important;
+    }
+    /* unset the break if called to do so */
+    #manuscript section.no-break {
+        break-before: unset !important;
+        break-after: unset !important;
+    }
+} /* end @media print */
+
+/* .unindent and .no-indent ------- */
+:is(article,section,div):not(.foothang):is(.unindent,.no-indent) {
+    & p,
+    & dd,
+    & li > p,
+    & dd > p,
+    & blockquote p {
+        text-indent: unset !important;
+    }
+}
+
+/* .foothang ---------------------- */
+/* .m-scene or any other major block with a class .foothang
+ * will format the paragraphs as a hanging indent */
+#manuscript :is(section,div) p.foothang,
+#manuscript :is(section,div).foothang p {
+    padding-left: var(--m-indent-foothang);
+    text-indent: calc(var(--m-indent-foothang) * -1); 
+}
+

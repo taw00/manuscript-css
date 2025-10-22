@@ -1,0 +1,83 @@
+/* .m-note - notes!
+ * (div#vpage article#manuscript section:is(.m-scene,.m-poem,.x-poem) div.m-note) 
+ *
+ * Notes can exist in the body of a scene or poem and serve to stand out for
+ * editorial purposes. They are sans-serif (system font), bordered,
+ * single-spaced, and their color is a bit different.
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+#vpage #manuscript div.m-note {
+    color:             var(--m-note-text-color);
+    background-color:  var(--m-note-color);
+    border: 1px dashed var(--m-note-frame-color);
+    border-radius: 1.5%;
+    padding:      var(--m-elbow-room);
+    margin-block: var(--m-elbow-room);
+    margin-inline: auto 0;
+    max-width: 100%;
+    width:     var(--m-width-notes);
+    a,
+    a:is(:any-link,:link,:active,:visited) {
+        color:     var(--m-note-link-color);
+        &:hover {
+            color: var(--m-note-link-hover-color);
+        }
+    }
+    &:not(.foothang) {
+        & p {
+            /* note paragraphs are not indented */
+            text-indent: 0;
+        }
+        /* specificity forces this re-declaration */
+        & ul > li > p,
+        & ol > li > p,
+        & dt > dd > p,
+        & dt > dd {
+            text-indent: 0;
+        }
+        & p ~ p,
+        & dd ~ dd {
+            /* note paragraphs are not indented */
+            text-indent: 0;
+            margin-block: var(--m-paragraph-spacing-nonnarrative) 0;
+        }
+        & :is(h1,h2,h3,h4,h5,h6) {
+            margin-block: revert;
+        }
+        /* these next two have to be here for reasons of specificity */
+        & > :first-child {
+            margin-block-start: 0;
+        }
+        & > :last-child {
+            margin-block-end: 0;
+        }
+    } /* end normal note (not a foothanging note) */
+    & > :first-child {
+        margin-block-start: 0;
+    }
+    & > :last-child {
+        margin-block-end: 0;
+    }
+} /* end .m-note */
+
+
+@media screen {
+    #vpage #manuscript div.m-note {
+        display: var(--m-notes-display) !important;
+    }
+}
+@media print {
+    #vpage #manuscript div.m-note {
+        display: var(--m-notes-export-display) !important;
+    }
+}
+/* Joplin Cloud */
+body.page-note {
+    #vpage #manuscript div.m-note {
+        display: var(--m-notes-jcloud-display) !important;
+    }
+}

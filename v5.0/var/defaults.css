@@ -1,0 +1,522 @@
+/* @layer lm-var-defaults
+ *
+ * Configuration of baseline default :root variables leveraging the constants
+ * established in m-var/constants.css.
+ *
+ * There are values in here that can be overridden, but others that really
+ * should not be (they are calculated or usually inherit).
+ *
+ * FOR EXAMPLE:
+ * Check the example manuscripts in this repo, but, essentially, this is how
+ * you override these settings. In your markdown, just add a :root {} section
+ * in your <style> block ... and redeclare variables. Here's an example:
+ *
+ * <style>
+ * @import url("/path/to/manuscript.css");
+ * 
+ * :root {
+ *     --m-font-family: "TeX Gyre Pagella", Palladio, Palantino, serif;
+ *     --m-font-family-title: "Comic Neue", "Comic Sans", cursive;
+ *     --m-font-family-subtitle: "Comic Neue", "Comic Sans", cursive;
+ *     --m-font-family-byline: "Comic Neue", "Comic Sans", cursive;
+ *     --m-font-size: 19px;
+ *     --m-font-size-title: 1.5rem;
+ *     --m-font-weight-title: bold;
+ *     --m-font-weight-subtitle: medium;
+ *     --m-line-spacing: 2.5;
+ *     --m-indent: .35in;
+ *     --m-dinkus: "~"
+ *     --m-30-: "~ ~ ~;
+ * }
+ * </style> 
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@layer lm-var-defaults {
+
+:root {
+    /*
+     * DEFAULTS - section 1 - baseline core values
+     */
+
+    /* set in m-var/permutations.css
+    --m-page-width:  var(--m-page-widthUS);
+    --m-page-height: var(--m-page-heightUS);
+    --m-page-margin: var(--m-page-marginUS);
+    --m-margination-margin: calc(var(--m-page-margin) * 1.333);
+     */
+
+    --m-fontstack-serif: var(--m-fontstack-times);
+    --m-fontstack-sans-serif: var(--m-fontstack-arial);
+    --m-fontstack-sans: var(--m-fontstack-sans-serif);
+    --m-fontstack-monospace: var(--m-fontstack-courier);
+    --m-fontstack-sans-monospace: var(--m-fontstack-roboto-mono);
+
+    --m-fontstack-mono: var(--m-fontstack-monospace);
+    --m-fontstack-sans-mono: var(--m-fontstack-sans-monospace);
+
+    --m-font-size: var(--m-font-size-standard); /* 16px (12pt) */
+    --m-font-weight: var(--m-font-weight-standard); /* normal */
+    --m-line-spacing: var(--m-line-spacing-standard); /* 2 (double) */
+
+    --m-font-size-preformatted:    inherit;
+    --m-font-size-code:            inherit;
+    --m-font-size-code-inline:     inherit;
+
+    --m-font-weight-preformatted:  inherit;
+    --m-font-weight-code:          inherit;
+    --m-font-weight-code-inline:   inherit;
+
+    --m-line-spacing-preformatted: var(--m-line-spacing-single);
+    --m-line-spacing-code:         inherit;
+
+    /* -------------------- */
+
+    /* constraining the content between the margins now that we have a
+     * --m-page-width, --m-page-height, and --m-page-margin defined */
+    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
+    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+
+    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+
+    /* Offset calculations used to offset title blocks from top of the
+     * page. Manuscripts standards recommend placing the main title-block
+     * header anywhere from 1/3rd to 1/2 down the page. And if a long-form
+     * manuscript the same holds true for part headers and chapter headers. */
+    --m-page-offset-1-5th: calc(var(--m-page-height) / 5);
+    --m-page-offset-1-4th: calc(var(--m-page-height) / 4);
+    --m-page-offset-1-3rd: calc(var(--m-page-height) / 3); /* or 3.66666in US */
+    --m-page-offset-5-12th: calc(var(--m-page-height) * 5 / 12); /* or 4.58333in US */
+    --m-page-offset-half: calc(var(--m-page-height) / 2); /* or 5.5in US */
+    --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
+    --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
+    --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
+    /*
+    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
+    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
+    */
+    --m-content-offset-5-12th: calc(var(--m-content-height) * 5 / 12);
+    --m-content-offset-half: calc(var(--m-content-height) / 2);
+
+    /* -------------------- */
+
+    /* hyphenation
+     *
+     * Manuscript standards almost universally state never fully justified and
+     * never hyphenated. But here's the variable switch if you want to play
+     * around: manual or auto.
+     *
+     * IMPORTANT: hyphenation only works if the lang attribute is set in the
+     * html element (eg: <html lang="en"> or set in the elements managing the
+     * text you want to be hyphenated. Most markdown editors don't set this.
+     * -- also, check out this future feature (still in a w3c draft)
+     * hyphenate-limit-chars: 6 3 2;
+     * hyphenate-limit-lines: 2;
+     */
+    --m-hyphens: manual; /* manual = no hyphenation; auto = hyphenate */
+
+    /* -------------------- */
+
+    --m-dinkus: var(--m-marker-hash);
+    --m-dinkus-subscene: var(--m-marker-tilde);
+    --m-dinkus-subscenes: var(--m-marker-zws);
+    --m-30-: var(--m-marker-the-end);
+
+    /* -------------------- */
+
+    --m-indent-foothang: var(--m-indentUS);
+
+
+    /*
+     * DEFAULTS - section 2 - baseline #manuscript.long (and short) specific
+     */
+
+    /* Title-block headers offset */
+    --m-offset-title: var(--m-content-offset-5-12th);
+    --m-offset-title-poem: calc(var(--m-page-margin) * 2);
+
+    /* font settings short/long - .m-facts */
+    --m-font-size-facts-short:    var(--m-font-size-contact);
+    --m-font-weight-facts-short:  var(--m-font-weight-contact);
+    /* --m-font-family-facts-short is set below */
+    --m-line-spacing-facts-short: var(--m-line-spacing-single);
+
+    --m-font-size-facts-long-oldstyle:    inherit; /* will inherit from m-title */
+    --m-font-weight-facts-long-oldstyle:  inherit;
+    --m-font-family-facts-long-oldstyle:  inherit;
+    --m-line-spacing-facts-long-oldstyle: var(--m-line-spacing-single);
+
+
+    /*
+     * DEFAULTS - section 3 - baseline #manuscript.narrative and
+     *                        #manuscript.nonnarrative specific
+     */
+
+    /* font-family - narrative and nonnarrative */
+    --m-font-family-narrative: var(--m-fontstack-serif);
+    --m-font-family-nonnarrative: var(--m-fontstack-sans);
+
+    --m-font-family-narrative-preformatted: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-preformatted: var(--m-fontstack-sans-mono);
+
+    --m-font-family-narrative-code: var(--m-fontstack-mono);
+    --m-font-family-nonnarrative-code: var(--m-fontstack-sans-mono);
+
+    /* first-line indent/inter-paragraph spacing - narrative & nonnarrative */
+    /* set in m-var/permutations.css …
+    --m-indent-narrative: var(--m-indentUS); */
+    --m-indent-narrative-first-paragraph: var(--m-indent-narrative);
+    --m-indent-narrative-first-paragraph-epigraph: 0;
+    --m-paragraph-spacing-narrative: 0;
+
+    --m-indent-nonnarrative: 0;
+    --m-indent-nonnarrative-first-paragraph: var(--m-indent-nonnarrative);
+    --m-indent-nonnarrative-first-paragraph-epigraph: 0;
+    --m-paragraph-spacing-nonnarrative: 1rem;
+
+    --m-spacing-poem-narrative: var(--m-paragraph-spacing-nonnarrative);
+    --m-spacing-poem-nonnarrative: calc(var(--m-paragraph-spacing-nonnarrative) * 2);
+
+    /* left and right margins - pre and blockquote */
+    --m-margin-poem: var(--m-indent-narrative);
+    --m-margin-blockquote: calc(var(--m-indent-narrative) * 1.5);
+
+    /*
+     * DEFAULTS - section 4 - baseline #manuscript.poetry specific
+     */
+
+    --m-font-family-poetry:          var(--m-fontstack-serif);
+    --m-font-size-poetry:            inherit;
+    --m-font-weight-poetry:          inherit;
+    --m-font-style-poetry:           inherit;
+    --m-line-spacing-poetry:         var(--m-line-spacing-single);
+    --m-text-transform-title-poetry: none; /*uppercase used to be the standard;*/
+
+    /*
+     * DEFAULTS - section 5 - baseline .m-note specific
+     */
+
+    --m-font-family-notes:           var(--m-fontstack-system);
+    --m-font-size-notes:             85%;
+    --m-line-spacing-notes:          var(--m-line-spacing-single);
+    --m-width-notes:                 max-content;
+
+    --m-notes-display-default:        block; /* are notes displayed at all? */
+    --m-notes-export-display-default: block; /* are notes displayed in exports? */
+    --m-notes-jcloud-display-default: none;  /* are notes displayed in Joplin Cloud? */
+
+    /* --------------------------------------------------------------------- */
+
+    /*
+     * DEFAULTS - section 6 - setting the default for everything to
+     *                #vpage.US and #manuscript.narrative and #manuscript.short
+     */
+
+    --m-font-style: normal;
+
+    /* everything is defaulted to -narrative and then that gets reset
+     * by manuscript.css to something different if necessary */
+    /* set in m-var/permutations.css …
+    --m-font-family:              var(--m-font-family-narrative);
+    --m-font-family-preformatted: var(--m-font-family-narrative-preformatted);
+    --m-font-family-code:         var(--m-font-family-narrative-code);
+
+    --m-indent:                 var(--m-indent-narrative);
+    --m-indent-first-paragraph: var(--m-indent-narrative-first-paragraph);
+    --m-paragraph-spacing:      var(--m-paragraph-spacing-narrative);
+    */
+
+    /* --------------------------------------------------------------------- */
+
+    /*
+     * DEFAULTS - section 7 - per-component font-size, font-weight,
+     *                        font-family, line-spacing, …
+     *    Initially all are set to what was set above.
+     *     - contact, header(s), facts, title/subtitle, byline
+     *     - part, chapter, scene, poem
+     *     - epigraph, dingus, -30-
+     *     This is insanely pedantic.
+     */
+
+    /* font settings - contact info (and facts if put in the right corner */
+    --m-font-size-contact:    var(--m-font-size);
+    --m-font-weight-contact:  var(--m-font-weight);
+    --m-font-family-contact:  inherit;
+    --m-font-family-facts-short:  var(--m-font-family-contact);
+    --m-line-spacing-contact: var(--m-line-spacing-single);
+
+    /* font settings - the main title-block header */
+    --m-font-size-header: var(--m-font-size);
+    --m-font-size-headers: var(--m-font-size);
+    --m-font-weight-header: var(--m-font-weight);
+    --m-font-weight-headers: var(--m-font-weight);
+    --m-font-family-header: inherit;
+    --m-font-family-headers: inherit;
+
+    /* font settings - - - the main other headers */
+
+    /* font settings - the main titles, subtitles, and authors */
+    --m-font-size-title: var(--m-font-size);
+    --m-font-size-subtitle: var(--m-font-size);
+    --m-font-size-byline: var(--m-font-size);
+
+    --m-font-weight-title: var(--m-font-weight);
+    --m-font-weight-byline: var(--m-font-weight);
+
+    --m-font-family-title: inherit;
+    --m-font-family-byline: inherit;
+
+    /* font settings - part titles, subtitles, and authors */
+    --m-font-size-title-part: var(--m-font-size-title);
+    --m-font-size-subtitle-part: var(--m-font-size-subtitle);
+    --m-font-size-byline-part: var(--m-font-size-byline);
+
+    --m-font-weight-title-part: var(--m-font-weight-title);
+    --m-font-weight-byline-part: var(--m-font-weight-byline);
+
+    --m-font-family-title-part: inherit;
+    --m-font-family-byline-part: inherit;
+
+    /* font settings - chapter titles, subtitles, and authors */
+    --m-font-size-title-chapter:    var(--m-font-size);
+    --m-font-size-subtitle-chapter: var(--m-font-size);
+    --m-font-size-byline-chapter:   var(--m-font-size);
+
+    --m-font-weight-title-chapter:  var(--m-font-weight);
+    --m-font-weight-byline-chapter: var(--m-font-weight);
+
+    --m-font-family-title-chapter:  inherit;
+    --m-font-family-byline-chapter: inherit;
+
+    /* font settings - scene titles, subtitles, and authors */
+    --m-font-size-title-scene:    var(--m-font-size);
+    --m-font-size-subtitle-scene: var(--m-font-size);
+    --m-font-size-byline-scene:   var(--m-font-size);
+
+    --m-font-weight-title-scene:  var(--m-font-weight);
+    --m-font-weight-byline-scene: var(--m-font-weight);
+
+    --m-font-family-title-scene:  inherit;
+    --m-font-family-byline-scene: inherit;
+
+    /* font settings - poem titles, subtitles, and authors */
+    --m-font-size-title-poem:    var(--m-font-size);
+    --m-font-size-subtitle-poem: var(--m-font-size);
+    --m-font-size-byline-poem:   var(--m-font-size);
+
+    --m-font-weight-title-poem:  var(--m-font-weight);
+    --m-font-weight-byline-poem: var(--m-font-weight);
+
+    --m-font-family-title-poem:  inherit;
+    --m-font-family-byline-poem: inherit;
+
+    /* font settings - the epigraphs */
+    /*--m-font-size-epigraph: .8125rem;*/ /* 13px or ~9.75pt (if parent 16px) */
+    /*--m-font-size-epigraph: .8333rem;*/ /* ~13.33px or 10pt */
+    --m-font-size-epigraph: .9166rem; /* ~14.7px or 11pt */
+    --m-font-weight-epigraph: var(--m-font-weight);
+    --m-font-family-epigraph: inherit;
+    --m-font-style-epigraph: italic;
+    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
+
+    /* font settings - the section separators (dinkus and -30-) */
+    --m-font-size-dinkus-30-: var(--m-font-size);
+    --m-font-weight-dinkus-30-: var(--m-font-weight);
+    --m-font-family-dinkus-30-: inherit;
+
+    /* positional and font settings - m-facts
+     * (.m-facts is an oddball container)
+     */
+
+    /* .m-facts settings */
+    /* set in m-var/permutations.css …
+    --m-position-facts:     var(--m-position-facts-short);
+    --m-top-facts:          var(--m-top-facts-short);
+    --m-bottom-facts:       var(--m-bottom-facts-short);
+    --m-left-facts:         var(--m-left-facts-short);
+    --m-right-facts:        var(--m-right-facts-short);
+
+    --m-margin-facts-horizontal: var(--m-margin-facts-short-horizontal);
+    --m-margin-facts-vertical:   var(--m-margin-facts-short-vertical);
+    --m-text-align-facts:   var(--m-text-align-facts-short);
+
+    --m-font-size-facts:    var(--m-font-size-facts-short);
+    --m-font-weight-facts:  var(--m-font-weight-facts-short);
+    --m-font-family-facts:  var(--m-font-family-facts-short);
+    --m-line-spacing-facts: var(--m-line-spacing-facts-short);
+    */
+
+    /* page break settings - these get refined settings elsewhere */
+    /* set in m-var/permutations.css …
+    --m-page-break:
+    --m-page-break-simulated:
+    --m-page-break-simulated-end-spacing:
+    */
+
+    /* the desktop theme beneath the paper */
+    --m-desktop-color-theme-default:     var(--m-color-gray5, darkgray);
+    --m-desktop-color-theme-dim:         var(--m-color-gray7, dimgray);
+    --m-desktop-color-theme-dimmer:      var(--m-color-gray7pt5);
+    --m-desktop-color-theme-dark:        var(--m-color-gray-purpleblue-dark); /* alt: hsl(0deg 0% 20%); or hsl(0deg 0% 16%); */
+    --m-desktop-color-theme-dark-yellow: var(--m-color-gray-yellow-dark);
+    --m-desktop-color-theme-dark-amber:  var(--m-color-gray-yellow-dark);
+    --m-desktop-color-theme-dark-green:  var(--m-color-gray-green-dark);
+    --m-desktop-color-theme-dark-blue:   var(--m-color-gray-blue-dark);
+    --m-desktop-color-theme-dark-pink:   var(--m-color-gray-pink-dark);
+    --m-desktop-color-theme-dark-purple: var(--m-color-gray-purple-dark);
+
+    /* the paper theme on the desktop */
+    --m-paper-color-theme-default:     var(--m-color-gray0, white);
+    --m-paper-color-theme-dim:         var(--m-color-gray4, silver);
+    --m-paper-color-theme-dimmer:      var(--m-color-gray6, gray);
+    --m-paper-color-theme-dark:        var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-yellow: var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-amber:  var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-green:  var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-blue:   var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-pink:   var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-purple: var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-red:    var(--m-color-gray8, #1e1e1eff);
+    --m-paper-color-theme-dark-cyan:   var(--m-color-gray8, #1e1e1eff);
+
+    /* the text color */
+    --m-text-color-theme-default:     var(--m-color-gray9, black);
+    --m-text-color-theme-dim:         var(--m-text-color-theme-default);
+    --m-text-color-theme-dimmer:      var(--m-text-color-theme-default);
+    --m-text-color-theme-dark:        var(--m-color-whitesmoke);
+    --m-text-color-theme-dark-amber:  hsl( 45deg 100% 70%);
+    --m-text-color-theme-dark-yellow: hsl( 60deg 100% 80%);
+    --m-text-color-theme-dark-green:  hsl(120deg 100% 80%);
+    --m-text-color-theme-dark-blue:   hsl(240deg 100% 80%);
+    --m-text-color-theme-dark-pink:   hsl(300deg 100% 80%);
+    --m-text-color-theme-dark-purple: hsl(270deg 100% 85%);
+    --m-text-color-theme-dark-red:    hsl(  0deg 100% 80%);
+    --m-text-color-theme-dark-cyan:   hsl(180deg 100% 80%);
+
+    /* the link color */
+    --m-link-color-theme-default:     var(--m-color-professional-blue2);
+    --m-link-color-theme-dim:         hsl(225deg  50% 26%); /* above, but desaturated */
+    --m-link-color-theme-dimmer:      hsl(225deg  20% 26%); /* above, but desaturated */
+    --m-link-color-theme-dark:        hsl(180deg 100% 90%);
+    --m-link-color-theme-dark-amber:  hsl( 45deg 100% 90%);
+    --m-link-color-theme-dark-yellow: hsl( 60deg 100% 95%);
+    --m-link-color-theme-dark-green:  hsl(120deg 100% 90%);
+    --m-link-color-theme-dark-blue:   hsl(240deg 100% 90%);
+    --m-link-color-theme-dark-pink:   hsl(300deg 100% 90%);
+    --m-link-color-theme-dark-purple: hsl(270deg 100% 95%);
+    --m-link-color-theme-dark-red:    hsl(  0deg 100% 90%);
+    --m-link-color-theme-dark-cyan:   hsl(180deg 100% 90%);
+
+    /* the link:hover color */
+    --m-link-hover-color-theme-default:     var(--m-color-gray7, dimgray);
+    --m-link-hover-color-theme-dim:         var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dimmer:      var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dark:        var(--m-link-hover-color-theme-default);
+    --m-link-hover-color-theme-dark-amber:  hsl( 45deg 100% 70% / 80%);
+    --m-link-hover-color-theme-dark-yellow: hsl( 60deg 100% 90% / 80%);
+    --m-link-hover-color-theme-dark-green:  hsl(120deg 100% 90% / 80%);
+    --m-link-hover-color-theme-dark-blue:   hsl(240deg 100% 90% / 80%);
+    --m-link-hover-color-theme-dark-pink:   hsl(300deg 100% 90% / 80%);
+    --m-link-hover-color-theme-dark-purple: hsl(270deg 100% 95% / 80%);
+    --m-link-hover-color-theme-dark-red:    hsl(  0deg 100% 90% / 80%);
+    --m-link-hover-color-theme-dark-cyan:   hsl(180deg 100% 90% / 80%);
+
+    /* the simulated page-break line color */
+    --m-page-break-simulated-color-theme-default:     hsl(0deg 0% 20% / 20%);
+    --m-page-break-simulated-color-theme-dim:         var(--m-page-break-simulated-color-theme-default);
+    --m-page-break-simulated-color-theme-dimmer:      var(--m-page-break-simulated-color-theme-default);
+    --m-page-break-simulated-color-theme-dark:        hsl(180deg 100% 90% / 10%);
+    --m-page-break-simulated-color-theme-dark-amber:  hsl( 45deg 100% 70% / 10%);
+    --m-page-break-simulated-color-theme-dark-yellow: hsl( 60deg 100% 90% / 10%);
+    --m-page-break-simulated-color-theme-dark-green:  hsl(120deg 100% 90% / 10%);
+    --m-page-break-simulated-color-theme-dark-blue:   hsl(240deg 100% 90% / 10%);
+    --m-page-break-simulated-color-theme-dark-pink:   hsl(300deg 100% 90% / 10%);
+    --m-page-break-simulated-color-theme-dark-purple: hsl(270deg 100% 95% / 10%);
+    --m-page-break-simulated-color-theme-dark-red:    hsl(  0deg 100% 90% / 10%);
+    --m-page-break-simulated-color-theme-dark-cyan:   hsl(180deg 100% 90% / 10%);
+
+    /* the fuzzy virtual page from offset frame color */
+    --m-vpage-frame-color-theme-default:     var(--m-color-gray9, black);
+    --m-vpage-frame-color-theme-dim:         var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dimmer:      var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark:        var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-amber:  var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-yellow: var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-green:  var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-blue:   var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-pink:   var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-purple: var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-red:    var(--m-vpage-frame-color-theme-default);
+    --m-vpage-frame-color-theme-dark-cyan:   var(--m-vpage-frame-color-theme-default);
+
+    /* note colors */
+               --m-note-color-default:                         hsl(0deg 0 0 / 7%);
+          --m-note-text-color-default:                 var(--m-color-gray7pt5);
+         --m-note-frame-color-default:                     var(--m-link-color);
+          --m-note-link-color-default:                     var(--m-text-color);
+          --m-note-link-color-default:       var(--m-link-color-theme-default);
+    --m-note-link-hover-color-default: var(--m-link-hover-color-theme-default);
+               --m-note-color-dim:                      hsl(0deg 0 0 / 7%);
+          --m-note-text-color-dim:             var(--m-color-gray7pt5);
+         --m-note-frame-color-dim:        var(--m-note-text-color-dim);
+          --m-note-link-color-dim:       var(--m-link-color-theme-dim);
+    --m-note-link-hover-color-dim: var(--m-link-hover-color-theme-dim);
+               --m-note-color-dimmer:                        hsl(0deg 0 0 / 7%);
+          --m-note-text-color-dimmer:       var(--m-link-color-theme-dimmer);
+          --m-note-text-color-dimmer:                   var(--m-color-gray8);
+         --m-note-frame-color-dimmer:        var(--m-note-text-color-dimmer);
+          --m-note-link-color-dimmer:       var(--m-link-color-theme-dimmer);
+    --m-note-link-hover-color-dimmer: var(--m-link-hover-color-theme-dimmer);
+               --m-note-color-dark:                      hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark:       var(--m-link-color-theme-dark);
+         --m-note-frame-color-dark:        var(--m-note-text-color-dark);
+          --m-note-link-color-dark:       var(--m-text-color-theme-dark);
+    --m-note-link-hover-color-dark: var(--m-link-hover-color-theme-dark);
+               --m-note-color-dark-yellow:                             hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-yellow:       var(--m-link-color-theme-dark-yellow);
+         --m-note-frame-color-dark-yellow:        var(--m-note-text-color-dark-yellow);
+          --m-note-link-color-dark-yellow:       var(--m-text-color-theme-dark-yellow);
+    --m-note-link-hover-color-dark-yellow: var(--m-link-hover-color-theme-dark-yellow);
+               --m-note-color-dark-amber:                            hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-amber:       var(--m-link-color-theme-dark-amber);
+         --m-note-frame-color-dark-amber:        var(--m-note-text-color-dark-amber);
+          --m-note-link-color-dark-amber:       var(--m-text-color-theme-dark-amber);
+    --m-note-link-hover-color-dark-amber: var(--m-link-hover-color-theme-dark-amber);
+               --m-note-color-dark-green:                            hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-green:       var(--m-link-color-theme-dark-green);
+         --m-note-frame-color-dark-green:        var(--m-note-text-color-dark-green);
+          --m-note-link-color-dark-green:       var(--m-text-color-theme-dark-green);
+    --m-note-link-hover-color-dark-green: var(--m-link-hover-color-theme-dark-green);
+               --m-note-color-dark-purple:                             hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-purple:       var(--m-link-color-theme-dark-purple);
+         --m-note-frame-color-dark-purple:        var(--m-note-text-color-dark-purple); 
+          --m-note-link-color-dark-purple:       var(--m-text-color-theme-dark-purple);
+    --m-note-link-hover-color-dark-purple: var(--m-link-hover-color-theme-dark-purple);
+               --m-note-color-dark-blue:                           hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-blue:       var(--m-link-color-theme-dark-blue);
+         --m-note-frame-color-dark-blue:        var(--m-note-text-color-dark-blue); 
+          --m-note-link-color-dark-blue:       var(--m-text-color-theme-dark-blue);
+    --m-note-link-hover-color-dark-blue: var(--m-link-hover-color-theme-dark-blue);
+               --m-note-color-dark-pink:                           hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-pink:       var(--m-link-color-theme-dark-pink);
+         --m-note-frame-color-dark-pink:        var(--m-note-text-color-dark-pink); 
+          --m-note-link-color-dark-pink:       var(--m-text-color-theme-dark-pink);
+    --m-note-link-hover-color-dark-pink: var(--m-link-hover-color-theme-dark-pink);
+               --m-note-color-dark-red:                          hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-red:       var(--m-link-color-theme-dark-red);
+         --m-note-frame-color-dark-red:        var(--m-note-text-color-dark-red); 
+          --m-note-link-color-dark-red:       var(--m-text-color-theme-dark-red);
+    --m-note-link-hover-color-dark-red: var(--m-link-hover-color-theme-dark-red);
+               --m-note-color-dark-cyan:                           hsl(0deg 0 0 / 9%);
+          --m-note-text-color-dark-cyan:       var(--m-link-color-theme-dark-cyan);
+         --m-note-frame-color-dark-cyan:        var(--m-note-text-color-dark-cyan); 
+          --m-note-link-color-dark-cyan:       var(--m-text-color-theme-dark-cyan);
+    --m-note-link-hover-color-dark-cyan: var(--m-link-hover-color-theme-dark-cyan);
+
+} /* end :root scoping */
+
+} /* end @layer lm-var-defaults */
+

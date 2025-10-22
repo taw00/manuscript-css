@@ -1,0 +1,138 @@
+/* marginalia logic
+ *
+ * Copyright (c) Todd Warner
+ * This work is licensed under Attribution 4.0 International. To view a copy
+ * of this license, visit http://creativecommons.org/licenses/by/4.0/
+ */
+
+@page no-marginalia {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-page-margin);
+}
+
+/*
+ * top (not :first) rules
+ */
+
+@page top-left-marginalia {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-marginalia-margin) var(--m-page-margin) var(--m-page-margin);
+    @top-left {
+        vertical-align: top;
+        margin: var(--m-page-margin) 0 0;
+        content: var(--m-marginalia);
+    }
+}
+@page top-center-marginalia {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-marginalia-margin) var(--m-page-margin) var(--m-page-margin);
+    @top-center {
+        vertical-align: top;
+        margin: var(--m-page-margin) 0 0;
+        content: var(--m-marginalia);
+    }
+}
+@page top-right-marginalia {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-marginalia-margin) var(--m-page-margin) var(--m-page-margin);
+    @top-right {
+        vertical-align: top;
+        margin: var(--m-page-margin) 0 0;
+        content: var(--m-marginalia);
+    }
+}
+
+
+/*
+ * bottom (not :first) rules
+ */
+
+@page bottom-left-marginalia {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-page-margin) var(--m-page-margin) var(--m-marginalia-margin);
+    @bottom-left {
+        vertical-align: bottom;
+        margin: 0 0 var(--m-page-margin);
+        content: var(--m-marginalia);
+    }
+}
+@page bottom-center-marginalia {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-page-margin) var(--m-page-margin) var(--m-marginalia-margin);
+    @bottom-center {
+        vertical-align: bottom;
+        margin: 0 0 var(--m-page-margin);
+        content: var(--m-marginalia);
+    }
+}
+@page bottom-right-marginalia {
+    size: var(--m-page-width) var(--m-page-height);
+    margin: var(--m-page-margin) var(--m-page-margin) var(--m-marginalia-margin);
+    @bottom-right {
+        vertical-align: bottom;
+        margin: 0 0 var(--m-page-margin);
+        content: var(--m-marginalia);
+    }
+}
+
+
+/*
+ * ******** first rules ********
+ */
+
+@page top-left-marginalia:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page top-center-marginalia:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page top-right-marginalia:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
+@page bottom-left-marginalia:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page bottom-center-marginalia:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+@page bottom-right-marginalia:first {
+    margin: var(--m-page-margin);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+    @bottom-center { content: none; }
+}
+
