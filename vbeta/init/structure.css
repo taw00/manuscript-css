@@ -19,6 +19,7 @@ body,
 #vpage,
 #vpage > *,
 #manuscript > *,
+#manuscript > .m-title-page > *,
 #manuscript .m-book > *,
 #manuscript .m-part > *,
 #manuscript .m-chapter > *,
@@ -28,8 +29,7 @@ body,
 #manuscript .x-poem > *,
 #manuscript .m-title > *,
 #manuscript .m-contact > *,
-#manuscript .m-count > *,
-#manuscript .m-facts > * {       /* deprecated? */
+#manuscript .m-count > * {
     display: none;
 }
 
@@ -39,6 +39,11 @@ body:has(div#vpage),
 div#vpage:has(article#manuscript),
 /* a vpage can only contain a #manuscript */
 div#vpage > article#manuscript,
+/* the title page */
+div#vpage > article#manuscript > div.m-title-page,
+div#vpage > article#manuscript > div.m-title-page > div.m-title,
+div#vpage > article#manuscript > div.m-title-page > div.m-contact,
+div#vpage > article#manuscript > div.m-title-page > div.m-count,
 /* a manuscript can only contain a contact block, count block, title block, and
  * then books, parts, chapters, and/or scenes/poems */
 div#vpage > article#manuscript > div.m-title,
@@ -88,12 +93,10 @@ div#vpage > article#manuscript section.m-poem > div.m-note,
 div#vpage > article#manuscript div.x-poem > div.m-title,
 div#vpage > article#manuscript div.x-poem > pre,
 div#vpage > article#manuscript div.x-poem > div.m-note,
-/* a title block can only contain a p, blockquote, x-poem, facts, or h-tag */
-div#vpage > article#manuscript div.m-title > div.m-facts,
+/* a title block can only contain a p, blockquote, x-poem, or h-tag */
 div#vpage > article#manuscript div.m-title > div.x-poem,
 div#vpage > article#manuscript div.m-title > :is(h1, h2, h3, h4, h5, blockquote, p),
-/* counts, facts, and contacts can only contain paragraphs */
-div#vpage > article#manuscript div.m-facts > p,
+/* counts and contacts can only contain paragraphs */
 div#vpage > article#manuscript div.m-contact > p,
 div#vpage > article#manuscript div.m-count > p,
 /* We have some special cases because … meddling by markdown ediors … */
@@ -127,7 +130,7 @@ div#page > #article#manuscript > section.m-chapter {
         clear: both;
     }
 
-    & .m-facts,
+    & .m-count,
     & div.x-poem {
         display: block;
         box-sizing: border-box;
