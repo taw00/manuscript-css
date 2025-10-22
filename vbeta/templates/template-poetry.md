@@ -46,12 +46,15 @@ firstname.lastname@example.com
 +1 555-555-1212
 
 
-</div>
-<div class="m-count">
+</div><div class="m-count">
+
 
 8 lines
 
+
 </div>
+
+
 
 
 <div class="m-title"> <!-- title block (title, byline if different) -->
@@ -99,12 +102,15 @@ firstname.lastname@example.com
 +1 555-555-1212
 
 
-</div>
-<div class="m-count">
+</div><div class="m-count">
+
 
 8 lines
 
+
 </div>
+
+
 
 
 <div class="m-title"> <!-- title block (title, byline if different) -->
@@ -150,12 +156,15 @@ firstname.lastname@example.com
 +1 555-555-1212
 
 
-</div>
-<div class="m-count">
+</div><div class="m-count">
+
 
 8 lines
 
+
 </div>
+
+
 
 
 <div class="m-title"> <!-- title block (title, byline if different) -->
@@ -203,12 +212,15 @@ firstname.lastname@example.com
 +1 555-555-1212
 
 
-</div>
-<div class="m-count">
+</div><div class="m-count">
+
 
 8 lines
 
+
 </div>
+
+
 
 
 <div class="m-title"> <!-- title block (title, byline if different) -->

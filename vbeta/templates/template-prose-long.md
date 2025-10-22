@@ -26,6 +26,7 @@ Template: long-form story - novellette, novella, novel, etc.
 
 <div class="m-contact">
 
+
 Samuel Clemens
 
 Woodlawn Cemetery
@@ -38,14 +39,14 @@ huck-n-jim@example.com
 
 +1 555-555-1212
 
-</div>
-<div class="m-count">
+
+</div><div class="m-count">
+
 
 125,000 words | Fiction, Satire
 
+
 </div>
-
-
 
 
 <div class="m-title"> <!-- title block (title, byline) -->

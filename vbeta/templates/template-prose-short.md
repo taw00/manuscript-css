@@ -30,6 +30,7 @@ Template: short story
 
 <div class="m-contact">
 
+
 Samuel Clemens
 
 Woodlawn Cemetery
@@ -40,12 +41,14 @@ Elmira, NY 14905-1624 USA
 
 huck-n-jim@example.com
 
-</div>
-<div class="m-count">
+
+</div><div class="m-count">
+
 
 2600 words
 
 Fiction, Tall Tale
+
 
 </div>
 
