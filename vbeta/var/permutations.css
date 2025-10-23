@@ -183,33 +183,6 @@
         --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
     }
 
-    /* m-count block for title page of short, the default, but being explicit
-     * for short stories, the count block goes in the top right hand corner */
-    &:has(#manuscript:not(.long,.poetry)) {
-        --m-float-count:         inline-end;
-        --m-position-count:      relative;
-        --m-top-count:           unset;
-        --m-right-count:         unset;
-        --m-bottom-count:        unset;
-        --m-left-count:          unset;
-        --m-margin-block-count:  unset;
-        --m-margin-inline-count: unset;
-        --m-text-align-count:    end;
-    }
-    /* m-count block for title page of long or poetry
-     * for long stories and poetry, the count block --> the bottom center */
-    &:has(#manuscript:is(.long,.poetry)) {
-        --m-float-count:         unset;
-        --m-position-count:      absolute;
-        --m-top-count:           calc(var(--m-content-height) - .4in);
-        --m-right-count:         0;
-        --m-bottom-count:        auto;
-        --m-left-count:          0;
-        --m-margin-block-count:  unset;
-        --m-margin-inline-count: auto;
-        --m-text-align-count:    center;
-    }
-
     /* simple and text-only */
     &:has(#manuscript:is(.text-only,.simple)) {
         --m-offset-title: 0 !important;

@@ -26,10 +26,12 @@
          * .m-chapter + .m-chapter = page break
          * .m-scene + .m-chapter = page break (why would this happen?)
          */
-        & > :is(div.m-title-page,section) + div.m-title-page {
-            padding-block-start: calc(var(--m-room-for-two) * 2);
-        }
 
+        /* SHORT stuff */
+        & > :is(div.m-title-page,section):has(.m-contact,.m-count) + div.m-title-page {
+            /*padding-block-start: calc(var(--m-room-for-two) * 2);*/
+            padding-block-start: var(--m-page-margin);
+        }
         & > div.m-title-page + section,
         & > section.m-book:has( > .m-title),
         & > section.m-book:has( > .m-title) + section,
@@ -39,7 +41,8 @@
             padding-block-start: var(--m-room-for-two);
         }
 
-        &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page,
+        /* LONG stuff */
+        /*&:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page,*/
         &:is(.long,.poetry) > div.m-title-page + section,
         &:is(.long,.poetry) > section.m-book:has( > .m-title),
         &:is(.long,.poetry) > section.m-book:has( > .m-title) + section,
@@ -49,7 +52,10 @@
             padding-block-start: var(--m-offset-title);
             border-block-start: var(--m-page-break-simulated);
         }
-
+        /* interior m-title-page page breaks */
+        &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page {
+            border-block-start: var(--m-page-break-simulated);
+        }
         /* interior m-title-page spacing changes if it has a count or contact */
         &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page:has(.m-contact,.m-count) {
             padding-block-start: unset;
@@ -83,6 +89,12 @@
          * .m-chapter + .m-chapter = page break
          * .m-scene + .m-chapter = page break (why would this happen?)
          */
+
+        /* SHORT stuff */
+        & > :is(div.m-title-page,section):has(.m-contact,.m-count) + div.m-title-page {
+            /*padding-block-start: calc(var(--m-room-for-two) * 2);*/
+            padding-block-start: var(--m-page-margin);
+        }
         & > div.m-title-page + section,
         & section.m-book:has( > .m-title),
         & section.m-book:has( > .m-title) + section,
@@ -92,7 +104,8 @@
             padding-block-start: var(--m-room-for-two);
         }
 
-        &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page,
+        /* LONG stuff */
+        /*&:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page,*/
         &:is(.long,.poetry) > div.m-title-page + section,
         &:is(.long,.poetry) section.m-book:has( > .m-title),
         &:is(.long,.poetry) section.m-book:has( > .m-title) + section,
@@ -102,7 +115,10 @@
             padding-block-start: var(--m-offset-title);
             break-before: var(--m-page-break);
         }
-
+        /* interior m-title-page page breaks */
+        &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page {
+            break-before: var(--m-page-break);
+        }
         /* interior m-title-page spacing changes if it has a count or contact */
         &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page:has(.m-contact,.m-count) {
             padding-block-start: unset;

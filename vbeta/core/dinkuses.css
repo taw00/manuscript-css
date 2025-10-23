@@ -23,9 +23,25 @@
 
 #manuscript:not(.text-only) {
 
-    /*
-     * DINKUSES & -30- CONTENT
-     */
+    &::after,                                /* auto-inserted top-level -30- */
+    & > h6,                              /* manually-inserted top-level -30- */
+    & section.m-scene::after,                        /* auto-inserted dinkus */
+    & section.m-subscenes::before,                   /* auto-inserted dinkus */
+    & section.m-subscenes::after,                    /* auto-inserted dinkus */
+    & section:not(.m-scene) > h6 {           /* manually-ins. within section */
+        display: none;
+        position: relative;
+        text-align: center;
+    }
+
+    &::after,                                /* auto inserted top-level -30- */
+    & > h6,                              /* manually inserted top-level -30- */
+    & section.m-scene:has(+ section.m-scene)::after, /* auto-inserted dinkus */
+    & section.m-subscenes::before,                   /* auto-inserted dinkus */
+    & section.m-subscenes::after,                    /* auto-inserted dinkus */
+    & section:not(.m-scene) > h6 {           /* manually ins. within section */
+        display: block;
+    }
 
     /* right now #manuscript-level classes no-dinkuses and hide-dinkuses do the
      * same thing */
@@ -66,23 +82,6 @@
     &:not(.poetry,.no-30-,.no-30)::after {
         padding-block-start: var(--m-room-for-two);
         content: var(--m-30-);
-    }
-
-
-    /*
-     * DINKUSES & -30- POSITIONING
-     * - dinkuses are placed between scenes
-     * - -30- is placed at the end of the document
-     */
-
-    &::after,
-    & > h6,                              /* manually inserted top-level -30- */
-    /*& > section:last-of-type::after,*/               /* auto-inserted -30- */
-    & section.m-scene:has(+ section.m-scene)::after, /* auto-inserted dinkus */
-    & section.m-subscenes::before,                   /* auto-inserted dinkus */
-    & section.m-subscenes::after,                    /* auto-inserted dinkus */
-    & :not(section.m-scene) > h6 {         /* manually ins. between sections */
-        position: relative;
         text-align: center;
     }
 

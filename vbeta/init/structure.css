@@ -38,9 +38,13 @@ html:has(body),
 body:has(div#vpage),
 div#vpage:has(article#manuscript),
 /* a vpage can only contain a #manuscript */
-div#vpage > article#manuscript,
-/* the title page */
-div#vpage > article#manuscript > div.m-title-page,
+div#vpage > article#manuscript {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* the title page (is managed differently) */
 div#vpage > article#manuscript > div.m-title-page > div.m-title,
 div#vpage > article#manuscript > div.m-title-page > div.m-contact,
 div#vpage > article#manuscript > div.m-title-page > div.m-count,
@@ -74,11 +78,12 @@ div#vpage > article#manuscript section.m-chapter > section.m-poem,
 div#vpage > article#manuscript section.m-scene > div.m-title,
 div#vpage > article#manuscript section.m-scene > div.m-subscenes,
 div#vpage > article#manuscript section.m-scene > div.x-poem,
+div#vpage > article#manuscript section.m-scene > :is(div), /* we have to allow for custom styling */
+div#vpage > article#manuscript section.m-scene > :is(div.m-note),
 div#vpage > article#manuscript section.m-scene > :is(img, hr, ul, ol, dl, pre, table),
 div#vpage > article#manuscript section.m-scene > :is(h1, h2, h3, h4, h5, blockquote, p),
 div#vpage > article#manuscript section.m-scene > :is(h6), /* a manual dinkus */
-div#vpage > article#manuscript section.m-scene > :is(div), /* we have to allow for custom styling */
-div#vpage > article#manuscript section.m-scene > :is(div.m-note),
+
 /* a subscenes can only contain scenes */
 div#vpage > article#manuscript section.m-subscenes > div.m-scene,
 /* a poem can contain a page header (deprecated, contact, count, and a title header,
@@ -103,22 +108,22 @@ div#vpage > article#manuscript div.m-count > p,
 div#vpage > article#manuscript section.m-scene > div.joplin-editable, /* special case */
 div#vpage > article#manuscript section.m-poem > div.joplin-editable,  /* special case */
 div#vpage > article#manuscript div.x-poem > div.joplin-editable {     /* special case */
-    display: block;
+    display: revert;
     box-sizing: border-box;
 }
 
+div#vpage > article#manuscript > div.m-title-page {
+    /*border: red 1px solid; DEBUG */
+    display: revert;
+    box-sizing: border-box;
+}
 
-/* A title page MUST exist if …
- * The manuscript then leads with a book, part, or chapter.
- *
- * A title page NEED NOT exist if …
- * The manuscript leads with a poem or scene. We allow no title pages if
- * compiling just a manuscript of scenes or poems. In fact, no title page for a
- * poetry submission packet is "the norm." */
-div#page > #article#manuscript > section.m-book,
-div#page > #article#manuscript > section.m-part,
-div#page > #article#manuscript > section.m-chapter {
-    display: none;
+/* title page: grid with two columns and two rows */
+div#vpage > article#manuscript > div.m-title-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    /*grid-template-rows: 1fr auto 1fr; / * three rows */
 }
 
 
@@ -132,14 +137,12 @@ div#page > #article#manuscript > section.m-chapter {
 
     & .m-count,
     & div.x-poem {
-        display: block;
         box-sizing: border-box;
     }
 
     /* All the dinkuses and the -30- */
     &::before, &::after,
     & section::before, & section::after {
-        display: block;
         box-sizing: border-box;
     }
     /* … remove dinkuses for any section (:last of type only works on elements
@@ -161,7 +164,6 @@ div#page > #article#manuscript > section.m-chapter {
 
     /* these two configurations are overly pedantic */
     & :is(h1, h2, h3, h4, h5, h6, blockquote, p) {
-        display: block;
         box-sizing: border-box;
     }
     & pre {
@@ -169,7 +171,7 @@ div#page > #article#manuscript > section.m-chapter {
         box-sizing: border-box;
     }
     & code {
-        display: inline;
+        white-space: normal;
         box-sizing: border-box;
     }
     & pre > code {

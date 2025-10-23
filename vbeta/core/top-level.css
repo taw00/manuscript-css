@@ -104,6 +104,71 @@
 
 
     /*
+     * TITLE PAGE STUFF
+     * Title page structure defined in init/structure.css
+     * Title page structure is display: grid and 2x2
+     */
+
+    /* contact block: set in first column and first row of the grid
+     * (upper left corner) */
+    & > div.m-title-page > div.m-contact {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    /* count block: set in second column and first row of the grid — SHORT
+     * (upper right corner) */
+    & > div.m-title-page > div.m-count {
+        grid-column: 2; /* Second column */
+        grid-row: 1;    /* First row */
+    }
+    /* count block: center of spanned two columns, last row, bottom of grid — LONG
+     * (bottom center of page) */
+    &:is(.long,.poetry) > div.m-title-page > div.m-count {
+        grid-column: 1 / -1;      /* Span across both columns */
+        grid-row: 2;              /* Second row */
+        display: block;           /* Set to block */
+        margin-block-start: auto; /* Pushes item to bottom of the grid cell */
+        margin-inline: auto;      /* Pushes item to bottom of the grid cell */
+    }
+    /* title flex box: center of spanned two columns, 2nd row, centered — not used
+     * (centered on center of page) */
+    &  > div.m-title-page > div.m-title {
+        grid-column: 1 / -1;     /* Span across both columns */
+        grid-row: 2;             /* Second row */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        flex-direction: column;
+    }
+    /* title flex box: center of spanned two columns, 1st row, centered
+     * (centered on top of page) */
+    & > div.m-title-page > div.m-title {
+        grid-column: 1 / -1;     /* Span across both columns */
+        grid-row: 1;             /* First row */
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        flex-direction: column;
+        margin-block: var(--m-offset-title) 0; /* default offset by X amount */
+    }
+    /* INTERIOR title flex box top margin: a page-margin of space — SHORT
+     * (centered but margined down from top of page) */
+    &:not(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page > div.m-title {
+        margin-block: var(--m-page-margin) 0;
+    }
+    /* INTERIOR title flex box top margin (if exist contact/count): a page-margin x2 — SHORT
+     * (centered but margined down from top of page a bit more) */
+    &:not(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page:has(.m-contact,.m-count) > div.m-title {
+        margin-block: calc(var(--m-page-margin) * 2) 0; /* short offset by page margin */
+    }
+    /* title flex box top margin: 5/12 of page — LONG
+     * (centered but margined down from top of page a bit more) */
+    &:is(.long,.poetry) > div.m-title-page > div.m-title {
+        margin-block: var(--m-offset-title) 0; /* long offset by X amount */
+    }
+
+
+
+    /*
      * Title Page(s)
      * Maybe make "m-book" be a title page?
      */
@@ -112,19 +177,18 @@
         border-block: transparent dashed 0.05px; /* stops margin collapse */
     }
     & > div.m-title-page {
-        height: unset;
+        height: auto;
     }
     &:is(.long,.poetry) > div.m-title-page {
         height: var(--m-content-height);
+    }
+    &:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page {
+        height: var(--m-content-height-interior);
     }
 
     /* document or interior title page contact info
      * positioned at upper left corner */
     & .m-contact {
-        /*position: absolute;
-        top: 0; left: 0;*/
-        float: inline-start;
-        margin-block: 0;
         & p {
             text-align: start;
             text-indent: unset;
@@ -132,30 +196,28 @@
             margin-block: 0;
         }
     }
+    & > section.m-poem > .m-contact {
+        position: absolute;
+        inset-block: auto;
+        inset-inline: 0 auto;
+        margin-block: 0;
+    }
 
-    /* document title page word and line Count
-     * short: positioned at upper right corner
-     * long: positioned at bottom of page */
     & > div.m-title-page .m-count {
-        float: var(--m-float-count);
-        position: var(--m-position-count);
-        inset: var(--m-top-count) var(--m-right-count) var(--m-bottom-count) var(--m-left-count);
-        margin-block: unset;
-        margin-inline: var(--m-margin-inline-count);
         & p {
-            text-align: var(--m-text-align-count);
-            text-indent: 0;
+            text-align: end;
+            text-indent: unset;
             margin-block: 0;
         }
     }
-    /* interior title page (a book, usually) word and line count
-     * positioned at upper right corner */
-    & > :is(div.m-title-page,section) + div.m-title-page > .m-count {
-        float: inline-end;
-        position: relative;
-        inset: unset;
-        text-align: end;
+    &:is(.long,.poetry) > div.m-title-page .m-count {
+        & p {
+            text-align: center;
+            text-indent: unset;
+            margin-block: 0;
+        }
     }
+
 
 
 
@@ -215,28 +277,6 @@
     }
 
 
-    /*
-     * TOP-LEVEL TITLE BLOCK (#manuscript > .m-title)
-     */
-    & > div.m-title-page > .m-title {
-        margin-inline: auto;
-        position: static;
-    }
-    & > div.m-title-page > .m-title {
-        /* just a small, but more pronounced margin */
-        /*margin-block: calc(var(--m-room-for-two) * 2) 0;*/
-        margin-block: 0;
-    }
-    & > :is(div.m-title-page,section) + div.m-title-page {
-        height: var(--m-content-height-interior);
-    }
-    /* Note that interior m-title-page spacing is controlled in core/page-breaks.css */
-    /*&:is(.long,.poetry) > :is(div.m-title-page,section) + div.m-title-page > .m-title,*/
-    & > div.m-title-page:has(.m-contact,.m-count) > .m-title {
-        /* place the manu.title block 1/3 to 5/12 down the page & center it */
-        margin-block: var(--m-offset-title) 0;
-    }
-
     /* TEXT-ONLY and SIMPLE
      *
      * #manuscript.text-only:
@@ -259,11 +299,4 @@
     }
 
 } /* end #manuscript */
-
-
-@media print {
-    #manuscript > :is(div.m-title-page,section) + div.m-title-page {
-        height: var(--m-content-height-interior);
-    }
-}
 
