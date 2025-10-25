@@ -52,7 +52,12 @@
     /* additional margin/spacing nudges used here and there */
     --m-nudge: .5rem;
     --m-elbow-room: 1rem;
+    --m-table-for-one: 1rem;
+    --m-room-for-one: 1rem;
     --m-room-for-two: 2rem;
+    --m-room-for-four: 4rem;
+    --m-room-for-six: 6rem;
+    --m-room-for-eight: 8rem;
 
     --m-text-align: start;
     --m-text-justify: inter-word;
@@ -132,20 +137,9 @@
     --m-fontstack-noto-sans-mono: "Noto Sans Mono", "Lucida Sans Typewriter", "Liberation Mono", monospace;
     --m-fontstack-system: "Public Sans", "Nunito Sans", "Open Sans", system-ui, "Adwaita Sans", inter, "Segoe UI", roboto, sans-serif;
 
-    /* page breaks & simulated page breaks - short-form and long-form
-     * Short form docs don't have any page breaks by default.
-     * Long form docs have page breaks after the title page and then before
-     * each chapter.
-     */
-    --m-page-break-short: unset;
-    --m-page-break-long:  page;
-    --m-page-break-simulated-short: 0;
-    --m-page-break-simulated-end-spacing-short: var(--m-room-for-two) transparent solid;
     /* … for the simulated page break for long-form docs, we use a heavy faded
      *   dashed line. For the title page, we add padding before that line. */
-    --m-page-break-simulated-long: 4px dashed var(--m-page-break-simulated-color);
-    --m-page-break-simulated-end-spacing-long: calc(var(--m-offset-title) + 0.5in) transparent solid;
-    --m-page-break-simulated-end-spacing-poem: var(--m-room-for-two) transparent solid;
+    --m-page-break-simulated: 4px dashed var(--m-page-break-simulated-color);
 
     /* colors used mainly for desktop, paper, and text / links */
     --m-color-black:      hsl(0deg 0% 0%); /* black */

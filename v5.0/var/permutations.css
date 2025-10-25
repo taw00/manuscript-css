@@ -28,11 +28,15 @@
     --m-page-margin: var(--m-page-marginUS);
     --m-page-margin-min: 13vw; /* 13% of the viewport */
     --m-marginalia-margin: calc(var(--m-page-margin) * 1.333); /* looked good to my eye */
+    --m-content-height-interior: calc(var(--m-page-height) - var(--m-page-margin) - var(--m-marginalia-margin));
 
     --m-notes-display: var(--m-notes-display-default);
     --m-notes-export-display: var(--m-notes-export-display-default);
     --m-notes-jcloud-display: var(--m-notes-jcloud-display-default);
 
+    &:has(#vpage:is(.no-marginalia)) {
+        --m-content-height-interior: var(--m-content-height);
+    }
     &:has(#vpage:is(.US,.us,.letter)) {
         --m-page-margin: var(--m-page-marginUS);
         --m-indent-narrative: var(--m-indentUS);
@@ -179,33 +183,6 @@
         --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
     }
 
-    /* m-count block for title page of short, the default, but being explicit
-     * for short stories, the count block goes in the top right hand corner */
-    &:has(#manuscript:not(.long,.poetry)) {
-        --m-float-count:         right;
-        --m-position-count:      relative;
-        --m-top-count:           unset;
-        --m-right-count:         unset;
-        --m-bottom-count:        unset;
-        --m-left-count:          unset;
-        --m-margin-block-count:  unset;
-        --m-margin-inline-count: unset;
-        --m-text-align-count:    end;
-    }
-    /* m-count block for title page of long or poetry
-     * for long stories and poetry, the count block --> the bottom center */
-    &:has(#manuscript:is(.long,.poetry)) {
-        --m-float-count:         unset;
-        --m-position-count:      absolute;
-        --m-top-count:           calc(var(--m-content-height) - .4in);
-        --m-right-count:         0;
-        --m-bottom-count:        auto;
-        --m-left-count:          0;
-        --m-margin-block-count:  unset;
-        --m-margin-inline-count: auto;
-        --m-text-align-count:    center;
-    }
-
     /* simple and text-only */
     &:has(#manuscript:is(.text-only,.simple)) {
         --m-offset-title: 0 !important;
@@ -240,44 +217,33 @@
     &:has(#manuscript:is(.no-notes-jcloud)) {
         --m-notes-jcloud-display: none;
     }
+    &:has(#manuscript:is(.classic)) {
+        --m-font-family-narrative: var(--m-fontstack-courier);
+        --m-font-family-nonnarrative: var(--m-fontstack-courier);
+        --m-font-family-poetry: var(--m-fontstack-courier);
+        --m-fontstack-monospace: var(--m-fontstack-roboto-mono);
+    }
+    &:has(#manuscript:is(.no-simulation)) {
+        --m-page-break-simulated: unset;
+    }
 
 } /* end ":root"-LEVEL VARIABLES (before @media differientators) */
 
 
-@media screen {
-    :root {
-        &:has(#manuscript:not(.long,.poetry)) {
-            /* the default, but let's be explicit */
-            /* note, these are, more or less, no-op settings by default. For short
-             * stories, we don't want to do forced page breaks anywhere. */
-            --m-page-break: var(--m-page-break-short); /* unset */
-            --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
-            --m-page-break-simulated-end-spacing: var(--m-page-break-simulated-end-spacing-short);
-        }
-        &:has(#manuscript:is(.long,.poetry)) {
-            --m-page-break: var(--m-page-break-long);
-            --m-page-break-simulated: var(--m-page-break-simulated-long);
-            --m-page-break-simulated-end-spacing: var(--m-page-break-simulated-end-spacing-long);
-        }
-    }
-} /* end @media screen */
-
 @media print {
     :root {
-        &:has(#manuscript:not(.long,.poetry)) {
-            /* the default, but let's be explicit */
-            /* short-form print behavior: if page break simulation was set for some
-             * reason, we unset it. */
-            --m-page-break-simulated: 0;
-            --m-page-break-simulated-end-spacing: 0;
-            --m-page-break: var(--m-page-break-short);
-        }
         &:has(#manuscript:is(.long,.poetry)) {
             /* long-form print behavior: no longer simulated, there will be a page
              * after the title page header */
-            --m-page-break-simulated: 0;
-            --m-page-break-simulated-end-spacing: 0;
-            --m-page-break: var(--m-page-break-long);
+            --m-page-break: page;
+        }
+        &:has(#vpage:is(.top-left-marginalia,.top-center-marginalia,.top-right-marginalia)) {
+            /* page2+ margins (if using top marginalia) are larger in printed
+             * and exported documents. Remove the difference from the title
+             * offsets. */
+            --m-offset-title: calc(var(--m-content-offset-1-3rd) - var(--m-marginalia-margin) + var(--m-page-margin));
+            --m-offset-title-interior-page-title: calc(var(--m-content-offset-5-12th) - var(--m-marginalia-margin) + var(--m-page-margin));
+            --m-offset-title-poem: calc(var(--m-content-offset-1-4th) - var(--m-marginalia-margin) + var(--m-page-margin));
         }
     }
 } /* end @media print */

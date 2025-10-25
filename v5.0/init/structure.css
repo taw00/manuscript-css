@@ -14,68 +14,107 @@
  * Note, experimenting with a version that changes text appearance so that
  * divergent user-choices are highlighted instead of merely vanished.
  */
+
 html,
 body,
 #vpage,
 #vpage > *,
 #manuscript > *,
-#manuscript .m-book > *,
+#manuscript .m-title-page > *,
 #manuscript .m-part > *,
 #manuscript .m-chapter > *,
 #manuscript .m-scene > *,
 #manuscript .m-subscenes > *, /* this is still experimental */
 #manuscript .m-poem > *,
 #manuscript .x-poem > *,
-#manuscript .m-title > *,
 #manuscript .m-contact > *,
 #manuscript .m-count > *,
-#manuscript .m-facts > * {       /* deprecated? */
+#manuscript .m-title > *,
+div.xxxxxxxx {
     display: none;
 }
 
+
+/* TOP-LEVEL CONTAINERS
+ * This enables the containers by reverting their type.
+ * html, body, div#vpage, article#manuscript
+ * Note, these can't be defined with 'display: flex' since they represent the
+ * page-spanning outer boxes. PDF rendering breaks if #manuscript is of type
+ * flex. */
 
 html:has(body),
 body:has(div#vpage),
 div#vpage:has(article#manuscript),
 /* a vpage can only contain a #manuscript */
 div#vpage > article#manuscript,
-/* a manuscript can only contain a contact block, count block, title block, and
- * then books, parts, chapters, and/or scenes/poems */
-div#vpage > article#manuscript > div.m-title,
-div#vpage > article#manuscript > div.m-contact,
-div#vpage > article#manuscript > div.m-count,
-div#vpage > article#manuscript > section.m-book,
+div.xxxxxxxx {
+    display: revert;
+    box-sizing: border-box;
+}
+
+
+/* TOP-LEVEL CONTAINERS W/IN #manuscript (all but title page and poem)
+ * This both enables the containers and defines their container type.
+ *
+ * section:is(.m-part,.m-chapter,.m-scene)
+ * div:is(.x-poem)
+ * div.m-title-page and section.m-poem is handled separately
+ */
 div#vpage > article#manuscript > section.m-part,
 div#vpage > article#manuscript > section.m-chapter,
 div#vpage > article#manuscript > section.m-scene,
-div#vpage > article#manuscript > section.m-poem,
-/* a book can only contain a title block, and then parts, chapters, and/or scenes/poems */
-div#vpage > article#manuscript section.m-book > div.m-title,
-div#vpage > article#manuscript section.m-book > section.m-part,
-div#vpage > article#manuscript section.m-book > section.m-chapter,
-div#vpage > article#manuscript section.m-book > section.m-scene,
-div#vpage > article#manuscript section.m-book > section.m-poem,
-/* a part can only contain a title block, and then chapters and/or scenes/poems */
-div#vpage > article#manuscript section.m-part > div.m-title,
 div#vpage > article#manuscript section.m-part > section.m-chapter,
 div#vpage > article#manuscript section.m-part > section.m-scene,
+div#vpage > article#manuscript section.m-scene > div.m-subscenes,
+div#vpage > article#manuscript section.m-scene > div.x-poem,
+div#vpage > article#manuscript section.m-scene > section.m-subscenes > div.m-scene,
+div#vpage > article#manuscript section.m-chapter > section.m-scene,
+div#vpage > article#manuscript div.m-title > div.x-poem,
+div.xxxxxxxx {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+
+/* TOP-LEVEL CONTAINERS W/IN #manuscript (title page and poem)
+ * This both enables the containers and defines their container type.
+ * div.m-title-page
+ * section.m-poem */
+
+/* title page and poem: grids with two columns and two rows
+ * note, .m-poem is ONLY enabled w/in a article.#manuscript.poetry container */
+div#vpage > article#manuscript > div.m-title-page,
+div#vpage > article#manuscript:is(.poetry) > section.m-poem,
 div#vpage > article#manuscript section.m-part > section.m-poem,
+div#vpage > article#manuscript section.m-chapter > section.m-poem,
+div.xxxxxxxx {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    box-sizing: border-box;
+}
+
+
+/* N-TIER CONTAINERS & ELEMENTS W/IN TOP-LEVEL and NEXT-LEVEL CONTAINERS
+ * This enables the containers and elements and reverts their type. */
+
+/* the title page (is managed differently) */
+div#vpage > article#manuscript > div.m-title-page > div.m-title,
+div#vpage > article#manuscript > div.m-title-page > div.m-contact,
+div#vpage > article#manuscript > div.m-title-page > div.m-count,
+/* a part can only contain a title block, and then chapters and/or scenes/poems */
+div#vpage > article#manuscript section.m-part > div.m-title,
 /* a chapter can only contain a title block and/or scenes/poems */
 div#vpage > article#manuscript section.m-chapter > div.m-title,
-div#vpage > article#manuscript section.m-chapter > section.m-scene,
-div#vpage > article#manuscript section.m-chapter > section.m-poem,
 /* a scene can only contain a title block, subscenes, img, hr, ul, ol, dl, pre, p,
  * blockquote, x-poem, h-tag, div, table */
 div#vpage > article#manuscript section.m-scene > div.m-title,
-div#vpage > article#manuscript section.m-scene > div.m-subscenes,
-div#vpage > article#manuscript section.m-scene > div.x-poem,
+div#vpage > article#manuscript section.m-scene > :is(div), /* we have to allow for custom styling */
+div#vpage > article#manuscript section.m-scene > :is(div.m-note),
 div#vpage > article#manuscript section.m-scene > :is(img, hr, ul, ol, dl, pre, table),
 div#vpage > article#manuscript section.m-scene > :is(h1, h2, h3, h4, h5, blockquote, p),
 div#vpage > article#manuscript section.m-scene > :is(h6), /* a manual dinkus */
-div#vpage > article#manuscript section.m-scene > :is(div), /* we have to allow for custom styling */
-div#vpage > article#manuscript section.m-scene > :is(div.m-note),
-/* a subscenes can only contain scenes */
-div#vpage > article#manuscript section.m-subscenes > div.m-scene,
 /* a poem can contain a contact, a count, a title, preformatted blocks (poem
  * stanzas), and notes.
  * (<div> specifically called out because editing tools like to wrap <pre>) */
@@ -89,33 +128,17 @@ div#vpage > article#manuscript div.x-poem > div.m-title,
 div#vpage > article#manuscript div.x-poem > pre,
 div#vpage > article#manuscript div.x-poem > div.m-note,
 /* a title block can only contain a p, blockquote, x-poem, or h-tag */
-div#vpage > article#manuscript div.m-title > div.m-facts, /* deprecated */
-div#vpage > article#manuscript div.m-title > div.x-poem,
 div#vpage > article#manuscript div.m-title > :is(h1, h2, h3, h4, h5, blockquote, p),
 /* counts and contacts can only contain paragraphs */
-div#vpage > article#manuscript div.m-facts > p, /* deprecated */
 div#vpage > article#manuscript div.m-contact > p,
 div#vpage > article#manuscript div.m-count > p,
 /* We have some special cases because … meddling by markdown ediors … */
 div#vpage > article#manuscript section.m-scene > div.joplin-editable, /* special case */
 div#vpage > article#manuscript section.m-poem > div.joplin-editable,  /* special case */
-div#vpage > article#manuscript div.x-poem > div.joplin-editable {     /* special case */
-    display: block;
+div#vpage > article#manuscript div.x-poem > div.joplin-editable,      /* special case */
+div.xxxxxxxx {
+    display: revert;
     box-sizing: border-box;
-}
-
-
-/* A title page MUST exist if …
- * The manuscript then leads with a book, part, or chapter.
- *
- * A title page NEED NOT exist if …
- * The manuscript leads with a poem or scene. We allow no title pages if
- * compiling just a manuscript of scenes or poems. In fact, no title page for a
- * poetry submission packet is "the norm." */
-div#page > #article#manuscript > section.m-book,
-div#page > #article#manuscript > section.m-part,
-div#page > #article#manuscript > section.m-chapter {
-    display: none;
 }
 
 
@@ -128,28 +151,18 @@ div#page > #article#manuscript > section.m-chapter {
     }
 
     & .m-count,
-    & .m-facts, /* deprecated */
     & div.x-poem {
-        display: block;
         box-sizing: border-box;
     }
 
     /* All the dinkuses and the -30- */
     &::before, &::after,
     & section::before, & section::after {
-        display: block;
         box-sizing: border-box;
     }
-    /* … remove dinkuses for any section (:last of type only works on elements
-     *   and not classes or ids) if they are last in any structure
-    & section:last-of-type::after {
-        display: none;
-    }
-    Note, if we want to find :last-of-type of a class we could do something
-    like this: section.m-scene:not(:has(~ section.m-scene)) {
-    */
-    /* … remove dinkuses for the last visible section (.hide is declared in
-     *   m-overrides-and-conveniences.css
+
+    /* … remove dinkuses for the last visible section
+     * (.hide is declared in m-overrides-and-conveniences.css)
      *   Can also be written:
      *      section:not(.hide):not(:has …)
      *   but stylelint gripes */
@@ -157,9 +170,8 @@ div#page > #article#manuscript > section.m-chapter {
         display: none;
     }
 
-    /* these two configurations are overly pedantic */
+    /* this configuration is overly pedantic */
     & :is(h1, h2, h3, h4, h5, h6, blockquote, p) {
-        display: block;
         box-sizing: border-box;
     }
     & pre {
@@ -167,12 +179,36 @@ div#page > #article#manuscript > section.m-chapter {
         box-sizing: border-box;
     }
     & code {
-        display: inline;
+        white-space: normal;
         box-sizing: border-box;
     }
     & pre > code {
         display: inline;
         box-sizing: border-box;
     }
+    & img {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 } /* end #manuscript */
+
+
+
+
+/* SAVED FOR POSTERITY ----------------------------------------------------- */
+
+/* if title page and poem is using flex instead of grid - see also
+ * core/top-level.css */
+/*
+div#vpage > article#manuscript > div.m-title-page,
+div#vpage > article#manuscript > section.m-poem,
+div#vpage > article#manuscript > section.m-book > section.m-poem,
+div#vpage > article#manuscript section.m-part > section.m-poem,
+div#vpage > article#manuscript section.m-chapter > section.m-poem,
+div.xxxxxxxx {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+*/
 

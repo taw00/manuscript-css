@@ -28,7 +28,7 @@ Template: short story
 
 
 
-<div class="m-contact">
+<div class="m-title-page"><div class="m-contact">
 
 
 Samuel Clemens
@@ -47,15 +47,12 @@ huck-n-jim@example.com
 
 2600 words
 
+<!--
 Fiction, Tall Tale
+-->
 
 
-</div>
-
-
-
-
-<div class="m-title"> <!-- title block (title, byline) -->
+</div><div class="m-title">
 
 
 # The Celebrated Jumping Frog of Calaveras County
@@ -65,7 +62,7 @@ Fiction, Tall Tale
 ### by Mark Twain
 
 
-</div> <!-- end m-title -->
+</div></div>
 
 
 
