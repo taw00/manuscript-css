@@ -220,6 +220,7 @@
     &:has(#manuscript:is(.classic)) {
         --m-font-family-narrative: var(--m-fontstack-courier);
         --m-font-family-nonnarrative: var(--m-fontstack-courier);
+        --m-font-family-poetry: var(--m-fontstack-courier);
         --m-fontstack-monospace: var(--m-fontstack-roboto-mono);
     }
     &:has(#manuscript:is(.no-simulation)) {
