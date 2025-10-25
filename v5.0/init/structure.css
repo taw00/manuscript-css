@@ -76,9 +76,9 @@ div#vpage > article#manuscript section.m-scene > :is(div), /* we have to allow f
 div#vpage > article#manuscript section.m-scene > :is(div.m-note),
 /* a subscenes can only contain scenes */
 div#vpage > article#manuscript section.m-subscenes > div.m-scene,
-/* a poem can contain a page header (deprecated, contact, count, and a title header,
- * and then ONLY preformatted blocks (poem stanzas)
- * (<div> specifically called out because editing tools like to wrap <pre> */
+/* a poem can contain a contact, a count, a title, preformatted blocks (poem
+ * stanzas), and notes.
+ * (<div> specifically called out because editing tools like to wrap <pre>) */
 div#vpage > article#manuscript section.m-poem > div.m-title,
 div#vpage > article#manuscript section.m-poem > div.m-contact,
 div#vpage > article#manuscript section.m-poem > div.m-count,

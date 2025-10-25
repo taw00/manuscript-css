@@ -203,7 +203,7 @@
     --m-font-family-notes:           var(--m-fontstack-system);
     --m-font-size-notes:             85%;
     --m-line-spacing-notes:          var(--m-line-spacing-single);
-    --m-width-notes:                 max-content;
+    --m-width-notes:                 min(max-content, 100%);
 
     --m-notes-display-default:        block; /* are notes displayed at all? */
     --m-notes-export-display-default: block; /* are notes displayed in exports? */

@@ -58,7 +58,7 @@
 
         /* EXPERIMENTAL ALERT! ALERT! ALERT! ERROR IN FORMATING
          * make stuff in a poem section that isn't poem stuff red and wrong */
-        & > :not(.m-title,.m-contact,.m-count,pre,code,.joplin-editable) {
+        & > :not(.m-title,.m-contact,.m-count,pre,code,.m-note,.joplin-editable) {
             color: red !important;
             font-weight: bold;
             text-decoration: line-through;
