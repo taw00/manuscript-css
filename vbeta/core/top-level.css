@@ -357,7 +357,10 @@
      * #manuscript.simple:
      *    removes the all page headers, contacts, & counts */
     &:is(.text-only) {
-        & .m-title-page {
+        & .m-title-page,
+        & .m-contact,
+        & .m-count,
+        & .m-title {
             display: none !important;
         }
     }

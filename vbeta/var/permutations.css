@@ -217,6 +217,14 @@
     &:has(#manuscript:is(.no-notes-jcloud)) {
         --m-notes-jcloud-display: none;
     }
+    &:has(#manuscript:is(.classic)) {
+        --m-font-family-narrative: var(--m-fontstack-courier);
+        --m-font-family-nonnarrative: var(--m-fontstack-courier);
+        --m-fontstack-monospace: var(--m-fontstack-roboto-mono);
+    }
+    &:has(#manuscript:is(.no-simulation)) {
+        --m-page-break-simulated: unset;
+    }
 
 } /* end ":root"-LEVEL VARIABLES (before @media differientators) */
 

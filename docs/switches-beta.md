@@ -17,7 +17,7 @@ To turn these on, you add them to the class attribute of the vpage div:
 
 &ZeroWidthSpace;
 
-### Themed Preview `#vpage` Switches
+### `div#vpage` Switches to Theme Your Document Preview
 
 <dl>
     <dt>dim</dt>
@@ -51,7 +51,7 @@ To turn these on, you add them to the class attribute of the vpage div:
 
 &ZeroWidthSpace;
 
-### Papersizes and Orientation `#vpage` Switches
+### `div#vpage` Switches Governing Papersizes and Orientation
 
 <dl>
     <dt>US</dt>
@@ -125,7 +125,7 @@ article:
 
 &ZeroWidthSpace;
 
-### Prose `#manuscript` Switches
+### `#manuscript` Switches Governing Prose (narratives)
 
 <dl>
     <dt>short</dt>
@@ -167,7 +167,7 @@ article:
 
 &ZeroWidthSpace;
 
-### Poetry `#manuscript` Switches
+### `#manuscript` Switches for Poetry
 
 <dl>
     <dt>poetry</dt>
@@ -178,22 +178,25 @@ article:
 
 &ZeroWidthSpace;
 
-### Simplification `#manuscript` Switches
+### `#manuscript` Switches to Simplify the Appearance of Your Document
 
 <dl>
     <dt>simple</dt>
-    <dd>(prose only) Strips out the 1st page contact and word count. Great for
+    <dd>(prose only) Strips out andy contacts and word counts. Great for
     sharing with friends and family who don't need to see that formal element
     of your manuscript.</dd>
     <dt>text-only</dt>
-    <dd>(prose only) Strips out all contact info, word count, all dinkuses,
-    and the ending -30- marker. Gives you are "just show me the words"
-    view.</dd>
+    <dd>(prose only) Strips out all contact info, titles, word count, all
+    dinkuses, and the ending -30- marker. Gives you are "just show me the
+    words" view.</dd>
     <dt>no-dinkuses</dt>
     <dd>(prose only) Strips out all of the dinkuses.</dd>
     <dt>no-30-</dt>
     <dd>(prose only) Strips out the ending -30- marker. (The End or ###
     etc.)</dd>
+    <dt>no-simulation</dt>
+    <dd>(long narratives and poetry only) Strips out all simulated page-breaks
+    (those dashed lines).</dd>
 </dl>
 
 &ZeroWidthSpace;
@@ -224,6 +227,9 @@ article:
     <dt>show-notes-jcloud</dt>
     <dd>Notes will be included when viewing the document via Joplin
     Cloud</dd>
+    <dt>classic</dt>
+    <dd>You like that old-time monospaced Courier (now Courier Prime by
+    default), don't you?</dd>
 </dl>
 
 &ZeroWidthSpace;
