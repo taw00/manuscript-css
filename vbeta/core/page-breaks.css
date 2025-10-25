@@ -56,7 +56,7 @@
             & section > section.m-poem,
             & :is(div.m-title-page,section) + section.m-poem,
             & section.m-poem + section {
-                border-block-start: var(--m-page-break-simulated-long);
+                border-block-start: var(--m-page-break-simulated);
             }
         }
     } /* end #manuscript */
