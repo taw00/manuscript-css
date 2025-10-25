@@ -95,10 +95,6 @@
     --m-content-offset-1-5th: calc(var(--m-page-offset-1-5th) - var(--m-page-margin));
     --m-content-offset-1-4th: calc(var(--m-page-offset-1-4th) - var(--m-page-margin));
     --m-content-offset-1-3rd: calc(var(--m-page-offset-1-3rd) - var(--m-page-margin));
-    /*
-    --m-content-offset-5-12th: calc(var(--m-page-offset-5-12th) - var(--m-page-margin));
-    --m-content-offset-half: calc(var(--m-page-offset-half) - var(--m-page-margin));
-    */
     --m-content-offset-5-12th: calc(var(--m-content-height) * 5 / 12);
     --m-content-offset-half: calc(var(--m-content-height) / 2);
 
@@ -136,8 +132,10 @@
      */
 
     /* Title-block headers offset */
-    --m-offset-title: var(--m-content-offset-5-12th);
-    --m-offset-title-poem: calc(var(--m-page-margin) * 2);
+    --m-offset-title-page-title: var(--m-content-offset-5-12th);
+    --m-offset-interior-page-title: var(--m-content-offset-5-12th);
+    --m-offset-title: var(--m-content-offset-1-3rd);
+    --m-offset-title-poem: var(--m-content-offset-1-4th);
 
     /* font settings short/long - .m-facts */
     --m-font-size-facts-short:    var(--m-font-size-contact);
@@ -203,7 +201,7 @@
     --m-font-family-notes:           var(--m-fontstack-system);
     --m-font-size-notes:             85%;
     --m-line-spacing-notes:          var(--m-line-spacing-single);
-    --m-width-notes:                 max-content;
+    --m-width-notes:                 min(max-content, 100%);
 
     --m-notes-display-default:        block; /* are notes displayed at all? */
     --m-notes-export-display-default: block; /* are notes displayed in exports? */

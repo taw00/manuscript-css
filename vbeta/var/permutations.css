@@ -221,40 +221,20 @@
 } /* end ":root"-LEVEL VARIABLES (before @media differientators) */
 
 
-@media screen {
-    :root {
-        &:has(#manuscript:not(.long,.poetry)) {
-            /* the default, but let's be explicit */
-            /* note, these are, more or less, no-op settings by default. For short
-             * stories, we don't want to do forced page breaks anywhere. */
-            --m-page-break: var(--m-page-break-short); /* unset */
-            --m-page-break-simulated: var(--m-page-break-simulated-short); /* 0 */
-            --m-page-break-simulated-end-spacing: var(--m-page-break-simulated-end-spacing-short);
-        }
-        &:has(#manuscript:is(.long,.poetry)) {
-            --m-page-break: var(--m-page-break-long);
-            --m-page-break-simulated: var(--m-page-break-simulated-long);
-            --m-page-break-simulated-end-spacing: var(--m-page-break-simulated-end-spacing-long);
-        }
-    }
-} /* end @media screen */
-
 @media print {
     :root {
-        &:has(#manuscript:not(.long,.poetry)) {
-            /* the default, but let's be explicit */
-            /* short-form print behavior: if page break simulation was set for some
-             * reason, we unset it. */
-            --m-page-break-simulated: 0;
-            --m-page-break-simulated-end-spacing: 0;
-            --m-page-break: var(--m-page-break-short);
-        }
         &:has(#manuscript:is(.long,.poetry)) {
             /* long-form print behavior: no longer simulated, there will be a page
              * after the title page header */
-            --m-page-break-simulated: 0;
-            --m-page-break-simulated-end-spacing: 0;
-            --m-page-break: var(--m-page-break-long);
+            --m-page-break: page;
+        }
+        &:has(#vpage:is(.top-left-marginalia,.top-center-marginalia,.top-right-marginalia)) {
+            /* page2+ margins (if using top marginalia) are larger in printed
+             * and exported documents. Remove the difference from the title
+             * offsets. */
+            --m-offset-title: calc(var(--m-content-offset-1-3rd) - var(--m-marginalia-margin) + var(--m-page-margin));
+            --m-offset-title-interior-page-title: calc(var(--m-content-offset-5-12th) - var(--m-marginalia-margin) + var(--m-page-margin));
+            --m-offset-title-poem: calc(var(--m-content-offset-1-4th) - var(--m-marginalia-margin) + var(--m-page-margin));
         }
     }
 } /* end @media print */

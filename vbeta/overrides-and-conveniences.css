@@ -84,10 +84,7 @@
     }
     /* .break-after ------------- */
     .break-after, .force-break-after {
-        border-block-end: var(--m-page-break-simulated-end-spacing-long) !important;
-    }
-    #manuscript section.m-poem:is(.break-after, .force-break-after) {
-        border-block-end: var(--m-page-break-simulated-end-spacing-poem) !important;
+        border-block-end: var(--m-room-for-two) !important;
     }
     /* unset the break if called to do so */
     #manuscript section.no-break {

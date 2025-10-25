@@ -106,11 +106,6 @@
          */
 
         & > .m-title {
-            /* prose content - there may be a small margin (non-narrative)
-             * between prose content and a scene's header block if it exists */
-            & + * {
-                padding-block-start: var(--m-paragraph-spacing-scene);
-            }
             /* all header content starts as centered and with no spacing */
             & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
             & > p {                            /* all paragraphs */

@@ -58,7 +58,7 @@
 
         /* EXPERIMENTAL ALERT! ALERT! ALERT! ERROR IN FORMATING
          * make stuff in a poem section that isn't poem stuff red and wrong */
-        & > :not(.m-title,.m-contact,.m-count,pre,code,.joplin-editable) {
+        & > :not(.m-title,.m-contact,.m-count,pre,code,.m-note,.joplin-editable) {
             color: red !important;
             font-weight: bold;
             text-decoration: line-through;
@@ -127,31 +127,13 @@
         /* gap between a poem header and its poem content */
         margin-block-end: calc(var(--m-spacing-poem) * 2);
     }
-    & section.m-poem:has( > .m-contact, > .m-count) > .m-title {
-        /* top margin for title (2 page margin heights), if existence of a
-         * contact header or count header */
-        margin-block-start: var(--m-offset-title-poem);
-    }
-
     /*
+     * this section is DEPRECATED
      * PAGE HEADERS FOR POEMS (contact left and line-count right)
      */
     & section.m-poem {
         /* stops .m-title top margin collapse (only happens when printing) */
-        padding: 0.02px; /* 0.02px is the smallest we can go */
-        /* Line Count */
-        & > .m-count {
-            float: right;
-            position: relative;
-            inset: unset;
-            margin-block: unset;
-            margin-inline: unset;
-            & p {
-                text-align: end;
-                text-indent: 0;
-                margin-block: 0;
-            }
-        }
+        /*padding: 0.02px;*/ /* 0.02px is the smallest we can go */
     }
 
 } /* end #manuscript */

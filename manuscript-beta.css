@@ -1,4 +1,4 @@
-/* CSS for Manuscript Format vBeta
+/* CSS for Manuscript Format vbeta
  * This version may diverge significantly from the latest numbered version
  *
  * Use this CSS to format your markdown-drafted short story or novel into an
@@ -36,11 +36,11 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                        url("./vbeta/var.css?rev=2025102202");
+@import                        url("./vbeta/var.css?rev=2025102501");
 @import                      url("./vbeta/reset.css?rev=2025101901");
-@import                       url("./vbeta/init.css?rev=2025102202");
-@import                       url("./vbeta/core.css?rev=2025102202");
-@import url("./vbeta/overrides-and-conveniences.css?rev=2025100902");
+@import                       url("./vbeta/init.css?rev=2025102501");
+@import                       url("./vbeta/core.css?rev=2025102501");
+@import url("./vbeta/overrides-and-conveniences.css?rev=2025102501");
 @import   url("./manuscript-user-customizations.css?rev=2025091501");
 
 :root {
