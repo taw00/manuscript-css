@@ -243,10 +243,11 @@
             padding-block-start: var(--m-room-for-four);
         }
         & section:has( > .m-title ) > section:first-of-type:has( > .m-title) > .m-title,
-        & section:has( > .m-title ) > section:first-of-type:is(.m-scene),
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-four);
         }
+        & > div.m-title-page + section:first-of-type:is(.m-scene),
+        & section:has( > .m-title ) > section:first-of-type:is(.m-scene),
         & section:is(.m-chapter):has( > .m-title ) > section:first-of-type:is(.m-scene) {
             padding-block-start: var(--m-room-for-two);
         }
@@ -272,10 +273,11 @@
             padding-block-start: var(--m-offset-title);
         }
         & section:has( > .m-title ) > section:first-of-type:has( > .m-title) > .m-title,
-        & section:has( > .m-title ) > section:first-of-type:is(.m-scene),
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-four);
         }
+        & > div.m-title-page + section:first-of-type:is(.m-scene),
+        & section:has( > .m-title ) > section:first-of-type:is(.m-scene),
         & section:is(.m-chapter):has( > .m-title ) > section:first-of-type:is(.m-scene) {
             padding-block-start: var(--m-room-for-two);
         }
