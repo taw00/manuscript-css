@@ -86,7 +86,6 @@ div.xxxxxxxx {
  * note, .m-poem is ONLY enabled w/in a article.#manuscript.poetry container */
 div#vpage > article#manuscript > div.m-title-page,
 div#vpage > article#manuscript:is(.poetry) > section.m-poem,
-div#vpage > article#manuscript > section.m-book > section.m-poem,
 div#vpage > article#manuscript section.m-part > section.m-poem,
 div#vpage > article#manuscript section.m-chapter > section.m-poem,
 div.xxxxxxxx {
@@ -104,13 +103,6 @@ div.xxxxxxxx {
 div#vpage > article#manuscript > div.m-title-page > div.m-title,
 div#vpage > article#manuscript > div.m-title-page > div.m-contact,
 div#vpage > article#manuscript > div.m-title-page > div.m-count,
-/* a manuscript can only contain a contact block, count block, title block, and
- * then books, parts, chapters, and/or scenes/poems */
-div#vpage > article#manuscript > div.m-title,
-div#vpage > article#manuscript > div.m-contact,
-div#vpage > article#manuscript > div.m-count,
-/* a book can only contain a title block, and then parts, chapters, and/or scenes/poems */
-div#vpage > article#manuscript > section.m-book > div.m-title,    /* .m-book is deprecated */
 /* a part can only contain a title block, and then chapters and/or scenes/poems */
 div#vpage > article#manuscript section.m-part > div.m-title,
 /* a chapter can only contain a title block and/or scenes/poems */
