@@ -52,18 +52,15 @@ firstname.lastname@example.com
 8 lines
 
 
-</div>
+</div><div class="m-title">
 
-
-
-
-<div class="m-title"> <!-- title block (title, byline if different) -->
 
 # Poem 1
 
 ### by Poeticus Rhymeness
 
-</div> <!-- end m-title -->
+
+</div>
 
 
 ```

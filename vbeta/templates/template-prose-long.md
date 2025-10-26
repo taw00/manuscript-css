@@ -24,7 +24,7 @@ Template: long-form story - novellette, novella, novel, etc.
 
 
 
-<div class="m-contact">
+<div class="m-title-page"><div class="m-contact">
 
 
 Samuel Clemens
@@ -43,13 +43,10 @@ huck-n-jim@example.com
 </div><div class="m-count">
 
 
-125,000 words | Fiction, Satire
+125,000 words<!-- | Fiction, Satire-->
 
 
-</div>
-
-
-<div class="m-title"> <!-- title block (title, byline) -->
+</div><div class="m-title">
 
 
 # Adventures of Huckleberry Finn
@@ -57,7 +54,7 @@ huck-n-jim@example.com
 ### by Mark Twain
 
 
-</div> <!-- end m-title -->
+</div></div>
 
 
 
