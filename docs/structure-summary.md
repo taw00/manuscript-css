@@ -73,19 +73,19 @@ The narrative or nonnarrative containers, in summary:
         <section class="scene">            <!-- prose: 1 required to many -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [scene text in here]
+[scene text in here]
 
         </section
         <section class="scene">            <!-- prose: 1 required to many -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [scene text in here]
+[scene text in here]
 
         </section
         <section class="scene">            <!-- prose: 1 required to many -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [scene text in here]
+[scene text in here]
 
         </section
       </section>
@@ -118,7 +118,15 @@ The poetry container, in summary:
             <div class="count"></div>                         <!-- 0 or 1 -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [poetry stanzas in here in between ```'s]
+```
+   Poem stanza
+       Here.
+```
+```
+   Poem stanza
+       Here.
+   Etc.
+```
 
         </section>
         <section class="poem">            <!-- poetry: 1 required to many -->
@@ -126,7 +134,15 @@ The poetry container, in summary:
             <div class="count"></div>                         <!-- 0 or 1 -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [poetry stanzas in here in between ```'s]
+```
+   Poem stanza
+       Here.
+```
+```
+   Poem stanza
+       Here.
+   Etc.
+```
 
         </section>
         <section class="poem">            <!-- poetry: 1 required to many -->
@@ -134,13 +150,21 @@ The poetry container, in summary:
             <div class="count"></div>                         <!-- 0 or 1 -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [poetry stanzas in here in between ```'s]
+```
+   Poem stanza
+       Here.
+```
+```
+   Poem stanza
+       Here.
+   Etc.
+```
 
         </section>
         <section class="scene">         <!-- prose: rarely, if ever, used -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [scene text in here]
+[scene text in here]
 
         </section
       </section>
