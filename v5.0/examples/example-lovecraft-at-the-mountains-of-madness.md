@@ -43,7 +43,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 
 Howard Phillips Lovecraft
@@ -54,10 +54,10 @@ Providence, RI 02906
 
 401.555.1212
 
-crawlingchaos@example.com
+crawlingchaos\@example\.com
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 40,000 Words / Suspense Fiction
@@ -65,7 +65,7 @@ crawlingchaos@example.com
 *draft rev. 193102*
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # At the Mountains of Madness
@@ -90,8 +90,8 @@ crawlingchaos@example.com
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # I
 
@@ -100,7 +100,7 @@ crawlingchaos@example.com
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 I am forced into speech because men of science have refused to follow my advice without knowing why. It is altogether against my will that I tell my reasons for opposing this contemplated invasion of the antarctic—with its vast fossil-hunt and its wholesale boring and melting of the ancient ice-cap—and I am the more reluctant because my warning may be in vain. Doubt of the real facts, as I must reveal them, is inevitable; yet if I suppressed what will seem extravagant and incredible there would be nothing left. The hitherto withheld photographs, both ordinary and aërial, will count in my favour; for they are damnably vivid and graphic. Still, they will be doubted because of the great lengths to which clever fakery can be carried. The ink drawings, of course, will be jeered at as obvious impostures; notwithstanding a strangeness of technique which art experts ought to remark and puzzle over.
  
@@ -156,8 +156,8 @@ At length we resolved to carry out our original plan of flying 500 miles eastwar
  
 The outside world knew, of course, of our programme, and was told also of Lake’s strange and dogged insistence on a westward—or rather, northwestward—prospecting trip before our radical shift to the new base. It seems he had pondered a great deal, and with alarmingly radical daring, over that triangular striated marking in the slate; reading into it certain contradictions in Nature and geological period which whetted his curiosity to the utmost, and made him avid to sink more borings and blastings in the west-stretching formation to which the exhumed fragments evidently belonged. He was strangely convinced that the marking was the print of some bulky, unknown, and radically unclassifiable organism of considerably advanced evolution, notwithstanding that the rock which bore it was of so vastly ancient a date—Cambrian if not actually pre-Cambrian—as to preclude the probable existence not only of all highly evolved life, but of any life at all above the unicellular or at most the trilobite stage. These fragments, with their odd marking, must have been 500 million to a thousand million years old.
 
-</section> <!-- /.m-scene -->
-</section> <!-- /.m-chapter -->
+</section> <!-- /.scene -->
+</section> <!-- /.chapter -->
 
 
 
@@ -167,8 +167,8 @@ The outside world knew, of course, of our programme, and was told also of Lake�
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # II
 
@@ -177,7 +177,7 @@ The outside world knew, of course, of our programme, and was told also of Lake�
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 Popular imagination, I judge, responded actively to our wireless bulletins of Lake’s start northwestward into regions never trodden by human foot or penetrated by human imagination; though we did not mention his wild hopes of revolutionising the entire sciences of biology and geology. His preliminary sledging and boring journey of January 11–18 with Pabodie and five others—marred by the loss of two dogs in an upset when crossing one of the great pressure-ridges in the ice—had brought up more and more of the Archaean slate; and even I was interested by the singular profusion of evident fossil markings in that unbelievably ancient stratum. These markings, however, were of very primitive life-forms involving no great paradox except that any life-forms should occur in rock as definitely pre-Cambrian as this seemed to be; hence I still failed to see the good sense of Lake’s demand for an interlude in our time-saving programme—an interlude requiring the use of all four planes, many men, and the whole of the expedition’s mechanical apparatus. I did not, in the end, veto the plan; though I decided not to accompany the northwestward party despite Lake’s plea for my geological advice. While they were gone, I would remain at the base with Pabodie and five men and work out final plans for the eastward shift. In preparation for this transfer one of the planes had begun to move up a good gasoline supply from McMurdo Sound; but this could wait temporarily. I kept with me one sledge and nine dogs, since it is unwise to be at any time without possible transportation in an utterly tenantless world of aeon-long death.
  
@@ -279,8 +279,8 @@ It was after four when Lake at last prepared to sign off and advised us all to s
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # III
 
@@ -289,7 +289,7 @@ It was after four when Lake at last prepared to sign off and advised us all to s
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 None of us, I imagine, slept very heavily or continuously that morning; for both the excitement of Lake’s discovery and the mounting fury of the wind were against such a thing. So savage was the blast, even where we were, that we could not help wondering how much worse it was at Lake’s camp, directly under the vast unknown peaks that bred and delivered it. McTighe was awake at ten o’clock and tried to get Lake on the wireless, as agreed, but some electrical condition in the disturbed air to the westward seemed to prevent communication. We did, however, get the *Arkham*, and Douglas told me that he had likewise been vainly trying to reach Lake. He had not known about the wind, for very little was blowing at McMurdo Sound despite its persistent rage where we were.
 
@@ -347,8 +347,8 @@ It will be hard work deterring others from the great white south, and some of ou
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # IV
 
@@ -357,7 +357,7 @@ It will be hard work deterring others from the great white south, and some of ou
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 It is only with vast hesitancy and repugnance that I let my mind go back to Lake’s camp and what we really found there—and to that other thing beyond the frightful mountain wall. I am constantly tempted to shirk the details, and to let hints stand for actual facts and ineluctable deductions. I hope I have said enough already to let me glide briefly over the rest; the rest, that is, of the horror at the camp. I have told of the wind-ravaged terrain, the damaged shelters, the disarranged machinery, the varied uneasinesses of our dogs, the missing sledges and other items, the deaths of men and dogs, the absence of Gedney, and the six insanely buried biological specimens, strangely sound in texture for all their structural injuries, from a world forty million years dead. I do not recall whether I mentioned that upon checking up the canine bodies we found one dog missing. We did not think much about that till later—indeed, only Danforth and I have thought of it at all.
 
@@ -407,8 +407,8 @@ A few more feet of altitude and we would behold that realm. Danforth and I, unab
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # V
 
@@ -417,7 +417,7 @@ A few more feet of altitude and we would behold that realm. Danforth and I, unab
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 I think that both of us simultaneously cried out in mixed awe, wonder, terror, and disbelief in our own senses as we finally cleared the pass and saw what lay beyond. Of course we must have had some natural theory in the back of our heads to steady our faculties for the moment. Probably we thought of such things as the grotesquely weathered stones of the Garden of the Gods in Colorado, or the fantastically symmetrical wind-carved rocks of the Arizona desert. Perhaps we even half thought the sight a mirage like that we had seen the morning before on first approaching those mountains of madness. We must have had some such normal notions to fall back upon as our eyes swept that limitless, tempest-scarred plateau and grasped the almost endless labyrinth of colossal, regular, and geometrically eurhythmic stone masses which reared their crumbled and pitted crests above a glacial sheet not more than forty or fifty feet deep at its thickest, and in places obviously thinner.
 
@@ -487,8 +487,8 @@ Just how extensive a territory we had opened up, it was impossible to guess with
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # VI
 
@@ -497,7 +497,7 @@ Just how extensive a territory we had opened up, it was impossible to guess with
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 It would be cumbrous to give a detailed, consecutive account of our wanderings inside that cavernous, aeon-dead honeycomb of primal masonry; that monstrous lair of elder secrets which now echoed for the first time, after uncounted epochs, to the tread of human feet. This is especially true because so much of the horrible drama and revelation came from a mere study of the omnipresent mural carvings. Our flashlight photographs of those carvings will do much toward proving the truth of what we are now disclosing, and it is lamentable that we had not a larger film supply with us. As it was, we made crude notebook sketches of certain salient features after all our films were used up.
 
@@ -539,8 +539,8 @@ I still wonder that we deduced so much in the short time at our disposal. Of cou
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # VII
 
@@ -549,7 +549,7 @@ I still wonder that we deduced so much in the short time at our disposal. Of cou
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 The full story, so far as deciphered, will shortly appear in an official bulletin of Miskatonic University. Here I shall sketch only the salient high lights in a formless, rambling way. Myth or otherwise, the sculptures told of the coming of those star-headed things to the nascent, lifeless earth out of cosmic space—their coming, and the coming of many other alien entities such as at certain times embark upon spatial pioneering. They seemed able to traverse the interstellar ether on their vast membraneous wings—thus oddly confirming some curious hill folklore long ago told me by an antiquarian colleague. They had lived under the sea a good deal, building fantastic cities and fighting terrific battles with nameless adversaries by means of intricate devices employing unknown principles of energy. Evidently their scientific and mechanical knowledge far surpassed man’s today, though they made use of its more widespread and elaborate forms only when obliged to. Some of the sculptures suggested that they had passed through a stage of mechanised life on other planets, but had receded upon finding its effects emotionally unsatisfying. Their preternatural toughness of organisation and simplicity of natural wants made them peculiarly able to live on a high plane without the more specialised fruits of artificial manufacture, and even without garments except for occasional protection against the elements.
 
@@ -599,8 +599,8 @@ Destruction of cities through the upthrust of mountains, the centrifugal rending
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # VIII
 
@@ -609,7 +609,7 @@ Destruction of cities through the upthrust of mountains, the centrifugal rending
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 Naturally, Danforth and I studied with especial interest and a peculiarly personal sense of awe everything pertaining to the immediate district in which we were. Of this local material there was naturally a vast abundance; and on the tangled ground level of the city we were lucky enough to find a house of very late date whose walls, though somewhat damaged by a neighbouring rift, contained sculptures of decadent workmanship carrying the story of the region much beyond the period of the Pliocene map whence we derived our last general glimpse of the pre-human world. This was the last place we examined in detail, since what we found there gave us a fresh immediate objective.
 
@@ -661,8 +661,8 @@ And yet we could not help thinking about these specimens—especially about the 
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # IX
 
@@ -671,7 +671,7 @@ And yet we could not help thinking about these specimens—especially about the 
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 I have said that our study of the decadent sculptures brought about a change in our immediate objective. This of course had to do with the chiselled avenues to the black inner world, of whose existence we had not known before, but which we were now eager to find and traverse. From the evident scale of the carvings we deduced that a steeply descending walk of about a mile through either of the neighbouring tunnels would bring us to the brink of the dizzy sunless cliffs above the great abyss; down whose side adequate paths, improved by the Old Ones, led to the rocky shore of the hidden and nighted ocean. To behold this fabulous gulf in stark reality was a lure which seemed impossible of resistance once we knew of the thing—yet we realised we must begin the quest at once if we expected to include it on our present flight.
 
@@ -729,8 +729,8 @@ It was the neatly huddled array of three sledges in that farther angle of the ra
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # X
 
@@ -739,7 +739,7 @@ It was the neatly huddled array of three sledges in that farther angle of the ra
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 Many people will probably judge us callous as well as mad for thinking about the northward tunnel and the abyss so soon after our sombre discovery, and I am not prepared to say that we would have immediately revived such thoughts but for a specific circumstance which broke in upon us and set up a whole new train of speculations. We had replaced the tarpaulin over poor Gedney and were standing in a kind of mute bewilderment when the sounds finally reached our consciousness—the first sounds we had heard since descending out of the open where the mountain wind whined faintly from its unearthly heights. Well known and mundane though they were, their presence in this remote world of death was more unexpected and unnerving than any grotesque or fabulous tones could possibly have been—since they gave a fresh upsetting to all our notions of cosmic harmony.
 
@@ -781,8 +781,8 @@ Since we could not afford to spend any considerable time in study, we resumed ou
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # XI
 
@@ -791,7 +791,7 @@ Since we could not afford to spend any considerable time in study, we resumed ou
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 Still another time have I come to a place where it is very difficult to proceed. I ought to be hardened by this stage; but there are some experiences and intimations which scar too deeply to permit of healing, and leave only such an added sensitiveness that memory reinspires all the original horror. We saw, as I have said, certain obstructions on the polished floor ahead; and I may add that our nostrils were assailed almost simultaneously by a very curious intensification of the strange prevailing foetor, now quite plainly mixed with the nameless stench of those others which had gone before us. The light of the second torch left no doubt of what the obstructions were, and we dared approach them only because we could see, even from a distance, that they were quite as past all harming power as had been the six similar specimens unearthed from the monstrous star-mounded graves at poor Lake’s camp.
 
@@ -847,8 +847,8 @@ But we were not on a station platform. We were on the track ahead as the nightma
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # XII
 
@@ -857,7 +857,7 @@ But we were not on a station platform. We were on the track ahead as the nightma
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 Danforth and I have recollections of emerging into the great sculptured hemisphere and of threading our back trail through the Cyclopean rooms and corridors of the dead city; yet these are purely dream-fragments involving no memory of volition, details, or physical exertion. It was as if we floated in a nebulous world or dimension without time, causation, or orientation. The grey half-daylight of the vast circular space sobered us somewhat; but we did not go near those cached sledges or look again at poor Gedney and the dog. They have a strange and titanic mausoleum, and I hope the end of this planet will find them still undisturbed.
 

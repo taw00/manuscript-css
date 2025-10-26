@@ -9,6 +9,7 @@ line count, as well as a title, and then the poem.
 - each with a page header (contact and poem line count), and a title block
 - if you want to add a title page or anything else, check out
   example-poems-extra.md in the examples folder
+- firstname.lastname@example.com escaped to turn off automated linking
 -->
 
 <style>
@@ -30,9 +31,9 @@ line count, as well as a title, and then the poem.
 
 
 
-<section class="m-poem"> <!-- ------------------- POEM -------------------- -->
+<section class="poem"> <!-- ------------------- POEM -------------------- -->
 
-<div class="m-contact">
+<div class="contact">
 
 
 Firstname Lastname
@@ -41,18 +42,18 @@ Firstname Lastname
 
 Example City, NC 12345 USA
 
-firstname.lastname@example.com
+firstname\.lastname\@example\.com
 
 +1 555-555-1212
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 8 lines
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # Poem 1
@@ -83,9 +84,9 @@ Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
 
 
 
-<section class="m-poem"> <!-- ------------------- POEM -------------------- -->
+<section class="poem"> <!-- ------------------- POEM -------------------- -->
 
-<div class="m-contact">
+<div class="contact">
 
 
 Firstname Lastname
@@ -94,12 +95,12 @@ Firstname Lastname
 
 Example City, NC 12345 USA
 
-firstname.lastname@example.com
+firstname\.lastname\@example\.com
 
 +1 555-555-1212
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 8 lines
@@ -110,13 +111,13 @@ firstname.lastname@example.com
 
 
 
-<div class="m-title"> <!-- title block (title, byline if different) -->
+<div class="title"> <!-- title block (title, byline if different) -->
 
 # Poem 2
 
 ### by Poeticus Rhymeness
 
-</div> <!-- end m-title -->
+</div> <!-- end title -->
 
 
 ```
@@ -137,9 +138,9 @@ Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
 
 
 
-<section class="m-poem"> <!-- ------------------- POEM -------------------- -->
+<section class="poem"> <!-- ------------------- POEM -------------------- -->
 
-<div class="m-contact">
+<div class="contact">
 
 
 Firstname Lastname
@@ -148,12 +149,12 @@ Firstname Lastname
 
 Example City, NC 12345 USA
 
-firstname.lastname@example.com
+firstname\.lastname\@example\.com
 
 +1 555-555-1212
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 8 lines
@@ -164,13 +165,13 @@ firstname.lastname@example.com
 
 
 
-<div class="m-title"> <!-- title block (title, byline if different) -->
+<div class="title"> <!-- title block (title, byline if different) -->
 
 # Poem 3
 
 ### by Poeticus Rhymeness
 
-</div> <!-- end m-title -->
+</div> <!-- end title -->
 
 
 ```
@@ -193,9 +194,9 @@ Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
 
 
 
-<section class="m-poem"> <!-- ------------------- POEM -------------------- -->
+<section class="poem"> <!-- ------------------- POEM -------------------- -->
 
-<div class="m-contact">
+<div class="contact">
 
 
 Firstname Lastname
@@ -204,12 +205,12 @@ Firstname Lastname
 
 Example City, NC 12345 USA
 
-firstname.lastname@example.com
+firstname\.lastname\@example\.com
 
 +1 555-555-1212
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 8 lines
@@ -220,13 +221,13 @@ firstname.lastname@example.com
 
 
 
-<div class="m-title"> <!-- title block (title, byline if different) -->
+<div class="title"> <!-- title block (title, byline if different) -->
 
 # Poem 4
 
 ### by Poeticus Rhymeness
 
-</div> <!-- end m-title -->
+</div> <!-- end title -->
 
 
 ```

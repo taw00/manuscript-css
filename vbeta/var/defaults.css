@@ -137,18 +137,6 @@
     --m-offset-title: var(--m-content-offset-1-3rd);
     --m-offset-title-poem: var(--m-content-offset-1-4th);
 
-    /* font settings short/long - .m-facts */
-    --m-font-size-facts-short:    var(--m-font-size-contact);
-    --m-font-weight-facts-short:  var(--m-font-weight-contact);
-    /* --m-font-family-facts-short is set below */
-    --m-line-spacing-facts-short: var(--m-line-spacing-single);
-
-    --m-font-size-facts-long-oldstyle:    inherit; /* will inherit from m-title */
-    --m-font-weight-facts-long-oldstyle:  inherit;
-    --m-font-family-facts-long-oldstyle:  inherit;
-    --m-line-spacing-facts-long-oldstyle: var(--m-line-spacing-single);
-
-
     /*
      * DEFAULTS - section 3 - baseline #manuscript.narrative and
      *                        #manuscript.nonnarrative specific
@@ -195,7 +183,7 @@
     --m-text-transform-title-poetry: none; /*uppercase used to be the standard;*/
 
     /*
-     * DEFAULTS - section 5 - baseline .m-note specific
+     * DEFAULTS - section 5 - baseline .note specific
      */
 
     --m-font-family-notes:           var(--m-fontstack-system);
@@ -234,17 +222,16 @@
      * DEFAULTS - section 7 - per-component font-size, font-weight,
      *                        font-family, line-spacing, …
      *    Initially all are set to what was set above.
-     *     - contact, header(s), facts, title/subtitle, byline
+     *     - contact, count, title/subtitle, byline
      *     - part, chapter, scene, poem
      *     - epigraph, dingus, -30-
      *     This is insanely pedantic.
      */
 
-    /* font settings - contact info (and facts if put in the right corner */
+    /* font settings */
     --m-font-size-contact:    var(--m-font-size);
     --m-font-weight-contact:  var(--m-font-weight);
     --m-font-family-contact:  inherit;
-    --m-font-family-facts-short:  var(--m-font-family-contact);
     --m-line-spacing-contact: var(--m-line-spacing-single);
 
     /* font settings - the main title-block header */
@@ -325,28 +312,6 @@
     --m-font-size-dinkus-30-: var(--m-font-size);
     --m-font-weight-dinkus-30-: var(--m-font-weight);
     --m-font-family-dinkus-30-: inherit;
-
-    /* positional and font settings - m-facts
-     * (.m-facts is an oddball container)
-     */
-
-    /* .m-facts settings */
-    /* set in m-var/permutations.css …
-    --m-position-facts:     var(--m-position-facts-short);
-    --m-top-facts:          var(--m-top-facts-short);
-    --m-bottom-facts:       var(--m-bottom-facts-short);
-    --m-left-facts:         var(--m-left-facts-short);
-    --m-right-facts:        var(--m-right-facts-short);
-
-    --m-margin-facts-horizontal: var(--m-margin-facts-short-horizontal);
-    --m-margin-facts-vertical:   var(--m-margin-facts-short-vertical);
-    --m-text-align-facts:   var(--m-text-align-facts-short);
-
-    --m-font-size-facts:    var(--m-font-size-facts-short);
-    --m-font-weight-facts:  var(--m-font-weight-facts-short);
-    --m-font-family-facts:  var(--m-font-family-facts-short);
-    --m-line-spacing-facts: var(--m-line-spacing-facts-short);
-    */
 
     /* page break settings - these get refined settings elsewhere */
     /* set in m-var/permutations.css …

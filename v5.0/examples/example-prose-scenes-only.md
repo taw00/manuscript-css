@@ -33,7 +33,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 
 This document is an example of a story snippet. It has no parts or
@@ -55,7 +55,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 
 Curabitur sagittis dictum ipsum, at congue mauris elementum nec. Aenean nec dui
@@ -73,7 +73,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 
 Praesent sit amet erat placerat, lacinia sapien non, gravida ipsum. Vivamus
@@ -93,7 +93,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 
 This is a scene. This is a scene. This is a scene. This is a scene.
@@ -105,7 +105,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 
 Phasellus tempus feugiat dui. Suspendisse non nunc tortor. Quisque in iaculis

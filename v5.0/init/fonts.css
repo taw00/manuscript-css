@@ -56,17 +56,7 @@ html {
         line-height: var(--m-line-spacing-code);
     }
 
-    & .m-contact {
-        font-size:   var(--m-font-size-contact);
-        font-weight: var(--m-font-weight-contact);
-        font-family: var(--m-font-family-contact);
-        line-height: var(--m-line-spacing-contact);
-        & p {
-            line-height: inherit;
-        }
-    }
-
-    & .m-count {
+    & .contact {
         font-size:   inherit;
         font-weight: inherit;
         font-family: inherit;
@@ -76,7 +66,17 @@ html {
         }
     }
 
-    & .m-title {
+    & .count {
+        font-size:   inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        line-height: var(--m-line-spacing-single);
+        & p {
+            line-height: inherit;
+        }
+    }
+
+    & .title {
         font-size:   var(--m-font-size-header);
         font-weight: var(--m-font-weight-header);
         font-family: var(--m-font-family-header);
@@ -105,34 +105,14 @@ html {
             font-family: var(--m-font-family-byline);
         }
     }
-    & section:is(.m-part, .m-chapter, .m-scene) > .m-title {
+    & section:is(.part, .chapter, .scene) > .title {
         font-size:   var(--m-font-size-headers);
         font-weight: var(--m-font-weight-headers);
         font-family: var(--m-font-family-headers);
     }
 
-    & > .m-facts,
-    & :not(section) .m-facts {
-        font-size:   var(--m-font-size-facts);
-        font-weight: var(--m-font-weight-facts);
-        font-family: var(--m-font-family-facts);
-        line-height: var(--m-line-spacing-facts);
-        & p {
-            line-height: inherit;
-        }
-    }
-    & section:is(.m-chapter,.m-scene) .m-facts {
-        font-size:   inherit;
-        font-weight: inherit;
-        font-family: inherit;
-        line-height: inherit;
-        & p {
-            line-height: inherit;
-        }
-    }
-
-    & section.m-part {
-        & > .m-title {
+    & section.part {
+        & > .title {
             & > h1 {              /* title: part */
                 font-size:   var(--m-font-size-title-part);
                 font-weight: var(--m-font-weight-title-part);
@@ -151,8 +131,8 @@ html {
         }
     }
 
-    & section.m-chapter {
-        & > .m-title {
+    & section.chapter {
+        & > .title {
             & > h1 {        /* title: chapter */
                 font-size:   var(--m-font-size-title-chapter);
                 font-weight: var(--m-font-weight-title-chapter);
@@ -171,8 +151,8 @@ html {
         }
     }
 
-    & section:is(.m-poem) > .m-title, /* poem section */
-    & div:is(.x-poem) > .m-title {    /* arbitrary poem */
+    & section:is(.poem) > .title, /* poem section */
+    & div:is(.x-poem) > .title {    /* arbitrary poem */
         line-height: var(--m-line-spacing-poetry);
         & blockquote, & p {
             line-height: var(--m-line-spacing-poetry);
@@ -198,7 +178,7 @@ html {
         }
     }
 
-    & section:is(.m-scene) > .m-title {
+    & section:is(.scene) > .title {
         & > h1 {         /* title: scene or poem*/
             font-size:   var(--m-font-size-title-scene);
             font-weight: var(--m-font-weight-title-scene);
@@ -216,7 +196,7 @@ html {
         }
     }
 
-    & section:is(.m-scene) {
+    & section:is(.scene) {
         font-family: var(--m-font-family-scene);
         & pre {
             font-family: var(--m-font-family-preformatted-scene);
@@ -229,7 +209,7 @@ html {
         }
     }
 
-    & :is(section.m-poem, div.x-poem) {
+    & :is(section.poem, div.x-poem) {
         & pre,
         & pre > code {
             font-size:   var(--m-font-size-poetry);
@@ -238,7 +218,7 @@ html {
             font-family: var(--m-font-family-poetry);
             line-height: var(--m-line-spacing-poetry);
         }
-        .m-title {
+        .title {
             font-family: inherit;
             font-style: inherit;
             font-weight: inherit;
@@ -248,7 +228,7 @@ html {
             }
         }
     }
-    & :is(section,div) div.m-note {
+    & :is(section,div) div.note {
         font-family: var(--m-font-family-notes);
         font-size:   var(--m-font-size-notes);
         line-height: var(--m-line-spacing-notes);
@@ -275,17 +255,6 @@ html {
         }
     }
 
-    /* link colors for .m-contact and for .m-facts are different */
-    & .m-contact,
-    &:not(.long) > .m-title > .m-facts {
-        a {
-            color: var(--m-text-color);
-            &:hover {
-                color: var(--m-link-color);
-            }
-        }
-    }
-
     & blockquote {
         color: inherit; background-color: inherit;
     }
@@ -307,10 +276,10 @@ html {
     &::after,
     & > h6,                              /* manually inserted top-level -30- */
     /*& > section:last-of-type::after,*/               /* auto-inserted -30- */
-    & section.m-scene::after,                        /* auto-inserted dinkus */
-    & section.m-subscenes::before,                   /* auto-inserted dinkus */
-    & section.m-subscenes::after,                    /* auto-inserted dinkus */
-    & :not(section.m-scene) > h6 {         /* manually ins. between sections */
+    & section.scene::after,                        /* auto-inserted dinkus */
+    & section.subscenes::before,                   /* auto-inserted dinkus */
+    & section.subscenes::after,                    /* auto-inserted dinkus */
+    & :not(section.scene) > h6 {         /* manually ins. between sections */
         font-size:   var(--m-font-size-dinkus-30-);
         font-weight: var(--m-font-weight-dinkus-30-);
         font-family: var(--m-font-family-dinkus-30-);

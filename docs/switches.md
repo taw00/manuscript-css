@@ -242,7 +242,7 @@ article:
 
 &ZeroWidthSpace;
 
-## `.m-book`, `.m-chapter`, `.m-scene`, `.m-poem` switches - switches shared between these structural elements
+## `.chapter`, `.scene`, `.poem` switches - switches shared between these structural elements
 
 Switches usable by all of these elements. For example:
 
@@ -252,7 +252,7 @@ Switches usable by all of these elements. For example:
 
 [ . . . ]
 
-<div class="m-chapter add-your-switch-here">
+<div class="chapter add-your-switch-here">
 ```
 
 <dl>
@@ -269,7 +269,7 @@ Switches usable by all of these elements. For example:
 
 &ZeroWidthSpace;
 
-## `.m-scene` switches - switches associated to prose content
+## `.scene` switches - switches associated to prose content
 
 Switches available to a scene beyond what has been mentioned previously.
 
@@ -279,7 +279,7 @@ Switches available to a scene beyond what has been mentioned previously.
 
 [ . . . ]
 
-<div class="m-scene add-your-switch-here">
+<div class="scene add-your-switch-here">
 ```
 
 <dl>
@@ -298,7 +298,7 @@ Switches available to a scene beyond what has been mentioned previously.
     <dd>Convert all paragraphs in the scene to hanging indent format. Useful
     for endnotes, citation, and the like. Note: You can also wrap paragraphs
     in a `<div class="foothang"> [ . . . ]</div>` if you like so that only
-    a portion of your `.m-scene` needs to be formatted as such.</dd>
+    a portion of your `.scene` needs to be formatted as such.</dd>
     <dt>no-dinkus</dt>
     <dd>Will not add a dinkus at the end of the scene if one would normally be
     placed there.</dd>
@@ -309,7 +309,7 @@ Switches available to a scene beyond what has been mentioned previously.
 
 &ZeroWidthSpace;
 
-## `.m-poem` switches - switches associated to poem content
+## `.poem` switches - switches associated to poem content
 
 Switches available to a poem beyond what has been mentioned previously. Note
 that poems have a title header that can have a prose element where the above
@@ -321,7 +321,7 @@ prose-oriented switches can have an effect.
 
 [ . . . ]
 
-<div class="m-poem add-your-switch-here">
+<div class="poem add-your-switch-here">
 ```
 
 <dl>

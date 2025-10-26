@@ -2,8 +2,8 @@
  * Some overriding classes
  *
  * These are used to force certain stylings on elements in your document. Most
- * commonly <section class="m-scene">. For example,
- * <section class="m-scene no-indent"> should turn off the text indenting for
+ * commonly <section class="scene">. For example,
+ * <section class="scene no-indent"> should turn off the text indenting for
  * that scene.
  *
  *
@@ -94,7 +94,7 @@
     /* poems add a aesthetic space at the end right before a simulated page-break
      * line from the next section. Let's remove that if that next section has a
      * 'no-break'. */
-    #manuscript section.m-poem:has( + section.no-break) {
+    #manuscript section.poem:has( + section.no-break) {
         border-block-end: unset !important; /* simulated page-break aesthetic spacing */
     }
 } /* end @media screen */
@@ -108,7 +108,7 @@
     .break-after, .force-break-after {
         break-after: page !important;
     }
-    #manuscript section.m-poem:is(.break-after, .force-break-after) {
+    #manuscript section.poem:is(.break-after, .force-break-after) {
         break-after: page !important;
     }
     /* unset the break if called to do so */
@@ -130,7 +130,7 @@
 }
 
 /* .foothang ---------------------- */
-/* .m-scene or any other major block with a class .foothang
+/* .scene or any other major block with a class .foothang
  * will format the paragraphs as a hanging indent */
 #manuscript :is(section,div) p.foothang,
 #manuscript :is(section,div).foothang p {

@@ -8,7 +8,7 @@ A short story example.
 - A dinkus because a # between the scenes would be odd before the
   acknowledgement. Other ways to handle it is to add 'no-dinkus' to the first
   scene (only one story scene), or to wrap the second scene in a
-  <div class="m-chapter>
+  <div class="chapter>
 - Gave it a fancy -30- (the story-end mark)
 - citation scene, for show
 
@@ -43,7 +43,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 
 Guy de Maupassant
@@ -51,7 +51,7 @@ Guy de Maupassant
 Paris, France
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 1900 words
@@ -61,7 +61,7 @@ gothic horror
 November 14, 1882 
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # The Wolf
@@ -81,7 +81,7 @@ November 14, 1882
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 This is what the old Marquis d'Arville told us after St. Hubert's dinner at the house of the Baron des Ravels.
 
@@ -196,7 +196,7 @@ Then a lady declared, in a little, soft voice
 
 "All the same, it is fine to have passions like that." 
 
-</section> <!-- /.m-scene -->
+</section> <!-- /.scene -->
 
 
 
@@ -206,8 +206,8 @@ Then a lady declared, in a little, soft voice
 
 
 
-<section class="m-scene foothang">
-<div class="m-title">
+<section class="scene foothang">
+<div class="title">
 
 
 # Acknowledgement
@@ -219,7 +219,7 @@ Then a lady declared, in a little, soft voice
 de Maupassant, Guy. 1882. In *The Gauls*. November 14, 1882. France.
 
 
-</section> <!-- /.m-scene styled with foothangs -->
+</section> <!-- /.scene styled with foothangs -->
 
 
 </article></div> <!-- ----------------------------- end of manuscript ---- -->

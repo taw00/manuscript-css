@@ -27,8 +27,8 @@ Customizations:
   - Shrank the content size to 90% and centered the content. I just liked this
     framing of it.
 - Footnotes!
-  The first content block is an 'm-poem' class <section>. The second content
-  block is an 'm-scene' class <section>. But I wanted the content to be
+  The first content block is an 'poem' class <section>. The second content
+  block is an 'scene' class <section>. But I wanted the content to be
   footnotes, and so …
   - 'no-break' switch enabled to remove the preceding page break that would
     normally occur if this were a manuscript.
@@ -37,6 +37,9 @@ Customizations:
   - added a top margin to the scene to shove it away from the poem a bit.
   - reduced the font size by 60% because the content is not the focus of the
     work.
+- todd@toddwarner.io escaped to turn off automated linking even though you
+  never see it because the 'simple' class in the article element makes the
+  contact info disappear.
 
 A note about footnotes and lines that begin with a number and a period. For
 example our footnote begins with (2019) 2022. If that began with 2022 alone,
@@ -67,16 +70,17 @@ h1 {
     @import url("https://toddwarner.io/pub/css/tw-font-sans-overpass.css");
     @import url("https://toddwarner.io/pub/css/tw-font-serif-crimson.css");
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css");
+    @import url("../../manuscript-5.0.css");
     /*
     @import url("../manuscript-5.0.css");
     @import url("../../manuscript-5.0.css");
     */
     #vpage > #manuscript {
-        & > .m-poem {
+        & > .poem {
             margin-inline: auto;
             max-width: 89%;
         }
-        & > .m-poem > .m-title {
+        & > .poem > .title {
             font-family: overpass, sans-serif;
             margin-inline: 0;
             margin-block-start: .15in;
@@ -85,7 +89,7 @@ h1 {
                 text-align: left;
             }
         }
-        & > .m-scene {
+        & > .scene {
             max-width: 89%;
             margin-inline: auto;
             margin-block-start: .5in;
@@ -102,22 +106,22 @@ h1 {
 <div id="vpage" class="A5 dim">
 <article id="manuscript" class="poetry simple">
 
-<section class="m-poem">
+<section class="poem">
 
-<div class="m-contact">
+<div class="contact">
 
 Todd Warner  
 North Carolina Piedmont, USA  
-todd@toddwarner.io
+todd\@toddwarner\.io
 
 </div>
-<div class="m-count">
+<div class="count">
 
 7 lines
 
 </div>
 
-<div class="m-title">
+<div class="title">
 
 # Crepuscular Dreams
 
@@ -146,7 +150,7 @@ Dreamers wake and face the dawn.
 ```
 
 </section>
-<section class="m-scene foothang no-break">
+<section class="scene foothang no-break">
 
 Copyright © 2019 Todd Warner
 

@@ -18,6 +18,7 @@ Customizations:
 - Turned off indenting 'no-indent' and page-breaking 'no-break' for the scene.
 - Added space between the poem and the epigraph with a .5in margin just to give
   it some air.
+- todd@toddwarner.io escaped to turn off automated linking
 
 Drafted 2021-01-21
 Published 2023-11-18 — County Lines, a Literary Journal, volume 11, 2024
@@ -25,12 +26,13 @@ Published 2023-11-18 — County Lines, a Literary Journal, volume 11, 2024
 
 <style>
     @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css");
+    @import url("../../manuscript-5.0.css");
     /*
     @import url("../manuscript-5.0.css");
     @import url("../../manuscript-5.0.css");
     */
     :root {	--m-line-spacing: normal; }
-    .m-scene {
+    .scene {
         font-size: 85%;
         margin-block-start: .5in;
         line-height: normal; /* redundant (see :root) but left as an example */
@@ -40,18 +42,18 @@ Published 2023-11-18 — County Lines, a Literary Journal, volume 11, 2024
 <div id="vpage" class="dark yellow">
 <article id="manuscript" class="poetry">
 
-<section class="m-poem">
+<section class="poem">
 
-<div class="m-contact">
+<div class="contact">
 
 Todd Warner
 
 North Carolina Piedmont, USA
 
-todd@toddwarner.io
+todd\@toddwarner\.io
 
 </div>
-<div class="m-count">
+<div class="count">
 
 26 lines (+2 line epigraph)  
 poem, panegyric  
@@ -59,7 +61,7 @@ poem, panegyric
 
 </div>
 
-<div class="m-title">
+<div class="title">
 
 # Amanda Takes the Stage
 
@@ -116,7 +118,7 @@ With these words,
 
 
 </section>
-<section class="m-scene no-indent no-break">
+<section class="scene no-indent no-break">
 
 —
 

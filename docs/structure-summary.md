@@ -49,7 +49,7 @@ if poetry, parts, chapters and poems. In the end, parts and chapters are not
 absolutely required. The meat of your manuscript lives either in a scene or a
 poem. Most short stories, for example, only use scenes. Often only one scene
 container. (Note, you can even add "book" sections do your document by
-inserting `<div class="m-title-page"> … </div>` blocks where appropriate. Look
+inserting `<div class="title-page"> … </div>` blocks where appropriate. Look
 at `example-prose-long-and-complicated.md` for an example.)
 
 The narrative or nonnarrative containers, in summary:  
@@ -61,29 +61,29 @@ The narrative or nonnarrative containers, in summary:
 </style>
 <div id="vpage">                                            <!-- 1 required -->
   <article id="manuscript" class="long">    <!-- 1 required (short or long) -->
-    <div id="m-title-page">                                     <!-- 0 or 1 -->
-        <div class="m-contact"></div>                           <!-- 0 or 1 -->
-        <div class="m-count"></div>                             <!-- 0 or 1 -->
-        <div class="m-title"></div>                             <!-- 0 or 1 -->
+    <div id="title-page">                                     <!-- 0 or 1 -->
+        <div class="contact"></div>                           <!-- 0 or 1 -->
+        <div class="count"></div>                             <!-- 0 or 1 -->
+        <div class="title"></div>                             <!-- 0 or 1 -->
     </div>
-    <section class="m-part">                          <!-- 0 to many --------->
-      <div class="m-title"></div>                               <!-- 0 or 1 -->
-      <section class="m-chapter">             <!-- 0 to many allowed --------->
-        <div class="m-title"></div>                             <!-- 0 or 1 -->
-        <section class="m-scene">            <!-- prose: 1 required to many -->
-            <div class="m-title"></div>                         <!-- 0 or 1 -->
+    <section class="part">                          <!-- 0 to many --------->
+      <div class="title"></div>                               <!-- 0 or 1 -->
+      <section class="chapter">             <!-- 0 to many allowed --------->
+        <div class="title"></div>                             <!-- 0 or 1 -->
+        <section class="scene">            <!-- prose: 1 required to many -->
+            <div class="title"></div>                         <!-- 0 or 1 -->
 
             [scene text in here]
 
         </section
-        <section class="m-scene">            <!-- prose: 1 required to many -->
-            <div class="m-title"></div>                         <!-- 0 or 1 -->
+        <section class="scene">            <!-- prose: 1 required to many -->
+            <div class="title"></div>                         <!-- 0 or 1 -->
 
             [scene text in here]
 
         </section
-        <section class="m-scene">            <!-- prose: 1 required to many -->
-            <div class="m-title"></div>                         <!-- 0 or 1 -->
+        <section class="scene">            <!-- prose: 1 required to many -->
+            <div class="title"></div>                         <!-- 0 or 1 -->
 
             [scene text in here]
 
@@ -104,41 +104,41 @@ The poetry container, in summary:
 </style>
 <div id="vpage">                                            <!-- 1 required -->
   <article id="manuscript" class="poetry">                  <!-- 1 required -->
-    <div id="m-title-page">           <!-- 0 or 1 - poetry collections only -->
-        <div class="m-contact"></div>                           <!-- 0 or 1 -->
-        <div class="m-count"></div>                             <!-- 0 or 1 -->
-        <div class="m-title"></div>                             <!-- 0 or 1 -->
+    <div id="title-page">           <!-- 0 or 1 - poetry collections only -->
+        <div class="contact"></div>                           <!-- 0 or 1 -->
+        <div class="count"></div>                             <!-- 0 or 1 -->
+        <div class="title"></div>                             <!-- 0 or 1 -->
     </div>
-    <section class="m-part">       <!-- 0 to many - poetry collections only -->
-      <div class="m-title"></div>                        <!-- 0 or 1 -->
-      <section class="m-chapter">  <!-- 0 to many - poetry collections only -->
-        <div class="m-title"></div>                      <!-- 0 or 1 -->
-        <section class="m-poem">            <!-- poetry: 1 required to many -->
-            <div class="m-contact"></div>                       <!-- 0 or 1 -->
-            <div class="m-count"></div>                         <!-- 0 or 1 -->
-            <div class="m-title"></div>                         <!-- 0 or 1 -->
+    <section class="part">       <!-- 0 to many - poetry collections only -->
+      <div class="title"></div>                        <!-- 0 or 1 -->
+      <section class="chapter">  <!-- 0 to many - poetry collections only -->
+        <div class="title"></div>                      <!-- 0 or 1 -->
+        <section class="poem">            <!-- poetry: 1 required to many -->
+            <div class="contact"></div>                       <!-- 0 or 1 -->
+            <div class="count"></div>                         <!-- 0 or 1 -->
+            <div class="title"></div>                         <!-- 0 or 1 -->
 
             [poetry stanzas in here]
 
         </section>
-        <section class="m-poem">            <!-- poetry: 1 required to many -->
-            <div class="m-contact"></div>                       <!-- 0 or 1 -->
-            <div class="m-count"></div>                         <!-- 0 or 1 -->
-            <div class="m-title"></div>                         <!-- 0 or 1 -->
+        <section class="poem">            <!-- poetry: 1 required to many -->
+            <div class="contact"></div>                       <!-- 0 or 1 -->
+            <div class="count"></div>                         <!-- 0 or 1 -->
+            <div class="title"></div>                         <!-- 0 or 1 -->
 
             [poetry stanzas in here]
 
         </section>
-        <section class="m-poem">            <!-- poetry: 1 required to many -->
-            <div class="m-contact"></div>                       <!-- 0 or 1 -->
-            <div class="m-count"></div>                         <!-- 0 or 1 -->
-            <div class="m-title"></div>                         <!-- 0 or 1 -->
+        <section class="poem">            <!-- poetry: 1 required to many -->
+            <div class="contact"></div>                       <!-- 0 or 1 -->
+            <div class="count"></div>                         <!-- 0 or 1 -->
+            <div class="title"></div>                         <!-- 0 or 1 -->
 
             [poetry stanzas in here]
 
         </section>
-        <section class="m-scene">         <!-- prose: rarely, if ever, used -->
-            <div class="m-title"></div>                         <!-- 0 or 1 -->
+        <section class="scene">         <!-- prose: rarely, if ever, used -->
+            <div class="title"></div>                         <!-- 0 or 1 -->
 
             [scene text in here]
 
@@ -166,7 +166,7 @@ optional.
 
 <!-- ------------------ the title page ------------------ -->
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 Edgar Allan Poe
 
@@ -174,13 +174,13 @@ Coates Street, Philadelphia, PA 19079 USA
 
 telleroftales@example.com
 
-</div><div class="m-count">
+</div><div class="count">
 
 2200 words
 
 Gothic Horror
 
-</div><div class="m-title">
+</div><div class="title">
 
 # The Tell-Tale Heart
 
@@ -195,16 +195,16 @@ Gothic Horror
 
 <!-- ------------------ the story ----------------------- -->
 
-<section class="m-part">
-<div class="m-title">
+<section class="part">
+<div class="title">
 
 # Part 1
 
 </div>
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # Chapter 1
 
@@ -213,7 +213,7 @@ Gothic Horror
 </div>
 
 
-<section class="m-scene">
+<section class="scene">
 
 True!—nervous—very, very dreadfully nervous I had been and am; but why *will*
 you say that I am mad? The disease had sharpened my senses—not destroyed—not
@@ -227,7 +227,7 @@ was none. I loved the old man. He had never wronged me. He had never given me
 insult. For his gold I had no desire. I think it was his eye! [ … ]
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 Upon the eighth night I was more than usually cautious in opening the door. A
 watch's minute hand moves more quickly than did mine. Never before that night
@@ -237,7 +237,7 @@ little by little, and he not even to dream of my secret deeds or thoughts. I
 fairly chuckled at the idea; and perhaps he heard me; for [ … ]
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 It was open—wide, wide open—and I grew furious as I gazed upon it. I saw it
 with perfect distinctness—all a dull blue, with a hideous veil over it that
@@ -281,8 +281,8 @@ To insert a poem in a document arbitrarily, it will be structured like this:
 # Poetry Manuscripts
 
 
-- `#manuscript` will be of `class="poetry"` and we use `m-poem` instead of a `m-scene`
-- Each `m-poem` will contain an `m-contact`, an `m-count`, an `m-title` and then
+- `#manuscript` will be of `class="poetry"` and we use `poem` instead of a `scene`
+- Each `poem` will contain an `contact`, an `count`, an `title` and then
   stanzas of poetry wrapped in <pre>```</pre> preformatting marks, similar to
   `x-poem` above.
 - Most submissions are three to five poems. You don't used a title page for
@@ -302,8 +302,8 @@ To insert a poem in a document arbitrarily, it will be structured like this:
 
 <!-- ------------------ three poems --------------------- -->
 
-<section class="m-poem">
-<div class="m-contact">
+<section class="poem">
+<div class="contact">
 
 Haiku Johnson
 
@@ -311,11 +311,11 @@ Elm Street, Somewherein, PA 19079 USA
 
 haikuforyou@example.com
 
-</div><div class="m-count">
+</div><div class="count">
 
 3 lines
 
-</div><div class="m-title">
+</div><div class="title">
 
 # The Savannah Watch
 
@@ -330,9 +330,9 @@ Gentle giants watch.
 </section>
 
 
-<section class="m-poem">
+<section class="poem">
 
-<div class="m-contact">
+<div class="contact">
 
 Haiku Johnson
 
@@ -340,11 +340,11 @@ Elm Street, Somewherein, PA 19079 USA
 
 haikuforyou@example.com
 
-</div><div class="m-count">
+</div><div class="count">
 
 3 lines
 
-</div><div class="m-title">
+</div><div class="title">
 
 # Sky-High Grazing
 
@@ -359,8 +359,8 @@ World seen from above.
 </section>
 
 
-<section class="m-poem">
-<div class="m-contact">
+<section class="poem">
+<div class="contact">
 
 Haiku Johnson
 
@@ -368,11 +368,11 @@ Elm Street, Somewherein, PA 19079 USA
 
 haikuforyou@example.com
 
-</div><div class="m-count">
+</div><div class="count">
 
 3 lines
 
-</div><div class="m-title">
+</div><div class="title">
 
 # The Desert Drink
 

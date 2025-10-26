@@ -38,13 +38,13 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-[comment]: / "---------------------------- POEMS -----------------------------"
+[comment]:: "---------------------------- POEMS ------------------------------"
 
 
 
 
-<section class="m-poem">
-<div class="m-contact">
+<section class="poem">
+<div class="contact">
 
 
 William Wordsworth
@@ -53,17 +53,17 @@ William Wordsworth
 
 Everyville, NM 32145
 
-will.i.am@example.com
+will\.i\.am\@example\.com
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 24 lines
 
 
 </div>
-<div class="m-title">
+<div class="title">
 
 
 # I Wandered Lonely as a Cloud
@@ -112,10 +112,10 @@ And dances with the daffodils.
 
 
 
-<section class="m-poem">
+<section class="poem">
 
 
-<div class="m-contact">
+<div class="contact">
 
 
 Charles Lutwidge Dodgson
@@ -127,14 +127,14 @@ Guildford, England
 United Kingdom
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 48 lines
 
 
 </div>
-<div class="m-title">
+<div class="title">
 
 
 # Jabberwocky
@@ -200,8 +200,8 @@ All mimsy were the borogoves,
 
 
 
-<section class="m-scene foothang">
-<div class="m-title">
+<section class="scene foothang">
+<div class="title">
 
 
 # Acknowledgments

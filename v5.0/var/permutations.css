@@ -262,10 +262,10 @@
 
 #manuscript {
 /*
- * "#manuscript > .m-scene"-SCOPED VARIABLES
+ * "#manuscript > .scene"-SCOPED VARIABLES
  */
-    & section.m-scene {
-        /* all -scene variables are scoped to .m-scene */
+    & section.scene {
+        /* all -scene variables are scoped to .scene */
         --m-indent-scene: var(--m-indent);
         --m-indent-first-paragraph-scene: var(--m-indent-first-paragraph);
         --m-paragraph-spacing-scene: var(--m-paragraph-spacing);
@@ -305,8 +305,8 @@
     }
 
     /* we don't allow narrative and nonnarrative in subscenes yet
-    & section.m-subscenes > section.m-scene {
-        /* all -subscene variables are scoped to .m-scene w/in .m-subscenes * /
+    & section.subscenes > section.scene {
+        /* all -subscene variables are scoped to .scene w/in .subscenes * /
         --m-indent-subscene: var(--m-indent);
         --m-indent-first-paragraph-subscene: var(--m-indent-first-paragraph);
         --m-paragraph-spacing-subscene: var(--m-paragraph-spacing);
@@ -332,7 +332,7 @@
     }
     */
 
-/* end "#manuscript > .m-scene"-SCOPED VARIABLES */
+/* end "#manuscript > .scene"-SCOPED VARIABLES */
 }
 
 

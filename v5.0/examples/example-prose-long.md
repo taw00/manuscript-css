@@ -29,7 +29,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 
 Firstname Lastname
@@ -38,12 +38,12 @@ Firstname Lastname
 
 Example City, NC 12345 USA
 
-firstname.lastname@example.com
+firstname\.lastname\@example\.com
 
 +1 555-555-1212
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 95,000 words / Contemporary Fiction
@@ -51,7 +51,7 @@ firstname.lastname@example.com
 _draft rev. 20221024_
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # Manuscript Formatting via CSS: A Long-Form Example (typical)
@@ -84,8 +84,8 @@ _draft rev. 20221024_
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 
 # Chapter 1
@@ -96,7 +96,7 @@ _draft rev. 20221024_
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 This document templates a long-form narrative that is divided into the more
 typical chapters and scenes (no parts). Most short stories are just a series of
@@ -115,7 +115,7 @@ The only time I turn off the page break similation is when I am sharing the
 document as an HTML page. I.e., when the HTML becomes the primary end artifact.
 
 </section> <!-- end scene -->
-<section class="m-scene">
+<section class="scene">
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia neque
 ultricies erat ullamcorper, non semper ex molestie. Duis sed odio at mauris
@@ -134,7 +134,7 @@ pellentesque porttitor. In ac mollis arcu. Etiam est nulla, faucibus et tellus
 nec, congue sagittis metus.
 
 </section> <!-- end scene -->
-<section class="m-scene">
+<section class="scene">
 
 Nam pharetra fermentum lectus nec malesuada. Nulla facilisi. Pellentesque
 volutpat odio vitae sapien convallis hendrerit. Nunc eu tincidunt quam. Praesent
@@ -158,8 +158,8 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 
 # Chapter 2
@@ -170,7 +170,7 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 Only one scene for chapter 2 because I think you get the idea.
 
@@ -199,8 +199,8 @@ mauris suscipit mattis ac sit amet purus.
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 
 # Epilogue
@@ -211,7 +211,7 @@ mauris suscipit mattis ac sit amet purus.
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 You get the idea. I am ending this manuscript with this scene.
 

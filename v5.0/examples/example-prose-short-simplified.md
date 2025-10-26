@@ -36,7 +36,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 
 Firstname Lastname
@@ -45,12 +45,12 @@ Firstname Lastname
 
 Example City, NC 12345 USA
 
-firstname.lastname@example.com
+firstname\.lastname\@example\.com
 
 +1 555-555-1212
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 5000 words
@@ -60,7 +60,7 @@ Contemporary Fiction
 _draft rev. 20221024_
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # Formatting via CSS: The Short Story (simplified format)
@@ -93,7 +93,7 @@ _draft rev. 20221024_
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 
 This document is an example of a typical short story. It has no parts or
@@ -112,7 +112,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 
 Curabitur sagittis dictum ipsum, at congue mauris elementum nec. Aenean nec dui
@@ -130,7 +130,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 
 Praesent sit amet erat placerat, lacinia sapien non, gravida ipsum. Vivamus
@@ -149,7 +149,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene. 
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 This is a scene. This is a scene. This is a scene. This is a scene.
 This is a scene. This is a scene. This is a scene. This is a scene.
@@ -160,7 +160,7 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 
 Phasellus tempus feugiat dui. Suspendisse non nunc tortor. Quisque in iaculis

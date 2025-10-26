@@ -10,25 +10,25 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  *
  * Note, short works will not have any page breaks unless you do something
- * odd. Note, section.m-poem is only for long/poetry manuscripts. If you want a
+ * odd. Note, section.poem is only for long/poetry manuscripts. If you want a
  * poem in the middle of a short story or novel, use div.x-poem instead.
  *
  * SHORT :not(.long,.poetry)
- *     > .m-title-page = page break (no page break for anything else)
- *     .m-title-page + anything = no page break
- *     .m-part = no page break
- *     .m-chapter = no page break
- *     .m-scene = no page break
+ *     > .title-page = page break (no page break for anything else)
+ *     .title-page + anything = no page break
+ *     .part = no page break
+ *     .chapter = no page break
+ *     .scene = no page break
  * LONG :is(.long,.poetry) …
- *     > .m-title-page = page break
- *     .m-title-page + anything = page break
- *     .m-part = page break
- *     .m-part > .m-chapter = NO page break (therefore not declared)
- *     .m-chapter + .m-chapter = page break
- *     .m-scene + .m-chapter = page break (why would this happen?)
+ *     > .title-page = page break
+ *     .title-page + anything = page break
+ *     .part = page break
+ *     .part > .chapter = NO page break (therefore not declared)
+ *     .chapter + .chapter = page break
+ *     .scene + .chapter = page break (why would this happen?)
  * POEMS …
- *     .m-poem = page break
- *     .m-poem + anything = page break
+ *     .poem = page break
+ *     .poem + anything = page break
  */
 
 
@@ -41,11 +41,11 @@
          * LONG page breaking
          */
         &:is(.long,.poetry) {
-            & > :is(div.m-title-page,section) + div.m-title-page,
-            & > div.m-title-page + section,
-            & section.m-part:has( > .m-title),
-            & section.m-chapter:has( ~ section ) + .m-chapter:has( > .m-title ),
-            & section.m-scene + .m-chapter:has( > .m-title ),
+            & > :is(div.title-page,section) + div.title-page,
+            & > div.title-page + section,
+            & section.part:has( > .title),
+            & section.chapter:has( ~ section ) + .chapter:has( > .title ),
+            & section.scene + .chapter:has( > .title ),
             & div.xxxxxxxx {
                 border-block-start: var(--m-page-break-simulated);
             }
@@ -53,9 +53,9 @@
         /*
          * POEM page breaking
          */
-            & section > section.m-poem,
-            & :is(div.m-title-page,section) + section.m-poem,
-            & section.m-poem + section {
+            & section > section.poem,
+            & :is(div.title-page,section) + section.poem,
+            & section.poem + section {
                 border-block-start: var(--m-page-break-simulated);
             }
         }
@@ -72,20 +72,20 @@
          * LONG page breaking
          */
         &:is(.long,.poetry) {
-            & > :is(div.m-title-page,section) + div.m-title-page,
-            & > div.m-title-page + section,
-            & section.m-part:has( > .m-title),
-            & section.m-chapter:has( ~ section ) + .m-chapter:has( > .m-title ),
-            & section.m-scene + .m-chapter:has( > .m-title ),
+            & > :is(div.title-page,section) + div.title-page,
+            & > div.title-page + section,
+            & section.part:has( > .title),
+            & section.chapter:has( ~ section ) + .chapter:has( > .title ),
+            & section.scene + .chapter:has( > .title ),
             & div.xxxxxxxx {
                 break-before: page;
             }
         /*
          * POEM page breaking
          */
-            & section > section.m-poem,
-            & :is(div.m-title-page,section) + section.m-poem,
-            & section.m-poem + section {
+            & section > section.poem,
+            & :is(div.title-page,section) + section.poem,
+            & section.poem + section {
                 break-before: page;
             }
         }
@@ -108,16 +108,16 @@
         /* avoid page break inside a note */
         /* avoid page break inside a poem stanza */
         /* avoid page break inside a header blocks */
-        & .m-note,
+        & .note,
         & .x-poem pre,
-        & section.m-poem pre,
-        & .m-contact,
-        & .m-count {
+        & section.poem pre,
+        & .contact,
+        & .count {
             break-inside: avoid-page !important;
         }
 
         /* avoid page break before a dinkus or -30- marker */
-        & section.m-scene::after,
+        & section.scene::after,
         &::after,
         & h6 {
             break-before: avoid-page !important;
@@ -125,7 +125,7 @@
         }
     } /* end #manuscript */
 
-    #vpage, #manuscript, #manuscript > div.m-title-page {
+    #vpage, #manuscript, #manuscript > div.title-page {
         break-before: avoid-page !important;
     }
 

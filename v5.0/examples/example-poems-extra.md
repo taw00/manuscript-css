@@ -40,13 +40,13 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-[comment]: / "-------------------------- TITLE PAGE --------------------------"
-[comment]: / "----------------- (often not used with poetry) -----------------"
+[comment]:: "-------------------------- TITLE PAGE ---------------------------"
+[comment]:: "----------------- (often not used with poetry) ------------------"
 
 
 
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 
 Editor Name
@@ -55,12 +55,12 @@ Editor Name
 
 Example City, NC 12345 USA
 
-editor@example.com
+editor\@example\.com
 
 +1 555-555-1212
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 2 poems | 72 lines
@@ -68,7 +68,7 @@ editor@example.com
 (_draft rev20250910_)
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # A Poetry Collection Manuscript
@@ -81,14 +81,14 @@ editor@example.com
 
 
 
-[comment]: / "-------------------------- TOC SCENE ---------------------------"
-[comment]: / "----------------- (often not used with poetry) -----------------"
+[comment]:: "-------------------------- TOC SCENE ----------------------------"
+[comment]:: "----------------- (often not used with poetry) ------------------"
 
 
 
 
-<section class="m-scene toc">
-<div class="m-title">
+<section class="scene toc">
+<div class="title">
 
 
 # Table of Contents
@@ -107,13 +107,13 @@ editor@example.com
 
 
 
-[comment]: / "---------------------------- POEMS -----------------------------"
+[comment]:: "----------------------------- POEMS -----------------------------"
 
 
 
 
-<section class="m-poem">
-<div class="m-contact">
+<section class="poem">
+<div class="contact">
 
 
 William Wordsworth
@@ -122,10 +122,10 @@ William Wordsworth
 
 Everyville, NM 32145
 
-will.i.am@example.com
+will\.i\.am\@example\.com
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 24 lines
@@ -134,7 +134,7 @@ will.i.am@example.com
 </div>
 
 
-<div class="m-title">
+<div class="title">
 
 
 # I Wandered Lonely as a Cloud
@@ -177,13 +177,13 @@ And dances with the daffodils.
 ```
 
 
-</section> <!-- /.m-poem -->
+</section> <!-- /.poem -->
 
 
 
 
-<section class="m-poem">
-<div class="m-contact">
+<section class="poem">
+<div class="contact">
 
 
 Charles Lutwidge Dodgson
@@ -195,7 +195,7 @@ Guildford, England
 United Kingdom
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 48 lines
@@ -204,7 +204,7 @@ United Kingdom
 </div>
 
 
-<div class="m-title">
+<div class="title">
 
 
 # Jabberwocky
@@ -259,18 +259,18 @@ All mimsy were the borogoves,
 ```
 
 
-</section> <!-- /.m-poem -->
+</section> <!-- /.poem -->
 
 
 
 
-[comment]: / "------ CITATION CHAPTER + SCENE (used only for example) --------"
+[comment]:: "------ CITATION CHAPTER + SCENE (used only for example) ---------"
 
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 
 # Acknowledgments
@@ -279,7 +279,7 @@ All mimsy were the borogoves,
 </div>
 
 
-<section class="m-scene foothang">
+<section class="scene foothang">
 
 
 Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *Poems, in Two Volumes*. London: Longman, Hurst, Rees, and Orms.

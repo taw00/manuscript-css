@@ -3,6 +3,7 @@ Template: short story
 
 - notice that I switched to dark mode for the on-screen version of this
   document. The PDF will be standard black on white.
+- huck-n-jim@example.com escaped to turn off automated linking
 
 -->
 
@@ -28,7 +29,7 @@ Template: short story
 
 
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 
 Samuel Clemens
@@ -39,10 +40,10 @@ Woodlawn Cemetery
 
 Elmira, NY 14905-1624 USA
 
-huck-n-jim@example.com
+huck-n-jim\@example\.com
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 2600 words
@@ -52,7 +53,7 @@ Fiction, Tall Tale
 -->
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # The Celebrated Jumping Frog of Calaveras County
@@ -72,7 +73,7 @@ Fiction, Tall Tale
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex
@@ -91,7 +92,7 @@ sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex

@@ -40,7 +40,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 
 Edgar Allan Poe
@@ -49,10 +49,10 @@ Coates Street
 
 Philadelphia, PA 19079 USA
 
-telleroftales@example.com
+telleroftales\@example\.com
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 2200 words
@@ -60,7 +60,7 @@ telleroftales@example.com
 Gothic Horror
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # The Tell-Tale Heart
@@ -78,7 +78,7 @@ Gothic Horror
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 True!—nervous—very, very dreadfully nervous I had been and am; but why *will* you say that I am mad? The disease had sharpened my senses—not destroyed—not dulled them. Above all was the sense of hearing acute. I heard all things in the heaven and in the earth. I heard many things in hell. How, then, am I mad? Hearken! and observe how healthily—how calmly I can tell you the whole story.
 
@@ -116,7 +116,7 @@ No doubt I now grew *very* pale;—but I talked more fluently, and with a height
 
 “Villains!” I shrieked, “dissemble no more! I admit the deed!—tear up the planks! here, here!—It is the beating of his hideous heart!”
 
-</section> <!-- /.m-scene -->
+</section> <!-- /.scene -->
 
 
 
@@ -126,8 +126,8 @@ No doubt I now grew *very* pale;—but I talked more fluently, and with a height
 
 
 
-<section class="m-scene foothang">
-<div class="m-title">
+<section class="scene foothang">
+<div class="title">
 
 
 # Acknowledgement
@@ -139,7 +139,7 @@ No doubt I now grew *very* pale;—but I talked more fluently, and with a height
 Poe, Edgar Allen. 1843. In *The Pioneer*. Vol. I, No. I, January, 1843. Philadelphia: Drew and Scammell.
 
 
-</section> <!-- /.m-scene.foothang -->
+</section> <!-- /.scene.foothang -->
 
 
 

@@ -24,7 +24,7 @@
 
 
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 
 Howard Phillips Lovecraft
@@ -35,16 +35,16 @@ Providence, RI 02906
 
 401.555.1212
 
-crawlingchaos@example.com
+crawlingchaos\@example\.com
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 17,000 Words
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # The Shadow Over Innsmouth
@@ -71,8 +71,8 @@ crawlingchaos@example.com
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # I
 
@@ -81,7 +81,7 @@ crawlingchaos@example.com
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 During the winter of 1927-28 Federal government officials made a strange and secret investigation of certain conditions in the ancient Massachusetts seaport of Innsmouth. The public first learned of it in February, when a vast series of raids and arrests occurred, followed by the deliberate burning and dynamiting—under suitable precautions—of an enormous number of crumbling, worm-eaten, and supposedly empty houses along the abandoned waterfront. Uninquiring souls let this occurrence pass as one of the major clashes in a spasmodic war on liquor.
 
@@ -157,8 +157,8 @@ All this, to the pious Miss Tilton, formed an excellent reason for shunning the 
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # II
 
@@ -167,7 +167,7 @@ All this, to the pious Miss Tilton, formed an excellent reason for shunning the 
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 Shortly before ten the next morning I stood with my one small valise in front of Hammond's Drug Store in old Market Square waiting for the Innsmouth bus. In a few moments a small motor-coach of extreme decrepitude and dirty gray color rattled down State Street, made a turn, and drew up at the curb beside me. I felt immediately that it was the right one; a guess which the half-illegible sign on the windshield—"Arkham-Innsmouth-Newb'port"—soon verified.
 
@@ -243,8 +243,8 @@ It was then that I saw the tumbledown fire station on my left, and noticed the r
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # III
 
@@ -253,7 +253,7 @@ It was then that I saw the tumbledown fire station on my left, and noticed the r
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 I had been assured that the old man could do nothing but hint at wild, disjointed, and incredible legends, and I had been warned that the natives made it unsafe to be seen talking with him; yet the thought of this aged witness to the town's decay, with memories going back to the early days of ships and factories, was a lure that no amount of reason could make me resist. Curiosity flared up beyond sense and caution, and in my youthful egotism I fancied I might be able to sift a nucleus of real history from the confused, extravagant outpouring I would probably extract with the aid of whiskey.
 
@@ -381,8 +381,8 @@ I glanced back at the sea, but there was nothing there. And when I reached Water
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # IV
 
@@ -391,7 +391,7 @@ I glanced back at the sea, but there was nothing there. And when I reached Water
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 I can hardly describe the mood in which I was left by this harrowing episode—an episode at once mad and pitiful, grotesque and terrifying. The grocery boy had prepared me for it, yet the reality left me none the less bewildered and disturbed. Puerile though the story was, old Zadok's insane earnestness and horror had communicated to me a mounting unrest which joined with my earlier sense of loathing for the town and its blight of intangible shadow.
 
@@ -517,8 +517,8 @@ But for all of their monstrousness they were not unfamiliar to me. I knew too we
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # V
 
@@ -527,7 +527,7 @@ But for all of their monstrousness they were not unfamiliar to me. I knew too we
 
 
 
-<section class="m-scene no-dinkus">
+<section class="scene no-dinkus">
 
 It was a gentle daylight rain that awaked me from my stupor in the brush-grown railway cut, and when I staggered out to the roadway ahead I saw no trace of any prints in the fresh mud. Innsmouth's ruined roofs and toppling steeples loomed up grayly toward the southeast, but not a living creature did I spy in all the desolate salt marshes around. My watch was still going, and told me that the hour was past noon.
 
@@ -567,7 +567,7 @@ One night I had a frightful dream in which I met my grandmother under the sea. S
 
 </section>
 <style>
-    #manuscript section.m-scene.illustration {
+    #manuscript section.scene.illustration {
         break-inside: avoid-page;
         width: 80%;
         margin-inline: auto;
@@ -577,14 +577,14 @@ One night I had a frightful dream in which I met my grandmother under the sea. S
         }
     }
 </style>
-<section class="m-scene no-dinkus illustration">
+<section class="scene no-dinkus illustration">
 
 ![the-shadow-over-innsmouth-ancient-ones.jpg](./example-lovecraft-the-shadow-over-innsmouth-ancient-ones.jpg)
 
 "One night, in a frightful dream, I met two Ancient Ones under the sea in a phosphorescent, many terraced palace surrounded by gardens of strange, leprous corals."
 
 </section>
-<section class="m-scene">
+<section class="scene">
 
 I met also that which had been her grandmother. For eighty thousand years Pth'thya-l'yi had lived in Y'ha-nthlei, and thither she had gone back after Obed Marsh was dead. Y'ha-nthlei was not destroyed when the upper-earth men shot death into the sea. It was hurt, but not destroyed. The Deep Ones could never be destroyed, even though the palaeogean magic of the forgotten Old Ones might sometimes check them. For the present they would rest; but some day, if they remembered, they would rise again for the tribute Great Cthulhu craved. It would be a city greater than Innsmouth next time. They had planned to spread, and had brought up that which would help them, but now they must wait once more. For bringing the upper-earth men's death I must do a penance, but that would not be heavy. This was the dream in which I saw a shoggoth for the first time, and the sight set me awake in a frenzy of screaming. That morning the mirror definitely told me I had acquired the Innsmouth look.
 

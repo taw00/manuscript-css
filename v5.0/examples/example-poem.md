@@ -6,7 +6,7 @@ of poems without a title page or table of contents. Each page has a page
 header and facts, as well as a title, and then the poem.
 
 - no title-page stuff
-- the poem with its own contact, title, and count
+- the poem with its own page-header and line-count
 - citation scene, for show
 
 
@@ -35,8 +35,8 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-<section class="m-poem">
-<div class="m-contact">
+<section class="poem">
+<div class="contact">
 
 
 William Wordsworth
@@ -45,11 +45,11 @@ William Wordsworth
 
 Everyville, NM 32145
 
-will.i.am@example.com
+will\.i\.am\@example\.com
 
 
 </div>
-<div class="m-count">
+<div class="count">
 
 
 24 lines
@@ -58,7 +58,7 @@ will.i.am@example.com
 </div>
 
 
-<div class="m-title">
+<div class="title">
 
 
 # I Wandered Lonely as a Cloud
@@ -102,7 +102,7 @@ And dances with the daffodils.
 ```
 
 
-</section> <!-- /.m-poem -->
+</section> <!-- /.poem -->
 
 
 
@@ -112,8 +112,8 @@ And dances with the daffodils.
 
 
 
-<section class="m-scene foothang">
-<div class="m-title">
+<section class="scene foothang">
+<div class="title">
 
 
 # Acknowledgment

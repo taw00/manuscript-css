@@ -50,15 +50,25 @@ from working draft to finalized manuscript.
 >  To use the older version, configure your markdown or html documents to use
 >  `manuscript-4.0.css` instead of `manuscript.css`.
 >- What's new:
->   - title-page management is now correctly managed, represented, and predictable.
->   - title-page structure has changed and class `m-facts` has been replaced
->     with `m-count`. Please refer to `v5.0/templates` and `v5.0/examples` for
+>   - all m-* classes droped the m- from their names:  
+>     `m-title` -> `title`; `m-part`, `m-chapter`, `m-scene` -> `part`,
+>     `chapter`, `scene`; etc.
+>   - class `title-page` wraps title page stuff: `contact`, `count`, `title` to
+>     form a full-height page, and therefore …
+>   - title pages are now correctly managed, represented, and predictable.
+>   - `title-page` structure has changed and class `m-facts` has been replaced
+>     with `count`. Please refer to `v5.0/templates` and `v5.0/examples` for
 >     a better understanding of the changes.
->   - title offsets for each section are now spaced absolutely correctly.
->   - short stories will never have a page break (even for books, parts, and chapters)
->   - `m-poem` class can't be used in 'short' or 'long' narratives, only in
+>   - `title` offsets for each `<section>` are now spaced absolutely correctly.
+>   - `short` stories will never have a page break (even if the author decides
+>     to use `parts` and `chapters` for whatever reason)
+>   - `poem` class can't be used in 'short' or 'long' narratives, only in
 >     'poetry' documents. For short stories and other narratives, use the
 >     `x-poem` class instead (used for arbitrary insertion of poems).
+>   - simulated page breaks are more sensible and accurate
+>   - `no-simulation` switch added to turn off page breaks
+>   - `classic` switch added if you really really want courier as your
+>     typeface.
 >
 > &ZeroWidthSpace;
 >

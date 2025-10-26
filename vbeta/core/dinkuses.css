@@ -4,12 +4,12 @@
  * - If article#manuscript.text-only — no dinkuses or -30- (and other things)
  * - If article#manuscript.no-dinkuses — no dinkuses
  * - If article#manuscript.no-30- — no -30- at The End
- * - If article#manuscript section.m-scene.no-dinkus — no dinkus for that scene
- * - If article#manuscript section.m-scene section.m-subscenes.no-dinkuses -
- * - If article#manuscript section.m-scene + section:not(.m-scene) - no dinkus
+ * - If article#manuscript section.scene.no-dinkus — no dinkus for that scene
+ * - If article#manuscript section.scene section.subscenes.no-dinkuses -
+ * - If article#manuscript section.scene + section:not(.scene) - no dinkus
  * - If article#manuscript.poetry - no -30- since poetry collections don't use
  *      -30- markers for whatever reason.
- * - If section.m-poem - will not have a dinkus
+ * - If section.poem - will not have a dinkus
  *
  * Copyright (c) Todd Warner
  * This work is licensed under Attribution 4.0 International. To view a copy
@@ -25,10 +25,10 @@
 
     &::after,                                /* auto-inserted top-level -30- */
     & > h6,                              /* manually-inserted top-level -30- */
-    & section.m-scene::after,                        /* auto-inserted dinkus */
-    & section.m-subscenes::before,                   /* auto-inserted dinkus */
-    & section.m-subscenes::after,                    /* auto-inserted dinkus */
-    & section:not(.m-scene) > h6 {           /* manually-ins. within section */
+    & section.scene::after,                        /* auto-inserted dinkus */
+    & section.subscenes::before,                   /* auto-inserted dinkus */
+    & section.subscenes::after,                    /* auto-inserted dinkus */
+    & section:not(.scene) > h6 {           /* manually-ins. within section */
         display: none;
         position: relative;
         text-align: center;
@@ -36,42 +36,42 @@
 
     &::after,                                /* auto inserted top-level -30- */
     & > h6,                              /* manually inserted top-level -30- */
-    & section.m-scene:has(+ section.m-scene)::after, /* auto-inserted dinkus */
-    & section.m-subscenes::before,                   /* auto-inserted dinkus */
-    & section.m-subscenes::after,                    /* auto-inserted dinkus */
-    & section:not(.m-scene) > h6 {           /* manually ins. within section */
+    & section.scene:has(+ section.scene)::after, /* auto-inserted dinkus */
+    & section.subscenes::before,                   /* auto-inserted dinkus */
+    & section.subscenes::after,                    /* auto-inserted dinkus */
+    & section:not(.scene) > h6 {           /* manually ins. within section */
         display: block;
     }
 
     /* right now #manuscript-level classes no-dinkuses and hide-dinkuses do the
      * same thing */
-    &:is(.hide-dinkuses,.no-dinkuses) section.m-scene::after {
+    &:is(.hide-dinkuses,.no-dinkuses) section.scene::after {
         content: var(--m-marker-zws); /* &zerowidthspace */
     }
 
     &:not(.hide-dinkuses,.no-dinkuses) {
-        & section.m-scene:not(.hide-dinkus,.no-dinkus)::after {
+        & section.scene:not(.hide-dinkus,.no-dinkus)::after {
             content: var(--m-dinkus);
         }
 
         /* per scene dinkuses - automated content for between scenes */
-        & section.m-scene:is(.hide-dinkus,.no-dinkus)::after,
+        & section.scene:is(.hide-dinkus,.no-dinkus)::after,
         /* if the next section after a scene … is not a scene, remove the dinkus
          * (should this be display: none?) */
-        & section.m-scene:has(+ section:not(.m-scene))::after {
+        & section.scene:has(+ section:not(.scene))::after {
             content: var(--m-marker-zws); /* &zerowidthspace */
         }
 
         /* SUBSCENES */
 
-        & section.m-subscenes:is(.hide-dinkuses,.no-dinkuses) section.m-scene::after {
+        & section.subscenes:is(.hide-dinkuses,.no-dinkuses) section.scene::after {
             content: var(--m-marker-zws); /* &zerowidthspace */
         }
-        & section.m-subscenes:not(.hide-dinkuses,.no-dinkuses) {
-            & section.m-scene:is(.hide-dinkus,.no-dinkus)::after {
+        & section.subscenes:not(.hide-dinkuses,.no-dinkuses) {
+            & section.scene:is(.hide-dinkus,.no-dinkus)::after {
                 content: var(--m-marker-zws); /* &zerowidthspace */
             }
-            & section.m-scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
+            & section.scene:not(.hide-dinkus,.no-dinkus,:last-of-type)::after {
                 content: var(--m-dinkus-subscene);
             }
         }

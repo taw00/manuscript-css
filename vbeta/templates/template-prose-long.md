@@ -1,13 +1,14 @@
 <!--
 Template: long-form story - novellette, novella, novel, etc.
+- note: huck-n-jim@example.com escaped to turn off automated linking
 -->
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css");
+    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css");
     */
-    @import url("../manuscript-beta.css");
-    @import url("../../manuscript-beta.css");
+    @import url("../manuscript-5.0.css");
+    @import url("../../manuscript-5.0.css");
     :root {
         --m-marginalia: "Twain / Huck Finn / " counter(page);
     }
@@ -24,7 +25,7 @@ Template: long-form story - novellette, novella, novel, etc.
 
 
 
-<div class="m-title-page"><div class="m-contact">
+<div class="title-page"><div class="contact">
 
 
 Samuel Clemens
@@ -35,18 +36,18 @@ Woodlawn Cemetery
 
 Elmira, NY 14905-1624 USA
 
-huck-n-jim@example.com
+huck-n-jim\@example\.com
 
 +1 555-555-1212
 
 
-</div><div class="m-count">
+</div><div class="count">
 
 
 125,000 words<!-- | Fiction, Satire-->
 
 
-</div><div class="m-title">
+</div><div class="title">
 
 
 # Adventures of Huckleberry Finn
@@ -64,8 +65,8 @@ huck-n-jim@example.com
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # Chapter 1
 
@@ -74,7 +75,7 @@ huck-n-jim@example.com
 
 
 
-<section class="m-scene">
+<section class="scene">
 
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex
@@ -93,7 +94,7 @@ sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
 
 
 </section> <!-- end scene -->
-<section class="m-scene">
+<section class="scene">
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacinia neque
@@ -124,13 +125,13 @@ nec, congue sagittis metus.
 
 
 
-<section class="m-chapter">
-<div class="m-title">
+<section class="chapter">
+<div class="title">
 
 # Chapter 2
 
 </div>
-<section class="m-scene">
+<section class="scene">
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a placerat lorem,
