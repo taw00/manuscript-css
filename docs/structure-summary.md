@@ -98,7 +98,7 @@ The narrative or nonnarrative containers, in summary:
 The poetry container, in summary:  
 (*Note: section blocks can be repeated infinite times.*)
 
-~~~markdown
+~~~html
 <style>
     @import url("/path/to/manuscript.css");
 </style>
