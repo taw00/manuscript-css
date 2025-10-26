@@ -6,11 +6,8 @@ Poetry manuscripts, no matter the length, are typically formatted as a series
 of poems without a title page or table of contents. Each page has a page
 header and facts, as well as a title, and then the poem.
 
-This one has a title page.
-
-- title-page stuff: the opening .m-page-header and .m-title
-  Note: this required me adding 'long' to the #manuscript classes.
-- the poems (each with their own page-header and line-count)
+- this one has a title page.
+- the poems (each with their own contact, title, and count)
 - citation scene, for show
 
 Copyright (c) Todd Warner
