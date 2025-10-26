@@ -125,7 +125,26 @@ The poetry container, in summary:
 ```
    Poem stanza
        Here.
-   Etc.
+```
+```
+…etc…
+```
+        </section>
+        <section class="poem">            <!-- poetry: 1 required to many -->
+            <div class="contact"></div>                       <!-- 0 or 1 -->
+            <div class="count"></div>                         <!-- 0 or 1 -->
+            <div class="title"></div>                         <!-- 0 or 1 -->
+
+```
+Poem stanza
+  Here.
+```
+```
+Poem stanza
+    Here.
+```
+```
+…etc…
 ```
 
         </section>
@@ -136,28 +155,14 @@ The poetry container, in summary:
 
 ```
    Poem stanza
-       Here.
+Here.
 ```
 ```
-   Poem stanza
-       Here.
-   Etc.
-```
-
-        </section>
-        <section class="poem">            <!-- poetry: 1 required to many -->
-            <div class="contact"></div>                       <!-- 0 or 1 -->
-            <div class="count"></div>                         <!-- 0 or 1 -->
-            <div class="title"></div>                         <!-- 0 or 1 -->
-
-```
-   Poem stanza
-       Here.
+Poem      stanza
+     Here.
 ```
 ```
-   Poem stanza
-       Here.
-   Etc.
+…etc…
 ```
 
         </section>
