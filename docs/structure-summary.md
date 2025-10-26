@@ -98,7 +98,7 @@ The narrative or nonnarrative containers, in summary:
 The poetry container, in summary:  
 (*Note: section blocks can be repeated infinite times.*)
 
-```html
+~~~markdown
 <style>
     @import url("/path/to/manuscript.css");
 </style>
@@ -118,7 +118,7 @@ The poetry container, in summary:
             <div class="count"></div>                         <!-- 0 or 1 -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [poetry stanzas in here]
+            [poetry stanzas in here in between ```'s]
 
         </section>
         <section class="poem">            <!-- poetry: 1 required to many -->
@@ -126,7 +126,7 @@ The poetry container, in summary:
             <div class="count"></div>                         <!-- 0 or 1 -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [poetry stanzas in here]
+            [poetry stanzas in here in between ```'s]
 
         </section>
         <section class="poem">            <!-- poetry: 1 required to many -->
@@ -134,7 +134,7 @@ The poetry container, in summary:
             <div class="count"></div>                         <!-- 0 or 1 -->
             <div class="title"></div>                         <!-- 0 or 1 -->
 
-            [poetry stanzas in here]
+            [poetry stanzas in here in between ```'s]
 
         </section>
         <section class="scene">         <!-- prose: rarely, if ever, used -->
@@ -147,7 +147,7 @@ The poetry container, in summary:
     </section>
   </article>
 </div>
-```
+~~~
 
 # A prose example (*also see templates in the templates folder*)
 
@@ -172,7 +172,7 @@ Edgar Allan Poe
 
 Coates Street, Philadelphia, PA 19079 USA
 
-telleroftales@example.com
+telleroftales\@example\.com
 
 </div><div class="count">
 
@@ -309,7 +309,7 @@ Haiku Johnson
 
 Elm Street, Somewherein, PA 19079 USA
 
-haikuforyou@example.com
+haikuforyou\@example\.com
 
 </div><div class="count">
 
@@ -338,7 +338,7 @@ Haiku Johnson
 
 Elm Street, Somewherein, PA 19079 USA
 
-haikuforyou@example.com
+haikuforyou\@example\.com
 
 </div><div class="count">
 
@@ -366,7 +366,7 @@ Haiku Johnson
 
 Elm Street, Somewherein, PA 19079 USA
 
-haikuforyou@example.com
+haikuforyou\@example\.com
 
 </div><div class="count">
 
