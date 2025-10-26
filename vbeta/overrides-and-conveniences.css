@@ -66,11 +66,6 @@
         th, td {
             padding: 5px;
         }
-        /*
-        th {
-            font-weight: bolder;
-        }
-        */
     }
 }
 
@@ -79,12 +74,12 @@
  * .no-break should win if both are used  ---------------------- */
 @media screen {
     /* .break-before ------------ */
-    .break-before, .force-break-before {
-        border-block-start: var(--m-page-break-simulated-long) !important;
+    #manuscript section:is(.break-before, .force-break-before) {
+        border-block-start: var(--m-page-break-simulated) !important;
     }
     /* .break-after ------------- */
-    .break-after, .force-break-after {
-        border-block-end: var(--m-room-for-two) !important;
+    #manuscript section:is(.break-after, .force-break-after) {
+        border-block-end: var(--m-page-break-simulated) !important;
     }
     /* unset the break if called to do so */
     #manuscript section.no-break {
@@ -101,11 +96,11 @@
 
 @media print {
     /* .break-before ------------ */
-    .break-before, .force-break-before {
+    #manuscript section:is(.break-before, .force-break-before) {
         break-before: page !important;
     }
     /* .break-after ------------- */
-    .break-after, .force-break-after {
+    #manuscript section:is(.break-after, .force-break-after) {
         break-after: page !important;
     }
     #manuscript section.poem:is(.break-after, .force-break-after) {
