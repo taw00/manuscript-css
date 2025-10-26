@@ -129,6 +129,7 @@ The poetry container, in summary:
 ```
 …etc…
 ```
+
         </section>
         <section class="poem">            <!-- poetry: 1 required to many -->
             <div class="contact"></div>                       <!-- 0 or 1 -->
