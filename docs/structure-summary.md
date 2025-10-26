@@ -1,31 +1,45 @@
 # Structure summary of a manuscript drafted in markdown
 
+It's generally easier to simply examine one of the templates in the template
+folder, but, for those with a more analytical brain, here we present a
+structural spec of sorts.
+
+Note, all text that represents your words must be
+bracketed by whitespace or it will not render correctly. That is a
+markdown-mingling-with-html thing.
+
 ### Example 1: The document beginning
 
-_Note that "./manuscript.css" here is a stand-in for
-"/path/to/manuscript-css/manuscript.css". Or if you decide to host it on some
-webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
+_Note that we use the locally imported url `"/path/to/manuscript.css"` here. If
+you decided to host the repo on some webserver instead, it would be something
+like: `"https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"`._
 
 ```markdown
 <!-- Default Formatting: US letter, 1in margins, short-form narrative -->
 <style>
-    @import url("./manuscript.css");
+    @import url("/path/to/manuscript.css");
 </style>
 <div id="vpage">
 <article id="manuscript">
+
 ... your manuscript ...
+
+</article></div>
 ```
 
 ### Example 2: The document beginning - w/ alterations
 
 ```markdown
-<!-- Formatting: A4, 2.54cm margins, long-form nonnarrative                 -->
+<!-- Formatting: A4, 2.54cm margins, long-form nonnarrative -->
 <style>
-    @import url("./manuscript.css");
+    @import url("/path/to/manuscript.css");
 </style>
 <div id="vpage" class="A4">
 <article id="manuscript" class="long nonnarrative">
+
 ... your manuscript ...
+
+</article></div>
 ```
 
 ### Example 3: the high-level containers
@@ -34,45 +48,46 @@ webserver, "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"._
 if poetry, parts, chapters and poems. In the end, parts and chapters are not
 absolutely required. The meat of your manuscript lives either in a scene or a
 poem. Most short stories, for example, only use scenes. Often only one scene
-container.
+container. (Note, you can even add "book" sections do your document by
+inserting `<div class="m-title-page"> … </div>` blocks where appropriate. Look
+at `example-prose-long-and-complicated.md` for an example.)
 
-The containers, in summary:  
+The narrative or nonnarrative containers, in summary:  
 (*Note: section blocks can be repeated infinite times.*)
 
 ```html
+<style>
+    @import url("/path/to/manuscript.css");
+</style>
 <div id="vpage">                                            <!-- 1 required -->
-  <article id="manuscript">                                 <!-- 1 required --> 
-    <div id="m-page-header">                                    <!-- 0 or 1 -->
+  <article id="manuscript" class="long">    <!-- 1 required (short or long) -->
+    <div id="m-title-page">                                     <!-- 0 or 1 -->
         <div class="m-contact"></div>                           <!-- 0 or 1 -->
+        <div class="m-count"></div>                             <!-- 0 or 1 -->
+        <div class="m-title"></div>                             <!-- 0 or 1 -->
     </div>
-    <div class="m-title-header">                                <!-- 0 or 1 -->
-        <div class="m-facts"></div>                             <!-- 0 or 1 -->
-    </div>
-    <section class="m-book">                          <!-- 0 to many --------->
-      <div class="m-title-header"></div>                        <!-- 0 or 1 -->
-          <div class="m-facts"></div>                           <!-- 0 or 1 -->
-      </div>
-      <section class="m-part">                        <!-- 0 to many --------->
-        <div class="m-title-header"></div>                      <!-- 0 or 1 -->
-            <div class="m-facts"></div>                         <!-- 0 or 1 -->
-        </div>
-        <section class="m-chapter">           <!-- 0 to many allowed --------->
-          <div class="m-title-header"></div>                    <!-- 0 or 1 -->
-              <div class="m-facts"></div>                       <!-- 0 or 1 -->
-          </div>
-          <section class="m-scene">          <!-- prose: 1 required to many -->
-              div class="m-title-header"></div>                 <!-- 0 or 1 -->
-                  <div class="m-facts"></div>                   <!-- 0 or 1 -->
-              </div>
-          </section
-          <section class="m-poem">          <!-- poetry: 1 required to many -->
-              div class="m-page-header"></div>                  <!-- 0 or 1 -->
-              div class="m-title-header"></div>                 <!-- 0 or 1 -->
-                  <div class="m-contact"></div>                 <!-- 0 or 1 -->
-                  <div class="m-facts"></div>                   <!-- 0 or 1 -->
-              </div>
-          </section>
-        </section>
+    <section class="m-part">                          <!-- 0 to many --------->
+      <div class="m-title"></div>                               <!-- 0 or 1 -->
+      <section class="m-chapter">             <!-- 0 to many allowed --------->
+        <div class="m-title"></div>                             <!-- 0 or 1 -->
+        <section class="m-scene">            <!-- prose: 1 required to many -->
+            <div class="m-title"></div>                         <!-- 0 or 1 -->
+
+            [scene text in here]
+
+        </section
+        <section class="m-scene">            <!-- prose: 1 required to many -->
+            <div class="m-title"></div>                         <!-- 0 or 1 -->
+
+            [scene text in here]
+
+        </section
+        <section class="m-scene">            <!-- prose: 1 required to many -->
+            <div class="m-title"></div>                         <!-- 0 or 1 -->
+
+            [scene text in here]
+
+        </section
       </section>
     </section>
   </article>
@@ -80,26 +95,78 @@ The containers, in summary:
 ```
 
 
+The poetry container, in summary:  
+(*Note: section blocks can be repeated infinite times.*)
 
-### A fuller example (*also see templates in the templates folder*)
+```html
+<style>
+    @import url("/path/to/manuscript.css");
+</style>
+<div id="vpage">                                            <!-- 1 required -->
+  <article id="manuscript" class="poetry">                  <!-- 1 required -->
+    <div id="m-title-page">           <!-- 0 or 1 - poetry collections only -->
+        <div class="m-contact"></div>                           <!-- 0 or 1 -->
+        <div class="m-count"></div>                             <!-- 0 or 1 -->
+        <div class="m-title"></div>                             <!-- 0 or 1 -->
+    </div>
+    <section class="m-part">       <!-- 0 to many - poetry collections only -->
+      <div class="m-title"></div>                        <!-- 0 or 1 -->
+      <section class="m-chapter">  <!-- 0 to many - poetry collections only -->
+        <div class="m-title"></div>                      <!-- 0 or 1 -->
+        <section class="m-poem">            <!-- poetry: 1 required to many -->
+            <div class="m-contact"></div>                       <!-- 0 or 1 -->
+            <div class="m-count"></div>                         <!-- 0 or 1 -->
+            <div class="m-title"></div>                         <!-- 0 or 1 -->
 
-This is a truncated example of a short story. It's three scenes contained
-within one chapter, and that chapter within one part. But you can have many parts containing many chapters containing many scenes.
+            [poetry stanzas in here]
 
+        </section>
+        <section class="m-poem">            <!-- poetry: 1 required to many -->
+            <div class="m-contact"></div>                       <!-- 0 or 1 -->
+            <div class="m-count"></div>                         <!-- 0 or 1 -->
+            <div class="m-title"></div>                         <!-- 0 or 1 -->
 
+            [poetry stanzas in here]
+
+        </section>
+        <section class="m-poem">            <!-- poetry: 1 required to many -->
+            <div class="m-contact"></div>                       <!-- 0 or 1 -->
+            <div class="m-count"></div>                         <!-- 0 or 1 -->
+            <div class="m-title"></div>                         <!-- 0 or 1 -->
+
+            [poetry stanzas in here]
+
+        </section>
+        <section class="m-scene">         <!-- prose: rarely, if ever, used -->
+            <div class="m-title"></div>                         <!-- 0 or 1 -->
+
+            [scene text in here]
+
+        </section
+      </section>
+    </section>
+  </article>
+</div>
+```
+
+# A prose example (*also see templates in the templates folder*)
+
+This is a truncated example of a novel manuscript. It's three scenes contained
+within one chapter, and that chapter within one part. But you can have many
+parts containing many chapters containing many scenes. Parts and chapters are
+optional.
 
 ```markdown
 <style>
-    @import url("./manuscript.css");
+    @import url("/path/to/manuscript.css");
 </style>
-
-
 <div id="vpage">
-<article id="manuscript">
+<article id="manuscript" class="long narrative">
 
 
-<div class="m-page-header">
-<div class="m-contact">
+<!-- ------------------ the title page ------------------ -->
+
+<div class="m-title-page"><div class="m-contact">
 
 Edgar Allan Poe
 
@@ -107,11 +174,13 @@ Coates Street, Philadelphia, PA 19079 USA
 
 telleroftales@example.com
 
-</div>
-</div>
+</div><div class="m-count">
 
+2200 words
 
-<div class="m-title-header">
+Gothic Horror
+
+</div><div class="m-title">
 
 # The Tell-Tale Heart
 
@@ -121,49 +190,30 @@ telleroftales@example.com
 
 > They heard!—they suspected!—they knew!
 
-<div class="m-facts">
-
-2200 words
-
-Gothic Horror
-
-</div>
-</div>
+</div></div>
 
 
-<!-- "section.part"s contain "section.chapter"s -->
-<section class="part">
+<!-- ------------------ the story ----------------------- -->
 
-<!-- the part's title (and could have, subtitle, author byline, & epigraph) -->
-<div class="m-title-header">
+<section class="m-part">
+<div class="m-title">
 
 # Part 1
 
 </div>
 
 
-<!-- "section.chapter"s contain section.scene"s (or "section.poem"s) -->
-<section class="chapter">
-
-<!-- the chapter's  title, subtitle, author byline, epigraph -->
-<div class="m-title-header">
+<section class="m-chapter">
+<div class="m-title">
 
 # Chapter 1
 
-</div>
-
-
-<!-- "section.scene"s contain your prose - an example of three scenes -->
-<section class="scene">
-
-<!-- (I rarely use m-title-headers in scenes) -->
-<div class="m-title-header">
-
-# My Scene Title
-
-### Contributing Author: Joe Blough
+### Contributing Editor: Joe Blough
 
 </div>
+
+
+<section class="m-scene">
 
 True!—nervous—very, very dreadfully nervous I had been and am; but why *will*
 you say that I am mad? The disease had sharpened my senses—not destroyed—not
@@ -177,7 +227,7 @@ was none. I loved the old man. He had never wronged me. He had never given me
 insult. For his gold I had no desire. I think it was his eye! [ … ]
 
 </section>
-<section class="scene">
+<section class="m-scene">
 
 Upon the eighth night I was more than usually cautious in opening the door. A
 watch's minute hand moves more quickly than did mine. Never before that night
@@ -187,7 +237,7 @@ little by little, and he not even to dream of my secret deeds or thoughts. I
 fairly chuckled at the idea; and perhaps he heard me; for [ … ]
 
 </section>
-<section class="scene">
+<section class="m-scene">
 
 It was open—wide, wide open—and I grew furious as I gazed upon it. I saw it
 with perfect distinctness—all a dull blue, with a hideous veil over it that
@@ -206,7 +256,7 @@ of the sense?—now, I say, there came to my ears [ … ]
 
 
 
-# Poetry in prose!
+# Poetry within prose!
 
 To insert a poem in a document arbitrarily, it will be structured like this:
 
@@ -214,11 +264,11 @@ To insert a poem in a document arbitrarily, it will be structured like this:
 
 <div class="x-poem">
 
-```plaintext
+```
    Poem stanza
        Here.
 ```
-```plaintext
+```
    Poem stanza
        Here.
 ```
@@ -227,20 +277,125 @@ To insert a poem in a document arbitrarily, it will be structured like this:
 ~~~
 
 
+
 # Poetry Manuscripts
 
 
-- `#manuscript` will be of `class="poetry"` and we use `.m-poem` instead of a `.m-scenea`
-- Each `.m-poem` will contain a `.m-page-header`, a `.m-title-header` and then
+- `#manuscript` will be of `class="poetry"` and we use `m-poem` instead of a `m-scene`
+- Each `m-poem` will contain an `m-contact`, an `m-count`, an `m-title` and then
   stanzas of poetry wrapped in <pre>```</pre> preformatting marks, similar to
-  `.x-poem` above.
-- Check out the example and templated poetry manuscripts.
+  `x-poem` above.
+- Most submissions are three to five poems. You don't used a title page for
+  those. If you are submitting a collection, it is structured much like a
+  novel.
+- Check out the example and templated poetry manuscripts. But here's a simple
+  and very common, three poem manuscript …
 
 
-## Good luck!
+~~~markdown
+<style>
+    @import url("/path/to/manuscript.css");
+</style>
+<div id="vpage">
+<article id="manuscript" class="poetry">
 
-Check out the example manuscripts in this repository and I think how everything
-works with `manuscript.css` becomes obvious.
+
+<!-- ------------------ three poems --------------------- -->
+
+<section class="m-poem">
+<div class="m-contact">
+
+Haiku Johnson
+
+Elm Street, Somewherein, PA 19079 USA
+
+haikuforyou@example.com
+
+</div><div class="m-count">
+
+3 lines
+
+</div><div class="m-title">
+
+# The Savannah Watch
+
+</div>
+
+```
+Long necks reach for leaves,
+Soft shadows graze on the plains,
+Gentle giants watch.
+```
+
+</section>
+
+
+<section class="m-poem">
+
+<div class="m-contact">
+
+Haiku Johnson
+
+Elm Street, Somewherein, PA 19079 USA
+
+haikuforyou@example.com
+
+</div><div class="m-count">
+
+3 lines
+
+</div><div class="m-title">
+
+# Sky-High Grazing
+
+</div>
+
+```
+Yellow patched tower,
+Quietly chews acacia,
+World seen from above.
+```
+
+</section>
+
+
+<section class="m-poem">
+<div class="m-contact">
+
+Haiku Johnson
+
+Elm Street, Somewherein, PA 19079 USA
+
+haikuforyou@example.com
+
+</div><div class="m-count">
+
+3 lines
+
+</div><div class="m-title">
+
+# The Desert Drink
+
+</div>
+
+```
+Water is far down,
+Slow legs spread out wide to drink,
+Neck bends to the pool.
+```
+
+</section>
+
+
+</article></div>
+~~~
+
+
+
+# Good luck!
+
+Check out the example and template manuscripts within this repository and I
+think how everything works with `manuscript.css` becomes obvious.
 
 Good luck. Now, quit fooling around on the internet and write something.
 

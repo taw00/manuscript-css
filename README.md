@@ -43,6 +43,25 @@ from working draft to finalized manuscript.
 
 <div class="newsbox">
 
+>### NEWS - 2025-10-26 - Manuscript version 5.0 released
+>
+>- Automatically updated under the covers.
+>- But **there are breaking changes!**  
+>  To use the older version, configure your markdown or html documents to use
+>  `manuscript-4.0.css` instead of `manuscript.css`.
+>- What's new:
+>   - title-page management is now correctly managed, represented, and predictable.
+>   - title-page structure has changed and class `m-facts` has been replaced
+>     with `m-count`. Please refer to `v5.0/templates` and `v5.0/examples` for
+>     a better understanding of the changes.
+>   - title offsets for each section are now spaced absolutely correctly.
+>   - short stories will never have a page break (even for books, parts, and chapters)
+>   - `m-poem` class can't be used in 'short' or 'long' narratives, only in
+>     'poetry' documents. For short stories and other narratives, use the
+>     `x-poem` class instead (used for arbitrary insertion of poems).
+>
+> &ZeroWidthSpace;
+>
 >### NEWS - 2025-09-12 - Manuscript version 4.0 released
 >
 >- Automatically updated under the covers.
@@ -50,8 +69,11 @@ from working draft to finalized manuscript.
 >  To use the older version, configure your markdown or html documents to use
 >  `manuscript-3.0.css` instead of `manuscript.css`.
 >- What's new:
->   - **poetry manuscripts finally achieve compliance with the shunn.net
->     manuscript spec**
+>   - **poetry manuscripts finally achieve 80% compliance with the shunn.net
+>     manuscript spec** (It will not, a may never, add a continuance phrase on
+>     pages beyond the first page of a poem.)
+>   - id `m-contact` is now class `m-contact` since we use it more than once
+>     within the document.
 >   - a major refactor and improvement across the board, much of which has been
 >     backported to 3.0
 

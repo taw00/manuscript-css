@@ -1,4 +1,4 @@
-# Document Switches to Customize your Manuscript
+# Document Switches to Customize your Manuscript (the beta version)
 
 Copying a template and filling in the blanks is all you really need to know,
 but there are a number of switches at your disposal the customize the end
@@ -17,7 +17,7 @@ To turn these on, you add them to the class attribute of the vpage div:
 
 &ZeroWidthSpace;
 
-### Themed Preview `#vpage` Switches
+### `div#vpage` Switches to Theme Your Document Preview
 
 <dl>
     <dt>dim</dt>
@@ -42,11 +42,16 @@ To turn these on, you add them to the class attribute of the vpage div:
     <dd>Dark mode! But red themed.</dd>
     <dt>dark amber</dt>
     <dd>Dark mode! But amber themed.</dd>
+    <dt>hide-jcloud-navbar</dt>
+    <dd>Joplin (Joplin Cloud) specific. If you absolutely must hide the navbar
+    when you publish to Joplin Cloud, this switch will enable that. It leaves
+    the footer in place so that the Joplin Cloud service is appropriately
+    acknowledged.</dd>
 </dl>
 
 &ZeroWidthSpace;
 
-### Papersizes and Orientation `#vpage` Switches
+### `div#vpage` Switches Governing Papersizes and Orientation
 
 <dl>
     <dt>US</dt>
@@ -120,16 +125,18 @@ article:
 
 &ZeroWidthSpace;
 
-### Prose `#manuscript` Switches
+### `#manuscript` Switches Governing Prose (narratives)
 
 <dl>
     <dt>short</dt>
-    <dd>For short works of prose, like short stories (the default. Will alter
-    how the 1st page is structured (where the facts-block lands, really) and
-    the spacing of that page and others.</dd>
+    <dd>For short works of prose, like short stories (the default), this switch
+    will alter how the 1st page is structured: the word count block in the
+    upper right-hand corner or at the bottom, and the first page will not break
+    after the title block.</dd>
     <dt>long</dt>
-    <dd>For longer works (novels, novellas, etc). Again, it will alter the
-    exported manuscript to match the shunn.net novel spec.</dd>
+    <dd>For longer works (novels, novellas, etc). Again, this switch will alter
+    the exported manuscript to match the shunn.net novel spec: word count on
+    the bottom and centered, and a page-break after the novel title block.</dd>
     <dt>narrative</dt>
     <dd>(The default) Serif font (Times New Roman, by default). Paragraphs are
     1st line indented with no spacing between.</dd>
@@ -160,34 +167,36 @@ article:
 
 &ZeroWidthSpace;
 
-### Poetry `#manuscript` Switches
+### `#manuscript` Switches for Poetry
 
 <dl>
     <dt>poetry</dt>
     <dd>Formats the manuscript appropriately, stripping out things the default
-    poetry manuscript doesn't need. Note, that if you wish a more prose format
-    (1st page title and such) you can choose 'long' instead then add your poems
-    within. You will have to experiment.</dd>
+    poetry manuscript doesn't need. Note, if you add title page elements,
+    'poetry' documents are formatted like long narratives for that page.</dd>
 </dl>
 
 &ZeroWidthSpace;
 
-### Simplification `#manuscript` Switches
+### `#manuscript` Switches to Simplify the Appearance of Your Document
 
 <dl>
     <dt>simple</dt>
-    <dd>(prose only) Strips out the 1st page contact and all facts. Great for
+    <dd>(prose only) Strips out andy contacts and word counts. Great for
     sharing with friends and family who don't need to see that formal element
     of your manuscript.</dd>
     <dt>text-only</dt>
-    <dd>(prose only) Strips out all contact info, all facts, all dinkuses,
-    and the ending -30- marker. Gives you are "just show me the words"
-    view.</dd>
+    <dd>(prose only) Strips out all contact info, titles, word count, all
+    dinkuses, and the ending -30- marker. Gives you are "just show me the
+    words" view.</dd>
     <dt>no-dinkuses</dt>
     <dd>(prose only) Strips out all of the dinkuses.</dd>
     <dt>no-30-</dt>
     <dd>(prose only) Strips out the ending -30- marker. (The End or ###
     etc.)</dd>
+    <dt>no-simulation</dt>
+    <dd>(long narratives and poetry only) Strips out all simulated page-breaks
+    (those dashed lines).</dd>
 </dl>
 
 &ZeroWidthSpace;
@@ -218,6 +227,9 @@ article:
     <dt>show-notes-jcloud</dt>
     <dd>Notes will be included when viewing the document via Joplin
     Cloud</dd>
+    <dt>classic</dt>
+    <dd>You like that old-time monospaced Courier (now Courier Prime by
+    default), don't you?</dd>
 </dl>
 
 &ZeroWidthSpace;
@@ -286,7 +298,7 @@ Switches available to a scene beyond what has been mentioned previously.
     <dd>Convert all paragraphs in the scene to hanging indent format. Useful
     for endnotes, citation, and the like. Note: You can also wrap paragraphs
     in a `<div class="foothang"> [ . . . ]</div>` if you like so that only
-    a portion of your `.m-scene` needs to be formated as such.</dd>
+    a portion of your `.m-scene` needs to be formatted as such.</dd>
     <dt>no-dinkus</dt>
     <dd>Will not add a dinkus at the end of the scene if one would normally be
     placed there.</dd>
