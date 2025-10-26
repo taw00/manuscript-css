@@ -242,8 +242,15 @@
              * and exported documents. Remove the difference from the title
              * offsets. */
             --m-offset-title: calc(var(--m-content-offset-1-3rd) - var(--m-marginalia-margin) + var(--m-page-margin));
-            --m-offset-title-interior-page-title: calc(var(--m-content-offset-5-12th) - var(--m-marginalia-margin) + var(--m-page-margin));
-            --m-offset-title-poem: calc(var(--m-content-offset-1-4th) - var(--m-marginalia-margin) + var(--m-page-margin));
+            --m-offset-title-titlepage-interior: calc(var(--m-offset-title-titlepage) - var(--m-marginalia-margin) + var(--m-page-margin));
+            /* poetry doesn't use page margins. Turn this off.
+            --m-offset-title-poem: calc(var(--m-content-offset-1-4th) - var(--m-marginalia-margin) + var(--m-page-margin));*/
+        }
+        &:has(#vpage:is(.bottom-left-marginalia,.bottom-center-marginalia,.bottom-right-marginalia,.no-marginalia,.poetry)) {
+            /* page2+ top margins are uniform with the page1 margin in this
+             * case. the offsets can be set back to uniformity */
+            --m-offset-title: var(--m-content-offset-1-3rd);
+            --m-offset-title-titlepage-interior: var(--m-offset-title-titlepage);
         }
     }
 } /* end @media print */

@@ -227,7 +227,7 @@
      * spacing for 1st page title page
      */
     & > div.m-title-page > div.m-title {
-        padding-block-start: var(--m-offset-title-page-title);
+        padding-block-start: var(--m-offset-title-titlepage);
     }
 
     /*
@@ -264,7 +264,7 @@
      */
     &:is(.long,.poetry) {
         & > :is(div.m-title-page,section) + div.m-title-page > div.m-title {
-            padding-block-start: var(--m-offset-interior-page-title);
+            padding-block-start: var(--m-offset-title-titlepage-interior);
         }
 
         & > div.m-title-page + section > .m-title,

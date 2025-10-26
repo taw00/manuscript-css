@@ -132,8 +132,8 @@
      */
 
     /* Title-block headers offset */
-    --m-offset-title-page-title: var(--m-content-offset-5-12th);
-    --m-offset-interior-page-title: var(--m-content-offset-5-12th);
+    --m-offset-title-titlepage: var(--m-content-offset-5-12th);
+    --m-offset-title-titlepage-interior: calc(var(--m-content-offset-5-12th) - var(--m-marginalia-margin) + var(--m-page-margin));
     --m-offset-title: var(--m-content-offset-1-3rd);
     --m-offset-title-poem: var(--m-content-offset-1-4th);
 
