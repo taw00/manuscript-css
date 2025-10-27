@@ -14,6 +14,10 @@ from working draft to finalized manuscript.
 
 ---
 
+![README-three-phases.png](misc/README-three-phases.png)
+
+---
+
 ## HOWTO
 
 *More detail can be found [here](#howto---in-more-detail)*
