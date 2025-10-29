@@ -237,8 +237,8 @@
         & > :is(div.title-page,section) + div.title-page > div:is(.title, .contact, .count) {
             padding-block-start: var(--m-room-for-eight);
         }
-        & > div.title-page + section > .title,
-        & section:not(section.poem):has( > .title ) > .title,
+        & > div.title-page + section:not(section.poem,section.scene) > .title,
+        & section:not(section.poem,section.scene):has( > .title ) > .title,
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-four);
         }
@@ -267,8 +267,8 @@
             padding-block-start: var(--m-offset-title-titlepage-interior);
         }
 
-        & > div.title-page + section > .title,
-        & section:not(section.poem):has( > .title ) > .title,
+        & > div.title-page + section:not(section.poem,section.scene) > .title,
+        & section:not(section.poem,section.scene):has( > .title ) > .title,
         & div.xxxxxxxx {
             padding-block-start: var(--m-offset-title);
         }
