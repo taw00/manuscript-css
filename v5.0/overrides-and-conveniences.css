@@ -128,7 +128,7 @@
 /* .scene or any other major block with a class .foothang
  * will format the paragraphs as a hanging indent */
 #manuscript :is(section,div) p.foothang,
-#manuscript :is(section,div).foothang p {
+#manuscript :is(section,div).foothang > p {
     padding-left: var(--m-indent-foothang);
     text-indent: calc(var(--m-indent-foothang) * -1); 
 }
