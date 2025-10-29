@@ -104,6 +104,22 @@
         margin-block: var(--m-nudge);
     }
 
+    /* ERROR ALERTING!
+     * title pages, parts, and chapters MUST have a title
+     * scene CANNOT have a title
+     * If not, we start painting things red.
+     */
+    & div.title-page:not(:has(.title)),
+    & section.part:not(:has(.title)),
+    & section.chapter:not(:has(.title)),
+    & div.xxxxxxxx {
+        color: red;
+    }
+    & section.scene > .title {
+        color: red;
+        text-decoration: line-through double;
+    }
+
 
     /*
      * TITLE PAGES - layout and orientation
@@ -220,7 +236,7 @@
     }
 
     /*
-     * VERTICAL LAYOUT - page titles, parts, chapters, scenes, and poems
+     * VERTICAL LAYOUT - title pages, parts, chapters, scenes, and poems
      */
 
     /*
@@ -233,6 +249,7 @@
     /*
      * short spacing
      */
+    /* TITLE METHOD --- this is faulty
     &:not(.long,.poetry) {
         & > :is(div.title-page,section) + div.title-page > div:is(.title, .contact, .count) {
             padding-block-start: var(--m-room-for-eight);
@@ -258,10 +275,31 @@
             }
         }
     }
+    */
+    &:not(.long,.poetry) {
+        & > :is(div.title-page,section) + div.title-page > div:is(.title, .contact, .count) {
+            padding-block-start: var(--m-room-for-eight);
+        }
+        & > div.title-page + section,
+        & section + section:is(.part,.chapter),
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & section > section:first-of-type,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & section > section:first-of-type:is(.scene),
+        & section:is(.chapter) > section:first-of-type:is(.scene),
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-two);
+        }
+    }
 
     /*
      * long spacing
      */
+    /* TITLE METHOD --- this is faulty
     &:is(.long,.poetry) {
         & > :is(div.title-page,section) + div.title-page > div.title {
             padding-block-start: var(--m-offset-title-titlepage-interior);
@@ -286,6 +324,27 @@
             & > .title {
                 padding-block-start: var(--m-room-for-two);
             }
+        }
+    }
+    */
+    &:is(.long,.poetry) {
+        & > :is(div.title-page,section) + div.title-page > div.title {
+            padding-block-start: var(--m-offset-title-titlepage-interior);
+        }
+
+        & > div.title-page + section,
+        & section + section:is(.part,.chapter),
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-offset-title);
+        }
+        & section > section:first-of-type,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & section > section:first-of-type:is(.scene),
+        & section:is(.chapter) > section:first-of-type:is(.scene),
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-two);
         }
     }
 
