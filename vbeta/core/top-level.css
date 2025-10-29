@@ -105,19 +105,48 @@
     }
 
     /* ERROR ALERTING!
-     * title pages, parts, and chapters MUST have a title
+     * title pages, parts, chapters, and poems MUST have a title
      * scene CANNOT have a title
      * If not, we start painting things red.
      */
-    & div.title-page:not(:has(.title)),
-    & section.part:not(:has(.title)),
-    & section.chapter:not(:has(.title)),
+    & div.title-page:not(:has( > .title )),
+    & section.part:not(:has( > .title )),
+    & section.chapter:not(:has( > .title )),
+    & section.poem:not(:has( > .title )),
+    & section.scene > .title,
     & div.xxxxxxxx {
         color: red;
+        &::before {
+            display: block;
+            position: abosolute;
+            top: calc(var(--m-room-for-eight) + var(--m-room-for-two));
+            z-index: 99;
+            margin-inline: auto;
+            padding: 5px 10px !important;
+            color: black;
+            background: yellow;
+            border: 5px red solid;
+            line-height: 1.25;
+        }
     }
-    & section.scene > .title {
-        color: red;
-        text-decoration: line-through double;
+    & div.title-page:not(:has( > div.title ))::before {
+        content: "ERROR: div.title-page is missing a div.title block";
+    }
+    & section.part:not(:has( > div.title ))::before {
+        content: "ERROR: section.part is missing a div.title block";
+    }
+    & section.chapter:not(:has( > div.title ))::before {
+        content: "ERROR: section.chapter is missing a div.title block";
+    }
+    & section.poem:not(:has( > div.title ))::before {
+        content: 'ERROR: section.poem is missing a div.title block; '
+                 'required even if the poem is untitled; in that case '
+                 ' just add an empty <div class="title"></div>';
+    }
+    & section.scene > div.title::before {
+        content: "ERROR: Scenes can't have titles. Remove the scene title block "
+                 "and wrap the scene in an entitled chapter section instead. Or "
+                 "manually insert #-style header indicators within the scene itself.";
     }
 
 
@@ -241,6 +270,7 @@
 
     /*
      * spacing for 1st page title page
+     * (same for both short and long manuscripts)
      */
     & > div.title-page > div.title {
         padding-block-start: var(--m-offset-title-titlepage);
@@ -248,37 +278,37 @@
 
     /*
      * short spacing
+     *
+     * title page +
+     * [eight lines of space]
+     * title page (flattened, because it's internal) >
+     *     [eight lines of space]
+     *     title
+     *
+     * section +
+     * [eight lines of space]
+     * title page (flattened, because it's internal) >
+     *     [eight lines of space]
+     *     title
+     *
+     * title page +
+     * [four lines of space]
+     * section:is(.part,.chapter)
+     *
+     * section >
+     *     [four lines of space]
+     *     section:is(.part,.chapter)
+     *
+     * section >
+     *     [two lines of space]
+     *     section:is(.scene)
      */
-    /* TITLE METHOD --- this is faulty
     &:not(.long,.poetry) {
-        & > :is(div.title-page,section) + div.title-page > div:is(.title, .contact, .count) {
+        & > :is(div.title-page,section) + div.title-page {
             padding-block-start: var(--m-room-for-eight);
-        }
-        & > div.title-page + section > .title,
-        & section:not(section.poem):has( > .title ) > .title,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
-        }
-        & section:has( > .title ) > section:first-of-type:has( > .title) > .title,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
-        }
-        & > div.title-page + section:first-of-type:is(.scene),
-        & section:has( > .title ) > section:first-of-type:is(.scene),
-        & section:is(.chapter):has( > .title ) > section:first-of-type:is(.scene) {
-            padding-block-start: var(--m-room-for-two);
-        }
-        & section:has( > .title ) > section:first-of-type:is(.scene):has( > .title ) {
-            padding-block-start: 0;
-            & > .title {
-                padding-block-start: var(--m-room-for-two);
+        & > div:is(.title) {
+                padding-block-start: var(--m-room-for-eight);
             }
-        }
-    }
-    */
-    &:not(.long,.poetry) {
-        & > :is(div.title-page,section) + div.title-page > div:is(.title, .contact, .count) {
-            padding-block-start: var(--m-room-for-eight);
         }
         & > div.title-page + section,
         & section + section:is(.part,.chapter),
@@ -290,7 +320,6 @@
             padding-block-start: var(--m-room-for-four);
         }
         & section > section:first-of-type:is(.scene),
-        & section:is(.chapter) > section:first-of-type:is(.scene),
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-two);
         }
@@ -298,38 +327,32 @@
 
     /*
      * long spacing
+     *
+     * [page-break]
+     * title page >
+     *     [5/12 down the page]
+     *     title
+     *
+     * title page +
+     * [page-break]
+     * section:is(.part,.chapter)
+     *
+     * FIXME FIXME FIXME
+     *
+     * section >
+     *     [four lines of space]
+     *     section:is(.part,.chapter)
+     *
+     * section >
+     *     [two lines of space]
+     *     section:is(.scene)
      */
-    /* TITLE METHOD --- this is faulty
     &:is(.long,.poetry) {
-        & > :is(div.title-page,section) + div.title-page > div.title {
-            padding-block-start: var(--m-offset-title-titlepage-interior);
-        }
-
-        & > div.title-page + section > .title,
-        & section:not(section.poem):has( > .title ) > .title,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-offset-title);
-        }
-        & section:has( > .title ) > section:first-of-type:has( > .title) > .title,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
-        }
-        & > div.title-page + section:first-of-type:is(.scene),
-        & section:has( > .title ) > section:first-of-type:is(.scene),
-        & section:is(.chapter):has( > .title ) > section:first-of-type:is(.scene) {
-            padding-block-start: var(--m-room-for-two);
-        }
-        & section:has( > .title ) > section:first-of-type:is(.scene):has( > .title ) {
+        & > :is(div.title-page,section) + div.title-page {
             padding-block-start: 0;
-            & > .title {
-                padding-block-start: var(--m-room-for-two);
+        & > div:is(.title) {
+                padding-block-start: var(--m-offset-title-titlepage-interior);
             }
-        }
-    }
-    */
-    &:is(.long,.poetry) {
-        & > :is(div.title-page,section) + div.title-page > div.title {
-            padding-block-start: var(--m-offset-title-titlepage-interior);
         }
 
         & > div.title-page + section,
@@ -342,7 +365,6 @@
             padding-block-start: var(--m-room-for-four);
         }
         & section > section:first-of-type:is(.scene),
-        & section:is(.chapter) > section:first-of-type:is(.scene),
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-two);
         }
@@ -438,6 +460,7 @@
 
 
 /* KEPT FOR POSTERITY ------------------------------------------ */
+
     /* contact and count: if block-style parent containers
      * (I think this is a little wrong and will not work the way we wish
      * anyway without html restructuring) */
@@ -524,6 +547,65 @@
         }
         & section.poem {
             padding-block-start: unset;
+        }
+    }
+    */
+
+
+/* The title model of spacing … */
+
+    /* TITLE METHOD --- this is faulty
+    &:not(.long,.poetry) {
+        & > :is(div.title-page,section) + div.title-page > div:is(.title, .contact, .count) {
+            padding-block-start: var(--m-room-for-eight);
+        }
+        & > div.title-page + section > .title,
+        & section:not(section.poem):has( > .title ) > .title,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & section:has( > .title ) > section:first-of-type:has( > .title) > .title,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & > div.title-page + section:first-of-type:is(.scene),
+        & section:has( > .title ) > section:first-of-type:is(.scene),
+        & section:is(.chapter):has( > .title ) > section:first-of-type:is(.scene) {
+            padding-block-start: var(--m-room-for-two);
+        }
+        & section:has( > .title ) > section:first-of-type:is(.scene):has( > .title ) {
+            padding-block-start: 0;
+            & > .title {
+                padding-block-start: var(--m-room-for-two);
+            }
+        }
+    }
+    */
+    /* TITLE METHOD --- this is faulty
+    &:is(.long,.poetry) {
+        & > :is(div.title-page,section) + div.title-page > div.title {
+            padding-block-start: var(--m-offset-title-titlepage-interior);
+        }
+
+        & > div.title-page + section > .title,
+        & section:not(section.poem):has( > .title ) > .title,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-offset-title);
+        }
+        & section:has( > .title ) > section:first-of-type:has( > .title) > .title,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & > div.title-page + section:first-of-type:is(.scene),
+        & section:has( > .title ) > section:first-of-type:is(.scene),
+        & section:is(.chapter):has( > .title ) > section:first-of-type:is(.scene) {
+            padding-block-start: var(--m-room-for-two);
+        }
+        & section:has( > .title ) > section:first-of-type:is(.scene):has( > .title ) {
+            padding-block-start: 0;
+            & > .title {
+                padding-block-start: var(--m-room-for-two);
+            }
         }
     }
     */
