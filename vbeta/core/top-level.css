@@ -269,15 +269,12 @@
      */
 
     /*
-     * spacing for 1st page title page
-     * (same for both short and long manuscripts)
-     */
-    & > div.title-page > div.title {
-        padding-block-start: var(--m-offset-title-titlepage);
-    }
-
-    /*
      * short spacing
+     *
+     * [page-break (managed by core/page-breaks.css]
+     * 1st title page >
+     *     [5/12 down the page]
+     *     title
      *
      * title page +
      * [eight lines of space]
@@ -292,34 +289,54 @@
      *     title
      *
      * title page +
+     * [eight lines of space]
+     * section.part
+     *
+     * section +
+     * [eight lines of space]
+     * section.part
+     *
+     * title page +
+     * [four lines of space]
+     * section:is(.part,.chapter,.scene)
+     *
+     * section +
      * [four lines of space]
      * section:is(.part,.chapter)
      *
      * section >
      *     [four lines of space]
-     *     section:is(.part,.chapter)
+     *     section.chapter
      *
      * section >
      *     [two lines of space]
-     *     section:is(.scene)
+     *     section.scene
      */
     &:not(.long,.poetry) {
+        & > div.title-page {
+            padding-block-start: 0;
+            & > div:is(.title) {
+                padding-block-start: var(--m-offset-title-titlepage);
+            }
+        }
         & > :is(div.title-page,section) + div.title-page {
             padding-block-start: var(--m-room-for-eight);
-        & > div:is(.title) {
+            & > div:is(.title) {
                 padding-block-start: var(--m-room-for-eight);
             }
         }
-        & > div.title-page + section,
-        & section + section:is(.part,.chapter),
+        & > :is(div.title-page,section) + section.part,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-eight);
+        }
+
+        & > div.title-page + section:is(.chapter,.scene),
+        & section + section.chapter,
+        & section > section:first-of-type.chapter,
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-four);
         }
-        & section > section:first-of-type,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
-        }
-        & section > section:first-of-type:is(.scene),
+        & section > section:first-of-type.scene,
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-two);
         }
@@ -328,43 +345,56 @@
     /*
      * long spacing
      *
-     * [page-break]
+     * [page-break (managed by core/page-breaks.css]
      * title page >
      *     [5/12 down the page]
      *     title
      *
      * title page +
-     * [page-break]
-     * section:is(.part,.chapter)
+     * [page-break (managed by core/page-breaks.css]
+     * [5/12 down the page]
+     * section:is(.part,.chapter,.scene)
      *
-     * FIXME FIXME FIXME
+     * [page-break (managed by core/page-breaks.css]
+     * [5/12 down the page]
+     * section:is(.part)
      *
-     * section >
+     * section +
+     * [page-break (managed by core/page-breaks.css]
+     * [5/12 down the page]
+     * section:is(.chapter)
+     *
+     * section:is(.part) >
      *     [four lines of space]
-     *     section:is(.part,.chapter)
-     *
-     * section >
+     *     section:is(.chapter)
+     * 
+     * section:is(.chapter,.part) >
      *     [two lines of space]
      *     section:is(.scene)
      */
     &:is(.long,.poetry) {
-        & > :is(div.title-page,section) + div.title-page {
+        & > div.title-page {
             padding-block-start: 0;
-        & > div:is(.title) {
+            & > div:is(.title) {
+                padding-block-start: var(--m-offset-title-titlepage);
+            }
+        }
+        & > :is(div.title-page,section) + div.title-page {
+            & > div:is(.title) {
                 padding-block-start: var(--m-offset-title-titlepage-interior);
             }
         }
-
-        & > div.title-page + section,
-        & section + section:is(.part,.chapter),
+        & > div.title-page + section:is(.part,.chapter,.scene),
+        & > section.part,
+        & section + section.chapter,
         & div.xxxxxxxx {
             padding-block-start: var(--m-offset-title);
         }
-        & section > section:first-of-type,
+        & section.part > section:first-of-type.chapter,
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-four);
         }
-        & section > section:first-of-type:is(.scene),
+        & section:is(.chapter,.part) > section:first-of-type.scene,
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-two);
         }
@@ -372,13 +402,17 @@
 
     /*
      * poem spacing
-     * Note, a poem in a manuscript should never be without contact & count but
-     * if the work is just being shared … still, 1/4 offset is an aesthetic
-     * choice.
+     *
+     * [page-break (managed by core/page-breaks.css]
+     * section.poem > 
+     *     [1/4 down the page]
+     *     title
      */
-    /*& section.poem:has( > .contact, > .count ) > .title {*/
-    & section.poem > .title {
-        padding-block-start: var(--m-offset-title-poem);
+    & section.poem {
+        padding-block-start: 0;
+        & > .title {
+            padding-block-start: var(--m-offset-title-poem);
+        }
     }
 
 
