@@ -52,7 +52,7 @@
         /*
          * POEM page breaking
          */
-            & section.poem,
+            & > :is(div.title-page,section) + section.poem,
             & section.poem + section {
                 border-block-start: var(--m-page-break-simulated);
             }
@@ -80,7 +80,7 @@
         /*
          * POEM page breaking
          */
-            & section.poem,
+            & > :is(div.title-page,section) + section.poem,
             & section.poem + section {
                 break-before: page;
             }
