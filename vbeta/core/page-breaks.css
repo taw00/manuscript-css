@@ -53,7 +53,9 @@
          * POEM page breaking
          */
             & > :is(div.title-page,section) + section.poem,
-            & section.poem + section {
+            & section > section.poem,
+            & section.poem + section,
+            & div.xxxxxxxx {
                 border-block-start: var(--m-page-break-simulated);
             }
         }
@@ -81,7 +83,9 @@
          * POEM page breaking
          */
             & > :is(div.title-page,section) + section.poem,
-            & section.poem + section {
+            & section > section.poem,
+            & section.poem + section,
+            & div.xxxxxxxx {
                 break-before: page;
             }
         }

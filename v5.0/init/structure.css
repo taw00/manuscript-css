@@ -64,6 +64,7 @@ div#vpage > article#manuscript > section.part,
 div#vpage > article#manuscript > section.chapter,
 div#vpage > article#manuscript > section.scene,
 div#vpage > article#manuscript section.part > section.chapter,
+/*div#vpage > article#manuscript section.part > section.scene, -- part can no longer have a scene?*/
 div#vpage > article#manuscript section.part > section.scene,
 div#vpage > article#manuscript section.scene > div.subscenes,
 div#vpage > article#manuscript section.scene > div.x-poem,
@@ -86,6 +87,7 @@ div.xxxxxxxx {
  * note, .poem is ONLY enabled w/in a article.#manuscript.poetry container */
 div#vpage > article#manuscript > div.title-page,
 div#vpage > article#manuscript:is(.poetry) > section.poem,
+/*div#vpage > article#manuscript section.part > section.poem, -- part can no longer have a scene?*/
 div#vpage > article#manuscript section.part > section.poem,
 div#vpage > article#manuscript section.chapter > section.poem,
 div.xxxxxxxx {
@@ -109,7 +111,7 @@ div#vpage > article#manuscript section.part > div.title,
 div#vpage > article#manuscript section.chapter > div.title,
 /* a scene can only contain a title block, subscenes, img, hr, ul, ol, dl, pre, p,
  * blockquote, x-poem, h-tag, div, table */
-div#vpage > article#manuscript section.scene > div.title,
+/*div#vpage > article#manuscript section.scene > div.title, -- no longer allowed titles, that's what chapters are for*/
 div#vpage > article#manuscript section.scene > :is(div), /* we have to allow for custom styling */
 div#vpage > article#manuscript section.scene > :is(div.note),
 div#vpage > article#manuscript section.scene > :is(img, hr, ul, ol, dl, pre, table),

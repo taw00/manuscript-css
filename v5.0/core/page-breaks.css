@@ -43,9 +43,8 @@
         &:is(.long,.poetry) {
             & > :is(div.title-page,section) + div.title-page,
             & > div.title-page + section,
-            & section.part:has( > .title),
-            & section.chapter:has( ~ section ) + .chapter:has( > .title ),
-            & section.scene + .chapter:has( > .title ),
+            & section.part,
+            & section + section.chapter,
             & div.xxxxxxxx {
                 border-block-start: var(--m-page-break-simulated);
             }
@@ -53,9 +52,10 @@
         /*
          * POEM page breaking
          */
+            & > :is(div.title-page,section) + section.poem,
             & section > section.poem,
-            & :is(div.title-page,section) + section.poem,
-            & section.poem + section {
+            & section.poem + section,
+            & div.xxxxxxxx {
                 border-block-start: var(--m-page-break-simulated);
             }
         }
@@ -74,18 +74,18 @@
         &:is(.long,.poetry) {
             & > :is(div.title-page,section) + div.title-page,
             & > div.title-page + section,
-            & section.part:has( > .title),
-            & section.chapter:has( ~ section ) + .chapter:has( > .title ),
-            & section.scene + .chapter:has( > .title ),
+            & section.part,
+            & section + section.chapter,
             & div.xxxxxxxx {
                 break-before: page;
             }
         /*
          * POEM page breaking
          */
+            & > :is(div.title-page,section) + section.poem,
             & section > section.poem,
-            & :is(div.title-page,section) + section.poem,
-            & section.poem + section {
+            & section.poem + section,
+            & div.xxxxxxxx {
                 break-before: page;
             }
         }
