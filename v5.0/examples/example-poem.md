@@ -107,12 +107,12 @@ And dances with the daffodils.
 
 
 
-[comment]: / "----------- CITATION SCENE (used only for example) -------------"
+[comment]: / "--------- CITATION CHAPTER (used only for example) -------------"
 
 
 
 
-<section class="scene foothang">
+<section class="chapter">
 <div class="title">
 
 
@@ -120,12 +120,14 @@ And dances with the daffodils.
 
 
 </div>
+<section class="scene foothang">
 
 
 Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *Poems, in Two Volumes*. London: Longman, Hurst, Rees, and Orms.
 
 
 </section> <!-- end specialized scene -->
+</section>
 
 
 </article></div> <!-- ------------------------------ end of manuscript ---- -->

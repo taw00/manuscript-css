@@ -199,7 +199,7 @@ All mimsy were the borogoves,
 
 
 
-<section class="scene foothang">
+<section class="chapter">
 <div class="title">
 
 
@@ -208,6 +208,7 @@ All mimsy were the borogoves,
 
 </div>
 
+<section class="scene foothang">
 
 Woodsworth, William. 1807. (Revised 1815.) "I Wandered Lonely as a Cloud." In *Poems, in Two Volumes*. London: Longman, Hurst, Rees, and Orms.
 
@@ -215,6 +216,7 @@ Carroll, Lewis. "Jabberwocky." 1871. In *Through the Looking-Glass*. London: Mac
 
 
 </section> <!-- end specialized scene -->
+</section>
 
 
 </article></div> <!-- ------------------------------ end of manuscript ---- -->

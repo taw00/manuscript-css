@@ -80,13 +80,13 @@ editor\@example\.com
 
 
 
-[comment]:: "-------------------------- TOC SCENE ----------------------------"
-[comment]:: "----------------- (often not used with poetry) ------------------"
+[comment]:: "-------------------------- TOC chapter --------------------------"
+[comment]:: "------------------- (rarely used with poetry) -------------------"
 
 
 
 
-<section class="scene toc">
+<section class="chapter">
 <div class="title">
 
 
@@ -95,12 +95,14 @@ editor\@example\.com
 
 </div>
 
+<section class="scene toc">
 
 - I Wandered Lonely as a Cloud, by William Wordsworth (24 lines)
 
 - Jabberwocky, by Lewis Carroll (48 lines)
 
 
+</section>
 </section>
 
 

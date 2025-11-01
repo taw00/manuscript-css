@@ -281,13 +281,6 @@ efficitur. Vestibulum molestie aliquam magna, et iaculis leo porttitor ac.
 
 
 <section class="scene">
-<div class="title">
-
-
-# Scene with a title!
-
-
-</div>
 
 Only one scene for chapter 2 because I think you get the idea.
 

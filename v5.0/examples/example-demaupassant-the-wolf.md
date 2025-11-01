@@ -201,19 +201,20 @@ Then a lady declared, in a little, soft voice
 
 
 
-[comment]: / "----------- CITATION SCENE (used only for example) -------------"
+[comment]:: "--------- CITATION CHAPTER (used only for example) --------------"
 
 
 
 
-<section class="scene foothang">
+<section class="chapter">
 <div class="title">
 
 
-# Acknowledgement
+# —<br><br>Acknowledgement
 
 
 </div>
+<section class="scene foothang">
 
 
 de Maupassant, Guy. 1882. In *The Gauls*. November 14, 1882. France.

@@ -121,25 +121,27 @@ No doubt I now grew *very* pale;—but I talked more fluently, and with a height
 
 
 
-[comment]: / "----------- CITATION SCENE (used only for example) -------------"
+[comment]:: "--------- CITATION CHAPTER (used only for example) --------------"
 
 
 
 
-<section class="scene foothang">
+<section class="chapter">
 <div class="title">
 
 
-# Acknowledgement
+# —<br><br>Acknowledgement
 
 
 </div>
+<section class="scene foothang">
 
 
 Poe, Edgar Allen. 1843. In *The Pioneer*. Vol. I, No. I, January, 1843. Philadelphia: Drew and Scammell.
 
 
 </section> <!-- /.scene.foothang -->
+</section>
 
 
 
