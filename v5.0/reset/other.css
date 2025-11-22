@@ -23,6 +23,7 @@ html, body { all: initial; }
 }
 
 /*body { width: 100%; max-width: unset; }*/
+/* THESE GET IN THE WAY FAR TOO OFTEN; COMMENTED OUT …
 h1,h2,h3,h4,h5,h6,
 ol,ul,dl,menu,li,dt,dd,
 hr,
@@ -34,13 +35,13 @@ table, thead, tbody, tfoot, th, tr, td, colgroup, col {
     line-height: unset;
     text-align: unset;
     color: unset;
-    /*background-color: unset;*/
     background: unset;
     margin: unset; padding: unset;
     border: unset;
     opacity: unset;
     filter: unset;
 }
+*/
 
 /* I don't think we have to reset these
 strong, b, em, i, u, s, img */
