@@ -35,6 +35,13 @@ div.xxxxxxxx {
 }
 
 
+/* some editors like to throw in an automated h1 header at the level right
+ * above div#vpage. Let's make that go away. */
+h1:has(~ div#vpage) {
+    display: none;
+}
+
+
 /* TOP-LEVEL CONTAINERS
  * This enables the containers by reverting their type.
  * html, body, div#vpage, article#manuscript
