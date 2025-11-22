@@ -302,6 +302,11 @@ html {
         }
     }
 
+    /* Specifically to fight off joplin's div.title styles */
+    .title {
+        color: inherit;
+    }
+
 } /* end #manuscript */
 
 
