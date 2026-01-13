@@ -102,8 +102,8 @@ of your story is lengthy, use a truncated or shortened version of that title.
 
 _(Note, there is debate about whether to use your legal last name in the page
 headers or to use the last name of your pen name (author name). We are
-defaulting to the assumption that it should be your pen name's last name.
-Discuss this requirement with your agent.)_
+defaulting to the assumption that it should be your last name used in your
+byline (your pen name). Discuss this requirement with your agent.)_
 
 ```css
     --m-marginalia: "Penlastname / Story Title / " counter(page);
