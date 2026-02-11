@@ -39,9 +39,9 @@ from working draft to finalized manuscript.
    <small>Note: Some publishers (and nearly all traditional book publishers)
    insist on your work being submitted in `.docx` format. For that, use this
    process until you are absolutely ready to submit to such a publisher and
-   then port the project to `.docx` using LibreOffice, Google Docs, or MS Word.
-   More information on some of the techniques to do that are listed later in
-   this document.</small>
+   then port the project to `.docx` using OnlyOffice or LibreOffice and MS Word
+   (Google Docs is less flexible, but it works). More information on some of
+   the techniques to do that are listed later in this document.</small>
 
 ---
 
@@ -457,44 +457,31 @@ Questions? Comments? Post them in the Discussions section of this repository.
   document, you are on your own. For now. I'll probably play with that in the
   future.
 
-### Porting your finished draft to LibreOffice and/or Google Docs (or any other
-word processor)
+### Porting your finished draft to OnlyOffice, LibreOffice, or any other
+word processor
 
-**LibreOffice**
+**Pandoc to .odt to .docx - NOT RECOMMENDED**
 
-I have included Libreoffice templates in this repository. Copy the templates
-into the `$HOME/Templates/` folder.  (Look in `Tools > Options, LibreOffice >
-Paths` for your Templates folder location.)
-
-You could use Pandoc to generate a functional, but messy LibreOffice `.odt`
-document and then edit it until it is properly formatted. But … that document
-will be MESSY.
+In theory, you could use Pandoc to generate a functional, but messy LibreOffice
+`.odt` document and then edit it until it is properly formatted. But … that
+document will be MESSY. I do not recommend, but here is how you do that.
 
 ```plaintext
 pandoc -o your-manuscript.odt your-manuscript.md
 ```
 
-Better, though tedious, is to create a fresh document in LibreOffice from one
-of the templates I have provided. And then cut and paste text from the PDF you
-generated using one of the methods above, adjusting the formatting as needed.
-Not ideal, but it works and it goes faster than it sounds.
 
-To create a nice clean fresh-from-a-template LibreOffice document:
-- Open LibreOffice
-- `File > New > Templates...` and pick the appropriate template.
-- Here are some of my customizations. The templates are templated as such
-  because they closely match Google Docs import/export style names. Looking at
-  all the styles, everything under
-    * "normal" represents everything in the document: "normal" is the text and
-    * other random things.
-    * "Heading 1" is for part titles.
-    * "Heading 2" is for chapter titles.
-    * "Heading 6" is for dinkus markers and the -30- marker. You
-      will have to figure out how to wedge everything else in if
-      you did a bunch of fancy things.
-- cut-and-paste from that PDF (CTRL-SHIFT-V to make sure you paste without
-  formatting) a bit at a time and then change the style for each paragraph and
-  whatnot.
+**Word (.docx) Templates**
+
+I have included MS Word-compatible example documents in this repository that
+can serve the purpose of a baseline template for you to work from. Copy the
+appropriate template into a working folder, rename it to your story, and
+copy-and-paste from your generated PDF into that `.docx` file, working to
+retain the proper formatting. It works and it goes faster than it sounds.
+
+As you work with one of those templates, notice the custom styling used for
+each manuscript-specific element within the document. If you are not familiar
+with managing your document using styles, now is the time to learn.
 
 **Google Docs**
 
@@ -502,9 +489,12 @@ Check out my Google Docs templates
 [here](https://drive.google.com/drive/folders/1VHZiNtNyCqU3BOJG7sGdywo_8Ag2DcUL).
 
 You can get your document into Google Docs one of two ways: 1. port it to
-LibreOffice, generate a .odt and then import that into Google Docs (I prefer
-this method). Or 2. you could create a new clean document from one of those
-templates and do the cut-and-paste shuffle as described earlier.
+OnlyOffice or LibreOffice, generate a .docx and then import that into Google
+Docs. Or 2. you could create a new clean document from one of those templates
+and do the cut-and-paste shuffle as described earlier.
+
+OnlyOffice seems to generate more true to MS Word `.docx` formatting. Then
+LibreOffice. Then Google Docs.
 
 ### My workflow as a writer:
 
@@ -518,11 +508,17 @@ templates and do the cut-and-paste shuffle as described earlier.
    progress (in manuscript form of course) and hand people a hardcopy to
    review.
 
-4. **submission for publication:** If they accept a PDF, I just generate a PDF
+4. **finalize the document:** If they accept a PDF, I just generate a PDF
    directly from Joplin and submit that. If they require a `.docx`, I port my
-   markdown to PDF then to over to LibreOffice writer. It doesn't take that
-   long.  Then do a final proofread, and then export and submit a `.docx` file
-   and wait for the rejections. :)
+   markdown to PDF then to over to OnlyOffice. It doesn't take that
+   long.
+5. **verify the format and submit:** If the publisher requires `.docx`, I
+   upload my final document into MS Word 365 online and verify the formatting
+   translated correctly. Fix any errors, then download the document and submit.
+   MS Work online: <https://word.cloud.microsoft/> or
+   <https://onedrive.live.com>
+6. Brace myself for the rejection. ;)
+
 
 ### Is Todd a Joplin shill?
 
