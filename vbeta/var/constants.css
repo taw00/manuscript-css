@@ -123,7 +123,7 @@
     /* typefaces (fontstacks)
      * Manuscript standards, these or close equivalents:
      * - Times New Roman - for narrative works
-     * - Arial or Helvetica - for nonnarrative works . . . sometimes
+     * - Aptos, Arial, or Helvetica - for nonnarrative works . . . sometimes
      * - Courier Prime - when a monospaced typeface is needed
      * - Noto Sans Mono - for when you need a monospace font that compliments
      *                    sans-serif.
@@ -131,6 +131,7 @@
      * for some excellent close-equivalent open options for each category. */
     --m-fontstack-times: "Times New Roman", "Croscore Tinos", tinos, "Nimbus Roman", "Liberation Serif", "TeX Gyre Termes", thorndale, serif;
     --m-fontstack-arial: arial, "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", albany, sans-serif;
+    --m-fontstack-aptos: aptos, var(--m-fontstack-arial);
     --m-fontstack-helvetica: helvetica, "TeX Gyre Heros", "Croscore Arimo", arimo, "Nimbus Sans L", "Liberation Sans", sans-serif;
     --m-fontstack-courier: "Courier Prime", "Croscore Cousine", cousine, "TeX Gyre Cursor", "Liberation Mono", cumberland, "Courier Prime Code", "Courier New", courier, monospace;
     --m-fontstack-roboto-mono: "Roboto Mono", "Adwaita Mono", "Lucida Sans Typewriter", "Liberation Mono", monospace;

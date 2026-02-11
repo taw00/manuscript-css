@@ -50,7 +50,7 @@
      */
 
     --m-fontstack-serif: var(--m-fontstack-times);
-    --m-fontstack-sans-serif: var(--m-fontstack-arial);
+    --m-fontstack-sans-serif: var(--m-fontstack-aptos);
     --m-fontstack-sans: var(--m-fontstack-sans-serif);
     --m-fontstack-monospace: var(--m-fontstack-courier);
     --m-fontstack-sans-monospace: var(--m-fontstack-roboto-mono);
