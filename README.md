@@ -514,8 +514,9 @@ LibreOffice. Then Google Docs.
    long.
 5. **verify the format and submit:** If the publisher requires `.docx`, I
    upload my final document into MS Word 365 online and verify the formatting
-   translated correctly. Fix any errors, then download the document and submit.
-   MS Work online: <https://word.cloud.microsoft/> or
+   translated correctly. Fix any errors (LibreOffice seems to struggle with
+   maintaining the margins, for example), then download the document and
+   submit.  MS Work online: <https://word.cloud.microsoft/> or
    <https://onedrive.live.com>
 6. Brace myself for the rejection. ;)
 
