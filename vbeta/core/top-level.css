@@ -327,14 +327,14 @@
         }
         & > :is(div.title-page,section) + section.part,
         & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-eight);
+            padding-block-start: var(--m-room-for-four);
         }
 
         & > div.title-page + section:is(.chapter,.scene),
         & section + section.chapter,
         & section > section:first-of-type.chapter,
         & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
+            padding-block-start: var(--m-room-for-two);
         }
         & section > section:first-of-type.scene,
         & div.xxxxxxxx {
@@ -392,7 +392,7 @@
         }
         & section.part > section:first-of-type.chapter,
         & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
+            padding-block-start: var(--m-room-for-two);
         }
         & section:is(.chapter,.part) > section:first-of-type.scene,
         & div.xxxxxxxx {
