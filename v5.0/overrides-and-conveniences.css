@@ -69,6 +69,16 @@
     }
 }
 
+#vpage #manuscript.blind {
+    & .title-page {
+        & .contact {
+            visibility: hidden;
+        }
+        & .title > h3 {
+            display: none;
+        }
+    }
+}
 
 /* .break-before, .break-after, .no-break ----------------------
  * .no-break should win if both are used  ---------------------- */
