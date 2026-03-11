@@ -81,6 +81,7 @@
  */
 
 @page top-left-marginalia:first {
+    counter-set: page var(--m-page-start);
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -90,6 +91,7 @@
     @bottom-center { content: none; }
 }
 @page top-center-marginalia:first {
+    counter-set: page var(--m-page-start);
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -99,6 +101,7 @@
     @bottom-center { content: none; }
 }
 @page top-right-marginalia:first {
+    counter-set: page var(--m-page-start);
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -109,6 +112,7 @@
 }
 
 @page bottom-left-marginalia:first {
+    counter-set: page var(--m-page-start);
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -118,6 +122,7 @@
     @bottom-center { content: none; }
 }
 @page bottom-center-marginalia:first {
+    counter-set: page var(--m-page-start);
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
@@ -127,6 +132,7 @@
     @bottom-center { content: none; }
 }
 @page bottom-right-marginalia:first {
+    counter-set: page var(--m-page-start);
     margin: var(--m-page-margin);
     @top-left { content: none; }
     @top-right { content: none; }
