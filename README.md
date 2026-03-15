@@ -174,7 +174,7 @@ Manuscript formatting similar to what many call Shunn Formatting:
 	+ Edit: has focus and Hemingway modes!
 	+ Preview: renders an accurate preview of the manuscript
 	+ HTML: export to compliant HTML file
-    + Caveat: terrible syntax highlighting
+    + Caveat: *terrible* syntax highlighting
 
 ### … tools:
 
@@ -206,8 +206,9 @@ painful to use, IMHO.
   only. Love the focus and Hemingway modes and accurate rendering, but it
   crashes and freezes far too often.
 - [Firefox](https://www.firefox.com/en-US/) and derivatives, like
-  [Zen](https://zen-browser.app/) and [LibreWolf](https://librewolf.net/) - Zen
-  is actually my go-to browser, but the Firefox engine cannot render an
+  [Zen](https://zen-browser.app/) and [LibreWolf](https://librewolf.net/) for
+  PDF rendering.  
+  Zen is actually my go-to browser, but the Firefox engine cannot render an
   accurate PDF for prose if that prose uses @page marginalia. (It works fine
   for poetry since the poetry manuscript rendering doesn't use @page margin
   headers.)
@@ -385,7 +386,7 @@ that is the case, then use Ghostwriter just for editing and previewing, and
 *Markdown Viewer* + Chrome for creating the PDF from your completed Markdown
 text file.
 
-### Markdown Viewer browser extension: markdown document to PDF document
+### Chrome/Chromium Markdown Viewer browser extension: markdown document to PDF document
 
 *Preview, and then when ready, export a PDF from a Markdown-formatted file.*
 
