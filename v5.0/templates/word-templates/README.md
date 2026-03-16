@@ -1,6 +1,1 @@
-MS Word documents to be used as templates. They are tested, as is, to work
-correctly with LibreOffice and OnlyOffice and then translate back into MS Word.
-Publishers use MS Word though, and so, no matter what word processor you use to
-revise your manuscript, verify the formatting has not drifted by uploading your
-final document in to MS Word 365 online and examining it there:
-<https://word.cloud.microsoft/> or <https://onedrive.live.com>
+MS Word documents to be used as templates. These were created within [OnlyOffice](https://www.onlyoffice.com/) (also checkout [OnlyOffice Docspace](https://onedrive.live.com)) and tested with [LibreOffice](https://www.libreoffice.org/) and Microsoft Word 11. Publishers use MS Word, and so, no matter what word processor you use to revise your manuscript, always verify the formatting has not drifted by your final manuscript against Microsoft Word 11 or better—**desktop version only**, MS Word 365 online has serious issues with the retention of formatting. Don't have MS Word at home? Take your document to a library like I did.

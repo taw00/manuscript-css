@@ -513,13 +513,16 @@ LibreOffice. Then Google Docs.
    directly from Joplin and submit that. If they require a `.docx`, I port my
    markdown to PDF then to over to OnlyOffice. It doesn't take that
    long.
-5. **verify the format and submit:** If the publisher requires `.docx`, I
-   upload my final document into MS Word 365 online and verify the formatting
-   translated correctly. Fix any errors (LibreOffice seems to struggle with
-   maintaining the margins, for example), then download the document and
-   submit.  MS Work online: <https://word.cloud.microsoft/> or
-   <https://onedrive.live.com>
-6. Brace myself for the rejection. ;)
+5. **verify the format and submit:** If the publisher requires `.docx`, I find
+   a friend with MS Word, or I head to the local library, and verify that the
+   formatting translated correctly. Fix any errors (LibreOffice seems to
+   struggle with maintaining the margins, for example) and then submit.<br>
+   **—WARNING: Do not use MS Word 365 online.** It boggles the mind that
+   Microsoft has yet to get this right, but that version of Word WILL NOT
+   retain your style settings and will very likely ruin your manuscript. I
+   suspect they will fix this soonish, but it has been a problem for some time
+   now.
+6. **Brace myself for the rejection.** ;)
 
 
 ### Is Todd a Joplin shill?
