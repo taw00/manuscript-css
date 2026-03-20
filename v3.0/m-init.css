@@ -5,8 +5,8 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import  url("./m-init/structure.css?rev=2025091401");
-@import      url("./m-init/fonts.css?rev=2025091401");
-@import       url("./m-init/page.css?rev=2025091602");
-@import url("./m-init/marginalia.css?rev=2025091601");
+@import  "./m-init/structure.css?rev=2025091401";
+@import      "./m-init/fonts.css?rev=2025091401";
+@import       "./m-init/page.css?rev=2025091602";
+@import "./m-init/marginalia.css?rev=2025091601";
 

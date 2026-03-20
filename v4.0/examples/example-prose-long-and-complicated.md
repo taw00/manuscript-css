@@ -8,11 +8,11 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript.css");
+    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
+    @import "/full/path/to/the/repository/for/manuscript-css/manuscript.css";
     */
-    @import url("../manuscript.css");
-    @import url("../../manuscript.css");
+    @import "../manuscript.css";
+    @import "../../manuscript.css";
     :root {
         --m-marginalia: "Penlastname / Long-form Prose / " counter(page);
     }

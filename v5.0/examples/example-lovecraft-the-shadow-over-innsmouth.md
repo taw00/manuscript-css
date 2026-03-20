@@ -1,10 +1,10 @@
 <style>
-    @Ximport url("https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css");
-    @import url("/home/todd/git/taw00/manuscript-css/manuscript-5.0.css");
+    @Ximport "https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css";
+    @import "/home/todd/git/taw00/manuscript-css/manuscript-5.0.css";
     /*
-    @import url("/full/path/to/the/repository/for/manuscript-css/manuscript-5.0.css");
-    @import url("../manuscript-5.0.css");
-    @import url("../../manuscript-5.0.css");
+    @import "/full/path/to/the/repository/for/manuscript-css/manuscript-5.0.css";
+    @import "../manuscript-5.0.css";
+    @import "../../manuscript-5.0.css";
     */
     .centered-poem pre { text-align: center; }
     :root {

@@ -14,10 +14,10 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import          url("./reset/joplin.css?rev=2025091901");
-@import          url("./reset/vscode.css?rev=2025091401");
-@import          url("./reset/pandoc.css?rev=2025091401");
-@import     url("./reset/ghostwriter.css?rev=2025091401");
-@import url("./reset/markdown-viewer.css?rev=2025091401");
-@import           url("./reset/other.css?rev=2025091402");
+@import          "./reset/joplin.css?rev=2025091901";
+@import          "./reset/vscode.css?rev=2025091401";
+@import          "./reset/pandoc.css?rev=2025091401";
+@import     "./reset/ghostwriter.css?rev=2025091401";
+@import "./reset/markdown-viewer.css?rev=2025091401";
+@import           "./reset/other.css?rev=2025091402";
 

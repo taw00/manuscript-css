@@ -5,10 +5,10 @@
  * of this license, visit http://creativecommons.org/licenses/by/4.0/
  */
 
-@import   url("./core/top-level.css?rev=2025101201");
-@import       url("./core/scene.css?rev=2025100601");
-@import        url("./core/poem.css?rev=2025092501");
-@import url("./core/page-breaks.css?rev=2025100401");
-@import    url("./core/dinkuses.css?rev=2025100101");
-@import       url("./core/notes.css?rev=2025100403");
+@import   "./core/top-level.css?rev=2025101201";
+@import       "./core/scene.css?rev=2025100601";
+@import        "./core/poem.css?rev=2025092501";
+@import "./core/page-breaks.css?rev=2025100401";
+@import    "./core/dinkuses.css?rev=2025100101";
+@import       "./core/notes.css?rev=2025100403";
 

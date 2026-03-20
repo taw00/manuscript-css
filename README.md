@@ -354,7 +354,7 @@ that is the case, then use VSCodium just for editing and previewing and
 > `manuscript-css` folder on the web somewhere. Or in the meantime, as of this
 > writing, just use my instance:
 > ```markdown
-> @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
+> @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
 > ```
 > That is not guaranteed to be a functional link forever though.</small>
 

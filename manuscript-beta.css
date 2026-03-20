@@ -21,7 +21,7 @@
  * this manuscript.css stylesheet like this:
  *
  * <style
- *   @import url("url-or-path/to/the/manuscript.css");
+ *   @import "url-or-path/to/the/manuscript.css";
  *   :root {
  *     --m-marginalia: "Penlastname / Story Title / " counter(page);
  *   }
@@ -36,12 +36,12 @@
 
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
-@import                        url("./vbeta/var.css?rev=2026030201");
-@import                      url("./vbeta/reset.css?rev=2025112101");
-@import                       url("./vbeta/init.css?rev=2026031101");
-@import                       url("./vbeta/core.css?rev=2026020201");
-@import url("./vbeta/overrides-and-conveniences.css?rev=2026030201");
-@import   url("./manuscript-user-customizations.css?rev=2025091501");
+@import                        "./vbeta/var.css?rev=2026030201";
+@import                      "./vbeta/reset.css?rev=2025112101";
+@import                       "./vbeta/init.css?rev=2026031101";
+@import                       "./vbeta/core.css?rev=2026020201";
+@import "./vbeta/overrides-and-conveniences.css?rev=2026030201";
+@import   "./manuscript-user-customizations.css?rev=2025091501";
 
 :root {
     --m-version: "beta";

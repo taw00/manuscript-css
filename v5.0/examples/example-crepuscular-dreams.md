@@ -67,13 +67,13 @@ h1 {
 
 
 <style>
-    @import url("https://toddwarner.io/pub/css/tw-font-sans-overpass.css");
-    @import url("https://toddwarner.io/pub/css/tw-font-serif-crimson.css");
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css");
-    @import url("../../manuscript-5.0.css");
+    @import "https://toddwarner.io/pub/css/tw-font-sans-overpass.css";
+    @import "https://toddwarner.io/pub/css/tw-font-serif-crimson.css";
+    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css";
+    @import "../../manuscript-5.0.css";
     /*
-    @import url("../manuscript-5.0.css");
-    @import url("../../manuscript-5.0.css");
+    @import "../manuscript-5.0.css";
+    @import "../../manuscript-5.0.css";
     */
     #vpage > #manuscript {
         & > .poem {

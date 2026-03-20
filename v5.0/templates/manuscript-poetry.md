@@ -14,10 +14,10 @@ line count, as well as a title, and then the poem.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css");
+    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css";
     */
-    @import url("../manuscript-5.0.css");
-    @import url("../../manuscript-5.0.css");
+    @import "../manuscript-5.0.css";
+    @import "../../manuscript-5.0.css";
 </style>
 
 <div id="vpage">

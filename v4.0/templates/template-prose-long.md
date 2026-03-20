@@ -4,10 +4,10 @@ Template: long-form story - novellette, novella, novel, etc.
 
 <style>
     /*
-    @import url("https://toddwarner.io/pub/css/manuscript-css/manuscript.css");
+    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
     */
-    @import url("../manuscript.css");
-    @import url("../../manuscript.css");
+    @import "../manuscript.css";
+    @import "../../manuscript.css";
     :root {
         --m-marginalia: "Twain / Huck Finn / " counter(page);
     }

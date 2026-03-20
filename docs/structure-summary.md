@@ -17,7 +17,7 @@ like: `"https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"`._
 ```markdown
 <!-- Default Formatting: US letter, 1in margins, short-form narrative -->
 <style>
-    @import url("/path/to/manuscript.css");
+    @import "/path/to/manuscript.css";
 </style>
 <div id="vpage">
 <article id="manuscript">
@@ -32,7 +32,7 @@ like: `"https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"`._
 ```markdown
 <!-- Formatting: A4, 2.54cm margins, long-form nonnarrative -->
 <style>
-    @import url("/path/to/manuscript.css");
+    @import "/path/to/manuscript.css";
 </style>
 <div id="vpage" class="A4">
 <article id="manuscript" class="long nonnarrative">
@@ -57,7 +57,7 @@ The narrative or nonnarrative containers, in summary:
 
 ```html
 <style>
-    @import url("/path/to/manuscript.css");
+    @import "/path/to/manuscript.css";
 </style>
 <div id="vpage">                                            <!-- 1 required -->
   <article id="manuscript" class="long">    <!-- 1 required (short or long) -->
@@ -100,7 +100,7 @@ The poetry container, in summary:
 
 ~~~html
 <style>
-    @import url("/path/to/manuscript.css");
+    @import "/path/to/manuscript.css";
 </style>
 <div id="vpage">                                            <!-- 1 required -->
   <article id="manuscript" class="poetry">                  <!-- 1 required -->
@@ -188,7 +188,7 @@ optional.
 
 ```markdown
 <style>
-    @import url("/path/to/manuscript.css");
+    @import "/path/to/manuscript.css";
 </style>
 <div id="vpage">
 <article id="manuscript" class="long narrative">
@@ -324,7 +324,7 @@ To insert a poem in a document arbitrarily, it will be structured like this:
 
 ~~~markdown
 <style>
-    @import url("/path/to/manuscript.css");
+    @import "/path/to/manuscript.css";
 </style>
 <div id="vpage">
 <article id="manuscript" class="poetry">

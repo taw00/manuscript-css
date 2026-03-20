@@ -12,7 +12,7 @@
  * in your <style> block ... and redeclare variables. Here's an example:
  *
  * <style>
- * @import url("/path/to/manuscript.css");
+ * @import "/path/to/manuscript.css";
  * 
  * :root {
  *     --m-font-family: "TeX Gyre Pagella", Palladio, Palantino, serif;
