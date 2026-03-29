@@ -93,16 +93,19 @@ html {
             font-size:   var(--m-font-size-title);
             font-weight: var(--m-font-weight-title);
             font-family: var(--m-font-family-title);
+            line-height: inherit;
         }
         & > h2 {                       /* subtitle of the work */
             font-size:   var(--m-font-size-subtitle);
             font-weight: var(--m-font-weight-subtitle);
             font-family: var(--m-font-family-subtitle);
+            line-height: inherit;
         }
         & > h3 {                         /* author of the work */
             font-size:   var(--m-font-size-byline);
             font-weight: var(--m-font-weight-byline);
             font-family: var(--m-font-family-byline);
+            line-height: inherit;
         }
     }
     & section:is(.part, .chapter, .scene) > .title {
@@ -117,16 +120,19 @@ html {
                 font-size:   var(--m-font-size-title-part);
                 font-weight: var(--m-font-weight-title-part);
                 font-family: var(--m-font-family-title-part);
+                line-height: inherit;
             }
             & > h2 {              /* subtitle: part */
                 font-size:   var(--m-font-size-subtitle-part);
                 font-weight: var(--m-font-weight-subtitle-part);
                 font-family: var(--m-font-family-subtitle-part);
+                line-height: inherit;
             }
             & > h3 {              /* subtitle: part */
                 font-size:   var(--m-font-size-byline-part);
                 font-weight: var(--m-font-weight-byline-part);
                 font-family: var(--m-font-family-byline-part);
+                line-height: inherit;
             }
         }
     }
@@ -137,16 +143,19 @@ html {
                 font-size:   var(--m-font-size-title-chapter);
                 font-weight: var(--m-font-weight-title-chapter);
                 font-family: var(--m-font-family-title-chapter);
+                line-height: inherit;
             }
             & > h2 {        /* subtitle: chapter */
                 font-size:   var(--m-font-size-subtitle-chapter);
                 font-weight: var(--m-font-weight-subtitle-chapter);
                 font-family: var(--m-font-family-subtitle-chapter);
+                line-height: inherit;
             }
             & > h3 {        /* author: chapter */
                 font-size:   var(--m-font-size-byline-chapter);
                 font-weight: var(--m-font-weight-byline-chapter);
                 font-family: var(--m-font-family-byline-chapter);
+                line-height: inherit;
             }
         }
     }
