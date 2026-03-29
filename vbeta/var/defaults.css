@@ -26,7 +26,7 @@
  *     --m-line-spacing: 2.5;
  *     --m-indent: .35in;
  *     --m-dinkus: "~"
- *     --m-30-: "~ ~ ~;
+ *     --m-30-: "~ ~ ~";
  * }
  * </style> 
  *
@@ -129,13 +129,21 @@
 
     /*
      * DEFAULTS - section 2 - baseline #manuscript.long (and short) specific
+     *            These get reset in permutations.css
+     *            Probably delete all this.
      */
 
-    /* Title-block headers offset */
-    --m-offset-title-titlepage: var(--m-content-offset-5-12th);
-    --m-offset-title-titlepage-interior: calc(var(--m-content-offset-5-12th) - var(--m-marginalia-margin) + var(--m-page-margin));
-    --m-offset-title: var(--m-content-offset-1-3rd);
-    --m-offset-title-poem: var(--m-content-offset-1-4th);
+    /*
+    --m-offset-part-adjust: calc((var(--m-line-spacing) * 3em) - 1em);
+    --m-offset-chapter-adjust: calc(var(--m-page-margin) * .90);
+
+    --m-offset-title: calc(var(--m-content-offset-half) - var(--m-offset-chapter-adjust));
+    --m-offset-title-chapter: var(--m-offset-title);
+    --m-offset-title-part: calc(var(--m-offset-title-chapter) - var(--m-offset-part-adjust));
+
+    --m-offset-title-titlepage: calc(var(--m-offset-title) + var(--m-marginalia-margin-diff));
+    --m-offset-title-titlepage-interior: var(--m-offset-title);
+     */
 
     /*
      * DEFAULTS - section 3 - baseline #manuscript.narrative and
