@@ -384,15 +384,23 @@
                 padding-block-start: var(--m-offset-title-titlepage-interior);
             }
         }
-        & > div.title-page + section:is(.part,.chapter,.scene),
+        & > div.title-page + section:is(.part),
         & > section.part,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-offset-title-part);
+        }
+        & > div.title-page + section:is(.chapter,.scene),
         & section + section.chapter,
         & div.xxxxxxxx {
             padding-block-start: var(--m-offset-title);
         }
         & section.part > section:first-of-type.chapter,
         & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-two);
+            padding-block-start: var(--m-room-for-three);
+        }
+        & section.part:has(> .title > h2) > section:first-of-type.chapter,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-one);
         }
         & section:is(.chapter,.part) > section:first-of-type.scene,
         & div.xxxxxxxx {
