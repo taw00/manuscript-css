@@ -23,7 +23,7 @@
      * - USh: 5.5in x 8.5in (140m x 216mm) - US Half Letter
      * - A4:  210mm x 297mm (8.3in x 11.7in)
      * - A5:  148mm x 210mm (5.8in x 8.3in)
-     * - A6:  106mm x 148mm (4.1in x 5.8in)
+     * - A6:  105mm x 148mm (4.1in x 5.8in)
      */
     --m-page-widthUS:  8.5in;  --m-page-heightUS:   11in;  --m-page-marginUS:   1in;
     --m-page-widthUSh: 5.5in;  --m-page-heightUSh: 8.5in;  --m-page-marginUSh: .5in;
@@ -55,6 +55,7 @@
     --m-table-for-one: 1rem;
     --m-room-for-one: 1rem;
     --m-room-for-two: 2rem;
+    --m-room-for-three: 3rem;
     --m-room-for-four: 4rem;
     --m-room-for-six: 6rem;
     --m-room-for-eight: 8rem;
@@ -117,8 +118,8 @@
     /* White Space Markers */
     --m-marker90:    "\200B"; /* &zerowidthspace */
     --m-marker-zws:  "\200B"; /* &zerowidthspace */
-    --m-marker91:    "\00A0"; /* &nbps; */
-    --m-marker-nbsp: "\00A0"; /* &nbps; */
+    --m-marker91:    "\00A0"; /* &nbsp; */
+    --m-marker-nbsp: "\00A0"; /* &nbsp; */
 
     /* typefaces (fontstacks)
      * Manuscript standards, these or close equivalents:
