@@ -27,9 +27,8 @@
 
     --m-page-margin: var(--m-page-marginUS);
     --m-page-margin-min: 13vw; /* 13% of the viewport */
-    /*--m-marginalia-margin: calc(var(--m-page-margin) * 1.333);*/  /* looked good to my eye */
     --m-marginalia-margin: calc(var(--m-page-margin) + 2em); /* looked good to my eye */
-    --m-marginalia-margin-diff: calc(var(--m-marginalia-margin) - var(--m-page-margin)); /* to get it in inches */
+    --m-marginalia-margin-diff: calc(var(--m-marginalia-margin) - var(--m-page-margin));
     --m-content-height-interior: calc(var(--m-page-height) - var(--m-page-margin) - var(--m-marginalia-margin));
 
     --m-offset-part-adjust: calc((var(--m-line-spacing) * 3em) - 1em);
@@ -54,6 +53,8 @@
     }
     &:has(#vpage:is(.US,.us,.letter)) {
         --m-page-margin: var(--m-page-marginUS);
+        /* This stuff should auto-refacter after the above page margin adjust */
+        /*
         --m-marginalia-margin: calc(var(--m-page-margin) + 2em);
         --m-offset-chapter-adjust: calc(var(--m-page-margin) * .90);
         --m-offset-title: calc(var(--m-content-offset-half) - var(--m-offset-chapter-adjust));
@@ -61,6 +62,7 @@
         --m-offset-title-part: calc(var(--m-offset-title-chapter) - var(--m-offset-part-adjust));
         --m-offset-title-titlepage: calc(var(--m-offset-title) + var(--m-marginalia-margin-diff));
         --m-offset-title-titlepage-interior: var(--m-offset-title);
+        */
         --m-indent-narrative: var(--m-indentUS);
         --m-indent-foothang:  var(--m-indentUS);
     }
@@ -74,13 +76,17 @@
     }
     &:has(#vpage:is(.USh,.USH,.ush,.hletter)) { /* US half-letter */
         --m-page-margin: var(--m-page-marginUSh);
+        /* This stuff should auto-refacter after the above page margin adjust */
+        /*
         --m-marginalia-margin: calc(var(--m-page-margin) + 2em);
+        --m-marginalia-margin-diff: calc(var(--m-marginalia-margin) - var(--m-page-margin));
         --m-offset-chapter-adjust: calc(var(--m-page-margin) * .90);
         --m-offset-title: calc(var(--m-content-offset-half) - var(--m-offset-chapter-adjust));
         --m-offset-title-chapter: var(--m-offset-title);
         --m-offset-title-part: calc(var(--m-offset-title-chapter) - var(--m-offset-part-adjust));
         --m-offset-title-titlepage: calc(var(--m-offset-title) + var(--m-marginalia-margin-diff));
         --m-offset-title-titlepage-interior: var(--m-offset-title);
+        */
         --m-indent-narrative: var(--m-indentUSh);
         --m-indent-foothang:  var(--m-indentUSh);
     }
@@ -94,13 +100,17 @@
     }
     &:has(#vpage:is(.A4,.a4)) {
         --m-page-margin: var(--m-page-marginA4);
+        /* This stuff should auto-refacter after the above page margin adjust */
+        /*
         --m-marginalia-margin: calc(var(--m-page-margin) + 2em);
+        --m-marginalia-margin-diff: calc(var(--m-marginalia-margin) - var(--m-page-margin));
         --m-offset-chapter-adjust: calc(var(--m-page-margin) * .90);
         --m-offset-title: calc(var(--m-content-offset-half) - var(--m-offset-chapter-adjust));
         --m-offset-title-chapter: var(--m-offset-title);
         --m-offset-title-part: calc(var(--m-offset-title-chapter) - var(--m-offset-part-adjust));
         --m-offset-title-titlepage: calc(var(--m-offset-title) + var(--m-marginalia-margin-diff));
         --m-offset-title-titlepage-interior: var(--m-offset-title);
+        */
         --m-indent-narrative: var(--m-indentA4);
         --m-indent-foothang:  var(--m-indentA4);
     }
@@ -115,13 +125,17 @@
 
     &:has(#vpage:is(.A5,.a5)) {
         --m-page-margin: var(--m-page-marginA5);
+        /* This stuff should auto-refacter after the above page margin adjust */
+        /*
         --m-marginalia-margin: calc(var(--m-page-margin) + 2em);
+        --m-marginalia-margin-diff: calc(var(--m-marginalia-margin) - var(--m-page-margin));
         --m-offset-chapter-adjust: calc(var(--m-page-margin) * .90);
         --m-offset-title: calc(var(--m-content-offset-half) - var(--m-offset-chapter-adjust));
         --m-offset-title-chapter: var(--m-offset-title);
         --m-offset-title-part: calc(var(--m-offset-title-chapter) - var(--m-offset-part-adjust));
         --m-offset-title-titlepage: calc(var(--m-offset-title) + var(--m-marginalia-margin-diff));
         --m-offset-title-titlepage-interior: var(--m-offset-title);
+        */
         --m-indent-narrative: var(--m-indentA5);
         --m-indent-foothang:  var(--m-indentA5);
     }
@@ -135,13 +149,17 @@
     }
     &:has(#vpage:is(.A6,.a6)) {
         --m-page-margin: var(--m-page-marginA6);
+        /* This stuff should auto-refacter after the above page margin adjust */
+        /*
         --m-marginalia-margin: calc(var(--m-page-margin) + 2em);
+        --m-marginalia-margin-diff: calc(var(--m-marginalia-margin) - var(--m-page-margin));
         --m-offset-chapter-adjust: calc(var(--m-page-margin) * .90);
         --m-offset-title: calc(var(--m-content-offset-half) - var(--m-offset-chapter-adjust));
         --m-offset-title-chapter: var(--m-offset-title);
         --m-offset-title-part: calc(var(--m-offset-title-chapter) - var(--m-offset-part-adjust));
         --m-offset-title-titlepage: calc(var(--m-offset-title) + var(--m-marginalia-margin-diff));
         --m-offset-title-titlepage-interior: var(--m-offset-title);
+        */
         --m-indent-narrative: var(--m-indentA6);
         --m-indent-foothang:  var(--m-indentA6);
     }
@@ -288,21 +306,22 @@
             --m-page-break: page;
         }
         &:has(#vpage:is(.top-left-marginalia,.top-center-marginalia,.top-right-marginalia)) {
-            /* this is the default */
+            /* this permutation is the default */
         }
         &:has(#vpage:is(.bottom-left-marginalia,.bottom-center-marginalia,
                         .bottom-right-marginalia,.no-marginalia,.poetry)) {
-            /* page2+ top margins are uniform with the page1 margin in this
-             * case. the offsets can be set back to uniformity */
-            /* THIS NEEDS TO BE TESTED!!! */
-            --m-marginalia-margin: calc(var(--m-page-margin) + 2em);
+            /* THIS PERMUTATION NEEDS TO BE RETESTED!!! */
+            /* Page2+ top margins are uniform with the page1 margin in this
+             * case. The offsets must account for this uniformity */
             --m-offset-chapter-adjust: calc((var(--m-page-margin) * .90) + var(--m-marginalia-margin-diff));
-            --m-offset-title: calc(var(--m-content-offset-half) - var(--m-offset-chapter-adjust) + 1em);
+            /* This stuff should auto-refacter the chapter offset is changed */
+            /*
+            --m-offset-title: calc(var(--m-content-offset-half) - var(--m-offset-chapter-adjust));
             --m-offset-title-chapter: var(--m-offset-title);
-            --m-offset-title-part: calc(var(--m-offset-title-chapter) - var(--m-offset-part-adjust) + 1em);
-            --m-offset-title-titlepage: var(--m-offset-title);
-            --m-offset-title-titlepage: calc(var(--m-offset-title));
+            --m-offset-title-part: calc(var(--m-offset-title-chapter) - var(--m-offset-part-adjust));
             --m-offset-title-titlepage-interior: var(--m-offset-title);
+            */
+            --m-offset-title-titlepage: var(--m-offset-title);
         }
     }
 } /* end @media print */
