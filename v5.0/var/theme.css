@@ -14,7 +14,7 @@
  * - dark red: … red-themed
  * - dark cyan: … cyan-themed
  *
- * - vplain: no 3D framing
+ * - plain: no 3D framing
  * - vplain: no 3D framing, away from center of screen
  * - vvplain: sorta website-like, but aligned to the left and still same size
  *            of content
@@ -27,7 +27,6 @@
 @layer lm-var-theme {
 
 @media screen {
-
     :root {
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-default);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-default);
@@ -41,6 +40,20 @@
             --m-note-frame-color:                           var(--m-note-frame-color-default);
             --m-note-link-color:                             var(--m-note-link-color-default);
             --m-note-link-hover-color:                 var(--m-note-link-hover-color-default);
+            --m-vpage-frame: 0 0 20px var(--m-vpage-frame-color);
+            --m-vpage-frame-margin: 20px auto;
+        &:has(#vpage.plain) {
+            --m-vpage-frame: 0;
+        }
+        &:has(#vpage.vplain) {
+            --m-vpage-frame: 0;
+            --m-vpage-frame-margin: 0;
+        }
+        &:has(#vpage.vvplain) {
+            --m-paper-color: transparent;
+            --m-vpage-frame: 0;
+            --m-vpage-frame-margin: 0;
+        }
         &:has(#vpage:is(.dim)) {
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dim);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dim);
@@ -196,22 +209,7 @@
             }
         } /* end &:has(#vpage:is(.dark)) */
 
-        &:has(#vpage.plain) {
-            --m-vpage-frame: 0;
-        }
-        &:has(#vpage.vplain) {
-            --m-vpage-frame: 0;
-            --m-vpage-frame-margin: 0;
-        }
-        &:has(#vpage.vvplain) {
-            --m-paper-color: transparent;
-            --m-vpage-frame: 0;
-            --m-vpage-frame-margin: 0;
-        }
-        --m-vpage-frame: 0 0 20px var(--m-vpage-frame-color);
-        --m-vpage-frame-margin: 20px auto;
     } /* end :root */
-
 } /* end @media screen */
 
 
