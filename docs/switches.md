@@ -181,10 +181,15 @@ article:
 ### `#manuscript` Switches to Simplify the Appearance of Your Document
 
 <dl>
+    <dt>blind</dt>
+    <dd>For blind submissions (contests and the like). The blind class hides
+    the title page contact information and title byline. It will also do the
+    same for each poem. You will need to manually simplify your page headers if
+    you added a last name there.</dd>
     <dt>simple</dt>
-    <dd>(prose only) Strips out andy contacts and word counts. Great for
-    sharing with friends and family who don't need to see that formal element
-    of your manuscript.</dd>
+    <dd>(prose only) Strips out any header information and word counts. Great
+    for sharing with friends and family who don't need to see that formal
+    element of your manuscript.</dd>
     <dt>text-only</dt>
     <dd>(prose only) Strips out all contact info, titles, word count, all
     dinkuses, and the ending -30- marker. Gives you are "just show me the

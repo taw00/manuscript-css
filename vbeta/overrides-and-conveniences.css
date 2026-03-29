@@ -69,8 +69,14 @@
     }
 }
 
+/* .blind will hide contact information for the document and for each poem.
+ * It will remove the byline (h3) under each .title.
+ * And it will set the default marginalia to not include the page counter. */
+:root:has(#vpage > #manuscript.blind) {
+    --m-marginalia: "Story Title / " counter(page);
+}
 #vpage #manuscript.blind {
-    & .title-page {
+    & :is(.title-page, .poem) {
         & .contact {
             visibility: hidden;
         }
