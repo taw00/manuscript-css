@@ -47,6 +47,19 @@ from working draft to finalized manuscript.
 
 <div class="newsbox">
 
+>### NEWS - 2026-03-29 - Manuscript version 5.0 improvements
+>
+> FIX = fixed, and IMP = improved
+>
+> FIX: Fixed a line-spacing issue with titles (CSS specificity can be finicky)
+> IMP: Title offsets, while always within spec by default, now match the Shunn
+>      standard almost precisely.
+> IMP: the blind class creates a default template for the margin header that
+>      does not include the author's last name. :)
+> IMP: as always, some cleanup and doc updates.
+>
+> &ZeroWidthSpace;
+>
 >### NEWS - 2025-10-26 - Manuscript version 5.0 released
 >
 >- Automatically updated under the covers.
