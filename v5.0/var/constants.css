@@ -94,6 +94,7 @@
     --m-marker-3quote-dashes: var(--m-marker-3horbars);
     --m-marker-forward-slash: "/";
     --m-marker-tilde: "~";
+    --m-marker-eot: "♦";
 
     /* Manuscript End, common */
     --m-marker10:       "The End";
