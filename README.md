@@ -1,16 +1,19 @@
-# Write in a Text Editor. Export to Manuscript Format.<br>—for Creative Writers<br>
-
-> ### *Pure CSS to render your Markdown or HTML documents into industry standard manuscript format.*
+# Creative Writers: Draft in Markdown; Export to an Industry Standard Manuscript Format PDF
 
 Are you a writer? In particular, a writer of narrative works of fiction,
-narrative nonfiction, memoir, etc? Or a writer of poetry? Do prefer the
-simplicity of drafting your work in a text or markdown editor? Do you wish to
-share your drafts in a professional manner without having to port your work to
-a word processor?
+narrative nonfiction, memoir, or poetry? Do prefer the simplicity of drafting
+your work in a text or markdown editor? Do you wish to share your drafts in a
+professional manner without having to port your work to a word processor?
 
 Now, you can stay in your favorite text editor and still have a means to
 present your work in a professional manner for review, critique, or whatever,
 from working draft to finalized manuscript.
+
+How? You follow a relatively simple format for your document and then, when you
+are ready to share your words with others, convert it to PDF. Via the power of
+CSS (Cascading Style Sheet), your seemingly boring text file becomes an
+industry standard manuscript, a format that agents, publishers, and editors all
+know and love.
 
 ---
 
@@ -47,10 +50,14 @@ from working draft to finalized manuscript.
 
 <div class="newsbox">
 
->### NEWS - 2026-03-29 - Manuscript version 5.0 improvements
+>### NEWS - 2026-04-04 - Manuscript version 5.0 improvements
 >
 > FIX = fixed, and IMP = improved
 >
+> FIX: If using the Joplin application as your editor, and you publish your
+>      manuscript to the Joplin Cloud, it would not print correctly from that
+>      interface. Now it does: NOTE: only chrome can handle the paging and
+>      margins correctly upon print.
 > FIX: Fixed a line-spacing issue with titles (CSS specificity can be finicky)
 > IMP: Title offsets, while always within spec by default, now match the Shunn
 >      standard almost precisely.
