@@ -128,14 +128,8 @@
         width: 100%;
         max-width: 100%;
         margin: 0;
-        box-shadow: unset;
-    }
-
-    #vpage {
-        padding: 0.02px; /* otherwise margins (can) collapse */
-    }
-    #manuscript {
         padding: 0;
+        box-shadow: unset;
     }
 
     /* print rendering - do not allow code scrollbars */
