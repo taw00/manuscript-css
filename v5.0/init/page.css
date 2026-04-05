@@ -34,6 +34,7 @@
 
         /* We want the padding (page margin) to shrink on small screens */
         padding: min(var(--m-page-margin),var(--m-page-margin-min));
+
         /* the content container - the words and content, not the paper */
         & #manuscript {
             width: 100%; max-width: var(--m-content-width);
