@@ -12,7 +12,9 @@ markdown-mingling-with-html thing.
 
 _Note that we use the locally imported url `"/path/to/manuscript.css"` here. If
 you decided to host the repo on some webserver instead, it would be something
-like: `"https://yourwebsite.com/pub/css/manuscript-css/manuscript.css"`._
+like: `@import "https://yourwebsite.com/pub/css/manuscript-css/manuscript.css";`_
+
+_Also available: `@import "https://taw00.github.io/manuscript-css/manuscript-5.0.css";`_
 
 ```markdown
 <!-- Default Formatting: US letter, 1in margins, short-form narrative -->
