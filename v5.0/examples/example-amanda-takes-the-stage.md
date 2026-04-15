@@ -25,8 +25,7 @@ Published 2023-11-18 — County Lines, a Literary Journal, volume 11, 2024
 -->
 
 <style>
-    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css";
-    @import "../../manuscript-5.0.css";
+    @import "https://taw00.github.io/manuscript-css/manuscript-5.0.css";
     /*
     @import "../manuscript-5.0.css";
     @import "../../manuscript-5.0.css";

@@ -8,11 +8,12 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     /*
-    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css";
+    @import "https://taw00.github.io/manuscript-css/manuscript-5.0.css";
     @import "/full/path/to/the/repository/for/manuscript-css/manuscript-5.0.css";
     */
     @import "../manuscript-5.0.css";
     @import "../../manuscript-5.0.css";
+
     :root {
         --m-marginalia: "Penlastname / Long-form Prose / " counter(page);
     }

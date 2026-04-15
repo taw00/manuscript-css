@@ -69,8 +69,7 @@ h1 {
 <style>
     @import "https://toddwarner.io/pub/css/tw-font-sans-overpass.css";
     @import "https://toddwarner.io/pub/css/tw-font-serif-crimson.css";
-    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css";
-    @import "../../manuscript-5.0.css";
+    @import "https://taw00.github.io/manuscript-css/manuscript-5.0.css";
     /*
     @import "../manuscript-5.0.css";
     @import "../../manuscript-5.0.css";

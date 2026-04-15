@@ -14,7 +14,7 @@ line count, as well as a title, and then the poem.
 
 <style>
     /*
-    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css";
+    @import "https://taw00.github.io/manuscript-css/manuscript-beta.css";
     */
     @import "../manuscript-beta.css";
     @import "../../manuscript-beta.css";

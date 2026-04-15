@@ -5,7 +5,7 @@ Template: long-form story - novellette, novella, novel, etc.
 
 <style>
     /*
-    @import "https://toddwarner.io/pub/css/manuscript-css/manuscript-beta.css";
+    @import "https://taw00.github.io/manuscript-css/manuscript-beta.css";
     */
     @import "../manuscript-beta.css";
     @import "../../manuscript-beta.css";

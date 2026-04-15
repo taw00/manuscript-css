@@ -372,11 +372,10 @@ that is the case, then use VSCodium just for editing and previewing and
 > These editors block importing (`@import`) from the filesystem. If you want to
 > use the previewer and renderer in VSCodium, you will have to host the
 > `manuscript-css` folder on the web somewhere. Or in the meantime, as of this
-> writing, just use my instance:
+> writing, just use it directly from github:
 > ```markdown
-> @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
+> @import "https://taw00.github.io/manuscript-css/manuscript.css";
 > ```
-> That is not guaranteed to be a functional link forever though.</small>
 
 **Side note**  
 With Joplin, you can use its native editor, or any other editor. If you are
