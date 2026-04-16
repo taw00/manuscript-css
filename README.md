@@ -327,8 +327,8 @@ like.
 
 - Method 1 - in-app: This can done natively with Joplin, Ghostwriter, or VSCodium/VSCode
 - Method 2 - in-browser: This is done using a Chrome-based browser and the
-  *Markdown Viewer* extension. Or by viewing an exported HTML document with the
-  browser.
+  [Markdown Viewer extension](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk).
+  Or by viewing an exported HTML document with the browser.
 
 ### Step 4 - Export the manuscript to a PDF document
 
