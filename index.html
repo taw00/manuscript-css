@@ -61,11 +61,11 @@ format.<br />
 <small>Note: Some publishers (and nearly all traditional book publishers)
 insist on your work being submitted in <code>.docx</code> format. For that, use
 this process until you are absolutely ready to submit to such a publisher and
-then port the project to <code>.docx</code> using <a
-href="https://www.onlyoffice.com/">OnlyOffice</a> or <a
-href="https://www.libreoffice.org/">LibreOffice</a> and MS Word (Google Docs is
-less flexible, but it works). More information on some of the techniques to do
-that are listed later in this document.</small></li>
+then <a href="#porting-your-finished-draft-to-docx">port the project</a to
+<code>.docx</code> using <a href="https://www.onlyoffice.com/">OnlyOffice</a>
+or <a href="https://www.libreoffice.org/">LibreOffice</a> or MS Word (Google
+Docs is less flexible, but it works). More information on some of the
+techniques to do that are listed later in this document.</small></li>
 </ol>
 
 
@@ -576,28 +576,14 @@ repository.<br />
 <p>&ZeroWidthSpace;</p>
 <p>&ZeroWidthSpace;</p>
 
-<h1 id="other-things">Other things</h1>
-<h3 id="whats-completely-untested">What's completely untested</h3>
-<ul>
-<li>Markdown-style Tables - I have done no work to make sure they look
-right in a manuscript. If this is something you would like to see … let
-me know. Also, give me examples of how it should look.</li>
-<li>I have also done no styling for images. If you want to add images to
-your document, you are on your own. For now. I'll probably play with
-that in the future.</li>
-</ul>
-<h3
-id="porting-your-finished-draft-to-onlyoffice-libreoffice-or-any-other">Porting
-your finished draft to <a href="https://www.onlyoffice.com/">OnlyOffice</a>, <a
+<h1
+id="porting-your-finished-draft-to-docx">Porting your finished draft to .docx</h1
+
+(and therefore <a href="https://www.onlyoffice.com/">OnlyOffice</a>, <a
 href="https://www.libreoffice.org/">LibreOffice</a>, or any other word
-processor</h3>
-<p><strong>Pandoc to .odt to .docx - NOT RECOMMENDED</strong></p>
-<p>In theory, you could use Pandoc to generate a functional, but messy
-LibreOffice <code>.odt</code> document and then edit it until it is
-properly formatted. But … that document will be MESSY. I do not
-recommend, but here is how you do that.</p>
-<pre class="plaintext"><code>pandoc -o your-manuscript.odt your-manuscript.md</code></pre>
-<p><strong>Word (.docx) Templates</strong></p>
+processor)
+
+<h3>Word (.docx) Templates</h3>
 <p><i>(Note, DO NOT USE WORD 365 ONLINE! It cannot manage saved styles correctly.)</i></p>
 <p>I have included MS Word-compatible templates in this repository
 (templates/word-templates). Copy the appropriate template into a working
@@ -622,6 +608,7 @@ earlier.</p>
 <p><a href="https://www.onlyoffice.com/">OnlyOffice</a> seems to generate more
 true to MS Word <code>.docx</code> formatting. Then <a
 href="https://www.libreoffice.org/">LibreOffice</a>. Then Google Docs.</p>
+
 <h3 id="my-workflow-as-a-writer">My workflow as a writer:</h3>
 <ol type="1">
 <li><p><strong>0-draft:</strong> handwritten, with pen-and-ink, in a
@@ -649,6 +636,33 @@ settings and will very likely ruin your manuscript. I suspect they will
 fix this soonish, but it has been a problem for some time now.</p></li>
 <li><p><strong>Brace myself for the rejection.</strong> ;)</p></li>
 </ol>
+
+<hr />
+<hr />
+
+
+<p>&ZeroWidthSpace;</p>
+<p>&ZeroWidthSpace;</p>
+
+<h1 id="other-things">Other things</h1>
+<h3 id="whats-completely-untested">What's completely untested</h3>
+<ul>
+<li>Markdown-style Tables - I have done no work to make sure they look
+right in a manuscript. If this is something you would like to see … let
+me know. Also, give me examples of how it should look.</li>
+<li>I have also done no styling for images. If you want to add images to
+your document, you are on your own. For now. I'll probably play with
+that in the future.</li>
+</ul>
+
+<h3>Pandoc to .odt to .docx - NOT RECOMMENDED</h3>
+<p>In theory, you could use Pandoc to generate a functional, but messy
+LibreOffice <code>.odt</code> document and then edit it until it is
+properly formatted. But … that document will be MESSY. I do not
+recommend, but here is how you do that.</p>
+<pre class="plaintext"><code>pandoc -o your-manuscript.odt your-manuscript.md</code></pre>
+
+
 <h3 id="is-todd-a-joplin-shill">Is Todd a Joplin shill?</h3>
 <p>Nope. It's just the best application that I have found for this kind
 of work.</p>
