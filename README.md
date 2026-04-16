@@ -48,8 +48,8 @@ know and love.
 7. **Submit your work to publishers** who accept manuscripts in **PDF format**.
 8. **Submit your work to publishers** who only accept manuscripts in **DOCX format**.\
    Some publishers (and nearly all traditional book publishers) insist on your
-   work being submitted in `.docx` format. For them, once your manuscript is
-   finalized with the above process, then [port the project to
+   work being submitted in `.docx` format. For this scenario, (1) finalize your
+   manuscript with the above process, then (2) [port the project to
    `.docx`](#porting-your-finished-draft-to-docx).
 
 
