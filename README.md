@@ -531,6 +531,8 @@ pandoc -o your-manuscript.odt your-manuscript.md
 
 **Word (.docx) Templates**
 
+*(Note, DO NOT USE WORD 365 ONLINE! It cannot manage saved styles correctly.)*
+
 I have included MS Word-compatible templates in this repository
 (`templates/word-templates`). Copy the appropriate template into a working
 folder, rename it to your story, and copy-and-paste from your generated PDF
@@ -540,8 +542,6 @@ it goes faster than it sounds.
 As you work with one of those templates, notice the custom styling used for
 each manuscript-specific element within the document. If you are not familiar
 with managing your document using styles, now is the time to learn.
-
-**(Note, DO NOT USE WORD 365 ONLINE! It cannot manage saved styles correctly.)**
 
 <!--
 **Google Docs**
