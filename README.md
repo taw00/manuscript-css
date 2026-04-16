@@ -375,6 +375,7 @@ that is the case, then use VSCodium just for editing and previewing and
 > ```markdown
 > @import "https://taw00.github.io/manuscript-css/manuscript.css";
 > ```
+> </small>
 
 **Side note**  
 With Joplin, you can use its native editor, or any other editor. If you are
