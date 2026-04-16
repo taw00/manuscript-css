@@ -605,7 +605,7 @@ Google Docs.
   document, you are on your own. For now. I'll probably play with that in the
   future.
 
-### Pandoc to .odt to .docx - NOT RECOMMENDED
+### Pandoc used to take .md or .html to .odt to .docx - DON'T DO THIS
 
 In theory, you could use Pandoc to generate a functional, but messy
 [LibreOffice](https://www.libreoffice.org/) `.odt` document and then edit it
