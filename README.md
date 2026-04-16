@@ -32,7 +32,8 @@ know and love.
    For example, perhaps `manuscript-prose-short.md` to `mylastname-mystory.md`.
 3. Open that copied template in your favorite text editor and draft your novel,
    story, or poetry. A short story in this example.
-4. Export your work to PDF. For example, `mylastname-mystory.pdf`.  
+4. [Export your work to PDF](#step-4---export-the-manuscript-to-a-pdf-document).
+   For example, `mylastname-mystory.pdf`.  
    Note that the work is now in industry standard
    [short story](https://format.ms/story), [novel](https://format.ms/novel), or
    [poetry](https://format.ms/poetry) manuscript format.
