@@ -49,10 +49,7 @@ know and love.
    <small>Note: Some publishers (and nearly all traditional book publishers)
    insist on your work being submitted in `.docx` format. For them, once your
    manuscript is finalized with the above process, then
-   [port the project to `.docx`](#porting-your-finished-draft-to-docx) using
-   [OnlyOffice](https://www.onlyoffice.com/) or
-   [LibreOffice](https://www.libreoffice.org/) or MS Word (Google Docs is less
-   flexible, but it works).</small>
+   [port the project to `.docx`](#porting-your-finished-draft-to-docx).</small>
 
 
 &ZeroWidthSpace;
