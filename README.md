@@ -21,6 +21,11 @@ know and love.
 
 ---
 
+
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
+
 ## HOWTO
 
 *More detail can be found [here](#howto---in-more-detail)*
@@ -115,6 +120,12 @@ know and love.
 
 </div>
 
+
+
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
+
 # Manuscript formatting?
 
 Take a look at the PDFs in the [examples folder](./examples/) in this
@@ -130,6 +141,11 @@ review. Here are some screenshots of the results . . .
 <a href="examples/example-prose-long.pdf"><img src="misc/README-long-prose.jpg" width="100%" alt="long story (novel) example" /></a>
 
 <div style="clear: both;"></div>
+
+
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
 
 # What is NOT supported
 
@@ -154,6 +170,10 @@ produce a manuscript), others. This project can do marvelous things with HTML:
 <https://pagedjs.org/>. And if you are data-scientist, check out
 <https://bookdown.org/>.
 
+
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
 
 # What IS supported
 
@@ -235,6 +255,10 @@ painful to use, IMHO.
 
 
 
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
+
 # HOWTO - in more detail
 
 ## First, download this repository
@@ -270,8 +294,6 @@ text with your contact information, your story, etc. **(3) Preview it** either
 in-application or in a Chrome browser. Then **(4) export to PDF** using either
 Joplin (the direct way) or a Chrome-based browser (Firefox cannot do this,
 unfortunately).
-
-### Step 1 - Copying from a template
 
 Choose a template to from the `manuscript-css/templates/` folder. For your
 first time, I recommend `template-prose-short.md`. Rename it to whatever
@@ -310,7 +332,6 @@ like.
   HTML, then use your browser (Chromium-based only!) to view it and "print to
   file."
 
-&ZeroWidthSpace;
 
 &ZeroWidthSpace;
 
@@ -470,6 +491,11 @@ Questions? Comments? Post them in the Discussions section of this repository.
 ---
 ---
 
+
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
+
 # Other things
 
 ### What's completely untested
@@ -575,6 +601,11 @@ It's not complicated.
 
 ---
 ---
+
+
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
 
 # Addendum: manuscript format guidelines
 
