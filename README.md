@@ -54,16 +54,17 @@ know and love.
 >
 > FIX = fixed, and IMP = improved
 >
-> FIX: If using the Joplin application as your editor, and you publish your
->      manuscript to the Joplin Cloud, it would not print correctly from that
->      interface. Now it does: NOTE: only chrome can handle the paging and
->      margins correctly upon print.
-> FIX: Fixed a line-spacing issue with titles (CSS specificity can be finicky)
-> IMP: Title offsets, while always within spec by default, now match the Shunn
->      standard almost precisely.
-> IMP: the blind class creates a default template for the margin header that
->      does not include the author's last name. :)
-> IMP: as always, some cleanup and doc updates.
+> - FIX: If using the Joplin application as your editor, and you publish your
+>        manuscript to the Joplin Cloud, it would not print correctly from that
+>        interface. Now it does: NOTE: only chrome can handle the paging and
+>        margins correctly upon print.
+> - FIX: Fixed a line-spacing issue with titles (CSS specificity can be
+>        finicky)
+> - IMP: Title offsets, while always within spec by default, now match the
+>        Shunn standard almost precisely.
+> - IMP: the blind class creates a default template for the margin header that
+>        does not include the author's last name. :)
+> - IMP: as always, some cleanup and doc updates.
 >
 > &ZeroWidthSpace;
 >
@@ -225,9 +226,7 @@ painful to use, IMHO.
 - [Apostrophe](https://en.wikipedia.org/wiki/Apostrophe_(text_editor)) - Linux
   only. Love the focus and Hemingway modes and accurate rendering, but it
   crashes and freezes far too often.
-- [Firefox](https://www.firefox.com/en-US/) and derivatives, like
-  [Zen](https://zen-browser.app/) and [LibreWolf](https://librewolf.net/) for
-  PDF rendering.  
+- [Firefox](https://www.firefox.com/en-US/) and derivatives ([Zen](https://zen-browser.app/), [LibreWolf](https://librewolf.net/)) can't render PDFs correctly.\
   Zen is actually my go-to browser, but the Firefox engine cannot render an
   accurate PDF for prose if that prose uses @page marginalia. (It works fine
   for poetry since the poetry manuscript rendering doesn't use @page margin
