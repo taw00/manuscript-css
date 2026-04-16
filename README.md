@@ -30,26 +30,25 @@ know and love.
 
 *More detail can be found [here](#howto---in-more-detail)*
 
-1. Download this repository.
-2. Copy one of the [templates](./templates) that best matches your
+1. **Download this repository.**
+2. **Copy one of the [templates](./templates)** that best matches your
    project—novel, short story, or poems—to a new
-   [markdown](https://www.markdownguide.org/) file.  
+   [markdown](https://www.markdownguide.org/) file.\
    For example, perhaps `manuscript-prose-short.md` to `mylastname-mystory.md`.
-3. Open that copied template in your favorite text editor and draft your novel,
+3. **Edit the renamed template** with your favorite text editor and draft your novel,
    story, or poetry. A short story in this example.
-4. [Export your work to PDF](#step-4---export-the-manuscript-to-a-pdf-document).
-   For example, `mylastname-mystory.pdf`.  
-   Note that the work is now in industry standard
+4. [**Export your work to PDF**](#step-4---export-the-manuscript-to-a-pdf-document)\
+   For example, `mylastname-mystory.pdf`. Note, the work is now in industry standard
    [short story](https://format.ms/story), [novel](https://format.ms/novel), or
    [poetry](https://format.ms/poetry) manuscript format.
-5. Submit your work for review by friends, family, and your critique group.
-6. Revise revise revise …
-7. Submit your work to publishers who accept manuscripts in PDF format.  
-8. Submit your work to publishers who only accept manuscripts in DOCX format.\
-   <small>Note: Some publishers (and nearly all traditional book publishers)
+5. **Submit your work for review** by friends, family, and your critique group.
+6. **Revise revise revise**
+7. **Submit your work to publishers** who accept manuscripts in **PDF format**.
+8. **Submit your work to publishers** who only accept manuscripts in **DOCX format**.\
+   Note: Some publishers (and nearly all traditional book publishers)
    insist on your work being submitted in `.docx` format. For them, once your
    manuscript is finalized with the above process, then
-   [port the project to `.docx`](#porting-your-finished-draft-to-docx).</small>
+   [port the project to `.docx`](#porting-your-finished-draft-to-docx).
 
 
 &ZeroWidthSpace;
