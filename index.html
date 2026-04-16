@@ -1,0 +1,668 @@
+<style>
+    body { width: 75%; margin-inline: auto; }
+    body img { width: 100%; }
+</style>
+
+<h1
+id="creative-writers-draft-in-markdown-export-to-an-industry-standard-manuscript-format-pdf">Creative
+Writers: Draft in Markdown; Export to an Industry Standard Manuscript
+Format PDF</h1>
+<p>Are you a writer? In particular, a writer of narrative works of
+fiction, narrative nonfiction, memoir, or poetry? Do prefer the
+simplicity of drafting your work in a text or markdown editor? Do you
+wish to share your drafts in a professional manner without having to
+port your work to a word processor?</p>
+<p>Now, you can stay in your favorite text editor and still have a means
+to present your work in a professional manner for review, critique, or
+whatever, from working draft to finalized manuscript.</p>
+<p>How? You follow a relatively simple format for your document and
+then, when you are ready to share your words with others, convert it to
+PDF. Via the power of CSS (Cascading Style Sheet), your seemingly boring
+text file becomes an industry standard manuscript, a format that agents,
+publishers, and editors all know and love.</p>
+<hr />
+<p><img src="misc/README-three-phases.png"
+alt="README-three-phases.png" /></p>
+<hr />
+<h2 id="howto">HOWTO</h2>
+<p><em>More detail can be found <a
+href="#howto---in-more-detail">here</a></em></p>
+<ol type="1">
+<li>Download this repository.</li>
+<li>Copy one of the <a href="./templates">templates</a> that best
+matches your project—novel, short story, or poems—to a new <a
+href="https://www.markdownguide.org/">markdown</a> file.<br />
+For example, perhaps <code>manuscript-prose-short.md</code> to
+<code>mylastname-mystory.md</code>.</li>
+<li>Open that copied template in your favorite text editor and draft
+your novel, story, or poetry. A short story in this example.</li>
+<li>Export your work to PDF. For example,
+<code>mylastname-mystory.pdf</code>.<br />
+Note that the work is now in industry standard <a
+href="https://format.ms/story">short story</a>, <a
+href="https://format.ms/novel">novel</a>, or <a
+href="https://format.ms/poetry">poetry</a> manuscript format.</li>
+<li>Submit your work for review by friends, family, and your critique
+group.</li>
+<li>Revise revise revise …</li>
+<li>Submit your work to publishers who accept manuscripts in PDF
+format.<br />
+<small>Note: Some publishers (and nearly all traditional book
+publishers) insist on your work being submitted in <code>.docx</code>
+format. For that, use this process until you are absolutely ready to
+submit to such a publisher and then port the project to
+<code>.docx</code> using OnlyOffice or LibreOffice and MS Word (Google
+Docs is less flexible, but it works). More information on some of the
+techniques to do that are listed later in this document.</small></li>
+</ol>
+<hr />
+<div class="newsbox">
+
+<blockquote>
+<h3 id="news---2026-04-04---manuscript-version-50-improvements">NEWS -
+2026-04-04 - Manuscript version 5.0 improvements</h3>
+<p>FIX = fixed, and IMP = improved</p>
+<p>FIX: If using the Joplin application as your editor, and you publish
+your manuscript to the Joplin Cloud, it would not print correctly from
+that interface. Now it does: NOTE: only chrome can handle the paging and
+margins correctly upon print. FIX: Fixed a line-spacing issue with
+titles (CSS specificity can be finicky) IMP: Title offsets, while always
+within spec by default, now match the Shunn standard almost precisely.
+IMP: the blind class creates a default template for the margin header
+that does not include the author's last name. :) IMP: as always, some
+cleanup and doc updates.</p>
+<p>​</p>
+<h3 id="news---2025-10-26---manuscript-version-50-released">NEWS -
+2025-10-26 - Manuscript version 5.0 released</h3>
+<ul>
+<li>Automatically updated under the covers.</li>
+<li>But <strong>there are breaking changes!</strong><br />
+To use the older version, configure your markdown or html documents to
+use <code>manuscript-4.0.css</code> instead of
+<code>manuscript.css</code>.</li>
+<li>What's new:
+<ul>
+<li>all m-* classes droped the m- from their names:<br />
+<code>m-title</code> -&gt; <code>title</code>; <code>m-part</code>,
+<code>m-chapter</code>, <code>m-scene</code> -&gt; <code>part</code>,
+<code>chapter</code>, <code>scene</code>; etc.</li>
+<li>class <code>title-page</code> wraps title page stuff:
+<code>contact</code>, <code>count</code>, <code>title</code> to form a
+full-height page, and therefore …</li>
+<li>title pages are now correctly managed, represented, and
+predictable.</li>
+<li><code>title-page</code> structure has changed and class
+<code>m-facts</code> has been replaced with <code>count</code>. Please
+refer to <code>v5.0/templates</code> and <code>v5.0/examples</code> for
+a better understanding of the changes.</li>
+<li><code>title</code> offsets for each <code>&lt;section&gt;</code> are
+now spaced absolutely correctly.</li>
+<li><code>short</code> stories will never have a page break (even if the
+author decides to use <code>parts</code> and <code>chapters</code> for
+whatever reason)</li>
+<li><code>poem</code> class can't be used in 'short' or 'long'
+narratives, only in 'poetry' documents. For short stories and other
+narratives, use the <code>x-poem</code> class instead (used for
+arbitrary insertion of poems).</li>
+<li>simulated page breaks are more sensible and accurate</li>
+<li><code>no-simulation</code> switch added to turn off page breaks</li>
+<li><code>classic</code> switch added if you really really want courier
+as your typeface.</li>
+</ul></li>
+</ul>
+<p>​</p>
+<h3 id="news---2025-09-12---manuscript-version-40-released">NEWS -
+2025-09-12 - Manuscript version 4.0 released</h3>
+<ul>
+<li>Automatically updated under the covers.</li>
+<li>But <strong>there are breaking changes!</strong><br />
+To use the older version, configure your markdown or html documents to
+use <code>manuscript-3.0.css</code> instead of
+<code>manuscript.css</code>.</li>
+<li>What's new:
+<ul>
+<li><strong>poetry manuscripts finally achieve 80% compliance with the
+shunn.net manuscript spec</strong> (It will not, a may never, add a
+continuance phrase on pages beyond the first page of a poem.)</li>
+<li>id <code>m-contact</code> is now class <code>m-contact</code> since
+we use it more than once within the document.</li>
+<li>a major refactor and improvement across the board, much of which has
+been backported to 3.0</li>
+</ul></li>
+</ul>
+</blockquote>
+</div>
+
+<h1 id="manuscript-formatting">Manuscript formatting?</h1>
+<p>Take a look at the PDFs in the <a href="./examples/">examples
+folder</a> in this repository. These manuscripts were rendered from
+their corresponding markdown-formatted draft documents. No fluff and
+easy to read and review. Here are some screenshots of the results . .
+.</p>
+<p><a href="examples/example-poe-the-tell-tale-heart.pdf"><img style="float: left; width: 49%;" src="misc/README-short-story-poe.jpg" alt="short story: The Tell-Tale Heart (Poe)" /></a>
+<a href="examples/example-lovecraft-at-the-mountains-of-madness.pdf"><img style="float: left; width: 49%;" src="misc/README-long-story-lovecraft.jpg" alt="long story: At the Mountains of Madness (Lovecraft)" /></a></p>
+<div style="clear: both;"></div>
+
+<p><a href="examples/example-prose-long.pdf"><img src="misc/README-long-prose.jpg" width="100%" alt="long story (novel) example" /></a></p>
+<div style="clear: both;"></div>
+
+<h1 id="what-is-not-supported">What is NOT supported</h1>
+<h3 id="1-this-process-is-not-for-book-production">1. This process is
+not for book production</h3>
+<p>A manuscript is not a formatted book. It's an industry standard
+format used to share your work with other humans for review and comment,
+and to submit to publishers.</p>
+<p>To create a book for self-publishing, look into tools like <a
+href="https://reedsy.com/write-a-book">Reedsy</a>, <a
+href="https://www.scribus.net/">Scribus</a>, Vellum, InDesign, and
+Atticus.</p>
+<h3 id="2-this-process-does-not-easily-produce-a-docx-document">2. This
+process does not easily produce a <code>.docx</code> document.</h3>
+<p>Many/most publishers require your manuscript to formatted as a
+Microsoft Word <code>.docx</code> file. (Word 2007 seems to be the most
+portable.) Some publishers and agents, especially the better ones, will
+accept a <code>.pdf</code>, but most require <code>.docx</code>. There
+are ways to automate generating <code>.docx</code> files, but it's not a
+piece of cake and never does a good job. Read more about that in <a
+href="docs/structure-summary.md">structure-summary.md</a>.</p>
+<p>Also check out the myriad of authoring platforms out there:
+Scrivener, Novlr, LivingWriter, Dabble, Ulysses, Storyist (Apple-only,
+blech!), Final Draft (for screenwriters), Quoll Writer (Windows-only and
+not sure if Quoll Writer can produce a manuscript), others. This project
+can do marvelous things with HTML: <a
+href="https://pagedjs.org/">https://pagedjs.org/</a>. And if you are
+data-scientist, check out <a
+href="https://bookdown.org/">https://bookdown.org/</a>.</p>
+<h1 id="what-is-supported">What IS supported</h1>
+<p>Manuscript formatting similar to what many call Shunn Formatting: <a
+href="https://www.shunn.net/format/">https://www.shunn.net/format/</a>
+(the "modern" formats)</p>
+<ul>
+<li>Prose manuscripts: short (scenes), long (chapters, scenes),
+narrative, nonnarrative</li>
+<li>Poetry manuscripts: single or many poem manuscripts</li>
+<li>US Letter, A4, and, though you shouldn't, A5, A6, US
+Half-letter</li>
+<li>If you are CSS savvy, easy-to-alter settings for nearly everything
+(fonts, margins, spacing, even the dinkuses and the -30-
+indicator).</li>
+</ul>
+<h3 id="recommended-editors-and-tools">Recommended Editors and
+Tools</h3>
+<ul>
+<li>Any text editor
+<ul>
+<li>Edit - any editor can be used to edit your manuscript.</li>
+</ul></li>
+<li><a href="https://joplinapp.com">Joplin</a> - the (mostly) seamless
+experience
+<ul>
+<li>Edit</li>
+</ul>
+<ul>
+<li>Preview: renders an accurate preview of the manuscript</li>
+</ul>
+<ul>
+<li>HTML: export to compliant HTML file</li>
+<li>PDF: export to compliant PDF file</li>
+<li>Recommended: install the <em>Import Local CSS</em> plugin so you can
+import the CSS from a webhost, or from your local harddrive</li>
+</ul></li>
+<li><a href="https://vscodium.com/">VSCodium</a>, the open-source
+version of <a href="https://code.visualstudio.com/">VSCode</a>
+<ul>
+<li>Edit</li>
+</ul>
+<ul>
+<li>Preview: renders an accurate preview of the manuscript</li>
+</ul>
+<ul>
+<li>HTML: export to compliant HTML file</li>
+<li>PDF: export to compliant HTML file …
+<ul>
+<li>then export to compliant PDF using a Chromium-based browser<br />
+(Chrome, Vivaldi, Edge, Safari (desktop only), Opera, etc.)<br />
+<em><small>NOTE: Firefox-based browsers CAN VIEW an the exported HTML
+document just fine, but it CANNOT render the PDF correctly because they
+cannot process @page rules correctly.</small></em></li>
+</ul></li>
+<li><strong>Required:</strong> install the <em>Markdown All-in-One</em>
+extension</li>
+<li><strong>Limitations:</strong> (1) you can't export to PDF directly
+within VSCodium/VSCode (not accurately), and (2) you MUST import
+manuscript.css from a webhost</li>
+</ul></li>
+<li><a href="https://ghostwriter.kde.org/">Ghostwriter</a> - love this
+editor
+<ul>
+<li>Edit: has focus and Hemingway modes!</li>
+<li>Preview: renders an accurate preview of the manuscript</li>
+<li>HTML: export to compliant HTML file</li>
+<li>Caveat: <em>terrible</em> syntax highlighting</li>
+</ul></li>
+</ul>
+<h3 id="-tools">… tools:</h3>
+<ul>
+<li><p>Chrome browser + <a
+href="https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk">Markdown
+Viewer</a> extension</p>
+<ul>
+<li>Preview: render a preview of the manuscript, whether in markdown
+format or HTML.</li>
+<li>PDF: convert your markdown document to PDF: <code>CTRL-P</code> in
+the browser (super simple).</li>
+</ul></li>
+<li><p><a href="https://pandoc.org/">Pandoc</a> - markdown to HTML
+command line tool</p>
+<ul>
+<li>HTML: convert your saved markdown document to a compliant HTML
+document. From the commandline! :)</li>
+<li>I only include this here for the folks who like to experiment.</li>
+</ul></li>
+</ul>
+<h3 id="editors-and-tools-to-specifically-avoid">Editors and Tools to
+Specifically Avoid</h3>
+<p>Note, I have only tested maybe a dozen editors. These ones are
+particularly painful to use, IMHO.</p>
+<ul>
+<li><a href="https://obsidian.md/">Obsidian</a> - A Joplin competitor,
+but without Joplin's functionality. Terrible at importing and exporting.
+Can't render anything correctly.</li>
+<li><a href="https://atom.io/">Atom</a> - DEAD PROJECT. Once,
+wildly-popular. Now unmaintained. VSCodium/VSCode replaces this editor's
+look and feel.</li>
+<li><a href="https://github.com/marktext/marktext">Marktext</a> - DEAD
+PROJECT. Once, a great, minimalistic writer's editor. Now
+unmaintained.</li>
+<li><a
+href="https://en.wikipedia.org/wiki/Apostrophe_(text_editor)">Apostrophe</a>
+- Linux only. Love the focus and Hemingway modes and accurate rendering,
+but it crashes and freezes far too often.</li>
+<li><a href="https://www.firefox.com/en-US/">Firefox</a> and
+derivatives, like <a href="https://zen-browser.app/">Zen</a> and <a
+href="https://librewolf.net/">LibreWolf</a> for PDF rendering.<br />
+Zen is actually my go-to browser, but the Firefox engine cannot render
+an accurate PDF for prose if that prose uses @page marginalia. (It works
+fine for poetry since the poetry manuscript rendering doesn't use @page
+margin headers.)</li>
+</ul>
+<h1 id="howto---in-more-detail">HOWTO - in more detail</h1>
+<h2 id="first-download-this-repository">First, download this
+repository</h2>
+<ul>
+<li><p>Command line: copy (clone) the <code>git</code> repository:</p>
+<pre class="shell"><code>git clone https://github.com/taw00/manuscript-css/
+cd manuscript-css</code></pre></li>
+<li><p>Via a browser:</p>
+<ul>
+<li>browse to <a
+href="https://github.com/taw00/manuscript-css/">https://github.com/taw00/manuscript-css/</a></li>
+<li>Click <code>Code</code> (big blue button) &gt;
+<code>Download zip</code></li>
+<li>Unzip the <code>manuscript-css-main.zip</code> file.</li>
+<li>Change that name to <code>manuscript-css</code> if you like.</li>
+<li><code>cd manuscript-css</code></li>
+<li>Recommend:<br />
+If you own a webserver somewhere, stick this repo in your
+<code>/pub/</code> directory so you can import it over the web. (Not a
+needed step if using Joplin as your editor.)</li>
+</ul></li>
+</ul>
+<p>Check out the example manuscripts in this repository in their
+original markdown and then as PDFs. Use one of the <a
+href="./templates/">templates</a> as a template for your own work. And
+if you are already familiar with converting markdown to HTML and then
+HTML to PDF then that should be enough to get you going.</p>
+<h2 id="process-summary---super-high-level">Process summary - super
+high-level</h2>
+<p><strong>(1) Copy and rename</strong> one of <code>.md</code>
+templates. <strong>(2) Edit and replace</strong> the text with your
+contact information, your story, etc. <strong>(3) Preview it</strong>
+either in-application or in a Chrome browser. Then <strong>(4) export to
+PDF</strong> using either Joplin (the direct way) or a Chrome-based
+browser (Firefox cannot do this, unfortunately).</p>
+<h3 id="step-1---copying-from-a-template">Step 1 - Copying from a
+template</h3>
+<p>Choose a template to from the <code>manuscript-css/templates/</code>
+folder. For your first time, I recommend
+<code>template-prose-short.md</code>. Rename it to whatever makes sense
+to you like <code>lastname-storytitle.md</code> which is a pretty
+standard filename for a manuscript.</p>
+<h3 id="step-2---edit-the-markdown-document">Step 2 - Edit the markdown
+document</h3>
+<p>Use any editor: <a href="https://joplinapp.org">Joplin</a> (best
+experience), <a href="https://vscodium.com/">VSCodium</a>, <a
+href="https://ghostwriter.kde.org/">Ghostwriter</a>, <a
+href="https://zed.dev/">Zed editor</a>, <a
+href="https://www.vim.org/">Vim</a> (experts only), <a
+href="https://apps.gnome.org/TextEditor/">Gnome Text Editor</a>, even
+Notepad if you like.</p>
+<ul>
+<li>Open that markdown document (<code>lastname-storytitle.md</code> in
+our example) in your favorite editor.</li>
+<li>Replace the templated content with yours</li>
+<li>Write your story, scene by scene. (Or if a poetry collection, poem
+by poem.)</li>
+</ul>
+<h3 id="step-3---preview-the-manuscript">Step 3 - Preview the
+manuscript</h3>
+<ul>
+<li>Method 1 - in-app: This can done natively with Joplin, Ghostwriter,
+or VSCodium/VSCode</li>
+<li>Method 2 - in-browser: This is done using a Chrome-based browser and
+the <em>Markdown Viewer</em> extension. Or by viewing an exported HTML
+document with the browser.</li>
+</ul>
+<h3 id="step-4---export-the-manuscript-to-a-pdf-document">Step 4 -
+Export the manuscript to a PDF document</h3>
+<ul>
+<li>Method 1 - <a href="https://joplinapp.org">Joplin</a>:
+CTRL-SHIFT-E</li>
+<li>Method 2 - <a
+href="https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk">Markdown
+Viewer</a> extension in Chrome: CTRL-P<br />
+(<em>The easiest way if not using Joplin.</em>)</li>
+<li>Method 3 - <a href="https://vscodium.com/">VSCodium</a>/VSCode:
+export the HTML to your harddive, then use your browser (Chromium-based
+only!) to view it and "print to file."</li>
+<li>Method 4: <a href="https://pandoc.org/">Pandoc</a>: convert the
+markdown document to HTML, then use your browser (Chromium-based only!)
+to view it and "print to file."</li>
+</ul>
+<h2 id="notes-about-using-some-of-the-tools">Notes about using some of
+the tools</h2>
+<h3 id="joplin-markdown-to-exported-pdf">Joplin: markdown to exported
+PDF</h3>
+<p><em>Edit, Preview, and then export a PDF, all in the same application
+interface.</em></p>
+<p>Install <a href="https://joplinapp.org">Joplin</a>, but then also
+install the <em>Import Local CSS</em> plugin.</p>
+<p>Joplin has a built-in previewer so you can see what the manuscript
+will look like. When you are ready to produce a PDF, then press
+<code>CTRL-SHIFT-E</code> from within the application.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>You can also export to HTML if you prefer that (right-click on the
+"note" and export to <em>HTML file</em>).</li>
+<li>If you subscribe to the <a href="https://joplincloud.com">Joplin
+Cloud</a> service, you can share the document in a browser with friends
+and family and critique groups by just sending them a link to view.</li>
+</ul>
+<p><strong>Extra Step for A4 and A5 page dimensions</strong></p>
+<p>Joplin hijacks the page dimensions. If you want to output A4, for
+example, you need to (a) set the A4 class value in your document like
+normal (read <a
+href="README-structure-summary.md">README-structure-summary.md</a> for
+more information), and (b) set it in the Joplin UI: <code>Options</code>
+&gt; <code>General</code> &gt; <code>Show Advanced Settings</code> and
+then set your preferred page size and orientation there. Just make sure
+your document settings and your Joplin settings match.</p>
+<p>Or … just export your document to an HTML file, view that with your
+browser and <code>CTRL-P</code>.</p>
+<h3 id="vscodiumvscode-markdown-to-exported-html">VSCodium/VSCode:
+markdown to exported HTML</h3>
+<p><em>Edit, Preview, and, if you like, export to an HTML
+document.</em></p>
+<p>Install <a href="https://vscodium.com/">VSCodium</a>, but then also
+install (<code>CTRL-SHIFT-X</code>) these extensions:
+<code>Markdown All-in-One</code>, and optionally
+<code>Markdown Preview Mermaid Support</code>,
+<code>Markdown Footnotes</code>, and <code>Markdown Superscript</code>.
+(The first extension is required.)</p>
+<p>VSCodium has a built-in previewer (<code>CTRL-k</code> release then
+<code>v</code>) so you can see what the manuscript will look like. To
+convert to a PDF document you have to either export it to HTML then
+convert that to PDF with a Chrome-based browser or Pandoc, or use the
+browser + the <em>Markdown Viewer</em> extension to view the markdown
+document and convert that to a PDF document.</p>
+<p>To export to HTML on disk: <code>CTRL-SHIFT-P</code> and then
+<code>&gt;Markdown All in One: Print current document to HTML</code>. It
+will be saved, in the same directory as the markdown document.</p>
+<p>Of course, exporting to HTML is optional if your goal is a compliant
+PDF. If that is the case, then use VSCodium just for editing and
+previewing and <em>Markdown Viewer</em> + Chrome for creating the
+PDF.</p>
+<blockquote>
+<p><small><strong>A BIG CAVEAT WITH VSCODIUM &amp; VSCODE</strong><br />
+These editors block importing (<code>@import</code>) from the
+filesystem. If you want to use the previewer and renderer in VSCodium,
+you will have to host the <code>manuscript-css</code> folder on the web
+somewhere. Or in the meantime, as of this writing, just use it directly
+from github:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>@import &quot;https://taw00.github.io/manuscript-css/manuscript.css&quot;;</span></code></pre></div>
+</blockquote>
+<p><strong>Side note</strong><br />
+With Joplin, you can use its native editor, or any other editor. If you
+are Joplin user but also love VSCodium, there is an excellent extension
+<code>joplin-vscode-plugin</code> that enables it to plug into the
+Joplin application. Other editors are simpler to use with Joplin,
+though. I personally use the <a href="https://zed.dev/">Zed
+editor</a>.</p>
+<h3 id="ghostwriter-markdown-to-exported-html">Ghostwriter: markdown to
+exported HTML</h3>
+<p>Out of the box, <a
+href="https://ghostwriter.kde.org/">Ghostwriter</a> will not render a
+correct preview of your work. You just need to adjust a couple settings
+so you can preview correctly and export to HTML correctly.</p>
+<ul>
+<li>Configure Ghostwriter to preview correctly: Settings &gt;
+Preview Options…
+<blockquote>
+<p>Markdown Flavor: <code>Pandoc CommonMark</code></p>
+</blockquote></li>
+<li>To export to HTML file: <code>CTRL-E</code>
+<ul>
+<li>Markdown Converter: <code>Pandoc CommonMark</code></li>
+<li>File Format: <code>HTML 5</code></li>
+<li>Command line options:
+<code>--metadata title="storytitle" --no-highlight -f markdown-native_divs+raw_html</code><br />
+<small>(optional: the title in this configuration is only saved in the
+PDF metadata. If you want to change it for each story, feel
+free)</small></li>
+</ul></li>
+</ul>
+<p>Of course, exporting to HTML is optional if your goal is a compliant
+PDF. If that is the case, then use Ghostwriter just for editing and
+previewing, and <em>Markdown Viewer</em> + Chrome for creating the PDF
+from your completed Markdown text file.</p>
+<h3
+id="chromechromium-markdown-viewer-browser-extension-markdown-document-to-pdf-document">Chrome/Chromium
+Markdown Viewer browser extension: markdown document to PDF
+document</h3>
+<p><em>Preview, and then when ready, export a PDF from a
+Markdown-formatted file.</em></p>
+<p>This enables you to use any text editor to work with your manuscript,
+and then this browser extension to do the conversion.</p>
+<p>First, in your Chrome-based browser (Chrome, Vivaldi, Edge, Safari on
+the desktop, etc.), install the <a
+href="https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk">Markdown
+Viewer</a> extension.</p>
+<p>Configure the extension:</p>
+<ul>
+<li>pin it to the top bar of the browser</li>
+<li>click on the M logo</li>
+<li>THEME: SIMPLE</li>
+<li>right click &gt; Manage Extension: make sure <em>Allow access to
+file URLs</em> is turned on.</li>
+</ul>
+<p>Then browse to your markdown file using your Chrome-based browser,
+open it, (or use your file browser to browse to it and then open in
+Chrome) and it should be rendered nicely as a manuscript-formatted
+document. Refresh the view as you edit the document with your text
+editor, and then <code>CTRL-P</code> when you are ready to export the
+document to PDF.</p>
+<h3 id="pandoc-markdown-document-to-html-document">Pandoc: markdown
+document to HTML document</h3>
+<p><strong>Most people will not use this option,</strong> but I present
+it here for the geeks …</p>
+<p>This requires you use the command line and to have Pandoc installed,
+<a href="https://pandoc.org/">https://pandoc.org/</a>.</p>
+<p>Convert your markdown-formatted completed manuscript to HTML:<br />
+(In this example really only <code>-V</code> and <code>--metadata</code>
+are optional.)</p>
+<pre class="plaintext"><code>pandoc -s -V lang=en --no-highlight -f markdown-native_divs+raw_html \
+  --metadata title=&quot;storytitle&quot; \
+  -o lastname.storytitle.html lastname.storytitle.md</code></pre>
+<ul>
+<li><code>-s</code> means standalone rendering</li>
+<li><code>-V lang=en</code> inserts the correct locale info in the HTML
+head element. Change <code>en</code> to your locale.</li>
+<li><code>--no-highlight</code> means to not do any syntax
+highlighting.</li>
+<li><code>-f markdown-native_divs+raw_html</code> tells pandoc to trust
+our markup and not "autofix" certain things (that then break our
+markdown).</li>
+<li><code>--metadata title="your title goes here"</code> sets the HTML
+title.</li>
+<li><code>-o filename.html</code> sets the output filename</li>
+</ul>
+<p>Then use the browser to open that HTML document and when ready,
+export to PDF (`CTRL-P).</p>
+<p>That's it! Congrats!</p>
+<p>Questions? Comments? Post them in the Discussions section of this
+repository.<br />
+-todd</p>
+<hr />
+<hr />
+<h1 id="other-things">Other things</h1>
+<h3 id="whats-completely-untested">What's completely untested</h3>
+<ul>
+<li>Markdown-style Tables - I have done no work to make sure they look
+right in a manuscript. If this is something you would like to see … let
+me know. Also, give me examples of how it should look.</li>
+<li>I have also done no styling for images. If you want to add images to
+your document, you are on your own. For now. I'll probably play with
+that in the future.</li>
+</ul>
+<h3
+id="porting-your-finished-draft-to-onlyoffice-libreoffice-or-any-other">Porting
+your finished draft to OnlyOffice, LibreOffice, or any other</h3>
+<p>word processor</p>
+<p><strong>Pandoc to .odt to .docx - NOT RECOMMENDED</strong></p>
+<p>In theory, you could use Pandoc to generate a functional, but messy
+LibreOffice <code>.odt</code> document and then edit it until it is
+properly formatted. But … that document will be MESSY. I do not
+recommend, but here is how you do that.</p>
+<pre class="plaintext"><code>pandoc -o your-manuscript.odt your-manuscript.md</code></pre>
+<p><strong>Word (.docx) Templates</strong></p>
+<p>I have included MS Word-compatible example documents in this
+repository that can serve the purpose of a baseline template for you to
+work from. Copy the appropriate template into a working folder, rename
+it to your story, and copy-and-paste from your generated PDF into that
+<code>.docx</code> file, working to retain the proper formatting. It
+works and it goes faster than it sounds.</p>
+<p>As you work with one of those templates, notice the custom styling
+used for each manuscript-specific element within the document. If you
+are not familiar with managing your document using styles, now is the
+time to learn.</p>
+<p><strong>Google Docs</strong></p>
+<p>Check out my Google Docs templates <a
+href="https://drive.google.com/drive/folders/1VHZiNtNyCqU3BOJG7sGdywo_8Ag2DcUL">here</a>.</p>
+<p>You can get your document into Google Docs one of two ways: 1. port
+it to OnlyOffice or LibreOffice, generate a .docx and then import that
+into Google Docs. Or 2. you could create a new clean document from one
+of those templates and do the cut-and-paste shuffle as described
+earlier.</p>
+<p>OnlyOffice seems to generate more true to MS Word <code>.docx</code>
+formatting. Then LibreOffice. Then Google Docs.</p>
+<h3 id="my-workflow-as-a-writer">My workflow as a writer:</h3>
+<ol type="1">
+<li><p><strong>0-draft:</strong> handwritten, with pen-and-ink, in a
+composition notebook</p></li>
+<li><p><strong>work-in-progress:</strong> transcribed to the Joplin
+desktop application interface (markdown)</p></li>
+<li><p><strong>review by other:</strong> I periodic share drafts or
+portion of a drafts with friends, family, and critique partners. For
+this, I also use Joplin's excellent Joplin Cloud service which has a
+really convenient publish-to-the-web feature. But I will also have just
+print my work in progress (in manuscript form of course) and hand people
+a hardcopy to review.</p></li>
+<li><p><strong>finalize the document:</strong> If they accept a PDF, I
+just generate a PDF directly from Joplin and submit that. If they
+require a <code>.docx</code>, I port my markdown to PDF then to over to
+OnlyOffice. It doesn't take that long.</p></li>
+<li><p><strong>verify the format and submit:</strong> If the publisher
+requires <code>.docx</code>, I find a friend with MS Word, or I head to
+the local library, and verify that the formatting translated correctly.
+Fix any errors (LibreOffice seems to struggle with maintaining the
+margins, for example) and then submit.<br> <strong>—WARNING: Do not use
+MS Word 365 online.</strong> It boggles the mind that Microsoft has yet
+to get this right, but that version of Word WILL NOT retain your style
+settings and will very likely ruin your manuscript. I suspect they will
+fix this soonish, but it has been a problem for some time now.</p></li>
+<li><p><strong>Brace myself for the rejection.</strong> ;)</p></li>
+</ol>
+<h3 id="is-todd-a-joplin-shill">Is Todd a Joplin shill?</h3>
+<p>Nope. It's just the best application that I have found for this kind
+of work.</p>
+<p>The great majority of markdown editors are great at editing text.
+Some can also preview your work (most cannot). Joplin is, I think, the
+only text editor with full CSS rendering capability and that can also
+export to HTML or PDF natively.</p>
+<p><a href="misc/README-joplin.png"><img src="misc/README-joplin.png" width="100%" alt="Joplin in action!" /></a></p>
+<p>The <a href="https://joplinapp.org">Joplin</a> note-taking
+application (like Obsidian but much better) gives you the full ability
+to customize the results of whatever you write to your hearts content
+using standard CSS. Joplin is also a great personal document-management
+platform (like Evernote, but better). And it can sync to the cloud. And
+you can publish things to the cloud for anyone to view. And it is fully
+end-to-end encrypted. And it has a web-clipper (super handy!!!) and a
+mobile app. And, and! So, yes, I suppose I am a Joplin shill. But for
+all the right reasons.</p>
+<p>But I also use other editors out there—primarily Zed, Ghostwriter,
+and Vim. I am sure you have your preferred interface. To work with any
+other edit, just install Chrome and the <em>Markdown Viewer</em>
+extension and follow the steps above. It's not complicated.</p>
+<hr />
+<hr />
+<h1 id="addendum-manuscript-format-guidelines">Addendum: manuscript
+format guidelines</h1>
+<h3 id="novels">Novels</h3>
+<ul>
+<li><a
+href="https://www.shunn.net/format/novel/">https://www.shunn.net/format/novel/</a></li>
+<li><a
+href="https://graemeshimmin.com/manuscript-format-for-novel-submission/">https://graemeshimmin.com/manuscript-format-for-novel-submission/</a>
+A4!</li>
+<li><a
+href="https://blog.reedsy.com/guide/book-manuscript-format/">https://blog.reedsy.com/guide/book-manuscript-format/</a></li>
+</ul>
+<h3 id="novellas">Novellas</h3>
+<ul>
+<li><a
+href="https://www.shunn.net/format/2009/03/proper_novella_format.html">https://www.shunn.net/format/2009/03/proper_novella_format.html</a></li>
+</ul>
+<h3 id="short-narratives">Short Narratives</h3>
+<ul>
+<li><a
+href="https://www.shunn.net/format/story/">https://www.shunn.net/format/story/</a></li>
+</ul>
+<h3 id="poetry">Poetry</h3>
+<ul>
+<li><a
+href="https://www.shunn.net/format/poetry/">https://www.shunn.net/format/poetry/</a></li>
+<li><a
+href="https://www.masterclass.com/articles/how-to-format-and-submit-your-poetry-manuscript">https://www.masterclass.com/articles/how-to-format-and-submit-your-poetry-manuscript</a></li>
+</ul>
+<hr />
+<h1 id="good-luck">Good luck!</h1>
+<p>Check out the manuscript <a href="./templates/">templates</a> and <a
+href="./examples/">examples</a> in this repository and I think how
+everything works with <code>manuscript.css</code> becomes obvious.</p>
+<p>Good luck. Now, quit fooling around on the internet and write
+something.</p>
+<p>Copyright (c) Todd Warner &lt;t0dd [at] protonmail [dot]
+com&gt;<br />
+This work is licensed under Attribution 4.0 International. To view a
+copy of this license, visit <a
+href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</a>.</p>
+<hr />
+<h4 id="thanking-me">Thanking me?</h4>
+<p>Several people have asked how they could thank me for work that I
+have done that they found valueable. Well, one easy way to thank me is
+to "buy me a cup of coffee": <a
+href="https://buymeacoff.ee/toddwarner">https://buymeacoff.ee/toddwarner</a>
+Or just send me an email (see above) and express your appreciation. Or
+star this on Github. Or whatever.</p>
+<p>Cheers!</p>
