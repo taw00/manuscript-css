@@ -45,14 +45,14 @@ know and love.
 5. Submit your work for review by friends, family, and your critique group.
 6. Revise revise revise …
 7. Submit your work to publishers who accept manuscripts in PDF format.  
+8. Submit your work to publishers who only accept manuscripts in DOCX format.\
    <small>Note: Some publishers (and nearly all traditional book publishers)
-   insist on your work being submitted in `.docx` format. For that, use this
-   process until you are absolutely ready to submit to such a publisher and
-   then [port the project](#porting-your-finished-draft-to-docx) to `.docx`
-   using [OnlyOffice](https://www.onlyoffice.com/) or
+   insist on your work being submitted in `.docx` format. For them, once your
+   manuscript is finalized with the above process, then
+   [port the project](#porting-your-finished-draft-to-docx) to `.docx` using
+   [OnlyOffice](https://www.onlyoffice.com/) or
    [LibreOffice](https://www.libreoffice.org/) or MS Word (Google Docs is less
-   flexible, but it works). More information on some of the techniques to do
-   that are listed later in this document.</small>
+   flexible, but it works).</small>
 
 
 &ZeroWidthSpace;
