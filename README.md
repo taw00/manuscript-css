@@ -82,7 +82,7 @@ know and love.
 >### NEWS - 2025-10-26 - Manuscript version 5.0 released
 >
 >- Automatically updated under the covers.
->- But **there are breaking changes!**  
+>- But **there are breaking changes** from version 4.0  
 >  To use the older version, configure your markdown or html documents to use
 >  `manuscript-4.0.css` instead of `manuscript.css`.
 >- What's new:
