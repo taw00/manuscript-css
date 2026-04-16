@@ -515,8 +515,7 @@ Questions? Comments? Post them in the Discussions section of this repository.
   document, you are on your own. For now. I'll probably play with that in the
   future.
 
-### Porting your finished draft to [OnlyOffice](https://www.onlyoffice.com/),
-[LibreOffice](https://www.libreoffice.org/), or any other word processor
+### Porting your finished draft to [OnlyOffice](https://www.onlyoffice.com/), [LibreOffice](https://www.libreoffice.org/), or any other word processor
 
 **Pandoc to .odt to .docx - NOT RECOMMENDED**
 
@@ -542,7 +541,7 @@ As you work with one of those templates, notice the custom styling used for
 each manuscript-specific element within the document. If you are not familiar
 with managing your document using styles, now is the time to learn.
 
-(Note, DO NOT USE WORD 365 ONLINE! It cannot manage saved styles correctly.)
+**(Note, DO NOT USE WORD 365 ONLINE! It cannot manage saved styles correctly.)**
 
 <!--
 **Google Docs**
