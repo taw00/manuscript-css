@@ -526,11 +526,11 @@ pandoc -o your-manuscript.odt your-manuscript.md
 
 **Word (.docx) Templates**
 
-I have included MS Word-compatible templates (`templates/word-templates`) in
-this repository. Copy the appropriate template into a working folder, rename it to
-your story, and copy-and-paste from your generated PDF into that `.docx` file,
-working to retain the proper formatting. It works and it goes faster than it
-sounds.
+I have included MS Word-compatible templates in this repository
+(`templates/word-templates`). Copy the appropriate template into a working
+folder, rename it to your story, and copy-and-paste from your generated PDF
+into that `.docx` file, working to retain the proper formatting. It works and
+it goes faster than it sounds.
 
 As you work with one of those templates, notice the custom styling used for
 each manuscript-specific element within the document. If you are not familiar
