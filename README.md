@@ -303,6 +303,8 @@ in-application or in a Chrome browser. Then **(4) export to PDF** using either
 Joplin (the direct way) or a Chrome-based browser (Firefox cannot do this,
 unfortunately). And maybe **(5) port to DOCX**.
 
+### Step 1 - Copy and rename a template
+
 Choose a template to from the `manuscript-css/templates/` folder. For your
 first time, I recommend `template-prose-short.md`. Rename it to whatever
 makes sense to you like `lastname-storytitle.md` which is a pretty standard
