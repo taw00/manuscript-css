@@ -504,32 +504,13 @@ Questions? Comments? Post them in the Discussions section of this repository.
 
 &ZeroWidthSpace;
 
-# Other things
+# Porting your finished draft to .docx
 
-### What's completely untested
-
-- Markdown-style Tables - I have done no work to make sure they look right in a
-  manuscript. If this is something you would like to see … let me know. Also,
-  give me examples of how it should look.
-- I have also done no styling for images. If you want to add images to your
-  document, you are on your own. For now. I'll probably play with that in the
-  future.
-
-### Porting your finished draft to [OnlyOffice](https://www.onlyoffice.com/), [LibreOffice](https://www.libreoffice.org/), or any other word processor
-
-**Pandoc to .odt to .docx - NOT RECOMMENDED**
-
-In theory, you could use Pandoc to generate a functional, but messy
-[LibreOffice](https://www.libreoffice.org/) `.odt` document and then edit it
-until it is properly formatted. But … that document will be MESSY. I do not
-recommend, but here is how you do that.
-
-```plaintext
-pandoc -o your-manuscript.odt your-manuscript.md
-```
+(and therefore to [OnlyOffice](https://www.onlyoffice.com/),
+[LibreOffice](https://www.libreoffice.org/), or any other word processor)
 
 
-**Word (.docx) Templates**
+### Word (.docx) Templates
 
 *(Note, DO NOT USE WORD 365 ONLINE! It cannot manage saved styles correctly.)*
 
@@ -560,6 +541,7 @@ Word `.docx` formatting. Then [LibreOffice](https://www.libreoffice.org/). Then
 Google Docs.
 -->
 
+
 ### My workflow as a writer:
 
 1. **0-draft:** handwritten, with pen-and-ink, in a composition notebook
@@ -574,23 +556,50 @@ Google Docs.
    progress (in manuscript form of course) and hand people a hardcopy to
    review.
 
-4. **finalize the document:** If they accept a PDF, I just generate a PDF
-   directly from Joplin and submit that. If they require a `.docx`, I port my
+4. **finalize the document (PDF):** If they accept a PDF, I just generate a PDF
+   directly from Joplin and submit that.
+
+5. **finalize the document (DOCX):** If they require a `.docx`, I port my
    markdown to PDF then to over to [OnlyOffice](https://www.onlyoffice.com/).
    It doesn't take that long.
 
 5. **verify the format and submit:** If the publisher requires `.docx`, I find
    a friend with MS Word, or I head to the local library, and verify that the
-   formatting translated correctly. Fix any errors
-   ([LibreOffice](https://www.libreoffice.org/) seems to struggle with
-   maintaining the margins, for example) and then submit.<br> **—WARNING: Do
-   not use MS Word 365 online.** It boggles the mind that Microsoft has yet to
-   get this right, but that version of Word WILL NOT retain your style settings
-   and will very likely ruin your manuscript. I suspect they will fix this
-   soonish, but it has been a problem for some time now.
+   formatting translated correctly. Fix any errors and then submit.
 
 6. **Brace myself for the rejection.** ;)
 
+---
+---
+
+
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
+
+# Other things
+
+### What's completely untested
+
+- Markdown-style Tables - I have done no work to make sure they look right in a
+  manuscript. If this is something you would like to see … let me know. Also,
+  give me examples of how it should look.
+- I have also done no styling for images. If you want to add images to your
+  document, you are on your own. For now. I'll probably play with that in the
+  future.
+
+### Porting your finished draft to [OnlyOffice](https://www.onlyoffice.com/), [LibreOffice](https://www.libreoffice.org/), or any other word processor
+
+**Pandoc to .odt to .docx - NOT RECOMMENDED**
+
+In theory, you could use Pandoc to generate a functional, but messy
+[LibreOffice](https://www.libreoffice.org/) `.odt` document and then edit it
+until it is properly formatted. But … that document will be MESSY. I do not
+recommend, but here is how you do that.
+
+```plaintext
+pandoc -o your-manuscript.odt your-manuscript.md
+```
 
 ### Is Todd a Joplin shill?
 
