@@ -47,10 +47,10 @@ know and love.
 6. **Revise revise revise**
 7. **Submit your work to publishers** who accept manuscripts in **PDF format**.
 8. **Submit your work to publishers** who only accept manuscripts in **DOCX format**.\
-   Note: Some publishers (and nearly all traditional book publishers)
-   insist on your work being submitted in `.docx` format. For them, once your
-   manuscript is finalized with the above process, then
-   [port the project to `.docx`](#porting-your-finished-draft-to-docx).
+   Some publishers (and nearly all traditional book publishers) insist on your
+   work being submitted in `.docx` format. For them, once your manuscript is
+   finalized with the above process, then [port the project to
+   `.docx`](#porting-your-finished-draft-to-docx).
 
 
 &ZeroWidthSpace;
