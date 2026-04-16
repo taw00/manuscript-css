@@ -44,7 +44,7 @@ know and love.
    [poetry](https://format.ms/poetry) manuscript format.
 5. **Submit your work for review**\
    by friends, family, and your critique group.
-6. **Revise revise revise**
+6. **Revise revise revise.**
 7. **Submit your work to publishers** who accept manuscripts in **PDF format**.
 8. **Submit your work to publishers** who only accept manuscripts in **DOCX format**.\
    Some publishers (and nearly all traditional book publishers) insist on your
