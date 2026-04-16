@@ -310,6 +310,9 @@ like.
   HTML, then use your browser (Chromium-based only!) to view it and "print to
   file."
 
+&ZeroWidthSpace;
+
+&ZeroWidthSpace;
 
 ## Notes about using some of the tools
 
