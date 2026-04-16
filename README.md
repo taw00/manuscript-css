@@ -48,9 +48,11 @@ know and love.
    <small>Note: Some publishers (and nearly all traditional book publishers)
    insist on your work being submitted in `.docx` format. For that, use this
    process until you are absolutely ready to submit to such a publisher and
-   then port the project to `.docx` using OnlyOffice or LibreOffice and MS Word
-   (Google Docs is less flexible, but it works). More information on some of
-   the techniques to do that are listed later in this document.</small>
+   then port the project to `.docx` using
+   [OnlyOffice](https://www.onlyoffice.com/) or
+   [LibreOffice](https://www.libreoffice.org/) and MS Word (Google Docs is less
+   flexible, but it works). More information on some of the techniques to do
+   that are listed later in this document.</small>
 
 ---
 
@@ -507,13 +509,15 @@ Questions? Comments? Post them in the Discussions section of this repository.
   document, you are on your own. For now. I'll probably play with that in the
   future.
 
-### Porting your finished draft to OnlyOffice, LibreOffice, or any other word processor
+### Porting your finished draft to [OnlyOffice](https://www.onlyoffice.com/),
+[LibreOffice](https://www.libreoffice.org/), or any other word processor
 
 **Pandoc to .odt to .docx - NOT RECOMMENDED**
 
-In theory, you could use Pandoc to generate a functional, but messy LibreOffice
-`.odt` document and then edit it until it is properly formatted. But … that
-document will be MESSY. I do not recommend, but here is how you do that.
+In theory, you could use Pandoc to generate a functional, but messy
+[LibreOffice](https://www.libreoffice.org/) `.odt` document and then edit it
+until it is properly formatted. But … that document will be MESSY. I do not
+recommend, but here is how you do that.
 
 ```plaintext
 pandoc -o your-manuscript.odt your-manuscript.md
@@ -522,34 +526,42 @@ pandoc -o your-manuscript.odt your-manuscript.md
 
 **Word (.docx) Templates**
 
-I have included MS Word-compatible example documents in this repository that
-can serve the purpose of a baseline template for you to work from. Copy the
-appropriate template into a working folder, rename it to your story, and
-copy-and-paste from your generated PDF into that `.docx` file, working to
-retain the proper formatting. It works and it goes faster than it sounds.
+I have included MS Word-compatible templates (`templates/word-templates`) in
+this repository. Copy the appropriate template into a working folder, rename it to
+your story, and copy-and-paste from your generated PDF into that `.docx` file,
+working to retain the proper formatting. It works and it goes faster than it
+sounds.
 
 As you work with one of those templates, notice the custom styling used for
 each manuscript-specific element within the document. If you are not familiar
 with managing your document using styles, now is the time to learn.
 
+(Note, DO NOT USE WORD 365 ONLINE! It cannot manage saved styles correctly.)
+
+<!--
 **Google Docs**
 
 Check out my Google Docs templates
 [here](https://drive.google.com/drive/folders/1VHZiNtNyCqU3BOJG7sGdywo_8Ag2DcUL).
 
 You can get your document into Google Docs one of two ways: 1. port it to
-OnlyOffice or LibreOffice, generate a .docx and then import that into Google
-Docs. Or 2. you could create a new clean document from one of those templates
-and do the cut-and-paste shuffle as described earlier.
+[OnlyOffice](https://www.onlyoffice.com/) or
+[LibreOffice](https://www.libreoffice.org/), generate a .docx and then import
+that into Google Docs. Or 2. you could create a new clean document from one of
+those templates and do the cut-and-paste shuffle as described earlier.
 
-OnlyOffice seems to generate more true to MS Word `.docx` formatting. Then
-LibreOffice. Then Google Docs.
+[OnlyOffice](https://www.onlyoffice.com/) seems to generate more true to MS
+Word `.docx` formatting. Then [LibreOffice](https://www.libreoffice.org/). Then
+Google Docs.
+-->
 
 ### My workflow as a writer:
 
 1. **0-draft:** handwritten, with pen-and-ink, in a composition notebook
+
 2. **work-in-progress:** transcribed to the Joplin desktop application
    interface (markdown)
+
 3. **review by other:** I periodic share drafts or portion of a drafts with
    friends, family, and critique partners. For this, I also use Joplin's
    excellent Joplin Cloud service which has a really convenient
@@ -559,17 +571,19 @@ LibreOffice. Then Google Docs.
 
 4. **finalize the document:** If they accept a PDF, I just generate a PDF
    directly from Joplin and submit that. If they require a `.docx`, I port my
-   markdown to PDF then to over to OnlyOffice. It doesn't take that
-   long.
+   markdown to PDF then to over to [OnlyOffice](https://www.onlyoffice.com/).
+   It doesn't take that long.
+
 5. **verify the format and submit:** If the publisher requires `.docx`, I find
    a friend with MS Word, or I head to the local library, and verify that the
-   formatting translated correctly. Fix any errors (LibreOffice seems to
-   struggle with maintaining the margins, for example) and then submit.<br>
-   **—WARNING: Do not use MS Word 365 online.** It boggles the mind that
-   Microsoft has yet to get this right, but that version of Word WILL NOT
-   retain your style settings and will very likely ruin your manuscript. I
-   suspect they will fix this soonish, but it has been a problem for some time
-   now.
+   formatting translated correctly. Fix any errors
+   ([LibreOffice](https://www.libreoffice.org/) seems to struggle with
+   maintaining the margins, for example) and then submit.<br> **—WARNING: Do
+   not use MS Word 365 online.** It boggles the mind that Microsoft has yet to
+   get this right, but that version of Word WILL NOT retain your style settings
+   and will very likely ruin your manuscript. I suspect they will fix this
+   soonish, but it has been a problem for some time now.
+
 6. **Brace myself for the rejection.** ;)
 
 
