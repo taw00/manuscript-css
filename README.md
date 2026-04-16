@@ -601,7 +601,7 @@ pandoc -o your-manuscript.odt your-manuscript.md
 
 ### Is Todd a Joplin shill?
 
-Nope. It's just the best application that I have found for this kind of work.
+Nope. Well, maybe yup! It's just the best application that I have found for this kind of work.
 
 The great majority of markdown editors are great at editing text. Some can also
 preview your work (most cannot). Joplin is, I think, the only text editor with
