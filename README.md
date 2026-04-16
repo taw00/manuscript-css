@@ -581,8 +581,8 @@ Google Docs.
    It doesn't take that long.
 
 5. **verify the format and submit:** If the publisher requires `.docx`, I find
-   a friend with MS Word, or I head to the local library, and verify that the
-   formatting translated correctly. Fix any errors and then submit.
+   a friend or local library with MS Word (desktop) and verify that the
+   formatting translated correctly, fix any errors, and then submit.
 
 6. **Brace myself for the rejection.** ;)
 
