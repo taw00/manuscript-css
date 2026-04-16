@@ -301,7 +301,7 @@ and then HTML to PDF then that should be enough to get you going.
 text with your contact information, your story, etc. **(3) Preview it** either
 in-application or in a Chrome browser. Then **(4) export to PDF** using either
 Joplin (the direct way) or a Chrome-based browser (Firefox cannot do this,
-unfortunately).
+unfortunately). And maybe **(5) port to DOCX**.
 
 Choose a template to from the `manuscript-css/templates/` folder. For your
 first time, I recommend `template-prose-short.md`. Rename it to whatever
@@ -339,6 +339,16 @@ like.
 - Method 4: [Pandoc](https://pandoc.org/): convert the markdown document to
   HTML, then use your browser (Chromium-based only!) to view it and "print to
   file."
+
+### Step 5 - Port the PDF to DOCX (if required)
+
+- The porting process is relatively manual: (1) generate your PDF, (2) grab a
+  template, (3) lots of copy and pasting, (4) verify, and done.
+- For this, I'm a fan of [OnlyOffice](https://www.onlyoffice.com/)
+  (and soon [EuroOffice](https://nextcloud.com/blog/press_releases/industry-initiative-launches-euro-office-as-true-sovereign-office-suite/),
+  [LibreOffice](https://www.libreoffice.org/), Word on desktop, and
+  if you must, Google Docs.
+- See more detail [here](#porting-your-finished-draft-to-docx).
 
 
 &ZeroWidthSpace;
@@ -508,6 +518,11 @@ Questions? Comments? Post them in the Discussions section of this repository.
 
 (and therefore to [OnlyOffice](https://www.onlyoffice.com/),
 [LibreOffice](https://www.libreoffice.org/), or any other word processor)
+
+
+Loads of publishers want `.docx`-formatted documents for better or
+for worse. It's a manual process, but … not too egregious. Here's how you do
+that.
 
 
 ### Word (.docx) Templates
