@@ -507,8 +507,7 @@ Questions? Comments? Post them in the Discussions section of this repository.
   document, you are on your own. For now. I'll probably play with that in the
   future.
 
-### Porting your finished draft to OnlyOffice, LibreOffice, or any other
-word processor
+### Porting your finished draft to OnlyOffice, LibreOffice, or any other word processor
 
 **Pandoc to .odt to .docx - NOT RECOMMENDED**
 
