@@ -77,7 +77,7 @@
             & section.part,
             & section + section.chapter,
             & div.xxxxxxxx {
-                break-before: page;
+                break-before: var(--m-page-break);
             }
         /*
          * POEM page breaking
@@ -86,7 +86,7 @@
             & section > section.poem,
             & section.poem + section,
             & div.xxxxxxxx {
-                break-before: page;
+                break-before: var(--m-page-break);
             }
         }
 
