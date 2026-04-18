@@ -115,6 +115,9 @@
         &:has(:where(article#manuscript:is(.long,.poetry))) {
             --m-page-start: 0;
         }
+        &:has(:where(article#manuscript:is(.simple,.text-only))) {
+            --m-page-start: 1;
+        }
     }
     html, body {
         width: 100%;
