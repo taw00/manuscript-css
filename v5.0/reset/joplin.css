@@ -55,13 +55,11 @@
     }
 
     /* rendered to HTML view */
-    body:not(#joplin-container-body) {
-        & > div.exported-note {
-            margin: 0;
-            padding: 0;
-            & > div.exported-note-title {
-                display: none !important;
-            }
+    body:not(#joplin-container-body) > div.exported-note {
+        margin: 0;
+        padding: 0;
+        & > div.exported-note-title {
+            display: none !important;
         }
     }
 
