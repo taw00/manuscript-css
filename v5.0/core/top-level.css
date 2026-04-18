@@ -268,7 +268,8 @@
      * VERTICAL LAYOUT - title pages, parts, chapters, scenes, and poems
      */
 
-    /*
+    /* TO-DO: update based on change to match shunn spacing much closer
+     *
      * short spacing
      *
      * [page-break (managed by core/page-breaks.css]
@@ -470,31 +471,6 @@
          * the title block */
         & > :first-child { margin-block-start: 0; }
         & > :last-child { margin-block-end: 0; }
-    }
-
-
-    /* TEXT-ONLY and SIMPLE
-     *
-     * #manuscript.text-only:
-     *    removes all contact info, page & title headers, & counts
-     * #manuscript.simple:
-     *    removes the all page headers, contacts, & counts */
-    &:is(.text-only) {
-        & .title-page,
-        & .contact,
-        & .count,
-        & .title {
-            display: none !important;
-        }
-    }
-    &:is(.simple) {
-        & .contact,
-        & .count {
-            display: none !important;
-        }
-        & > div.title-page > div.title {
-            padding-block-start: var(--m-room-for-eight);
-        }
     }
 
 } /* end #manuscript */

@@ -251,46 +251,39 @@
         --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
     }
 
-    /* simple and text-only */
-    &:has(#manuscript:is(.text-only,.simple)) {
-        --m-offset-title: 0 !important;
-        --m-offset-title-poem: 0 !important;
-    }
-    &:has(#manuscript:is(.text-only)) {
-        --m-page-break: unset !important;
-        --m-page-break-simulated: 0 !important;
-        --m-manuscript-border: 0 !important;
-    }
-
-    /* note visibility */
+    /* .show-notes any class=note will be visible when rendered (default),
+     *             exported (default), and published to Joplin Cloud (not
+     *             default)
+     * .show-notes-export visible when exported
+     * .show-notes-jcloud visible when published to Joplin Cloud
+     * .no-notes, .no-notes-export, .no-notes-jcloud - opposite */
+    /* show notes */
     &:has(#manuscript:is(.show-notes)) {
         --m-notes-display: block;
         --m-notes-export-display: block;
         --m-notes-jcloud-display: block;
     }
+    &:has(#manuscript:is(.show-notes-export)) {
+        --m-notes-export-display: block;
+    }
+    &:has(#manuscript:is(.show-notes-jcloud)) {
+        --m-notes-jcloud-display: block;
+    }
+    /* no show notes */
     &:has(#manuscript:is(.no-notes)) {
         --m-notes-display: none;
         --m-notes-export-display: none;
         --m-notes-jcloud-display: none;
     }
-    &:has(#manuscript:is(.show-notes-export)) {
-        --m-notes-export-display: block;
-    }
     &:has(#manuscript:is(.no-notes-export)) {
         --m-notes-export-display: none;
-    }
-    &:has(#manuscript:is(.show-notes-jcloud)) {
-        --m-notes-jcloud-display: block;
     }
     &:has(#manuscript:is(.no-notes-jcloud)) {
         --m-notes-jcloud-display: none;
     }
-    &:has(#manuscript:is(.classic)) {
-        --m-font-family-narrative: var(--m-fontstack-courier);
-        --m-font-family-nonnarrative: var(--m-fontstack-courier);
-        --m-font-family-poetry: var(--m-fontstack-courier);
-        --m-fontstack-monospace: var(--m-fontstack-roboto-mono);
-    }
+
+
+    /* turn off page break simulations */
     &:has(#manuscript:is(.no-simulation)) {
         --m-page-break-simulated: unset;
     }
@@ -365,7 +358,7 @@
             --m-font-family-preformatted-scene: var(--m-font-family-narrative-preformatted);
             --m-font-family-code: var(--m-font-family-narrative-code);
         }
-        &:is(.nonnarrative, .nonnarrative) {
+        &:is(.nonnarrative, .non-narrative) {
             --m-indent-scene: var(--m-indent-nonnarrative);
             --m-indent-first-paragraph-scene: var(--m-indent-nonnarrative-first-paragraph);
             --m-paragraph-spacing-scene: var(--m-paragraph-spacing-nonnarrative);
@@ -392,7 +385,7 @@
             --m-font-family-preformatted-subscene: var(--m-font-family-narrative-preformatted);
             --m-font-family-code-subscene: var(--m-font-family-narrative-code);
         }
-        &:is(.nonnarrative, .nonnarrative) {
+        &:is(.nonnarrative, .non-narrative) {
             --m-indent-subscene: var(--m-indent-nonnarrative);
             --m-indent-first-paragraph-subscene: var(--m-indent-nonnarrative-first-paragraph);
             --m-paragraph-spacing-subscene: var(--m-paragraph-spacing-nonnarrative);
@@ -415,7 +408,7 @@
  * --------------------
  */
 #vpage {
-    &:is(.long,.short,.prose,.poetry,.nonnarrative,.non-narrative,.simple,.text-only) {
+    &:is(.long,.short,.prose,.poetry,.nonnarrative,.non-narrative) {
         & #manuscript {
             & > :first-child::after {
                 box-sizing: border-box;
