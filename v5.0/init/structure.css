@@ -15,6 +15,7 @@
  * divergent user-choices are highlighted instead of merely vanished.
  */
 
+:where(
 html,
 body,
 #vpage,
@@ -30,7 +31,7 @@ body,
 #manuscript .contact > *,
 #manuscript .count > *,
 #manuscript .title > *,
-div.xxxxxxxx {
+div.xxxxxxxx) {
     display: none;
 }
 
@@ -49,12 +50,13 @@ h1:has(~ div#vpage) {
  * page-spanning outer boxes. PDF rendering breaks if #manuscript is of type
  * flex. */
 
+:where(
 html:has(body),
 body:has(div#vpage),
 div#vpage:has(article#manuscript),
 /* a vpage can only contain a #manuscript */
 div#vpage > article#manuscript,
-div.xxxxxxxx {
+div.xxxxxxxx) {
     display: revert;
     box-sizing: border-box;
 }
