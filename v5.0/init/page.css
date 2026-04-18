@@ -112,7 +112,7 @@
     :root {
         /* w/ short, page 1 is page 1. w/ long, page 1 is page 0 */
         --m-page-start: 1;
-        &:has(article#manuscript:is(.long,.poetry)) {
+        &:has(:where(article#manuscript:is(.long,.poetry))) {
             --m-page-start: 0;
         }
     }
