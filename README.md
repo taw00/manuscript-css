@@ -28,7 +28,7 @@ know and love.
 
 ## HOWTO
 
-*More detail can be found [here](#howto---in-more-detail)*
+*More detail can be found [below](#howto---in-more-detail)*
 
 1. **Download this repository.**
 2. **Copy one of the [templates](./templates)**\
