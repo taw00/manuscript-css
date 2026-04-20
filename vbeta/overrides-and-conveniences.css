@@ -69,11 +69,14 @@
     }
 }
 
+
+
+
 /* .blind will hide contact information for the document and for each poem.
  * It will remove the byline (h3) under each .title.
  * And it will set the default marginalia to not include the page counter. */
-:root:has(#vpage > #manuscript.blind) {
-    --m-marginalia: "Story Title / " counter(page);
+:root:has(where(#vpage > #manuscript.blind)) {
+    --m-marginalia: var(--m-marginalia-title) " / " counter(page);
 }
 #vpage #manuscript.blind {
     & :is(.title-page, .poem) {
@@ -85,6 +88,65 @@
         }
     }
 }
+
+
+
+
+/* .simple will simplify the manuscript
+ *   - removed: count and contact from title pages and poems
+ *   - removed: designated page breaks (affects long documents)
+ *   - shrinks: title offsets and titlepage title has no offset
+ * .text-only will strip out everything that is not the text body
+ *   - removed: title pages
+ *   - removed: count and contact from poems
+ *   - removed: designated page breaks (affects long documents)
+ *   - shrinks: title offsets and titlepage title has no offset
+ *   - note that part and chapter titles are retained
+ *
+ */
+:root {
+    &:has(:where(#manuscript:is(.text-only,.simple))) {
+        --m-offset-title: var(--m-room-for-two);
+        --m-offset-title-poem: var(--m-room-for-two);
+        --m-offset-title-titlepage: 0;
+        --m-page-break: unset;
+        --m-page-break-simulated: 0;
+        --m-manuscript-border: 0;
+    }
+}
+#vpage #manuscript.simple {
+    & :is(.title-page, .poem) {
+        & .contact,
+        & .count {
+            display: none;
+        }
+    }
+    & div.title-page { height: auto; }
+}
+#vpage #manuscript.text-only {
+    & :is(.title-page, .poem) {
+        & .contact,
+        & .count,
+        & .title {
+            display: none !important;
+        }
+    }
+    & :is(.title-page) {
+        display: none;
+    }
+}
+
+
+
+
+/* .classic switches us to courier fonts */
+&:has(#manuscript:is(.classic)) {
+    --m-font-family-narrative: var(--m-fontstack-courier);
+    --m-font-family-nonnarrative: var(--m-fontstack-courier);
+    --m-font-family-poetry: var(--m-fontstack-courier);
+    --m-fontstack-monospace: var(--m-fontstack-roboto-mono);
+}
+
 
 
 
@@ -141,6 +203,9 @@
         text-indent: unset !important;
     }
 }
+
+
+
 
 /* .foothang ---------------------- */
 /* .scene or any other major block with a class .foothang

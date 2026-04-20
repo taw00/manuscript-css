@@ -105,13 +105,13 @@
  *
  */
 :root {
-    &:has(#manuscript:is(.text-only,.simple)) {
-        --m-offset-title: var(--m-room-for-two) !important;
-        --m-offset-title-poem: var(--m-room-for-two) !important;
-        --m-offset-title-titlepage: 0 !important;
-        --m-page-break: unset !important;
-        --m-page-break-simulated: 0 !important;
-        --m-manuscript-border: 0 !important;
+    &:has(:where(#manuscript:is(.text-only,.simple))) {
+        --m-offset-title: var(--m-room-for-two);
+        --m-offset-title-poem: var(--m-room-for-two);
+        --m-offset-title-titlepage: 0;
+        --m-page-break: unset;
+        --m-page-break-simulated: 0;
+        --m-manuscript-border: 0;
     }
 }
 #vpage #manuscript.simple {

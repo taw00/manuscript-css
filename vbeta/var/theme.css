@@ -42,19 +42,19 @@
             --m-note-link-hover-color:                 var(--m-note-link-hover-color-default);
             --m-vpage-frame: 0 0 20px var(--m-vpage-frame-color);
             --m-vpage-frame-margin: 20px auto;
-        &:has(#vpage.plain) {
+        &:has(:where(#vpage.plain)) {
             --m-vpage-frame: 0;
         }
-        &:has(#vpage.vplain) {
+        &:has(:where(#vpage.vplain)) {
             --m-vpage-frame: 0;
             --m-vpage-frame-margin: 0;
         }
-        &:has(#vpage.vvplain) {
+        &:has(:where(#vpage.vvplain)) {
             --m-paper-color: transparent;
             --m-vpage-frame: 0;
             --m-vpage-frame-margin: 0;
         }
-        &:has(#vpage:is(.dim)) {
+        &:has(:where(#vpage:is(.dim))) {
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dim);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dim);
             --m-desktop-color:                           var(--m-desktop-color-theme-dim);
@@ -68,7 +68,7 @@
             --m-note-link-color:                             var(--m-note-link-color-dim);
             --m-note-link-hover-color:                 var(--m-note-link-hover-color-dim);
         }
-        &:has(#vpage:is(.dimmer)) {
+        &:has(:where(#vpage:is(.dimmer))) {
             --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dimmer);
             --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dimmer);
             --m-desktop-color:                           var(--m-desktop-color-theme-dimmer);
@@ -82,7 +82,7 @@
             --m-note-link-color:                             var(--m-note-link-color-dimmer);
             --m-note-link-hover-color:                 var(--m-note-link-hover-color-dimmer);
         }
-        &:has(#vpage:is(.dark)) {
+        &:has(:where(#vpage:is(.dark))) {
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark);
@@ -95,7 +95,7 @@
                 --m-note-frame-color:                           var(--m-note-frame-color-dark);
                 --m-note-link-color:                             var(--m-note-link-color-dark);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark);
-            &:has(#vpage:is(.amber)) {
+            &:has(:where(#vpage:is(.amber))) {
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-amber);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-amber);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-amber);
@@ -109,7 +109,7 @@
                 --m-note-link-color:                             var(--m-note-link-color-dark-amber);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-amber);
             }
-            &:has(#vpage:is(.yellow)) {
+            &:has(:where(#vpage:is(.yellow))) {
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-yellow);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-yellow);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-yellow);
@@ -123,7 +123,7 @@
                 --m-note-link-color:                             var(--m-note-link-color-dark-yellow);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-yellow);
             }
-            &:has(#vpage:is(.green)) {
+            &:has(:where(#vpage:is(.green))) {
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-green);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-green);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-green);
@@ -137,7 +137,7 @@
                 --m-note-link-color:                             var(--m-note-link-color-dark-green);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-green);
             }
-            &:has(#vpage:is(.blue)) {
+            &:has(:where(#vpage:is(.blue))) {
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-blue);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-blue);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-blue);
@@ -151,7 +151,7 @@
                 --m-note-link-color:                             var(--m-note-link-color-dark-blue);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-blue);
             }
-            &:has(#vpage:is(.pink)) {
+            &:has(:where(#vpage:is(.pink))) {
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-pink);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-pink);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-pink);
@@ -165,7 +165,7 @@
                 --m-note-link-color:                             var(--m-note-link-color-dark-pink);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-pink);
             }
-            &:has(#vpage:is(.purple)) {
+            &:has(:where(#vpage:is(.purple))) {
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-purple);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-purple);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-purple);
@@ -179,7 +179,7 @@
                 --m-note-link-color:                             var(--m-note-link-color-dark-purple);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-purple);
             }
-            &:has(#vpage:is(.red)) {
+            &:has(:where(#vpage:is(.red))) {
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-red);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-red);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-red);
@@ -193,7 +193,7 @@
                 --m-note-link-color:                             var(--m-note-link-color-dark-red);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-red);
             }
-            &:has(#vpage:is(.cyan)) {
+            &:has(:where(#vpage:is(.cyan))) {
                 --m-page-break-simulated-color: var(--m-page-break-simulated-color-theme-dark-cyan);
                 --m-vpage-frame-color:                   var(--m-vpage-frame-color-theme-dark-cyan);
                 --m-desktop-color:                           var(--m-desktop-color-theme-dark-cyan);
@@ -207,7 +207,7 @@
                 --m-note-link-color:                             var(--m-note-link-color-dark-cyan);
                 --m-note-link-hover-color:                 var(--m-note-link-hover-color-dark-cyan);
             }
-        } /* end &:has(#vpage:is(.dark)) */
+        } /* end &:has(:where(#vpage:is(.dark))) */
 
     } /* end :root */
 } /* end @media screen */
