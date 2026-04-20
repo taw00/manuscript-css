@@ -239,9 +239,10 @@
      */
 
     /* all poem blocks start as 'display: contents' and span both grid cols */
-    & section.poem > * {
+    & section.poem
+      *:not(.contact,.contact *,.count,.count *,.title,.title *) {
         grid-column: 1 / -1;
-        display: contents;
+        /*display: contents;*/
         flex-direction: column;
     }
 

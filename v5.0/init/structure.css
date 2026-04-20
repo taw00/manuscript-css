@@ -69,22 +69,23 @@ div.xxxxxxxx) {
  * div:is(.x-poem)
  * div.title-page and section.poem is handled separately
  */
-:where(
-div#vpage > article#manuscript > section.part,
-div#vpage > article#manuscript > section.chapter,
-div#vpage > article#manuscript > section.scene,
-div#vpage > article#manuscript section.part > section.chapter,
-/*div#vpage > article#manuscript section.part > section.scene, -- part can no longer have a scene?*/
-div#vpage > article#manuscript section.part > section.scene,
-div#vpage > article#manuscript section.scene > div.subscenes,
-div#vpage > article#manuscript section.scene > div.x-poem,
-div#vpage > article#manuscript section.scene > section.subscenes > div.scene,
-div#vpage > article#manuscript section.chapter > section.scene,
-div#vpage > article#manuscript div.title > div.x-poem,
-div.xxxxxxxx) {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+:where(div#vpage > article#manuscript) {
+    & > section.part,
+    & > section.chapter,
+    & > section.scene,
+    & :where(section.part) > section.chapter,
+    /*& section.part > section.scene, -- part can no longer have a scene?*/
+    & :where(section.part) > section.scene,
+    & :where(section.scene) > div.subscenes,
+    & :where(section.scene) > div.x-poem,
+    & :where(section.scene) > section.subscenes > div.scene,
+    & :where(section.chapter) > section.scene,
+    & div.title > div.x-poem,
+    div.xxxxxxxx {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
 }
 
 
@@ -95,64 +96,66 @@ div.xxxxxxxx) {
 
 /* title page and poem: grids with two columns and two rows
  * note, .poem is ONLY enabled w/in a article.#manuscript.poetry container */
-:where(
-div#vpage > article#manuscript > div.title-page,
-div#vpage > article#manuscript:is(.poetry) > section.poem,
-/*div#vpage > article#manuscript section.part > section.poem, -- part can no longer have a scene?*/
-div#vpage > article#manuscript section.part > section.poem,
-div#vpage > article#manuscript section.chapter > section.poem,
-div.xxxxxxxx) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
-    box-sizing: border-box;
+:where(div#vpage > article#manuscript) {
+    & > div.title-page,
+    &:where(.poetry) > section.poem,
+    /*& :where(section.part) > section.poem, -- part can no longer have a poem?*/
+    & :where(section.part) > section.poem,
+    & :where(section.chapter) > section.poem,
+    & div.xxxxxxxx {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        box-sizing: border-box;
+    }
 }
 
 
 /* N-TIER CONTAINERS & ELEMENTS W/IN TOP-LEVEL and NEXT-LEVEL CONTAINERS
  * This enables the containers and elements and reverts their type. */
 
-:where(
-/* the title page (is managed differently) */
-div#vpage > article#manuscript > div.title-page > div.title,
-div#vpage > article#manuscript > div.title-page > div.contact,
-div#vpage > article#manuscript > div.title-page > div.count,
-/* a part can only contain a title block, and then chapters and/or scenes/poems */
-div#vpage > article#manuscript section.part > div.title,
-/* a chapter can only contain a title block and/or scenes/poems */
-div#vpage > article#manuscript section.chapter > div.title,
-/* a scene can only contain a title block, subscenes, img, hr, ul, ol, dl, pre, p,
- * blockquote, x-poem, h-tag, div, table */
-/*div#vpage > article#manuscript section.scene > div.title, -- no longer allowed titles, that's what chapters are for*/
-div#vpage > article#manuscript section.scene > :is(div), /* we have to allow for custom styling */
-div#vpage > article#manuscript section.scene > :is(div.note),
-div#vpage > article#manuscript section.scene > :is(img, hr, ul, ol, dl, pre, table),
-div#vpage > article#manuscript section.scene > :is(h1, h2, h3, h4, h5, blockquote, p),
-div#vpage > article#manuscript section.scene > :is(h6), /* a manual dinkus */
-/* a poem can contain a contact, a count, a title, preformatted blocks (poem
- * stanzas), and notes.
- * (<div> specifically called out because editing tools like to wrap <pre>) */
-div#vpage > article#manuscript section.poem > div.title,
-div#vpage > article#manuscript section.poem > div.contact,
-div#vpage > article#manuscript section.poem > div.count,
-div#vpage > article#manuscript section.poem > pre,
-div#vpage > article#manuscript section.poem > div.note,
-/* an arbitrary poem can contain a title header and pre */
-div#vpage > article#manuscript div.x-poem > div.title,
-div#vpage > article#manuscript div.x-poem > pre,
-div#vpage > article#manuscript div.x-poem > div.note,
-/* a title block can only contain a p, blockquote, x-poem, or h-tag */
-div#vpage > article#manuscript div.title > :is(h1, h2, h3, h4, h5, blockquote, p),
-/* counts and contacts can only contain paragraphs */
-div#vpage > article#manuscript div.contact > p,
-div#vpage > article#manuscript div.count > p,
-/* We have some special cases because … meddling by markdown ediors … */
-div#vpage > article#manuscript section.scene > div.joplin-editable, /* special case */
-div#vpage > article#manuscript section.poem > div.joplin-editable,  /* special case */
-div#vpage > article#manuscript div.x-poem > div.joplin-editable,      /* special case */
-div.xxxxxxxx) {
-    display: revert;
-    box-sizing: border-box;
+:where(div#vpage > article#manuscript) {
+    /* the title page (is managed differently) */
+    & > div.title-page > div.title,
+    & > div.title-page > div.contact,
+    & > div.title-page > div.count,
+    /* a part can only contain a title block, and then chapters and/or scenes/poems */
+    & section.part > div.title,
+    /* a chapter can only contain a title block and/or scenes/poems */
+    & section.chapter > div.title,
+    /* a scene can only contain a title block, subscenes, img, hr, ul, ol, dl, pre, p,
+     * blockquote, x-poem, h-tag, div, table */
+    /*& section.scene > div.title, -- no longer allowed titles, that's what chapters are for*/
+    & section.scene > :is(div), /* we have to allow for custom styling */
+    & section.scene > :is(div.note),
+    & section.scene > :is(img, hr, ul, ol, dl, pre, table),
+    & section.scene > :is(h1, h2, h3, h4, h5, blockquote, p),
+    & section.scene > :is(h6), /* a manual dinkus */
+    /* a poem can contain a contact, a count, a title, preformatted blocks (poem
+     * stanzas), and notes.
+     * (<div> specifically called out because editing tools like to wrap <pre>) */
+    & section.poem > div.title,
+    & section.poem > div.contact,
+    & section.poem > div.count,
+    & section.poem > pre,
+    & section.poem > div.note,
+    /* an arbitrary poem can contain a title header and pre */
+    & div.x-poem > div.title,
+    & div.x-poem > pre,
+    & div.x-poem > div.note,
+    /* a title block can only contain a p, blockquote, x-poem, or h-tag */
+    & div.title > :is(h1, h2, h3, h4, h5, blockquote, p),
+    /* counts and contacts can only contain paragraphs */
+    & div.contact > p,
+    & div.count > p,
+    /* We have some special cases because … meddling by markdown ediors … */
+    & section.scene > div.joplin-editable, /* special case */
+    & section.poem > div.joplin-editable,  /* special case */
+    & div.x-poem > div.joplin-editable,    /* special case */
+    & div.xxxxxxxx {
+        display: revert;
+        box-sizing: border-box;
+    }
 }
 
 
