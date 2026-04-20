@@ -67,7 +67,7 @@
     html:has(#vpage + hr.footnotes-sep) #vpage {
         /*padding-block-end: 0;*/ /* removes the page-margin */
         margin-block-end: 0; /* removes the framing gap */
-        box-shadow: 0 -15px 20px -5px var(--m-vpage-frame-color);
+        box-shadow: 0 -10px 20px -5px var(--m-vpage-frame-color);
     }
     #vpage + hr.footnotes-sep {
         display: none;
@@ -80,7 +80,7 @@
         color: var(--m-text-color);
 
         background-color: var(--m-paper-color);
-        box-shadow: 0 15px 20px -5px var(--m-vpage-frame-color);
+        box-shadow: 0 10px 20px -5px var(--m-vpage-frame-color);
         width: 96%;
         max-width: var(--m-page-width);
         margin: 0 auto var(--m-vpage-frame-margin);
