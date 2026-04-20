@@ -61,14 +61,21 @@ know and love.
 
 <div class="newsbox">
 
+>### NEWS - 2026-04-19 - Manuscript version 5.0 improvements
+>
+> FIX = fixed, and IMP = improved
+>
+> - IMP: specificity reduction makes it easier to override functionality.
+> - FIX: poem line count blocks were not formatting correctly.
+>
 >### NEWS - 2026-04-04 - Manuscript version 5.0 improvements
 >
 > FIX = fixed, and IMP = improved
 >
 > - FIX: If using the Joplin application as your editor, and you publish your
 >        manuscript to the Joplin Cloud, it would not print correctly from that
->        interface. Now it does: NOTE: only chrome can handle the paging and
->        margins correctly upon print.
+>        interface. Now it does. (NOTE: only chrome can handle the paging and
+>        margins correctly upon print.)
 > - FIX: Fixed a line-spacing issue with titles (CSS specificity can be
 >        finicky)
 > - IMP: Title offsets, while always within spec by default, now match the
