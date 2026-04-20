@@ -242,8 +242,8 @@ code.inline-code {
 
 /* In Joplin, a pre is rendered twice, depending on things I don't understand.
  * We need to blip out the extra pre */
-#rendered-md pre.joplin-source {
-    display: none;
+#rendered-md #vpage #manuscript :is(.x-poem,.poem,.title) pre.joplin-source {
+    display: none !important;
 }
 
 #vpage #manuscript :is(.x-poem,.poem,.title) {
