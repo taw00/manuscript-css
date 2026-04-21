@@ -78,43 +78,43 @@
      *          https://www.w3.org/International/questions/qa-escapes */
     --m-marker0:     "#";
     --m-marker-hash: "#";          /* THE DEFAULT (scene dinkuses) */
-    --m-marker1:    "*";
-    --m-marker-ast: "*";
+    --m-marker1:     "*";
+    --m-marker-ast:  "*";
 
    /* for subscenes and subscene blocks, perhaps */
-    --m-marker-hyphen: "-";
-    --m-marker-3hyphens: "- - -";
-    --m-marker2:        "—";
-    --m-marker-em-dash: "—";
-    --m-marker-3em-dashes: "— — —";
-    --m-marker-2em-dash: "⸺";
-    --m-marker-horbar: "―";
-    --m-marker-quote-dash: var(--m-marker-horbar);
-    --m-marker-3horbars: "― ― ―";
+    --m-marker-hyphen:        "-";
+    --m-marker-3hyphens:      "- - -";
+    --m-marker2:              "—";
+    --m-marker-em-dash:       "—";
+    --m-marker-3em-dashes:    "— — —";
+    --m-marker-2em-dash:      "⸺";
+    --m-marker-horbar:        "―";
+    --m-marker-quote-dash:    var(--m-marker-horbar);
+    --m-marker-3horbars:      "― ― ―";
     --m-marker-3quote-dashes: var(--m-marker-3horbars);
     --m-marker-forward-slash: "/";
-    --m-marker-tilde: "~";
-    --m-marker-eot: "♦";
+    --m-marker-tilde:         "~";
+    --m-marker-eot:           "♦";
 
     /* Manuscript End, common */
     --m-marker10:       "The End";
     --m-marker-the-end: "The End"; /* THE DEFAULT (manuscript end (30)) */
-    --m-marker11:     "# # #";
-    --m-marker-3hash: "# # #";
-    --m-marker12:    "* * *";
-    --m-marker-3ast: "* * *";
-    --m-marker13: "⁂";
-    --m-marker14: "❦";
-    --m-marker15: "🙞 ❦ 🙜";
-    --m-marker16: "🙞  🙜";
-    --m-marker17:   "- 30 -";
-    --m-marker-30-: "- 30 -";
+    --m-marker11:       "# # #";
+    --m-marker-3hash:   "# # #";
+    --m-marker12:       "* * *";
+    --m-marker-3ast:    "* * *";
+    --m-marker13:       "⁂";
+    --m-marker14:       "❦";
+    --m-marker15:       "🙞 ❦ 🙜";
+    --m-marker16:       "🙞  🙜";
+    --m-marker17:       "- 30 -";
+    --m-marker-30-:     "- 30 -";
 
     /* The End + copyright */
-    --m-marker30: "The End \00000a \00000a  (c) ";
-    --m-marker31: "The End \00000a \00000a \0000a9  ";
-    --m-marker32: "The End \00000a \00000a Copyright (c) ";
-    --m-marker33: "The End \00000a \00000a Copyright \0000a9  ";
+    --m-marker30: "The End\a(c) ";  /* \a \00a \00000a is line feed    */
+    --m-marker31: "The End\a\a9  "; /* \a9 \00a9 \0000a9 is (c) symbol */
+    --m-marker32: "The End\00000aCopyright (c) ";
+    --m-marker33: "The End\00000aCopyright \a9  ";
 
     /* White Space Markers */
     --m-marker90:    "\200B"; /* &zerowidthspace */

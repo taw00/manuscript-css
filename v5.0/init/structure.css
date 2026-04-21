@@ -176,6 +176,7 @@ div.xxxxxxxx) {
     &::before, &::after,
     & section::before, & section::after {
         box-sizing: border-box;
+        white-space: pre; /* wrap line-feed escapes correctly */
     }
 
     /* … remove dinkuses for the last visible section
