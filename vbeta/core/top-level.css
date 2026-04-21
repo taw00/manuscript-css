@@ -207,7 +207,6 @@
     & > div.title-page > div.title {
         grid-column: 1 / -1;
         display: flex;
-        justify-content: center;
         flex-direction: column;
     }
     &:is(.long,.poetry) > div.title-page > div.count {
@@ -261,7 +260,6 @@
     & section.poem > div.title {
         grid-column: 1 / -1;
         display: flex;
-        justify-content: center;
         flex-direction: column;
     }
 
