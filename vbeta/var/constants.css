@@ -76,10 +76,10 @@
      *        CSS escapes and (b) they eat one space following. \a is a
      *        newline. \a9 is the copyright symbol For reference:
      *          https://www.w3.org/International/questions/qa-escapes */
-    --m-marker0:     "#";
     --m-marker-hash: "#";          /* THE DEFAULT (scene dinkuses) */
-    --m-marker1:     "*";
     --m-marker-ast:  "*";
+    --m-marker0:     var(--m-marker-hash);
+    --m-marker1:     var(--m-marker-ast);
 
    /* for subscenes and subscene blocks, perhaps */
     --m-marker-hyphen:        "-";
@@ -97,12 +97,13 @@
     --m-marker-eot:           "♦";
 
     /* Manuscript End, common */
-    --m-marker10:       "The End";
-    --m-marker-the-end: "The End"; /* THE DEFAULT (manuscript end (30)) */
-    --m-marker11:       "# # #";
+    --m-marker-the-end:    "The End"; /* THE DEFAULT (manuscript end (30)) */
+    --m-marker-except-end: "Excerpt End";
     --m-marker-3hash:   "# # #";
-    --m-marker12:       "* * *";
     --m-marker-3ast:    "* * *";
+    --m-marker10:       var(--m-marker-the-end);
+    --m-marker11:       var(--m-marker-3hash);
+    --m-marker12:       var(--m-marker-3ast);
     --m-marker13:       "⁂";
     --m-marker14:       "❦";
     --m-marker15:       "🙞 ❦ 🙜";
@@ -110,17 +111,19 @@
     --m-marker17:       "- 30 -";
     --m-marker-30-:     "- 30 -";
 
-    /* The End + copyright */
-    --m-marker30: "The End\a(c) ";  /* \a \00a \00000a is line feed    */
-    --m-marker31: "The End\a\a9  "; /* \a9 \00a9 \0000a9 is (c) symbol */
+    /* The End + copyright 
+     * \a \00a \00000a is a line feed
+     * \a9 \00a9 \0000a9 is (c) symbol */
+    --m-marker30: "The End\a(c) ";
+    --m-marker31: "The End\a\a9  ";
     --m-marker32: "The End\00000aCopyright (c) ";
     --m-marker33: "The End\00000aCopyright \a9  ";
 
     /* White Space Markers */
-    --m-marker90:    "\200B"; /* &zerowidthspace */
     --m-marker-zws:  "\200B"; /* &zerowidthspace */
-    --m-marker91:    "\00A0"; /* &nbsp; */
     --m-marker-nbsp: "\00A0"; /* &nbsp; */
+    --m-marker90:    var(--m-marker-zws);
+    --m-marker91:    var(--m-marker-nbsp);
 
     /* typefaces (fontstacks)
      * Manuscript standards, these or close equivalents:
