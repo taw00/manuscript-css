@@ -22,7 +22,8 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import "../../manuscript-5.0.css";
 
     :root {
-        --m-marginalia: "Penlastname / Short Prose, Simplified / " counter(page);
+        --m-marginalia-lastname: "Penlastname";
+        --m-marginalia-title: "Short-form Prose, Simplified";
     }
 </style>
 

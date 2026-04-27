@@ -19,7 +19,8 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
     :root {
         --m-30-: "• • •";
-        --m-marginalia: "Penlastname / Prose, Scenes Only / " counter(page);
+        --m-marginalia-lastname: "Penlastname";
+        --m-marginalia-title: "Prose, Scenes Only";
     }
 </style>
 
@@ -125,4 +126,3 @@ This is a scene. This is a scene. This is a scene. This is a scene.
 
 
 </article></div> <!-- ----------------------------- end of manuscript ---- -->
-

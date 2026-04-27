@@ -25,7 +25,8 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
         --m-font-size-title: 1.25em;
         --m-dinkus: "—";
         --m-30-: "🙞 ❦ 🙜";
-        --m-marginalia: "Poe / Telltale Heart / " counter(page);
+        --m-marginalia-lastname: "Poe";
+        --m-marginalia-title: "Telltale Heart";
     }
 </style>
 
@@ -147,4 +148,3 @@ Poe, Edgar Allen. 1843. In *The Pioneer*. Vol. I, No. I, January, 1843. Philadel
 
 
 </article></div> <!-- ------------------------------ end of manuscript ---- -->
-
