@@ -25,10 +25,11 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import "../manuscript-5.0.css";
     @import "../../manuscript-5.0.css";
     :root {
-        --m-marginalia: "de Maupassant / The Wolf / " counter(page);
-        --m-font-size-title: 1.25em;
-        --m-dinkus: "—";
-        --m-30-: "🙞 ❦ 🙜";
+        --m-marginalia-lastname: "Maupassant";
+        --m-marginalia-title: "The Wolf";
+        -X-m-font-size-title: 1.25em;
+        -X-m-dinkus: "—";
+        -X-m-30-: "🙞 ❦ 🙜";
     }
 </style>
 
@@ -50,15 +51,18 @@ Guy de Maupassant
 
 Paris, France
 
+shortstoryguy\@example\.com
+
 
 </div><div class="count">
 
 
 1900 words
-
+<!--
 gothic horror
 
-November 14, 1882 
+November 14, 1882
+-->
 
 
 </div><div class="title">
@@ -200,11 +204,8 @@ Then a lady declared, in a little, soft voice
 
 
 
-
+<!--
 [comment]:: "--------- CITATION CHAPTER (used only for example) --------------"
-
-
-
 
 <section class="chapter">
 <div class="title">
@@ -220,8 +221,9 @@ Then a lady declared, in a little, soft voice
 de Maupassant, Guy. 1882. In *The Gauls*. November 14, 1882. France.
 
 
-</section> <!-- /.scene styled with foothangs -->
-
+</section>
+[comment]:: "end of .scene styled with foothangs"
+-->
 
 </article></div> <!-- ----------------------------- end of manuscript ---- -->
 

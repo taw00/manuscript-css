@@ -27,7 +27,8 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
     @import "../../manuscript-5.0.css";
     .centered-poem pre { text-align: center; }
     :root {
-        --m-marginalia: "Lovecraft / Mountains of Madness / " counter(page);
+        --m-marginalia-lastname: "Lovecraft";
+        --m-marginalia-title: "Mountains of Madness";
     }
 </style>
 
@@ -60,9 +61,7 @@ crawlingchaos\@example\.com
 </div><div class="count">
 
 
-40,000 Words / Suspense Fiction
-
-*draft rev. 193102*
+40,000 words<!-- / Suspense Fiction / *draft rev. 193102* -->
 
 
 </div><div class="title">
@@ -72,12 +71,10 @@ crawlingchaos\@example\.com
 
 ### by H.P. Lovecraft
 
-> A classic tale presented here as an example of a manuscript formatted as a
+> <small>The classic tale presented here as an example of a manuscript formatted as a
 > long-form narrative. For this example we are not using parts, only chapters,
-> each with a single scene.
->
-> This text was adapted from a transcription found on the fansite
-> hplovecraft.com. It can be found [here](https://www.hplovecraft.com/writings/texts/fiction/mm.aspx).
+> each with a single scene. This text was adapted from a transcription found on the fansite
+> hplovecraft\.com. It can be found [here](https://www.hplovecraft.com/writings/texts/fiction/mm.aspx).</small>
 
 
 </div></div>
