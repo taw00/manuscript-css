@@ -71,9 +71,10 @@ crawlingchaos\@example\.com
 
 ### by H.P. Lovecraft
 
-> <small>The classic tale presented here as an example of a manuscript formatted as a
-> long-form narrative. For this example we are not using parts, only chapters,
-> each with a single scene. This text was adapted from a transcription found on the fansite
+> <small>Example note: The classic tale presented here is an example of a
+> manuscript formatted as long-form narrative. For this example, we are not
+> using parts, only chapters, and each with only a single scene. This text was
+> adapted from a transcription found on the fansite
 > hplovecraft\.com. It can be found [here](https://www.hplovecraft.com/writings/texts/fiction/mm.aspx).</small>
 
 
