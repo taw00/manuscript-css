@@ -34,7 +34,7 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 <div class="title-page"><div class="contact">
 
 
-Firstname Lastname
+Firstname Lastname (they/them)
 
 123 Elm Street
 
@@ -63,7 +63,7 @@ _draft rev. 20221024_
 ### by Penfirstname Penlastname
 
 > This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
-> Some stories, parts, chapters, and even scenes will kick off with an epigraph.
+> Some main titles, parts, and chapters will include an epigraph.
 >
 > <div class="x-poem">
 >
@@ -107,11 +107,11 @@ scenes w/o parts. But some books are also divided into books or parts. Of the
 three components, only scenes are required. But here, we demo the long-form
 typical: chapters and scenes.
 
-Side note: the dotted lines in the HTML view are simulalated page breaks. They
+Side note: the dotted lines in the HTML view are simulated page breaks. They
 can be turned off with the `no-simulations` switch. HTML doesn't "page break"
 so we put in an indicator as an approximation of the behavior.
 
-The only time I turn off the page break similation is when I am sharing the 
+The only time I turn off the page break simulation is when I am sharing the 
 document as an HTML page. I.e., when the HTML becomes the primary end artifact.
 
 </section> <!-- end scene -->
