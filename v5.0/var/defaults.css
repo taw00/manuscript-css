@@ -339,6 +339,8 @@
     --m-desktop-color-theme-dark-blue:   var(--m-color-gray-blue-dark);
     --m-desktop-color-theme-dark-pink:   var(--m-color-gray-pink-dark);
     --m-desktop-color-theme-dark-purple: var(--m-color-gray-purple-dark);
+    --m-desktop-color-theme-dark-red:    var(--m-color-gray-purpleblue-dark);
+    --m-desktop-color-theme-dark-cyan:   var(--m-color-gray-purpleblue-dark);
 
     /* the paper theme on the desktop */
     --m-paper-color-theme-default:     var(--m-color-gray0, white);
