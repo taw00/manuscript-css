@@ -31,13 +31,13 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 
 
-<!-- --------------------------- TITLE PAGE ------------------------------- -->
+[comment]:: "--------------------------- TITLE PAGE ---------------------------"
+
+<div class="title-page">
 
 
-
-
-<div class="title-page"><div class="contact">
-
+<!-- CONTACT BLOCK -->
+<div class="contact">
 
 Firstname Lastname (they/them)\
 123 Elm Street\
@@ -46,14 +46,19 @@ firstname\.lastname\@example\.com\
 +1 555-555-1212\
 <br>Member: Author's Guild
 
-</div><div class="count">
+</div>
 
+
+<!-- WORD COUNT BLOCK -->
+<div class="count">
 
 95,000 words / Contemporary Fiction / _draft rev. 20221024_
 
+</div>
 
-</div><div class="title">
 
+<!-- TITLE BLOCK -->
+<div class="title">
 
 # My Novel/Novella/Novelette Title
 
@@ -64,8 +69,8 @@ firstname\.lastname\@example\.com\
 > This is an example of an
 > [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)) that includes
 > a 'poem'. Some main titles, parts, and chapters will include an epigraph
-> though you may wish to add these until you are ready to adapt the work to
-> print.
+> though you may wish to wait to add these until you are ready to adapt the
+> work to print.
 >
 > <div class="x-poem">
 >
@@ -78,8 +83,10 @@ firstname\.lastname\@example\.com\
 >
 > </div>
 
+</div>
 
-</div></div>
+
+</div> <!-- end title page -->
 
 
 

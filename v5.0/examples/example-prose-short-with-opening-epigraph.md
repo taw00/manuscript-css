@@ -11,7 +11,6 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 <style>
     @import "https://toddwarner.io/pub/css/manuscript-css/manuscript-5.0.css";
-    @import "../../manuscript-beta.css";
     /*
     @import "https://toddwarner.io/pub/css/manuscript-css/manuscript.css";
     @import "../manuscript.css";
@@ -36,11 +35,11 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 
 [comment]:: "--------------------------- TITLE PAGE ---------------------------"
 
+<div class="title-page">
 
 
-
-<div class="title-page"><div class="contact">
-
+<!-- CONTACT BLOCK -->
+<div class="contact">
 
 Firstname Lastname (they/them)\
 123 Elm Street\
@@ -49,17 +48,21 @@ firstname\.lastname\@example\.com\
 +1 555-555-1212\
 <br>Member: Author's Guild
 
+</div>
 
-</div><div class="count">
 
+<!-- WORD COUNT BLOCK -->
+<div class="count">
 
 5000 words\
 Contemporary Fiction\
 _draft rev. 20221024_
 
+</div>
 
-</div><div class="title">
 
+<!-- TITLE BLOCK -->
+<div class="title">
 
 # My Short Story Title
 
@@ -70,8 +73,8 @@ _draft rev. 20221024_
 > This is an example of an
 > [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)) that includes
 > a 'poem'. Some main titles, parts, and chapters will include an epigraph
-> though you may wish to add these until you are ready to adapt the work to
-> print.
+> though you may wish to wait to add these until you are ready to adapt the
+> work to print.
 >
 > <div class="x-poem">
 >
@@ -84,8 +87,10 @@ _draft rev. 20221024_
 >
 > </div>
 
+</div>
 
-</div></div>
+
+</div> <!-- end title page -->
 
 
 
