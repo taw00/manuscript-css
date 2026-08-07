@@ -53,7 +53,7 @@ firstname\.lastname\@example\.com
 </div><div class="count">
 
 
-95,000 words
+95,000 words / Contemporary Fiction
 
 <!--
 95,000 words / Contemporary Fiction
@@ -61,13 +61,27 @@ firstname\.lastname\@example\.com
 _draft rev. 20221024_
 -->
 
-
 </div><div class="title">
 
 
 # My Novel/Novella/Novelette Title
 
 ### by Penfirstname Penlastname
+
+> This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
+> Some main titles, parts, and chapters will include an epigraph though you may
+> wish to add these until you are ready to adapt the work to print.
+>
+> <div class="x-poem">
+>
+> ```
+> A dreamer is one who can only find his way by moonlight, and his
+> punishment is that he sees the dawn before the rest of the world.
+> —Oscar Wilde, 1888
+> ```
+>
+> </div>
+
 
 </div></div>
 
