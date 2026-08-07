@@ -49,6 +49,7 @@ firstname\.lastname\@example\.com
 
 +1 555-555-1212
 
+<br>Member: Author's Guild
 
 </div><div class="count">
 

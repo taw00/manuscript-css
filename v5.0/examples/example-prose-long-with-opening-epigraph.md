@@ -39,44 +39,40 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 <div class="title-page"><div class="contact">
 
 
-Firstname Lastname (they/them)
-
-123 Elm Street
-
-Example City, NC 12345 USA
-
-firstname\.lastname\@example\.com
-
-+1 555-555-1212
-
+Firstname Lastname (they/them)\
+123 Elm Street\
+Example City, NC 12345 USA\
+firstname\.lastname\@example\.com\
++1 555-555-1212\
+<br>Member: Author's Guild
 
 </div><div class="count">
 
 
-95,000 words / Contemporary Fiction
+95,000 words / Contemporary Fiction / _draft rev. 20221024_
 
-<!--
-95,000 words / Contemporary Fiction
-
-_draft rev. 20221024_
--->
 
 </div><div class="title">
 
 
 # My Novel/Novella/Novelette Title
 
+## My Novel/Novella/Novelette Subtitle
+
 ### by Penfirstname Penlastname
 
-> This is an [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)).
-> Some main titles, parts, and chapters will include an epigraph though you may
-> wish to add these until you are ready to adapt the work to print.
+> This is an example of an
+> [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)) that includes
+> a 'poem'. Some main titles, parts, and chapters will include an epigraph
+> though you may wish to add these until you are ready to adapt the work to
+> print.
 >
 > <div class="x-poem">
 >
 > ```
-> A dreamer is one who can only find his way by moonlight, and his
-> punishment is that he sees the dawn before the rest of the world.
+> A dreamer is one who can only find his way by
+> moonlight, and his punishment is that he sees the dawn
+> before the rest of the world.
 > —Oscar Wilde, 1888
 > ```
 >

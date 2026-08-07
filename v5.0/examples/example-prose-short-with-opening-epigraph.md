@@ -42,28 +42,20 @@ this license, visit <http://creativecommons.org/licenses/by/4.0/>.
 <div class="title-page"><div class="contact">
 
 
-Firstname Lastname (they/them)
-
-123 Elm Street
-
-Example City, NC 12345 USA
-
-firstname\.lastname\@example\.com
-
-+1 555-555-1212
-
+Firstname Lastname (they/them)\
+123 Elm Street\
+Example City, NC 12345 USA\
+firstname\.lastname\@example\.com\
++1 555-555-1212\
 <br>Member: Author's Guild
 
 
 </div><div class="count">
 
 
-5000 words
-
-<!--
+5000 words\
 Contemporary Fiction\
 _draft rev. 20221024_
--->
 
 
 </div><div class="title">
@@ -71,13 +63,10 @@ _draft rev. 20221024_
 
 # My Short Story Title
 
-<!--
 ## My Short Story Subtitle
--->
 
 ### by Penfirstname Penlastname
 
-<!--
 > This is an example of an
 > [epigraph](https://en.wikipedia.org/wiki/Epigraph_(literature)) that includes
 > a 'poem'. Some main titles, parts, and chapters will include an epigraph
@@ -94,7 +83,7 @@ _draft rev. 20221024_
 > ```
 >
 > </div>
--->
+
 
 </div></div>
 
