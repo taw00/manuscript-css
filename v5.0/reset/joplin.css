@@ -119,7 +119,7 @@
                 box-shadow: unset;
                 border: unset;
             }
-            & > div.note-main {
+            & > div.published-note-layout > div.note-main {
                 /* viewport to 100% */
                 margin: 0 auto;
                 padding: 0;
@@ -180,7 +180,7 @@
             & > div.container.main-container {
                 /* remove branded navbar */
                 & > nav.navbar { display: none; }
-                & > div.note-main {
+                & > div.published-note-layout > div.note-main {
                     /* viewport to 100% */
                     margin: 0 auto;
                     padding: 0;
