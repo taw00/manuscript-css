@@ -38,7 +38,7 @@
 @layer lm-reset-joplin-constants, lm-var-constants, lm-var-defaults, lm-var-permutations, lm-var-theme, lm-user-overrides;
 
 @import                        "./vbeta/var.css?rev=2026080201";
-@import                      "./vbeta/reset.css?rev=2026041901";
+@import                      "./vbeta/reset.css?rev=2026090801";
 @import                       "./vbeta/init.css?rev=2026042101";
 @import                       "./vbeta/core.css?rev=2026042101";
 @import "./vbeta/overrides-and-conveniences.css?rev=2026041901";
