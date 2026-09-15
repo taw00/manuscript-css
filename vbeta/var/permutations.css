@@ -53,7 +53,7 @@
     }
     &:has(:where(#vpage:is(.US,.us,.letter))) {
         --m-page-margin: var(--m-page-marginUS);
-        /* This stuff should auto-refacter after the above page margin adjust */
+        /* This stuff should auto-refactor after the above page margin adjust */
         /*
         --m-marginalia-margin: calc(var(--m-page-margin) + 2em);
         --m-offset-chapter-adjust: calc(var(--m-page-margin) * .90);
