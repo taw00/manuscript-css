@@ -103,7 +103,7 @@
 
     /* Joplin Cloud stuff */
     body.page-note {
-        /* footer with copright and T&Cs - fade to watermark */
+        /* footer with copyright and T&Cs - fade to watermark */
         & > div.footer div.content {
             opacity: initial;
             color: var(--m-reset-joplin-footer-color);
@@ -149,7 +149,7 @@
             padding: 0;
         }
     }
-    /* exported HTNL view to PDF: remove Joplin-inserted title & padding */
+    /* exported HTML view to PDF: remove Joplin-inserted title & padding */
     body:not(#joplin-container-body) > div.exported-note {
         margin: 0;
         padding: 0;
@@ -212,7 +212,7 @@
 #rendered-md {
     /* Rendered view: viewport to 100% */
     width: 100%; max-width: unset; margin: 0 auto; padding: unset;
-    /* I under what I personally set in my Joplin CSS. We want to manage the
+    /* I undid what I personally set in my Joplin CSS. We want to manage the
      * virtual paper look with the #vpage ID. */
     box-shadow: unset;
     background-color: transparent;
