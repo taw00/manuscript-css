@@ -255,7 +255,7 @@ html {
     background-color: transparent;
 
     & a,
-    & a:is(:any-link,:link,:active,:visited) {
+    & a:is(:any-link) {
         color: var(--m-link-color);
         text-decoration: unset;
         border: unset;
@@ -302,7 +302,7 @@ html {
      * - no-links-export - no links in the exported PDF only */
     &:is(.no-links,.disable-links) {
         a,
-        a:is(:any-link,:link,:active,:visited,:hover) {
+        a:is(:any-link) {
             pointer-events: none;
             cursor: default;
             color: inherit;
@@ -331,7 +331,7 @@ html {
         #vpage #manuscript {
             &:is(.no-links-jcloud,.disable-links-jcloud,.no-links-cloud,.disable-links-cloud) {
                 a,
-                a:is(:any-link,:link,:active,:visited,:hover) {
+                a:is(:any-link) {
                     pointer-events: none;
                     cursor: default;
                     color: inherit;
@@ -353,8 +353,8 @@ html {
      * - no-links-export - no links in the exported PDF only (defined here) */
     #manuscript:is(.no-links-pdf,.disable-links-pdf,.no-links-export,.disable-links-export) {
         a,
-        a:is(:any-link,:link,:active,:visited,:hover) {
-            /* bug! Chrome export to PDF honors neight pointer-events nor
+        a:is(:any-link) {
+            /* bug! Chrome export to PDF honors neither pointer-events nor
              * cursor */
             pointer-events: none;
             cursor: default;

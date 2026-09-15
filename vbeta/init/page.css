@@ -101,7 +101,7 @@
         width: 96%;
         max-width: var(--m-page-width);
         margin: 0 auto var(--m-vpage-frame-margin);
-        padding-block: 40px var(--m-page-margin);
+        /*padding-block: 40px var(--m-page-margin);*/
         padding-block: 0 var(--m-page-margin);
         & ol {
             box-sizing: border-box;

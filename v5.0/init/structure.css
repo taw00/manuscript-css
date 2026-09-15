@@ -81,7 +81,7 @@ div.xxxxxxxx) {
     & :where(section.scene) > section.subscenes > div.scene,
     & :where(section.chapter) > section.scene,
     & div.title > div.x-poem,
-    div.xxxxxxxx {
+    & div.xxxxxxxx {
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
