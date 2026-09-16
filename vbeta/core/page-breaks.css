@@ -1,4 +1,4 @@
-/* Page breaks and simulated page breaks
+/* Page Breaks and Simulated Page Breaks
  *
  * Note, if you start mixing up odd things sometimes page breaking can get odd
  * as well. So, be mindful if you see a blank page or stacks of simulated page
@@ -31,65 +31,40 @@
  *     .poem + anything = page break
  */
 
-
-/*
- * PAGE BREAKS, SIMULATED
- */
+/* on the screen, page breaks are simulated */
 @media screen {
-    #manuscript {
-        /*
-         * LONG page breaking
-         */
-        &:is(.long,.poetry) {
-            & > :is(div.title-page,section) + div.title-page,
-            & > div.title-page + section,
-            & section.part,
-            & section + section.chapter,
-            & div.xxxxxxxx {
-                border-block-start: var(--m-page-break-simulated);
-            }
-
-        /*
-         * POEM page breaking
-         */
-            & > :is(div.title-page,section) + section.poem,
-            & section > section.poem,
-            & section.poem + section,
-            & div.xxxxxxxx {
-                border-block-start: var(--m-page-break-simulated);
-            }
+    #manuscript:is(.long, .poetry) {
+        /* LONG story page breaking */
+        & > :is(div.title-page, section) + div.title-page,
+        & > div.title-page + section,
+        & section.part,
+        & section + section.chapter,
+        /* POEM page breaking */
+        & > :is(div.title-page, section) + section.poem,
+        & section > section.poem,
+        & section.poem + section {
+            border-block-start: var(--m-page-break-simulated);
         }
-    } /* end #manuscript */
+    }
 } /* end @media screen */
 
 
-/*
- * PAGE BREAKS ACTUAL
- */
+/* on the page or PDF, page breaks are real */
 @media print {
     #manuscript {
-        /*
-         * LONG page breaking
-         */
-        &:is(.long,.poetry) {
-            & > :is(div.title-page,section) + div.title-page,
+        &:is(.long, .poetry) {
+            /* LONG story page breaking */
+            & > :is(div.title-page, section) + div.title-page,
             & > div.title-page + section,
             & section.part,
             & section + section.chapter,
-            & div.xxxxxxxx {
-                break-before: var(--m-page-break);
-            }
-        /*
-         * POEM page breaking
-         */
-            & > :is(div.title-page,section) + section.poem,
+            /* POEM page breaking */
+            & > :is(div.title-page, section) + section.poem,
             & section > section.poem,
-            & section.poem + section,
-            & div.xxxxxxxx {
+            & section.poem + section {
                 break-before: var(--m-page-break);
             }
         }
-
 
         /* AVOIDANCE RULES ----- */
 
@@ -98,12 +73,10 @@
             break-inside: avoid-page !important;
         }
 
-        & :is(h1, h2, h3, h4, h5, h6),
-        & :is(img, figure) {
+        & :is(h1, h2, h3, h4, h5, h6, img, figure) {
             break-inside: avoid-page !important;
             break-after: avoid-page !important;
         }
-
 
         /* avoid page break inside a note */
         /* avoid page break inside a poem stanza */
@@ -125,9 +98,10 @@
         }
     } /* end #manuscript */
 
-    #vpage, #manuscript, #manuscript > div.title-page {
+    /* avoid page break at the the top of the document */
+    #vpage,
+    #manuscript,
+    #manuscript > div.title-page {
         break-before: avoid-page !important;
     }
-
 } /* end @media print */
-

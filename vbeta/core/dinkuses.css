@@ -23,6 +23,7 @@
 
 #manuscript:not(.text-only) {
 
+    /* Base display state for dinkus and -30- markers */
     &::after,                                /* auto-inserted top-level -30- */
     & > h6,                              /* manually-inserted top-level -30- */
     & section.scene::after,                        /* auto-inserted dinkus */
@@ -34,15 +35,17 @@
         text-align: center;
     }
 
+    /* Active display state */
     &::after,                                /* auto inserted top-level -30- */
     & > h6,                              /* manually inserted top-level -30- */
-    & section.scene:has(+ section.scene)::after, /* auto-inserted dinkus */
+    & section.scene:has(+ section.scene)::after,   /* auto-inserted dinkus */
     & section.subscenes::before,                   /* auto-inserted dinkus */
     & section.subscenes::after,                    /* auto-inserted dinkus */
     & section:not(.scene) > h6 {           /* manually ins. within section */
         display: block;
     }
 
+    /* Global dinkus toggle */
     /* right now #manuscript-level classes no-dinkuses and hide-dinkuses do the
      * same thing */
     &:is(.hide-dinkuses,.no-dinkuses) section.scene::after {
@@ -90,7 +93,7 @@
     &:not(.poetry,.text-only)::after {
         /* prevents (I think) the half-height characters
          * at bottoms of pages here and there. */
-        padding-bottom: .5rem;
+        padding-bottom: 0.5rem;
     }
 
 } /* end #manuscript:not(.text-only) */
