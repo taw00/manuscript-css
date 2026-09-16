@@ -1,4 +1,4 @@
-/* .note - notes!
+/* .note notes! - Editorial Notes Configuration
  * (div#vpage article#manuscript section:is(.scene,.poem,.x-poem) div.note) 
  *
  * Notes can exist in the body of a scene or poem and serve to stand out for
@@ -20,42 +20,47 @@
     margin-inline: auto 0;
     max-width: 100%;
     width:     var(--m-width-notes);
+
     a,
-    a:is(:any-link,:link,:active,:visited) {
+    a:is(:link,:active,:visited) {
         color:     var(--m-note-link-color);
         &:hover {
             color: var(--m-note-link-hover-color);
         }
     }
+
     &:not(.foothang) {
-        & p {
-            /* note paragraphs are not indented */
-            text-indent: 0;
-        }
-        /* specificity forces this re-declaration */
+        & p,
         & ul > li > p,
         & ol > li > p,
         & dt > dd > p,
         & dt > dd {
+            /* note paragraphs are not indented */
             text-indent: 0;
         }
+
         & p ~ p,
         & dd ~ dd {
             /* note paragraphs are not indented */
             text-indent: 0;
             margin-block: var(--m-paragraph-spacing-nonnarrative) 0;
         }
+
         & :is(h1,h2,h3,h4,h5,h6) {
             margin-block: revert;
         }
+
         /* these next two have to be here for reasons of specificity */
+        /*
         & > :first-child {
             margin-block-start: 0;
         }
         & > :last-child {
             margin-block-end: 0;
         }
+        */
     } /* end normal note (not a foothanging note) */
+
     & > :first-child {
         margin-block-start: 0;
     }
@@ -76,8 +81,6 @@
     }
 }
 /* Joplin Cloud */
-body.page-note {
-    #vpage #manuscript div.note {
-        display: var(--m-notes-jcloud-display) !important;
-    }
+body.page-note #vpage #manuscript div.note {
+    display: var(--m-notes-jcloud-display) !important;
 }

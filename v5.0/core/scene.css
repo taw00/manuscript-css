@@ -37,9 +37,8 @@
 #manuscript {
     & section.scene {
         position: relative;
-        /*
-         * Normal Scene: #manuscript section.scene:not(.foothang)
-         */
+
+        /* Normal Scene: #manuscript section.scene:not(.foothang) */
         &:not(.foothang) {
             & p {
                 /* a paragraph after a non-paragraph is not indented */
@@ -84,20 +83,22 @@
             content: var(--m-marker-zws); /* &zerowidthspace */
             margin-block-start: 2rem;
         }
-        /* ... subscenes: subscenes spacing AFTER subscenes block */
-        & section.subscenes::after {
-            content: var(--m-marker-zws); /* &zerowidthspace */
-            margin-block-end: 2rem;
-        }
 
-        & > section.subscenes:first-child,
+        /* ... subscenes: subscenes spacing AFTER subscenes block */
         & section.subscenes {
-            & > section.scene:first-child {
-                padding-block-start: 0;
+            &::after {
+                content: var(--m-marker-zws); /* &zerowidthspace */
+                margin-block-end: 2rem;
             }
-            & > section.scene:last-child {
-                margin-block-end: 0;
-                padding-block-end: 0;
+
+            & > section.scene {
+                &:first-child {
+                    padding-block-start: 0;
+                }
+                &:last-child {
+                    margin-block-end: 0;
+                    padding-block-end: 0;
+                }
             }
         }
 
@@ -105,38 +106,36 @@
          * Scene padding at the top
          */
 
+        /* Scene Title Header & Spacing */
         & > .title {
-            /* all header content starts as centered and with no spacing */
-            & > :is(h1, h2, h3, h4, h5, h6),   /* all header prose */
-            & > p {                            /* all paragraphs */
+            margin-block-end: var(--m-elbow-room);
+
+            /* all header and p content starts as centered and with no spacing */
+            & > :is(h1, h2, h3, h4, h5, h6, p) {
                 padding: 0; border: 0;
                 text-align: center;
             }
+        }
+
+        /* Adjacent Scene Spacing with Titles */
+        & ~ section.scene:has(> .title) {
+            margin-block-start: var(--m-elbow-room);
         }
 
         /*
          * Scene's last children are treated special-like
          */
 
-        /* last element within a scene: zero-out bottom spacing */
         & > :last-child {
+            /* last element within a scene: zero-out bottom spacing */
             margin-block-end: 0; padding-block-end: 0;
-        }
-        /* last element::after within a scene: zero-out content and spacing  */
-        & > :last-child::after {
-            content: "";
-            margin-block: 0; padding-block: 0;
+
+            /* last element::after w/in a scene: zero-out content & spacing  */
+            &::after {
+                content: "";
+                margin-block: 0; padding-block: 0;
+            }
         }
     } /* end #manuscript section.scene */
-
-    /* scene title header spacing control
-     * - gap between a scene header and its scene content */
-    & section.scene > .title {
-        margin-block-end: calc(var(--m-elbow-room) * 1);
-    }
-    & section.scene ~ section.scene:has( > .title) {
-        margin-block-start: calc(var(--m-elbow-room) * 1);
-    }
-
 } /* end #manuscript */
 

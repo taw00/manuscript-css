@@ -1,4 +1,4 @@
-/* base elements initialization and top-level positioning and spacing
+/* Base Elements and Top-Level Layout
  *
  * For the base elements stuff, this also includes some of the white-space and
  * overflow settings. I debate whether these should go in the fonts.css
@@ -53,7 +53,7 @@
         text-align: var(--m-text-align);
     }
 
-    & :is(dd) {
+    & dd {
         margin-inline-start: var(--m-indent);
     }
 
@@ -104,7 +104,7 @@
         margin-block: var(--m-nudge);
     }
 
-    /* ERROR ALERTING!
+    /* Structural ERROR Alerts
      * title pages, parts, chapters, and poems MUST have a title
      * scene CANNOT have a title
      * If not, we start painting things red.
@@ -118,7 +118,7 @@
         color: red;
         &::before {
             display: block;
-            position: abosolute;
+            position: absolute;
             top: calc(var(--m-room-for-eight) + var(--m-room-for-two));
             z-index: 99;
             margin-inline: auto;
@@ -151,7 +151,7 @@
 
 
     /*
-     * TITLE PAGES - layout and orientation
+     * TITLE PAGES Grid Layout
      * (1st page title page and interior title pages "books")
      *
      * Title page itself is initialized in init/structure.css
