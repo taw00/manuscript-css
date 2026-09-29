@@ -100,7 +100,7 @@
     & :is(ol,ul,dl,menu, li,dt,dd, table,thead,tbody,tfoot,th,tr,td,colgroup,col) pre ~ pre {
         margin-block-start: 0;
     }
-    & .title pre {
+    & div.title pre {
         margin-block: var(--m-nudge);
     }
 
@@ -109,11 +109,11 @@
      * scene CANNOT have a title
      * If not, we start painting things red.
      */
-    & div.title-page:not(:has( > .title )),
-    & section.part:not(:has( > .title )),
-    & section.chapter:not(:has( > .title )),
-    & section.poem:not(:has( > .title )),
-    & section.scene > .title,
+    & div.title-page:not(:has( > div.title )),
+    & section.part:not(:has( > div.title )),
+    & section.chapter:not(:has( > div.title )),
+    & section.poem:not(:has( > div.title )),
+    & section.scene > div.title,
     & div.xxxxxxxx {
         color: red;
         &::before {
@@ -162,15 +162,15 @@
      *
      * 1st page title page and "long" documents interior title pages
      * - page breaks above and below
-     * - .contact - 1st row, 1st col, upper left-hand corner
-     * - .count - 1st row, 2nd col,  upper right-hand corder (SHORT)
+     * - div.contact - 1st row, 1st col, upper left-hand corner
+     * - div.count - 1st row, 2nd col,  upper right-hand corder (SHORT)
      *              or 2nd row, spanned, centered, bottom (LONG)
-     * - .title - 1st row, spanned 2 cols, centered, top-margin-offset
+     * - div.title - 1st row, spanned 2 cols, centered, top-margin-offset
      *
      * Interior pages title pages:
      * - For "long" documents, see above.
      * - For "short" documents, the interior title pages .contact, .count,
-     *   .title will all occupy the samelevel with some seperation from the
+     *   div.title will all occupy the samelevel with some separation from the
      *   previous block of text.
      *
      * We use the grid model for the title pages. The flex model settings have
@@ -216,15 +216,15 @@
         margin-inline: auto;
     }
 
-    & .contact p {
-        text-align: start;
+    & :is(.contact,.count) p {
         text-indent: unset;
         margin-block: 0;
     }
+    & .contact p {
+        text-align: start;
+    }
     & .count p {
         text-align: end;
-        text-indent: unset;
-        margin-block: 0;
     }
 
     &:is(.long,.poetry) > div.title-page .count p {
@@ -267,9 +267,9 @@
      * VERTICAL LAYOUT - title pages, parts, chapters, scenes, and poems
      */
 
-    /* TO-DO: update based on change to match shunn spacing much closer
+    /* SHORT SPACING
      *
-     * short spacing
+     * TO-DO: update based on change to match shunn spacing much closer
      *
      * [page-break (managed by core/page-breaks.css]
      * 1st title page >
@@ -320,30 +320,29 @@
             }
         }
         & > :is(div.title-page,section) + div.title-page {
-            padding-block-start: var(--m-room-for-eight);
+            padding-block-start: var(--m-separation-title-page);
             & > div:is(.title) {
-                padding-block-start: var(--m-room-for-eight);
+                padding-block-start: var(--m-separation-title-page);
             }
         }
         & > :is(div.title-page,section) + section.part,
         & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
+            padding-block-start: var(--m-separation-part);
         }
 
         & > div.title-page + section:is(.chapter,.scene),
         & section + section.chapter,
         & section > section:first-of-type.chapter,
         & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-two);
+            padding-block-start: var(--m-separation-chapter);
         }
         & section > section:first-of-type.scene,
         & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-two);
+            padding-block-start: var(--m-separation-scene);
         }
     }
 
-    /*
-     * long spacing
+    /* LONG SPACING
      *
      * [page-break (managed by core/page-breaks.css]
      * title page >
@@ -396,15 +395,19 @@
         }
         & section.part > section:first-of-type.chapter,
         & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-three);
+            /*padding-block-start: var(--m-room-for-three);*/
+            padding-block-start: var(--m-separation-chapter);
         }
-        & section.part:has(> .title > h2) > section:first-of-type.chapter,
+        /*
+        & section.part:has(> div.title > :is(h2, h3, div)) > section:first-of-type.chapter,
         & div.xxxxxxxx {
             padding-block-start: var(--m-room-for-one);
         }
+        */
         & section:is(.chapter,.part) > section:first-of-type.scene,
         & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-two);
+            /*padding-block-start: var(--m-room-for-two);*/
+            padding-block-start: var(--m-separation-scene);
         }
     }
 
@@ -418,7 +421,7 @@
      */
     & section.poem {
         padding-block-start: 0;
-        & > .title {
+        & > div.title {
             padding-block-start: var(--m-offset-title-poem);
         }
     }
@@ -427,7 +430,7 @@
     /*
      * TITLE BLOCKS (.title) - configuration within
      */
-    & .title {
+    & div.title {
         /* this should be, for a 8.5in page, about 77% */
         width: calc((var(--m-max-width-header) / var(--m-content-width)) * 100%);
         max-width: var(--m-max-width-header);
@@ -473,157 +476,4 @@
     }
 
 } /* end #manuscript */
-
-
-
-/* KEPT FOR POSTERITY ------------------------------------------ */
-
-    /* contact and count: if block-style parent containers
-     * (I think this is a little wrong and will not work the way we wish
-     * anyway without html restructuring) */
-    /*
-    & .contact {
-        display: block;
-        float: inline-start;
-        margin-block: 0;
-    }
-    & section.poem .count,
-    & > div.title-page .count {
-        display: block;
-        float: inline-end;
-        margin-block: unset;
-        margin-inline: unset;
-    }
-    &:is(.long,.poetry) > div.title-page .count {
-        margin-inline: auto;
-    }
-    */
-
-    /* contact and count: if flex-style parent containers */
-    /*
-    & .contact {
-        position: absolute;
-        inset-inline: 0 auto;
-        margin-block: 0;
-    }
-
-    & section.poem .count,
-    & > div.title-page .count {
-        position: absolute;
-        inset-inline: auto 0;
-        margin-block: unset;
-        margin-inline: unset;
-    }
-    &:is(.long,.poetry) > div.title-page .count {
-        position: absolute;
-        inset-block-start: auto;
-        margin-block: unset;
-        margin-inline: auto;
-    }
-    */
-
-
-/* spacing based on elements and not title */
-    /*
-    &:not(.long,.poetry) {
-        / * an aesthetic gap * /
-        & > :is(div.title-page,section):has(.contact,.count) + div.title-page {
-            padding-block-start: var(--m-page-margin);
-        }
-        */
-        /*
-        & > div.title-page + section,
-        & section:has( > .title ),
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-two);
-        }
-        */
-        /*
-        & section > .title,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-two);
-        }
-        */
-    /*
-    &:is(.long,.poetry) {
-        & > :is(div.title-page,section) + div.title-page:has(.contact,.count) {
-            padding-block-start: unset;
-        }
-        & > div.title-page + section,
-        & section:has( > .title ),
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-offset-title);
-        }
-        & section:has( > .title ) > section:first-of-type:has( > .title),
-        & section:has( > .title ) > section:first-of-type.scene,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
-        }
-        & section.chapter:has( > .title ) > section:first-of-type.scene {
-            padding-block-start: var(--m-room-for-two);
-        }
-        & section.poem {
-            padding-block-start: unset;
-        }
-    }
-    */
-
-
-/* The title model of spacing … */
-
-    /* TITLE METHOD --- this is faulty
-    &:not(.long,.poetry) {
-        & > :is(div.title-page,section) + div.title-page > div:is(.title, .contact, .count) {
-            padding-block-start: var(--m-room-for-eight);
-        }
-        & > div.title-page + section > .title,
-        & section:not(section.poem):has( > .title ) > .title,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
-        }
-        & section:has( > .title ) > section:first-of-type:has( > .title) > .title,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
-        }
-        & > div.title-page + section:first-of-type:is(.scene),
-        & section:has( > .title ) > section:first-of-type:is(.scene),
-        & section:is(.chapter):has( > .title ) > section:first-of-type:is(.scene) {
-            padding-block-start: var(--m-room-for-two);
-        }
-        & section:has( > .title ) > section:first-of-type:is(.scene):has( > .title ) {
-            padding-block-start: 0;
-            & > .title {
-                padding-block-start: var(--m-room-for-two);
-            }
-        }
-    }
-    */
-    /* TITLE METHOD --- this is faulty
-    &:is(.long,.poetry) {
-        & > :is(div.title-page,section) + div.title-page > div.title {
-            padding-block-start: var(--m-offset-title-titlepage-interior);
-        }
-
-        & > div.title-page + section > .title,
-        & section:not(section.poem):has( > .title ) > .title,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-offset-title);
-        }
-        & section:has( > .title ) > section:first-of-type:has( > .title) > .title,
-        & div.xxxxxxxx {
-            padding-block-start: var(--m-room-for-four);
-        }
-        & > div.title-page + section:first-of-type:is(.scene),
-        & section:has( > .title ) > section:first-of-type:is(.scene),
-        & section:is(.chapter):has( > .title ) > section:first-of-type:is(.scene) {
-            padding-block-start: var(--m-room-for-two);
-        }
-        & section:has( > .title ) > section:first-of-type:is(.scene):has( > .title ) {
-            padding-block-start: 0;
-            & > .title {
-                padding-block-start: var(--m-room-for-two);
-            }
-        }
-    }
-    */
 

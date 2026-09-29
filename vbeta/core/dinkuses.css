@@ -83,7 +83,7 @@
     /* -30- content
      * Note: poetry manuscripts do not use dinkus or -30- markers */
     &:not(.poetry,.no-30-,.no-30)::after {
-        padding-block-start: var(--m-room-for-two);
+        padding-block-start: var(--m-separation-dinkus);
         content: var(--m-30-);
         text-align: center;
     }

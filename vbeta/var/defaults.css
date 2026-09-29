@@ -77,11 +77,11 @@
 
     /* constraining the content between the margins now that we have a
      * --m-page-width, --m-page-height, and --m-page-margin defined */
-    --m-content-width: calc(var(--m-page-width) - calc(var(--m-page-margin) * 2));
-    --m-content-height: calc(var(--m-page-height) - calc(var(--m-page-margin) * 2));
+    --m-content-width: calc(var(--m-page-width) - (var(--m-page-margin) * 2));
+    --m-content-height: calc(var(--m-page-height) - (var(--m-page-margin) * 2));
     --m-content-height-interior: var(--m-content-height); /* this will change */
 
-    --m-max-width-header: calc(var(--m-content-width) - calc(var(--m-page-margin) * 1.5));
+    --m-max-width-header: calc(var(--m-content-width) - (var(--m-page-margin) * 1.5));
 
     /* Offset calculations used to offset title blocks from top of the
      * page. Manuscripts standards recommend placing the main title-block
@@ -203,10 +203,21 @@
     --m-notes-export-display-default: block; /* are notes displayed in exports? */
     --m-notes-jcloud-display-default: none;  /* are notes displayed in Joplin Cloud? */
 
+    /*
+     * DEFAULTS - section 6 - baseline separation spacing
+     */
+
+    --m-separation-dinkus: var(--m-room-for-two);
+    --m-separation-scene: var(--m-room-for-two);
+    --m-separation-chapter: var(--m-separation-scene);
+    --m-separation-part: calc(2 * var(--m-separation-chapter));
+    --m-separation-title-page: calc(2 * var(--m-separation-part));
+
+
     /* --------------------------------------------------------------------- */
 
     /*
-     * DEFAULTS - section 6 - setting the default for everything to
+     * DEFAULTS - section 7 - setting the default for everything to
      *                #vpage.US and #manuscript.narrative and #manuscript.short
      */
 
@@ -227,7 +238,7 @@
     /* --------------------------------------------------------------------- */
 
     /*
-     * DEFAULTS - section 7 - per-component font-size, font-weight,
+     * DEFAULTS - section 8 - per-component font-size, font-weight,
      *                        font-family, line-spacing, …
      *    Initially all are set to what was set above.
      *     - contact, count, title/subtitle, byline
@@ -314,7 +325,7 @@
     --m-font-weight-epigraph: var(--m-font-weight);
     --m-font-family-epigraph: inherit;
     --m-font-style-epigraph: italic;
-    --m-max-width-epigraph: calc(var(--m-content-width) - calc(var(--m-page-margin) * 2));
+    --m-max-width-epigraph: calc(var(--m-content-width) - (var(--m-page-margin) * 2));
 
     /* font settings - the section separators (dinkus and -30-) */
     --m-font-size-dinkus-30-: var(--m-font-size);

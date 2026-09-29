@@ -163,6 +163,9 @@ article:
     <dd>Force narrative-style indenting and paragraph spacing.</dd>
     <dt>nonnarrative-spacing</dt>
     <dd>Force nonnarrative-style indenting and paragraph spacing.</dd>
+    <dt>singlespaced or singlespace or single</dt>
+    <dd>Instead of doublespacing everything, make singlespace the default. This
+    will also adjust other spacing here and there.</dd>
 </dl>
 
 &ZeroWidthSpace;
