@@ -191,6 +191,7 @@
         --m-spacing-poem: var(--m-spacing-poem-narrative);
         --m-spacing-stanza: calc(var(--m-spacing-poem) / 2);
     }
+
     &:has(:where(#vpage #manuscript:is(.unindent-first))) {
         /* remove indent for that first line of the first paragraph. Not the
          * standard for narrative manuscript formatting. */

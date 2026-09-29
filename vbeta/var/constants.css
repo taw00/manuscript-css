@@ -39,15 +39,18 @@
     --m-indentA6:  calc(var(--m-page-marginA6)  * .5);
 
     /* line-height (line spacing) - singlespace and doublespace
-     * web single-space is usually 1.2 or 1.25,
+     * web single-space is usually 1.2, (line-height: normal)
      * but libreoffice and word are 1.15
-     * web doublespace, is usually 2. libreoffice and word are 1.15 * 2 = 2.3
+     * but libreoffice and word are 2.3 which is derived from 1.15 * 2
      */
     --m-line-spacing-single: 1.15;
-    --m-line-spacing-single-plus: 1.725; /* +0.575 */
     --m-line-spacing-double: 2.3;        /* 2 x 1.15 */
-    --m-line-spacing-double-plus: 2.875; /* +0.575 */
     --m-line-spacing-triple: 3.45;       /* 3 x 1.15 */
+    --m-line-spacing-single-plus: 1.725; /* 1.15 + 0.575 (i.e. 1.15 * 1.5) */
+    --m-line-spacing-double-plus: 2.875; /* 2.3 + 0.575 */
+    --m-line-spacing-single-web: 1.2;
+    --m-line-spacing-double-web: 2.4;
+    --m-line-spacing-triple-web: 3.6;
 
     /* additional margin/spacing nudges used here and there */
     --m-nudge: .5rem;
@@ -63,6 +66,7 @@
     --m-text-align: start;
     --m-text-justify: inter-word;
 
+    /* standard values for typical manuscripts */
     --m-font-size-standard:   16px; /* 16px=12pt; 19px=14pt; 14px=10pt */
     --m-font-weight-standard: normal;
     --m-line-spacing-standard: var(--m-line-spacing-double);

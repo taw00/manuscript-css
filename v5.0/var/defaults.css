@@ -60,7 +60,7 @@
 
     --m-font-size: var(--m-font-size-standard); /* 16px (12pt) */
     --m-font-weight: var(--m-font-weight-standard); /* normal */
-    --m-line-spacing: var(--m-line-spacing-standard); /* 2 (double) */
+    --m-line-spacing: var(--m-line-spacing-standard); /* 2.3 (double) */
 
     --m-font-size-preformatted:    inherit;
     --m-font-size-code:            inherit;
