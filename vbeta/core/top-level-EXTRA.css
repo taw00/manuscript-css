@@ -1,0 +1,151 @@
+/* KEPT FOR POSTERITY ------------------------------------------ */
+
+    /* contact and count: if block-style parent containers
+     * (I think this is a little wrong and will not work the way we wish
+     * anyway without html restructuring) */
+    /*
+    & .contact {
+        display: block;
+        float: inline-start;
+        margin-block: 0;
+    }
+    & section.poem .count,
+    & > div.title-page .count {
+        display: block;
+        float: inline-end;
+        margin-block: unset;
+        margin-inline: unset;
+    }
+    &:is(.long,.poetry) > div.title-page .count {
+        margin-inline: auto;
+    }
+    */
+
+    /* contact and count: if flex-style parent containers */
+    /*
+    & .contact {
+        position: absolute;
+        inset-inline: 0 auto;
+        margin-block: 0;
+    }
+
+    & section.poem .count,
+    & > div.title-page .count {
+        position: absolute;
+        inset-inline: auto 0;
+        margin-block: unset;
+        margin-inline: unset;
+    }
+    &:is(.long,.poetry) > div.title-page .count {
+        position: absolute;
+        inset-block-start: auto;
+        margin-block: unset;
+        margin-inline: auto;
+    }
+    */
+
+
+/* spacing based on elements and not title */
+    /*
+    &:not(.long,.poetry) {
+        / * an aesthetic gap * /
+        & > :is(div.title-page,section):has(.contact,.count) + div.title-page {
+            padding-block-start: var(--m-page-margin);
+        }
+        */
+        /*
+        & > div.title-page + section,
+        & section:has( > .title ),
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-two);
+        }
+        */
+        /*
+        & section > .title,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-two);
+        }
+        */
+    /*
+    &:is(.long,.poetry) {
+        & > :is(div.title-page,section) + div.title-page:has(.contact,.count) {
+            padding-block-start: unset;
+        }
+        & > div.title-page + section,
+        & section:has( > .title ),
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-offset-title);
+        }
+        & section:has( > .title ) > section:first-of-type:has( > .title),
+        & section:has( > .title ) > section:first-of-type.scene,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & section.chapter:has( > .title ) > section:first-of-type.scene {
+            padding-block-start: var(--m-room-for-two);
+        }
+        & section.poem {
+            padding-block-start: unset;
+        }
+    }
+    */
+
+
+/* The title model of spacing … */
+
+    /* TITLE METHOD --- this is faulty
+    &:not(.long,.poetry) {
+        & > :is(div.title-page,section) + div.title-page > div:is(.title, .contact, .count) {
+            padding-block-start: var(--m-room-for-eight);
+        }
+        & > div.title-page + section > .title,
+        & section:not(section.poem):has( > .title ) > .title,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & section:has( > .title ) > section:first-of-type:has( > .title) > .title,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & > div.title-page + section:first-of-type:is(.scene),
+        & section:has( > .title ) > section:first-of-type:is(.scene),
+        & section:is(.chapter):has( > .title ) > section:first-of-type:is(.scene) {
+            padding-block-start: var(--m-room-for-two);
+        }
+        & section:has( > .title ) > section:first-of-type:is(.scene):has( > .title ) {
+            padding-block-start: 0;
+            & > .title {
+                padding-block-start: var(--m-room-for-two);
+            }
+        }
+    }
+    */
+    /* TITLE METHOD --- this is faulty
+    &:is(.long,.poetry) {
+        & > :is(div.title-page,section) + div.title-page > div.title {
+            padding-block-start: var(--m-offset-title-titlepage-interior);
+        }
+
+        & > div.title-page + section > .title,
+        & section:not(section.poem):has( > .title ) > .title,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-offset-title);
+        }
+        & section:has( > .title ) > section:first-of-type:has( > .title) > .title,
+        & div.xxxxxxxx {
+            padding-block-start: var(--m-room-for-four);
+        }
+        & > div.title-page + section:first-of-type:is(.scene),
+        & section:has( > .title ) > section:first-of-type:is(.scene),
+        & section:is(.chapter):has( > .title ) > section:first-of-type:is(.scene) {
+            padding-block-start: var(--m-room-for-two);
+        }
+        & section:has( > .title ) > section:first-of-type:is(.scene):has( > .title ) {
+            padding-block-start: 0;
+            & > .title {
+                padding-block-start: var(--m-room-for-two);
+            }
+        }
+    }
+    */
+
